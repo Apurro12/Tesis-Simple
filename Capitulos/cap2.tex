@@ -311,7 +311,38 @@ Una aclaracion importante es que el termino $Log[2 L ]$ es correcto dimensionalm
 
 \section{Cálculo de la energía de vacío}
 
+La energía de vacío queda determinada por la ecuación 
 
+\begin{equation}
+    E _0 = \frac{\hbar}{2}  
+    \zeta (s)  |  _{- \frac{1}{2}}
+\end{equation}
+
+$\zeta (s)$ ya está desarrollada alrededor de $s=-1/2$ en (\ref{eq.desarrollo}), queda desarrollar $(E_c) ^{2s+1} $ alrededor de $s=-1/2$ quedando.
+
+\begin{equation}
+    E _c \approx 
+    1 + 2 Log[E_c] (s + 1/2) +
+    2 Log[E_c] ^2 (s+1/2) ^2 + 
+    O (s+1/2)^3
+\end{equation}
+
+Entonces la energía de vació queda determinada por:
+
+\begin{equation}
+    E _0 =
+    \left(
+    \frac{1}{(s+1/2)^2} 
+    \left(
+    \frac{- \alpha}{8 \pi}
+    \right)+
+    \frac{
+    \alpha(1 -\gamma-Log[2L]) - 
+    \alpha Log[E_c] 
+    }{4 \pi (s+1/2)} 
+     + Regular
+    \right) | _{s=-1/2}
+\end{equation}
 
 
 

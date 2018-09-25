@@ -1,3 +1,42 @@
-\chapter{Álgebra Lineal}
+\chapter{Calculo de las correciones asintoticas la Funcion Hypergeometrica}
 
-Cosas.
+n el capitulo 3, cuando se calcularon asintoticamente los autovalores, se utilizo la aproximacion:  
+
+\begin{equation}
+    F _1 ^1 (a,b,z) = \Gamma (b) 
+    \left(
+    \frac{e^z z ^{a-b} }{\Gamma(a)} * A_1 + \frac{(-z) ^{ -a}}{ \Gamma(b-a)} 
+    * A_2
+    \right)
+\end{equation}
+
+Donde $A_1$ y $A_2$ quedan determinadas por:
+
+\begin{equation}
+\begin{array}{c}
+    A _1 = 
+    \sum _{n=0} ^{R-1} 
+    \left(
+    \frac{(a) _n (1+a-b) _n}{n!} (-z) ^{-n} + O(|z| ^{-R})
+    \right) \\
+    A _2 = 
+    \sum _{n=0} ^{S-1} 
+    \left(
+    \frac{(b-a) _n (1-a) _n }{n!} z ^{-n} + O(|z| ^{-s})
+    \right)
+\end{array}
+\end{equation}
+
+Donde $(a)_ n$ es el símbolo de Pochhammer, las primeras correcciones en $A_1$ y $A_2$ quedan,Luego de reemplazar $a,b,z$ por sus valores:
+
+\begin{equation}
+\begin{array}{c}
+    A _1 = 1 + \frac{a(1-a-b)}{-z} + O(|z| ^ {-2})
+    =  - \frac{\beta}{4 \mu ^2} + \frac{\beta ^2}{8 i \mu ^3} + O(|\mu| ^{-3}) \\ 
+    A _2 = 1 + \frac{(b-a)(1-a)}{z} + O(|z| ^{-2}) = 
+    - \frac{\beta ^2}{8 i \mu ^3} - \frac{\beta}{4 \mu ^2} + 
+    O(|\mu| ^{-3})
+\end{array}
+\end{equation}
+
+De aquí puede verse que la primer corrección asintótica entra al orden mas bajo en la potencia $\mu ^2$, que no contribuye al polo en $s= -1/2$ ya que la ecuación asintótica, el del orden $\frac{1}{\mu ^2}$ cuando quiero calcular el polo en $s=-3/2$.
