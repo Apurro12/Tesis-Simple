@@ -44,7 +44,7 @@ Haciendo el cambio de variables $\mu = \lambda L$ y $\theta = \gamma L $ las ecu
 \label{eq.asintota}
 \end{equation}
 
-Tal como se puede ver en la figura (\ref{fig:Dibujo}), los autovalores $\mu _n$ tienden a pegarse a la asíntota vertical de $ Tg (\mu)$ a medida que $\mu _n$ se hace cada vez mas grande.
+Tal como se puede ver en la figura (\ref{fig:Dibujo}), los autovalores $\mu _n$ tienden a pegarse a la asíntota vertical de $ Tg [ \mu ] $ a medida que $\mu _n$ se hace cada vez mas grande.
 
 \begin{figure}
     \centering
@@ -69,14 +69,15 @@ conocer $\epsilon _n $ es equivalente a resolver la ecuación (\ref{eq.asintota}
 voy a intesertar (\ref{eq.mu}) en la segunda ecuacion de (\ref{eq.asintota}) y desarrollar alrededor de $\epsilon \rightarrow{0}$ obteniendo:
 
 \begin{equation}
-    Sin( n \pi + \frac{\pi}{2} + \epsilon _n ) = 
-    - \frac{\mu _n}{\theta}  \ Cos( n \pi + \frac{\pi}{2} + \epsilon _n )  
-\end{equation}
+\begin{array}{c}
+    Sin[ n \pi + \frac{\pi}{2} + \epsilon _n ] = 
+    - \frac{\mu _n}{\theta}  \ Cos[ n \pi + \frac{\pi}{2} + \epsilon _n ]  \\
+ \\
 
-\begin{equation}
          \sum _{p=0} ^{\infty} \frac{(-1) ^n  \epsilon ^{2 p }}{(2p)!} 
     =  \frac{-1}{\theta}  \ (n \pi + \frac{\pi}{2} + \epsilon ) \
      \sum _{p=0} ^{\infty} \frac{(-1) ^n \epsilon ^{2 p + 1}}{(2p+1)!} 
+\end{array}
 \end{equation}
 
 
@@ -92,44 +93,45 @@ Donde acomodando la igualdad, obtengo la ecuacion :
 \label{igualdad epsilon}
 \end{equation}
 
-Suponiendo que $\epsilon _n $ tiene un desarrollo en serie (\ref{eq.epsilon}), donde la contribución de cada termino es menor que la anterior.
+Suponiendo que $\epsilon _n $ tiene un desarrollo en serie de la forma (\ref{eq.epsilon}).
 
 \begin{equation}
     \epsilon = 
-    \epsilon ^{(1)}  + 
-    \epsilon ^{(2)}  + 
-    \epsilon ^{(3)}  + ...
+    \frac{\epsilon ^{(1)}}{n}  + 
+    \frac{\epsilon ^{(2)}}{n ^2}  + 
+    \frac{\epsilon ^{(3)}}{n ^3}  + ...
 \label{eq.epsilon}
 \end{equation}
 
 
-Insertando este desarrollo de $\epsilon$ en la ecuación (\ref{igualdad epsilon}), e igualando orden a orden se obtiene, para los primeros ordenes de $\epsilon$ ( \ref{epsilons} ) :
+Insertando este desarrollo de $\epsilon$ en la ecuación (\ref{igualdad epsilon}), e igualando orden a orden se obtiene, para los primeros ordenes de $\epsilon$:
 
 \begin{equation}
-\begin{array}{cc}
-    \epsilon ^{(1)} = \frac{\theta}{n \pi} \\
-    \epsilon ^{(2)} = - \frac{ \theta}{2 \pi n ^2 } \\
-    \epsilon ^{(3)} = \frac{\theta}{n^3 \pi} 
+    \epsilon  = \frac{\theta}{n \pi} 
+     - \frac{ \theta}{2 \pi n ^2 } 
+    + \frac{\theta}{n^3 \pi} 
         \left( \frac{1}{4} - 
         \frac{\theta ^2}{2 \pi ^2} -
         \frac{\theta}{\pi ^2}
         \right) 
-\end{array}
 \label{epsilons}
 \end{equation}
 
-Una vez obtenido el desarrollo de $\mu _n $ puedo calcular a $\lambda _n = \frac{\mu _n }{L}  $ 
+Una vez obtenido el desarrollo de $\mu _n $ puedo calcular $\lambda _n = \frac{\mu _n }{L}  $ 
 
 
 
 \begin{equation}
     \lambda _n = 
+    \frac{1}{L}
+    \left(
     \alpha n + 
     \beta + 
     \frac{\gamma}{n} +
     \frac{\delta}{n ^2} +
     \frac{\eta}{n^3} +
     O(\frac{1}{n^4} ) 
+    \right)
 \end{equation}
     
 Donde $\alpha, \beta , ... $ quedan escritos en funcion de los $\epsilon ^{(1)},\epsilon^{(2)}, ... $ ; 
@@ -137,7 +139,8 @@ Luego se calcula la funcion $\zeta _A (s) $ utilizando el desarrollo asintotico 
     
 \begin{equation}
 \begin{array}{cc}
-    \zeta _{A} (s) = \sum _{n=1} ^{\infty} \lambda _n ^ {-s} =
+    \zeta _{A} (s) =  \sum _{n=1} ^{\infty} \lambda _n ^ {-2 s} =
+    L ^{2s}
     \sum _{n=1} ^{\infty} 
     \left(
     \alpha n + 
@@ -147,8 +150,9 @@ Luego se calcula la funcion $\zeta _A (s) $ utilizando el desarrollo asintotico 
     \frac{\eta}{n^3} +
     O( \frac{1}{n ^{4} }  )
     \right) ^{-2 s} = \\
+    ( \frac{L}{\alpha} ) ^{2s}    
     \sum _{n=1} ^{\infty} 
-    (\alpha n) ^{- 2 s} 
+    n ^{- 2 s} 
     \left(
     1 +     
     \underbrace{
@@ -164,27 +168,23 @@ Luego se calcula la funcion $\zeta _A (s) $ utilizando el desarrollo asintotico 
 Para calcular esta serie voy a hacer un desarrollo binomial alrededor de $\chi _n \rightarrow{0} $ 
 
 \begin{equation}
-\zeta _{A} (s) = 
-\sum _{n=1} ^{\infty}
-( \alpha n ) ^{-2 S}
-\left(
-(circulo){0} \ \chi ^0 + (circulo){1} \ \chi ^1  + (circulo){2} \ \chi ^2 + ...
-\right)
-\end{equation}
-
-Donde hay que tener en cuenta que cada termino $\chi ^{n} $ contribuye con distintas potencias de $\frac{1}{n}$, escribiendo explícitamente la expresion de cada $(circulo){p}$ obtengo.
-
-\begin{equation}
 \begin{array}{c}
-    \sum _{n=1} ^{\infty}  (\alpha n) ^{- 2 s} \\ 
-    \left(
-    1- s \chi _n + 
-    \frac{s}{2} (s+1) \chi _n ^2  +
-    \frac{-1}{6} s (2+3s+s^2) \chi _n ^{3} +
-    \frac{s}{24} (6+11s +6s^2+s^3) \chi _n ^4
-    \right)
+\zeta _{A} (s) = 
+( \frac{L}{\alpha} ) ^{2s}
+\sum _{n=1} ^{\infty}
+  n  ^{-2 S} \\
+(
+1 - 2 s \chi _n + 2 s(s+1) \frac{\chi _n ^2}{2} - 2s(2s+1)(2s+2) \frac{ \chi _n ^3}{3!}  + \\ 
+2s(2s+1)(2s+2)(2s+3) \frac{\chi ^4 _n}{4!}
++ O( \frac{1}{n ^5}) )
+
 \end{array}
 \end{equation}
+
+Donde hay que tener en cuenta que cada termino $\chi _{n} ^{m} $ contribuye al orden mas bajo en la sumatoria en una potencia $\frac{1}{n ^m}$.
+
+
+Calculando explicitamente cada termino, obtengo:
 
 
 \begin{equation}
