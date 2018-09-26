@@ -186,65 +186,49 @@ Donde hay que tener en cuenta que cada termino $\chi _{n} ^{m} $ contribuye al o
 
 Calculando explicitamente cada termino, obtengo:
 
+\begin{equation}
+\sum _{n=1} \infty n ^{-2 s} = \zeta (2s)
+\end{equation}
+
 
 \begin{equation}
+\begin{array}{c}
 \sum _{n=1} ^{\infty}
-( \alpha n ) ^{-2 S} \ 
-(circulo){0} = \sum _{n=1} ^{\infty} (\alpha n )^ {-2 s} = \zeta (2 s)
-\end{equation}
-
-\begin{equation}
-\begin{array}{cc}
-    \sum _{n=1} ^{\infty}
-    ( \alpha n )   ^{-2 S} \ 
-    (circulo){1} \ \chi ^1 = \\ 
-    \sum _{n=1} ^{\infty} (-s \chi _n) = \\
-    -s \alpha ^{-s} \left(
-    \frac{\beta}{\alpha} \zeta(s+1) +
-    \frac{\gamma}{\alpha} \zeta (s+2) + 
-    \frac{\delta}{\alpha} \zeta (s+3) + 
-    \frac{\eta}{\alpha} \zeta (s+4) + 
-    \sum O (\frac{1}{n ^{s-5}}
-    \right)
-\end{array}
-\end{equation}
-
-\begin{equation}
-\begin{array}{cc}
-    \sum _{n=1} ^{\infty} \
-    ( \alpha n ) ^{-2 S} \
-    (circulo){2} = \sum \frac{s}{2} (s+1) \chi _n ^2 \\
-    \frac{s(s+1)}{2} \alpha ^{-2s} \left(
-    \frac{\beta ^2}{\alpha ^2} \zeta (s+2) +
-    \frac{2 \beta \gamma}{\alpha} \zeta (s+3) + 
-    \left(\frac{2 \beta \gamma}{\alpha ^2} + \frac{\gamma ^2}{\alpha ^2} ) \right)
-    \zeta (s+4)
-    \right ) + 
-    \sum O(\frac{1}{n ^5 } )
+ n  ^{-2 S}  \chi _n =  \\
+\frac{\beta}{\alpha} \zeta (2s+2) + \frac{\gamma}{\alpha} \zeta(2s+2) + \frac{\delta}{\alpha} +
+\frac{\eta}{\alpha} \zeta (2s+4) + \sum _{n=1} ^{\infty} n ^{-2s} O(\frac{1}{n ^5})
 \end{array}
 \end{equation}
 
 \begin{equation}
 \begin{array}{c}
     \sum _{n=1} ^{\infty}
-    ( \alpha n ) ^{-2 S} \
-    (circulo){3} = \\ 
-    \sum (\alpha n) ^{-s} (\frac{-s}{6} (2 + 3s + s^2 ) ) \chi _n ^3 \\
-    -\alpha ^{-2 s} \frac{s}{6} (2+3 s + s^2) \left(
-    ( \frac{\beta}{\alpha} ) ^3 \zeta (s+3) + 
-    \frac{3 \beta ^2 \gamma}{\alpha ^3} \zeta (s+4) +
-    \sum \frac{1}{n ^{s-5}}
-    \right)
+    n   ^{-2 S} \chi _n ^2 = \\ 
+    \frac{\beta ^2}{\alpha ^2} \zeta(2s+2) +
+    \frac{2 \gamma \beta }{\alpha} \zeta (2s+3) + 
+    \left( \frac{2 \beta \delta}{\alpha ^2} + \frac{\gamma ^2}{\alpha ^2} \right) \zeta (2s+4) + 
+    \sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n^s} )
 \end{array}
 \end{equation}
 
 \begin{equation}
 \begin{array}{cc}
-    \sum (\alpha n) ^{2 s} \frac{s}{24} (6 + 11s+ 6s^2 + s^3) \chi _n ^4 \\
-    (circulo){4} = \frac{\alpha ^{-s} s}{24} (6+11s+6 s ^2 + s^3) 
-    \frac{\beta}{\alpha} \zeta (s+4)
+    \sum _{n=1} ^{\infty} 
+    n ^{-2 S} \chi _n ^3 =
+    \frac{\beta ^3}{\alpha ^3} \zeta (2s+3) + 
+    \frac{3 \gamma \beta ^2}{\alpha ^3} \zeta (2s+4)
+    + \sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n ^5} )
+    
 \end{array}
 \end{equation}
+
+\begin{equation}
+\sum _{n=1} \infty n ^{-2s} \chi _n ^4 \\
+\frac{\beta ^4}{\alpha ^4} \zeta (2s+4) + 
+\sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n ^5} )
+\end{equation}
+
+
 
 Una vez calculados todos los terminos los sumo y saco factor común cada $\zeta( 2s+n )$
 
@@ -260,7 +244,7 @@ Obteniendo como resultado
     C _{s+4} \ \zeta (s+4) + ....
 \end{equation}
 
-Se puede ver que el resultado esta expresado como suma de funciones $\zeta (s+n)$ acompañados de unos argumentos $C_{s+n}$ que dependen de los $(circulo){n}$ que se escriben en funcion de $\alpha,\beta,\gamma, ...$ que estan calculados en la ecuacion (\ref{epsilons}
+Se puede ver que el resultado esta expresado como suma de funciones $\zeta (s+n)$ acompañados de unos argumentos $C_{s+n}$ que dependen de losvalores $\alpha,\beta,\gamma, ...$ que estan calculados en la ecuacion (\ref{epsilons}.
 
 \section{Calculo de la funcion zeta mediante calculo complejo:}
 
