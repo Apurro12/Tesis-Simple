@@ -223,7 +223,7 @@ Calculando explicitamente cada termino, obtengo:
 \end{equation}
 
 \begin{equation}
-\sum _{n=1} \infty n ^{-2s} \chi _n ^4 \\
+\sum _{n=1}  ^{\infty} n ^{-2s} \chi _n ^4 \\
 \frac{\beta ^4}{\alpha ^4} \zeta (2s+4) + 
 \sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n ^5} )
 \end{equation}
@@ -252,7 +252,7 @@ Conocida la función de la cual hay que despejar los autovalores, se puede proce
 
 \begin{equation}
 \begin{array}{c}
-   \zeta _A (s) =  \frac{1}{2 \pi i} \int _{C} \frac{f'(x)}{f(x)} z ^{-2s} = \\ 
+   \zeta _A (s) =  \frac{1}{2 \pi i} \int _{C} \frac{f'(x)}{f(x)} z ^{-2s} dz = \\ 
    \\ 
     \frac{1}{2 \pi i} \int _{C}
     \frac{ cos(\gamma z) \left(\gamma + \frac{1}{L} \right) - sin(\gamma z) \frac{z \gamma}{L}
@@ -274,18 +274,17 @@ Conocida la función de la cual hay que despejar los autovalores, se puede proce
 \end{figure}
 
 
-La integral de linea puede descomponerse en 3 partes, un contorno circular y dos lineas rectas, la contribución circular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto puedo expresar ambos tramos como la integral (\ref{contorno}) 
+La integral de linea puede descomponerse en 3 partes, un contorno circular y dos lineas rectas, la contribución circular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto voy a realizar mi integral en funcion de t, parametrizando z de la forma $z = \pm i L t$ entonces se pueden expresar ambas integrales (luego de tirar los terminos exponencialmente decrecientes)como  (\ref{contorno}) .
 
 \begin{equation}
-    \frac{1}{ \pi } 
-    Sin(\pi s)
+    \frac{Sin(\pi s)}{ \pi } L ^{-2s+1}
     \int _1 ^{\infty} 
     t ^{-2s}
-    \underbrace{
-    \left( 
-    \frac{(1+L \gamma) Cosh( \gamma t)+ t \gamma Sin(\gamma t)}
-    {t \ Cosh(t \gamma)+ L Sinh(t \gamma)}
-    \right)} _{\chi}
+    \underbrace
+    {
+	\frac{ \frac{1}{L} + \gamma + \gamma t}
+	{1+ t}
+	} _{\chi}
     dt 
 \label{contorno}
 \end{equation}
@@ -293,22 +292,29 @@ La integral de linea puede descomponerse en 3 partes, un contorno circular y dos
 Luego voy a desarrollar asintoticamente  $\chi$  (\ref{eq:chi}), para despues insertarlo en (\ref{contorno} da como resultado y realizar la integral termino a termino para luego obtener (\ref{eq.zeta.com})
 
 \begin{equation}
-    \gamma + \frac{1}{t}-\frac{L}{t^2}+\frac{L^2}{t^3}+O(\frac{1}{t^4})
+    \chi = \gamma + \frac{1}{L} \sum _{n=1} ^{\infty} \frac{(-1) ^{n+1}}{t ^n}
 \label{eq:chi}
 \end{equation}
 
 \begin{equation}
     \zeta _A (s) = 
-    \frac{Sin(\pi s)}{\pi}
+    \frac{Sin(\pi s)}{\pi} L ^{1-2s}
     \left(
-    \frac{\gamma}{2s-1} + 
-    \frac{1}{2s} -
-    \frac{L}{2s+1} +
-    \frac{L^2}{2s+2} + ...
+    \frac{\gamma}{2s+1} + 
+    \sum _{n=1} ^{\infty}
+    \frac{(-1) ^{n+1}}{2s-n-1}
     \right)
 \label{eq.zeta.com}
 \end{equation}
 
-De donde se pueden comparar los polos y residuos con el caso anterior 
+Donde Los primeros estan dados por 
+
+\begin{equation}
+\begin{array}{c}
+
+\zeta(s) \approx 
+
+\end{array}
+\end{equation}
 
 \section{Calculo del Heat-Kernel}
