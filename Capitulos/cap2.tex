@@ -379,30 +379,31 @@ Sacando factor comun de modo que me quede un termino exponencialmente decrencien
 
 \begin{equation}
 \frac{1}{2 \pi i}  \int _{\infty} ^{t0} 
-\partial _t
+\partial _{\lambda}
 \left(
--\frac{i\alpha}{2 \lambda} - Log[\Gamma[1- \frac{i \alpha}{2 \lambda}]] +
+-\frac{i\alpha}{2 \lambda} Log[2 \lambda L] - Log[\Gamma[1- \frac{i \alpha}{2 \lambda}]] +
 Log[1- e ^{2 i q} e ^{i p} \frac{ \Gamma[1-\frac{i \alpha}{2 z }]}{ \Gamma[1+\frac{i \alpha}{2 z }]} ]
 \right)
+d \lambda
 \end{equation}
 
 
 Tomando primero el Limite $L \rightarrow \infty $ el termino dentro del ultimo Logaritmo va a cero, quedando la integral final 
 
 \begin{equation}
-\frac{1}{2 \pi i} \int _{\infty} ^{t_0} 
+\frac{1}{2 \pi i} \int _{\infty} ^{\lambda_0} 
 \left(
 \frac{i \alpha}{2 \lambda ^2} -
-\frac{i \alpha}{2\lamda ^2} -
-\frac{i \alpha}{2 \lambda } \psi (1 - \frac{i \alpha}{2 \zeta}) 
+\frac{i \alpha}{2\lambda ^2} -
+\frac{i \alpha}{2 \lambda } \psi (1 - \frac{i \alpha}{2 t}) 
 \right)
-t ^{-2s} dt
+t ^{-2s} d \lambda
 \end{equation}
 
 Para la parte de arriba, usando el mismo argumento, pero sacando factor comun, el otro termino de la suma, obtengo para mi integral final:
 
 \begin{equation}
-\frac{1}{2 \pi i} \int _{t_0} ^{\infty}
+\frac{1}{2 \pi i} \int 
 \left(
 \frac{- i \alpha}{2 t^2} + 
 \frac{i \alpha}{2 t^2} +
@@ -419,22 +420,49 @@ Entonces dando vuelta el signo de la primer integral, y tomando el limite $\epsi
 \left(
 - \frac{1}{x ^2} Log[2 x L ] +
 \frac{1}{ x^2} +
-\frac{1}{ 2 x^2} ( \psi (1+ \frac{i \alpha}{2 x}) + \psi (1 - \frac{i \alpha}{2 x}))
-x ^{-2s}
+\frac{1}{ 2 x^2} ( \psi (1+ \frac{i \alpha}{2 x}) + \psi (1 - \frac{i \alpha}{2 x})
 \right)
-dt
+x ^{-2s}
+dx
 \end{equation}
 
 Relizando las integrals termino a termino obtengo
 
+\begin{equation}
+\frac{\alpha}{2 \pi} z0 ^{-2s-1}
+\left(
+- \frac{2}{(2s+1) ^2} +
+\frac{Log[2 L z _0]}{1+2s}
+\right) +
+\int _{z_0} ^{\infty} 
+\left(
+\psi(1 + \frac{i \alpha}{2 x}) +
+\psi(1 - \frac{i \alpha}{2 x}
+\right)
+x ^{-2s}
+dx
+\end{equation}
 
 
+Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion $\psi $ que se pueden usar, yo voy a el desarrollo 
 
+\begin{equation}
+\psi (1+x) = - \gamma + \sum _{n=1} ^{\infty} \frac{x}{n(n+x)}
+\end{equation}
 
+El cual su radio de convergencia esta centrado alrededor de $x = 0$
 
+La ultima integral queda expresada como:
 
+\begin{equation}
+\int _{t_0} ^{\infty} 
+\left(
+-2 \gamma + 2 \alpha \sum _{n=1} ^{\infty} \frac{1}{n(4 x^2 n^2+\alpha ^2)}
+\right)
+x ^{-2s-2} dx
+\end{equation}
 
-
+Donde se puede realizar la integral dando funciones $\beta$ , o a partir de un $n = n_c$ tal que $\alpha ^2 /(4 x^2 n^2) < 1$ se puede expander el denominador utilizando la funcion geometrica
 
 
 
