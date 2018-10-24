@@ -1,0 +1,182 @@
+\chapter{Extensiones Autoadjuntas del Operador}
+
+    En Este capitulo se van a estudiar otras condiciones de contorno que hacen que el operador sea Autoadjunto en $x=0$ ademas de CC Dirichlet.
+
+\section{Artesanal}
+
+Dado el Hamiltoniano $\mathscr{H} = - \partial ^2 _x + \frac{\alpha}{x}  $ voy a buscar condiciones de contorno que lo hagan autoadjunto en $x=0$ que es donde está la singularidad. 
+
+La primer condicion necesaria es que su dominio e imagen pertenezcan a $L _2$.
+
+\begin{equation}
+\begin{array}{c}
+si, \ \phi \in L _2 \rightarrow \mathscr{H} \phi \in L _2
+\end{array}
+\end{equation}
+
+
+Como voy a estudiar el comportamiento en $x=0$, suponiendo que en $x=L$ todo es bien comportado, voy a empezar buscando soluciones analiticas en $x=0$, 
+
+Basandome en el desarrollo de las autofunciones ( \ref{eq.scat} ) a  $x \rightarrow 0 $ 
+Suponiendo que la primer funcion decae igual que la primer autofuncion $ y_1 (x) $.
+
+\begin{equation}
+\begin{array}{c}
+\phi _1 (x \rightarrow 0) \approx x \ \rightarrow \phi _1 \ \in \ L _2 \\
+\mathscr{H} [ \phi _1 ] (x \rightarrow 0) \approx \alpha \in L _2
+\end{array}
+\label{eq.chico1}
+\end{equation}
+
+Esto tambien vale para cualquier potencia positiva mayor 1, no vale para funciones que van a una constante debido a que el termino $1/x$ lo vuelve no integrable en el origen, luego se estudiara mas formalmente esta afirmacion.
+
+Visto el comportamiento de la segunda autofuncion, propongo su comportamiento en $x \rightarrow 0 $ sea :
+
+\begin{equation}
+\begin{array}{c}
+\phi _2 (x \rightarrow 0) \approx 1 + \alpha x Log[x] \\
+\mathscr{H} [\phi _2] (x \rightarrow 0 ) \approx \alpha ^2 Log[x] \ \in L _2
+\end{array}
+\label{eq.chico2}
+\end{equation}
+
+Con estas propuestas dos funciones cualquiera en el dominio del operador tienen el desarrollo a $x \rightarrow 0$ :
+
+\begin{equation}
+\phi , \chi = \beta , \beta _1 \ x + \gamma , \gamma _1 \ (1+ \alpha x Log[x] )
+\label{eq.phi.chi}
+\end{equation}
+
+La siguiente condicion es pedir que operador sea simetrico.
+
+\begin{equation}
+(\phi, \mathscr{H} \chi ) = ( \mathscr{H} \phi , \chi )
+\end{equation}
+
+Para ello voy a pedir que se anulen los terminos de borde
+
+\begin{equation}
+\begin{array}{c}
+\int _0 ^{L} 
+\left(
+- \partial ^2 _x + \frac{\alpha}{x}
+\right)
+\phi ^{*} \chi dx = \\
+\phi ^{*'} \chi - \phi \chi ^{* '} + 
+\int _0 ^{L} 
+\phi ^{*} 
+| _{x=0} ^{x=L}
+\left(
+- \partial _x ^2 + \frac{\alpha}{x}
+\right)
+\chi dx 
+\end{array}
+\end{equation}
+
+Suponiendo que $\phi $ y $ \chi $ ya satisfacen la condicion de contorno en $x=L$ e insertando el desarrollo de $\phi$ y $\chi$ dado por ( \ref{eq.phi.chi} ) , obtengo que para que el termino de borde se satisfaga debe cumplirse:
+
+\begin{equation}
+\left(
+-1 + \alpha x 
+\right)
+\left(
+\beta _1 ^{* '} \gamma - \beta \gamma _1 ^{* '}
+\right)
+\end{equation}
+
+La cual se satiface si se cumple la doncidion 
+
+\begin{equation}
+\gamma = c \beta 
+\end{equation}
+
+Entonces toda funcion que esté en el dominio del operador va a tener un desarollo dado por:
+
+\begin{equation}
+\phi ( x \rightarrow 0 ) \approx x + c \left(  1 + \alpha x Log[x]   \right)
+\end{equation}
+
+Para cada $c$ que yo elija voy a obtener un Hamiltoniano con unas condiciones de contorno que lo vuelvan autoadjunto
+
+\section{Teoria de Von Neumann}
+
+
+Dado un operador diferencial de segundo orden $\mathscr{H}$ hay que definir cieras condiciones de contorno para que sea Hermitico.
+
+Una forma de encontrar las condiciones de contorno que hacen que un operador sea hermitico (en el caso que estamos estudiando) es que las funciones del dominio se comporten en $x \rightarrow 0$ como:
+
+\begin{equation}
+\phi (x) \approx  A \phi (x) _{+} (x) + U(n) A \phi (x) _{-}
+\end{equation}
+ 
+
+Donde $|| \phi _{+/-} (x) || = 1$ y ambas son soluciones de 
+
+\begin{equation}
+\mathscr{H} \phi _{+/-} (x) = \pm i \phi _{+/-} (x)
+\end{equation}
+
+En general $U(n)$ que es el grupo unitario de orden n, es una isometria entre el las funciones $\phi _{+}$ y $\phi _{-} (x) $ pero como el problema a tratar tiene $n=1$ el unico elemento de $U(1) = e ^{i \gamma}$.
+
+
+Como mi operador es real, basta hallar $\phi _{+} (x) $ y conjugarlo para hallar $ \phi _{-} (x) $, obtengo entonces 
+
+\begin{equation}
+\begin{array}{c}
+\phi _{+} (x) = e ^{- \sqrt[4]{-1} x } e ^{i \sqrt{2} x } x . \\
+\left(
+F _1 ^1 (1 - \frac{ 4]{-1} }{2} \alpha ,2 , -2 (-1) ^{\frac{3}{4} } x )  +
+U(1 - \frac{ \sqrt[4]{-1} }{2} \alpha ,2 , -2 (-1) ^{\frac{3}{4} } x )
+\right)
+\end{array}
+\end{equation}
+
+Para que satisfagan la condicion de contorno en $ x=L $ reescribo $ \phi _{+}$ como.
+
+\begin{equation}
+\phi _{+} (x) = \phi * _{-} (x) = 
+= e ^{- \sqrt[4]{-1} x } e ^{i \sqrt{2} x } x.
+\left(
+F _1 ^1 (x=L) U(x) - U(x=L) F _1 ^1 (x)
+\right)
+\end{equation}
+
+
+Utilizando (REFERENCIAR CAPITULO ANTEIOR), Los desarrollos quedan:
+
+\begin{equation}
+\begin{array}{c}
+F _1 ^1 (x \rightarrow 0 ) \approx 1 \\
+U( \rightarrow 0  ) \approx - \frac{1}{\alpha x \Gamma} + \frac{C}{\Gamma} + \frac{Log[x]}{\Gamma}
+\end{array}
+\end{equation}
+
+
+Donnde $C$ es un numero complejo, insertando este desarrollo en (ARRIBA) y multiplicando por $ e ^{- i \gamma /2}$ obtengo:
+
+\begin{equation}
+\begin{array}{c} \\
+\psi (x \rightarrow 0 )
+A N ^{+}
+\left(
+-2 Re[ \frac{e ^{-i \gamma /2} F}{\alpha \Gamma} ] + 
+2 x Re [ e ^{-i \gamma /2} (\frac{C F}{\Gamma} - U ) ] + 
+2 x Log[x] Re [ e ^{- i \gamma /2 }]
+\right)
+\end{array}
+\end{equation}
+
+Lo cual luego de redefinir $C$ y $A$ queda 
+
+\begin{equation}
+\psi (x \rightarrow 0 ) = A N ^{+} 
+\left(
+x + C (1- \alpha Log[x] )
+\right)
+\end{equation}
+
+Lo cual coincide con lo calculado anteriormente.
+
+\section{Autofunciones:}
+
+Las solcuciones de $H \phi (x) = \lambda ^2 \phi (x)$ ya fueron calculadas anteriormente 
