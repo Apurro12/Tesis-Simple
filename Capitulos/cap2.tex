@@ -8,71 +8,47 @@
 
 En estudiaran los autovalores del operador diferencial $A = - \partial ^2 _x$ con distintas condiciones de contorno:
 
-\subsection{Dirichlet}
+\subsection{Dirichlet, Neumann y Perdiódicas}
 
-El operador $A$ estara dado por : 
+\textbf{Dirichlet y Periódicas}
+
+El operador $A$ tendrá las siguientes condiciones de contorno, segun sea Dirichlet o Neumann : 
 
 \begin{equation}
 \begin{array}{c}
-    A \phi (x) = - \partial ^2 _x \ \phi (x)  \\
     \phi (0) = \phi(L) = 0 \\ 
+    \phi' (0) = \phi ' (L) = 0 
 \end{array}
 \end{equation}
+
+
 
 Cuyos autovalores estan dados por  : 
 
 \begin{equation}
 \begin{array}{c}
 	\lambda _n = \left( \frac{n \pi }{L} \right) ^2 \\
-	n > 0
+	n > 0 , Dirichlet \\
+	n \geq, Neuman
 \end{array}
 \end{equation}
 
-La funcion $\zeta _A (s)$ queda determinada por:
+La funcion $\zeta _A (s)$ de ambos operadores quedará determinada por:
 
 \begin{equation}
 \zeta _A (s) = 
 \sum _{n=1} ^{\infty} \lambda ^{-2s} =  
 \left( \frac{\pi}{L} \right) ^{-2s} \sum _{n=1} ^{\infty} n ^{-2s} = 
-\left( \frac{\pi}{L} \right() ^{-2s} \zeta (2s)
-\end{equation}
-
-\subsection{Neuman}
-
-El operador $A$ estara dado por : 
-
-\begin{equation}
-\begin{array}{c}
-    A \phi (x) = - \partial ^2 _x \ \phi (x)  \\
-    \phi ' (0) = \phi ' (L) = 0 \\ 
-\end{array}
-\end{equation}
-
-Cuyos autovalores estan dados por  : 
-
-\begin{equation}
-\begin{array}{c}
-	\lambda _n = \left( \frac{n \pi }{L} \right) ^2 \\
-	n \geq 0
-\end{array}
-\end{equation}
-
-La funcion $\zeta _A (s)$ queda determinada por:
-
-\begin{equation}
-\zeta _A (s) = 
-\sum _{n=0} ^{\infty} \lambda ^{-2s} =  
-\left( \frac{\pi}{L} \right) ^{-2s} \sum _{n=1} ^{\infty} n ^{-2s} = 
 \left( \frac{\pi}{L} \right) ^{-2s} \zeta (2s)
 \end{equation}
 
-\subsection{Periodicas}
 
-El operador $A$ estara dado por : 
+\textbf{Periódicas}
+
+Las condiciones de contorno estan dadas por : 
 
 \begin{equation}
 \begin{array}{c}
-    A \phi (x) = - \partial ^2 _x \ \phi (x)  \\
     \phi (0) = \phi (L)  \\ 
 \end{array}
 \end{equation}
@@ -93,6 +69,21 @@ La funcion $\zeta _A (s)$ queda determinada por:
 \sum _{n=0} ^{\infty} \lambda ^{-2s} =  
 \left( \frac{2 \pi}{L} \right) ^{-2s} \sum _{n=1} ^{\infty} n ^{-2s} = 
 \left( \frac{2 \pi}{L} \right) ^{-2s} \zeta (2s)
+\end{equation}
+
+\textbf{Energías de Vacío }
+
+Como ninguna de las $\zeta _A (s)$ tiene polos para obtener la energía de vacío voy a evualuar $\zeta (s)$ en $s = -1/2$
+
+obteniendo 
+
+
+
+\begin{equation}
+\begin{array}{c}
+E _0 = - \frac{\pi}{12 L}, Dirichlet \ y \ Neumann \\
+E _0 = - \frac{\pi}{6 L} , Periodicas \\
+\end{array}
 \end{equation}
 
 \section{Condiciones de Contorno Mixtas}
@@ -123,10 +114,10 @@ Una vez obtenidos los autovalores el siguiente paso es calcular la funcion $\zet
 
 Al no poder encontrar explícitamente los autovalores se proceden a distintas técnicas para hallar distintas aproximaciones de la función $\zeta _A (s)$
 
-\section{Calculo Asintótico de los autovalores}
+\subsection{Calculo Asintótico de los autovalores}
 
 
-Haciendo el cambio de variables $\mu = \lambda L$ y $\theta = \gamma L $ las ecuaciones (\ref{autovalores}) se pueden expresar de la forma:
+Haciendo el cambio a variables adimensionales $\mu = \lambda \gamma $ y $\theta = \gamma L $ las ecuaciones (\ref{autovalores}) se pueden expresar de la forma:
 
 \begin{equation}
 \begin{array}{c}
@@ -136,7 +127,7 @@ Haciendo el cambio de variables $\mu = \lambda L$ y $\theta = \gamma L $ las ecu
 \label{eq.asintota}
 \end{equation}
 
-Tal como se puede ver en la figura (\ref{fig:Dibujo}), los autovalores $\mu _n$ tienden a pegarse a la asíntota vertical de $ Tg [ \mu ] $ a medida que $\mu _n$ se hace cada vez mas grande.
+Tal como se puede ver en la figura [\ref{fig:Dibujo}], los autovalores $\mu _n$ tienden a pegarse a la asíntota vertical de $ Tg [ \mu ] $ a medida que $\mu _n$ se hace cada vez mas grande.
 
 \begin{figure}
     \centering
@@ -145,12 +136,12 @@ Tal como se puede ver en la figura (\ref{fig:Dibujo}), los autovalores $\mu _n$ 
     \label{fig:Dibujo}
 \end{figure}
 
-Se puede ver entonces de los autovalores $\mu _n$ se pueden descomponer en una parte correspondiente a las asíntotas verticales de $Tg(x)$ mas una corrección que tiende a cero a medida que n tiende a $\infty$
+Se puede ver entonces de los autovalores $\mu _n$ se pueden descomponer en una parte correspondiente a las asíntotas verticales de $Tg[\mu]$ mas una corrección que tiende a cero a medida que n tiende a $\infty$
 
 \begin{equation}
 \begin{array}{c}
     \mu _n = n \pi + \frac{\pi}{2} + \epsilon _n \\
-    Donde \ \epsilon _n \rightarrow{0} \ si \ cuando \ n \rightarrow{0}
+    Donde \ \epsilon _n \rightarrow{0}  \ cuando \ n \rightarrow{0}
 \end{array}
 \label{eq.mu}
 \end{equation}
@@ -185,10 +176,10 @@ Donde acomodando la igualdad, obtengo la ecuacion :
 \label{igualdad epsilon}
 \end{equation}
 
-Suponiendo que $\epsilon _n $ tiene un desarrollo en serie de la forma (\ref{eq.epsilon}).
+Suponiendo que $\epsilon _n $ tiene un desarrollo en serie de la forma .
 
 \begin{equation}
-    \epsilon = 
+    \epsilon _n = 
     \frac{\epsilon ^{(1)}}{n}  + 
     \frac{\epsilon ^{(2)}}{n ^2}  + 
     \frac{\epsilon ^{(3)}}{n ^3}  + ...
@@ -199,48 +190,41 @@ Suponiendo que $\epsilon _n $ tiene un desarrollo en serie de la forma (\ref{eq.
 Insertando este desarrollo de $\epsilon$ en la ecuación (\ref{igualdad epsilon}), e igualando orden a orden se obtiene, para los primeros ordenes de $\epsilon$:
 
 \begin{equation}
-    \epsilon  = \frac{\theta}{n \pi} 
+    \epsilon _n = \frac{\theta}{n \pi} 
      - \frac{ \theta}{2 \pi n ^2 } 
-    + \frac{\theta}{n^3 \pi} 
-        \left( \frac{1}{4} - 
-        \frac{\theta ^2}{2 \pi ^2} -
-        \frac{\theta}{\pi ^2}
-        \right) 
 \label{epsilons}
 \end{equation}
 
-Una vez obtenido el desarrollo de $\mu _n $ puedo calcular $\lambda _n = \frac{\mu _n }{L}  $ 
+Una vez obtenido el desarrollo de $\mu _n $ puedo calcular $\lambda _n = \frac{\mu _n }{\gamma}  $ 
 
 
 
 \begin{equation}
     \lambda _n = 
-    \frac{1}{L}
+    \frac{1}{\gamma}
     \left(
     \alpha n + 
     \beta + 
     \frac{\gamma}{n} +
     \frac{\delta}{n ^2} +
-    \frac{\eta}{n^3} +
-    O(\frac{1}{n^4} ) 
+    O(\frac{1}{n^3} ) 
     \right)
 \end{equation}
     
 Donde $\alpha, \beta , ... $ quedan escritos en funcion de los $\epsilon ^{(1)},\epsilon^{(2)}, ... $ ; 
-Luego se calcula la funcion $\zeta _A (s) $ utilizando el desarrollo asintotico de los autovalores.
+voy a calcular entonces $\zeta _A (s) $ utilizando el desarrollo asintotico de los autovalores.
     
 \begin{equation}
 \begin{array}{cc}
     \zeta _{A} (s) =  \sum _{n=1} ^{\infty} \lambda _n ^ {-2 s} =
-    L ^{2s}
+    \gamma ^{2s}
     \sum _{n=1} ^{\infty} 
     \left(
     \alpha n + 
     \beta + 
     \frac{\gamma}{n} +
     \frac{\delta}{n ^2} +
-    \frac{\eta}{n^3} +
-    O( \frac{1}{n ^{4} }  )
+    O( \frac{1}{n ^{3} }  )
     \right) ^{-2 s} = \\
     ( \frac{L}{\alpha} ) ^{2s}    
     \sum _{n=1} ^{\infty} 
@@ -257,7 +241,7 @@ Luego se calcula la funcion $\zeta _A (s) $ utilizando el desarrollo asintotico 
 \end{array}
 \end{equation}
 
-Para calcular esta serie voy a hacer un desarrollo binomial alrededor de $\chi _n \rightarrow{0} $ 
+Para calcular esta serie voy a hacer un desarrollo binomial alrededor de $\chi _n \rightarrow{0} $  .
 
 \begin{equation}
 \begin{array}{c}
@@ -266,9 +250,7 @@ Para calcular esta serie voy a hacer un desarrollo binomial alrededor de $\chi _
 \sum _{n=1} ^{\infty}
   n  ^{-2 S} \\
 (
-1 - 2 s \chi _n + 2 s(s+1) \frac{\chi _n ^2}{2} - 2s(2s+1)(2s+2) \frac{ \chi _n ^3}{3!}  + \\ 
-2s(2s+1)(2s+2)(2s+3) \frac{\chi ^4 _n}{4!}
-+ O( \frac{1}{n ^5}) )
+1 - 2 s \chi _n + 2 s(s+1) \frac{\chi _n ^2}{2} - 2s(2s+1)(2s+2) \frac{ \chi _n ^3}{3!}  + O( \frac{1}{n ^4}) )
 
 \end{array}
 \end{equation}
@@ -319,11 +301,11 @@ Calculando explicitamente cada termino, obtengo:
 \end{array}
 \end{equation}
 
-\begin{equation}
-\sum _{n=1}  ^{\infty} n ^{-2s} \chi _n ^4 = \\
-\frac{\beta ^4}{\alpha ^4} \zeta (2s+4) + 
-\sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n ^5} )
-\end{equation}
+%\begin{equation}
+%\sum _{n=1}  ^{\infty} n ^{-2s} \chi _n ^4 = \\
+%\frac{\beta ^4}{\alpha ^4} \zeta (2s+4) + 
+%\sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n ^5} )
+%\end{equation}
 
 
 
@@ -348,19 +330,20 @@ Los polos de mi funcion $\zeta _A (s)$ estaran dados por los polos de las funcio
 \begin{equation}
 \begin{array}{c}
 \zeta _A (s \rightarrow 1/2) = 
-\frac{L}{2 \pi } \frac{1}{s-1/2} + \ finito \\
+\frac{\gamma}{2 \pi } \frac{1}{s-1/2} + \ finito \\
 \zeta _A (s \rightarrow 0) = \ finito \\
-\zeta _A (s \rightarrow -1/2) = \frac{\gamma}{2 \pi} \frac{1}{s+1/2} \\
+\zeta _A (s \rightarrow -1/2) = \frac{L}{2 \pi} \frac{1}{s+1/2} \\
 \zeta _A (s \rightarrow -1) = finito \\
-\zeta _A (s \rightarrow -3/2) = \frac{-3 \gamma ^3}{4 \pi } \frac{1}{s+3/2}
 \end{array}
 \end{equation}
 
 Lo cual corrobora que los polos estan en semienteros de $s$.
 
-\section{Calculo de la funcion zeta mediante calculo complejo:}
+\subsection{Calculo de la funcion zeta mediante calculo complejo:}
 
-Conocida la función de la cual hay que despejar los autovalores, se puede proceder a calcular la funcion $\zeta$ utilizando variable de calculo complejo, utilizando el camino representado en la figura (\ref{fig:contorno}) el cual al no poseer mas ceros, se puede deformar hasta el camino (\ref{fig:contorno}) 
+Conocida la ecuacion de autovalores, se puede proceder a calcular la funcion $\zeta _A (s) $ sin calcular explicitamente los autovalores, utilizando variable compleja.
+
+Donde $\zeta _A (s) $ va a quedar representada por la integral:
 
 \begin{equation}
 \begin{array}{c}
@@ -375,18 +358,22 @@ Conocida la función de la cual hay que despejar los autovalores, se puede proce
 \end{array}
 \end{equation}
 
+Donde puede utilizarse como camino de integracion cualquiera de los dos caminos representados en la figura [\ref{fig:contorno}], dado que la funcion $f'(z) / f(z) $ tiene polos en los autovalores de $\hat{A}$.
+
+
+
 
 
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.7]{contorno.jpg}
+\includegraphics[scale=0.3]{contorno.jpg}
 \caption{Camino tenido en cuenta para realizar la integral de contorno en el plano complejo}
 \label{fig:contorno}
 \end{figure}
 
 
-La integral de linea puede descomponerse en 3 partes, un contorno circular y dos lineas rectas, la contribución circular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto voy a realizar mi integral en funcion de t, parametrizando z de la forma $z = \pm i L t$ entonces se pueden expresar ambas integrales (luego de tirar los terminos exponencialmente decrecientes)como  (\ref{contorno}) .
+Voy a utilizar el camino de la derecha, el cual puedo descomponer en 3 integrales, una angular y dos rectas, la contribución circular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto voy a realizar mi integral en funcion de t, parametrizando z de la forma $z = \pm i L t$ entonces se pueden expresar ambas integrales (luego de tirar los terminos exponencialmente decrecientes)como  :
 
 \begin{equation}
     \frac{Sin(\pi s)}{ \pi } L ^{-2s+1}
@@ -401,30 +388,34 @@ La integral de linea puede descomponerse en 3 partes, un contorno circular y dos
 \label{contorno}
 \end{equation}
 
-Luego voy a desarrollar asintoticamente  $\chi$  (\ref{eq:chi}), para despues insertarlo en (\ref{contorno} da como resultado y realizar la integral termino a termino para luego obtener (\ref{eq.zeta.com})
+En donde voy a insetar el desarrollo asintotico de   $\chi$. 
 
 \begin{equation}
     \chi = \gamma + \frac{1}{L} \sum _{n=1} ^{\infty} \frac{(-1) ^{n+1}}{t ^n}
 \label{eq:chi}
 \end{equation}
 
+Luego de integrar termino a termino, obtengo como resultado:
+
 \begin{equation}
     \zeta _A (s) = 
     \frac{Sin(\pi s)}{\pi} L ^{1-2s}
     \left(
-    \frac{\gamma}{2s+1} + 
+    \frac{\gamma}{2s-1} + 
+    \frac{1}{L}
     \sum _{n=1} ^{\infty}
-    \frac{(-1) ^{n+1}}{2s-n-1}
+    \frac{(-1) ^{n+1}}{2s+n-1}
     \right)
 \label{eq.zeta.com}
 \end{equation}
 
-Donde Los primeros estan dados por 
+De acá se puede ver que tiene polos simples en $s=1/2$ donde la estructura de polos queda determinada por
 
 \begin{equation}
 \begin{array}{c}
 
-\zeta(s) \approx 
+\zeta(s \rightarrow 1/2) = \frac{\gamma}{2 \pi} \frac{1}{s-1/2} \\
+\zeta (s \rightarrow -n + 1/2)  = \frac{ (-1) ^n L ^{2n-1}  }{\pi} \frac{1}{s- n + 1/2}
 
 \end{array}
 \end{equation}

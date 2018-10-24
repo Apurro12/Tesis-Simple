@@ -8,66 +8,65 @@ El Lagrangiano de un campo escalar en unidimensional, $\phi (x,t)$ en un potenci
     \frac{1}{2} m ^2 \phi ^2  - \frac{V}{2} \phi ^2 
 \end{equation}
 
-Del cual se pueden obtener las ecuaciones de movimiento dadas por:
+El cual me conduce a las ecuaciones de movimiento para el campo : 
 
 
 \begin{equation}
     ( \partial _t ^2 - \nabla ^2 + m ^2 +V  ) 
-    \phi = 0
+    \phi (x,t) = 0
 \end{equation}
 
 Descomponiendo el campo en modos normales de vibracion  $\phi (x,t) = \phi(x) e ^{i \omega t}$ y considerando a mi particula sin masa, llego a la ecuacion
 
 \begin{equation}
-   A \phi(x) =  ( - \nabla ^2 + V(x) \ ) \phi (x) = \omega ^2 \phi (x)  
+\hat{A} \phi(x) = ( - \nabla ^2 + V(x) \ ) \phi (x) = \omega ^2 \phi (x)  
 \end{equation}
 
 
-Donde tengo un problema de Schrodinger con autovalor $\omega  ^2$
+Donde tengo un problema de Schrodinger con autovalor $\omega  ^2$ \\
+
 
 Una vez obtenidos todos los autovalores $\omega ^2 _n $, para obtener la energía de vació debo sumar sobre todos los modos normales de oscilación, obteniendo la expresión: 
 
 \begin{equation}
     E _0 = 
-    \frac{\hbar}{2}  \sum _n \omega _n 
+    \frac{1}{2}  \sum _n \omega _n 
 \label{eq.vacio}
 \end{equation}
 
-Donde la expresión anterior generalmente es divergente, para poder calcular la suma voy a tener que calcular la función $\zeta _A (s) $ definida en (\ref{eq.zeta.1}) para luego hacer la prolongación analítica, quedando definida mi energía de vació expresada por (\ref{eq.vacio}).  
+Donde la expresión anterior generalmente es divergente, para poder calcularla suma voy a tener que calcular la función $\zeta _A (s) $ definida en (\ref{eq.zeta.1}) para luego hacer la prolongación analítica, quedando definida mi energía de vació expresada por (\ref{eq.vacio}).  
 
 
 \begin{equation}
 \begin{array}{c}
-    \zeta _A (s) = \sum _n ( \omega _n ^{2} ) ^{-s} = 
-    L ^{2 s} \ \sum _n  \mu _n ^{-2 s}  \\
-    Donde \ \mu \ es \ adimensional
+    \bar{\zeta}  _A (s) = \mu  \sum _n  ( \frac{\omega _n}{\mu}  ) ^{-2 s} =
+    \mu ^{2s+1} \sum _n   \omega _n   ^{-2 s}  =  \mu ^{2s+1} \zeta _A (s) \\
+    Donde \ \mu \ me \ fija \ las \ unidades \ de \ energia 
 \end{array}
 \label{eq.zeta.1}
 \end{equation}
 
+Una vez calculada $ \zeta _A (s) $  voy a hacer la extencion analítica a $ s=-1/2 $ en donde presentara polos, que tendran que compenzarse con el desarrollo de $ \mu ^{2s+1} $ alrededor del mismo punto
+
+Suponiendo que $ \zeta _A (s) $ presenta un polo simple, $\bar {\zeta} _A (s) $ quedará
+
 \begin{equation}
-    E _0 = \frac{\hbar}{2}  \ \zeta _A (-\frac{1}{2})
-\label{eq.vacio}
+\begin{array}{c}
+
+\bar{\zeta} _A (s) = 
+\left(
+1 + 2Log[\mu] (s+1/2) + O (s+1/2)^2
+\right)
+\left(
+\frac{c _{-1} }{s+1/2} + O(1)
+\right) = \\
+\frac{c _{-1} }{s+1/2} + 2 Log[\mu] C _{-1} + Regular(s)
+\end{array}
 \end{equation}
 
-Lo cual conduce al resultado con las unidades correctas
+Donde $Regular(s)$ es una funcion que tiene desarrollo de taylor en potencias positivas alrededor de $s=-1/2$, entonces la energía de vacio se obtiene de tomar la parte finita de $\bar{\zeta} _A (s) $, quedando:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{equation}
+    E _0 = \frac{1}{2}  \ \bar{\zeta} _A (-\frac{1}{2})
+\label{eq.vacio}
+\end{equation}
