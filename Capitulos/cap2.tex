@@ -6,30 +6,30 @@
 
 \section{Ejemplos Sencillos}
 
-En estudiaran los autovalores del operador diferencial $A = - \partial ^2 _x$ con distintas condiciones de contorno:
+En estudiará el espectro del operador diferencial $A = - \partial ^2 _x$, con autovalor $\lambda ^2$, al aplicarle distintas condiciones de contorno:
 
 \subsection{Dirichlet, Neumann y Perdiódicas}
 
-\textbf{Dirichlet y Periódicas}
+\textbf{Dirichlet}
 
-El operador $A$ tendrá las siguientes condiciones de contorno, segun sea Dirichlet o Neumann : 
+El operador $A$ estrá dado por:
 
 \begin{equation}
 \begin{array}{c}
-    \phi (0) = \phi(L) = 0 \\ 
-    \phi' (0) = \phi ' (L) = 0 
+	A \phi (x) = - \partial _x ^2 \phi (x) \\
+    \phi (0) = \phi(L) = 0 
 \end{array}
 \end{equation}
 
 
 
-Cuyos autovalores estan dados por  : 
+Cuyos autovalores y autofinciones estan dados por  : 
 
 \begin{equation}
 \begin{array}{c}
+	\phi (x) _n = \sqrt{\frac{2}{L}} Sin( \frac{n \pi x}{L} ) \\
 	\lambda _n = \left( \frac{n \pi }{L} \right) ^2 \\
-	n > 0 , Dirichlet \\
-	n \geq, Neuman
+	n = 1,2,3, ...
 \end{array}
 \end{equation}
 
