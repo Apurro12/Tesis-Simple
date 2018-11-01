@@ -337,17 +337,72 @@ El termino
 Log[x] = 
 Log \left[
 		- \frac{1}{\Gamma [1 - \frac{i \alpha}{2 \lambda}]}
-		\right] + 
-2 i c
+		 + 
+		2 i c
+		\right]
 \end{equation}
 
-Se comporta igual que el termino $ Log[S2] $, aquí lo nuevo vendrá de las potencias de $\epsilon$ \\
+Se comporta igual que el termino $ Log[S2] $, dando polos simples en los semienteros, aquí lo nuevo vendrá de las potencias de $\epsilon$ \\
 Vamos a analizar cada termino de la suma:
 
 \begin{equation}
+\begin{array}{c}
 \frac{1}{x ^n} = 
-
+\left(
+	- \frac{1}{\Gamma [1 - \frac{i \alpha}{2 \lambda}]}
+	+ 
+	2 i c
+	\right) ^{-n} =
+\left(
+	- 1 + 2 i c\sum _{n=1} ^{\infty} \frac{\Gamma ^{-} _n }{\lambda ^n}
+	\right) ^{-n} 
+\end{array}
 \end{equation}
+
+Termino que es desarrollable y tiene potencias enteras negativas de $\lambda$
+
+El siguiente termino lo puedo evaluar utilizando el Binomio de Newton
+
+\begin{equation}
+\begin{array}{c}
+\epsilon ^{m} = 
+\left(
+		\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n}}
+			 {\Gamma[1- \frac{i \alpha}{2 \lambda}]}		
+		+ c \alpha \sum _{n=1} ^{\infty} \frac{c _n}{\lambda ^n} +
+		\frac{\alpha c Log[2 \lambda]}{\lambda \Gamma [1 - \frac{i \alpha}{2 \lambda} ]}	
+		\right) ^m = \\
+\sum _{i=0} ^{m}
+{m\choose i}
+\left(
+	\frac{\alpha c}{\lambda} \frac{Log [2 \lambda]}{\Gamma [1- \frac{i \alpha}{2 \lambda}]}
+	\right) ^{i}
+\left(
+	\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n}}
+		{\Gamma[1- \frac{i \alpha}{2 \lambda}]}		
+		+ c \alpha \sum _{n=1} ^{\infty} \frac{c _n}{\lambda ^n} 
+	\right) ^{m-i } = \\
+\sum _{i=0} ^{m}
+{m\choose i}
+\left(
+	\frac{\alpha c}{\lambda} \frac{Log [2 \lambda]}{\Gamma [1- \frac{i \alpha}{2 \lambda}]}
+	\right) ^{i} 
+\left(
+	\sum _{n=1} ^{\infty} \frac{q_n}{\lambda ^n}
+\right) ^{m-i}
+\end{array}
+\end{equation}
+
+En este ultimo termino es importante notar que cada potencia de $Log[2 \lambda]$ va a estar dividida por una potencia igual o mayor en $\lambda$.
+
+El efecto final es que cuando haga la derivada respecto a $\lambda$ la potencia $\lambda$ que va a estar dividiendo al $Log[2 \lambda]$ va a aumentar en 1, de modo que en la integral final voy a tener terminos
+
+\begin{equation}
+\frac{1}{2 pi i} 
+\int _{1} ^{\infty} \frac{Log[2 \lambda] ^{m}}{\lambda ^{m'}} \lambda ^{-2s} d \lambda
+\end{equation}
+
+Y se va a cumplir siempre que $m'> m$
 
 
 
