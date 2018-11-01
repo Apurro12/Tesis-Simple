@@ -6,7 +6,7 @@
 
 \section{Ejemplos Sencillos}
 
-En estudiará el espectro del operador diferencial $A = - \partial ^2 _x$, con autovalor $\lambda ^2$, al aplicarle distintas condiciones de contorno:
+En estudiará el espectro del operador diferencial $A = - \partial ^2 _x$, con autovalor $\omega ^2$, al aplicarle distintas condiciones de contorno:
 
 \subsection{Dirichlet, Neumann y Perdiódicas}
 
@@ -28,20 +28,50 @@ Cuyos autovalores y autofinciones estan dados por  :
 \begin{equation}
 \begin{array}{c}
 	\phi (x) _n = \sqrt{\frac{2}{L}} Sin( \frac{n \pi x}{L} ) \\
-	\lambda _n = \left( \frac{n \pi }{L} \right) ^2 \\
+	\omega _n ^2 = \left( \frac{n \pi }{L} \right) ^2 \\
 	n = 1,2,3, ...
 \end{array}
 \end{equation}
 
-La funcion $\zeta _A (s)$ de ambos operadores quedará determinada por:
+La funcion $\zeta _A (s)$ quedará determinada por:
 
 \begin{equation}
 \zeta _A (s) = 
-\sum _{n=1} ^{\infty} \lambda ^{-2s} =  
+\sum _{n=1} ^{\infty} \omega ^{-2s} =  
 \left( \frac{\pi}{L} \right) ^{-2s} \sum _{n=1} ^{\infty} n ^{-2s} = 
 \left( \frac{\pi}{L} \right) ^{-2s} \zeta (2s)
 \end{equation}
 
+Que es regular en $s=-1/2$, entonces la energía de vacío será:
+
+\begin{equation}
+E _0 = - \frac{\pi}{12 L}
+\end{equation}
+
+\textbf{Neumann}
+
+El operador $A$ estrá dado por:
+
+\begin{equation}
+\begin{array}{c}
+	A \phi (x) = - \partial _x ^2 \phi (x) \\
+    \phi ' (0) = \phi ' (L) = 0 
+\end{array}
+\end{equation}
+
+
+
+Cuyos autovalores y autofinciones estan dados por  : 
+
+\begin{equation}
+\begin{array}{c}
+	\phi (x) _n = \sqrt{\frac{2}{L}} Cos( \frac{n \pi x}{L} ) \\
+	\omega _n ^2 = \left( \frac{n \pi }{L} \right) ^2 \\
+	n = 0,1,2,3, ...
+\end{array}
+\end{equation}
+
+La funcion $\zeta _A (s)$ qserá la misma que la calculada anteriormente, así como tambien la energía de vacio \\
 
 \textbf{Periódicas}
 
@@ -53,12 +83,14 @@ Las condiciones de contorno estan dadas por :
 \end{array}
 \end{equation}
 
-Cuyos autovalores estan dados por  : 
+Cuyos autovalores y autofinciones estan dados por  : 
 
 \begin{equation}
 \begin{array}{c}
-	\lambda _n = \left( \frac{2 n \pi }{L} \right) ^2 \\
-	n \geq 0
+	\phi _{n=0} = \sqrt{\frac{1}{L}} \\ 
+	\phi _{n \neq 0 } (x) = \sqrt{\frac{2}{L}} Cos( \frac{2 n \pi x}{L} ) \\
+	\omega _n ^2 = \left( \frac{2 n \pi }{L} \right) ^2 \\
+	n = 0,1,2,3, ...
 \end{array}
 \end{equation}
 
@@ -66,24 +98,15 @@ La funcion $\zeta _A (s)$ queda determinada por:
 
 \begin{equation}
 \zeta _A (s) = 
-\sum _{n=0} ^{\infty} \lambda ^{-2s} =  
+\sum _{n=0} ^{\infty} \omega ^{-2s} =  
 \left( \frac{2 \pi}{L} \right) ^{-2s} \sum _{n=1} ^{\infty} n ^{-2s} = 
 \left( \frac{2 \pi}{L} \right) ^{-2s} \zeta (2s)
 \end{equation}
 
-\textbf{Energías de Vacío }
-
-Como ninguna de las $\zeta _A (s)$ tiene polos para obtener la energía de vacío voy a evualuar $\zeta (s)$ en $s = -1/2$
-
-obteniendo 
-
-
+Que al igual que en los casos anteriores es regular en $s=-1/2$, obteniendo entonces para la Energía de Vacio:
 
 \begin{equation}
-\begin{array}{c}
-E _0 = - \frac{\pi}{12 L}, Dirichlet \ y \ Neumann \\
-E _0 = - \frac{\pi}{6 L} , Periodicas \\
-\end{array}
+E _0 = - \frac{\pi}{6 L}
 \end{equation}
 
 \section{Condiciones de Contorno Mixtas}
@@ -96,12 +119,12 @@ E _0 = - \frac{\pi}{6 L} , Periodicas \\
 \end{array}
 \end{equation}
 
-Donde las condiciones de contorno me fijan un espectro autovalores $\lambda > 0 $, que está dado cualquiera de las dos ecuaciones equivalentes: 
+Donde las condiciones de contorno me fijan un espectro autovalores $\omega > 0 $, que está dado cualquiera de las dos ecuaciones equivalentes: 
 
 \begin{equation}
 \begin{array}{cc}
-    \frac{\lambda}{\gamma}  \ Cos( L \lambda ) +   Sin( L \lambda ) = 0 \\
-    \frac{\lambda}{\gamma}  + Tg(\lambda L )  = 0 
+    \frac{\omega}{\gamma}  \ Cos( L \omega ) +   Sin( L \omega ) = 0 \\
+    \frac{\omega}{\gamma}  + Tg(\omega L )  = 0 
 \label{autovalores}
 \end{array}
 \end{equation}
@@ -109,7 +132,7 @@ Donde las condiciones de contorno me fijan un espectro autovalores $\lambda > 0 
 Una vez obtenidos los autovalores el siguiente paso es calcular la funcion $\zeta$ definida por:
 
 \begin{equation}
-    \zeta _ {A } (s) = \sum_{n = 1} ^{ \infty } \lambda _n ^ {-s}
+    \zeta _ {A } (s) = \sum_{n = 1} ^{ \infty } \omega _n ^ {-s}
 \end{equation}
 
 Al no poder encontrar explícitamente los autovalores se proceden a distintas técnicas para hallar distintas aproximaciones de la función $\zeta _A (s)$
@@ -131,8 +154,8 @@ Tal como se puede ver en la figura [\ref{fig:Dibujo}], los autovalores $\mu _n$ 
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.3]{Dibujo.jpg}
-    \caption{Aquí se busca encontrar los terminos que no se anulan a n = $\infty$ del desarrollo asintotico de autovalores de la ecuacion (\ref{eq.asintota}) }
+    \includegraphics[scale=0.6]{Dibujo.jpg}
+    \caption{En este ejemplo, se puede ver que la interseccion entre $Tan[x]$ y $-x$ tiende a las asintotas verticales de la tangente, el mismo comportamiento se aprecia para cualquier $ \theta $.}
     \label{fig:Dibujo}
 \end{figure}
 
@@ -415,9 +438,7 @@ De acá se puede ver que tiene polos simples en $s=1/2$ donde la estructura de p
 \begin{array}{c}
 
 \zeta(s \rightarrow 1/2) = \frac{\gamma}{2 \pi} \frac{1}{s-1/2} \\
-\zeta (s \rightarrow -n + 1/2)  = \frac{ (-1) ^n L ^{2n-1}  }{\pi} \frac{1}{s- n + 1/2}
+\zeta (s \rightarrow -n - 1/2)  = \frac{ (-1) ^n L ^{2n+1}  }{2 \pi} \frac{1}{s + n + 1/2}
 
 \end{array}
 \end{equation}
-
-\section{Calculo del Heat-Kernel}

@@ -199,3 +199,155 @@ Lo cual coincide con lo calculado anteriormente.
 \section{Autofunciones:}
 
 Las solcuciones de $H \phi (x) = \lambda ^2 \phi (x)$ ya fueron calculadas anteriormente 
+
+\section{Funcion zeta}
+
+El espectro de mi operador estará dado por los ceros de la funcion de onda en $x=L$
+
+\begin{equation}
+\begin{array}{c}
+\frac{\psi (x=L)}{N L e ^{-i \lambda L} }
+ = 
+\left(
+1+ i \lambda c - \alpha c 
+\left(
+2 \gamma -1 + Log[2 i \lambda] + 
+\psi 
+( 1 - \frac{i \alpha}{2 \lambda} )
+\right)  
+\right)
+F _1 ^1 (1 - \frac{i \alpha}{2 \lambda},2,2 i \lambda L ) + \\
+c \alpha \Gamma [-\frac{i \alpha}{2 \lambda}]
+U (1 - \frac{i \alpha}{2 \lambda},2,2 i \lambda L )
+\end{array}
+\end{equation}
+
+Para calcular la funcion $\zeta (s)$ voy a desarrollar en serie las funciones Hypergeometricas alrededor de $\lambda \rightarrow \infty$ para obtener:
+
+\begin{equation}
+\begin{array}{c}
+\frac{(2 i \lambda L)}
+{e ^{- \frac{\pi \alpha}{4 \lambda}}}
+ \frac{\psi (x=L)}{N L e ^{-i \lambda L} } = 
+ (- \alpha c Log[2 \lambda] + \lambda f[ \lambda ] ) 
+ \left(
+ \frac{e ^{  \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } e ^{2 i \lambda L } }
+ {\Gamma ( 1 - \frac{i \alpha}{2 \lambda} )} S1 - 
+ \frac{e ^{ -  \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } }
+ 	  {\Gamma (1 + \frac{i \alpha}{2 \lambda})} S2 
+ \right) + \\
+ c \alpha \Gamma (-\frac{i \alpha}{2 \lambda}) 
+ e ^{- \frac{i \alpha Log[2 \lambda L]}{2 \lambda}} S2
+\end{array}
+\end{equation}
+
+Donde $S1,S2$ y $f$ son series de potencias enteras negativas en $\lambda$ donde $S _{1,2} \rightarrow 1$ y $f \rightarrow i c$, cuando $\lambda \rightarrow \infty$.
+
+Para calcular la funcion $zeta (s) $ voy a utilizar la integral en el plano complejo, trabajando con el lado derecho de la ecuacion , al igual que antes voy a tener un termino exponencialmente creciente/decreciente, dependiendo sobre que que eje me pare, obteniendo : 
+
+\begin{equation}
+\begin{array}{c}
+Log[M[\lambda = i t]] = 
+Log[S2] - 
+\frac{i \alpha}{2 \lambda} Log[2 \lambda L] + % \\
+Log[
+	\frac{\alpha c Log[2 \lambda] - \lambda f[\lambda] }{\Gamma (1- \frac{i \alpha}{ 2 \lambda})} + 
+	c \alpha \Gamma (- \frac{i \alpha}{2 \lambda}) ] \\ 
+Log[M[\lambda = - i t]] = 
+2 i \lambda L +
+\frac{i \alpha Log[2 \lambda L]}{2 \lambda} -
+Log[\Gamma (1- \frac{i \alpha}{2 \lambda}) ] +
+Log[
+	- \alpha c Log[2 \lambda] +
+	\lambda f[\lambda]
+	]
+\end{array}
+\end{equation}
+
+
+Voy a empezar a analizar las contribuciones a los polos en $\lambda = i t$ \\
+
+\textbf{Log[S2]:} \\
+
+S2 es una serie de potencias que tiende a 1 en $\lambda \rightarrow \infty$, entonces tiene la forma:
+
+\begin{equation}
+S2 = 1 + \sum _{n=1} ^{\infty} \frac{a _n}{\lambda ^n}
+\end{equation}
+
+Su redivada Logaritmica la puedo escribir como es desarrollable y se puede escribir como:
+
+\begin{equation}
+\frac{S' [\lambda]}{1+ S[ \lambda ]} = \sum _{n=2} ^{\infty} \frac{b _n }{x ^n}
+\end{equation}
+
+De aquí se puede ver que este termino de la suma contribuira a polos simples, en los semienteros (como pasa en el problema regular) \\
+
+$\mathbf{
+- \frac{i \alpha}{2 \lambda} Log[2 \lambda L]} : 
+$ \\
+
+Este termino es el mismo que aparecía antes, y va a contribuir a un polo doble en $s=-1/2$  \\
+
+$\mathbf{
+Log[
+	\frac{\alpha c Log[2 \lambda] - \lambda f[\lambda] }{\Gamma (1- \frac{i \alpha}{ 2 \lambda})} + 
+	c \alpha \Gamma (- \frac{i \alpha}{2 \lambda}) ] :
+}$ \\
+
+Luego de desarrollar mi funcion $\Gamma$ se ve que dentro del Logaritmo hay 3 terminos que crecen indefinidamente:
+
+\begin{equation}
+\Gamma [- \frac{i \alpha}{2 \lambda}] = 
+\frac{2 i \lambda}{\alpha} + 
+\sum _{n=0} ^{\infty} \frac{c _n}{\lambda ^n}
+\end{equation}
+
+Sin embargo el termino dominante es orden $\lambda$, sacando factor comun $\lambda$ obtengo:
+
+\begin{equation}
+Log[\lambda] + 
+Log \left[
+	- \frac{1}{\Gamma[1- \frac{i \alpha}{2 \lambda}]} +
+	2 i c -
+	\left(
+		\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n}}
+			 {\Gamma[1- \frac{i \alpha}{2 \lambda}]}		
+		+ c \alpha \sum _{n=1} ^{\infty} \frac{c _n}{\lambda ^n} +
+		\frac{\alpha c Log[2 \lambda]}{\lambda \Gamma [1 - \frac{i \alpha}{2 \lambda} ]}	
+		\right)
+		\right]		
+\end{equation}
+
+
+Donde toda la parte que está entre parentesis es infinitesimalmente chica, entonces voy a hacer un desarrollo alrededor del parentesis yendo a cero, (tambien se puede desarrollar la funcion $\Gamma$ que está abajo del 1, y poner todos los terminos que van a cero en el parentesis, pero el resultado final es el mismo)
+
+\begin{equation}
+Log[x + \epsilon] =
+Log[x] + 
+\sum _{n=1} ^{\infty}
+	\frac{(-1) ^{1+n} }
+     	{x ^n n}
+     \epsilon ^{n}
+\end{equation}
+
+El termino 
+
+\begin{equation}
+Log[x] = 
+Log \left[
+		- \frac{1}{\Gamma [1 - \frac{i \alpha}{2 \lambda}]}
+		\right] + 
+2 i c
+\end{equation}
+
+Se comporta igual que el termino $ Log[S2] $, aquí lo nuevo vendrá de las potencias de $\epsilon$ \\
+Vamos a analizar cada termino de la suma:
+
+\begin{equation}
+\frac{1}{x ^n} = 
+
+\end{equation}
+
+
+

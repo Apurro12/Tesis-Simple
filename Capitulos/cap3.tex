@@ -19,30 +19,30 @@ Para eso voy a resolver la ecuación de autovalores (\ref{eq.aut.sin}).
 
 \begin{equation}
 \begin{array}{c}
-    A  \phi (x)  =  \pm \omega ^2 \phi (x) \\ 
+    A  \phi (x)  =   \omega ^2 \phi (x) \\ 
     \omega \ \in \ \mathfrak{R}
 \end{array}
 \label{eq.aut.sin}
 \end{equation}
 
-La cual posee soluciones LI $ y_1 $ y $ y_2 $ (para autovalor $+ \omega ^2$)dadas por :
+La cual posee soluciones LI $ y_1 $ y $ y_2 $ dadas por :
 
 \begin{equation}
-    \phi ^{+} (x) = 
+    \phi (x) = 
     \underbrace{
     C[1] \ e ^{-i \omega x} \ x \ F _{1} ^{1} (1+\frac{ \alpha}{2 \omega i },2,2 i \omega x) } _ {y_1}
     + \underbrace{C[2] \ e^{-i \omega x } \ x \ U (1+\frac{ \alpha}{2 \omega i },2,2 i \omega x) } _{y_2} 
 \end{equation}
 
 
-Para autovalor $- \omega ^2 $ obtengo las siguientes soluciones:
+%Para autovalor $- \omega ^2 $ obtengo las siguientes soluciones:
 
-\begin{equation}
-    \phi ^{-} (x) = 
-    \underbrace{
-    C[1] \ e ^{-i \omega x} \ x \ F _{1} ^{1} (1 + \frac{ \alpha}{2 \omega},2,2 i \omega x) } _ {y_1}
-    + \underbrace{C[2] \ e^{-i \omega x } \ x \ U (1 + \frac{ \alpha}{2 \omega},2,2 i \omega x) } _{y_2} 
-\end{equation}
+%\begin{equation}
+%    \phi ^{-} (x) = 
+%    \underbrace{
+%    C[1] \ e ^{-i \omega x} \ x \ F _{1} ^{1} (1 + \frac{ \alpha}{2 \omega},2,2 i \omega x) } _ {y_1}
+%    + \underbrace{C[2] \ e^{-i \omega x } \ x \ U (1 + \frac{ \alpha}{2 \omega},2,2 i \omega x) } _{y_2} 
+%\end{equation}
 
 Donde $F _1 ^1(a,b,z)$ y $ U(a,b,z)$ son las soluciones LI de la ecuacion hypergeometrica (\ref{eq:hyper})
 
@@ -68,19 +68,19 @@ Las cuales tienen las siguientes expresiones analiticas  :
 \end{array}
 \end{equation}
 
-\textbf{Estados Ligados:} \\
+%\textbf{Estados Ligados:} \\
 
-Primero voy a buscar estados ligados, imponiendo la condicion $\phi ^{-} (0) = 0$, veo que $U(1- \frac{\alpha}{2 \lambda} ,2 ,0) \rightarrow \infty $ obtengo $C[2] = 0$
+%Primero voy a buscar estados ligados, imponiendo la condicion $\phi ^{-} (0) = 0$, veo que $U(1- \frac{\alpha}{2 \lambda} ,2 ,0) \rightarrow \infty $ obtengo $C[2] = 0$
 
-Los estados ligados van a surgir entonces de la condicion de contorno en $x=L$
+%Los estados ligados van a surgir entonces de la condicion de contorno en $x=L$
 
-\begin{equation}
-	F _1 ^{1} (1- \frac{\alpha}{2 \omega} , 2 2 i \omega L ) = L 
-\end{equation}
+%\begin{equation}
+%	F _1 ^{1} (1- \frac{\alpha}{2 \omega} , 2 2 i \omega L ) = L 
+%\end{equation}
 
 
 \textbf{Estados de Scattering:} \\
-    A partir de aquí $\phi ^{+} (x)$ la escribiré $\phi (x)$ \\
+%    A partir de aquí $\phi ^{+} (x)$ la escribiré $\phi (x)$ \\
 
 
 Para aplicar la condicion de contorno $\phi (0) = 0$, hay que hacer un desarrollo de $\phi(x \rightarrow 0)$, el cual es:
@@ -344,7 +344,7 @@ Mi funcion $ \zeta _A (s) $ va a quedar definida por:
 \label{eq.zeta.compleja}
 \end{equation}
 
-
+Donde $M ( \mu )$ está dada por (\ref{eq.aproxx}).
 cuando integre los ejes verticales, voy a obtener un termino exponencialmente decreciente y uno decreciente, que se van a alternar dependiendo de si estoy arriba o abajo del eje real. \\
 
 Reemplazando la parametrizacion $ \mu  (t) = \pm i t$ en (\ref{eq.zeta.compleja}) y tirando los terminos exponencialmente decrecientes, obtengo:
