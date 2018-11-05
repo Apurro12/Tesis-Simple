@@ -1,493 +1,646 @@
-\chapter{Ejemplos Sencillos}
 
-%    En este capitulo se van a explicar los conceptos matemáticos utilizados con un ejemplo, para luego aplicarlos al estudio del caso que nos interesa. Se va a calcular la función $\zeta _A (s)$ mediante distintas técnicas, calculando asintóticamente los autovalores, y luego ponerlos en la definición o en el Heat Kernel, y luego se procedió a utilizar el calculo completo
-    
-    En este capitulo se van a explicar los concepctos matemátocps utilizados con varios ejemplos, para luego poder aplicarlos al operador diferencial que nos interesa, se va a calcular la funcion $ \zeta _A (s) $ de dos maneras distintas y luego se van a calcular sus respectivas energías de vacio.
+\chapter{Estudio del Problema Singular}
 
-\section{Dirichlet,Neumann y Periodicas}
+En este capitulo se van a aplicar las herramientas desarrolladas en el capitulo anterior al estudio del espectro de un operador singular
 
-En estudiará el espectro del operador diferencial $A = - \partial ^2 _x$, con autovalor $\omega ^2$, al aplicarle distintas condiciones de contorno:
+\section{El Operador Singular}
 
-\textbf{Dirichlet}
-
-El operador $A$ estrá dado por:
+Como trabajo de tesis se propondra aplicar los metodos desarrollados en el capitulo anterior al operador diferencial (\ref{operador}).
 
 \begin{equation}
 \begin{array}{c}
-	A \phi (x) = - \partial _x ^2 \phi (x) \\
-    \phi (0) = \phi(L) = 0 
+    A \phi (x) = - \partial ^2 _x  \phi(x) + \frac{\alpha}{x} \phi(x) \\
+    \phi(0) = \phi(L) = 0 
 \end{array}
+\label{operador}
 \end{equation}
 
-
-
-Cuyos autovalores y autofinciones estan dados por  : 
+Para eso voy a resolver la ecuación de autovalores (\ref{eq.aut.sin}).
 
 \begin{equation}
 \begin{array}{c}
-	\phi (x) _n = \sqrt{\frac{2}{L}} Sin( \frac{n \pi x}{L} ) \\
-	\omega _n ^2 = \left( \frac{n \pi }{L} \right) ^2 \\
-	n = 1,2,3, ...
+    A  \phi (x)  =   \omega ^2 \phi (x) \\ 
+    \omega \ \in \ \mathfrak{R}
 \end{array}
+\label{eq.aut.sin}
 \end{equation}
 
-La funcion $\zeta _A (s)$ quedará determinada por:
+La cual posee soluciones LI $ y_1 $ y $ y_2 $ dadas por :
 
 \begin{equation}
-\zeta _A (s) = 
-\sum _{n=1} ^{\infty} \omega ^{-2s} =  
-\left( \frac{\pi}{L} \right) ^{-2s} \sum _{n=1} ^{\infty} n ^{-2s} = 
-\left( \frac{\pi}{L} \right) ^{-2s} \zeta (2s)
-\end{equation}
-
-Que es regular en $s=-1/2$, entonces la energía de vacío será:
-
-\begin{equation}
-E _0 = - \frac{\pi}{12 L}
-\end{equation}
-
-\textbf{Neumann}
-
-El operador $A$ estrá dado por:
-
-\begin{equation}
-\begin{array}{c}
-	A \phi (x) = - \partial _x ^2 \phi (x) \\
-    \phi ' (0) = \phi ' (L) = 0 
-\end{array}
-\end{equation}
-
-
-
-Cuyos autovalores y autofinciones estan dados por  : 
-
-\begin{equation}
-\begin{array}{c}
-	\phi (x) _n = \sqrt{\frac{2}{L}} Cos( \frac{n \pi x}{L} ) \\
-	\omega _n ^2 = \left( \frac{n \pi }{L} \right) ^2 \\
-	n = 0,1,2,3, ...
-\end{array}
-\end{equation}
-
-La funcion $\zeta _A (s)$ qserá la misma que la calculada anteriormente, así como tambien la energía de vacio \\
-
-\textbf{Periódicas}
-
-Las condiciones de contorno estan dadas por : 
-
-\begin{equation}
-\begin{array}{c}
-    \phi (0) = \phi (L)  \\ 
-\end{array}
-\end{equation}
-
-Cuyos autovalores y autofinciones estan dados por  : 
-
-\begin{equation}
-\begin{array}{c}
-	\phi _{n=0} = \sqrt{\frac{1}{L}} \\ 
-	\phi _{n \neq 0 } (x) = \sqrt{\frac{2}{L}} Cos( \frac{2 n \pi x}{L} ) \\
-	\omega _n ^2 = \left( \frac{2 n \pi }{L} \right) ^2 \\
-	n = 0,1,2,3, ...
-\end{array}
-\end{equation}
-
-La funcion $\zeta _A (s)$ queda determinada por:
-
-\begin{equation}
-\zeta _A (s) = 
-\sum _{n=0} ^{\infty} \omega ^{-2s} =  
-\left( \frac{2 \pi}{L} \right) ^{-2s} \sum _{n=1} ^{\infty} n ^{-2s} = 
-\left( \frac{2 \pi}{L} \right) ^{-2s} \zeta (2s)
-\end{equation}
-
-Que al igual que en los casos anteriores es regular en $s=-1/2$, obteniendo entonces para la Energía de Vacio:
-
-\begin{equation}
-E _0 = - \frac{\pi}{6 L}
-\end{equation}
-
-\section{Condiciones de Contorno Mixtas}
-
-\begin{equation}
-\begin{array}{c}
-    A \phi (x) = - \partial ^2 _x \ \phi (x)  \\
-    \phi (0) = 0 \\ 
-    \partial _x \phi (L) + \gamma \phi (L) = 0
-\end{array}
-\end{equation}
-
-Donde las condiciones de contorno me fijan un espectro autovalores $\omega > 0 $, que está dado cualquiera de las dos ecuaciones equivalentes: 
-
-\begin{equation}
-\begin{array}{cc}
-    \frac{\omega}{\gamma}  \ Cos( L \omega ) +   Sin( L \omega ) = 0 \\
-    \frac{\omega}{\gamma}  + Tg(\omega L )  = 0 
-\label{autovalores}
-\end{array}
-\end{equation}
-
-Una vez obtenidos los autovalores el siguiente paso es calcular la funcion $\zeta$ definida por:
-
-\begin{equation}
-    \zeta _ {A } (s) = \sum_{n = 1} ^{ \infty } \omega _n ^ {-s}
-\end{equation}
-
-Al no poder encontrar explícitamente los autovalores se proceden a distintas técnicas para hallar distintas aproximaciones de la función $\zeta _A (s)$
-
-\subsection{Calculo Asintótico de los autovalores}
-
-
-Haciendo el cambio a variables adimensionales $\mu = \lambda \gamma $ y $\theta = \gamma L $ las ecuaciones (\ref{autovalores}) se pueden expresar de la forma:
-
-\begin{equation}
-\begin{array}{c}
-    Tg[\mu] + \frac{\mu}{\theta} = 0 \\
-    \frac{\mu}{\theta} Cos[\mu] + Sin[\mu] = 0
-\end{array}
-\label{eq.asintota}
-\end{equation}
-
-Tal como se puede ver en la figura [\ref{fig:Dibujo}], los autovalores $\mu _n$ tienden a pegarse a la asíntota vertical de $ Tg [ \mu ] $ a medida que $\mu _n$ se hace cada vez mas grande.
-
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.6]{Dibujo.jpg}
-    \caption{En este ejemplo, se puede ver que la interseccion entre $Tan[x]$ y $-x$ tiende a las asintotas verticales de la tangente, el mismo comportamiento se aprecia para cualquier $ \theta $.}
-    \label{fig:Dibujo}
-\end{figure}
-
-Se puede ver entonces de los autovalores $\mu _n$ se pueden descomponer en una parte correspondiente a las asíntotas verticales de $Tg[\mu]$ mas una corrección que tiende a cero a medida que n tiende a $\infty$
-
-\begin{equation}
-\begin{array}{c}
-    \mu _n = n \pi + \frac{\pi}{2} + \epsilon _n \\
-    Donde \ \epsilon _n \rightarrow{0}  \ cuando \ n \rightarrow{0}
-\end{array}
-\label{eq.mu}
-\end{equation}
-
-
-conocer $\epsilon _n $ es equivalente a resolver la ecuación (\ref{eq.asintota}), la cual no puede resolverse analíticamente, en vez de eso voy a obtener un desarrollo de $\epsilon _n $ para $n \rightarrow \infty$.
-
-voy a intesertar (\ref{eq.mu}) en la segunda ecuacion de (\ref{eq.asintota}) y desarrollar alrededor de $\epsilon \rightarrow{0}$ obteniendo:
-
-\begin{equation}
-\begin{array}{c}
-    Sin[ n \pi + \frac{\pi}{2} + \epsilon _n ] = 
-    - \frac{\mu _n}{\theta}  \ Cos[ n \pi + \frac{\pi}{2} + \epsilon _n ]  \\
- \\
-
-         \sum _{p=0} ^{\infty} \frac{(-1) ^n  \epsilon ^{2 p }}{(2p)!} 
-    =  \frac{-1}{\theta}  \ (n \pi + \frac{\pi}{2} + \epsilon ) \
-     \sum _{p=0} ^{\infty} \frac{(-1) ^n \epsilon ^{2 p + 1}}{(2p+1)!} 
-\end{array}
-\end{equation}
-
-
-Donde acomodando la igualdad, obtengo la ecuacion :
-
-\begin{equation}
-    1 = \sum _{p=1} ^{\infty} \epsilon ^{2p+2} \ (-1) ^p
-    \left( 
-    \frac{1}{(2p+2)!} + \frac{1}{\theta} \frac{(1 )}{(2p+1)!} 
-    \right ) +
-    \frac{1}{\theta} \left(n \pi + \frac{\pi}{2} \right)
-    \sum _{p=0} ^{\infty} \frac{(-1) ^p \epsilon ^{2p+1}}{(2p+1) !}
-\label{igualdad epsilon}
-\end{equation}
-
-Suponiendo que $\epsilon _n $ tiene un desarrollo en serie de la forma .
-
-\begin{equation}
-    \epsilon _n = 
-    \frac{\epsilon ^{(1)}}{n}  + 
-    \frac{\epsilon ^{(2)}}{n ^2}  + 
-    \frac{\epsilon ^{(3)}}{n ^3}  + ...
-\label{eq.epsilon}
-\end{equation}
-
-
-Insertando este desarrollo de $\epsilon$ en la ecuación (\ref{igualdad epsilon}), e igualando orden a orden se obtiene, para los primeros ordenes de $\epsilon$:
-
-\begin{equation}
-    \epsilon _n = \frac{\theta}{n \pi} 
-     - \frac{ \theta}{2 \pi n ^2 } 
-\label{epsilons}
-\end{equation}
-
-Una vez obtenido el desarrollo de $\mu _n $ puedo calcular $\lambda _n = \frac{\mu _n }{\gamma}  $ 
-
-
-
-\begin{equation}
-    \lambda _n = 
-    \frac{1}{\gamma}
-    \left(
-    \alpha n + 
-    \beta + 
-    \frac{\gamma}{n} +
-    \frac{\delta}{n ^2} +
-    O(\frac{1}{n^3} ) 
-    \right)
-\end{equation}
-    
-Donde $\alpha, \beta , ... $ quedan escritos en funcion de los $\epsilon ^{(1)},\epsilon^{(2)}, ... $ ; 
-voy a calcular entonces $\zeta _A (s) $ utilizando el desarrollo asintotico de los autovalores.
-    
-\begin{equation}
-\begin{array}{cc}
-    \zeta _{A} (s) =  \sum _{n=1} ^{\infty} \lambda _n ^ {-2 s} =
-    \gamma ^{2s}
-    \sum _{n=1} ^{\infty} 
-    \left(
-    \alpha n + 
-    \beta + 
-    \frac{\gamma}{n} +
-    \frac{\delta}{n ^2} +
-    O( \frac{1}{n ^{3} }  )
-    \right) ^{-2 s} = \\
-    ( \frac{L}{\alpha} ) ^{2s}    
-    \sum _{n=1} ^{\infty} 
-    n ^{- 2 s} 
-    \left(
-    1 +     
+    \phi (x) = 
     \underbrace{
-        \frac{\beta}{\alpha n} + 
-        \frac{\gamma}{\alpha n^2} +
-        \frac{\delta}{\alpha n ^3} +
-        \frac{\eta}{\alpha n^4} +
-        O(\frac{1}{n ^{5}} ) } _{ \chi _n}
-    \right ) ^{-2 s}
-\end{array}
-\end{equation}
-
-Para calcular esta serie voy a hacer un desarrollo binomial alrededor de $\chi _n \rightarrow{0} $  .
-
-\begin{equation}
-\begin{array}{c}
-\zeta _{A} (s) = 
-( \frac{L}{\alpha} ) ^{2s}
-\sum _{n=1} ^{\infty}
-  n  ^{-2 S} \\
-(
-1 - 2 s \chi _n + 2 s(s+1) \frac{\chi _n ^2}{2} - 2s(2s+1)(2s+2) \frac{ \chi _n ^3}{3!}  + O( \frac{1}{n ^4}) )
-
-\end{array}
-\end{equation}
-
-Donde hay que tener en cuenta que cada termino $\chi _{n} ^{m} $ contribuye al orden mas bajo en la sumatoria en una potencia $\frac{1}{n ^m}$.
-
-
-Calculando explicitamente cada termino, obtengo:
-
-\begin{equation}
-\sum _{n=1} ^{\infty} n ^{-2 s} = \zeta (2s)
+    C[1] \ e ^{-i \omega x} \ x \ F _{1} ^{1} (1+\frac{ \alpha}{2 \omega i },2,2 i \omega x) } _ {y_1}
+    + \underbrace{C[2] \ e^{-i \omega x } \ x \ U (1+\frac{ \alpha}{2 \omega i },2,2 i \omega x) } _{y_2} 
 \end{equation}
 
 
-\begin{equation}
-\begin{array}{c}
-\begin{array}{c}
-\sum _{n=1} ^{\infty}
- n  ^{-2 S}  \chi _n =  \\
-\frac{\beta}{\alpha} \zeta (2s+1) + 
-\frac{\gamma}{\alpha} \zeta(2s+2) + 
-\frac{\delta}{\alpha} \zeta(2s+3) +
-\frac{\eta}{\alpha} \zeta (2s+4) + 
-\sum _{n=1} ^{\infty} n ^{-2s} O(\frac{1}{n ^5})
-\end{array}
-\end{array}
-\end{equation}
-
-\begin{equation}
-\begin{array}{c}
-    \sum _{n=1} ^{\infty}
-    n   ^{-2 S} \chi _n ^2 = \\ 
-    \frac{\beta ^2}{\alpha ^2} \zeta(2s+2) +
-    \frac{2 \gamma \beta }{\alpha} \zeta (2s+3) + 
-    \left( \frac{2 \beta \delta}{\alpha ^2} + \frac{\gamma ^2}{\alpha ^2} \right) \zeta (2s+4) + 
-    \sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n^s} )
-\end{array}
-\end{equation}
-
-\begin{equation}
-\begin{array}{cc}
-    \sum _{n=1} ^{\infty} 
-    n ^{-2 S} \chi _n ^3 =
-    \frac{\beta ^3}{\alpha ^3} \zeta (2s+3) + 
-    \frac{3 \gamma \beta ^2}{\alpha ^3} \zeta (2s+4)
-    + \sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n ^5} )
-    
-\end{array}
-\end{equation}
+%Para autovalor $- \omega ^2 $ obtengo las siguientes soluciones:
 
 %\begin{equation}
-%\sum _{n=1}  ^{\infty} n ^{-2s} \chi _n ^4 = \\
-%\frac{\beta ^4}{\alpha ^4} \zeta (2s+4) + 
-%\sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n ^5} )
+%    \phi ^{-} (x) = 
+%    \underbrace{
+%    C[1] \ e ^{-i \omega x} \ x \ F _{1} ^{1} (1 + \frac{ \alpha}{2 \omega},2,2 i \omega x) } _ {y_1}
+%    + \underbrace{C[2] \ e^{-i \omega x } \ x \ U (1 + \frac{ \alpha}{2 \omega},2,2 i \omega x) } _{y_2} 
+%\end{equation}
+
+Donde $F _1 ^1(a,b,z)$ y $ U(a,b,z)$ son las soluciones LI de la ecuacion hypergeometrica (\ref{eq:hyper})
+
+\begin{equation}
+    z \ \partial ^2 _z \ \psi (a,b,z) + (b-z) \
+    \partial _z \psi (a,b,z)
+    -a \ \psi (a,b,z) = 0
+\label{eq:hyper}
+\end{equation}
+
+Las cuales tienen las siguientes expresiones analiticas  : 
+
+\begin{equation}
+\begin{array}{c}
+	U(a,b,z) = \frac{1}{\Gamma (a)} 
+	\int _0 ^{\infty} e ^{-zt}
+	t ^{a-1}
+	(1+t) ^{b-a-1}
+	dt \\
+	F _1 ^1 (a,b,z) = \sum _ {k=0} ^{\infty} 
+	\frac{(a) _k}{(b) _k} 
+	\frac{z ^k}{k!} 
+\end{array}
+\end{equation}
+
+%\textbf{Estados Ligados:} \\
+
+%Primero voy a buscar estados ligados, imponiendo la condicion $\phi ^{-} (0) = 0$, veo que $U(1- \frac{\alpha}{2 \lambda} ,2 ,0) \rightarrow \infty $ obtengo $C[2] = 0$
+
+%Los estados ligados van a surgir entonces de la condicion de contorno en $x=L$
+
+%\begin{equation}
+%	F _1 ^{1} (1- \frac{\alpha}{2 \omega} , 2 2 i \omega L ) = L 
 %\end{equation}
 
 
+\textbf{Estados de Scattering:} \\
+%    A partir de aquí $\phi ^{+} (x)$ la escribiré $\phi (x)$ \\
 
-Una vez calculados todos los terminos los sumo y saco factor común cada $\zeta( 2s+n )$
 
-
-Obteniendo como resultado 
-
-\begin{equation}
-    \zeta _A (s) = 
-    C _s \ \zeta (s) +
-    C _{s+1} \ \zeta (s+1) + 
-    C _{s+2} \ \zeta (s+2) +
-    C _{s+3} \ \zeta (s+3) + 
-    C _{s+4} \ \zeta (s+4) + ....
-\end{equation}
-
-Se puede ver que el resultado esta expresado como suma de funciones $\zeta (s+n)$ acompañados de unos argumentos $C_{s+n}$ que dependen de losvalores $\alpha,\beta,\gamma, ...$ que estan calculados en la ecuacion (\ref{epsilons}.
-
-Los polos de mi funcion $\zeta _A (s)$ estaran dados por los polos de las funciones $\zeta (s+n)$, desarrollando en los primeros polos obtengo:
+Para aplicar la condicion de contorno $\phi (0) = 0$, hay que hacer un desarrollo de $\phi(x \rightarrow 0)$, el cual es:
 
 \begin{equation}
 \begin{array}{c}
-\zeta _A (s \rightarrow 1/2) = 
-\frac{\gamma}{2 \pi } \frac{1}{s-1/2} + \ finito \\
-\zeta _A (s \rightarrow 0) = \ finito \\
-\zeta _A (s \rightarrow -1/2) = \frac{L}{2 \pi} \frac{1}{s+1/2} \\
-\zeta _A (s \rightarrow -1) = finito \\
+\phi (x \rightarrow 0) \approx
+C[1] ( x + O(x ^2)) + 
+C[2] x 
+\left( 
+\frac{1}{  \alpha x  \Gamma ( \frac{ \alpha}{2 i \omega}  )   }  +
+\frac{Log[x] }{\Gamma ( \frac{ \alpha}{2 i \omega} ) } + Cte + O(x)
+\right)
+\\
+Donde,  \ Cte = 
+\frac{
+-1 + 2 \gamma + Log[2 i \lambda] + \psi (1 + \frac{ \alpha}{2 i \omega})
+}
+{\Gamma (\frac{i \alpha}{2 \lambda})}
 \end{array}
+\label{eq.scat}
 \end{equation}
 
-Lo cual corrobora que los polos estan en semienteros de $s$.
+Donde se ve que $y _1 (x \rightarrow 0 ) \rightarrow 0$ y $y _2 (x \rightarrow 0)  \rightarrow
+\frac{1}{  \alpha   \Gamma ( \frac{i \alpha}{2 \lambda}  )   } $ , entonces la forma de satisfacer la condicion de contorno es poniendo C[2] = 0
 
-\subsection{Calculo de la funcion zeta mediante calculo complejo:}
+Los autovalores estaran dados entonces por los ceroes de $y_1 (x= L)$, como el único termino que se anula en el produco es la funcion Hypergeometrica, los autovalores vienen dados por los ceros de la ecuacion (\ref{eq.1}), donde se puede ver su comportamiento en la figura (\ref{fig:funcion}) en funcion de $\omega$ para  $\alpha=1, \ L=1$.:
 
-Conocida la ecuacion de autovalores, se puede proceder a calcular la funcion $\zeta _A (s) $ sin calcular explicitamente los autovalores, utilizando variable compleja.
-
-Donde $\zeta _A (s) $ va a quedar representada por la integral:
 
 \begin{equation}
-\begin{array}{c}
-   \zeta _A (s) =  \frac{1}{2 \pi i} \int _{C} \frac{f'(x)}{f(x)} z ^{-2s} dz = \\ 
-   \\ 
-    \frac{1}{2 \pi i} \int _{C}
-    \frac{ cos(\gamma z) \left(\gamma + \frac{1}{L} \right) - sin(\gamma z) \frac{z \gamma}{L}
-    }
-    {cos(\gamma z) \frac{z}{L} + sin(\gamma z)
-    }
-    z ^{-2 s} dz
-\end{array}
+y_1 (L, \omega) = F _1 ^1 (1+\frac{ \alpha}{2 i \omega},2,2 i \omega L)  = 0
+\label{eq.1}
 \end{equation}
-
-Donde puede utilizarse como camino de integracion cualquiera de los dos caminos representados en la figura [\ref{fig:contorno}], dado que la funcion $f'(z) / f(z) $ tiene polos en los autovalores de $\hat{A}$.
-
-
-
-
-
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.3]{contorno.jpg}
-\caption{Camino tenido en cuenta para realizar la integral de contorno en el plano complejo}
-\label{fig:contorno}
+\includegraphics[scale=0.7]{Funcion.jpg}
+\caption{En esta imagen se puede ver el comportamiento de los ceros de función $F _1 ^1$, para $\alpha=1$ y $L=1$}
+\label{fig:funcion}
 \end{figure}
 
-
-Voy a utilizar el camino de la derecha, el cual puedo descomponer en 3 integrales, una angular y dos rectas, la contribución circular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto voy a realizar mi integral en funcion de t, parametrizando z de la forma $z = \pm i L t$ entonces se pueden expresar ambas integrales (luego de tirar los terminos exponencialmente decrecientes)como  :
-
-\begin{equation}
-    \frac{Sin(\pi s)}{ \pi } L ^{-2s+1}
-    \int _1 ^{\infty} 
-    t ^{-2s}
-    \underbrace
-    {
-	\frac{ \frac{1}{L} + \gamma + \gamma t}
-	{1+ t}
-	} _{\chi}
-    dt 
-\label{contorno}
-\end{equation}
-
-En donde voy a insetar el desarrollo asintotico de   $\chi$. 
+A partir de ahora en vez de trabajar con la función $F _1 ^1$, voy a trabajar con el primer termino de su desarrollo en serie a $ \omega \rightarrow \infty  $ dado por (\ref{eq.aprox}) 
 
 \begin{equation}
-    \chi = \gamma + \frac{1}{L} \sum _{n=1} ^{\infty} \frac{(-1) ^{n+1}}{t ^n}
-\label{eq:chi}
-\end{equation}
-
-Luego de integrar termino a termino, obtengo como resultado:
-
-\begin{equation}
-    \zeta _A (s) = 
-    \frac{Sin(\pi s)}{\pi} L ^{1-2s}
+    F _1 ^1 (a,b,z) = \Gamma (b) 
     \left(
-    \frac{\gamma}{2s-1} + 
-    \frac{1}{L}
-    \sum _{n=1} ^{\infty}
-    \frac{(-1) ^{n+1}}{2s+n-1}
+    \frac{e^z z ^{a-b} }{\Gamma(a)} * A_1 + \frac{(-z) ^{ -a}}{ \Gamma(b-a)} 
+    * A_2
     \right)
-\label{eq.zeta.com}
+\label{eq.aprox}
 \end{equation}
 
-De acá se puede ver que tiene polos simples en $s=1/2$ donde la estructura de polos queda determinada por
+Donde $A_1$ y $A_2$ son los demas terminos de la serie, que voy a tomar como 1, en el apéndice 1 voy a demostrar que no contribuyen a la estructura de los polos al orden que estoy calculando, si hay que tenerlos en cuenta para calcular los polos mas halla de donde se calcularon en esta tesis.
+
+Definiendo las variables adimensionales $\mu = \omega L$  y $\beta = \alpha L $ y reemplazando los valores correspondientes en la ecuación (\ref{eq.aprox}) obtengo. 
+
+\begin{equation}
+    F _1 ^1 (1+  \frac{  \beta}{2 i \mu} ,2 ,2 i \beta ) = 
+   i  \frac{e ^{- \frac{\pi}{4} \frac{\beta}{\mu} } }{2 \mu}
+    \left( -
+    \frac{e ^{- i \frac{\beta}{2 \mu} Ln(2 \mu) } e ^{2 i \mu} }{\Gamma(1+\frac{ \beta}{2 i \mu})} +
+    \frac{e ^{  i \frac{\beta}{2 \mu} Ln(2 \mu) }}               {\Gamma(1-\frac{ \beta}{2 i \mu})}
+    \right)
+\label{eq.completa}
+\end{equation}
+
+
+
+
+La cual queda expresada como un producto de dos funciones, una parte que se anula y una parte que no.
+
+Para obtener los autovalores voy a solo ocuparme de la parte que se anula, la cual esta entre paréntesis.
+
+\begin{equation}
+    M (\mu) = -
+    \frac{e ^{- i \frac{\beta}{2 \mu} Ln(2 \mu) } e ^{2 i \mu} }{\Gamma(1+\frac{ \beta}{2 i \mu})} +
+    \frac{e ^{  i \frac{\beta}{2 \mu} Ln(2 \mu) }}               {\Gamma(1-\frac{ \beta}{2 i \mu})}
+\label{eq.aproxx}
+\end{equation}
+
+Para el calculo de la funcion $\zeta _A (s) $ se puede utilizar ($\mu$) o cualquier multiplo de ella, ya que posee los mismos autovalores que $F_1 ^1 $
+
+%En todas las cuentas posteriores, para calcular $\zeta _A (s)$ voy a utilizar $M ( \mu )$ ya que posee los mismos autovalores de $ F _1 ^1 $.
+
+
+
+\section{Calculo Asintótico de los autovalores}
+
+
+
+Necesito conocer los ceros de  de $M(\mu)$ a $\mu \rightarrow{\infty}$, suponiendo que $\mu _n$ la puedo descomponer en una parte divergente mas una infinitesimal cuando $n \rightarrow{\infty}$, tal como en el capitulo anterior.
+
+Para que el desarrollo sea mas simple, voy a voy a escribir a $M (\mu)$ como :
+
+\begin{equation}
+M (\mu) = e ^{\frac{i \beta Log[2 \mu]}{\mu}}
+\frac{\Gamma (1- \frac{i \beta}{2 \mu})}{\Gamma (1 + \frac{i \beta}{2 \mu})}
+- e ^{2 i \mu}
+\label{eq.otro.mu}
+\end{equation}
+
+
+En el limite de $\mu _n \rightarrow \infty$ se obtiene:
+
+\begin{equation}
+    M(\mu _n \rightarrow \infty) = 
+	1 - e ^{2 i \mu}
+\end{equation}
+
+De acá se puede ver que el comportamiento de $\mu _n$ esta dado por 
+
 
 \begin{equation}
 \begin{array}{c}
+    \mu _n = n \pi + \epsilon _n \\
+    Donde \ \epsilon _n \rightarrow{0} ,\ si \ n \rightarrow{0}
+\end{array}
+\label{eq.mu2}
+\end{equation}
 
-\zeta(s \rightarrow 1/2) = \frac{\gamma}{2 \pi} \frac{1}{s-1/2} \\
-\zeta (s \rightarrow -n - 1/2)  = \frac{ (-1) ^n L ^{2n+1}  }{2 \pi} \frac{1}{s + n + 1/2}
 
+
+Para calcular orden a orden el termino $\epsilon _n$ inserto la ecuación (\ref{eq.mu2}) en (\ref{eq.otro.mu}) e igualo la ecuación a cero, lo cual conduce a la siguiente ecuación para $\mu _n$
+
+\begin{equation}
+	e ^{ i \frac{\beta}{ \mu _n} Ln(2 \mu _n)}     
+    \frac{\Gamma(1 + \frac{ \beta}{2 i \mu _n} ) }
+    {\Gamma(1 - \frac{ \beta}{2 i \mu _n})} =    
+    e ^{2 i \epsilon _n }
+\end{equation}
+
+teniendo en cuenta que $\frac{ln(2 \mu _n)}{2 \mu _n }$ tiende a cero a $\mu _n$ grade, puedo hacer un desarrollo de la exponencial y las funciones $\Gamma$ alrededor de $ \mu \rightarrow \infty $, y $\epsilon \rightarrow 0$
+
+\begin{equation}
+    \left(
+    \sum _{p = 0} ^{\infty} \frac{( i \frac{\beta}{ \mu} Log[2 \mu]) ^p }{p!}
+    \right)
+    \left(
+	\sum _{q = 0} ^{\infty} \frac{a _q}{\mu ^q}
+	\right)
+    =
+    \left(
+    \sum _{l = 0} ^{\infty} \frac{( 2 i \epsilon)^l}{l !}
+    \right)
+\end{equation}
+
+
+Al orden mas bajo se obtiene la ecuación : 
+
+\begin{equation}
+(1 + \frac{i \beta}{ \mu} Log[2 \mu)] 
+(1 + \frac{i  \gamma \beta}{ \mu})  =
+(1 + 2 i \epsilon)
+\end{equation}
+
+Todo esto conduce a que el termino subdominante sea $\epsilon _n =  \frac{\beta Ln(2 n \pi)}{2 n \pi}$ , pero con esto no alcanza, ya que existe un termino que decae como 1/n, entonces para calcular el polo que nos interesa se deben calcular todos los términos que decaigan como 1/n, insertando $\epsilon _n =  \frac{\beta Ln(2 n \pi)}{2 n \pi} + \epsilon '$ en la ecuación anterior, obtengo:
+
+
+\begin{equation}
+    \epsilon _n =  \frac{\beta Ln(2 n \pi)}{2 n \pi} 
+                \frac{\gamma \beta}{2 n \pi} +
+                O(\frac{1}{n^2})
+\end{equation}
+
+Luego para calcular la función $\zeta _{A}$ utilizo su definición
+
+\begin{equation}
+\begin{array}{c}
+    \zeta _A (s) = \sum _n ^{\infty} \omega _n ^{-s}  =
+    \sum _{n=1} ^{\infty} \left(\frac{\mu _n}{L} \right) ^{-2 s} =  \\
+    L ^{2 s} \sum _{n=1} ^{\infty} 
+    \left( 
+    n \pi + \frac{\beta Ln(2 n \pi)}{2 n \pi} + \frac{\gamma \beta}{2 n \pi} +
+    O(\frac{1}{n^2})
+    \right) ^{-2s} = \\
+    
+\end{array}
+\end{equation}
+
+Como en el ejemplo anterior puedo escribir todo como
+
+\begin{equation}
+\begin{array}{c}
+    \zeta _A (2 s) = \left( \frac{L}{\pi} \right)  ^{2 s} 
+    \sum _{n=1} ^{\infty} n ^{- 2  s}
+    \left(
+    1 - \frac{\beta Ln(2 n \pi)}{2 n^2 \pi ^2} - \frac{\gamma \beta}{2 n^2 \pi ^2 } +
+    O(\frac{1}{n^3})  \right) ^{-2 s} = \\
+    \sum _{n=1} ^{\infty} n ^{-2 s} 
+    \left(
+    1 -\chi _n \right) ^{- 2 s}
+\end{array}
+\end{equation}
+
+Utilizando como en el ejemplo anterior el desarrollo de la ecuacion para $\chi \xrightarrow 0$, puedo expresar mi funcion zeta como 
+
+
+\begin{equation}
+\begin{array}{c}
+    \zeta _A (s) = ( \frac{L}{\pi} ) ^{2 s}
+    \sum _{n=1} ^{\infty} 
+    n ^{-2s}
+    \left(
+    1 + 2 s \chi + O(\chi ^2)
+    \right) =  \\
+    ( \frac{L}{\pi} ) ^{2 s}
+    \left(
+    \sum _{n=1} ^{\infty} n ^{-2 s} 
+    \left(
+    1 - 2s (
+    \frac{\beta Log[2 n \pi]}{2 n ^2 \pi ^2} + 
+    \frac{\gamma \beta}{2 n ^2 \pi ^2} +
+    O (n ^{-3}  )
+    \right)
+    \right)
 \end{array}
 \end{equation}
 
 
-\subsection{Calculo del Heat-Kernel}
+\begin{equation}
+\begin{array}{c}
+    \zeta _A (S) = 
+    \left( \frac{L }{ \pi } \right) ^{2}  \\
+    \left(
+    \zeta (2 S) -
+	\frac{ s \beta}{ \pi ^2}
+	\left(
+	\zeta (2s+2)  ( Log[2 n \pi ] + \gamma) +
+	\zeta '(2s+2) \
+	\right)
+    \right)
+\end{array}
+\end{equation}
 
-Dado que el operador que estamos autilizando es regular se puede calcular 
+Donde sabiendo que $\zeta(s) = \frac{1}{s-1} + Regular$, el primer polo queda determinado como
+
+\begin{equation}
+    Res(s=1/2) = \frac{L}{2 \pi}    
+\end{equation}
+
+Aquí sabiendo el desarrollo de $\zeta(s)$ alrededor de $s=1$ puedo conocer los desarrollos de $\zeta'(2s+2)$, que lo utilizo para desarrollar alrededor de mi segundo polo en $s = -1/2$ obteniendo:
+
+\begin{equation}
+    \zeta _A (s) =  \frac{\beta}{8 L \pi (s+1/2)^2} +
+    \beta \frac{(-1 + \gamma + Log[2L ])}{4 L \pi (s+1/2)} + 
+    Regular
+\end{equation}
+
+\section{Calculo Utilizando Variable Compleja}
+
+
+Sabiendo que los autovalores de mi Hamiltoniano son todos reales, puedo expresar $\zeta _A (s)$ como una integral en el plano complejo, y deformar la trayectoria hasta el camino dado por la figura [\ref{fig:contorno}], tal como se hizo en el capitulo anterior: \\
+
+Mi funcion $ \zeta _A (s) $ va a quedar definida por:
+
+\begin{equation}
+\zeta _A (s) = 
+\frac{1}{2 \pi i} 
+\int _{\mathcal{C}}
+\frac{M ' ( \mu ) }{ M ( \mu ) } d \mu
+\label{eq.zeta.compleja}
+\end{equation}
+
+Donde $M ( \mu )$ está dada por (\ref{eq.aproxx}).
+cuando integre los ejes verticales, voy a obtener un termino exponencialmente decreciente y uno decreciente, que se van a alternar dependiendo de si estoy arriba o abajo del eje real. \\
+
+Reemplazando la parametrizacion $ \mu  (t) = \pm i t$ en (\ref{eq.zeta.compleja}) y tirando los terminos exponencialmente decrecientes, obtengo:
+
+
+\begin{equation}
+\begin{array}{c}
+    \zeta _A (s) = \\
+     \frac{1}{2 \pi i} \int _{\infty} ^{1}
+     \frac{\beta}{2 t^2} 
+     \left(
+     1 - \frac{i \pi}{2} + Log[2 t] + \psi (1 + \frac{\beta}{2 t})
+     \right)
+     t ^{-2s}
+     e ^{- i \pi s} (i dt) + \\
+     \frac{1}{2 \pi i} \int _{\infty} ^{1} 
+     \left(
+     2 + \frac{\beta}{2 t^2}
+     \left(
+     1 + \frac{i \pi}{2} - Log[2 t] - \psi (1+ \frac{\beta}{2 t})
+     \right)
+     t ^{-2s}
+     e ^{ i \pi s} (-i dt)
+     \right)     
+\end{array}
+\end{equation}
+
+\begin{equation}
+\begin{array}{c}
+    \zeta _A (s) = \\
+     \frac{1}{2 \pi i} \int _{\infty} ^{1}
+     \frac{i \alpha}{2 t^2}
+     \left(
+     1 - Log(2 L t) - \frac{i \pi}{2} + \psi (1-\frac{\alpha}{2 t})
+     \right)
+     t^{-2 s}
+     e^{-i \pi s} \ 
+     (i dt) + \\
+     \frac{1}{2 \pi i} \int _1 ^{\infty}
+     \frac{ \alpha}{2 i t^2}
+     \left(
+     \left(
+     1 - Log(2 L t) - \frac{i \pi}{2} + \psi (1-\frac{\alpha}{2 t}) 
+     \right)
+     + 2 i L
+     \right)
+     t^{-2 s}
+     e^{i \pi s}
+     (-i dt)
+     
+\end{array}
+\end{equation}
+
+Donde antes de reacomodar los terminos puedo calcular el termino que contiene $2iL$ el cual es la potencia mas alta de $t$ para obtener: 
+
+\begin{equation}
+    \frac{1}{2 \pi i }
+    \int _1 ^{\infty}
+    2 i L
+    e^{i \pi s}
+    t ^{-2 s}
+    (-i dt) =  
+    \frac{L e^{i \pi s} }{2 \pi i} \frac{1}{s-1/2   }
+\end{equation}
+
+Ningún otro termino aportará a este polo, entonces el residuo en $s= 1/2$ es:
+
+\begin{equation}
+    Res (s=1/2) = \frac{L}{2 \pi}
+\end{equation}
+
+Que se corresponde con el calculado con el método anterior. \\
+
+Una vez calculado este termino, puedo reorganizar el resto de la integral como:
+
+\begin{equation}
+\begin{array}{c}
+    - \frac{\alpha}{2 \pi} \ sin[\pi s]
+    \int _1 ^{\infty}
+    t ^{-2 s-s} 
+    \left(
+    1 - Log[2Lt] + \psi (1- \frac{\alpha}{2t})
+    \right) dt - 
+    \frac{\alpha}{4} 
+    Cos[\pi s]
+    \int _1 ^{\infty} t^{-2s-s} dt
+\end{array}
+\end{equation}
+
+Donde todos los términos son calculables analíticamente, excepto el que esta multiplicado por $\psi$, para lo cual utilizo el desarrollo de $\psi$ en $t \rightarrow \infty$:
+
+\begin{equation}
+    \psi(1-\frac{\alpha}{2 t}) \approx 
+    -\gamma + O(\frac{1}{t})
+\end{equation}
+
+Realizando todas las integrales la funcion $ \zeta _A (s)$ a este orden queda determinada por:  
+
+\begin{equation}
+\begin{array}{c}
+    \zeta (s) _{A} = 
+    \frac{L e ^{i \pi s}}{2 \pi i} \frac{1}{s-1/2} 
+    -\frac{\alpha Sin[\pi s]}{4 \pi} \frac{1}{s+1/2} \\
+    \alpha 
+    \frac{
+    1+S Log(4)+2SLog[L]+Log[2L]
+    }
+    {8 \pi} \frac{sin(\pi s)}{(s+1/2) ^2}  \\
+    \frac{\gamma \alpha Sin[\pi s]}{4 \pi } \frac{1}{s+1/2} 
+    \frac{\alpha cos(\pi s) }{8 \pi}  \frac{1}{s+1/2}  \\
+\end{array}
+\end{equation}
+
+Donde el siguiente termino en el desarrollo de $ \psi $ contribuirá al residuo en $s = -3/2$
+
+Para calcular el residuo en $s=-1/2$ desarrollo todo en Serie de Laurent alrededor de ese punto obteniendo.
+
+\begin{equation}
+    - \frac{\alpha}{8 \pi} \frac{1}{(s+1/2)^2} + 
+    \alpha \frac{1-\gamma -Log[2 L]}{4 \pi} \frac{1}{s+1/2} + \ Regular
+\label{eq.desarrollo}
+\end{equation}
+
+Donde se puede ver que el residuo, y la contribución al polo cuadrático en $s=-1/2$ coinciden con las calculadas anteriormente.
+
+%Una aclaracion importante es que el termino $Log[2 L ]$ es correcto dimensionalmente, ya que proviene de evaluar la integral $\int _1 ^\infty  Log[2 L \omega] \ d \omega$
+
+\section{Cálculo de la energía de vacío}
+
+La energía de vacío queda determinada por la ecuación 
+
+\begin{equation}
+    E _0 = \frac{\hbar}{2}  
+    \zeta (s)  |  _{- \frac{1}{2}}
+\end{equation}
+
+$\zeta (s)$ ya está desarrollada alrededor de $s=-1/2$ en (\ref{eq.desarrollo}), queda desarrollar $(E_c) ^{2s+1} $ alrededor de $s=-1/2$ quedando.
+
+\begin{equation}
+    E _c \approx 
+    1 + 2 Log[E_c] (s + 1/2) +
+    2 Log[E_c] ^2 (s+1/2) ^2 + 
+    O (s+1/2)^3
+\end{equation}
+
+Entonces la energía de vació queda determinada por:
+
+\begin{equation}
+    E _0 =
+    \left(
+    \frac{1}{(s+1/2)^2} 
+    \left(
+    \frac{- \alpha}{8 \pi}
+    \right)+
+    \frac{
+    \alpha(1 -\gamma-Log[2L]) - 
+    \alpha Log[E_c] 
+    }{4 \pi (s+1/2)} 
+     + Regular
+    \right) | _{s=-1/2}
+\end{equation}
+
+
+\chapter{Limite Continuo}
+
+En esta seccion voy a estudiar el comportamiento de la fucion $\zeta (s) $ en el limite $L \rightarrow \infty$, donde quedara definida por:
+
+\begin{equation}
+\zeta (s) = \int _{0} ^{\infty} \rho (x) x^{-2 s} dx
+\end{equation}
+
+Donde la $\rho(x) $ es la densidad de autovalores, para llegar a esta ecuacion, voy a utilizar la representacion integral de la funcion $\zeta$ en el plano complejo e integrar sobre un camino dado por la figura(REFERENCIAR), para eso voy a trabajar con mi aproximacion (REFERENCIAR)
+
+
+
+Dependiendo si estoy arriba o abajo del eje real, voy a tener un termino exponencialmente creciente/decreciente en el limite $L \rightarrow \infty$ proveniente de $e ^{i z t}$
+
+Voy a separar mi integral en una parte de arriba y una parte de abajo, en el termino de arriba del eje real obtengo:
+
+\begin{equation}
+\begin{array}{c}
+\frac{1}{2 \pi i} \int _{\infty} ^{t0} 
+\partial _z
+Log
+\left(
+\frac{e ^{-2 i z  L } e ^{- \frac{i \alpha}{2 \lambda} Log[2 z  L]} }{\Gamma[1-\frac{i \alpha}{2 z }]} +
+\frac{e ^{ \frac{i \alpha}{2 z } Log[2 z  L]} }{\Gamma[1+\frac{i \alpha}{2 z }]}
+\right) d z \\
+z = i t + \epsilon 
+\end{array}
+\end{equation}
+
+Sacando factor comun de modo que me quede un termino exponencialmente decrenciente dentro del Logatirmo obtengo
+
+\begin{equation}
+\frac{1}{2 \pi i}  \int _{\infty} ^{t0} 
+\partial _{z}
+\left(
+\frac{i\alpha}{2 z} Log[2 z L] - Log[\Gamma[1 + \frac{i \alpha}{2 z}]] +
+Log[1- \epsilon _L ]
+\right)
+d z
+\end{equation}
+
+Donde $ \epsilon _L \rightarrow 0$ si $L \rightarrow \infty $ , entonces Logaritmo va a cero, quedando la integral final:
+
+\begin{equation}
+\begin{array}{c}
+\zeta (s) = 
+\frac{L}{\pi}
+\int _ {x_0} ^{\infty} x ^{-2s} dx + \\
+\frac{\alpha}{2 \pi } \int _{x_0} ^{\infty} 
+\left(
+\frac{-1}{ x ^2} -
+\frac{Log[2 x L]}{x ^2}  -
+\frac{1}{ x ^2 } 
+\left(
+\psi (1 + \frac{i \alpha}{2 x}) + \psi (1 - \frac{i \alpha}{2 x}) 
+\right)
+\right)
+x ^{-2s} d x
+\end{array}
+\end{equation}
+
+
+
+Relizando las integrales termino a termino obtengo
+
+\begin{equation}
+\begin{array}{c}
+\zeta (s) = 
+\frac{\alpha}{2 \pi} x _{0} ^{-2s-1}
+\left( 
+\frac{1}{(1+2s) ^2} +
+\frac{Log[2 L x _0]}{1+2s} -
+\frac{1}{1+2s}
+\right) + 
+\frac{L}{\pi} \frac{x _0 ^{-2s+1}}{2s-1}  \\
+- \frac{\alpha}{2 \pi}
+\int _{x_0} ^{\infty} 
+\left(
+\psi(1 + \frac{i \alpha}{2 x}) +
+\psi(1 - \frac{i \alpha}{2 x} )
+\right)
+x ^{-2s-2}
+dx
+\end{array}
+\end{equation}
+
+
+Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion $\psi $ que se pueden usar, yo voy a el desarrollo 
+
+\begin{equation}
+\begin{array}{cc}
+\psi (1+ z ) = - \gamma + \sum _{n=2} ^{\infty} (-1) ^n \zeta (n) z ^{n-1} & |z| < 1
+\end{array}
+\end{equation}
+
+El cual su radio de convergencia esta centrado alrededor de $x = 0$
+
+La ultima integral queda expresada como:
+
+\begin{equation}
+\int _{x_0} ^{\infty}
+\left(
+-2 \gamma + 
+2 \sum _{n=2} ^{\infty}
+\zeta (2n+1) (-1) ^{n+1}
+( \frac{\alpha}{2 x} ) ^{2n}
+\right)
+x ^{-2s-2} dx
+\end{equation}
+
+Quedando la funcion $\zeta _A (s) $ :
 
 \begin{equation}
 \begin{array}{c}
 \zeta _A (s) = 
-\frac{1}{\Gamma (s)} 
-\int _0 ^{\infty}
-t ^{s-1}
-K(t)
-dt \\
-k(t) = \sum _{n} e^{- \lambda _n t}
+\frac{L x0 ^{-2s+1} }{2 \pi } \frac{1}{s- 1/2} + 
+\frac{\alpha x0 ^{-2s-1} }{8 \pi } \frac{1}{(s+1/2) ^2} + \\
+\frac{\alpha x0 ^{-2s-1} }{4 \pi } 
+\left(
+Log[2 L x_0] + \gamma - 1
+\right)
+\frac{1}{s+1/2} + \\
+\frac{x_0 ^{-2s}}{2\pi} 
+\sum _{n=1} ^{\infty} (-1) ^{n} \zeta (2n+1) 
+( \frac{\alpha}{2 x0} ) ^{2n+1} \frac{1}{s+n+1/2}
 \end{array}
 \end{equation}
 
-Donde se ve que los polos de la funcion $\zeta$ estaran dados por el desarrollo del Heat-Kernel a $t \rightarrow 0 $, el cual admite un desarrollo de la forma
+Para ver la energía de vacío hay que evaluar esta expresion en $s=-1/2$ y graficar su parte finita, tal como esta en la figura [ \ref{fig:vacio} ] donde estan los primeros 100 terminos de la serie, en funcion de $x = \alpha / x_0$ y la suma exacta de la serie al reemplazar $\zeta (2s+1) = 1$.
 
-\begin{equation}
-K (t) = 
-t ^{\frac{-1}{2}}
-\sum _{n=0} ^{\infty}
-t ^{\frac{k}{2}}
-a _k
-\end{equation}
-
-Obtengo para los primeros terminos
-
-\begin{equation}
-a _0 = 
-\frac{1}{\sqrt{4 \pi}}
-\int dx =
-\frac{L}{\sqrt{4 \pi}} \\
-a_1 = 
-\end{equation}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{Vacio.jpg}
+    \caption{En esta imagen esta graficada la parte finita de la $\zeta _A (-1/2) $ en funcion del parametro $x= \frac{\alpha}{x _0}$ donde se sumaron los primeros 100 terminos de la serie, y en azul se puede ver la suma de la serie al reemplazar $\zeta (2n+1) = 1$}
+    \label{fig:vacio}
+\end{figure}

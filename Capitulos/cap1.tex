@@ -177,40 +177,43 @@ Puedo definir entonces el determinante funcional de un operador como:
 Det[A] = exp ^{- \zeta ' (0)}
 \end{equation}
 
-La primer correccion a la accion efectiva va a estar dada por 
+La primer correccion a la accion efectiva va a estar dada por (luego de adimensaionalizar los auvalores con el parametro de escala $\mu$ ) \\
+
+\textbf{Regularizacion de la Energía de Casimir}
+
+Al inicio de la seccion se calculó la energía de Casimir como
 
 \begin{equation}
-\frac{\hbar}{2} Log Det A = - \frac{\hbar}{2} \partial _s \zeta' (0) =
-- \frac{\hbar}{2} Log[ \mu ] \zeta (0) - \frac{\hbar}{2} \zeta '(0) 
+E _0 = \frac{\hbar}{2} \sum _n \omega _n 
 \end{equation}
 
-\begin{equation}
-Log Det (A) = 
-- \mu ^{2s}  \Gamma (s) \zeta (s) | _{s=0}
-\end{equation} 
-
-Donde $\zeta (0) = c _m (A) $ donde $m$ es la dimension de la variedad 
-
-Tambien la puedo definir de la forma
+La cual se le puede dar un sentido utilizando la funcion $\zeta _A (s) $ (utilizando el mismo parametro de escala $\mu$)
 
 \begin{equation}
-Log Det (A/ \mu ^2) = 
-- \zeta ' (0) - 2 Log ( \mu ) \zeta (0)
+\begin{array}{c}
+E _0 = \frac{\hbar}{2} \mu  \sum _n  \frac{\omega _n }{\mu } | _{s=-1/2} = 
+\frac{\hbar}{2} \mu  \sum _{n} \left( \frac{\omega _n}{\mu } \right) ^ {-2 s} = \\
+\frac{\hbar}{2} \mu ^{2s+1} \sum _n \omega _n ^{-2s} | _{-1/2} =  
+\frac{\hbar}{2} \mu ^{2s+1} \zeta  (s) | _{s=-1/2}
+\end{array}
 \end{equation}
 
 
-
-
-La Accion Efecitva viene dada por
+Puede ocurrir que $\zeta (-1/2) $ tenga un polo, entonces me quedo con la parte finita de la expresion, por ejemplo si tiene un polo simple:
 
 \begin{equation}
-w = \frac{1}{2} Log[Det D]
+\begin{array}{c}
+E_0 = \frac{\hbar}{2}
+PF
+\left[
+	\left(
+		1 + 2 Log [ \mu ] (s+1/2) + ...
+		\right)
+	\left(
+		\frac{c_{-1}}{s+1/2} + c _0 + ...
+		\right) | _{s=-1/2}
+		\right] = \\
+\frac{\hbar}{2}
+(2 C _{-1} Log[\mu ] + C_0 )
+\end{array}
 \end{equation}
-
-El cual conduce a sumas que son formalmente divergentes, en este trabajo se utilizaran funciones espectrales las cuales se definen a travez de las trasas de funciones del operador D \\
-
-
-
-
-
-
