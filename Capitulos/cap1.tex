@@ -1,72 +1,216 @@
-\chapter{Introduccion Física}
-
-El Lagrangiano de un campo escalar en unidimensional, $\phi (x,t)$ en un potencial externo está dado por:
-
-\begin{equation}
-    L = \frac{1}{2} (\partial _t \phi  ) ^2
-    - \frac{1}{2} (\partial _x \phi ) ^2 - 
-    \frac{1}{2} m ^2 \phi ^2  - \frac{V}{2} \phi ^2 
-\end{equation}
-
-El cual me conduce a las ecuaciones de movimiento para el campo : 
+\chapter{Introduccion}
 
 
-\begin{equation}
-    ( \partial _t ^2 - \nabla ^2 + m ^2 +V  ) 
-    \phi (x,t) = 0
-\end{equation}
+\section{Aplicaciones Físicas de la Regularizacion}
 
-Descomponiendo el campo en modos normales de vibracion  $\phi (x,t) = \phi(x) e ^{i \omega t}$ y considerando a mi particula sin masa, llego a la ecuacion
+En Teoría Cuántica de Campos el calculo de ciertas magnitudes físicas (Acción efectiva, energía de Casimir, Espectacion del Vacio, etc) conducen a valores formalmente divergentes, en lo siguiente se hará un resumen de la energía de Casimir, y la Accion Efectiva, junto con los metodos regularizacion\\
+
+
+
+
+
+\textbf{Accion Efectiva}\\
+
+En Teorias Cuanticas de Campos la probabilidad de transicion de una configuracion de un campo está dada por:
 
 \begin{equation}
-\hat{A} \phi(x) = ( - \nabla ^2 + V(x) \ ) \phi (x) = \omega ^2 \phi (x)  
+< \phi _f (x) | e ^{- \frac{i H t}{\hbar}} | \phi _i (x) > =
+\int D \phi \ e ^{- \frac{i S[\phi]}{\hbar}}
 \end{equation}
 
-
-Donde tengo un problema de Schrodinger con autovalor $\omega  ^2$ \\
-
-
-Una vez obtenidos todos los autovalores $\omega ^2 _n $, para obtener la energía de vació debo sumar sobre todos los modos normales de oscilación, obteniendo la expresión: 
+La funcional Generatriz es el elemento basico mediante el cual se calculan todas las magnitudes físicas:
 
 \begin{equation}
-    E _0 = 
-    \frac{1}{2}  \sum _n \omega _n 
-\label{eq.vacio}
+Z[j] = 
+\int D \phi
+e^{-\frac{1}{\hbar} S[\phi] + \frac{1}{\hbar} (J,\phi) }  
 \end{equation}
 
-Donde la expresión anterior generalmente es divergente, para poder calcularla suma voy a tener que calcular la función $\zeta _A (s) $ definida en (\ref{eq.zeta.1}) para luego hacer la prolongación analítica, quedando definida mi energía de vació expresada por (\ref{eq.vacio}).  
+Voy a hacer una traslacion del campo $\phi (x) = \phi _0 (x) + \psi (x) $, donde $\phi _0 (x)$ es la solucion clasica a la ecuacion de movimiento (la que extremiza la accion clasica) y $\psi (x)$ es la fluctuacion cuantica respecto a esa solucion, obteniendo:
 
+\begin{equation}
+Z[j] = 
+\int D \phi
+e^{-\frac{1}{\hbar} S[\phi _0 + \psi] + \frac{1}{\hbar} (J,\phi _0 + \psi ) }  
+\end{equation}
+
+Desarrollando la accion $S[\phi _0 + \psi]$ alrededor de $\phi _0$, y utilizando de $\phi _0$ es la solucion claisca, se obtiene para la accion fectiva:
+
+\begin{equation}
+\Gamma [\psi] = 
+- \hbar 
+Log
+\left[
+	e ^{-\frac{1}{\hbar} S[\phi _0] }
+	\int D \phi \
+	e ^{-\frac{1}{2 \hbar} (\phi,A \psi) }
+	\right]
+\end{equation}
+
+
+
+Obteniendo en la aproximacion a 1-loop para la accion efectiva:
+
+\begin{equation}
+\Gamma [\psi] = S [\psi] + \frac{\hbar}{2} log \ Det (A) +
+O ( \hbar ^2 )
+\end{equation}
+
+Donde el termino divergente proviene del determinante funcional el cual debe ser correctamente regularizado
+
+
+\textbf{Energía de Casimir} \\
+
+En el año 1948 Hendrik Casimir tomando la idea de que dos moleculas neutras se atraen debido a las fuerzas de Van der Waals, llego a la conclucion que dos placas melaticas paralelas neutras en el vacio sufren una fuerza atractiva dada por (\label{casimir.1}) aunque , la primer medicion del efecto fue en 1958 por Sparnaay que no pudo ser conclusivo debido al 100 \% de insertidumbre en la medicion, se han echo varias mediciones para distintas configuraciones (ya que la fuerza de Casimir depende la geometria), el experimento mas definitivo fue echo por U. Mohideen y Anushree Roy, con una diferencia entre teoria y experimento del 1 \%, en la cual midieron la fuerza entre una esfera metalica y una placa plana, donde se utilizo un microscopio de fuerza atomica 
+
+
+\begin{equation}
+F(d) = - \frac{\pi ^2 \hbar c}{240} \frac{A}{d^4}
+\label{casimir.1}
+\end{equation}
+
+
+
+
+En el caso de dos placas paralelas el efecto casimir se puede ver, calculando el valor de espetacion del vacio del campo entre las placas, el campo va a satisfacer la ecuacion de Klein-Gordon
+
+\begin{equation}
+( \partial _t ^2 - \partial _x ^2  ) \phi (x,t) = 0 
+\end{equation}
+
+Descomponiendo al campo en modos normales de oscilacion, puedo llegar a la ecuacion de autovalores:
 
 \begin{equation}
 \begin{array}{c}
-    \bar{\zeta}  _A (s) = \mu  \sum _n  ( \frac{\omega _n}{\mu}  ) ^{-2 s} =
-    \mu ^{2s+1} \sum _n   \omega _n   ^{-2 s}  =  \mu ^{2s+1} \zeta _A (s) \\
-    Donde \ \mu \ me \ fija \ las \ unidades \ de \ energia 
-\end{array}
-\label{eq.zeta.1}
-\end{equation}
-
-Una vez calculada $ \zeta _A (s) $  voy a hacer la extencion analítica a $ s=-1/2 $ en donde presentara polos, que tendran que compenzarse con el desarrollo de $ \mu ^{2s+1} $ alrededor del mismo punto
-
-Suponiendo que $ \zeta _A (s) $ presenta un polo simple, $\bar {\zeta} _A (s) $ quedará
-
-\begin{equation}
-\begin{array}{c}
-
-\bar{\zeta} _A (s) = 
-\left(
-1 + 2Log[\mu] (s+1/2) + O (s+1/2)^2
-\right)
-\left(
-\frac{c _{-1} }{s+1/2} + O(1)
-\right) = \\
-\frac{c _{-1} }{s+1/2} + 2 Log[\mu] C _{-1} + Regular(s)
+\phi (x,t) = e ^{-i \omega t} \phi (x) \\
+\partial _x ^2 \phi (x) = - \omega ^2 \phi (x)
 \end{array}
 \end{equation}
 
-Donde $Regular(s)$ es una funcion que tiene desarrollo de taylor en potencias positivas alrededor de $s=-1/2$, entonces la energía de vacio se obtiene de tomar la parte finita de $\bar{\zeta} _A (s) $, quedando:
+Donde imponiendo las condiciones de contorno que el campo se anule en las placas $\phi (0) = \phi (L) = 0$ obtengo para los modos normales
 
 \begin{equation}
-    E _0 = \frac{1}{2}  \ \bar{\zeta} _A (-\frac{1}{2})
-\label{eq.vacio}
+\omega _n = \frac{2 \pi n}{L}
 \end{equation}
+
+El valor de espectacion del vacio va a estar dado entonces, por la suma de todos los modos normales de oscilacion:
+
+\begin{equation}
+E _0 = \frac{\hbar}{2} \sum \frac{2 n \pi}{L} 
+\end{equation}
+
+Lo cual conduce a una energía que es claramente divergente, por lo cual tambien se necesita un proceso de regularizacion.
+
+\section{Heat Kernel y Funcion Zeta}
+
+Dado un operador diferencial $A$ con coeficientes derivables, actuando sobre una variedad compacta $M$ con borde suave $\partial M$, se puede definir la traza del operador $A ^{-s}$ lo que se llama, $\zeta _A (s)$ (Funcion zeta del operador A), si el espectro del operador $A$ está dado por ${\lambda _n} _{n \in N}$ la funcion $\zeta _A (s)$ queda expresada como:
+
+
+\begin{equation}
+\zeta _A (s) = Tr A ^{-s} = \sum _{n}  \lambda _n ^{-s}
+\end{equation}
+
+La cual en principio converge para valores grandes de $s$, pero una vez calculada se puede hacer la prolongacion analítica al plano complejo, en particular la funcion va a tener polos simples en $x _n$ dados por:
+
+\begin{equation}
+x _n = \frac{m-n}{d} 
+\end{equation}
+
+Donde $m$ es la dimension de la variedad y $d$ el orden del operador A.
+
+%En esta tesis se estudiaran los polos de la funcion $\zeta _A (s)$ de un operador singular unidimensional de segundo orden.
+Tambien es posible definir otra funcion dependiente el espectro de A, La traza del Heat-Kernel, que está dada por:
+
+\begin{equation}
+Tr e ^{-t A} = 
+\sum _{n} e ^{-t \lambda _n}
+\end{equation}
+
+El cual tiene la propiedad de admitir un desarrollo asintótico para valores pequeños de t de la forma:
+
+\begin{equation}
+Tr e ^{-t A} \approx 
+\sum _{n=0} ^{\infty}
+c _n (A) 
+t ^{\frac{(-n+k)}{2}}
+\end{equation}
+
+Donde n es la dimension de la variedad.
+
+La funcion $\zeta _A (s) $ y $Tr e ^{-A t}$ estan relacionadas a travez de la Transformada de Mellin.
+
+\begin{equation}
+\zeta (s) = \frac{1}{\Gamma [s] } 
+\int _0 ^{\infty}
+t ^{s-1} Tr e ^{-A t} dt
+\end{equation}
+
+Se puede ver entonces que residuos de la funcion $\zeta$ estan dados por
+
+\begin{equation}
+Res[\zeta _A (s)] | _{s= s_0} = \frac{C _n (A)}{\Gamma (s _0)}
+\end{equation}
+
+\textbf{Regularizacion de la Accion Efectiva:}
+
+Inspirados en las propiedades de las matrices se puede dar una definiciones al determinante funcional, de tal forma que sea convergene, para matrices de $A $ de $ nxn$ se tiene la proiedad
+
+\begin{equation}
+Log [ Det e ^A] = Tr [A]
+\end{equation}
+
+Escribiendo entonces $B= e ^{A} \rightarrow B ^{-s} = e ^{-s A}$, se que ve y poniendolo en la ecuacion anterior:
+
+\begin{equation}
+\partial _s B ^{-s} | _{s=0} = (- A e ^{-s A}) | _{s=0} = - A
+\end{equation}
+
+Juntando todo obtengo:
+
+\begin{equation}
+Log [Det [e ^A ]] = Tr[A] = - Tr \partial _s B ^{-S} | _{s=0} = - \partial _s Tr[B ^{-s}] | _{s=0}
+\end{equation}
+
+Puedo definir entonces el determinante funcional de un operador como:
+
+\begin{equation}
+Det[A] = exp ^{- \zeta ' (0)}
+\end{equation}
+
+La primer correccion a la accion efectiva va a estar dada por 
+
+\begin{equation}
+\frac{\hbar}{2} Log Det A = - \frac{\hbar}{2} \partial _s \zeta' (0) =
+- \frac{\hbar}{2} Log[ \mu ] \zeta (0) - \frac{\hbar}{2} \zeta '(0) 
+\end{equation}
+
+\begin{equation}
+Log Det (A) = 
+- \mu ^{2s}  \Gamma (s) \zeta (s) | _{s=0}
+\end{equation} 
+
+Donde $\zeta (0) = c _m (A) $ donde $m$ es la dimension de la variedad 
+
+Tambien la puedo definir de la forma
+
+\begin{equation}
+Log Det (A/ \mu ^2) = 
+- \zeta ' (0) - 2 Log ( \mu ) \zeta (0)
+\end{equation}
+
+
+
+
+La Accion Efecitva viene dada por
+
+\begin{equation}
+w = \frac{1}{2} Log[Det D]
+\end{equation}
+
+El cual conduce a sumas que son formalmente divergentes, en este trabajo se utilizaran funciones espectrales las cuales se definen a travez de las trasas de funciones del operador D \\
+
+
+
+
+
+
