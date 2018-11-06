@@ -227,7 +227,7 @@ Para calcular la funcion $\zeta (s)$ voy a desarrollar en serie las funciones Hy
 \begin{equation}
 \begin{array}{c}
 \frac{(2 i \lambda L)}
-{e ^{- \frac{\pi \alpha}{4 \lambda}}}
+{e ^{ \frac{\pi \alpha}{4 \lambda}}}
  \frac{\psi (x=L)}{N L e ^{-i \lambda L} } = 
  (- \alpha c Log[2 \lambda] + \lambda f[ \lambda ] ) 
  \left(
@@ -236,14 +236,20 @@ Para calcular la funcion $\zeta (s)$ voy a desarrollar en serie las funciones Hy
  \frac{e ^{ -  \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } }
  	  {\Gamma (1 + \frac{i \alpha}{2 \lambda})} S2 
  \right) + \\
- c \alpha \Gamma (-\frac{i \alpha}{2 \lambda}) 
+ c \alpha \Gamma \left[ -\frac{i \alpha}{2 \lambda} \right]
  e ^{- \frac{i \alpha Log[2 \lambda L]}{2 \lambda}} S2
 \end{array}
 \end{equation}
 
-Donde $S1,S2$ y $f$ son series de potencias enteras negativas en $\lambda$ donde $S _{1,2} \rightarrow 1$ y $f \rightarrow i c$, cuando $\lambda \rightarrow \infty$.
+Donde $S1,S2$ y $f$ son series de potencias enteras negativas en $\lambda$ donde $S _{1,2} \rightarrow 1$ y $f \rightarrow i c$, cuando $\lambda \rightarrow \infty$, voy a escribir a $f[\lambda]$ como:
 
-Para calcular la funcion $zeta (s) $ voy a utilizar la integral en el plano complejo, trabajando con el lado derecho de la ecuacion , al igual que antes voy a tener un termino exponencialmente creciente/decreciente, dependiendo sobre que que eje me pare, obteniendo : 
+\begin{equation}
+f[\lambda] = i c + \sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n}
+\end{equation}
+
+
+
+Para calcular la funcion $\zeta (s) $ voy a utilizar la integral en el plano complejo, trabajando con el lado derecho de la ecuacion , al igual que antes voy a tener un termino exponencialmente creciente/decreciente, dependiendo sobre que que eje me pare, obteniendo : 
 
 \begin{equation}
 \begin{array}{c}
@@ -251,16 +257,18 @@ Log[M[\lambda = i t]] =
 Log[S2] - 
 \frac{i \alpha}{2 \lambda} Log[2 \lambda L] + % \\
 Log[
-	\frac{\alpha c Log[2 \lambda] - \lambda f[\lambda] }{\Gamma (1- \frac{i \alpha}{ 2 \lambda})} + 
-	c \alpha \Gamma (- \frac{i \alpha}{2 \lambda}) ] \\ 
+	\frac{\alpha c Log[2 \lambda] - \lambda f[\lambda] }{\Gamma (1 + \frac{i \alpha}{ 2 \lambda})} + 
+	c \alpha \Gamma \left(- \frac{i \alpha}{2 \lambda} \right) ] \\ \\
+	
 Log[M[\lambda = - i t]] = 
 2 i \lambda L +
 \frac{i \alpha Log[2 \lambda L]}{2 \lambda} -
-Log[\Gamma (1- \frac{i \alpha}{2 \lambda}) ] +
+Log[\Gamma (1- \frac{i \alpha}{2 \lambda}) ] + \\
 Log[
 	- \alpha c Log[2 \lambda] +
 	\lambda f[\lambda]
-	]
+	] +
+Log[S1]
 \end{array}
 \end{equation}
 
@@ -275,52 +283,61 @@ S2 es una serie de potencias que tiende a 1 en $\lambda \rightarrow \infty$, ent
 S2 = 1 + \sum _{n=1} ^{\infty} \frac{a _n}{\lambda ^n}
 \end{equation}
 
-Su redivada Logaritmica la puedo escribir como es desarrollable y se puede escribir como:
+Debido a que $S2$ tiende a $0$, puedo resarrollar su derivada logaritmica y me cambia la primer potencia que aparece, siendo $\frac{1}{\lambda ^ 2}$:
 
 \begin{equation}
-\frac{S' [\lambda]}{1+ S[ \lambda ]} = \sum _{n=2} ^{\infty} \frac{b _n }{x ^n}
+\partial _{\lambda} Log[S2] = 
+\frac{
+    \sum _{n=1} ^{\infty} \frac{(-n) a_n}{\lambda ^{n+1}} }{1 + \sum _{n=1} ^{\infty} \frac{a _n}{\lambda ^n} }
+= \sum _{n=2} ^{\infty} \frac{b _n}{\lambda ^n}
 \end{equation}
 
-De aquí se puede ver que este termino de la suma contribuira a polos simples, en los semienteros (como pasa en el problema regular) \\
+De aquí se puede ver que este termino de la suma contribuira a polos simples, en los semienteros (como pasa en el problema regular), siendo la primer contribucion en $s=-1/2$ \\
 
 $\mathbf{
 - \frac{i \alpha}{2 \lambda} Log[2 \lambda L]} : 
 $ \\
 
-Este termino es el mismo que aparecía antes, y va a contribuir a un polo doble en $s=-1/2$  \\
+Este termino es el mismo que aparecía en el problema regular, y va a contribuir a un polo doble en $s=-1/2$  \\
 
 $\mathbf{
 Log[
-	\frac{\alpha c Log[2 \lambda] - \lambda f[\lambda] }{\Gamma (1- \frac{i \alpha}{ 2 \lambda})} + 
-	c \alpha \Gamma (- \frac{i \alpha}{2 \lambda}) ] :
+	\frac{\alpha c Log[2 \lambda] - \lambda f[\lambda] }{\Gamma \left[1 + \frac{i \alpha}{ 2 \lambda} \right] } + 
+	c \alpha \Gamma \left[ - \frac{i \alpha}{2 \lambda} \right] ] :
 }$ \\
 
-Luego de desarrollar mi funcion $\Gamma$ se ve que dentro del Logaritmo hay 3 terminos que crecen indefinidamente:
+Teniendo en cuenta los desarrollos de las funciones $\Gamma$ se puede ver que el termino dominante es de orden $\lambda$
+
 
 \begin{equation}
+\begin{array}{c}
 \Gamma [- \frac{i \alpha}{2 \lambda}] = 
-\frac{2 i \lambda}{\alpha} + 
-\sum _{n=0} ^{\infty} \frac{c _n}{\lambda ^n}
+\frac{2 i \lambda}{\alpha}  + 
+\sum _{n=0} ^{\infty} \frac{c _n}{\lambda ^n} \\
+\Gamma \left[ 1 + \frac{i \alpha}{2 \lambda} \right] ^{-1} = 1 + 
+\sum _{n=1} ^{\infty} \frac{d _n}{\lambda ^n}
+\end{array}
 \end{equation}
 
-Sin embargo el termino dominante es orden $\lambda$, sacando factor comun $\lambda$ obtengo:
+Sacando factor comun $\lambda$ obtengo:
 
 \begin{equation}
 Log[\lambda] + 
 Log \left[
-	- \frac{1}{\Gamma[1- \frac{i \alpha}{2 \lambda}]} +
-	2 i c -
+	2 i  c
+	- i c +
 	\left(
 		\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n}}
-			 {\Gamma[1- \frac{i \alpha}{2 \lambda}]}		
-		+ c \alpha \sum _{n=1} ^{\infty} \frac{c _n}{\lambda ^n} +
-		\frac{\alpha c Log[2 \lambda]}{\lambda \Gamma [1 - \frac{i \alpha}{2 \lambda} ]}	
+			 {\Gamma[1+ \frac{i \alpha}{2 \lambda}]}		
+		+ c \alpha \sum _{n=0} ^{\infty} \frac{c _n}{\lambda ^{n+1}} +
+		\frac{\alpha c Log[2 \lambda]}{\lambda \Gamma [1 + \frac{i \alpha}{2 \lambda} ]}	
 		\right)
 		\right]		
 \end{equation}
 
 
-Donde toda la parte que está entre parentesis es infinitesimalmente chica, entonces voy a hacer un desarrollo alrededor del parentesis yendo a cero, (tambien se puede desarrollar la funcion $\Gamma$ que está abajo del 1, y poner todos los terminos que van a cero en el parentesis, pero el resultado final es el mismo)
+Ahora voy a hacer un desarrollo de toda la parte que está entre parentesis alrededor de cero
+
 
 \begin{equation}
 Log[x + \epsilon] =
@@ -331,69 +348,49 @@ Log[x] +
      \epsilon ^{n}
 \end{equation}
 
-El termino 
-
-\begin{equation}
-Log[x] = 
-Log \left[
-		- \frac{1}{\Gamma [1 - \frac{i \alpha}{2 \lambda}]}
-		 + 
-		2 i c
-		\right]
-\end{equation}
-
-Se comporta igual que el termino $ Log[S2] $, dando polos simples en los semienteros, aquí lo nuevo vendrá de las potencias de $\epsilon$ \\
-Vamos a analizar cada termino de la suma:
+El termino $Log[i c]$ va a aportar al polo en $s=1/2$, el comportamiento nuevo va a venir de las potencias de $\epsilon$, el cual lo puedo evaluar utilizando el Binomi de Newton :
 
 \begin{equation}
 \begin{array}{c}
-\frac{1}{x ^n} = 
-\left(
-	- \frac{1}{\Gamma [1 - \frac{i \alpha}{2 \lambda}]}
-	+ 
-	2 i c
-	\right) ^{-n} =
-\left(
-	- 1 + 2 i c\sum _{n=1} ^{\infty} \frac{\Gamma ^{-} _n }{\lambda ^n}
-	\right) ^{-n} 
-\end{array}
-\end{equation}
-
-Termino que es desarrollable y tiene potencias enteras negativas de $\lambda$
-
-El siguiente termino lo puedo evaluar utilizando el Binomio de Newton
-
-\begin{equation}
-\begin{array}{c}
-\epsilon ^{m} = 
-\left(
+\epsilon ^m =
+	\left(
 		\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n}}
-			 {\Gamma[1- \frac{i \alpha}{2 \lambda}]}		
-		+ c \alpha \sum _{n=1} ^{\infty} \frac{c _n}{\lambda ^n} +
-		\frac{\alpha c Log[2 \lambda]}{\lambda \Gamma [1 - \frac{i \alpha}{2 \lambda} ]}	
-		\right) ^m = \\
+			 {\Gamma[1+ \frac{i \alpha}{2 \lambda}]}		
+		+ c \alpha \sum _{n=0} ^{\infty} \frac{c _n}{\lambda ^{n+1}} +
+		\frac{\alpha c Log[2 \lambda]}{\lambda \Gamma [1 + \frac{i \alpha}{2 \lambda} ]}	
+		\right) ^m \\
 \sum _{i=0} ^{m}
 {m\choose i}
 \left(
-	\frac{\alpha c}{\lambda} \frac{Log [2 \lambda]}{\Gamma [1- \frac{i \alpha}{2 \lambda}]}
+	\frac{\alpha c}{\lambda} \frac{Log [2 \lambda]}{\Gamma [1 + \frac{i \alpha}{2 \lambda}]}
 	\right) ^{i}
 \left(
-	\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n}}
-		{\Gamma[1- \frac{i \alpha}{2 \lambda}]}		
+	\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^{n+1}}}
+		{\Gamma[1+ \frac{i \alpha}{2 \lambda}]}		
 		+ c \alpha \sum _{n=1} ^{\infty} \frac{c _n}{\lambda ^n} 
 	\right) ^{m-i } = \\
 \sum _{i=0} ^{m}
 {m\choose i}
 \left(
-	\frac{\alpha c}{\lambda} \frac{Log [2 \lambda]}{\Gamma [1- \frac{i \alpha}{2 \lambda}]}
+	\frac{\alpha c}{\lambda} \frac{Log [2 \lambda]}{\Gamma [1+ \frac{i \alpha}{2 \lambda}]}
 	\right) ^{i} 
 \left(
 	\sum _{n=1} ^{\infty} \frac{q_n}{\lambda ^n}
-\right) ^{m-i}
+\right) ^{m-i} \\
+\sum _{i=0} ^{m}
+{m\choose i}
+\left(
+	\frac{Log ^i [2 \lambda]}{\lambda ^m}
+	\right)
+\left(
+	\frac{\alpha c}{\Gamma \left[ 1+ \frac{i \alpha}{2 \lambda}\right]}
+	\right) ^{i}
+q _n ^{m-i}
 \end{array}
 \end{equation}
 
-En este ultimo termino es importante notar que cada potencia de $Log[2 \lambda]$ va a estar dividida por una potencia igual o mayor en $\lambda$.
+
+En este ultimo termino es importante notar que cada potencia de $Log[2 \lambda]$ va a estar dividia por una potencia de $\lambda ^m$ o mayor .
 
 El efecto final es que cuando haga la derivada respecto a $\lambda$ la potencia $\lambda$ que va a estar dividiendo al $Log[2 \lambda]$ va a aumentar en 1, de modo que en la integral final voy a tener terminos
 
