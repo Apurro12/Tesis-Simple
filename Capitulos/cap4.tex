@@ -198,11 +198,46 @@ Lo cual coincide con lo calculado anteriormente.
 
 \section{Autofunciones:}
 
-Las solcuciones de $H \phi (x) = \lambda ^2 \phi (x)$ ya fueron calculadas anteriormente 
+Las solcuciones de $H \phi (x) = \lambda ^2 \phi (x)$ ya fueron calculadas anteriormente, la solucion general tiene la forma
 
-\section{Funcion zeta}
+\begin{equation}
+\phi (x) = 
+x e ^{-i \lambda x}
+\left(
+A  F _1 ^1 \left( 1 - \frac{i \alpha}{2\lambda}  \right) + 
+B  U \left( 1 - \frac{i \alpha}{2\lambda}  \right)
+\right)
+\end{equation}
 
-El espectro de mi operador estará dado por los ceros de la funcion de onda en $x=L$
+Desarrollando todo alrededor de $x \rightarrow 0$ obtengo:
+
+\begin{equation}
+\begin{array}{c}
+\phi (x \rightarrow 0 ) = 
+x 
+\left(
+	1 - i \lambda x + O (x ^2)
+	\right)
+\left(
+	A + O (x) + B \left( \frac{1}{\alpha \Gamma x} + \frac{Cte}{\Gamma} + \frac{Log[x]}{\Gamma} + O(x)\right)	
+	\right) = \\
+x \left( A + \frac{Cte B}{\Gamma} - \frac{i \lambda B}{\alpha \Gamma}  \right) +
+\frac{B}{\alpha	\Gamma} (1 + \alpha x Log[x] ) + O (x^2)
+\end{array}
+\end{equation}
+
+Donde: $Cte = 2 \gamma -1 + Log[2 i \lambda] + \psi \left( 1 - \frac{i \alpha}{2 \lambda}\right)$; y $\Gamma = \Gamma \left[ - \frac{i \alpha}{2 \lambda} \right]$
+
+Para que se cumpla la condicion de contorno debe cumpirse que:
+
+\begin{equation}
+A = \frac{B}{\alpha	\Gamma} 
+\left(
+\frac{1}{c} + i \lambda - \alpha Cte
+\right)
+\end{equation}
+
+Las autofunciones estaran dadas entonces por los ceros de la funcion de onda en $x=L$
 
 \begin{equation}
 \begin{array}{c}
@@ -222,7 +257,9 @@ U (1 - \frac{i \alpha}{2 \lambda},2,2 i \lambda L )
 \end{array}
 \end{equation}
 
-Para calcular la funcion $\zeta (s)$ voy a desarrollar en serie las funciones Hypergeometricas alrededor de $\lambda \rightarrow \infty$ para obtener:
+\section{Funcion zeta}
+
+Como la funcion $\zeta _A (s) $ solo depende de los auvotalores, voy a sacar factor comun todo lo que no se anula, y desarrollar en serie las funciones Hypergeometricas alrededor de $\lambda \rightarrow \infty$ obteniendo:
 
 \begin{equation}
 \begin{array}{c}
@@ -235,9 +272,9 @@ Para calcular la funcion $\zeta (s)$ voy a desarrollar en serie las funciones Hy
  {\Gamma ( 1 - \frac{i \alpha}{2 \lambda} )} S1 - 
  \frac{e ^{ -  \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } }
  	  {\Gamma (1 + \frac{i \alpha}{2 \lambda})} S2 
- \right) + \\
+ \right) d \lambda + \\
  c \alpha \Gamma \left[ -\frac{i \alpha}{2 \lambda} \right]
- e ^{- \frac{i \alpha Log[2 \lambda L]}{2 \lambda}} S2
+ e ^{- \frac{i \alpha Log[2 \lambda L]}{2 \lambda}} S2 d \lambda
 \end{array}
 \end{equation}
 
@@ -299,6 +336,16 @@ $\mathbf{
 $ \\
 
 Este termino es el mismo que aparecía en el problema regular, y va a contribuir a un polo doble en $s=-1/2$  \\
+
+
+
+En La rama de abajo voy a tener dos terminos que se comportan diferente que los anteriores:
+
+$\mathbf{
+		Log[\Gamma [ 1 - \frac{i \alpha}{2 \lambda} ] ]
+		}: 
+		$ \\
+
 
 $\mathbf{
 Log[
@@ -380,26 +427,71 @@ El termino $Log[i c]$ va a aportar al polo en $s=1/2$, el comportamiento nuevo v
 \sum _{i=0} ^{m}
 {m\choose i}
 \left(
-	\frac{Log ^i [2 \lambda]}{\lambda ^m}
-	\right)
+	\frac{Log [2 \lambda]}{ \lambda }
+	\right) ^{i} 
 \left(
-	\frac{\alpha c}{\Gamma \left[ 1+ \frac{i \alpha}{2 \lambda}\right]}
-	\right) ^{i}
-q _n ^{m-i}
+	\frac{q_1}{\lambda} + \sum _{n=2} ^{\infty} \frac{q_n}{\lambda ^n}
+\right) ^{m-i} 
+\left(
+	\frac{\alpha c}{\Gamma [1+ \frac{i \alpha}{2 \lambda}]}
+	\right) ^i \\
 \end{array}
 \end{equation}
 
-
-En este ultimo termino es importante notar que cada potencia de $Log[2 \lambda]$ va a estar dividia por una potencia de $\lambda ^m$ o mayor .
-
-El efecto final es que cuando haga la derivada respecto a $\lambda$ la potencia $\lambda$ que va a estar dividiendo al $Log[2 \lambda]$ va a aumentar en 1, de modo que en la integral final voy a tener terminos
+El proposito de separar la seunda serie así, es para poder ver explicitamente que la pontencia mas baja que va a estar dividiendo al $Log[2 \lambda] $ va a ser de orden $m$, y como la potencia de $Log[2 \lambda]$ va a ser m, puedo escribir todo de la forma:
 
 \begin{equation}
-\frac{1}{2 pi i} 
+\sum _{i=0} ^m \sum _{p=0} ^{\infty} \frac{Log[2 \lambda]}{\lambda ^{m+p}} g _{m+p}
+\end{equation}
+
+
+El efecto final es que cuando haga la derivada respecto a $\lambda$ la potencia $\lambda$ que va a estar dividiendo al $Log[2 \lambda]$ va a aumentar en 1, de modo que cuando integre voy a tener terminos de la forma:
+
+\begin{equation}
+\frac{1}{2 \pi i} 
 \int _{1} ^{\infty} \frac{Log[2 \lambda] ^{m}}{\lambda ^{m'}} \lambda ^{-2s} d \lambda
 \end{equation}
 
-Y se va a cumplir siempre que $m'> m$
+Y se va a cumplir siempre que $m'> m$, como cada potencia de $Log[2 \lambda]$ me aumenta el orden del polo, y cada potencia de $\lambda$ me corre en donde está posicionado el polo, este termino va a contribuir a la estructura de polos de la siguiente forma (siempre y cuando no se anulen los coeficientes que acompañan a los Logaritmos)
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6]{Polos.jpg}
+    \caption{En este caption se puede ver la contribucion a los polos generador por el termino $Log[
+	\frac{\alpha c Log[2 \lambda] - \lambda f[\lambda] }{\Gamma \left[1 + \frac{i \alpha}{ 2 \lambda} \right] } + 
+	c \alpha \Gamma \left[ - \frac{i \alpha}{2 \lambda} \right] ]$ }
+    \label{fig:Dibujo}
+\end{figure}
+
+$\mathbf{
+		Log[- \alpha c Log[2 \lambda] + \lambda f[\lambda] ]
+		}: 
+		$ \\
+
+Al igual que con el termino en la rama anterior, voy a sacar factor comun $\lambda$ para que quede:
+
+\begin{equation}
+Log[\lambda] + 
+Log[i c - \frac{\alpha c Log[2 \lambda] }{\lambda} + 
+\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^{n+1}} ]
+\end{equation}
+
+Este termino tiene la misma forma que el anterior, haciando el mismo tratamiento obtengo:
+
+\begin{equation}
+\begin{array}{c}
+Log[- \alpha c Log[2 \lambda] + \lambda f[\lambda] ] = \\
+Log[\lambda] + Log[i c] + 
+\sum _{m=0} ^{\infty} \frac{(-1)^{n+1}}{(i c) ^m}
+							\left(
+								\sum _{p=0} ^{\infty} {m\choose p} 
+									\left( - \frac{ \alpha c Log[2 \lambda] } {\lambda} \right) ^p
+									\left( \sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n} \right) ^{m-p} 
+								\right)
+\end{array}
+\end{equation}
+
+Donde se puede ver el mismo la misma forma de contribucion a los polos 
 
 
 

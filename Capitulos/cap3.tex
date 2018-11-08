@@ -1,4 +1,3 @@
-
 \chapter{Estudio del Problema Singular}
 
 En este capitulo se van a aplicar las herramientas desarrolladas en el capitulo anterior al estudio del espectro de un operador singular
@@ -505,142 +504,116 @@ Entonces la energía de vació queda determinada por:
     }{4 \pi (s+1/2)} 
      + Regular
     \right) | _{s=-1/2}
-\end{equation}
+\end{equation}\\
 
 
-\chapter{Limite Continuo}
 
-En esta seccion voy a estudiar el comportamiento de la fucion $\zeta (s) $ en el limite $L \rightarrow \infty$, donde quedara definida por:
+Para calcular la parte finita que no está calculada voy a volver a calcular la funcion $\zeta _A (s) $ utilizando variable compleja pero, utilizando todos los terminos de la expancion en seríe de la funcion Hypergeometrica
 
 \begin{equation}
-\zeta (s) = \int _{0} ^{\infty} \rho (x) x^{-2 s} dx
+ \left(
+ \frac{e ^{  \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } e ^{2 i \lambda L } }
+ {\Gamma ( 1 - \frac{i \alpha}{2 \lambda} )} S1 - 
+ \frac{e ^{ -  \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } }
+ 	  {\Gamma (1 + \frac{i \alpha}{2 \lambda})} S2 
+ \right)
 \end{equation}
 
-Donde la $\rho(x) $ es la densidad de autovalores, para llegar a esta ecuacion, voy a utilizar la representacion integral de la funcion $\zeta$ en el plano complejo e integrar sobre un camino dado por la figura(REFERENCIAR), para eso voy a trabajar con mi aproximacion (REFERENCIAR)
-
-
-
-Dependiendo si estoy arriba o abajo del eje real, voy a tener un termino exponencialmente creciente/decreciente en el limite $L \rightarrow \infty$ proveniente de $e ^{i z t}$
-
-Voy a separar mi integral en una parte de arriba y una parte de abajo, en el termino de arriba del eje real obtengo:
+Al igual que antes voy a tener una parte exponencialmente creciente/decreciente mas la parte curva , sin realizar explicitamente los calculos como antes, los integrandos quedan:
 
 \begin{equation}
 \begin{array}{c}
-\frac{1}{2 \pi i} \int _{\infty} ^{t0} 
-\partial _z
-Log
-\left(
-\frac{e ^{-2 i z  L } e ^{- \frac{i \alpha}{2 \lambda} Log[2 z  L]} }{\Gamma[1-\frac{i \alpha}{2 z }]} +
-\frac{e ^{ \frac{i \alpha}{2 z } Log[2 z  L]} }{\Gamma[1+\frac{i \alpha}{2 z }]}
-\right) d z \\
-z = i t + \epsilon 
+ \left( \frac{1}{2 \pi i} \right) ^{-1 } \zeta _A (s) = \\
+\int _{arriba} \lambda ^{-2s } \partial _{\lambda}
+	\left(
+		- \frac{i \alpha}{2 \lambda} Log [2 \lambda] - Log[\Gamma [1 + \frac{i \alpha}{2 \lambda}]] +
+		Log[ S2 ]
+		\right) d \lambda
+	+ \\ \\
+\int _{abajo} \lambda ^{-2s } \partial \lambda
+	\left(
+		2 i \lambda + \frac{i \alpha}{2 \lambda} Log [2 \lambda] - 
+		Log[\Gamma [1 - \frac{i \alpha}{2 \lambda}]] +
+		Log[ S1 ]
+		\right)	d \lambda
+	+ \\ \\
+\int _{circulo} \lambda ^{-2s } \partial \lambda \ Log \left[
+					\frac{e ^{\frac{i \alpha Log[2 \lambda L ]}{2 \lambda}} e ^{2 i \lambda L} S1}
+					{\Gamma \left[ 1 - \frac{i \alpha}{2 \lambda} \right]} - 
+					\frac{e ^{\frac{-i \alpha Log[2 \lambda L ]}{2 \lambda}} S2}
+					{\Gamma \left[ 1 + \frac{i \alpha}{2 \lambda} \right]}					
+					\right] d \lambda
 \end{array}
 \end{equation}
 
-Sacando factor comun de modo que me quede un termino exponencialmente decrenciente dentro del Logatirmo obtengo
+Donde se puede ver que los únicos cambios respecto a la funcion $\zeta _A (s)$ calculada antes, es la suma de dos factores que van con el logatirmo de las series que acompañan a las exponenciales, mas la parte circular.
 
-\begin{equation}
-\frac{1}{2 \pi i}  \int _{\infty} ^{t0} 
-\partial _{z}
-\left(
-\frac{i\alpha}{2 z} Log[2 z L] - Log[\Gamma[1 + \frac{i \alpha}{2 z}]] +
-Log[1- \epsilon _L ]
-\right)
-d z
-\end{equation}
-
-Donde $ \epsilon _L \rightarrow 0$ si $L \rightarrow \infty $ , entonces Logaritmo va a cero, quedando la integral final:
+La integral angular queda (Llamando como simepre $M[\lambda]$ al argumento):
 
 \begin{equation}
 \begin{array}{c}
-\zeta (s) = 
-\frac{L}{\pi}
-\int _ {x_0} ^{\infty} x ^{-2s} dx + \\
-\frac{\alpha}{2 \pi } \int _{x_0} ^{\infty} 
-\left(
-\frac{-1}{ x ^2} -
-\frac{Log[2 x L]}{x ^2}  -
-\frac{1}{ x ^2 } 
-\left(
-\psi (1 + \frac{i \alpha}{2 x}) + \psi (1 - \frac{i \alpha}{2 x}) 
-\right)
-\right)
-x ^{-2s} d x
+
+\frac{1}{2 \pi i} \int _{\pi /2 } ^{0} 
+\frac{e ^{-2 s i \theta} d \theta}{M [e ^{i \theta}]} \\
+
+\Bigg[
+
+\frac{
+e ^{\frac{i \alpha (Log[2 L] + i \theta)}{2 e ^{i \theta} }} e ^{2 i L e ^{i \theta}}
+
+	\left(
+		\left(
+			\frac{i \alpha}{2 e ^{2 i \theta} } - 
+			\frac{i \alpha( Log[2 L ] + e ^{i \theta} ) }{2 e^{2 i \theta}}
+			- \frac{i \alpha \psi \left( 1 - \frac{i \alpha}{2 e ^{i \theta}}\right)}
+				   {2 e ^{2 i \theta}}
+			\right) S1 [e ^{i \theta}] +
+		S'1 [e ^{i \theta }]
+		\right)
+}{\Gamma \left( 1 - \frac{i \alpha}{2 e ^{i \theta}} \right)} + \\
+
+\frac{
+e ^{- \frac{i \alpha (Log[2 L] + i \theta)}{2 e ^{i \theta} }}
+
+	\left(
+		\left(
+			\frac{-i \alpha}{2 e ^{2 i \theta} } + 
+			\frac{i \alpha( Log[2 L ] + e ^{i \theta} ) }{2 e^{2 i \theta}}
+			+ \frac{i \alpha \psi \left( 1 - \frac{i \alpha}{2 e ^{i \theta}}\right)}
+				   {2 e ^{2 i \theta}}
+			\right) S2 [e ^{i \theta}] +
+		S'2 [e ^{i \theta }]
+		\right)
+}{\Gamma \left( 1 + \frac{i \alpha}{2 e ^{i \theta}} \right)}
+
+\Bigg]
+
 \end{array}
 \end{equation}
 
 
 
-Relizando las integrales termino a termino obtengo
+Las otras dos integrales, solo me van a contribuir a la parte finita los terminos
 
 \begin{equation}
 \begin{array}{c}
-\zeta (s) = 
-\frac{\alpha}{2 \pi} x _{0} ^{-2s-1}
-\left( 
-\frac{1}{(1+2s) ^2} +
-\frac{Log[2 L x _0]}{1+2s} -
-\frac{1}{1+2s}
-\right) + 
-\frac{L}{\pi} \frac{x _0 ^{-2s+1}}{2s-1}  \\
-- \frac{\alpha}{2 \pi}
-\int _{x_0} ^{\infty} 
+\frac{e ^{- i \pi s} }{2 \pi}
+\int _ {\infty} ^{1}
+\frac{S2 ' [i t]}{S2 [i t]}
+t ^{-2 s } dt - 
+\frac{e ^{ i \pi s} }{2 \pi}
+\int _ {1} ^{\infty}
+\frac{S1 ' [-i t]}{S1 [-i t]}
+t ^{-2 s } dt  - \\
+\frac{\alpha}{2 \pi}
+\int _{1} ^{\infty }
+t ^{-2s-2}
 \left(
-\psi(1 + \frac{i \alpha}{2 x}) +
-\psi(1 - \frac{i \alpha}{2 x} )
-\right)
-x ^{-2s-2}
-dx
+\psi \left( 1 - \frac{\alpha}{2 t} \right )+ \gamma
+\right) dt
 \end{array}
 \end{equation}
 
 
-Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion $\psi $ que se pueden usar, yo voy a el desarrollo 
 
-\begin{equation}
-\begin{array}{cc}
-\psi (1+ z ) = - \gamma + \sum _{n=2} ^{\infty} (-1) ^n \zeta (n) z ^{n-1} & |z| < 1
-\end{array}
-\end{equation}
-
-El cual su radio de convergencia esta centrado alrededor de $x = 0$
-
-La ultima integral queda expresada como:
-
-\begin{equation}
-\int _{x_0} ^{\infty}
-\left(
--2 \gamma + 
-2 \sum _{n=2} ^{\infty}
-\zeta (2n+1) (-1) ^{n+1}
-( \frac{\alpha}{2 x} ) ^{2n}
-\right)
-x ^{-2s-2} dx
-\end{equation}
-
-Quedando la funcion $\zeta _A (s) $ :
-
-\begin{equation}
-\begin{array}{c}
-\zeta _A (s) = 
-\frac{L x0 ^{-2s+1} }{2 \pi } \frac{1}{s- 1/2} + 
-\frac{\alpha x0 ^{-2s-1} }{8 \pi } \frac{1}{(s+1/2) ^2} + \\
-\frac{\alpha x0 ^{-2s-1} }{4 \pi } 
-\left(
-Log[2 L x_0] + \gamma - 1
-\right)
-\frac{1}{s+1/2} + \\
-\frac{x_0 ^{-2s}}{2\pi} 
-\sum _{n=1} ^{\infty} (-1) ^{n} \zeta (2n+1) 
-( \frac{\alpha}{2 x0} ) ^{2n+1} \frac{1}{s+n+1/2}
-\end{array}
-\end{equation}
-
-Para ver la energía de vacío hay que evaluar esta expresion en $s=-1/2$ y graficar su parte finita, tal como esta en la figura [ \ref{fig:vacio} ] donde estan los primeros 100 terminos de la serie, en funcion de $x = \alpha / x_0$ y la suma exacta de la serie al reemplazar $\zeta (2s+1) = 1$.
-
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.3]{Vacio.jpg}
-    \caption{En esta imagen esta graficada la parte finita de la $\zeta _A (-1/2) $ en funcion del parametro $x= \frac{\alpha}{x _0}$ donde se sumaron los primeros 100 terminos de la serie, y en azul se puede ver la suma de la serie al reemplazar $\zeta (2n+1) = 1$}
-    \label{fig:vacio}
-\end{figure}
+Donde las primeras dos integrales se pueden juntar en una sola dado que $S1(x) = S2 (x) ^{*}$
