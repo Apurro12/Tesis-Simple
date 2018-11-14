@@ -259,22 +259,22 @@ U (1 - \frac{i \alpha}{2 \lambda},2,2 i \lambda L )
 
 \section{Funcion zeta}
 
-Como la funcion $\zeta _A (s) $ solo depende de los auvotalores, voy a sacar factor comun todo lo que no se anula, y desarrollar en serie las funciones Hypergeometricas alrededor de $\lambda \rightarrow \infty$ obteniendo:
+Como la funcion $\zeta _A (s) $ solo depende de los auvotalores, voy a sacar factor convenientemente, y desarrollar en serie las funciones Hypergeometricas alrededor de $\lambda \rightarrow \infty$ obteniendo:
 
 \begin{equation}
 \begin{array}{c}
-\frac{(2 i \lambda L)}
-{e ^{ \frac{\pi \alpha}{4 \lambda}}}
- \frac{\psi (x=L)}{N L e ^{-i \lambda L} } = 
+M (\lambda) = 
  (- \alpha c Log[2 \lambda] + \lambda f[ \lambda ] ) 
  \left(
- \frac{e ^{  \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } e ^{2 i \lambda L } }
+ \frac{e ^{ - \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } e ^{2 i \lambda L } }
  {\Gamma ( 1 - \frac{i \alpha}{2 \lambda} )} S1 - 
- \frac{e ^{ -  \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } }
+ \frac{e ^{   \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } }
  	  {\Gamma (1 + \frac{i \alpha}{2 \lambda})} S2 
- \right) d \lambda + \\
- c \alpha \Gamma \left[ -\frac{i \alpha}{2 \lambda} \right]
- e ^{- \frac{i \alpha Log[2 \lambda L]}{2 \lambda}} S2 d \lambda
+ \right)  + \\
+ c \alpha \Gamma \left[ - \frac{i \alpha}{2 \lambda} \right]
+ e ^{ \frac{i \alpha Log[2 \lambda L]}{2 \lambda}} 
+ e ^{- \frac{\pi \alpha}{2 \lambda}} 
+ S2 
 \end{array}
 \end{equation}
 
@@ -286,19 +286,20 @@ f[\lambda] = i c + \sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n}
 
 
 
-Para calcular la funcion $\zeta (s) $ voy a utilizar la integral en el plano complejo, trabajando con el lado derecho de la ecuacion , al igual que antes voy a tener un termino exponencialmente creciente/decreciente, dependiendo sobre que que eje me pare, obteniendo : 
+Para calcular la funcion $\zeta (s) $ voy a utilizar la integral en el plano complejo, al igual que antes voy a tener un termino exponencialmente creciente/decreciente, dependiendo sobre que eje me pare, obteniendo : 
 
 \begin{equation}
 \begin{array}{c}
 Log[M[\lambda = i t]] = 
-Log[S2] - 
-\frac{i \alpha}{2 \lambda} Log[2 \lambda L] + % \\
+Log[S2] +
+\frac{i \alpha}{2 \lambda} Log[2 \lambda L] +  \\
 Log[
 	\frac{\alpha c Log[2 \lambda] - \lambda f[\lambda] }{\Gamma (1 + \frac{i \alpha}{ 2 \lambda})} + 
-	c \alpha \Gamma \left(- \frac{i \alpha}{2 \lambda} \right) ] \\ \\
+	c \alpha \Gamma \left[- \frac{i \alpha}{2 \lambda} \right] 
+	e ^{- \frac{ \pi \alpha}{2 \lambda}} ] \\ \\
 	
 Log[M[\lambda = - i t]] = 
-2 i \lambda L +
+2 i \lambda L -
 \frac{i \alpha Log[2 \lambda L]}{2 \lambda} -
 Log[\Gamma (1- \frac{i \alpha}{2 \lambda}) ] + \\
 Log[
@@ -310,8 +311,10 @@ Log[S1]
 \end{equation}
 
 
-Voy a empezar a analizar las contribuciones a los polos en $\lambda = i t$ \\
+A estos dos terminos todavia tengo que calcular la derivada respecto de $\lambda$, las únicas contribuciones a la funcion $\zeta _A (s)$ que no aparecieron antes son:
 
+
+\begin{comment}
 \textbf{Log[S2]:} \\
 
 S2 es una serie de potencias que tiende a 1 en $\lambda \rightarrow \infty$, entonces tiene la forma:
@@ -321,6 +324,7 @@ S2 = 1 + \sum _{n=1} ^{\infty} \frac{a _n}{\lambda ^n}
 \end{equation}
 
 Debido a que $S2$ tiende a $0$, puedo resarrollar su derivada logaritmica y me cambia la primer potencia que aparece, siendo $\frac{1}{\lambda ^ 2}$:
+
 
 \begin{equation}
 \partial _{\lambda} Log[S2] = 
@@ -346,6 +350,7 @@ $\mathbf{
 		}: 
 		$ \\
 
+\end{comment}
 
 $\mathbf{
 Log[
@@ -371,9 +376,9 @@ Sacando factor comun $\lambda$ obtengo:
 \begin{equation}
 Log[\lambda] + 
 Log \left[
-	2 i  c
-	- i c +
+	 i  c +
 	\left(
+		- i c \sum _{n=1} ^{\infty} \frac{d _n}{\lambda ^n} +
 		\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n}}
 			 {\Gamma[1+ \frac{i \alpha}{2 \lambda}]}		
 		+ c \alpha \sum _{n=0} ^{\infty} \frac{c _n}{\lambda ^{n+1}} +
@@ -383,38 +388,41 @@ Log \left[
 \end{equation}
 
 
-Ahora voy a hacer un desarrollo de toda la parte que está entre parentesis alrededor de cero
-
+Donde todo lo que está entre parentesis tiende a cero a medida que $\lambda \rightarrow 0$, voy a hacer entonces un desarrollo alrededor de cero.
 
 \begin{equation}
-Log[x + \epsilon] =
-Log[x] + 
+Log[i c + \epsilon] =
+Log[i c] + 
 \sum _{n=1} ^{\infty}
 	\frac{(-1) ^{1+n} }
-     	{x ^n n}
+     	{(i c) ^n n}
      \epsilon ^{n}
 \end{equation}
 
-El termino $Log[i c]$ va a aportar al polo en $s=1/2$, el comportamiento nuevo va a venir de las potencias de $\epsilon$, el cual lo puedo evaluar utilizando el Binomi de Newton :
+El termino $Log[i c]$ va a aportar al polo en $s=1/2$, el comportamiento nuevo va a venir de las potencias de $\epsilon$, el cual lo puedo evaluar utilizando el Binomio de Newton :
+
+
 
 \begin{equation}
 \begin{array}{c}
-\epsilon ^m =
+	\epsilon ^m = 
 	\left(
+		- i c \sum _{n=1} ^{\infty} \frac{d _n}{\lambda ^n} +
 		\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^n}}
 			 {\Gamma[1+ \frac{i \alpha}{2 \lambda}]}		
 		+ c \alpha \sum _{n=0} ^{\infty} \frac{c _n}{\lambda ^{n+1}} +
-		\frac{\alpha c Log[2 \lambda]}{\lambda \Gamma [1 + \frac{i \alpha}{2 \lambda} ]}	
-		\right) ^m \\
+		\frac{\alpha c Log[2 \lambda]}{\lambda \Gamma [1 + \frac{i \alpha}{2 \lambda} ]}
+		\right) ^m \\ \\
 \sum _{i=0} ^{m}
 {m\choose i}
 \left(
 	\frac{\alpha c}{\lambda} \frac{Log [2 \lambda]}{\Gamma [1 + \frac{i \alpha}{2 \lambda}]}
 	\right) ^{i}
 \left(
-	\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^{n+1}}}
+	- i c \sum _{n=1} ^{\infty} \frac{d _n}{\lambda ^n} +
+	\frac{\sum _{n=1} ^{\infty} \frac{f _n}{\lambda ^{n}}}
 		{\Gamma[1+ \frac{i \alpha}{2 \lambda}]}		
-		+ c \alpha \sum _{n=1} ^{\infty} \frac{c _n}{\lambda ^n} 
+		+ c \alpha \sum _{n=1} ^{\infty} \frac{c _n}{\lambda ^{n+1}} 
 	\right) ^{m-i } = \\
 \sum _{i=0} ^{m}
 {m\choose i}
@@ -438,10 +446,11 @@ El termino $Log[i c]$ va a aportar al polo en $s=1/2$, el comportamiento nuevo v
 \end{array}
 \end{equation}
 
-El proposito de separar la seunda serie así, es para poder ver explicitamente que la pontencia mas baja que va a estar dividiendo al $Log[2 \lambda] $ va a ser de orden $m$, y como la potencia de $Log[2 \lambda]$ va a ser m, puedo escribir todo de la forma:
+El proposito de separar la seunda serie así, es para poder ver explicitamente que la pontencia mas baja que va a estar dividiendo al $Log[2 \lambda] $ va a ser de orden $m$, y como la maxima potencia de $Log[2 \lambda]$ va a ser m, puedo escribir todo de la forma:
 
 \begin{equation}
-\sum _{i=0} ^m \sum _{p=0} ^{\infty} \frac{Log[2 \lambda]}{\lambda ^{m+p}} g _{m+p}
+\epsilon ^m = 
+\sum _{i=0} ^m \sum _{p=0} ^{\infty} { (Log[2 \lambda]) ^i}{\lambda ^{m+p}} g _{m+p}
 \end{equation}
 
 
@@ -452,7 +461,7 @@ El efecto final es que cuando haga la derivada respecto a $\lambda$ la potencia 
 \int _{1} ^{\infty} \frac{Log[2 \lambda] ^{m}}{\lambda ^{m'}} \lambda ^{-2s} d \lambda
 \end{equation}
 
-Y se va a cumplir siempre que $m'> m$, como cada potencia de $Log[2 \lambda]$ me aumenta el orden del polo, y cada potencia de $\lambda$ me corre en donde está posicionado el polo, este termino va a contribuir a la estructura de polos de la siguiente forma (siempre y cuando no se anulen los coeficientes que acompañan a los Logaritmos)
+Y se va a cumplir siempre que $m'> m$, como cada potencia de $Log[2 \lambda]$ me aumenta el orden del polo, y cada potencia de $\lambda$ me corre en donde está posicionado el polo, este termino va a contribuir a la estructura de polos de forma [\ref{fig:Dibujo}]. \\
 
 \begin{figure}
     \centering
@@ -482,7 +491,7 @@ Este termino tiene la misma forma que el anterior, haciando el mismo tratamiento
 \begin{array}{c}
 Log[- \alpha c Log[2 \lambda] + \lambda f[\lambda] ] = \\
 Log[\lambda] + Log[i c] + 
-\sum _{m=0} ^{\infty} \frac{(-1)^{n+1}}{(i c) ^m}
+\sum _{m=0} ^{\infty} \frac{(-1)^{n+1}}{(i c) ^m m}
 							\left(
 								\sum _{p=0} ^{\infty} {m\choose p} 
 									\left( - \frac{ \alpha c Log[2 \lambda] } {\lambda} \right) ^p

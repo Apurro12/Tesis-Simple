@@ -24,6 +24,9 @@ Para eso voy a resolver la ecuación de autovalores (\ref{eq.aut.sin}).
 \label{eq.aut.sin}
 \end{equation}
 
+
+
+
 La cual posee soluciones LI $ y_1 $ y $ y_2 $ dadas por :
 
 \begin{equation}
@@ -471,6 +474,169 @@ Donde se puede ver que el residuo, y la contribución al polo cuadrático en $s=
 
 %Una aclaracion importante es que el termino $Log[2 L ]$ es correcto dimensionalmente, ya que proviene de evaluar la integral $\int _1 ^\infty  Log[2 L \omega] \ d \omega$
 
+Para calcular los siguienes polos, voy a volver a calcular la funcion $\zeta _A (s) $ con variable compleja, pero utilizando todos los terminos de la expancion en seríe de la funcion $M [\lambda]$
+
+\begin{equation}
+\begin{array}{c}
+M[\lambda] =  
+ \frac{e ^{ - \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } e ^{2 i \lambda L } }
+ {\Gamma \left[ 1 - \frac{i \alpha}{2 \lambda}  \right] } S1 - 
+ \frac{e ^{   \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } }
+ 	  {\Gamma \left[ 1 + \frac{i \alpha}{2 \lambda}  \right]  } S2 
+\end{array}
+\end{equation}
+
+Al igual que antes voy a tener una parte exponencialmente creciente/decreciente, los Logaritmos quedan entonces:
+
+\begin{equation}
+\begin{array}{c}
+
+Log[M [\lambda = i t]] = Log[-1] + Log[S2] + 
+\frac{i \alpha Log[2 \lambda L]}{2 \lambda} - Log[\Gamma[1 + \frac{i \alpha}{2 \lambda}]] \\
+
+Log[M[\lambda = -i t]] = 2 i \lambda L - \frac{i \alpha Log[2 \lambda L ]}{2 \lambda} - 
+Log[\Gamma[1 - \frac{i \alpha}{2 \lambda}]] + Log[S1]
+
+\end{array}
+\end{equation}
+
+Donde lo único que diferen de los calculados antes, en la suma de los terminos $S1$ y $S2$.
+
+Sacando todos los terminos que no me contribuyen a los polos mas chicos que $s=-1/2$ obtengo:
+
+\begin{equation}
+\begin{array}{c}
+ \zeta _A [Polos[s<-1/2]] = \\
+\frac{e ^{- i \pi s}}{2 \pi}
+\int _{\infty} ^{1} t ^{-2s } 
+		\frac{S2' [it]}{S2 [it]}
+		d t
+	- 
+\frac{e ^{i \pi s}}{2 \pi}
+\int _{1} ^{\infty} t ^{-2s } 
+	\frac{S1' [-it]}{S1[-it]}
+	d t
+	 \\ \\
+	- \frac{\alpha}{2 \pi }	 \int _1 ^{\infty}
+	t ^{-2s-2} \left( \psi \left[ 1 - \frac{\alpha}{2 \lambda}\right] + \gamma \right) dt
+
+
+\end{array}
+\end{equation}
+
+\begin{comment}
+\begin{equation}
+\frac{1 }{2 \pi i}
+\int _{circulo} \lambda ^{-2s } \partial \lambda \ Log \left[
+					\frac{e ^{\frac{i \alpha Log[2 \lambda L ]}{2 \lambda}} e ^{2 i \lambda L} S1}
+					{\Gamma \left[ 1 - \frac{i \alpha}{2 \lambda} \right]} - 
+					\frac{e ^{\frac{-i \alpha Log[2 \lambda L ]}{2 \lambda}} S2}
+					{\Gamma \left[ 1 + \frac{i \alpha}{2 \lambda} \right]}					
+					\right] d \lambda
+\end{equation}
+\end{comment}
+
+De aquí se puede ver que no va a haber mas polos multiples, que el que habia en $s=-1/2$, porque las $S\S' $ son desarrollables en series de potencias.%, y las contribuciones a la parte finita en $s=-1/2$ estan dadas por el desarrollo en serie de la funcion Polygamma mas las derivadas logaritmicas de las correcciones asintoticas.
+
+\begin{comment}
+Las primeras 3 integrales se pueden realizar analiticamente de manera sencilla, dado que son todas series de potencias, la integral angular va a tener que ser evaluada numericamente dado que es de la forma (parametrizando $\lambda = e ^{i \theta}$ y llamando $M_c$ a todo el termino adentro del logaritmo) :
+
+\begin{equation}
+\begin{array}{c}
+
+\frac{1}{2 \pi i} \int _{\pi /2 } ^{- \pi /2} 
+\frac{e ^{-2 s i \theta} d \theta}{M [e ^{i \theta}]} \\
+
+\Bigg[
+
+\frac{
+e ^{- \frac{i \alpha (Log[2 L] + i \theta)}{2 e ^{i \theta} }} e ^{2 i L e ^{i \theta}}
+}{\Gamma \left( 1 - \frac{i \alpha}{2 e ^{i \theta}} \right)}
+	\left(
+		\left(
+			2 i L -
+			\frac{i \alpha}{2 e ^{2 i \theta} } + 
+			\frac{i \alpha( Log[2 L ] + e ^{i \theta} ) }{2 e^{2 i \theta}}
+			- \frac{i \alpha \psi \left( 1 - \frac{i \alpha}{2 e ^{i \theta}}\right)}
+				   {2 e ^{2 i \theta}}
+			\right) S1 [e ^{i \theta}] +
+		S1 ' [e ^{i \theta }]
+		\right)
+  \\
+
+- \frac{
+e ^{ \frac{i \alpha (Log[2 L] + i \theta)}{2 e ^{i \theta} }}
+}{\Gamma \left( 1 + \frac{i \alpha}{2 e ^{i \theta}} \right)}
+	\left(
+		\left(
+			\frac{i \alpha}{2 e ^{2 i \theta} } - 
+			\frac{i \alpha( Log[2 L ] + e ^{i \theta} ) }{2 e^{2 i \theta}}
+			+ \frac{i \alpha \psi \left( 1 + \frac{i \alpha}{2 e ^{i \theta}}\right)}
+				   {2 e ^{2 i \theta}}
+			\right) S2 [e ^{i \theta}] +
+		S'2 [e ^{i \theta }]
+		\right)
+
+
+\Bigg]
+
+\end{array}
+\end{equation}
+
+La cual va a dar una constante independiente de $\lambda$ y se puede calcular numericamente.
+
+
+A la hora de calcular los terminos de la forma $S'/S$ hay que tener en cuenta hasta que orden hay que llevar el numerado y el denominador para poder ser consitente con la expancion en serie.
+
+\begin{equation}
+\begin{array}{c}
+\frac{S'(x)}{S(x)} =
+\frac{
+		- \sum _{n=1} ^{\infty} \frac{n a_n}{x ^{n+1}}
+      }
+      {
+		1 + \sum _{m=1} ^{\infty} \frac{a _n}{x ^{n}}
+            } =
+            
+
+\left(
+	    - \sum _{n=1} ^{\infty} \frac{n a_n}{x ^{n+1}}
+		\right)
+\sum _{p =0} ^{\infty}
+		\left(
+			    \sum _{m=1} ^{\infty} \frac{a _n}{x ^{n}}
+	    		\right) ^{p}
+\end{array}
+\end{equation}
+
+Donde se puede hacer el producto de Cauchy para tener la solucion exacta de hasta que terminos hay que desarrollar $S,S'$ y la Serie Geometrica.
+\end{comment}
+
+
+En vez de desarrollar en serie $S/S'$ voy a desarrollar el logatirmo y tomarle la derivada:
+
+\begin{equation}
+\begin{array}{c}
+
+Log 
+\left[
+	1 + \sum _{n=1} ^{\infty}  \frac{S _n}{\lambda ^n}
+	\right] =
+	
+\sum _{m = 1} ^{\infty} 
+	\left(
+	\frac{(-1) ^{m+1} }{m}
+	\left(
+		\sum _{n=1} ^{\infty} \frac{S _n}{\lambda ^n}
+		\right) ^m 
+	\right)
+\end{array}	
+\end{equation}
+
+Si yo quiero cortar la serie $\sum \frac{S _n}{\lambda ^n}$ en la potencia $\lambda ^{-N}$, el logatirmo voy a tener que desarrollarlo hasta la potencia $N$ para sumar todos los terminos $\lambda ^{-N}$.
+
+La primer serie me contribuye hasta la potencia $\lambda ^{-N}$, entonces tengo que sumar todos los terminos que contribuyan con esa potencia, el ultimo termino que contribuye es $m=N$, entonces puedo cortar ambas series en $N$ y estar seguro que el desarrollo del logaritmo es correcto hasta la potencia $\lambda ^{-N}$
+
 \section{Cálculo de la energía de vacío}
 
 La energía de vacío queda determinada por la ecuación 
@@ -508,112 +674,4 @@ Entonces la energía de vació queda determinada por:
 
 
 
-Para calcular la parte finita que no está calculada voy a volver a calcular la funcion $\zeta _A (s) $ utilizando variable compleja pero, utilizando todos los terminos de la expancion en seríe de la funcion Hypergeometrica
-
-\begin{equation}
- \left(
- \frac{e ^{  \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } e ^{2 i \lambda L } }
- {\Gamma ( 1 - \frac{i \alpha}{2 \lambda} )} S1 - 
- \frac{e ^{ -  \frac{i \alpha Log[2 \lambda L ]}{2 \lambda } } }
- 	  {\Gamma (1 + \frac{i \alpha}{2 \lambda})} S2 
- \right)
-\end{equation}
-
-Al igual que antes voy a tener una parte exponencialmente creciente/decreciente mas la parte curva , sin realizar explicitamente los calculos como antes, los integrandos quedan:
-
-\begin{equation}
-\begin{array}{c}
- \left( \frac{1}{2 \pi i} \right) ^{-1 } \zeta _A (s) = \\
-\int _{arriba} \lambda ^{-2s } \partial _{\lambda}
-	\left(
-		- \frac{i \alpha}{2 \lambda} Log [2 \lambda] - Log[\Gamma [1 + \frac{i \alpha}{2 \lambda}]] +
-		Log[ S2 ]
-		\right) d \lambda
-	+ \\ \\
-\int _{abajo} \lambda ^{-2s } \partial \lambda
-	\left(
-		2 i \lambda + \frac{i \alpha}{2 \lambda} Log [2 \lambda] - 
-		Log[\Gamma [1 - \frac{i \alpha}{2 \lambda}]] +
-		Log[ S1 ]
-		\right)	d \lambda
-	+ \\ \\
-\int _{circulo} \lambda ^{-2s } \partial \lambda \ Log \left[
-					\frac{e ^{\frac{i \alpha Log[2 \lambda L ]}{2 \lambda}} e ^{2 i \lambda L} S1}
-					{\Gamma \left[ 1 - \frac{i \alpha}{2 \lambda} \right]} - 
-					\frac{e ^{\frac{-i \alpha Log[2 \lambda L ]}{2 \lambda}} S2}
-					{\Gamma \left[ 1 + \frac{i \alpha}{2 \lambda} \right]}					
-					\right] d \lambda
-\end{array}
-\end{equation}
-
-Donde se puede ver que los únicos cambios respecto a la funcion $\zeta _A (s)$ calculada antes, es la suma de dos factores que van con el logatirmo de las series que acompañan a las exponenciales, mas la parte circular.
-
-La integral angular queda (Llamando como simepre $M[\lambda]$ al argumento):
-
-\begin{equation}
-\begin{array}{c}
-
-\frac{1}{2 \pi i} \int _{\pi /2 } ^{0} 
-\frac{e ^{-2 s i \theta} d \theta}{M [e ^{i \theta}]} \\
-
-\Bigg[
-
-\frac{
-e ^{\frac{i \alpha (Log[2 L] + i \theta)}{2 e ^{i \theta} }} e ^{2 i L e ^{i \theta}}
-
-	\left(
-		\left(
-			\frac{i \alpha}{2 e ^{2 i \theta} } - 
-			\frac{i \alpha( Log[2 L ] + e ^{i \theta} ) }{2 e^{2 i \theta}}
-			- \frac{i \alpha \psi \left( 1 - \frac{i \alpha}{2 e ^{i \theta}}\right)}
-				   {2 e ^{2 i \theta}}
-			\right) S1 [e ^{i \theta}] +
-		S'1 [e ^{i \theta }]
-		\right)
-}{\Gamma \left( 1 - \frac{i \alpha}{2 e ^{i \theta}} \right)} + \\
-
-\frac{
-e ^{- \frac{i \alpha (Log[2 L] + i \theta)}{2 e ^{i \theta} }}
-
-	\left(
-		\left(
-			\frac{-i \alpha}{2 e ^{2 i \theta} } + 
-			\frac{i \alpha( Log[2 L ] + e ^{i \theta} ) }{2 e^{2 i \theta}}
-			+ \frac{i \alpha \psi \left( 1 - \frac{i \alpha}{2 e ^{i \theta}}\right)}
-				   {2 e ^{2 i \theta}}
-			\right) S2 [e ^{i \theta}] +
-		S'2 [e ^{i \theta }]
-		\right)
-}{\Gamma \left( 1 + \frac{i \alpha}{2 e ^{i \theta}} \right)}
-
-\Bigg]
-
-\end{array}
-\end{equation}
-
-
-
-Las otras dos integrales, solo me van a contribuir a la parte finita los terminos
-
-\begin{equation}
-\begin{array}{c}
-\frac{e ^{- i \pi s} }{2 \pi}
-\int _ {\infty} ^{1}
-\frac{S2 ' [i t]}{S2 [i t]}
-t ^{-2 s } dt - 
-\frac{e ^{ i \pi s} }{2 \pi}
-\int _ {1} ^{\infty}
-\frac{S1 ' [-i t]}{S1 [-i t]}
-t ^{-2 s } dt  - \\
-\frac{\alpha}{2 \pi}
-\int _{1} ^{\infty }
-t ^{-2s-2}
-\left(
-\psi \left( 1 - \frac{\alpha}{2 t} \right )+ \gamma
-\right) dt
-\end{array}
-\end{equation}
-
-
-
-Donde las primeras dos integrales se pueden juntar en una sola dado que $S1(x) = S2 (x) ^{*}$
+ 
