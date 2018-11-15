@@ -6,7 +6,7 @@
 
 \section{Dirichlet,Neumann y Periodicas}
 
-En estudiará el espectro del operador diferencial $A = - \partial ^2 _x$, con autovalor $\omega ^2$, al aplicarle distintas condiciones de contorno:
+En estudiará el espectro del operador diferencial $A = - \partial ^2 _x$, con autovalor $\omega ^2$, al aplicarle distintas condiciones de contorno: \\
 
 \textbf{Dirichlet}
 
@@ -45,6 +45,8 @@ Que es regular en $s=-1/2$, entonces la energía de vacío será:
 \begin{equation}
 E _0 = - \frac{\pi}{12 L}
 \end{equation}
+
+Lo cual conduce a una Energía de Vacio atractiva.
 
 \textbf{Neumann}
 
@@ -107,6 +109,8 @@ Que al igual que en los casos anteriores es regular en $s=-1/2$, obteniendo ento
 E _0 = - \frac{\pi}{6 L}
 \end{equation}
 
+Lo cual conduce a una Energía de Vacio atractiva
+
 \section{Condiciones de Contorno Mixtas}
 
 \begin{equation}
@@ -130,7 +134,7 @@ Donde las condiciones de contorno me fijan un espectro autovalores $\omega > 0 $
 Una vez obtenidos los autovalores el siguiente paso es calcular la funcion $\zeta$ definida por:
 
 \begin{equation}
-    \zeta _ {A } (s) = \sum_{n = 1} ^{ \infty } \omega _n ^ {-s}
+    \zeta _ {A } (s) = \sum_{n = 1} ^{ \infty } \omega _n ^ {-2 s}
 \end{equation}
 
 Al no poder encontrar explícitamente los autovalores se proceden a distintas técnicas para hallar distintas aproximaciones de la función $\zeta _A (s)$
@@ -138,7 +142,7 @@ Al no poder encontrar explícitamente los autovalores se proceden a distintas t�
 \subsection{Calculo Asintótico de los autovalores}
 
 
-Haciendo el cambio a variables adimensionales $\mu = \lambda \gamma $ y $\theta = \gamma L $ las ecuaciones (\ref{autovalores}) se pueden expresar de la forma:
+Haciendo el cambio a variables adimensionales $\mu = \omega \gamma $ y $\theta = \gamma L $ las ecuaciones (\ref{autovalores}) se pueden expresar de la forma:
 
 \begin{equation}
 \begin{array}{c}
@@ -216,48 +220,42 @@ Insertando este desarrollo de $\epsilon$ en la ecuación (\ref{igualdad epsilon}
 \label{epsilons}
 \end{equation}
 
-Una vez obtenido el desarrollo de $\mu _n $ puedo calcular $\lambda _n = \frac{\mu _n }{\gamma}  $ 
+Una vez obtenido el desarrollo de $\mu _n $ puedo calcular $\omega _n = \frac{\mu _n }{L}  $ 
 
 
 
 \begin{equation}
-    \lambda _n = 
-    \frac{1}{\gamma}
-    \left(
-    \alpha n + 
-    \beta + 
-    \frac{\gamma}{n} +
-    \frac{\delta}{n ^2} +
-    O(\frac{1}{n^3} ) 
-    \right)
+    \omega _n = 
+	\frac{n \pi}{L} + 
+    \frac{\pi}{2 L} +
+    \frac{\gamma}{n \pi} +
+    \frac{\gamma}{2 n ^2 \pi} +
+    O \left(  \frac{1}{n^3} \right) 
 \end{equation}
     
-Donde $\alpha, \beta , ... $ quedan escritos en funcion de los $\epsilon ^{(1)},\epsilon^{(2)}, ... $ ; 
-voy a calcular entonces $\zeta _A (s) $ utilizando el desarrollo asintotico de los autovalores.
+Voy a obtener para la funcion $ \zeta _A (s)$ a este orden:
     
 \begin{equation}
 \begin{array}{cc}
-    \zeta _{A} (s) =  \sum _{n=1} ^{\infty} \lambda _n ^ {-2 s} =
-    \gamma ^{2s}
+    \zeta _{A} (s) =  \sum _{n=1} ^{\infty} \omega _n ^ {-2 s} =
     \sum _{n=1} ^{\infty} 
     \left(
-    \alpha n + 
-    \beta + 
-    \frac{\gamma}{n} +
-    \frac{\delta}{n ^2} +
-    O( \frac{1}{n ^{3} }  )
+	\frac{n \pi}{L} + 
+    \frac{\pi}{2 L} +
+    \frac{\gamma}{n \pi} +
+    \frac{\gamma}{2 n ^2 \pi} +
+    O \left(  \frac{1}{n^3} \right) 
     \right) ^{-2 s} = \\
-    ( \frac{L}{\alpha} ) ^{2s}    
+    ( \frac{L}{\pi} ) ^{2s}    
     \sum _{n=1} ^{\infty} 
     n ^{- 2 s} 
     \left(
     1 +     
     \underbrace{
-        \frac{\beta}{\alpha n} + 
-        \frac{\gamma}{\alpha n^2} +
-        \frac{\delta}{\alpha n ^3} +
-        \frac{\eta}{\alpha n^4} +
-        O(\frac{1}{n ^{5}} ) } _{ \chi _n}
+        \frac{1}{2 n} + 
+        \frac{L \gamma}{n^2 \pi ^2} -
+        \frac{L \gamma}{2 n ^3 \pi ^2} +
+        O(\frac{1}{n ^{4}} ) } _{ \chi _n}
     \right ) ^{-2 s}
 \end{array}
 \end{equation}
@@ -276,72 +274,26 @@ Para calcular esta serie voy a hacer un desarrollo binomial alrededor de $\chi _
 \end{array}
 \end{equation}
 
-Donde hay que tener en cuenta que cada termino $\chi _{n} ^{m} $ contribuye al orden mas bajo en la sumatoria en una potencia $\frac{1}{n ^m}$.
+Donde hay que tener en cuenta que cada termino $\chi _{n} ^{m} $ contribuye al orden mas bajo en la sumatoria en una potencia $\frac{1}{n ^m}$, obteniendo como resultado.
 
 
-Calculando explicitamente cada termino, obtengo:
 
-\begin{equation}
-\sum _{n=1} ^{\infty} n ^{-2 s} = \zeta (2s)
-\end{equation}
 
 
 \begin{equation}
 \begin{array}{c}
-\begin{array}{c}
-\sum _{n=1} ^{\infty}
- n  ^{-2 S}  \chi _n =  \\
-\frac{\beta}{\alpha} \zeta (2s+1) + 
-\frac{\gamma}{\alpha} \zeta(2s+2) + 
-\frac{\delta}{\alpha} \zeta(2s+3) +
-\frac{\eta}{\alpha} \zeta (2s+4) + 
-\sum _{n=1} ^{\infty} n ^{-2s} O(\frac{1}{n ^5})
+    \zeta _A (s) = \left( \frac{L}{\pi} \right) ^{2s} \\
+	\Bigg(
+		\zeta [2 s] -
+		-s \zeta [2s+1 ] +
+		 \frac{\zeta [2s +2 ]}{4} \left( 1 - s - s^2 \right) + \\
+		 \zeta [2s+3] \left(  
+							\frac{s}{12} - \frac{s ^2}{4} - \frac{s ^3}{6} -
+							\frac{2 L s \gamma}{\pi ^2} + \frac{2 L s^2 \gamma}{\pi ^2}
+		 									\right) 
+		+ ...
+		\Bigg)
 \end{array}
-\end{array}
-\end{equation}
-
-\begin{equation}
-\begin{array}{c}
-    \sum _{n=1} ^{\infty}
-    n   ^{-2 S} \chi _n ^2 = \\ 
-    \frac{\beta ^2}{\alpha ^2} \zeta(2s+2) +
-    \frac{2 \gamma \beta }{\alpha} \zeta (2s+3) + 
-    \left( \frac{2 \beta \delta}{\alpha ^2} + \frac{\gamma ^2}{\alpha ^2} \right) \zeta (2s+4) + 
-    \sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n^s} )
-\end{array}
-\end{equation}
-
-\begin{equation}
-\begin{array}{cc}
-    \sum _{n=1} ^{\infty} 
-    n ^{-2 S} \chi _n ^3 =
-    \frac{\beta ^3}{\alpha ^3} \zeta (2s+3) + 
-    \frac{3 \gamma \beta ^2}{\alpha ^3} \zeta (2s+4)
-    + \sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n ^5} )
-    
-\end{array}
-\end{equation}
-
-%\begin{equation}
-%\sum _{n=1}  ^{\infty} n ^{-2s} \chi _n ^4 = \\
-%\frac{\beta ^4}{\alpha ^4} \zeta (2s+4) + 
-%\sum _{n=1} ^{\infty} n ^{-2s} O( \frac{1}{n ^5} )
-%\end{equation}
-
-
-
-Una vez calculados todos los terminos los sumo y saco factor común cada $\zeta( 2s+n )$
-
-
-Obteniendo como resultado 
-
-\begin{equation}
-    \zeta _A (s) = 
-    C _s \ \zeta (s) +
-    C _{s+1} \ \zeta (s+1) + 
-    C _{s+2} \ \zeta (s+2) +
-    C _{s+3} \ \zeta (s+3) + 
-    C _{s+4} \ \zeta (s+4) + ....
 \end{equation}
 
 Se puede ver que el resultado esta expresado como suma de funciones $\zeta (s+n)$ acompañados de unos argumentos $C_{s+n}$ que dependen de losvalores $\alpha,\beta,\gamma, ...$ que estan calculados en la ecuacion (\ref{epsilons}.
@@ -351,9 +303,9 @@ Los polos de mi funcion $\zeta _A (s)$ estaran dados por los polos de las funcio
 \begin{equation}
 \begin{array}{c}
 \zeta _A (s \rightarrow 1/2) = 
-\frac{\gamma}{2 \pi } \frac{1}{s-1/2} + \ finito \\
+\frac{L}{2 \pi } \frac{1}{s-1/2} + \ finito \\
 \zeta _A (s \rightarrow 0) = \ finito \\
-\zeta _A (s \rightarrow -1/2) = \frac{L}{2 \pi} \frac{1}{s+1/2} \\
+\zeta _A (s \rightarrow -1/2) = \frac{\gamma}{2 \pi} \frac{1}{s+1/2} \\
 \zeta _A (s \rightarrow -1) = finito \\
 \end{array}
 \end{equation}
@@ -454,7 +406,7 @@ Dado que el operador que estamos autilizando es regular se puede calcular
 t ^{s-1}
 K(t)
 dt \\
-k(t) = \sum _{n} e^{- \lambda _n t}
+k(t) = \sum _{n} e^{- \omega _n t}
 \end{array}
 \end{equation}
 
