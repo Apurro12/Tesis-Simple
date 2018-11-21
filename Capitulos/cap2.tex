@@ -274,7 +274,7 @@ Para calcular esta serie voy a hacer un desarrollo binomial alrededor de $\chi _
 \end{array}
 \end{equation}
 
-Donde hay que tener en cuenta que cada termino $\chi _{n} ^{m} $ contribuye al orden mas bajo en la sumatoria en una potencia $\frac{1}{n ^m}$, obteniendo como resultado.
+Se desarrolla hasta este orden, porque hay que tener en cuenta que cada termino $\chi _{n} ^{m} $ contribuye al orden mas bajo en la sumatoria en una potencia $\frac{1}{n ^m}$, el resultado final es:
 
 
 
@@ -296,7 +296,6 @@ Donde hay que tener en cuenta que cada termino $\chi _{n} ^{m} $ contribuye al o
 \end{array}
 \end{equation}
 
-Se puede ver que el resultado esta expresado como suma de funciones $\zeta (s+n)$ acompañados de unos argumentos $C_{s+n}$ que dependen de losvalores $\alpha,\beta,\gamma, ...$ que estan calculados en la ecuacion (\ref{epsilons}.
 
 Los polos de mi funcion $\zeta _A (s)$ estaran dados por los polos de las funciones $\zeta (s+n)$, desarrollando en los primeros polos obtengo:
 
@@ -320,12 +319,12 @@ Donde $\zeta _A (s) $ va a quedar representada por la integral:
 
 \begin{equation}
 \begin{array}{c}
-   \zeta _A (s) =  \frac{1}{2 \pi i} \int _{C} \frac{f'(x)}{f(x)} z ^{-2s} dz = \\ 
+   \zeta _A (s) =  \frac{1}{2 \pi i} \int _{C} \frac{f'(z)}{f(z)} z ^{-2s} dz = \\ 
    \\ 
     \frac{1}{2 \pi i} \int _{C}
-    \frac{ cos(\gamma z) \left(\gamma + \frac{1}{L} \right) - sin(\gamma z) \frac{z \gamma}{L}
+    \frac{ cos(L z) \left(L + \frac{1}{\gamma} \right) - sin(L z) \frac{z L}{\gamma}
     }
-    {cos(\gamma z) \frac{z}{L} + sin(\gamma z)
+    {cos(L z) \frac{z}{\gamma} + sin(L z)
     }
     z ^{-2 s} dz
 \end{array}
@@ -346,16 +345,16 @@ Donde puede utilizarse como camino de integracion cualquiera de los dos caminos 
 \end{figure}
 
 
-Voy a utilizar el camino de la derecha, el cual puedo descomponer en 3 integrales, una angular y dos rectas, la contribución circular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto voy a realizar mi integral en funcion de t, parametrizando z de la forma $z = \pm i L t$ entonces se pueden expresar ambas integrales (luego de tirar los terminos exponencialmente decrecientes)como  :
+Voy a utilizar el camino de la derecha, el cual puedo descomponer en 3 integrales, una angular y dos rectas, la contribución circular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto voy a realizar mi integral en funcion de t, parametrizando z de la forma $z = \pm i  t$ entonces se pueden expresar ambas integrales (luego de tirar los terminos exponencialmente decrecientes)como  :
 
 \begin{equation}
-    \frac{Sin(\pi s)}{ \pi } L ^{-2s+1}
+    \frac{Sin(\pi s)}{ \pi } 
     \int _1 ^{\infty} 
     t ^{-2s}
     \underbrace
     {
-	\frac{ \frac{1}{L} + \gamma + \gamma t}
-	{1+ t}
+	\frac{ \frac{1}{\gamma} + L + \frac{L t}{\gamma}}
+	{1+ \frac{t}{\gamma}}
 	} _{\chi}
     dt 
 \label{contorno}
@@ -364,7 +363,7 @@ Voy a utilizar el camino de la derecha, el cual puedo descomponer en 3 integrale
 En donde voy a insetar el desarrollo asintotico de   $\chi$. 
 
 \begin{equation}
-    \chi = \gamma + \frac{1}{L} \sum _{n=1} ^{\infty} \frac{(-1) ^{n+1}}{t ^n}
+    \chi = L +  \sum _{n=1} ^{\infty} \frac{(-1) ^{n+1} \gamma ^{n-1} }{t ^n}
 \label{eq:chi}
 \end{equation}
 
@@ -372,12 +371,11 @@ Luego de integrar termino a termino, obtengo como resultado:
 
 \begin{equation}
     \zeta _A (s) = 
-    \frac{Sin(\pi s)}{\pi} L ^{1-2s}
+    \frac{Sin(\pi s)}{\pi} 
     \left(
-    \frac{\gamma}{2s-1} + 
-    \frac{1}{L}
+    \frac{L}{2s-1} + 
     \sum _{n=1} ^{\infty}
-    \frac{(-1) ^{n+1}}{2s+n-1}
+    \frac{(-1) ^{n+1} \gamma ^{n-1} }{2s+n-1}
     \right)
 \label{eq.zeta.com}
 \end{equation}
@@ -387,59 +385,11 @@ De acá se puede ver que tiene polos simples en $s=1/2$ donde la estructura de p
 \begin{equation}
 \begin{array}{c}
 
-\zeta(s \rightarrow 1/2) = \frac{\gamma}{2 \pi} \frac{1}{s-1/2} \\
-\zeta (s \rightarrow -n - 1/2)  = \frac{ (-1) ^n L ^{2n+1}  }{2 \pi} \frac{1}{s + n + 1/2}
+\zeta(s \rightarrow 1/2) = \frac{L}{2 \pi} \frac{1}{s-1/2} \\
+\zeta (s \rightarrow -n - 1/2)  = \frac{ (-1) ^n \gamma ^{2n+1}  }{2 \pi} \frac{1}{s + n + 1/2}
 
 \end{array}
 \end{equation}
 
 
-\subsection{Calculo del Heat-Kernel}
-
-Dado que el operador que estamos autilizando es regular se puede calcular 
-
-\begin{equation}
-\begin{array}{c}
-\zeta _A (s) = 
-\frac{1}{\Gamma (s)} 
-\int _0 ^{\infty}
-t ^{s-1}
-K(t)
-dt \\
-k(t) = \sum _{n} e^{- \omega _n t}
-\end{array}
-\end{equation}
-
-Donde se ve que los polos de la funcion $\zeta$ estaran dados por el desarrollo del Heat-Kernel a $t \rightarrow 0 $, el cual admite un desarrollo de la forma
-
-\begin{equation}
-K (t) = 
-t ^{\frac{-1}{2}}
-\sum _{n=0} ^{\infty}
-t ^{\frac{k}{2}}
-a _k
-\end{equation}
-
-Obtengo para los primeros terminos
-
-\begin{equation}
-a _0 = 
-\frac{1}{\sqrt{4 \pi}}
-\int dx =
-\frac{L}{\sqrt{4 \pi}} \\
-a_1 = 
-\end{equation}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Que coincide con los polos calculados anteriormente.
