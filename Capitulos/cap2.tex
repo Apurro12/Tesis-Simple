@@ -2,15 +2,15 @@
 
 %    En este capitulo se van a explicar los conceptos matemáticos utilizados con un ejemplo, para luego aplicarlos al estudio del caso que nos interesa. Se va a calcular la función $\zeta _A (s)$ mediante distintas técnicas, calculando asintóticamente los autovalores, y luego ponerlos en la definición o en el Heat Kernel, y luego se procedió a utilizar el calculo completo
     
-    En este capitulo se van a explicar los concepctos matemátocps utilizados con varios ejemplos, para luego poder aplicarlos al operador diferencial que nos interesa, se va a calcular la funcion $ \zeta _A (s) $ de dos maneras distintas y luego se van a calcular sus respectivas energías de vacio.
+    En este capitulo se van a explicar los conceptos matemáticos utilizados con varios ejemplos, para luego poder aplicarlos al operador diferencial que nos interesa, se va a calcular la funcion $ \zeta _A (s) $ de dos maneras distintas y luego se van a calcular sus respectivas energías de vacio, partir de aquí se utilizaran las unidades naturales $\hbar=c=1$.
 
 \section{Dirichlet,Neumann y Periodicas}
 
 En estudiará el espectro del operador diferencial $A = - \partial ^2 _x$, con autovalor $\omega ^2$, al aplicarle distintas condiciones de contorno: \\
 
-\textbf{Dirichlet}
+\textbf{Dirichlet:}
 
-El operador $A$ estrá dado por:
+El operador $A$ estará dado por:
 
 \begin{equation}
 \begin{array}{c}
@@ -21,11 +21,11 @@ El operador $A$ estrá dado por:
 
 
 
-Cuyos autovalores y autofinciones estan dados por  : 
+Cuyos autovalores y autofunciones estan dados por  : 
 
 \begin{equation}
 \begin{array}{c}
-	\phi (x) _n = \sqrt{\frac{2}{L}} Sin( \frac{n \pi x}{L} ) \\
+	\phi _n (x) = \sqrt{\frac{2}{L}} Sin( \frac{n \pi x}{L} ) \\
 	\omega _n ^2 = \left( \frac{n \pi }{L} \right) ^2 \\
 	n = 1,2,3, ...
 \end{array}
@@ -46,11 +46,11 @@ Que es regular en $s=-1/2$, entonces la energía de vacío será:
 E _0 = - \frac{\pi}{12 L}
 \end{equation}
 
-Lo cual conduce a una Energía de Vacio atractiva.
+Lo cual conduce a una Energía de Vacio atractiva. \\
 
-\textbf{Neumann}
+\textbf{Neumann:}
 
-El operador $A$ estrá dado por:
+El operador $A$ estará dado por:
 
 \begin{equation}
 \begin{array}{c}
@@ -65,13 +65,14 @@ Cuyos autovalores y autofinciones estan dados por  :
 
 \begin{equation}
 \begin{array}{c}
-	\phi (x) _n = \sqrt{\frac{2}{L}} Cos( \frac{n \pi x}{L} ) \\
+	\phi _0 (x) = \sqrt{ \frac{1}{L} } \\
+	\phi _n (x)  = \sqrt{\frac{2}{L}} Cos( \frac{n \pi x}{L} ) \\
 	\omega _n ^2 = \left( \frac{n \pi }{L} \right) ^2 \\
-	n = 0,1,2,3, ...
+	n = 1,2,3, ...
 \end{array}
 \end{equation}
 
-La funcion $\zeta _A (s)$ qserá la misma que la calculada anteriormente, así como tambien la energía de vacio \\
+La funcion $\zeta _A (s)$ qserá la misma que la calculada anteriormente, así como tambien la energía de vacio. \\
 
 \textbf{Periódicas}
 
@@ -87,10 +88,10 @@ Cuyos autovalores y autofinciones estan dados por  :
 
 \begin{equation}
 \begin{array}{c}
-	\phi _{n=0} = \sqrt{\frac{1}{L}} \\ 
-	\phi _{n \neq 0 } (x) = \sqrt{\frac{2}{L}} Cos( \frac{2 n \pi x}{L} ) \\
+	\phi _{0} = \sqrt{\frac{1}{L}} \\ 
+	\phi _{n} (x) = \sqrt{\frac{2}{L}} Cos( \frac{2 n \pi x}{L} ) \\
 	\omega _n ^2 = \left( \frac{2 n \pi }{L} \right) ^2 \\
-	n = 0,1,2,3, ...
+	n = 1,2,3, ...
 \end{array}
 \end{equation}
 
@@ -228,7 +229,7 @@ Una vez obtenido el desarrollo de $\mu _n $ puedo calcular $\omega _n = \frac{\m
     \omega _n = 
 	\frac{n \pi}{L} + 
     \frac{\pi}{2 L} +
-    \frac{\gamma}{n \pi} +
+    \frac{\gamma}{n \pi} -
     \frac{\gamma}{2 n ^2 \pi} +
     O \left(  \frac{1}{n^3} \right) 
 \end{equation}
@@ -393,3 +394,35 @@ De acá se puede ver que tiene polos simples en $s=1/2$ donde la estructura de p
 
 
 Que coincide con los polos calculados anteriormente.
+
+
+\subsection{Uso del Heat-Kernel:}
+
+En el capitulo anterior, se dio una exprescion para el desarrollo del Heat-Kernel en el limite $t \rightarrow 0$, lo cual a travez de la transformada de Mellin permitia, conocer los polos de la funcion $\zeta _A (s)$, dada las condiciones de nuestro operador (variedad unidimensional, sin curvatura, sin potencial), los coeficientes del Heat-Kernel se van a simplificar considerablemente, quedando
+
+\begin{equation}
+\begin{array}{c}
+C _0 (A) = \frac{1}{\sqrt{4 \pi}} \int _{0} ^{L} dx = \frac{L}{\sqrt{4 \pi}} \\
+C _1 (A) = \frac{1}{4} \left( (-1) + (+1) \right) = 0 \\
+C _2 (A) = \frac{12}{6} \frac{1}{\sqrt{4 \pi }} \left(  - \gamma \right) = - \frac{\gamma}{\sqrt{\pi}} \\
+C _3 (A) = \frac{192}{384}  (- \gamma ) ^2 = \frac{\gamma ^2}{2} \\
+C _4 (A) = \frac{480}{360} \frac{1}{\sqrt{4 \pi}} (- \gamma) ^3 = \frac{-2 \gamma}{3 \sqrt{\pi}}
+
+\end{array}
+\end{equation}
+
+Insertando estos coeficientes en (REF) obtengo:
+
+\begin{equation}
+\begin{array}{c}
+Res[ \zeta _A (s)] | _{s=1/2} = \frac{L}{2 \pi} \\
+Res[ \zeta _A (s)] | _{s=0} = 0 \\
+Res[ \zeta _A (s)] | _{s=-1/2} = \frac{\gamma}{2 \pi} \\
+Res[ \zeta _A (s)] | _{s=-1} = \frac{\gamma}{2 \pi} = 0 \\
+Res[ \zeta _A (s)] | _{s=-3/2} = - \frac{\gamma ^2}{2 \pi} = 0 \\
+
+
+\end{array}
+\end{equation}
+
+Lo cual coincide con lo calculado por los dos metodos anteriores.

@@ -395,24 +395,24 @@ Reemplazando la parametrizacion $ z (t) = \pm i t$ en (\ref{eq.zeta.compleja}) y
 \begin{equation}
 \begin{array}{c}
     \zeta _A (s) = \\
-     \frac{1}{2 \pi i} \int _{\infty} ^{1}
+     \frac{e^{-i \pi s}}{2 \pi i} \int _{\infty} ^{1}
      \frac{i \alpha}{2 t^2}
      \left(
-     1 - Log(2 L t) - \frac{i \pi}{2} + \psi (1-\frac{\alpha}{2 t})
+     - 1 + Log(2 L t) + \frac{i \pi}{2} - \psi (1+\frac{\alpha}{2 t})
      \right)
      t^{-2 s}
-     e^{-i \pi s} \ 
+      \ 
      (i dt) + \\
-     \frac{1}{2 \pi i} \int _1 ^{\infty}
-     \frac{ \alpha}{2 i t^2}
+     \frac{e^{i \pi s}}{2 \pi i} \int _1 ^{\infty}
+	\left(     
+     2 i L + 
+     \frac{ i \alpha}{2  t^2}
      \left(
-     \left(
-     1 - Log(2 L t) - \frac{i \pi}{2} + \psi (1-\frac{\alpha}{2 t}) 
+     1 - Log(2 L t) + \frac{i \pi}{2} + \psi (1 + \frac{\alpha}{2 t}) 
      \right)
-     + 2 i L
+     \
      \right)
      t^{-2 s}
-     e^{i \pi s}
      (-i dt)
      
 \end{array}
@@ -421,10 +421,9 @@ Reemplazando la parametrizacion $ z (t) = \pm i t$ en (\ref{eq.zeta.compleja}) y
 Donde antes de reacomodar los terminos puedo calcular el termino que contiene $2iL$ el cual es la potencia mas alta de $t$ para obtener: 
 
 \begin{equation}
-    \frac{1}{2 \pi i }
+    \frac{e^{i \pi s}}{2 \pi i }
     \int _1 ^{\infty}
-    2 i L
-    e^{i \pi s}
+    2 i L    
     t ^{-2 s}
     (-i dt) =  
     \frac{L e^{i \pi s} }{2 \pi i} \frac{1}{s-1/2   }
@@ -442,12 +441,12 @@ Una vez calculado este termino, puedo reorganizar el resto de la integral como:
 
 \begin{equation}
 \begin{array}{c}
-    - \frac{\alpha}{2 \pi} \ sin[\pi s]
+    \frac{\alpha}{2 \pi} \ sin[\pi s]
     \int _1 ^{\infty}
     t ^{-2 s-s} 
     \left(
-    1 - Log[2Lt] + \psi (1- \frac{\alpha}{2t})
-    \right) dt - \\ 
+    1 - Log[2Lt] + \psi (1 + \frac{\alpha}{2t})
+    \right) dt \ + \\ 
     \frac{\alpha}{4} 
     Cos[\pi s]
     \int _1 ^{\infty} t^{-2s-s} dt
@@ -458,7 +457,7 @@ Donde todos los términos son calculables analíticamente, excepto el que esta m
 
 \begin{equation}
     \psi(1-\frac{\alpha}{2 t}) \approx 
-    -\gamma + O \left( \frac{1}{t} \right)
+    - \gamma + O \left( \frac{1}{t} \right)
 \end{equation}
 
 Realizando todas las integrales, la funcion $ \zeta _A (s)$ a este orden queda determinada por:  
@@ -467,14 +466,12 @@ Realizando todas las integrales, la funcion $ \zeta _A (s)$ a este orden queda d
 \begin{array}{c}
     \zeta (s) _{A} = 
     \frac{L e ^{i \pi s}}{2 \pi i} \frac{1}{s-1/2} 
-    -\frac{\alpha Sin[\pi s]}{4 \pi} \frac{1}{s+1/2} \\
-    \alpha 
-    \frac{
-    1+S Log(4)+2SLog[L]+Log[2L]
-    }
-    {8 \pi} \frac{sin(\pi s)}{(s+1/2) ^2}  \\
-    \frac{\gamma \alpha Sin[\pi s]}{4 \pi } \frac{1}{s+1/2} 
-    \frac{\alpha cos(\pi s) }{8 \pi}  \frac{1}{s+1/2}  \\
+    -\frac{\alpha Sin(\pi s)}{4 \pi} \frac{1}{s+1/2} \\
+    - \frac{\alpha sin (\pi s) }{4 \pi } \frac{1}{s+1/2}
+    \left(
+    -2 + 2 \gamma + 2 Log(2 L) \right)
+    + \frac{\alpha Cos(\pi s)}{8} \frac{1}{s+1/2}
+    
 \end{array}
 \end{equation}
 
@@ -484,7 +481,7 @@ Para calcular el residuo en $s=-1/2$ desarrollo todo en Serie de Laurent obtenie
 
 \begin{equation}
 	\zeta (s \rightarrow -1/2) = 
-    - \frac{\alpha}{8 \pi} \frac{1}{(s+1/2)^2} + 
+     \frac{\alpha}{8 \pi} \frac{1}{(s+1/2)^2} - 
     \alpha \frac{1-\gamma -Log[2 L]}{4 \pi} \frac{1}{s+1/2} + \ Regular
 \label{eq.desarrollo}
 \end{equation}
@@ -541,8 +538,8 @@ Quedandome solo con los terminos que me contribuyen a los polos en  $s < -1/2$ o
 	\frac{S1' (-it)}{S1(-it)}
 	d t
 	 \\ \\
-	- \frac{\alpha}{2 \pi }	 \int _1 ^{\infty}
-	t ^{-2s-2} \left( \psi \left( 1 - \frac{\alpha}{2 t}\right) + \gamma \right) dt
+	- \frac{\alpha sin( \pi s)}{2 \pi }	 \int _1 ^{\infty}
+	t ^{-2s-2} \left( \psi \left( 1 + \frac{\alpha}{2 t}\right) + \gamma \right) dt
 
 
 \end{array}
@@ -643,6 +640,8 @@ Donde se puede hacer el producto de Cauchy para tener la solucion exacta de hast
 Lo que va a suceder es que no voy a poder hallar una representacion en serie de potencias alrededor de $t=1$, voy a desarrollar entonces alrededor de $t = \infty$ y cortar mi integral en $t _0$.
 
 
+
+
 En vez de desarrollar en serie $S/S'$ voy a desarrollar el logatirmo y tomarle la derivada:
 
 \begin{equation}
@@ -667,21 +666,40 @@ Si yo quiero cortar la serie $\sum \frac{S _n}{\lambda ^n}$ en la potencia $\lam
 
 La primer serie me contribuye hasta la potencia $\lambda ^{-N}$, entonces tengo que sumar todos los terminos que contribuyan con esa potencia, el ultimo termino que contribuye es $m=N$, entonces puedo cortar ambas series en $N$ y estar seguro que el desarrollo del logaritmo es correcto hasta la potencia $\lambda ^{-N}$
 
+Con este cuidado obtengo para los primeros polos despues de $s=-1/2$:
 
+Los primeros dos polos son de la forma:
+
+\begin{equation}
+\begin{array}{c}
+
+\zeta _A (s \rightarrow - 3/2 ) = 
+\left(
+	- \frac{3 \alpha (-1 + L \alpha) }{16 L ^2 \pi } + \frac{\alpha ^3 \psi ^2 (1)}{32 \pi}
+\right)
+\frac{1}{s+ 3/2} + Regular \\
+\zeta _A (s \rightarrow - 5/2 ) = 
+\left(
+- \frac{5 \alpha (18 - 17 L \alpha + 3 L ^2 \alpha ^2)}{192 L ^4 \pi} +
+\frac{\alpha ^5 \zeta (5) }{64 \pi }
+\right)
+\frac{1}{s+ 5/2} + Regular
+\end{array}
+\end{equation}
 
 \section{Cálculo de la energía de vacío}
 
-La energía de vacío queda determinada por la ecuación 
+La energía de vacío queda determinada por la ecuación (una vez introducido el parametro $\mu$): 
 
 \begin{equation}
     E _0 = \frac{\hbar}{2}  
     \zeta (s)  |  _{- \frac{1}{2}}
 \end{equation}
 
-$\zeta (s)$ ya está desarrollada alrededor de $s=-1/2$ en (\ref{eq.desarrollo}), queda desarrollar $(E_c) ^{2s+1} $ alrededor de $s=-1/2$ quedando.
+$\zeta (s)$ ya está desarrollada alrededor de $s=-1/2$ en (\ref{eq.desarrollo}), queda desarrollar $(\mu) ^{2s+1} $ alrededor de $s=-1/2$ quedando.
 
 \begin{equation}
-    E _c \approx 
+    \mu \approx 
     1 + 2 Log[E_c] (s + 1/2) +
     2 Log[E_c] ^2 (s+1/2) ^2 + 
     O (s+1/2)^3
