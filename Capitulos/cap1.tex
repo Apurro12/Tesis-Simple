@@ -3,7 +3,7 @@
 
 \section{Aplicaciones Físicas de la Regularizacion}
 
-En Teoría Cuántica de Campos el calculo de ciertas magnitudes físicas (Acción efectiva, energía de Casimir, Espectacion del Vacio, etc) conducen a valores formalmente divergentes, por lo cual se requiere un metodo para regularizar estas magnitudes, en lo siguiente se hará un resumen de la energía de Casimir, y la Accion Efectiva, junto con los metodos regularizacion Heat-Kernel y Funcion-$ \zeta _A (s) $.\\
+En Teoría Cuántica de Campos el calculo de ciertas magnitudes físicas (Acción efectiva, energía de Casimir, Amplitudes de dispersion, etc) conducen a valores formalmente divergentes, por lo cual se requiere un metodo para regularizar estas magnitudes. En lo siguiente se hará un resumen de la energía de Casimir, y la Accion Efectiva, junto con los metodos regularizacion Heat-Kernel y Funcion-$ \zeta _A (s) $.\\
 
 
 
@@ -11,6 +11,36 @@ En Teoría Cuántica de Campos el calculo de ciertas magnitudes físicas (Acció
 
 \textbf{Acción Efectiva}\\
 
+Lo siguiente a ser desarrollado vale tanto para Campos Escalares, como para Campos Fermionicos o Campos de Gauge, pero por simplicidad de la notacion el desarrollo va a hacerce sobre Campos Escalares.
+
+Consideremos una teoria de campo ecalar $\phi(x)$ definidos sobre una variedad $M$ con borde $\partial M$, donde $x \in \partial M$.
+
+La ecuacion clasica de movimiento $ \phi _0 $ va a estar dado por la que minimze la accion 
+
+\begin{equation}
+\frac{\delta S}{\delta \phi (x)} | _{\phi _0} = 0
+\end{equation}
+
+
+Dependiendo de que tipo de campo se tenga (Escalar, Fermionico, Gauge) el Lagrangiano va a ser distinto y por lo tanto voy a tener distintas ecuaciones de movimiento, por ejemplo:
+
+\begin{equation}
+\begin{array}{c}
+L = \frac{1}{2} \partial _t \phi ^2 - \frac{1}{2} ( \nabla \phi ) ^2 - \frac{1}{2} m ^2 \phi ^2 
+\rightarrow 
+\left(
+	\partial _t ^2 - \nabla ^2 + m^2 
+		\right) \phi = 0 \\
+L = - \frac{1}{4} F _{\mu \nu} F ^{\mu \nu}
+\rightarrow \partial _{\mu} F ^{\mu \nu} = 0
+ \\
+\bar{\psi} \left(
+			i \gamma ^{\mu} \partial _{\mu} - m 
+			\right) \psi 
+\end{array}
+\end{equation}
+
+Donde los distintos Lagrangianos conducen a la Ecuacion de Klein Gordon para un campo escalar, a la ecuacion de Dirac en caso que el Campo Fermionico sea de electrones, y las ecuaciones de Maxwell en el caso de fotones.
 
 En Teorías Cuantícas de Campos, la Funcional Generatriz es el elemento basico mediante el cual se calculan todas las magnitudes físicas, utilizando el tiempo euclideo está dada por:
 
@@ -18,7 +48,7 @@ En Teorías Cuantícas de Campos, la Funcional Generatriz es el elemento basico 
 Z[J] = 
 \int D \phi
 e^{-\frac{1}{\hbar} S[\phi] + \frac{1}{\hbar} (J,\phi) }  =
-e ^{-\frac{1}{\hbar} \Gamma[J] + \frac{1}{\hbar} (J,\phi )}
+e ^{-\frac{1}{\hbar} \Gamma[J] + \frac{1}{\hbar} (J,\phi )} 
 \end{equation}
 
 Voy a hacer una traslacion del campo $\phi (x) = \phi _0 (x) + \psi (x) $, donde $\phi _0 (x)$ es la solucion que extremiza la accion clasica y $\psi (x)$ es la fluctuacion cuantica respecto a esa solucion, obteniendo:
