@@ -266,7 +266,7 @@ Para calcular esta serie voy a hacer un desarrollo binomial alrededor de $\chi _
 \begin{equation}
 \begin{array}{c}
 \zeta _{A} (s) = 
-( \frac{L}{\alpha} ) ^{2s}
+( \frac{L}{\pi} ) ^{2s}
 \sum _{n=1} ^{\infty}
   n  ^{-2 S} \\
 (
@@ -285,13 +285,12 @@ Se desarrolla hasta este orden, porque hay que tener en cuenta que cada termino 
 \begin{array}{c}
     \zeta _A (s) = \left( \frac{L}{\pi} \right) ^{2s} \\
 	\Bigg(
-		\zeta [2 s] -
-		-s \zeta [2s+1 ] +
-		 \frac{\zeta [2s +2 ]}{4} \left( 1 - s - s^2 \right) + \\
-		 \zeta [2s+3] \left(  
-							\frac{s}{12} - \frac{s ^2}{4} - \frac{s ^3}{6} -
-							\frac{2 L s \gamma}{\pi ^2} + \frac{2 L s^2 \gamma}{\pi ^2}
-		 									\right) 
+		\zeta ( 2 s ) -
+		s \zeta ( 2s+1 ) +
+		 \zeta (2s +2 ) \frac{s}{4} \left( 1+ 2s - \frac{8 L \gamma}{\pi ^2 } \right) + \\
+		 \zeta (2s+3) \left(  
+							\frac{ \pi ^2 (1+2s) - 24 L \gamma}{12 \pi ^2}
+		 					\right) 
 		+ ...
 		\Bigg)
 \end{array}
