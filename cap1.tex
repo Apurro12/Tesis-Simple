@@ -1,0 +1,507 @@
+\chapter{Introduccion}
+
+
+\section{Aplicaciones Físicas de la Regularizacion}
+
+En Teoría Cuántica de Campos el calculo de ciertas magnitudes físicas (Acción efectiva, energía de Casimir, Amplitudes de dispersion, Numero Fermionico, etc) conducen a valores formalmente divergentes, por lo cual se requiere un metodo para regularizar estas magnitudes. En lo siguiente se hará un resumen de la energía de Casimir, y la Accion Efectiva, junto con los metodos regularizacion Heat-Kernel y Funcion-$ \zeta _A (s) $.\\
+
+
+
+
+
+\textbf{Acción Efectiva}\\
+
+Lo siguiente a ser desarrollado vale tanto para Campos Escalares, como para Campos Fermionicos o Campos de Gauge, pero por simplicidad de la notacion el desarrollo va a hacerce sobre Campos Escalares.
+
+Consideremos una teoria de campo escalar $\phi(x)$ definidos sobre una variedad $M$ con borde $\partial M$, donde $x \in \partial M$. \\
+
+La solucion clasica de movimiento $ \phi _0 $ va a estar dada por la que minimize la accion del campo:
+
+\begin{equation}
+\frac{\delta S [ \phi ] }{\delta \phi (x)} | _{\phi _0} = 0
+\end{equation}
+
+
+Dependiendo de que tipo de teoria tenga (Escalar, Fermionica, Gauge) voy a obtener distintas formas para la accion, lo que va a conducir a distintas ecuaciones de movimiento, por ejemplo para campos Escalares, Bosonicos y Fermionicos obtengo respectivamente la Ecuacion de Klein Gordon, las Ecuaciones de Maxwell y la Ecuacion de Dirac respectivamente.
+
+\begin{equation}
+\begin{array}{c}
+\mathscr{L} = \frac{1}{2} (\partial _t \phi ) ^2 - \frac{1}{2} ( \nabla \phi ) ^2 - \frac{1}{2} m ^2 \phi ^2 
+\rightarrow 
+\left(
+	\partial _t ^2 - \nabla ^2 + m^2 
+		\right) \phi = 0 \\
+\mathscr{L} = - \frac{1}{4} F _{\mu \nu} F ^{\mu \nu}
+\rightarrow \partial _{\mu} F ^{\mu \nu} = 0
+ \\
+\mathscr{L} = { \bar{\psi} } \left(
+			i \gamma ^{\mu} \partial _{\mu} - m 
+			\right) \psi 
+\rightarrow
+			\left( i \gamma ^{\mu} \partial _{\mu}  - m   \right)\psi = 0
+\end{array}
+\end{equation}
+
+
+
+
+En Teorías Cuantícas de Campos, el campo se convierte en un operador ($\phi \rightarrow \hat{\phi}$) actuando sobre algun cierto Espacio de Fock.   %, donde todas las configuraciones del campo contribuyen en la integral de caminos no voy a poder encontrar una ecuacion diferencial de movimiento, en cambio si reemplazo la accion por la accion efectiva, voy a poder encontrar una ecuacion de movimiento para el valor de espectacion del vacio (lo que voy a llamar $ \phi _J$ ), donde estoy teniendo en cuenta todas las fuentes externas $J$.
+
+
+
+Cuando está presente una fuente externa, toda la informacion que contiene la teoria con todos los efectos cuanticos está dada por los valores medios de los campos :
+
+\begin{equation}
+\begin{array}{c}
+< 0 | \hat{ \phi  } (x _1) .... \hat{\phi  } (x _n) | 0 > = 
+\int D \phi \ e ^{- S[ \phi ] + (J, \phi )} \phi (x _1) ... \phi (x _n) = \\ \\
+\frac{\delta ^n Log Z[J] }{ \delta J(x) ... \delta J(x _n) }
+\end{array}
+\end{equation}
+
+Donde $(.,.) $ es el producto interno de funciones sobre la variedad, en nuestro caso $(\phi,J) = \int J(x) \phi (x)$ .
+
+El campo medio, queda definido como:
+
+\begin{equation}
+\phi _J (x) \equiv < \hat{\phi } (x) > = \frac{\delta Log Z[J] }{\delta J(x)} 
+\end{equation}
+
+Donde la Funcional Generatriz queda definida por:
+
+\begin{equation}
+Z [J] = 
+\int D \phi \ e ^{- S[ \phi ] + (J, \phi )}
+\end{equation}
+
+Así como la ecuacion de movimiento para el campo clasico estaba dada por el minimo de la accion, el campo $ \phi _J (x) $ va a satisfacer una ecuacion de movimiento dada por la accion efectiva $ \Gamma [\phi _J] $, que en el limite $\hbar \rightarrow 0$ tiende a la ecuacion de movimiento clasica:
+
+
+\begin{equation}
+\begin{array}{c}
+\frac{\delta \Gamma [ \phi _J ]  }{\delta \phi _J (x)  } = 
+J (x) \\
+\underset{ \hbar \rightarrow 0 }{ Lim  } \Gamma [ \phi  ] = S [ \phi ]
+\end{array}
+\label{eq.accion1}
+\end{equation}
+
+Veo que las condiciones anteriores se cumplen si defino la accion efectiva como:
+
+\begin{equation}
+\begin{array}{c}
+\Gamma [\phi _J] = (J, \phi _J) - Log Z [J] \\
+\frac{\delta \Gamma [ \phi _J ]}{\delta \phi _J (x) } = 
+J(x) + \int dx ' \frac{\delta J (x')}{\delta \phi _J (x) } \phi _J (x') - 
+\frac{1}{Z[J]} \int dx' \frac{\delta Z[J] }{\delta J(x')} \frac{\delta J[x']}{\delta \phi _J (x)} = J(x)
+\end{array}
+\end{equation}
+
+Hay un metodo de obtener un desarrollo en potencias de $\hbar$ de la accion efectiva, sin necesidad de calcular la Funcional Generatriz. \\
+
+
+Para hallar una expresion para la accion efectiva voy a hacer una traslacion del campo $\phi (x) \rightarrow \phi _{J} (x) + \phi (x) $ en la funcional generatriz, y luego voy a desarrollar la accion clasica alrededor  $ S[ \phi _J + \phi ] $ alrededor de $ \phi _J $ .
+
+\begin{equation}
+\begin{array}{c}
+S [\phi _J + \phi ] \approx
+S[ \phi _j ] +
+\int dx \frac{\delta S[\phi]}{\delta \phi (x) } | _ {\phi = \phi _J} \phi( x ) +
+\frac{1}{2}
+\int dx dx' \frac{\delta S[\phi]}{\delta \phi (x') \phi (x) } | _ {\phi = \phi _J} \phi( x ) \phi (x')  \\ \\
+= S[ \phi _J ] + \int \delta S \ \phi + \frac{1}{2} \int \delta ^2 S \ \phi \phi
+\end{array}
+\end{equation}
+
+Donde el renglon de abajo, es la misma expresion de arriba escrita de manera mas compacta. Intesertando  esta expresion en la Funcional Generatriz obtengo:
+
+\begin{equation}
+\begin{array}{c}
+Z[J] = e ^{-S[ \phi _J ] + (J, \phi _J )} 
+\int D \phi e ^{ \int (\delta S [\phi] - J) \phi - \frac{1}{2} \int \delta ^2 S[\phi ] - ... }
+\end{array}
+\end{equation}
+
+Haciendo el cambio $J = \delta \Gamma [ \phi ]$ Se puede ver que el termino dominante a $\hbar \rightarrow 0$ viene dado por $\delta ^2 S$, obteniendo así, para la primera aproximacio de la accion efectiva.
+
+
+
+
+
+\begin{equation}
+\Gamma [\phi _J ] = S [ \phi _J ] - Log \int D \phi e ^{\frac{1}{2} \int \delta ^2 S \phi \phi }
+\end{equation}
+
+
+Lo cual puede reescribirse como:
+
+\begin{equation}
+\Gamma [\psi] = S [\psi] + \frac{\hbar}{2} Log \ Det ( \delta ^2 S ) +
+O ( \hbar ^2 )
+\end{equation}
+
+
+Si el operador $ \delta ^2 S $ tiene una base completa de autofunciones $ \{ \lambda _n \} _{n \in N}$ su determinante se puede escribir como:
+
+\begin{equation}
+Det \ \delta ^2 S = \underset{ n \in N }{ \Pi } \ \lambda _n
+\end{equation}
+
+Donde por lo general conduce a una cantidad divergente que debe ser regularizada.\\
+
+
+
+\textbf{Energía de Casimir:} \\ 
+
+En el año 1948 Hendrik Casimir tomando la idea de que dos moleculas neutras se atraen debido a las fuerzas de Van der Waals, llego a la conclucion que dos placas melaticas paralelas neutras en el vacio sufren una fuerza atractiva dada por (\ref{casimir.1}) aunque , la primer medicion del efecto fue en 1958 por Sparnaay que no pudo ser conclusivo debido al 100 \% de insertidumbre en la medicion, se han echo varias mediciones para distintas configuraciones (ya que la fuerza de Casimir depende la geometria), el experimento mas preciso fue echo por U. Mohideen y Anushree Roy, con una diferencia entre teoria y experimento del 1 \%, en la cual midieron la fuerza entre una esfera metalica y una placa plana, donde se utilizo un microscopio de fuerza atómica \cite{BORDAG20011} .
+
+
+\begin{equation}
+\begin{array}{c}
+F(d) = - \frac{\pi ^2 \hbar c}{240} \frac{A}{d^4} \\
+\end{array} 
+\label{casimir.1}
+\end{equation}
+
+
+
+
+En el caso de dos placas paralelas el efecto casimir se puede ver, calculando el valor de espetacion del vacio del campo entre las placas, el campo va a satisfacer la ecuacion de Klein-Gordon.
+
+\begin{equation}
+( \partial _0 ^2 - \nabla  ^2  ) \phi (\vec{x} ,t) = 0 
+\end{equation}
+
+Descomponiendo al campo en modos normales de oscilacion, llego a la ecuacion de autovalores:
+
+\begin{equation}
+\begin{array}{c}
+\phi ( \vec{x},t) = e ^{-i \omega t} \phi ( \vec{x}) \\
+\nabla ^2 \phi ( \vec{x}) = - \frac{\omega ^2}{c ^2} \phi ( \vec{x})
+\end{array}
+\end{equation}
+
+Imponiendo que la funcion de onda se anule sobre los bordes conductores, y condiciones de contorno periodicas sobre la direccion transveral (para luego tomar el limite yendo a infinito), los modos normales de oscilacion estan dados por:
+
+\begin{equation}
+\omega _n = c \sqrt{ k _x ^2 + k _y ^2 + \left( \frac{n \pi}{L} \right) ^2 }
+\end{equation}
+
+Teniendo en cuenta las dos polarizaciones posibles del campo electromagnetico obtengo para la energía de vacio:
+
+\begin{equation}
+E _0 = \frac{A \hbar }{(2 \pi) ^2} \int dk _x dk _y 
+\sum _{n=1} ^{\infty} 
+c
+\sqrt{
+		\left( \frac{n \pi}{a } \right) ^2 + k _x ^2 + k _y ^2
+		}
+\end{equation}
+
+
+Lo cual conduce a una energía que es divergente, la fuerza estaría dada por la derivada respecto de $L$, para obtener un resultado finito se requiere un proceso de regularizacion.
+
+\section{Heat Kernel y Funcion Zeta}
+
+
+En los trabajos \cite{ Seeley:1967ea,10.2307/2373309,10.2307/2373312} se han estudiado trazas de operadores diferenciales $A$ con coeficientes derivables, actuando sobre variedades compactas $M$ con borde suave $\partial M$, una de las funciones espectrales que se pueden definir es lo que se llama $\zeta _A (s)$ (Funcion zeta del operador A), si el espectro del operador $A$ está dado por $ \{ \lambda _n \} _{n \in N}$ la funcion $\zeta _A (s)$ queda expresada como:
+
+
+\begin{equation}
+\zeta _A (s) = Tr A ^{-s} = \sum _{n \in N}  \lambda _n ^{-s}
+\label{funcion.zeta}
+\end{equation}
+
+La cual en principio converge para valores grandes de $s$, pero una vez calculada se puede hacer la prolongacion analítica al plano complejo, en particular la funcion $\zeta _A (s)$ va a tener polos simples en $x _n$ dados por:   :
+
+\begin{equation}
+x _n = \frac{m-n}{d} 
+\label{eq.ceros.zeta}
+\end{equation}
+
+Donde $m$ es la dimension de la variedad,$d$ el orden del operador A y $n= 0,1,2,3 ...$ \\
+
+%En esta tesis se estudiaran los polos de la funcion $\zeta _A (s)$ de un operador singular unidimensional de segundo orden.
+Tambien es posible definir otra funcion dependiente el espectro de A, La traza del Heat-Kernel \cite{VASSILEVICH2003279}, que está dada por:
+
+\begin{equation}
+K (t) =  Tr \ e ^{-t A} = 
+\sum _{n  \in N} e ^{-t \lambda _{n} }
+\end{equation}
+
+En el caso que el operador diferencial $A$ sea del tipo Laplace acuando con dondiciones de contorno local, sobre campos escalares $\phi $ :
+
+\begin{equation}
+\begin{array}{c}
+
+A = - \left(
+			g ^{\mu \nu} \nabla _{\mu} \nabla _{\nu} + V
+			\right) \\
+\left (\partial _m + S \right) \phi | _{\partial M} = 0
+
+			
+
+\end{array}
+\end{equation}
+
+Donde $\nabla$ es la derivada covariante, $V$ es el potencial y $\partial _m$ es la derivada normal con respecto al borde, $K(t)$ admite un desarrollo asintótico para valores pequeños de t  de la forma:
+
+\begin{equation}
+K(t) \approx 
+\sum _{n=0} ^{\infty}
+C _n (A) \ 
+t ^{\frac{(-m+n)}{2}}
+\label{eq.heat.expansion}
+\end{equation}
+
+
+
+Los primeros 5 terminos $C _n (A) $ están calculados en \cite{VASSILEVICH2003279}, la forma explicita de los primeros 3 es: 
+
+\begin{equation}
+\begin{array}{c}
+C _0 (A) = (4 \pi ) ^{-m/2}  \int _M d ^m x \sqrt{g}  \\
+C _1 (A) = \frac{(4 \pi) ^{-(m-1)/2} }{4} \int _{\partial M } d ^{m-1} \sqrt{h} \\
+C _2 (A) = \frac{(4 \pi) ^{-m/2} }{6} \left(
+									\int _M d ^m x\sqrt{g} (6 V + R) +
+									\int _{\partial M } d ^{n-1} x 
+									\sqrt{h} (2 L _{aa}  + 12 S)
+									\right)
+\end{array}
+\end{equation} 
+
+Donde $C _0$ y $C _1$ representan el volumen de la variedad y del borde respectivamente, $C _2$ así como el resto de los coeficientes son funciones del potencial $V$, el Campo de Gauge $\omega $, la condicion de contorno $S$, en tensor de curvatura de la variedad $R _{\mu \nu \rho \sigma }$ y el tensor de curvatura extrinseca $K _{\mu \nu }$ sobre el borde de la variedad. \\
+
+A su vez funcion $\zeta _A (s) $ y $K(t)$ estan relacionadas a travez de la Transformada de Mellin.
+
+
+
+\begin{equation}
+\zeta (s) = \frac{1}{\Gamma (s) } 
+\int _0 ^{\infty} dt \
+t ^{s-1} K(t) 
+\end{equation}
+
+Se puede ver entonces que residuos de la funcion $\zeta _A (s)$ estan dados por:
+
+\begin{equation}
+Res[\zeta _A (s)] | _{s= m/2 - n/2} = \frac{C _n (A)}{\Gamma (n/2 + m/2)}
+\end{equation}
+
+Lo cual coincide con (\ref{eq.ceros.zeta}) para un operador del tipo Laplace. \\
+
+\textbf{Regularizacion de la Accion Efectiva:} \\
+
+Si el operador $\delta ^2 S$ tiene autovalores $\lambda _n$ la primer correccion a la accion efectiva puede expresarse como:
+
+\begin{equation}
+Log \ Det \ \delta ^2 S = 
+\sum _n Log( \lambda _n )
+\end{equation}
+
+Donde puedo usar el desarrollo de la funcion Gamma incompleta, para expresar $Log ( \lambda _n )$:
+
+\begin{equation}
+\int _ { \epsilon } ^{\infty} \frac{e ^{- T \lambda _n}}{T} dT =
+- \left(
+		\gamma + Log ( \lambda  ) + Log ( \epsilon  ) + O ( \epsilon  ) 
+		\right)
+\end{equation}
+
+Como ni $ \epsilon $ ni $ \gamma $ entran en juego en la accion efecitva, puedo reemplazar:
+
+\begin{equation}
+\Gamma [ \phi ] = 
+S[ \phi ] - 
+\frac{\hbar }{2}
+\int _ { \epsilon } ^{\infty} \frac{ dT}{T} Tr \  e ^{- T \delta ^2 S}
+\end{equation}
+
+Dependiendo del tipo de accion y si el campo presenta o no masa, voy a tener divergencias ultravioletas o infrarojas, en caso de que tenga masa, no se van a presentar divergencías infrarojas y las divergencias UV van a poder ser interpretadas como correcciones cuanticas al lagrangiano de partida. \\
+
+
+Como ejemplo se va a tomar el problema $\lambda \phi ^4 $.
+
+Su Accion viene dada por:
+
+\begin{equation}
+S[ \phi ] = \int dx dt \ 
+\frac{( \partial _t \phi ) ^2}{2} +  
+\frac{( \partial _x \phi ) ^2}{2} +
+\frac{m ^2 }{2} \phi ^2 +
+\frac{\lambda}{4!} \phi ^4 
+\end{equation}
+
+Calculando la segunda variacion de la accion obtengo:
+
+\begin{equation}
+\delta ^2 S = 
+- \partial _t ^2 
+- \partial _x ^2 
++ m ^2 
++ \frac{\lambda}{2}\phi ^2 
+\end{equation}
+
+La primer correccion a la accion efectiva para le potencial $\lambda \phi ^4 $ viene entonces dada por:
+
+\begin{equation}
+\Gamma [ \phi ] = 
+S[ \phi ] - 
+\frac{\hbar }{2}
+\int _ { \epsilon } ^{\infty} \frac{ dT}{T} 
+e ^{- T m ^2 }
+Tr \  e ^{- T ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) }
+\end{equation}
+
+Dada la exponencial generada por la masa, puedo ver que la accion efectiva no posee divergencias infrarojas, el comportamiento divergente va a estar dado en el limite $T \rightarrow 0$, voy entonces a desarrollar el Heat-Kernel en este limite:
+
+
+
+\begin{equation}
+\begin{array}{c}
+Tr \  e ^{- T ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) } \approx
+\frac{1}{4 \pi}
+\int
+\frac{  dx dt }{T}
+\left(
+1  -
+T  \frac{\lambda}{2} \phi ^2  +
+T ^2 \frac{\lambda ^2 }{8} \phi ^4 + O ( \phi ^6 T ^3)
+\right)
+
+\end{array}
+\end{equation}
+
+Donde en general, el desarrollo del Heat-Kernel va a ser un desarrollo en potencias de $ \lambda \phi ^2 T $, insertando el desarrollo hasta este orden en la accion efectiva obtengo:
+
+\begin{comment}
+
+\begin{equation}
+\begin{array}{c}
+\int _ { \epsilon } ^{\infty} \frac{ dt}{t} 
+e ^{- t m ^2 }
+Tr \  e ^{- t ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) } = \\
+\int _ { \epsilon } ^{1} \frac{ dt}{t} 
+e ^{- t m ^2 }
+Tr \  e ^{- t ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) } + 
+\int _ { 1 } ^{\infty} \frac{ dt}{t} 
+Tr \  e ^{- t ( - \partial ^2 + m^2 + \frac{\lambda}{2} \phi ^2 ) }
+
+\end{array}
+\end{equation}
+
+\end{comment}
+
+
+
+\begin{equation}
+\begin{array}{c}
+\Gamma [ \phi ] = 
+\int dx dt  \\
+\left(
+\frac{( \partial _t \phi ) ^2}{2} +  
+\frac{( \partial _x \phi ) ^2}{2} +
+\frac{m ^2 }{2} \phi ^2 +
+\frac{\lambda}{4!} \phi ^4 
+						\right)  \\
+- \frac{1}{8 \pi}
+\left(
+	\frac{\lambda \phi ^2 Log( \epsilon )}{2}  + \frac{ \lambda ^2 \phi ^4 }{m}
+	\right) + O ( \phi ^6)
+
+\end{array}
+\end{equation}
+
+Así los terminos que acompañan a $\phi ^2 $ y $\phi ^4 $ se reinterpretan como correcciones cuanticas a la masa y a la constante de acoplamiento $\lambda $:
+
+\begin{equation}
+\begin{array}{c}
+
+\Gamma [ \phi ] = 
+\int dx dt 
+\frac{ ( \partial \phi ) ^2 }{2 } +
+\frac{\phi ^2}{2} m ^2 + O ( \phi ^6 ) + .... 
++ \frac{\phi ^4}{4!} \lambda \\ \\
+m ^2 _{fis} = m ^2 - \frac{\lambda phi ^2 Log( \epsilon )}{8 \pi} \\
+\lambda _{fis} = \lambda + \frac{3 \lambda ^2}{m} 
+
+
+\end{array}
+\end{equation}
+
+Donde $m _{fis}$ y $ \lambda _{fis} $ se reinterpretan como los parametros originales del lagrangiano, a medida que valla corrigiendo la accion efectiva, tambien se van a ir corrigiendo la masa y $\lambda $ orden a orden.
+
+\textbf{Regularizacion de la Energía de Casimir}
+
+Al inicio de la seccion se calculó la energía de Casimir como:
+
+\begin{equation}
+E _0 = \frac{A \hbar }{(2 \pi) ^2} \int dk _x dk _y 
+\sum _{n=1} ^{\infty} 
+c
+\sqrt{
+		\left( \frac{n \pi}{a } \right) ^2 + k _x ^2 + k _y ^2
+		}
+\end{equation}
+
+Para regularizarla voy a calcular la funcion $\zeta _A (s)$ del problema usando coordenadas polares:
+
+\begin{equation}
+\begin{array}{c}
+
+\zeta _A (s) = 
+\int dk _x dk _y 
+\sum _{n=1} ^{\infty} 
+\left(	\left( \frac{n \pi}{a } \right) ^2 + k _x ^2 + k _y ^2
+		\right) ^{-s} = \\
+\sum _{n=1} ^{\infty}  \frac{\pi}{s-1} \left( \frac{n \pi}{a} \right) ^{-2s+2} =
+\frac{\pi}{s-1} \left( \frac{\pi}{a} \right) ^{2-2s} \zeta (2s-2) 
+
+\end{array}
+\end{equation}
+
+La Energía de Casimir, se correspondera con $\zeta _A (-1/2)$, obteniendo 
+
+
+\begin{equation}
+\zeta _A (-1/2) = 
+- \frac{\pi ^4}{180 a ^3}
+\end{equation}
+
+La Energía de Casimir queda definida por:
+
+\begin{equation}
+E _0 =  \frac{A c \hbar}{(2 \pi) ^2}
+\zeta _A (-1/2) =
+- \frac{A \hbar c \pi ^2}
+		{720 L ^3}
+\end{equation}
+
+Obteniendo una fuerza atractiva dada por:
+
+\begin{equation}
+F(L) = - \partial _L E _0 (L) = 
+- \frac{A c \pi ^2 \hbar}{240 L^4}
+\end{equation}
+
+Que coincide con lo expresado al principio de la seccion. \\ \\
+
+
+En el ejemplo anterior la funcion $\zeta _A (s) $ era regular en $s= -1/2$, entonces no fue necesario introducir un regulador, para obtener la funcion $\zeta _A (s)$ adimensional para todos los valores de $s$, se la define de la siguiente forma (suponiendo que $A$ tiene auvalores $\lambda _n ^2 $):
+
+\begin{equation}
+\zeta _A (s) = \sum _{n \in N} \left( \frac{\lambda _n}{\mu }  \right) ^{-2s } = 
+\mu ^{2s} \sum _{n \in N } \lambda _n ^{-2s}
+\end{equation}
+
+Donde $\mu $ tiene unidades de $longitud ^{-1}$ . \\
+
+Para que coincida con $\underset{ {n \in N}}{  \sum } \lambda _n$ en $s= -1/2$, se procede a definir la energía de vacio como:
+
+\begin{equation}
+E _ 0 = 
+\frac{\hbar c}{2 }
+\left(
+	\mu ^{2s+1} \sum _{n \in N} \lambda _n ^{-2s} 
+	\right) _{s=-1/2}
+\end{equation}
