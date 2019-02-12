@@ -6,7 +6,7 @@
 
 \section{Dirichlet,Neumann y Periodicas}
 
-En estudiará el espectro del operador diferencial $A = - \partial ^2 _x$, con autovalor $\omega ^2$, al aplicarle distintas condiciones de contorno: \\
+En estudiará el espectro del operador diferencial $A = - \partial ^2 _x$, con autovalor $\lambda ^2$, al aplicarle distintas condiciones de contorno: \\
 
 \textbf{Dirichlet:}
 
@@ -26,7 +26,7 @@ Cuyos autovalores y autofunciones estan dados por  :
 \begin{equation}
 \begin{array}{c}
 	\phi _n (x) = \sqrt{\frac{2}{L}} Sin( \frac{n \pi x}{L} ) \\
-	\omega _n ^2 = \left( \frac{n \pi }{L} \right) ^2 \\
+	\lambda _n ^2 = \left( \frac{n \pi }{L} \right) ^2 \\
 	n = 1,2,3, ...
 \end{array}
 \end{equation}
@@ -35,7 +35,7 @@ La funcion $\zeta _A (s)$ quedará determinada por:
 
 \begin{equation}
 \zeta _A (s) = 
-\sum _{n=1} ^{\infty} \omega ^{-2s} =  
+\sum _{n=1} ^{\infty} \lambda ^{-2s} =  
 \left( \frac{\pi}{L} \right) ^{-2s} \sum _{n=1} ^{\infty} n ^{-2s} = 
 \left( \frac{\pi}{L} \right) ^{-2s} \zeta (2s)
 \end{equation}
@@ -67,12 +67,12 @@ Cuyos autovalores y autofinciones estan dados por  :
 \begin{array}{c}
 	\phi _0 (x) = \sqrt{ \frac{1}{L} } \\
 	\phi _n (x)  = \sqrt{\frac{2}{L}} Cos( \frac{n \pi x}{L} ) \\
-	\omega _n ^2 = \left( \frac{n \pi }{L} \right) ^2 \\
+	\lambda _n ^2 = \left( \frac{n \pi }{L} \right) ^2 \\
 	n = 1,2,3, ...
 \end{array}
 \end{equation}
 
-La funcion $\zeta _A (s)$ qserá la misma que la calculada anteriormente, así como tambien la energía de vacio. \\
+La funcion $\zeta _A (s)$ será la misma que la calculada anteriormente, así como tambien la energía de vacio. \\
 
 \textbf{Periódicas}
 
@@ -90,7 +90,7 @@ Cuyos autovalores y autofinciones estan dados por  :
 \begin{array}{c}
 	\phi _{0} = \sqrt{\frac{1}{L}} \\ 
 	\phi _{n} (x) = \sqrt{\frac{2}{L}} Cos( \frac{2 n \pi x}{L} ) \\
-	\omega _n ^2 = \left( \frac{2 n \pi }{L} \right) ^2 \\
+	\lambda _n ^2 = \left( \frac{2 n \pi }{L} \right) ^2 \\
 	n = 1,2,3, ...
 \end{array}
 \end{equation}
@@ -99,7 +99,7 @@ La funcion $\zeta _A (s)$ queda determinada por:
 
 \begin{equation}
 \zeta _A (s) = 
-\sum _{n=0} ^{\infty} \omega ^{-2s} =  
+\sum _{n=0} ^{\infty} \lambda ^{-2s} =  
 \left( \frac{2 \pi}{L} \right) ^{-2s} \sum _{n=1} ^{\infty} n ^{-2s} = 
 \left( \frac{2 \pi}{L} \right) ^{-2s} \zeta (2s)
 \end{equation}
@@ -122,47 +122,49 @@ Lo cual conduce a una Energía de Vacio atractiva
 \end{array}
 \end{equation}
 
-Donde las condiciones de contorno me fijan un espectro autovalores $\omega > 0 $, que está dado cualquiera de las dos ecuaciones equivalentes: 
+Donde las condiciones de contorno me fijan un espectro autovalores $\lambda > 0 $, que está dado por  cualquiera de las dos ecuaciones equivalentes: 
 
 \begin{equation}
 \begin{array}{cc}
-    \frac{\omega}{\gamma}  \ Cos( L \omega ) +   Sin( L \omega ) = 0 \\
-    \frac{\omega}{\gamma}  + Tg(\omega L )  = 0 
+    \frac{\lambda}{\gamma}  \ Cos( L \lambda ) +   Sin( L \lambda ) = 0 \\
+    \frac{\lambda}{\gamma}  + Tg(\lambda L )  = 0 
 \label{autovalores}
 \end{array}
 \end{equation}
 
+
+
 Una vez obtenidos los autovalores el siguiente paso es calcular la funcion $\zeta$ definida por:
 
 \begin{equation}
-    \zeta _ {A } (s) = \sum_{n = 1} ^{ \infty } \omega _n ^ {-2 s}
+    \zeta _ {A } (s) = \sum_{n = 1} ^{ \infty } \lambda _n ^ {-2 s}
 \end{equation}
 
-Al no poder encontrar explícitamente los autovalores se proceden a distintas técnicas para hallar distintas aproximaciones de la función $\zeta _A (s)$
+Al no poder encontrar explícitamente los autovalores voy a utilizar 2 técnicas distintas, para hallar aproximaciones de la función $\zeta _A (s)$.
 
 \subsection{Calculo Asintótico de los autovalores}
 
 
-Haciendo el cambio a variables adimensionales $\mu = \omega \gamma $ y $\theta = \gamma L $ las ecuaciones (\ref{autovalores}) se pueden expresar de la forma:
+Haciendo el cambio a variables adimensionales $\mu = \lambda L $ y $\theta = \gamma L $ las ecuaciones (\ref{autovalores}) se pueden expresar de la forma:
 
 \begin{equation}
 \begin{array}{c}
-    Tg[\mu] + \frac{\mu}{\theta} = 0 \\
-    \frac{\mu}{\theta} Cos[\mu] + Sin[\mu] = 0
+    Tg(\mu) + \frac{\mu}{\theta} = 0 \\
+    \frac{\mu}{\theta} Cos( \mu ) + Sin( \mu ) = 0
 \end{array}
 \label{eq.asintota}
 \end{equation}
 
-Tal como se puede ver en la figura [\ref{fig:Dibujo}], los autovalores $\mu _n$ tienden a pegarse a la asíntota vertical de $ Tg [ \mu ] $ a medida que $\mu _n$ se hace cada vez mas grande.
+Tal como se puede ver en la figura [\ref{fig:Dibujo}], los autovalores $\mu _n$ tienden a pegarse a la asíntota vertical de $ Tg ( \mu ) $ a medida que $\mu _n$ se hace cada vez mas grande.
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.6]{Dibujo.jpg}
-    \caption{En este ejemplo, se puede ver que la interseccion entre $Tan[x]$ y $-x$ tiende a las asintotas verticales de la tangente, el mismo comportamiento se aprecia para cualquier $ \theta $.}
+    \caption{En este ejemplo, se puede ver que la interseccion entre $Tan(x)$ y $-x$ tiende a las asintotas verticales de la tangente, el mismo comportamiento se aprecia para cualquier $ \theta $.}
     \label{fig:Dibujo}
 \end{figure}
 
-Se puede ver entonces de los autovalores $\mu _n$ se pueden descomponer en una parte correspondiente a las asíntotas verticales de $Tg[\mu]$ mas una corrección que tiende a cero a medida que n tiende a $\infty$
+Se puede ver entonces de los autovalores $\mu _n$ se pueden descomponer en una parte correspondiente a las asíntotas verticales de $Tg( \mu )$ mas una corrección que tiende a cero a medida que n  $ \rightarrow \infty$ :
 
 \begin{equation}
 \begin{array}{c}
@@ -173,19 +175,19 @@ Se puede ver entonces de los autovalores $\mu _n$ se pueden descomponer en una p
 \end{equation}
 
 
-conocer $\epsilon _n $ es equivalente a resolver la ecuación (\ref{eq.asintota}), la cual no puede resolverse analíticamente, en vez de eso voy a obtener un desarrollo de $\epsilon _n $ para $n \rightarrow \infty$.
+Conocer $\epsilon _n $ es equivalente a resolver la ecuación (\ref{eq.asintota}) la cual no puede resolverse analíticamente, en vez de eso voy a obtener un desarrollo de $\epsilon _n $ para $n \rightarrow \infty$.
 
 voy a intesertar (\ref{eq.mu}) en la segunda ecuacion de (\ref{eq.asintota}) y desarrollar alrededor de $\epsilon \rightarrow{0}$ obteniendo:
 
 \begin{equation}
 \begin{array}{c}
-    Sin[ n \pi + \frac{\pi}{2} + \epsilon _n ] = 
-    - \frac{\mu _n}{\theta}  \ Cos[ n \pi + \frac{\pi}{2} + \epsilon _n ]  \\
+    Sin( n \pi + \frac{\pi}{2} + \epsilon _n ) = 
+    - \frac{n \pi + \frac{\pi}{2} + \epsilon _n}{\theta}  \ Cos( n \pi + \frac{\pi}{2} + \epsilon _n )  \\
  \\
 
-         \sum _{p=0} ^{\infty} \frac{(-1) ^n  \epsilon ^{2 p }}{(2p)!} 
-    =  \frac{-1}{\theta}  \ (n \pi + \frac{\pi}{2} + \epsilon ) \
-     \sum _{p=0} ^{\infty} \frac{(-1) ^n \epsilon ^{2 p + 1}}{(2p+1)!} 
+         (-1) ^n \sum _{p=0} ^{\infty} \frac{(-1) ^p  \epsilon _n ^{2 p }}{(2p)!} 
+    =  \frac{-(n \pi + \frac{\pi}{2} + \epsilon _n) (-1) ^n}{\theta}  \  \	
+     \sum _{p=0} ^{\infty} \frac{(-1) ^ {p+1} \epsilon _n ^{2 p + 1}}{(2p+1)!} 
 \end{array}
 \end{equation}
 
@@ -193,12 +195,11 @@ voy a intesertar (\ref{eq.mu}) en la segunda ecuacion de (\ref{eq.asintota}) y d
 Donde acomodando la igualdad, obtengo la ecuacion :
 
 \begin{equation}
-    1 = \sum _{p=1} ^{\infty} \epsilon ^{2p+2} \ (-1) ^p
-    \left( 
-    \frac{1}{(2p+2)!} + \frac{1}{\theta} \frac{(1 )}{(2p+1)!} 
-    \right ) +
-    \frac{1}{\theta} \left(n \pi + \frac{\pi}{2} \right)
-    \sum _{p=0} ^{\infty} \frac{(-1) ^p \epsilon ^{2p+1}}{(2p+1) !}
+    1 = 
+    - \frac{n \pi + \frac{\pi}{2} + \epsilon _n }{\theta}
+    \sum _{p=0} ^{ \infty } 
+    \frac{(-1)^{p+1} \epsilon ^{2p+1}}{(2p+1)!}
+    - \sum _{p=1} ^{\infty} \frac{(-1) ^p \epsilon ^{2p}}{(2p)!}
 \label{igualdad epsilon}
 \end{equation}
 
@@ -221,12 +222,12 @@ Insertando este desarrollo de $\epsilon$ en la ecuación (\ref{igualdad epsilon}
 \label{epsilons}
 \end{equation}
 
-Una vez obtenido el desarrollo de $\mu _n $ puedo calcular $\omega _n = \frac{\mu _n }{L}  $ 
+Una vez obtenido el desarrollo de $\mu _n $ puedo calcular $\lambda _n = \frac{\mu _n }{L}  $ 
 
 
 
 \begin{equation}
-    \omega _n = 
+    \lambda _n = 
 	\frac{n \pi}{L} + 
     \frac{\pi}{2 L} +
     \frac{\gamma}{n \pi} -
@@ -238,12 +239,12 @@ Voy a obtener para la funcion $ \zeta _A (s)$ a este orden:
     
 \begin{equation}
 \begin{array}{cc}
-    \zeta _{A} (s) =  \sum _{n=1} ^{\infty} \omega _n ^ {-2 s} =
+    \zeta _{A} (s) =  \sum _{n=1} ^{\infty} \lambda _n ^ {-2 s} =
     \sum _{n=1} ^{\infty} 
     \left(
 	\frac{n \pi}{L} + 
     \frac{\pi}{2 L} +
-    \frac{\gamma}{n \pi} +
+    \frac{\gamma}{n \pi} -
     \frac{\gamma}{2 n ^2 \pi} +
     O \left(  \frac{1}{n^3} \right) 
     \right) ^{-2 s} = \\

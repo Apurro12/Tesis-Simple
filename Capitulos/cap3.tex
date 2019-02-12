@@ -18,8 +18,8 @@ Para eso voy a resolver la ecuación de autovalores (\ref{eq.aut.sin}).
 
 \begin{equation}
 \begin{array}{c}
-    A  \phi (x)  =   \omega ^2 \phi (x) \\ 
-    \omega \ \in \ \mathfrak{R} _+
+    A  \phi (x)  =   \lambda ^2 \phi (x) \\ 
+    \lambda \ \in \ \mathfrak{R} _+
 \end{array}
 \label{eq.aut.sin}
 \end{equation}
@@ -33,18 +33,18 @@ La cual posee soluciones LI, $ y_1 $ y $ y_2 $ dadas por :
     \phi (x) = 
     C[1]
     \underbrace{
-     \ e ^{-i \omega x} \ x \ F _{1} ^{1} (1+\frac{ \alpha}{2 \omega i },2,2 i \omega x) } _ {y_1}
-    + C[2] \underbrace{ \ e^{-i \omega x } \ x \ U (1+\frac{ \alpha}{2 \omega i },2,2 i \omega x) } _{y_2} 
+     \ e ^{-i \lambda x} \ x \ F _{1} ^{1} (1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x) } _ {y_1}
+    + C[2] \underbrace{ \ e^{-i \lambda x } \ x \ U (1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x) } _{y_2} 
 \end{equation}
 
 
-%Para autovalor $- \omega ^2 $ obtengo las siguientes soluciones:
+%Para autovalor $- \lambda ^2 $ obtengo las siguientes soluciones:
 
 %\begin{equation}
 %    \phi ^{-} (x) = 
 %    \underbrace{
-%    C[1] \ e ^{-i \omega x} \ x \ F _{1} ^{1} (1 + \frac{ \alpha}{2 \omega},2,2 i \omega x) } _ {y_1}
-%    + \underbrace{C[2] \ e^{-i \omega x } \ x \ U (1 + \frac{ \alpha}{2 \omega},2,2 i \omega x) } _{y_2} 
+%    C[1] \ e ^{-i \lambda x} \ x \ F _{1} ^{1} (1 + \frac{ \alpha}{2 \lambda},2,2 i \lambda x) } _ {y_1}
+%    + \underbrace{C[2] \ e^{-i \lambda x } \ x \ U (1 + \frac{ \alpha}{2 \lambda},2,2 i \lambda x) } _{y_2} 
 %\end{equation}
 
 Donde $F _1 ^1(a,b,z)$ y $ U(a,b,z)$ son las soluciones LI de la ecuacion hypergeometrica (\ref{eq:hyper})
@@ -78,7 +78,7 @@ Las cuales tienen las siguientes expresiones analiticas  :
 %Los estados ligados van a surgir entonces de la condicion de contorno en $x=L$
 
 %\begin{equation}
-%	F _1 ^{1} (1- \frac{\alpha}{2 \omega} , 2 2 i \omega L ) = L 
+%	F _1 ^{1} (1- \frac{\alpha}{2 \lambda} , 2 2 i \lambda L ) = L 
 %\end{equation}
 
 
@@ -94,13 +94,13 @@ Para aplicar la condicion de contorno $\phi (0) = 0$, hay que hacer un desarroll
 C[1] ( x + O(x ^2)) + 
 C[2] x 
 \left( 
-\frac{1}{  \alpha x  \Gamma ( \frac{ \alpha}{2 i \omega}  )   }  +
-\frac{Log(x) }{\Gamma ( \frac{ \alpha}{2 i \omega} ) } + Cte + O(x)
+\frac{1}{  \alpha x  \Gamma ( \frac{ \alpha}{2 i \lambda}  )   }  +
+\frac{Log(x) }{\Gamma ( \frac{ \alpha}{2 i \lambda} ) } + Cte + O(x)
 \right)
 \\ \\
 Donde,  \ Cte = 
 \frac{
--1 + 2 \gamma + Log[2 i \lambda] + \psi (1 + \frac{ \alpha}{2 i \omega})
+-1 + 2 \gamma + Log[2 i \lambda] + \psi (1 + \frac{ \alpha}{2 i \lambda})
 }
 {\Gamma (\frac{i \alpha}{2 \lambda})}
 \end{array}
@@ -110,11 +110,11 @@ Donde,  \ Cte =
 Donde se ve que $y _1 (x \rightarrow 0 ) \rightarrow 0$ y $y _2 (x \rightarrow 0)  \rightarrow
 \frac{1}{  \alpha   \Gamma ( \frac{i \alpha}{2 \lambda}  )   } $ , entonces la forma de satisfacer la condicion de contorno es imponiendo C[2] = 0
 
-Los autovalores estaran dados entonces por los ceros de $y_1 (x= L)$, como el único termino que se anula en el produco es la funcion Hypergeometrica, los autovalores vienen dados por los ceros de la ecuacion (\ref{eq.1}), en la figura (\ref{fig:funcion}) en funcion de $\omega$ para  $\alpha=1, \ L=1$.:
+Los autovalores estaran dados entonces por los ceros de $y_1 (x= L)$, como el único termino que se anula en el produco es la funcion Hypergeometrica, los autovalores vienen dados por los ceros de la ecuacion (\ref{eq.1}), en la figura (\ref{fig:funcion}) en funcion de $\lambda$ para  $\alpha=1, \ L=1$.:
 
 
 \begin{equation}
-F _1 ^1 (1+\frac{ \alpha}{2 i \omega},2,2 i \omega L)  = 0
+F _1 ^1 (1+\frac{ \alpha}{2 i \lambda},2,2 i \lambda L)  = 0
 \label{eq.1}
 \end{equation}
 
@@ -127,7 +127,7 @@ F _1 ^1 (1+\frac{ \alpha}{2 i \omega},2,2 i \omega L)  = 0
 
 \textbf{Desarrollo en serie:} \\
 
-Para estudiar el espectro de $F _1 ^1$ voy a hacer un desarrollo asintotico alrededor de $\omega \rightarrow \infty$, el cual está dado por (\ref{eq.aprox})
+Para estudiar el espectro de $F _1 ^1$ voy a hacer un desarrollo asintotico alrededor de $\lambda \rightarrow \infty$, el cual está dado por (\ref{eq.aprox})
 
 
 \begin{equation}
@@ -148,11 +148,11 @@ $A_1$ y $A _2$ son las correcciones al orden domintante, para calcular el polo d
 
 %Donde $A_1$ y $A_2$ son los demas terminos de la serie, que voy a tomar como 1, en el apéndice 1 voy a demostrar que no contribuyen a la estructura de los polos al orden que estoy calculando, si hay que tenerlos en cuenta para calcular los polos mas halla de donde se calcularon en esta tesis.
 
-Quedandome solo con el orden domintante obtengo para la ecuacion (\ref{eq.aprox}) %, definiendo las variables adimensionales $\mu = \omega L$, $\beta = \alpha L $, obtengo para la ecuación  (\ref{eq.aprox}):. 
+Quedandome solo con el orden domintante obtengo para la ecuacion (\ref{eq.aprox}) %, definiendo las variables adimensionales $\mu = \lambda L$, $\beta = \alpha L $, obtengo para la ecuación  (\ref{eq.aprox}):. 
 
 \begin{equation}
     F _1 ^1 (1+  \frac{  \alpha}{2 i \lambda} ,2 ,2 i \lambda L  ) = 
-   i  \frac{e ^{- \frac{\pi}{4} \frac{\alpha}{\lambda} } }{2 \lambda L}
+   i  \frac{e ^{ \frac{\pi}{4} \frac{\alpha}{\lambda} } }{2 \lambda L}
     \left( -
     \frac{e ^{- i \frac{\alpha}{2 \lambda} Ln(2 \lambda L) } e ^{2 i \lambda L} }{\Gamma(1+\frac{ \alpha}{2 i \lambda})} +
     \frac{e ^{  i \frac{\alpha}{2 \lambda} Ln(2 \lambda L) }}               {\Gamma(1-\frac{ \alpha}{2 i \lambda})}
@@ -183,7 +183,7 @@ Para el calculo de la funcion $\zeta _A (s) $ se puede utilizar $M ( \mu )$ o cu
 \section{Calculo Asintótico de los autovalores}
 
 
-En está seccion voy a definir las variables adimensionales $\mu = \omega L $ y $\beta = \alpha L$.
+En está seccion voy a definir las variables adimensionales $\mu = \lambda L $ y $\beta = \alpha L$.
 
 Entonces el problema queda determinado por conocer los ceros $\mu _n$ de $M(\mu)$, a $\mu _n \rightarrow{\infty}$, suponiendo que a $\mu _n$ la puedo descomponer en una parte divergente mas una infinitesimal cuando $n \rightarrow{\infty}$, tal como en el capitulo anterior.
 
@@ -264,7 +264,7 @@ Luego para calcular la función $\zeta _{A}$ utilizo su definición
 
 \begin{equation}
 \begin{array}{c}
-    \zeta _A (s) = \sum _{n=1} ^{\infty} \omega _n ^{-2 s}  =
+    \zeta _A (s) = \sum _{n=1} ^{\infty} \lambda _n ^{-2 s}  =
     \sum _{n=1} ^{\infty} \left(\frac{\mu _n}{L} \right) ^{-2 s} =  \\
     L ^{2 s} \sum _{n=1} ^{\infty} 
     \left( 
@@ -488,7 +488,7 @@ Para calcular el residuo en $s=-1/2$ desarrollo todo en Serie de Laurent obtenie
 
 Donde se puede ver que el polo coincide con lo calculado anteriormente. \\
 
-%Una aclaracion importante es que el termino $Log[2 L ]$ es correcto dimensionalmente, ya que proviene de evaluar la integral $\int _1 ^\infty  Log[2 L \omega] \ d \omega$
+%Una aclaracion importante es que el termino $Log[2 L ]$ es correcto dimensionalmente, ya que proviene de evaluar la integral $\int _1 ^\infty  Log[2 L \lambda] \ d \lambda$
 
 \textbf{Siguientes Polos:} \\
 
@@ -649,19 +649,19 @@ Usando que $S1' (-it)/S1 (-i t) = - S2 ' (i t) / S2(it)  = S(t) $ puedo reescrib
 
 \begin{equation}
 \begin{array}{c}
-\zeta _A (s) =  \\
-- \frac{cos (\pi s)}{\pi} \int _1 ^{\infty} t ^{-2s} S(t) dt + \\
+\zeta _A (s) =  
+-  \frac{i \ sin (\pi s)}{\pi} \int _1 ^{\infty} t ^{-2s} S(t) dt + 
 \frac{\alpha sin( \pi s )}{2 \pi } \int _{1} ^{\infty} 
 t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt
 \end{array}
 \end{equation}
 
-Lo que va a suceder es que no voy a poder hallar una representacion en serie de potencias alrededor de $t=1$, voy a desarrollar entonces alrededor de $t = \infty$ y cortar mi integral en $t _0$.
+Lo que va a suceder es que no voy a poder hallar una representacion en serie de potencias de $S(t)$ alrededor de $t=1$, voy a desarrollar entonces alrededor de $t = \infty$ y cortar la integral de $S(t) $ en $t _0$.
 
 
 
 
-En vez de desarrollar en serie $S/S'$ voy a desarrollar el logatirmo y tomarle la derivada:
+En vez de desarrollar en serie $S'(t) /S$ voy a desarrollar el logatirmo y tomarle la derivada:
 
 \begin{equation}
 \begin{array}{c}
@@ -683,22 +683,25 @@ Log
 
 Si yo quiero cortar la serie $\sum \frac{S _n}{\lambda ^n}$ en la potencia $\lambda ^{-N}$, el logatirmo voy a tener que desarrollarlo hasta la potencia $N$ para sumar todos los terminos $\lambda ^{-N}$.
 
-La primer serie me contribuye hasta la potencia $\lambda ^{-N}$, entonces tengo que sumar todos los terminos que contribuyan con esa potencia, el ultimo termino que contribuye es $m=N$, entonces puedo cortar ambas series en $N$ y estar seguro que el desarrollo del logaritmo es correcto hasta la potencia $\lambda ^{-N}$
+La primer serie me contribuye hasta la potencia $\lambda ^{-N}$, entonces tengo que sumar todos los terminos que contribuyan con esa potencia, el ultimo termino que contribuye es $m=N$, entonces puedo cortar ambas series en $N$ y estar seguro que el desarrollo del logaritmo es correcto hasta la potencia $\lambda ^{-N}$.
 
-Con este cuidado obtengo para los primeros polos despues de $s=-1/2$:
-
-Los primeros polos son de la forma:
+Con este cuidado, los primeros terminos de $S(t)$ son:
 
 \begin{equation}
-\begin{array}{c}
-
-\zeta _A (s) = \\
-\frac{ \alpha (L \alpha -1) }{16 L ^2 \pi (s+1)} 
-- \frac{\alpha ^3 \zeta (3) }{16 \pi (s+3/2)} 
-+ \frac{\alpha (18-17L \alpha + 3 L ^2 \alpha ^2 )}{192 L ^4 \pi (s+2)} + Finito \ en \ s \geq -2
-
-\end{array}
+S(t) = 
+\frac{i \alpha}{2 L t^3} -
+\frac{3 i (L \alpha ^2 - \alpha)}{8 L^2 t ^4} -
+\frac{i ( L \alpha ^2 - \alpha )}{2 L^3 t^5}
 \end{equation}
+
+Con este desarrollo puedo encontrar el polo en $s=-3/2$, resultando ser analitica en $s=-1$ y $s=-2$.
+\begin{equation}
+\zeta _A (s \rightarrow -3/2) = 
+\frac{L ^2 \alpha \psi ^{(2)} (1) + 3 \alpha - 3 L \alpha ^2}{16 L^2 \pi}
+\frac{1}{s+3/2}
+\end{equation}
+
+Para seguir calculando la estructura de polos, hay que seguir desarrollando las funciones $S(t)$ y $\psi (1 + \frac{\alpha}{2 t})$.
 
 \section{Cálculo de la energía de vacío}
 

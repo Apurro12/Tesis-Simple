@@ -47,29 +47,32 @@ Dependiendo de que tipo de teoria tenga (Escalar, Fermionica, Gauge) voy a obten
 
 En Teorías Cuantícas de Campos, el campo se convierte en un operador ($\phi \rightarrow \hat{\phi}$) actuando sobre algun cierto Espacio de Fock.   %, donde todas las configuraciones del campo contribuyen en la integral de caminos no voy a poder encontrar una ecuacion diferencial de movimiento, en cambio si reemplazo la accion por la accion efectiva, voy a poder encontrar una ecuacion de movimiento para el valor de espectacion del vacio (lo que voy a llamar $ \phi _J$ ), donde estoy teniendo en cuenta todas las fuentes externas $J$.
 
-La amplitud de transicion entre dos estados de vacio puede calcularse mediante la integral de caminos
 
-\begin{equation}
-< 0 | 0 >  \equiv Z [J] = 
-\int D \phi \ e ^{- S[ \phi ] + (J, \phi )} \phi (x)
-\end{equation}
 
-Toda la informacion que contiene la teoria con todos los efectos cuanticos está dada por los valores medios de los campos :
+Cuando está presente una fuente externa, toda la informacion que contiene la teoria con todos los efectos cuanticos está dada por los valores medios de los campos :
 
 \begin{equation}
 \begin{array}{c}
-< \hat{ \phi  } (x _1) .... \hat{\phi  } (x _n) > = 
+< 0 | \hat{ \phi  } (x _1) .... \hat{\phi  } (x _n) | 0 > = 
 \int D \phi \ e ^{- S[ \phi ] + (J, \phi )} \phi (x _1) ... \phi (x _n) = \\ \\
 \frac{\delta ^n Log Z[J] }{ \delta J(x) ... \delta J(x _n) }
 \end{array}
 \end{equation}
 
+Donde $(.,.) $ es el producto interno de funciones sobre la variedad, en nuestro caso $(\phi,J) = \int J(x) \phi (x)$ .
+
 El campo medio, queda definido como:
 
 \begin{equation}
-\phi _J (x) = \frac{\delta Log Z[J] }{\delta J(x)} 
+\phi _J (x) \equiv < \hat{\phi } (x) > = \frac{\delta Log Z[J] }{\delta J(x)} 
 \end{equation}
 
+Donde la Funcional Generatriz queda definida por:
+
+\begin{equation}
+Z [J] = 
+\int D \phi \ e ^{- S[ \phi ] + (J, \phi )}
+\end{equation}
 
 Así como la ecuacion de movimiento para el campo clasico estaba dada por el minimo de la accion, el campo $ \phi _J (x) $ va a satisfacer una ecuacion de movimiento dada por la accion efectiva $ \Gamma [\phi _J] $, que en el limite $\hbar \rightarrow 0$ tiende a la ecuacion de movimiento clasica:
 
@@ -83,7 +86,7 @@ J (x) \\
 \label{eq.accion1}
 \end{equation}
 
-Definiendo la accion efectiva como (REF) veo que se cumple (\ref{eq.accion1}).
+Veo que las condiciones anteriores se cumplen si defino la accion efectiva como:
 
 \begin{equation}
 \begin{array}{c}
@@ -94,10 +97,23 @@ J(x) + \int dx ' \frac{\delta J (x')}{\delta \phi _J (x) } \phi _J (x') -
 \end{array}
 \end{equation}
 
-Hay un metodo de obtener un desarrollo en potencias de $\hbar$ de la accion efectiva, sin necesidad de calcular la Funcional Generatriz.
+Hay un metodo de obtener un desarrollo en potencias de $\hbar$ de la accion efectiva, sin necesidad de calcular la Funcional Generatriz. \\
 
 
-Para hallar una expresion para la accion efectiva voy a hacer una traslacion del campo $\phi (x) \rightarrow \phi _{J} (x) + \phi (x) $ en la funcional generatriz, y luego voy a desarrollar la accion clasica alrededor  $ S[ \phi _J + \phi ] $ alrededor de $ \phi _J $ para obtener:
+Para hallar una expresion para la accion efectiva voy a hacer una traslacion del campo $\phi (x) \rightarrow \phi _{J} (x) + \phi (x) $ en la funcional generatriz, y luego voy a desarrollar la accion clasica alrededor  $ S[ \phi _J + \phi ] $ alrededor de $ \phi _J $ .
+
+\begin{equation}
+\begin{array}{c}
+S [\phi _J + \phi ] \approx
+S[ \phi _j ] +
+\int dx \frac{\delta S[\phi]}{\delta \phi (x) } | _ {\phi = \phi _J} \phi( x ) +
+\frac{1}{2}
+\int dx dx' \frac{\delta S[\phi]}{\delta \phi (x') \phi (x) } | _ {\phi = \phi _J} \phi( x ) \phi (x')  \\ \\
+= S[ \phi _J ] + \int \delta S \ \phi + \frac{1}{2} \int \delta ^2 S \ \phi \phi
+\end{array}
+\end{equation}
+
+Donde el renglon de abajo, es la misma expresion de arriba escrita de manera mas compacta. Intesertando  esta expresion en la Funcional Generatriz obtengo:
 
 \begin{equation}
 \begin{array}{c}
@@ -106,23 +122,10 @@ Z[J] = e ^{-S[ \phi _J ] + (J, \phi _J )}
 \end{array}
 \end{equation}
 
-Haciendo el cambio $J = \delta \Gamma \phi]$ Se puede ver que el termino dominante a $\hbar \rightarrow 0$ viene dado por $\delta ^2 S$, obteniendo así, para la accion efectiva.
+Haciendo el cambio $J = \delta \Gamma [ \phi ]$ Se puede ver que el termino dominante a $\hbar \rightarrow 0$ viene dado por $\delta ^2 S$, obteniendo así, para la primera aproximacio de la accion efectiva.
 
 
 
-
-\begin{equation}
-\begin{array}{c}
-S [\phi _J + \phi ] \approx
-S[ \phi _j ] +
-\int dx \frac{\delta S[\phi]}{\delta \phi (x) } | _ {\phi = \phi _J} \phi( x ) +
-\frac{1}{2}
-\int dx dx' \frac{\delta S[\phi]}{\delta \phi (x') \phi (x) } | _ {\phi = \phi _J} \phi( x ) \phi (x') = \\ \\
-S[ \phi _J ] + \int \delta S \ \phi + \frac{1}{2} \int \delta ^2 S \ \phi \phi
-\end{array}
-\end{equation}
-
-Donde el renglon de abajo es el termino de arriba reescrito de manera mas compacta
 
 
 \begin{equation}
@@ -130,18 +133,18 @@ Donde el renglon de abajo es el termino de arriba reescrito de manera mas compac
 \end{equation}
 
 
-Obteniendo en la aproximacion a 1-loop para la accion efectiva:
+Lo cual puede reescribirse como:
 
 \begin{equation}
-\Gamma [\psi] = S [\psi] + \frac{\hbar}{2} Log \ Det (A) +
+\Gamma [\psi] = S [\psi] + \frac{\hbar}{2} Log \ Det ( \delta ^2 S ) +
 O ( \hbar ^2 )
 \end{equation}
 
 
-Si el operador $A$ tiene una base completa de autofunciones $ \{ \lambda _n \} _{n \in N}$ su determinante se puede escribir como:
+Si el operador $ \delta ^2 S $ tiene una base completa de autofunciones $ \{ \lambda _n \} _{n \in N}$ su determinante se puede escribir como:
 
 \begin{equation}
-Det A = \underset{ n \in N }{ \Pi } \ \lambda _n
+Det \ \delta ^2 S = \underset{ n \in N }{ \Pi } \ \lambda _n
 \end{equation}
 
 Donde por lo general conduce a una cantidad divergente que debe ser regularizada.\\
@@ -289,32 +292,144 @@ Lo cual coincide con (\ref{eq.ceros.zeta}) para un operador del tipo Laplace. \\
 
 \textbf{Regularizacion de la Accion Efectiva:} \\
 
-Inspirados en las propiedades de las matrices se puede dar una definiciones al determinante funcional, de tal forma que sea convergene, para matrices de $ NxN$ se tiene la propiedad:
+Si el operador $\delta ^2 S$ tiene autovalores $\lambda _n$ la primer correccion a la accion efectiva puede expresarse como:
 
 \begin{equation}
-Log  Det \left( \ e ^B \right)  = Tr (B)
+Log \ Det \ \delta ^2 S = 
+\sum _n Log( \lambda _n )
 \end{equation}
 
-Escribiendo entonces $A= e ^{B} \rightarrow A ^{-s} = e ^{-s B}$, se ve que:
+Donde puedo usar el desarrollo de la funcion Gamma incompleta, para expresar $Log ( \lambda _n )$:
 
 \begin{equation}
-\partial _s A ^{-s} | _{s=0} = (- B e ^{-s B}) | _{s=0} = - B
+\int _ { \epsilon } ^{\infty} \frac{e ^{- T \lambda _n}}{T} dT =
+- \left(
+		\gamma + Log ( \lambda  ) + Log ( \epsilon  ) + O ( \epsilon  ) 
+		\right)
 \end{equation}
 
-Juntando todo obtengo:
+Como ni $ \epsilon $ ni $ \gamma $ entran en juego en la accion efecitva, puedo reemplazar:
 
 \begin{equation}
-Log Det ( A ) = Tr B = - Tr  \left( \partial _s A ^{-S} | _{s=0} \right) =
- - \partial _s \left( Tr A ^{-s} \right) | _{s=0}
+\Gamma [ \phi ] = 
+S[ \phi ] - 
+\frac{\hbar }{2}
+\int _ { \epsilon } ^{\infty} \frac{ dT}{T} Tr \  e ^{- T \delta ^2 S}
 \end{equation}
 
-Puedo definir entonces el determinante funcional de un operador como:
+Dependiendo del tipo de accion y si el campo presenta o no masa, voy a tener divergencias ultravioletas o infrarojas, en caso de que tenga masa, no se van a presentar divergencías infrarojas y las divergencias UV van a poder ser interpretadas como correcciones cuanticas al lagrangiano de partida. \\
+
+
+Como ejemplo se va a tomar el problema $\lambda \phi ^4 $.
+
+Su Accion viene dada por:
 
 \begin{equation}
-Det A = e ^{- \zeta _A ' (0)}
+S[ \phi ] = \int dx dt \ 
+\frac{( \partial _t \phi ) ^2}{2} +  
+\frac{( \partial _x \phi ) ^2}{2} +
+\frac{m ^2 }{2} \phi ^2 +
+\frac{\lambda}{4!} \phi ^4 
 \end{equation}
 
-Lo cual conduce a una contribucion finita a 1-loop de la accion efectiva (siempre que $\zeta _A (0)$ sea regular). \\
+Calculando la segunda variacion de la accion obtengo:
+
+\begin{equation}
+\delta ^2 S = 
+- \partial _t ^2 
+- \partial _x ^2 
++ m ^2 
++ \frac{\lambda}{2}\phi ^2 
+\end{equation}
+
+La primer correccion a la accion efectiva para le potencial $\lambda \phi ^4 $ viene entonces dada por:
+
+\begin{equation}
+\Gamma [ \phi ] = 
+S[ \phi ] - 
+\frac{\hbar }{2}
+\int _ { \epsilon } ^{\infty} \frac{ dT}{T} 
+e ^{- T m ^2 }
+Tr \  e ^{- T ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) }
+\end{equation}
+
+Dada la exponencial generada por la masa, puedo ver que la accion efectiva no posee divergencias infrarojas, el comportamiento divergente va a estar dado en el limite $T \rightarrow 0$, voy entonces a desarrollar el Heat-Kernel en este limite:
+
+
+
+\begin{equation}
+\begin{array}{c}
+Tr \  e ^{- T ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) } \approx
+\frac{1}{4 \pi}
+\int
+\frac{  dx dt }{T}
+\left(
+1  -
+T  \frac{\lambda}{2} \phi ^2  +
+T ^2 \frac{\lambda ^2 }{8} \phi ^4 + O ( \phi ^6 T ^3)
+\right)
+
+\end{array}
+\end{equation}
+
+Donde en general, el desarrollo del Heat-Kernel va a ser un desarrollo en potencias de $ \lambda \phi ^2 T $, insertando el desarrollo hasta este orden en la accion efectiva obtengo:
+
+\begin{comment}
+
+\begin{equation}
+\begin{array}{c}
+\int _ { \epsilon } ^{\infty} \frac{ dt}{t} 
+e ^{- t m ^2 }
+Tr \  e ^{- t ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) } = \\
+\int _ { \epsilon } ^{1} \frac{ dt}{t} 
+e ^{- t m ^2 }
+Tr \  e ^{- t ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) } + 
+\int _ { 1 } ^{\infty} \frac{ dt}{t} 
+Tr \  e ^{- t ( - \partial ^2 + m^2 + \frac{\lambda}{2} \phi ^2 ) }
+
+\end{array}
+\end{equation}
+
+\end{comment}
+
+
+
+\begin{equation}
+\begin{array}{c}
+\Gamma [ \phi ] = 
+\int dx dt  \\
+\left(
+\frac{( \partial _t \phi ) ^2}{2} +  
+\frac{( \partial _x \phi ) ^2}{2} +
+\frac{m ^2 }{2} \phi ^2 +
+\frac{\lambda}{4!} \phi ^4 
+						\right)  \\
+- \frac{1}{8 \pi}
+\left(
+	\frac{\lambda \phi ^2 Log( \epsilon )}{2}  + \frac{ \lambda ^2 \phi ^4 }{m}
+	\right) + O ( \phi ^6)
+
+\end{array}
+\end{equation}
+
+Así los terminos que acompañan a $\phi ^2 $ y $\phi ^4 $ se reinterpretan como correcciones cuanticas a la masa y a la constante de acoplamiento $\lambda $:
+
+\begin{equation}
+\begin{array}{c}
+
+\Gamma [ \phi ] = 
+\int dx dt 
+\frac{ ( \partial \phi ) ^2 }{2 } +
+\frac{\phi ^2}{2} m ^2 + O ( \phi ^6 ) + .... 
++ \frac{\phi ^4}{4!} \lambda \\ \\
+m ^2 _{fis} = m ^2 - \frac{\lambda phi ^2 Log( \epsilon )}{8 \pi} \\
+\lambda _{fis} = \lambda + \frac{3 \lambda ^2}{m} 
+
+
+\end{array}
+\end{equation}
+
+Donde $m _{fis}$ y $ \lambda _{fis} $ se reinterpretan como los parametros originales del lagrangiano, a medida que valla corrigiendo la accion efectiva, tambien se van a ir corrigiendo la masa y $\lambda $ orden a orden.
 
 \textbf{Regularizacion de la Energía de Casimir}
 
@@ -329,15 +444,20 @@ c
 		}
 \end{equation}
 
-Para regularizarla voy a calcular la funcion $\zeta _A (s)$ del problema:
+Para regularizarla voy a calcular la funcion $\zeta _A (s)$ del problema usando coordenadas polares:
 
 \begin{equation}
+\begin{array}{c}
+
 \zeta _A (s) = 
 \int dk _x dk _y 
 \sum _{n=1} ^{\infty} 
 \left(	\left( \frac{n \pi}{a } \right) ^2 + k _x ^2 + k _y ^2
-		\right) ^{-2s} = 
-\frac{\pi}{s-1} \left( \frac{\pi}{a} \right) ^{2-2s} \zeta (2s-2)
+		\right) ^{-s} = \\
+\sum _{n=1} ^{\infty}  \frac{\pi}{s-1} \left( \frac{n \pi}{a} \right) ^{-2s+2} =
+\frac{\pi}{s-1} \left( \frac{\pi}{a} \right) ^{2-2s} \zeta (2s-2) 
+
+\end{array}
 \end{equation}
 
 La Energía de Casimir, se correspondera con $\zeta _A (-1/2)$, obteniendo 
