@@ -2,9 +2,9 @@
 
 %    En este capitulo se van a explicar los conceptos matemáticos utilizados con un ejemplo, para luego aplicarlos al estudio del caso que nos interesa. Se va a calcular la función $\zeta _A (s)$ mediante distintas técnicas, calculando asintóticamente los autovalores, y luego ponerlos en la definición o en el Heat Kernel, y luego se procedió a utilizar el calculo completo
     
-    En este capitulo se van a explicar los conceptos matemáticos utilizados con varios ejemplos, para luego poder aplicarlos al operador diferencial que nos interesa, se va a calcular la funcion $ \zeta _A (s) $ de dos maneras distintas y luego se van a calcular sus respectivas energías de vacio, partir de aquí se utilizaran las unidades naturales $\hbar=c=1$.
+    En este capitulo se van a explicar los conceptos matemáticos utilizados con varios ejemplos, para luego poder aplicarlos al operador diferencial que nos interesa, se va a calcular la función $ \zeta _A (s) $ de dos maneras distintas y luego se van a calcular sus respectivas energías de vacío, partir de aquí se utilizaran las unidades naturales $\hbar=c=1$.
 
-\section{Dirichlet,Neumann y Periodicas}
+\section{Dirichlet,Neumann y Periódicas}
 
 En estudiará el espectro del operador diferencial $A = - \partial ^2 _x$, con autovalor $\lambda ^2$, al aplicarle distintas condiciones de contorno: \\
 
@@ -21,7 +21,7 @@ El operador $A$ estará dado por:
 
 
 
-Cuyos autovalores y autofunciones estan dados por  : 
+Cuyos autovalores y autofunciones están dados por  : 
 
 \begin{equation}
 \begin{array}{c}
@@ -31,7 +31,7 @@ Cuyos autovalores y autofunciones estan dados por  :
 \end{array}
 \end{equation}
 
-La funcion $\zeta _A (s)$ quedará determinada por:
+La función $\zeta _A (s)$ quedará determinada por:
 
 \begin{equation}
 \zeta _A (s) = 
@@ -46,7 +46,7 @@ Que es regular en $s=-1/2$, entonces la energía de vacío será:
 E _0 = - \frac{\pi}{12 L}
 \end{equation}
 
-Lo cual conduce a una Energía de Vacio atractiva. \\
+Lo cual conduce a una Energía de Vacío atractiva. \\
 
 \textbf{Neumann:}
 
@@ -61,7 +61,7 @@ El operador $A$ estará dado por:
 
 
 
-Cuyos autovalores y autofinciones estan dados por  : 
+Cuyos autovalores y autofunciones están dados por  : 
 
 \begin{equation}
 \begin{array}{c}
@@ -72,11 +72,11 @@ Cuyos autovalores y autofinciones estan dados por  :
 \end{array}
 \end{equation}
 
-La funcion $\zeta _A (s)$ será la misma que la calculada anteriormente, así como tambien la energía de vacio. \\
+La función $\zeta _A (s)$ será la misma que la calculada anteriormente, así como también la energía de vacío. \\
 
 \textbf{Periódicas}
 
-Las condiciones de contorno estan dadas por : 
+Las condiciones de contorno están dadas por : 
 
 \begin{equation}
 \begin{array}{c}
@@ -84,7 +84,7 @@ Las condiciones de contorno estan dadas por :
 \end{array}
 \end{equation}
 
-Cuyos autovalores y autofinciones estan dados por  : 
+Cuyos autovalores y autofunciones están dados por  : 
 
 \begin{equation}
 \begin{array}{c}
@@ -95,7 +95,7 @@ Cuyos autovalores y autofinciones estan dados por  :
 \end{array}
 \end{equation}
 
-La funcion $\zeta _A (s)$ queda determinada por:
+La función $\zeta _A (s)$ queda determinada por:
 
 \begin{equation}
 \zeta _A (s) = 
@@ -104,13 +104,13 @@ La funcion $\zeta _A (s)$ queda determinada por:
 \left( \frac{2 \pi}{L} \right) ^{-2s} \zeta (2s)
 \end{equation}
 
-Que al igual que en los casos anteriores es regular en $s=-1/2$, obteniendo entonces para la Energía de Vacio:
+Que al igual que en los casos anteriores es regular en $s=-1/2$, obteniendo entonces para la Energía de Vacío:
 
 \begin{equation}
 E _0 = - \frac{\pi}{6 L}
 \end{equation}
 
-Lo cual conduce a una Energía de Vacio atractiva
+Lo cual conduce a una Energía de Vacío atractiva
 
 \section{Condiciones de Contorno Mixtas}
 
@@ -122,7 +122,14 @@ Lo cual conduce a una Energía de Vacio atractiva
 \end{array}
 \end{equation}
 
-Donde las condiciones de contorno me fijan un espectro autovalores $\lambda > 0 $, que está dado por  cualquiera de las dos ecuaciones equivalentes: 
+Obteniendo autofunciones de la forma:
+
+\begin{equation}
+\phi _n (x) = 
+B _n Sin( \lambda _n x )
+\end{equation}
+
+El espectro autovalores $\lambda _n > 0 $ está dado por  cualquiera de las dos ecuaciones equivalentes: 
 
 \begin{equation}
 \begin{array}{cc}
@@ -134,13 +141,13 @@ Donde las condiciones de contorno me fijan un espectro autovalores $\lambda > 0 
 
 
 
-Una vez obtenidos los autovalores el siguiente paso es calcular la funcion $\zeta$ definida por:
+Una vez obtenidos los autovalores el siguiente paso es calcular la función $\zeta _A (s) $ definida por:
 
 \begin{equation}
     \zeta _ {A } (s) = \sum_{n = 1} ^{ \infty } \lambda _n ^ {-2 s}
 \end{equation}
 
-Al no poder encontrar explícitamente los autovalores voy a utilizar 2 técnicas distintas, para hallar aproximaciones de la función $\zeta _A (s)$.
+Al no poder encontrar explícitamente los autovalores voy a utilizar 2 técnicas distintas para hallar aproximaciones de la función $\zeta _A (s)$.
 
 \subsection{Calculo Asintótico de los autovalores}
 
@@ -155,13 +162,13 @@ Haciendo el cambio a variables adimensionales $\mu = \lambda L $ y $\theta = \ga
 \label{eq.asintota}
 \end{equation}
 
-Tal como se puede ver en la figura [\ref{fig:Dibujo}], los autovalores $\mu _n$ tienden a pegarse a la asíntota vertical de $ Tg ( \mu ) $ a medida que $\mu _n$ se hace cada vez mas grande.
+Tal como se puede ver en la figura [\ref{fig:Dibujo1}], los autovalores $\mu _n$ tienden a pegarse a la asíntota vertical de $ Tg ( \mu ) $ a medida que $\mu _n$ se hace cada vez mas grande.
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.6]{Dibujo.jpg}
-    \caption{En este ejemplo, se puede ver que la interseccion entre $Tan(x)$ y $-x$ tiende a las asintotas verticales de la tangente, el mismo comportamiento se aprecia para cualquier $ \theta $.}
-    \label{fig:Dibujo}
+    \caption{En este ejemplo, se puede ver que la intersección entre $Tan(x)$ y $-x$ tiende a las asíntotas verticales de la tangente, el mismo comportamiento se aprecia para cualquier $ \theta $.}
+    \label{fig:Dibujo1}
 \end{figure}
 
 Se puede ver entonces de los autovalores $\mu _n$ se pueden descomponer en una parte correspondiente a las asíntotas verticales de $Tg( \mu )$ mas una corrección que tiende a cero a medida que n  $ \rightarrow \infty$ :
@@ -177,7 +184,7 @@ Se puede ver entonces de los autovalores $\mu _n$ se pueden descomponer en una p
 
 Conocer $\epsilon _n $ es equivalente a resolver la ecuación (\ref{eq.asintota}) la cual no puede resolverse analíticamente, en vez de eso voy a obtener un desarrollo de $\epsilon _n $ para $n \rightarrow \infty$.
 
-voy a intesertar (\ref{eq.mu}) en la segunda ecuacion de (\ref{eq.asintota}) y desarrollar alrededor de $\epsilon \rightarrow{0}$ obteniendo:
+voy a insertar (\ref{eq.mu}) en la segunda ecuación de (\ref{eq.asintota}) y desarrollar alrededor de $\epsilon \rightarrow{0}$ obteniendo:
 
 \begin{equation}
 \begin{array}{c}
@@ -192,7 +199,7 @@ voy a intesertar (\ref{eq.mu}) en la segunda ecuacion de (\ref{eq.asintota}) y d
 \end{equation}
 
 
-Donde acomodando la igualdad, obtengo la ecuacion :
+Donde acomodando la igualdad, obtengo la ecuación :
 
 \begin{equation}
     1 = 
@@ -235,7 +242,7 @@ Una vez obtenido el desarrollo de $\mu _n $ puedo calcular $\lambda _n = \frac{\
     O \left(  \frac{1}{n^3} \right) 
 \end{equation}
     
-Voy a obtener para la funcion $ \zeta _A (s)$ a este orden:
+Voy a obtener para la función $ \zeta _A (s)$ a este orden:
     
 \begin{equation}
 \begin{array}{cc}
@@ -298,7 +305,7 @@ Se desarrolla hasta este orden, porque hay que tener en cuenta que cada termino 
 \end{equation}
 
 
-Los polos de mi funcion $\zeta _A (s)$ estaran dados por los polos de las funciones $\zeta (s+n)$, desarrollando en los primeros polos obtengo:
+Los polos de mi función $\zeta _A (s)$ estarán dados por los polos de las funciones $\zeta (s+n)$, desarrollando en los primeros polos obtengo:
 
 \begin{equation}
 \begin{array}{c}
@@ -310,11 +317,11 @@ Los polos de mi funcion $\zeta _A (s)$ estaran dados por los polos de las funcio
 \end{array}
 \end{equation}
 
-Lo cual corrobora que los polos estan en semienteros de $s$.
+Lo cual corrobora que los polos están en semienteros de $s$.
 
-\subsection{Calculo de la funcion zeta mediante calculo complejo:}
+\subsection{Calculo de la función zeta mediante calculo complejo:}
 
-Conocida la ecuacion de autovalores, se puede proceder a calcular la funcion $\zeta _A (s) $ sin calcular explicitamente los autovalores, utilizando variable compleja.
+Conocida la ecuación de autovalores, se puede proceder a calcular la función $\zeta _A (s) $ sin calcular explícitamente los autovalores, utilizando variable compleja.
 
 Donde $\zeta _A (s) $ va a quedar representada por la integral:
 
@@ -331,7 +338,7 @@ Donde $\zeta _A (s) $ va a quedar representada por la integral:
 \end{array}
 \end{equation}
 
-Donde puede utilizarse como camino de integracion cualquiera de los dos caminos representados en la figura [\ref{fig:contorno}], dado que la funcion $f'(z) / f(z) $ tiene polos en los autovalores de $\hat{A}$.
+Donde puede utilizarse como camino de integración cualquiera de los dos caminos representados en la figura [\ref{fig:contorno}], dado que la función $f'(z) / f(z) $ tiene polos en los autovalores de $\hat{A}$.
 
 
 
@@ -346,7 +353,7 @@ Donde puede utilizarse como camino de integracion cualquiera de los dos caminos 
 \end{figure}
 
 
-Voy a utilizar el camino de la derecha, el cual puedo descomponer en 3 integrales, una angular y dos rectas, la contribución circular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto voy a realizar mi integral en funcion de t, parametrizando z de la forma $z = \pm i  t$ entonces se pueden expresar ambas integrales (luego de tirar los terminos exponencialmente decrecientes)como  :
+Voy a utilizar el camino de la derecha, el cual puedo descomponer en 3 integrales, una angular y dos rectas, la contribución circular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto voy a realizar mi integral en función de t, parametrizando z de la forma $z = \pm i  t$ entonces se pueden expresar ambas integrales (luego de tirar los términos exponencialmente decrecientes)como  :
 
 \begin{equation}
     \frac{Sin(\pi s)}{ \pi } 
@@ -361,7 +368,7 @@ Voy a utilizar el camino de la derecha, el cual puedo descomponer en 3 integrale
 \label{contorno}
 \end{equation}
 
-En donde voy a insetar el desarrollo asintotico de   $\chi$. 
+En donde voy a insertar el desarrollo asintótico de   $\chi$. 
 
 \begin{equation}
     \chi = L +  \sum _{n=1} ^{\infty} \frac{(-1) ^{n+1} \gamma ^{n-1} }{t ^n}
@@ -398,7 +405,7 @@ Que coincide con los polos calculados anteriormente.
 
 \subsection{Uso del Heat-Kernel:}
 
-En el capitulo anterior, se dio una exprescion para el desarrollo del Heat-Kernel en el limite $t \rightarrow 0$, lo cual a travez de la transformada de Mellin permitia, conocer los polos de la funcion $\zeta _A (s)$, dada las condiciones de nuestro operador (variedad unidimensional, sin curvatura, sin potencial), los coeficientes del Heat-Kernel se van a simplificar considerablemente, quedando
+En el capitulo anterior, se dio una expresión para el desarrollo del Heat-Kernel en el limite $t \rightarrow 0$, lo cual a través de la transformada de Mellin permite, conocer los polos de la función $\zeta _A (s)$, dada las condiciones de nuestro operador (variedad unidimensional, sin curvatura, sin potencial), los coeficientes del Heat-Kernel se van a simplificar considerablemente, quedando
 
 \begin{equation}
 \begin{array}{c}
@@ -425,4 +432,4 @@ Res[ \zeta _A (s)] | _{s=-3/2} = - \frac{\gamma ^2}{2 \pi} = 0 \\
 \end{array}
 \end{equation}
 
-Lo cual coincide con lo calculado por los dos metodos anteriores.
+Lo cual coincide con lo calculado por los dos métodos anteriores.

@@ -1,9 +1,9 @@
 \chapter{Introducción}
 
 
-\section{Aplicaciones Físicas de la Regularización}
+\section{ Aplicaciones Físicas de la Regularización }
 
-En Teoría Cuántica de Campos el calculo de ciertas magnitudes físicas (Acción efectiva, energía de Casimir, Amplitudes de dispersión, Numero Fermionico, etc) conducen a valores formalmente divergentes, por lo cual se requiere un método para regularizar estas magnitudes. En lo siguiente se hará un resumen de la energía de Casimir, y la acción Efectiva, junto con los métodos de regularización Heat-Kernel y Función-$ \zeta _A (s) $.\\
+En Teoría Cuántica de Campos el calculo de ciertas magnitudes físicas (Acción efectiva, energía de Casimir, Amplitudes de dispersión, Numero Fermionico, etc. ) conducen a valores formalmente divergentes, por lo cual se requiere un método para regularizar estas magnitudes. En lo siguiente se hará un resumen de la energía de Casimir, y la acción Efectiva, junto con los métodos de regularización Heat-Kernel y Función-$ \zeta _A (s) $.\\
 
 
 
@@ -13,7 +13,7 @@ En Teoría Cuántica de Campos el calculo de ciertas magnitudes físicas (Acció
 
 Lo siguiente a ser desarrollado vale tanto para Campos Escalares, como para Campos Fermionicos o Campos de Gauge, pero por simplicidad de la notación el desarrollo va a hacerse sobre Campos Escalares.
 
-Consideremos una teoría de campo escalar $\phi(x)$ definidos sobre una variedad $M$ con borde $\partial M$, donde $x \in \partial M$. \\
+Consideremos una teoría de campo escalar $\phi(x)$ definidos sobre una variedad $M$ con borde $\partial M$, donde $x \in  M$. \\
 
 La solución clásica de movimiento $ \phi _0 $ va a estar dada por la que minimice la acción del campo:
 
@@ -22,7 +22,7 @@ La solución clásica de movimiento $ \phi _0 $ va a estar dada por la que minim
 \end{equation}
 
 
-Dependiendo de que tipo de teoría tenga (Escalar, Fermionica, Gauge) voy a obtener distintas formas para la acción, lo que va a conducir a distintas ecuaciones de movimiento, por ejemplo para campos Escalares, Bosonicos y Fermionicos obtengo respectivamente la Ecuación de Klein Gordon, las Ecuaciones de Maxwell y la Ecuación de Dirac respectivamente.
+Dependiendo de que tipo de teoría tenga voy a obtener distintas formas para la acción, lo que va a conducir a distintas ecuaciones de movimiento, por ejemplo para campos Escalares, Bosonicos y Fermionicos (en el Vacío), obtengo  la Ecuación de Klein Gordon, las Ecuaciones de Maxwell y la Ecuación de Dirac respectivamente.
 
 \begin{equation}
 \begin{array}{c}
@@ -45,21 +45,28 @@ Dependiendo de que tipo de teoría tenga (Escalar, Fermionica, Gauge) voy a obte
 
 
 
-En Teorías Cuantícas de Campos, el campo se convierte en un operador ($\phi \rightarrow \hat{\phi}$) actuando sobre algún cierto Espacio de Fock.   %, donde todas las configuraciones del campo contribuyen en la integral de caminos no voy a poder encontrar una ecuacion diferencial de movimiento, en cambio si reemplazo la acción por la acción efectiva, voy a poder encontrar una ecuacion de movimiento para el valor de espectacion del vacio (lo que voy a llamar $ \phi _J$ ), donde estoy teniendo en cuenta todas las fuentes externas $J$.
+En Teorías Cuantícas de Campos, el campo se convierte en un operador ($\phi \rightarrow \hat{\phi}$) actuando sobre algún cierto Espacio de Fock.\\   %, donde todas las configuraciones del campo contribuyen en la integral de caminos no voy a poder encontrar una ecuacion diferencial de movimiento, en cambio si reemplazo la acción por la acción efectiva, voy a poder encontrar una ecuacion de movimiento para el valor de espectacion del vacio (lo que voy a llamar $ \phi _J$ ), donde estoy teniendo en cuenta todas las fuentes externas $J$.
 
 
+Dada una fuente J(x), se define la Funcional Generatriz como:
 
-Cuando está presente una fuente externa, toda la información que contiene la teoría con todos los efectos cuánticos está dada por los valores medios de los campos :
+\begin{equation}
+Z [J] = 
+\int D \phi \ e ^{- S[ \phi ] + (J, \phi )}
+\end{equation}
+
+Donde $(.,.) $ es el producto interno de funciones sobre la variedad, en nuestro caso $(\phi,J) = \int J(x) \phi (x)$ . \\
+
+Toda la información que contiene la teoría con todos los efectos cuánticos está dada por los valores medios de los campos en presencia de la fuente:
 
 \begin{equation}
 \begin{array}{c}
-< 0 | \hat{ \phi  } (x _1) .... \hat{\phi  } (x _n) | 0 > = 
+< 0 | \hat{ \phi  } (x _1) .... \hat{\phi  } (x _n) | 0 > = \frac{1}{Z[J]} 
 \int D \phi \ e ^{- S[ \phi ] + (J, \phi )} \phi (x _1) ... \phi (x _n) = \\ \\
 \frac{\delta ^n Log Z[J] }{ \delta J(x) ... \delta J(x _n) }
 \end{array}
 \end{equation}
 
-Donde $(.,.) $ es el producto interno de funciones sobre la variedad, en nuestro caso $(\phi,J) = \int J(x) \phi (x)$ .
 
 El campo medio, queda definido como:
 
@@ -67,12 +74,7 @@ El campo medio, queda definido como:
 \phi _J (x) \equiv < \hat{\phi } (x) > = \frac{\delta Log Z[J] }{\delta J(x)} 
 \end{equation}
 
-Donde la Funcional Generatriz queda definida por:
 
-\begin{equation}
-Z [J] = 
-\int D \phi \ e ^{- S[ \phi ] + (J, \phi )}
-\end{equation}
 
 Así como la ecuación de movimiento para el campo clásico estaba dada por el mínimo de la acción, el campo $ \phi _J (x) $ va a satisfacer una ecuación de movimiento dada por la acción efectiva $ \Gamma [\phi _J] $, que en el limite $\hbar \rightarrow 0$ tiende a la ecuación de movimiento clásica:
 
@@ -83,24 +85,28 @@ Así como la ecuación de movimiento para el campo clásico estaba dada por el m
 J (x) \\
 \underset{ \hbar \rightarrow 0 }{ Lim  } \Gamma [ \phi  ] = S [ \phi ]
 \end{array}
-\label{eq.acción1}
+\label{eq.accion1}
 \end{equation}
 
-Veo que las condiciones anteriores se cumplen si defino la acción efectiva como:
+Se define entonces la acción efectiva como:
 
 \begin{equation}
-\begin{array}{c}
-\Gamma [\phi _J] = (J, \phi _J) - Log Z [J] \\
+\Gamma [\phi _J] = (J, \phi _J) - Log Z [J]
+\end{equation}
+
+La cual cumple al evaluarla en el campo medio $\phi _J $
+
+
+\begin{equation}
 \frac{\delta \Gamma [ \phi _J ]}{\delta \phi _J (x) } = 
 J(x) + \int dx ' \frac{\delta J (x')}{\delta \phi _J (x) } \phi _J (x') - 
 \frac{1}{Z[J]} \int dx' \frac{\delta Z[J] }{\delta J(x')} \frac{\delta J[x']}{\delta \phi _J (x)} = J(x)
-\end{array}
 \end{equation}
 
-Hay un método de obtener un desarrollo en potencias de $\hbar$ de la acción efectiva, sin necesidad de calcular la Funcional Generatriz. \\
+Hay un método de obtener un desarrollo en potencias de $\hbar$ de $\Gamma [ \phi _J]$ , sin necesidad de calcular la Funcional Generatriz. \\
 
 
-Para hallar una expresión para la acción efectiva voy a hacer una traslación del campo $\phi (x) \rightarrow \phi _{J} (x) + \phi (x) $ en la funcional generatriz, y luego voy a desarrollar la acción clásica alrededor  $ S[ \phi _J + \phi ] $ alrededor de $ \phi _J $ .
+Para hallar una expresión para la acción efectiva voy a hacer una traslación del campo $\phi (x) \rightarrow \phi _{J} (x) + \phi (x) $ en la funcional generatriz, y luego voy a desarrollar la acción clásica  $ S[ \phi _J + \phi ] $ alrededor de $ \phi _J $ .
 
 \begin{equation}
 \begin{array}{c}
@@ -285,10 +291,10 @@ t ^{s-1} K(t)
 Se puede ver entonces que residuos de la función $\zeta _A (s)$ están dados por:
 
 \begin{equation}
-Res[\zeta _A (s)] | _{s= m/2 - n/2} =  _n (A)}{\Gamma (n/2 + m/2)}
+Res[ \zeta _A (s) ] | _{s= m/2 - n/2} =  n _ {(A) } {\Gamma (n/2 + m/2)}
 \end{equation}
 
-Lo cual coincide con (eq.ceros.zeta}) para un operador del tipo Laplace. \\
+Lo cual coincide con (\ref{eq.ceros.zeta}) para un operador del tipo Laplace. \\
 
 \textbf{Regularización de la Acción Efectiva:} \\
 
