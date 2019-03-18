@@ -330,21 +330,18 @@ Lo cual corrobora que los polos están en semienteros de $s$.
 
 Conocida la ecuación de autovalores, se puede proceder a calcular la función $\zeta _A (s) $ sin calcular explícitamente los autovalores.
 
-
-Dado que la función $f'(z) / f(z) $ tiene polos en los autovalores de $\hat{A}$, la función $\zeta _A (s)$ puede representarse como una integral en el plano complejo, donde el camino de intregración es cualquiera de los dos caminos representados en la figura [\ref{fig:contorno}].
-
-Donde $\zeta _A (s) $ va a quedar representada por la integral:
+Si los  autovalores están definidos por una función $f(\lambda ) = 0$, de la cual son ceros simples, entonces la función $f'(z) / f(z) $ va a tener polos simples en los autovalores de $\hat{A}$, así la  función $\zeta _A (s)$ va a poder representarse como una integral en el plano complejo, donde el camino de intregración es cualquiera de los dos caminos representados en la figura [\ref{autovalores}]:
 
 \begin{equation}
 \begin{array}{c}
-   \zeta _A (s) =  \frac{1}{2 \pi i} \int _{C} \frac{f'(z)}{f(z)} z ^{-2s} dz = \\ 
-   \\ 
+   \zeta _A (s) =  \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2s} = \\ 
+   \frac{1}{2 \pi i} \int _{C} \frac{f'(z)}{f(z)} \left( \frac{z}{\mu} \right) ^{-2s} dz =  
     \frac{1}{2 \pi i} \int _{C}
     \frac{ cos(L z) \left(L + \frac{1}{\gamma} \right) - sin(L z) \frac{z L}{\gamma}
     }
     {cos(L z) \frac{z}{\gamma} + sin(L z)
     }
-    z ^{-2 s} dz
+    \left( \frac{z}{\mu} \right) ^{-2 s} dz
 \end{array}
 \end{equation}
 
@@ -357,7 +354,7 @@ Donde $\zeta _A (s) $ va a quedar representada por la integral:
 \end{figure}
 
 
-Voy a utilizar el camino de la derecha, el cual puedo descomponer en 3 integrales, una angular y dos rectas, la contribución circular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto voy a realizar mi integral en función de t, parametrizando z de la forma $z = \pm i  t$ entonces se pueden expresar ambas integrales (luego de tirar los términos exponencialmente decrecientes)como  :
+Voy a utilizar el camino de la derecha de [\ref{fig:contorno}], el cual puedo descomponer en 3 integrales, una angular y dos rectas, la contribución angular es regular para todo s, entonces no aporta a la estructura de polos, en cuanto a las contribuciones del lado recto voy a realizar mi integral en función de t, parametrizando z de la forma $z = \pm i  t$, luego de tirar los términos exponencialmente decrecientes  :
 
 \begin{equation}
     \frac{Sin(\pi s)}{ \pi } 
