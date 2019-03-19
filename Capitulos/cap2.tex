@@ -343,6 +343,7 @@ Si los  autovalores están definidos por una función $f(\lambda ) = 0$, de la c
     }
     \left( \frac{z}{\mu} \right) ^{-2 s} dz
 \end{array}
+\label{asd}
 \end{equation}
 
 
@@ -359,12 +360,14 @@ Voy a utilizar el camino de la derecha de [\ref{fig:contorno}], el cual puedo de
 \begin{equation}
     \frac{Sin(\pi s)}{ \pi } 
     \int _1 ^{\infty} 
-    t ^{-2s}
-    \underbrace
-    {
-	\frac{ \frac{1}{\gamma} + L + \frac{L t}{\gamma}}
-	{1+ \frac{t}{\gamma}}
-	} _{\chi}
+    \left( \frac{t}{\mu}  \right)^{-2s}
+    \left(
+    	L + 
+	    \underbrace
+    	{
+		\frac{1}{\gamma + t}   
+		} _{\chi} 
+	\right)
     dt 
 \label{contorno}
 \end{equation}
@@ -372,7 +375,7 @@ Voy a utilizar el camino de la derecha de [\ref{fig:contorno}], el cual puedo de
 En donde voy a insertar el desarrollo asintótico de   $\chi$. 
 
 \begin{equation}
-    \chi = L +  \sum _{n=1} ^{\infty} \frac{(-1) ^{n+1} \gamma ^{n-1} }{t ^n}
+    \chi =   \sum _{m=0} ^{\infty} \frac{(-1) ^{m} \gamma ^{m} }{t ^{m+1}}
 \label{eq:chi}
 \end{equation}
 
@@ -380,28 +383,28 @@ Luego de integrar termino a termino, obtengo como resultado:
 
 \begin{equation}
     \zeta _A (s) = 
-    \frac{Sin(\pi s)}{\pi} 
+    \frac{Sin(\pi s) \mu ^{2s }}{\pi } 
     \left(
     \frac{L}{2s-1} + 
-    \sum _{n=1} ^{\infty}
-    \frac{(-1) ^{n+1} \gamma ^{n-1} }{2s+n-1}
+    \sum _{m=0} ^{\infty}
+    \frac{(-1) ^{m} \gamma ^{m} }{2s+m}
     \right)
 \label{eq.zeta.com}
 \end{equation}
 
-De acá se puede ver que tiene polos simples en $s=1/2$ donde la estructura de polos queda determinada por
+De aquí se puede ver que tiene polos simples en $s=1/2$ y los semienteros negativos, donde la estructura de polos queda determinada por:
 
 \begin{equation}
 \begin{array}{c}
 
-\zeta(s \rightarrow 1/2) = \frac{L}{2 \pi} \frac{1}{s-1/2} \\
-\zeta (s \rightarrow -n - 1/2)  = \frac{ (-1) ^n \gamma ^{2n+1}  }{2 \pi} \frac{1}{s + n + 1/2}
+\zeta(s \rightarrow 1/2) = \frac{L \mu }{2 \pi} \frac{1}{s-1/2} + finito\\
+\zeta (s \rightarrow -n - 1/2)  = \frac{ (-1) ^n \gamma ^{2n+1}  }{2 \pi \mu ^{2n + 1}} \frac{1}{s + n + 1/2} + finito
 
 \end{array}
 \end{equation}
 
 
-Que coincide con los polos calculados anteriormente.
+Donde coincide con los primeros dos polos calculados anteriormente, utilizando esta tecnica se pudo sacar la estructura entera de polos de la función $\zeta _A (s) $, pero sin calcular la parte finita de estas expresiones, para calcular la parte finita hay que tener en cuenta la parte angular de (\ref{asd}), y los terminos exponenciales tirados para llegar a (\ref{contorno}).
 
 
 \subsection{Uso del Heat-Kernel:}
