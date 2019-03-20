@@ -96,12 +96,12 @@ C[1] ( x + O(x ^2)) +
 C[2] x 
 \left( 
 \frac{1}{  \alpha x  \Gamma ( \frac{ \alpha}{2 i \lambda}  )   }  +
-\frac{Log(x) }{\Gamma ( \frac{ \alpha}{2 i \lambda} ) } + Cte + O(x)
+\frac{Ln(x) }{\Gamma ( \frac{ \alpha}{2 i \lambda} ) } + Cte + O(x)
 \right)
 \\ \\
 Donde,  \ Cte = 
 \frac{
--1 + 2 \gamma + Log[2 i \lambda] + \psi (1 + \frac{ \alpha}{2 i \lambda})
+-1 + 2 \gamma + Ln[2 i \lambda] + \psi (1 + \frac{ \alpha}{2 i \lambda})
 }
 {\Gamma (\frac{i \alpha}{2 \lambda})}
 \end{array}
@@ -182,7 +182,7 @@ Al igual que en el capítulo anterior voy a descomponer los a $\mu _n$ en una pa
 Para que el desarrollo sea mas simple, voy a voy a escribir a $M (\mu)$ como:
 
 \begin{equation}
-M (\mu) = e ^{\frac{i \beta }{\mu} Log(2 \mu) }
+M (\mu) = e ^{\frac{i \beta }{\mu} Ln(2 \mu) }
 \frac{\Gamma (1 + \frac{ \beta}{2 i \mu})}{\Gamma (1 - \frac{ \beta}{2 i \mu})}
 - e ^{2 i \mu}
 \label{eq.otro.mu}
@@ -222,7 +222,7 @@ teniendo en cuenta que $\frac{ln(2 \mu _n)}{2 \mu _n }$ tiende a cero, puedo hac
 
 \begin{equation}
     \left(
-    \sum _{p = 0} ^{\infty} \frac{ \left( i \frac{\beta}{ \mu _n } Log(2 \mu _n ) \right) ^p }{p!}
+    \sum _{p = 0} ^{\infty} \frac{ \left( i \frac{\beta}{ \mu _n } Ln(2 \mu _n ) \right) ^p }{p!}
     \right)
     \left(
 	\sum _{q = 0} ^{\infty} \frac{a _q}{\mu _n ^q}
@@ -237,7 +237,7 @@ teniendo en cuenta que $\frac{ln(2 \mu _n)}{2 \mu _n }$ tiende a cero, puedo hac
 Al orden mas bajo se obtiene: 
 
 \begin{equation}
-(1 + \frac{i \beta}{ \mu _n} Log( 2 \mu _n) ) 
+(1 + \frac{i \beta}{ \mu _n} Ln( 2 \mu _n) ) 
 (1 + \frac{i  \gamma \beta}{ \mu _n})  =
 (1 + 2 i \epsilon _n)
 \end{equation}
@@ -298,7 +298,7 @@ Al igual que en el capítulo anterior voy a desarrollar el binomio alrededor de 
     \sum _{n=1} ^{\infty} n ^{-2 s} 
     \left(
     1 - 2s \left(
-    \frac{\alpha L }{2 n ^2 \pi ^2} Log( 2  n \pi) + 
+    \frac{\alpha L }{2 n ^2 \pi ^2} Ln( 2  n \pi) + 
     \frac{\gamma \alpha L }{2 n ^2 \pi ^2} 
 	\right) +
     O (\frac{1}{n ^{3} }  )
@@ -315,7 +315,7 @@ Al igual que en el capítulo anterior voy a desarrollar el binomio alrededor de 
     \zeta (2 s) -
 	\frac{ s \alpha L}{ \pi ^2} \zeta (2s+2)
 	\left(
-	   Log[2  \pi ] + \gamma
+	   Ln[2  \pi ] + \gamma
 	\right) +
     \frac{s \alpha L}{\pi ^2}
 	\zeta '(2s+2) \
@@ -334,7 +334,7 @@ Luego desarrollando alrededor de $s=-1/2$:
 
 \begin{equation}
     \zeta _A (s \rightarrow -1/2 ) =  \frac{\alpha}{8  \pi \mu (s+1/2)^2} +
-    \alpha \frac{ \gamma -1 + Log(2L \mu)}{4  \pi \mu (s+1/2)} + 
+     \frac{ \alpha ( \gamma  + Ln(2L \mu ) -1 ) }{4  \pi \mu } \frac{1}{s+1/2} + 
     Regular
 \end{equation}
 
@@ -365,7 +365,7 @@ Utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales, el 
      \frac{1}{2 \pi i} \int _{\infty} ^{1}
      \frac{ i \alpha }{2 t^2} 
      \left(
-      1 + \frac{i \pi}{2} + Log[2 t] + \psi (1 + \frac{\beta}{2 t})
+      1 + \frac{i \pi}{2} + Ln[2 t] + \psi (1 + \frac{\beta}{2 t})
      \right)
      t ^{-2s}
      e ^{- i \pi s} (i dt) + \\
@@ -373,7 +373,7 @@ Utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales, el 
      \left(
      2 + \frac{\beta}{2 t^2}
      \left(
-     1 + \frac{i \pi}{2} - Log[2 t] - \psi (1+ \frac{\beta}{2 t})
+     1 + \frac{i \pi}{2} - Ln[2 t] - \psi (1+ \frac{\beta}{2 t})
      \right)
      t ^{-2s}
      e ^{ i \pi s} (-i dt)
@@ -389,7 +389,7 @@ Utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales, el 
      \frac{e^{-i \pi s} \mu ^{2s}}{2 \pi i} \int _{\infty} ^{1}
      \frac{ i \alpha}{2 t^2}
      \left(
-     - 1 + Log(2 L t) + \frac{i \pi}{2}  - \psi (1+\frac{\alpha}{2 t})
+     - 1 + Ln(2 L t) + \frac{i \pi}{2}  - \psi (1+\frac{\alpha}{2 t})
      \right)
      t^{-2 s}
       \ 
@@ -398,7 +398,7 @@ Utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales, el 
 	\left(      
      \frac{ i \alpha}{2  t^2}
      \left(
-     1 - Log(2 L t) + \frac{i \pi}{2} + \psi (1 + \frac{\alpha}{2 t}) 
+     1 - Ln(2 L t) + \frac{i \pi}{2} + \psi (1 + \frac{\alpha}{2 t}) 
       
      \right)
      + 2 i L
@@ -435,7 +435,7 @@ Una vez calculado este termino, puedo reorganizar el resto de la integral como:
     \int _1 ^{\infty}
     t ^{-2 s-s} 
     \left(
-    1 - Log(2Lt) + \psi (1 + \frac{\alpha}{2t})
+    1 - Ln(2Lt) + \psi (1 + \frac{\alpha}{2t})
     \right) dt \ + \\ 
     \frac{\alpha \mu ^{2s} }{4} 
     Cos(\pi s)
@@ -443,7 +443,7 @@ Una vez calculado este termino, puedo reorganizar el resto de la integral como:
 \end{array}
 \end{equation}
 
-Donde todos los términos son calculables analíticamente, excepto el que esta multiplicado por $\psi$, para lo cual utilizo el desarrollo de $\psi$ en $t \rightarrow \infty$:
+Donde todos los términos son calculables analíticamente, excepto el que esta multiplicado por $\psi$, para lo cual utilizo el desarrollo de $\psi$ en $t \rightarrow \infty$, quedandome co el primer ordend dado que el siguiente termino contribuye al polo en $s = -3/2$.
 
 \begin{equation}
     \psi(1 + \frac{\alpha}{2 t}) =
@@ -457,69 +457,71 @@ Realizando todas las integrales, la función $ \zeta _A (s)$ a este orden queda 
     \zeta _A (s)  = 
     \frac{L \mu ^{2 s} e ^{i \pi s}}{2 \pi i} \frac{1}{s-1/2} 
     -\frac{\alpha \mu ^{2s} Sin(\pi s)}{8 \pi} \frac{1}{(s+1/2) ^2} \\
-    + \frac{\alpha \mu ^{2s} sin (\pi s) }{4 \pi } \frac{1 - \gamma -  Log(2 L)}{s+1/2}
+    + \frac{\alpha \mu ^{2s} sin (\pi s) }{4 \pi } \frac{1 - \gamma -  Ln(2 L)}{s+1/2}
     + \frac{\alpha \mu ^{2s} Cos(\pi s)}{8} \frac{1}{s+1/2}
     
 \end{array}
 \end{equation}
 
-Donde el siguiente termino en el desarrollo de $ \psi $ contribuirá al residuo en $s = -3/2$.
 
-Para calcular el residuo en $s=-1/2$ desarrollo todo en Serie de Laurent obteniendo.
+
+Para calcular el polo en $s=-1/2$ desarrollo en Serie de Laurent, obteniendo el mismo resultado que con el metodo anterior:
 
 \begin{equation}
+\begin{array}{c}
+
 	\zeta (s \rightarrow -1/2) = 
-     \frac{\alpha}{8 \pi \mu } \frac{1}{(s+1/2)^2} + 
-    \alpha \frac{\gamma + Log[2 L] - 1}{4 \pi \mu } \frac{1}{s+1/2} + \ Regular
+    \frac{\alpha}{8 \pi \mu } \frac{1}{(s+1/2)^2} + \\
+	\frac{\alpha ( \gamma  + Ln(2L \mu ) -1 )}{4 \pi \mu } \frac{1}{s+1/2} + \ Regular
+    
+\end{array}
 \label{eq.desarrollo}
 \end{equation}
 
-Donde se puede ver que el polo coincide con lo calculado anteriormente. \\
 
-%Una aclaracion importante es que el termino $Log[2 L ]$ es correcto dimensionalmente, ya que proviene de evaluar la integral $\int _1 ^\infty  Log[2 L \lambda] \ d \lambda$
 
-\textbf{Siguientes Polos:} \\
+\section{Siguientes Polos:} 
 
-Para calcular los siguientes polos mas allá de $s=-1/2$, voy a volver a calcular la función $\zeta _A (s) $ con variable compleja, pero utilizando todos los términos de la expansión en serie de la función $M ( \lambda )$:
+Para calcular los siguientes polos, voy a calcular la función $\zeta _A (s) $ con variable compleja, pero utilizando todos los términos de la expansión en serie de la función $M ( \lambda )$:
 
 \begin{equation}
 \begin{array}{c}
 M( \lambda ) = 
- \frac{ e ^{   \frac{i \alpha Log \left(2 \lambda L \right) } 
+-
+ \frac{e ^{2 i \lambda L } e ^{ - \frac{i \alpha Ln \left( 2 \lambda L \right) }{2 \lambda } }  }
+      { \Gamma \left( 1 + \frac{ \alpha}{2 i \lambda}  \right) } S1 ( \lambda ) +
+ \frac{ e ^{   \frac{i \alpha Ln \left(2 \lambda L \right) } 
            {2 \lambda } } }
-      { \Gamma \left( 1 + \frac{i \alpha}{2 \lambda}  \right)   } S2 ( \lambda ) -
- \frac{e ^{ - \frac{i \alpha Log \left( 2 \lambda L \right) }{2 \lambda } } e ^{2 i \lambda L } }
-      { \Gamma \left( 1 - \frac{i \alpha}{2 \lambda}  \right) } S1 ( \lambda ) \\
+      { \Gamma \left( 1 - \frac{ \alpha}{2 i \lambda}  \right)   } S2 ( \lambda )  \\ [15pt]
       
 S1 ( \lambda ) = \sum _{n=0} ^{ \infty }
-\frac{\Gamma (1 + \frac{i \alpha}{2 \lambda} + n )}{\Gamma (1 + \frac{i \alpha}{2 \lambda})} 
-\frac{\Gamma (\frac{i \alpha}{2 \lambda} + n )}{\Gamma (\frac{i \alpha}{2 \lambda})} 
-\frac{1}{( 2 i \lambda L ) ^n} \\
+\frac{\Gamma (1 - \frac{ \alpha}{2 i \lambda} + n )}{\Gamma (1 - \frac{ \alpha}{2 i \lambda})} 
+\frac{\Gamma (- \frac{ \alpha}{2 i \lambda} + n )}{\Gamma (- \frac{\alpha}{2 i \lambda})} 
+\frac{1}{( 2 i \lambda L ) ^n} \\ [10pt]
 
 S2 (\lambda ) = \sum _{n=0 } ^{\infty}
-\frac{ \Gamma ( 1- \frac{i \alpha}{2 \lambda } + n ) }{\Gamma ( 1- \frac{i \alpha}{2 \lambda } )}
-\frac{\Gamma (- \frac{i \alpha }{2 \lambda} + n )}{\Gamma (- \frac{i \alpha }{2 \lambda} )}
+\frac{ \Gamma ( 1 + \frac{ \alpha}{2 i \lambda } + n ) }{\Gamma ( 1 + \frac{ \alpha}{2 i \lambda } )}
+\frac{\Gamma ( \frac{ \alpha }{2 i \lambda} + n )}{\Gamma ( \frac{ \alpha }{2 i \lambda} )}
 \frac{1}{( - 2 i \lambda L ) ^n}
 \end{array}
 \end{equation}
 
-Donde $S1 (\lambda ) $ y $S2 (\lambda)$ son series de potencias negativas.  \\
 
-Al igual que antes, cuando integre sobre los ejes verticales voy a tener una parte exponencialmente creciente/decreciente, tirando estos términos los logaritmos quedan (salvo constantes aditivas):
+Al igual que antes, cuando integre sobre los ejes verticales voy a tener una parte exponencialmente creciente/decreciente, tirando estos términos los Lnaritmos quedan (salvo constantes aditivas):
 
 \begin{equation}
 \begin{array}{c}
 
-Log ( M ( \lambda = i t ) ) =  Log(S2) + 
-\frac{i \alpha Log(2 \lambda L)}{2 \lambda} - Log( \Gamma( 1 + \frac{i \alpha}{2 \lambda} ) ) \\
+Ln ( M ( \lambda = i t ) ) =  Ln(S2) + 
+\frac{i \alpha Ln(2 \lambda L)}{2 \lambda} - Ln( \Gamma( 1 + \frac{i \alpha}{2 \lambda} ) ) \\
 
-Log( M ( \lambda = -i t ) ) = 2 i \lambda L - \frac{i \alpha Log( 2 \lambda L )}{2 \lambda} - 
-Log( \Gamma ( 1 - \frac{i \alpha}{2 \lambda} )) + Log(S1)
+Ln( M ( \lambda = -i t ) ) = 2 i \lambda L - \frac{i \alpha Ln( 2 \lambda L )}{2 \lambda} - 
+Ln( \Gamma ( 1 - \frac{i \alpha}{2 \lambda} )) + Ln(S1)
 
 \end{array}
 \end{equation}
 
-Donde lo único que difiere los logaritmos calculados antes, es la suma de los términos $S1$ y $S2$.
+Donde lo único que difiere los Lnaritmos calculados antes, es la suma de los términos $S1$ y $S2$.
 
 Quedándome solo con los términos que me contribuyen a los polos en  $s < -1/2$ obtengo:
 
@@ -546,10 +548,10 @@ Quedándome solo con los términos que me contribuyen a los polos en  $s < -1/2$
 \begin{comment}
 \begin{equation}
 \frac{1 }{2 \pi i}
-\int _{circulo} \lambda ^{-2s } \partial \lambda \ Log \left[
-					\frac{e ^{\frac{i \alpha Log( 2 \lambda L )}{2 \lambda}} e ^{2 i \lambda L} S1}
+\int _{circulo} \lambda ^{-2s } \partial \lambda \ Ln \left[
+					\frac{e ^{\frac{i \alpha Ln( 2 \lambda L )}{2 \lambda}} e ^{2 i \lambda L} S1}
 					{\Gamma \left( 1 - \frac{i \alpha}{2 \lambda} \right)} - 
-					\frac{e ^{\frac{-i \alpha Log(2 \lambda L )}{2 \lambda}} S2}
+					\frac{e ^{\frac{-i \alpha Ln(2 \lambda L )}{2 \lambda}} S2}
 					{\Gamma \left( 1 + \frac{i \alpha}{2 \lambda} \right)}					
 					\right] d \lambda
 \end{equation}
@@ -557,10 +559,10 @@ Quedándome solo con los términos que me contribuyen a los polos en  $s < -1/2$
 
 Donde los primeros dos términos son las nuevas contribuciones, y el ultimo termino está escrito para que empiece a contribuir a los polos en  $s > -1/2$. De aquí se puede ver que no va a haber mas polos múltiples, que el que había en $s=-1/2$, porque las $S / S' $ son desarrollables en series de potencias.
 
-%, y las contribuciones a la parte finita en $s=-1/2$ estan dadas por el desarrollo en serie de la funcion Polygamma mas las derivadas logaritmicas de las correcciones asintoticas.
+%, y las contribuciones a la parte finita en $s=-1/2$ estan dadas por el desarrollo en serie de la funcion Polygamma mas las derivadas Lnaritmicas de las correcciones asintoticas.
 
 \begin{comment}
-Las primeras 3 integrales se pueden realizar analíticamente de manera sencilla, dado que son todas series de potencias, la integral angular va a tener que ser evaluada numéricamente dado que es de la forma (parametrizando $\lambda = e ^{i \theta}$ y llamando $M_c$ a todo el termino adentro del logaritmo) :
+Las primeras 3 integrales se pueden realizar analíticamente de manera sencilla, dado que son todas series de potencias, la integral angular va a tener que ser evaluada numéricamente dado que es de la forma (parametrizando $\lambda = e ^{i \theta}$ y llamando $M_c$ a todo el termino adentro del Lnaritmo) :
 
 \begin{equation}
 \begin{array}{c}
@@ -571,13 +573,13 @@ Las primeras 3 integrales se pueden realizar analíticamente de manera sencilla,
 \Bigg[
 
 \frac{
-e ^{- \frac{i \alpha (Log[2 L] + i \theta)}{2 e ^{i \theta} }} e ^{2 i L e ^{i \theta}}
+e ^{- \frac{i \alpha (Ln[2 L] + i \theta)}{2 e ^{i \theta} }} e ^{2 i L e ^{i \theta}}
 }{\Gamma \left( 1 - \frac{i \alpha}{2 e ^{i \theta}} \right)}
 	\left(
 		\left(
 			2 i L -
 			\frac{i \alpha}{2 e ^{2 i \theta} } + 
-			\frac{i \alpha( Log[2 L ] + e ^{i \theta} ) }{2 e^{2 i \theta}}
+			\frac{i \alpha( Ln[2 L ] + e ^{i \theta} ) }{2 e^{2 i \theta}}
 			- \frac{i \alpha \psi \left( 1 - \frac{i \alpha}{2 e ^{i \theta}}\right)}
 				   {2 e ^{2 i \theta}}
 			\right) S1 [e ^{i \theta}] +
@@ -586,12 +588,12 @@ e ^{- \frac{i \alpha (Log[2 L] + i \theta)}{2 e ^{i \theta} }} e ^{2 i L e ^{i \
   \\
 
 - \frac{
-e ^{ \frac{i \alpha (Log[2 L] + i \theta)}{2 e ^{i \theta} }}
+e ^{ \frac{i \alpha (Ln[2 L] + i \theta)}{2 e ^{i \theta} }}
 }{\Gamma \left( 1 + \frac{i \alpha}{2 e ^{i \theta}} \right)}
 	\left(
 		\left(
 			\frac{i \alpha}{2 e ^{2 i \theta} } - 
-			\frac{i \alpha( Log[2 L ] + e ^{i \theta} ) }{2 e^{2 i \theta}}
+			\frac{i \alpha( Ln[2 L ] + e ^{i \theta} ) }{2 e^{2 i \theta}}
 			+ \frac{i \alpha \psi \left( 1 + \frac{i \alpha}{2 e ^{i \theta}}\right)}
 				   {2 e ^{2 i \theta}}
 			\right) S2 [e ^{i \theta}] +
@@ -649,12 +651,12 @@ Lo que va a suceder es que no voy a poder hallar una representación en serie de
 
 
 
-En vez de desarrollar en serie $S'(t) /S$ voy a desarrollar el logaritmo y tomarle la derivada:
+En vez de desarrollar en serie $S'(t) /S$ voy a desarrollar el Lnaritmo y tomarle la derivada:
 
 \begin{equation}
 \begin{array}{c}
 
-Log 
+Ln 
 \left[
 	1 + \sum _{n=1} ^{\infty}  \frac{S _n}{\lambda ^n}
 	\right] =
@@ -669,9 +671,9 @@ Log
 \end{array}	
 \end{equation}
 
-Si yo quiero cortar la serie $\sum \frac{S _n}{\lambda ^n}$ en la potencia $\lambda ^{-N}$, el logaritmo voy a tener que desarrollarlo hasta la potencia $N$ para sumar todos los términos $\lambda ^{-N}$.
+Si yo quiero cortar la serie $\sum \frac{S _n}{\lambda ^n}$ en la potencia $\lambda ^{-N}$, el Lnaritmo voy a tener que desarrollarlo hasta la potencia $N$ para sumar todos los términos $\lambda ^{-N}$.
 
-La primer serie me contribuye hasta la potencia $\lambda ^{-N}$, entonces tengo que sumar todos los términos que contribuyan con esa potencia, el ultimo termino que contribuye es $m=N$, entonces puedo cortar ambas series en $N$ y estar seguro que el desarrollo del logaritmo es correcto hasta la potencia $\lambda ^{-N}$.
+La primer serie me contribuye hasta la potencia $\lambda ^{-N}$, entonces tengo que sumar todos los términos que contribuyan con esa potencia, el ultimo termino que contribuye es $m=N$, entonces puedo cortar ambas series en $N$ y estar seguro que el desarrollo del Lnaritmo es correcto hasta la potencia $\lambda ^{-N}$.
 
 Con este cuidado, los primeros términos de $S(t)$ son:
 
@@ -704,8 +706,8 @@ $\zeta (s)$ ya está desarrollada alrededor de $s=-1/2$ en (\ref{eq.desarrollo})
 
 \begin{equation}
     \mu \approx 
-    1 + 2 Log[E_c] (s + 1/2) +
-    2 Log[E_c] ^2 (s+1/2) ^2 + 
+    1 + 2 Ln[E_c] (s + 1/2) +
+    2 Ln[E_c] ^2 (s+1/2) ^2 + 
     O (s+1/2)^3
 \end{equation}
 
@@ -719,8 +721,8 @@ Entonces la energía de vació queda determinada por:
     \frac{- \alpha}{8 \pi}
     \right)+
     \frac{
-    \alpha(1 -\gamma-Log[2L]) - 
-    \alpha Log[E_c] 
+    \alpha(1 -\gamma-Ln[2L]) - 
+    \alpha Ln[E_c] 
     }{4 \pi (s+1/2)} 
      + Regular
     \right) | _{s=-1/2}

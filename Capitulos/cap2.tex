@@ -334,16 +334,24 @@ Si los  autovalores están definidos por una función $f(\lambda ) = 0$, de la c
 
 \begin{equation}
 \begin{array}{c}
-   \zeta _A (s) =  \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2s} = \\ 
+   \zeta _A (s) =  \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2s} =  \\
    \frac{1}{2 \pi i} \int _{C} \frac{f'(z)}{f(z)} \left( \frac{z}{\mu} \right) ^{-2s} dz =  
+	\frac{1}{2 \pi i} \int _{C} \partial _z Ln f(z) \ 
+	\left( \frac{z}{\mu} \right) ^{-2s}
+
+\end{array}
+\label{asd}
+\end{equation}
+
+Reemplazando $f(z)$ por  \ref{autovalores} se obtiene:
+
+\begin{equation}
     \frac{1}{2 \pi i} \int _{C}
     \frac{ cos(L z) \left(L + \frac{1}{\gamma} \right) - sin(L z) \frac{z L}{\gamma}
     }
     {cos(L z) \frac{z}{\gamma} + sin(L z)
     }
     \left( \frac{z}{\mu} \right) ^{-2 s} dz
-\end{array}
-\label{asd}
 \end{equation}
 
 
