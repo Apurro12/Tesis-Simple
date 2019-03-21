@@ -1,12 +1,24 @@
 \chapter{Limite Continuo}
 
-En esta seccion voy a estudiar el comportamiento de la fucion $\zeta (s) $ en el limite $L \rightarrow \infty$, donde quedara definida por:
+En esta seccion se va a estudiar la fucion $\zeta (s) $ en el limite $L \rightarrow \infty$, donde la funcíon $\zeta _A (s)$ va a quedar definida por:
 
 \begin{equation}
-\zeta (s) = \int _{0} ^{\infty} \rho (x) x^{-2 s} dx
+\zeta (s) = \int _{0} ^{\infty} \rho (x) \ \left( \frac{x}{\mu } \right) ^{-2 s} dx
 \end{equation}
 
-Donde la $\rho(x) $ es la densidad de autovalores, para llegar a esta ecuacion, voy a utilizar la representacion integral de la funcion $\zeta$ en el plano complejo e integrar sobre un camino dado por la figura(REFERENCIAR), para eso voy a trabajar con mi aproximacion (REFERENCIAR)
+Donde la $\rho(x) $ es la densidad de autovalores, para llegar a esta representación se va a utilizar la forma como integral en el plano complejo donde el camino de intregración de está dado por la figura izquierda de (\ref{fig:contorno}), la parametrización va a estar dada por:
+
+
+\[
+z(t) =  
+	  \begin{cases} 
+      t + i \epsilon  & x _0 \leq t \leq \infty \\
+      t - i \epsilon  & x _0 \leq t \leq \infty \\
+      x _0 + i t		  & - \epsilon \leq t \leq \epsilon
+   \end{cases}
+\]
+
+De (\ref{larga}) se puede ver que $S1/S2 \rightarrow 1$ cuando $L \rightarrow \infty$, por lo tanto se va a utilizar $M ( \lambda)$ dada por (\ref{eq.completa}).\\
 
 
 
