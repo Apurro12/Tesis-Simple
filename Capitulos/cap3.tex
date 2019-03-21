@@ -349,7 +349,10 @@ Mi función $ \zeta _A (s) $ va a quedar definida por:
 \zeta _A (s) = 
 \frac{1}{2 \pi i} 
 \int _{\mathcal{C}}
-\frac{M ' ( z ) }{ M ( z ) } d z
+\frac{M ' ( z ) }{ M ( z ) } z ^{-2s} d z = 
+\frac{1}{2 \pi i} 
+\int _{\mathcal{C}}
+\partial _z \ Ln (	M(z) ) z ^{-2s} \ dz
 \label{eq.zeta.compleja}
 \end{equation}
 
@@ -433,7 +436,7 @@ Una vez calculado este termino, puedo reorganizar el resto de la integral como:
 \begin{array}{c}
     \frac{\alpha \mu ^{2s} }{2 \pi} \ sin(\pi s)
     \int _1 ^{\infty}
-    t ^{-2 s-s} 
+    t ^{-2 s-2} 
     \left(
     1 - Ln(2Lt) + \psi (1 + \frac{\alpha}{2t})
     \right) dt \ + \\ 
@@ -497,70 +500,144 @@ M( \lambda ) =
 S1 ( \lambda ) = \sum _{n=0} ^{ \infty }
 \frac{\Gamma (1 - \frac{ \alpha}{2 i \lambda} + n )}{\Gamma (1 - \frac{ \alpha}{2 i \lambda})} 
 \frac{\Gamma (- \frac{ \alpha}{2 i \lambda} + n )}{\Gamma (- \frac{\alpha}{2 i \lambda})} 
-\frac{1}{( 2 i \lambda L ) ^n} \\ [10pt]
+\frac{1}{( 2 i \lambda L ) ^n} = 
+1 + \sum _{n=1} ^{\infty} \frac{S ^{(1)} _n (\lambda)}{\lambda ^n} \\ [10pt]
 
 S2 (\lambda ) = \sum _{n=0 } ^{\infty}
 \frac{ \Gamma ( 1 + \frac{ \alpha}{2 i \lambda } + n ) }{\Gamma ( 1 + \frac{ \alpha}{2 i \lambda } )}
 \frac{\Gamma ( \frac{ \alpha }{2 i \lambda} + n )}{\Gamma ( \frac{ \alpha }{2 i \lambda} )}
-\frac{1}{( - 2 i \lambda L ) ^n}
+\frac{1}{( - 2 i \lambda L ) ^n} = 
+1 + \sum _{n=1} ^{\infty} \frac{S ^{(2)} _n (\lambda)}{\lambda ^n}
 \end{array}
 \end{equation}
 
+Donde $S _n ^{(1,2)}$ es un polinomio (de potencias negativas), donde el orden mas bajo es 1 y el mas alto $\lambda ^n$. \\
 
-Al igual que antes, cuando integre sobre los ejes verticales voy a tener una parte exponencialmente creciente/decreciente, tirando estos términos los Lnaritmos quedan (salvo constantes aditivas):
+
+Al igual que antes, al integrar sobre los ejes verticales va a haber una parte exponencialmente creciente o decreciente, tirando los términos exponencialmente decrecientes se obtiene:
 
 \begin{equation}
 \begin{array}{c}
 
 Ln ( M ( \lambda = i t ) ) =  Ln(S2) + 
-\frac{i \alpha Ln(2 \lambda L)}{2 \lambda} - Ln( \Gamma( 1 + \frac{i \alpha}{2 \lambda} ) ) \\
+\frac{i \alpha }{2 \lambda} Ln(2 \lambda L) - 
+Ln( \Gamma( 1 - \frac{ \alpha}{2 i \lambda} ) ) \\ 
 
-Ln( M ( \lambda = -i t ) ) = 2 i \lambda L - \frac{i \alpha Ln( 2 \lambda L )}{2 \lambda} - 
-Ln( \Gamma ( 1 - \frac{i \alpha}{2 \lambda} )) + Ln(S1)
+Ln( M ( \lambda = -i t ) ) = Ln(S1) -  
+\frac{i \alpha }{2 \lambda} Ln( 2 \lambda L ) - 
+Ln( \Gamma ( 1 + \frac{ \alpha}{2 i \lambda} )) +
+2 i \lambda L 
 
 \end{array}
 \end{equation}
 
-Donde lo único que difiere los Lnaritmos calculados antes, es la suma de los términos $S1$ y $S2$.
+Donde lo único que difiere con lo calculado antes es contribución de los terminos que generan $S1$ y $S2$. \\
+
+
+
 
 Quedándome solo con los términos que me contribuyen a los polos en  $s < -1/2$ obtengo:
 
 \begin{equation}
 \begin{array}{c}
- \zeta _A (s) = \\
-\frac{e ^{- i \pi s}}{2 \pi}
+ \zeta _A (s) = \\ [10pt]
+\frac{e ^{- i \pi s} \mu ^{2s } }{2 \pi}
 \int _{\infty} ^{1} t ^{-2s } 
 		\frac{S2' (it)}{S2 (it)}
 		d t
 	- 
-\frac{e ^{i \pi s}}{2 \pi}
+\frac{e ^{i \pi s} \mu ^{2s}}{2 \pi}
 \int _{1} ^{\infty} t ^{-2s } 
 	\frac{S1' (-it)}{S1(-it)}
-	d t
-	 \\ \\
-	+ \frac{\alpha sin( \pi s)}{2 \pi }	 \int _1 ^{\infty}
-	t ^{-2s-2} \left( \psi \left( 1 + \frac{\alpha}{2 t}\right) + \gamma \right) dt
+	d t +
+	 \\ [10pt]
+	\frac{\alpha \mu ^{2s} }{2 \pi }	sin( \pi s)  \int _1 ^{\infty}
+	t ^{-2s-2} \left( \psi \left( 1 + \frac{\alpha}{2 t}\right) + \gamma \right) dt \\[15pt]
 
 
 \end{array}
 \end{equation}
 
-\begin{comment}
+
+
+
+Se puede ver de la expresión anterior que solo van a existir polos simples en los semienteros negativos dado que $sin(\pi s)$ posee ceros simples en los enteros negativos, lo cual coincide con el caso regular.
+
+Usando que $\frac{S1' (-it)}{S1 (-i t)} = - \frac{S2 ' (i t)}{S2(it)} = \frac{S'(t)}{S(t)}  $ se puede reescribir lo anterior como:
+
 \begin{equation}
-\frac{1 }{2 \pi i}
-\int _{circulo} \lambda ^{-2s } \partial \lambda \ Ln \left[
-					\frac{e ^{\frac{i \alpha Ln( 2 \lambda L )}{2 \lambda}} e ^{2 i \lambda L} S1}
-					{\Gamma \left( 1 - \frac{i \alpha}{2 \lambda} \right)} - 
-					\frac{e ^{\frac{-i \alpha Ln(2 \lambda L )}{2 \lambda}} S2}
-					{\Gamma \left( 1 + \frac{i \alpha}{2 \lambda} \right)}					
-					\right] d \lambda
+\begin{array}{c}
+\zeta _A (s) =  \\ [5pt]
+-  \frac{i \mu ^{2s}  sin (\pi s)}{\pi} \int _1 ^{\infty} t ^{-2s} \frac{S'(t)}{S(t)} dt + 
+\frac{\alpha \mu ^{2s} sin( \pi s )}{2 \pi } \int _{1} ^{\infty} 
+t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt
+\end{array}
 \end{equation}
-\end{comment}
 
-Donde los primeros dos términos son las nuevas contribuciones, y el ultimo termino está escrito para que empiece a contribuir a los polos en  $s > -1/2$. De aquí se puede ver que no va a haber mas polos múltiples, que el que había en $s=-1/2$, porque las $S / S' $ son desarrollables en series de potencias.
 
-%, y las contribuciones a la parte finita en $s=-1/2$ estan dadas por el desarrollo en serie de la funcion Polygamma mas las derivadas Lnaritmicas de las correcciones asintoticas.
 
+En vez de desarrollar en serie $S'(t) / S (t)$ se va a desarrollar el Logaritmo y tomarle la derivada para luego evaluar en $\lambda \rightarrow -i t$, lo cual nos permite controlar el orden del desarrollo.
+
+\begin{equation}
+\begin{array}{c}
+
+\frac{S'( \lambda)}{S( \lambda )} \approx 
+\partial _{\lambda} Log \left(
+								1 + \sum _{n=1} ^{N-1}  \frac{S _n}{\lambda ^n}
+								\right) \approx 
+\partial _{\lambda} 
+	
+\sum _{m = 1} ^{N/2} 
+	\left(
+	\frac{(-1) ^{m+1} }{m}
+	\left(
+		\sum _{n=1} ^{N-1} \frac{S _n}{\lambda ^n}
+		\right) ^m 
+	\right) = \\ [10pt]
+	
+\left(								
+	\sum _{l = 1} ^{N-1} 
+	\frac{S' _l}{\lambda ^l} - l \frac{S _l}{\lambda ^{l+1}}
+	\right)							
+
+\left(
+	\sum _{m = 1} ^{N/2} (-1) ^{m+1} 
+
+
+	\left(
+			\sum _{n=1} ^{N-1} \frac{S _n}{\lambda ^n}
+			\right) ^{m-1}
+			
+	\right)
+
+
+	
+\end{array}	
+\end{equation}
+
+
+
+Este desarrollo de Taylor es correcto hasta el orden N (en caso de que N sea semientero hay que tomarle la parte entera), tiene la ventaja de poder ser calculado explicitamente, los primeros terminos de $\frac{S'(t)}{S(t)}$ son:
+
+\begin{equation}
+\frac{S'(t)}{S(t)} = 
+\frac{i \alpha}{2 L t^3} -
+\frac{3 i (L \alpha ^2 - 2 \alpha)}{8 L^2 t ^4}
+\end{equation}
+
+
+
+
+Con este desarrollo puedo encontrar el polo en $s=-3/2$.
+\begin{equation}
+\zeta _A (s \rightarrow -3/2) = 
+\frac{L ^2 \alpha  ^3 \psi ^{(2)} (1) + 12   \alpha  - 6 L \alpha ^2}{32 L^2 \pi \mu ^3}
+\frac{1}{s+3/2}
+\end{equation}
+
+Para seguir calculando la estructura de polos, basta con seguir desarrollando las funciones $S(t)$ y $\psi (1 + \frac{\alpha}{2 t})$.
+
+%Estos comentarios tienen las contribuciones de la parte finita
 \begin{comment}
 Las primeras 3 integrales se pueden realizar analíticamente de manera sencilla, dado que son todas series de potencias, la integral angular va a tener que ser evaluada numéricamente dado que es de la forma (parametrizando $\lambda = e ^{i \theta}$ y llamando $M_c$ a todo el termino adentro del Lnaritmo) :
 
@@ -634,100 +711,36 @@ A la hora de calcular los términos de la forma $S'/S$ hay que tener en cuenta h
 
 Donde se puede hacer el producto de Cauchy para tener la solución exacta de hasta que términos hay que desarrollar $S,S'$ y la Serie Geométrica.
 \end{comment}
-
-Usando que $S1' (-it)/S1 (-i t) = - S2 ' (i t) / S2(it)  = S(t) $ puedo reescribir esta ultima integral como:
-
+\begin{comment}
 \begin{equation}
-\begin{array}{c}
-\zeta _A (s) =  
--  \frac{i \ sin (\pi s)}{\pi} \int _1 ^{\infty} t ^{-2s} S(t) dt + 
-\frac{\alpha sin( \pi s )}{2 \pi } \int _{1} ^{\infty} 
-t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt
-\end{array}
+\frac{1 }{2 \pi i}
+\int _{circulo} \lambda ^{-2s } \partial \lambda \ Ln \left[
+					\frac{e ^{\frac{i \alpha Ln( 2 \lambda L )}{2 \lambda}} e ^{2 i \lambda L} S1}
+					{\Gamma \left( 1 - \frac{i \alpha}{2 \lambda} \right)} - 
+					\frac{e ^{\frac{-i \alpha Ln(2 \lambda L )}{2 \lambda}} S2}
+					{\Gamma \left( 1 + \frac{i \alpha}{2 \lambda} \right)}					
+					\right] d \lambda
 \end{equation}
+\end{comment}
 
-Lo que va a suceder es que no voy a poder hallar una representación en serie de potencias de $S(t)$ alrededor de $t=1$, voy a desarrollar entonces alrededor de $t = \infty$ y cortar la integral de $S(t) $ en $t _0$.
-
-
-
-
-En vez de desarrollar en serie $S'(t) /S$ voy a desarrollar el Lnaritmo y tomarle la derivada:
-
-\begin{equation}
-\begin{array}{c}
-
-Ln 
-\left[
-	1 + \sum _{n=1} ^{\infty}  \frac{S _n}{\lambda ^n}
-	\right] =
-	
-\sum _{m = 1} ^{\infty} 
-	\left(
-	\frac{(-1) ^{m+1} }{m}
-	\left(
-		\sum _{n=1} ^{\infty} \frac{S _n}{\lambda ^n}
-		\right) ^m 
-	\right)
-\end{array}	
-\end{equation}
-
-Si yo quiero cortar la serie $\sum \frac{S _n}{\lambda ^n}$ en la potencia $\lambda ^{-N}$, el Lnaritmo voy a tener que desarrollarlo hasta la potencia $N$ para sumar todos los términos $\lambda ^{-N}$.
-
-La primer serie me contribuye hasta la potencia $\lambda ^{-N}$, entonces tengo que sumar todos los términos que contribuyan con esa potencia, el ultimo termino que contribuye es $m=N$, entonces puedo cortar ambas series en $N$ y estar seguro que el desarrollo del Lnaritmo es correcto hasta la potencia $\lambda ^{-N}$.
-
-Con este cuidado, los primeros términos de $S(t)$ son:
-
-\begin{equation}
-S(t) = 
-\frac{i \alpha}{2 L t^3} -
-\frac{3 i (L \alpha ^2 - \alpha)}{8 L^2 t ^4} -
-\frac{i ( L \alpha ^2 - \alpha )}{2 L^3 t^5}
-\end{equation}
-
-Con este desarrollo puedo encontrar el polo en $s=-3/2$, resultando ser analítica en $s=-1$ y $s=-2$.
-\begin{equation}
-\zeta _A (s \rightarrow -3/2) = 
-\frac{L ^2 \alpha \psi ^{(2)} (1) + 3 \alpha - 3 L \alpha ^2}{16 L^2 \pi}
-\frac{1}{s+3/2}
-\end{equation}
-
-Para seguir calculando la estructura de polos, hay que seguir desarrollando las funciones $S(t)$ y $\psi (1 + \frac{\alpha}{2 t})$.
 
 \section{Cálculo de la energía de vacío}
 
-La energía de vacío queda determinada por la ecuación (una vez introducido el parámetro $\mu$): 
+La energía de vacío queda definida por la ecuación: 
 
 \begin{equation}
-    E _0 = \frac{\hbar}{2}  
-    \zeta (s)  |  _{- \frac{1}{2}}
+    E _0 = \frac{\mu }{2}  
+    \zeta _A \left( - 1/2 \right) 
 \end{equation}
 
-$\zeta (s)$ ya está desarrollada alrededor de $s=-1/2$ en (\ref{eq.desarrollo}), queda desarrollar $(\mu) ^{2s+1} $ alrededor de $s=-1/2$ quedando.
+Utilizando el desarrollo de $\zeta _A (s \rightarrow -1/2)$ en (\ref{eq.desarrollo}), se obtiene para la energía de vacío:
 
 \begin{equation}
-    \mu \approx 
-    1 + 2 Ln[E_c] (s + 1/2) +
-    2 Ln[E_c] ^2 (s+1/2) ^2 + 
-    O (s+1/2)^3
+E _0 = \frac{1}{2} \left(
+				\frac{\alpha}{8 \pi  } \frac{1}{(s+1/2)^2} + 
+				\frac{\alpha ( \gamma  + Ln(2L \mu ) -1 )}{4 \pi  } \frac{1}{s+1/2} +
+				\ Regular
+				\right)
 \end{equation}
-
-Entonces la energía de vació queda determinada por:
-
-\begin{equation}
-    E _0 =
-    \left(
-    \frac{1}{(s+1/2)^2} 
-    \left(
-    \frac{- \alpha}{8 \pi}
-    \right)+
-    \frac{
-    \alpha(1 -\gamma-Ln[2L]) - 
-    \alpha Ln[E_c] 
-    }{4 \pi (s+1/2)} 
-     + Regular
-    \right) | _{s=-1/2}
-\end{equation}\\
-
-
 
  
