@@ -3,139 +3,157 @@
 
 \section{ Aplicaciones Físicas de la Regularización }
 
-En Teoría Cuántica de Campos el calculo de ciertas magnitudes físicas (Acción efectiva, energía de Casimir, Amplitudes de dispersión, Numero Fermionico, etc. ) conducen a valores formalmente divergentes, por lo cual se requiere un método para regularizar estas magnitudes. En lo siguiente se hará un resumen de la energía de Casimir, y la acción Efectiva, junto con los métodos de regularización Heat-Kernel y Función-$ \zeta _A (s) $.\\
+En Teoría Cuántica de Campos el calculo de ciertas magnitudes físicas (Acción efectiva, energía de Casimir, Amplitudes de dispersión, Numero Fermionico, etc. ) conducen a valores formalmente divergentes, por lo cual se requiere un método para extraer resultados finitos. El presente capítulo se aplicaran los metodos regularización Heat-Kernel y Función $ \zeta _A (s) $ al calculo de la energía de Casimir y la acción Efectiva, junto con las herramientas para regularizarlas.\\
 
 
 
 
 
-\textbf{Acción Efectiva}\\
+\textbf{Acción Efectiva:}\\
 
-Lo siguiente a ser desarrollado vale tanto para Campos Escalares, como para Campos Fermionicos o Campos de Gauge, pero por simplicidad de la notación el desarrollo va a hacerse sobre Campos Escalares.
+Lo siguiente vale tanto para Campos Escalares, como para Campos Fermionicos o Campos de Gauge, pero por simplicidad de la notación el desarrollo va a hacerse sobre Campos Escalares.
 
 Consideremos una teoría de campo escalar $\phi(x)$ definidos sobre una variedad $M$ con borde $\partial M$, donde $x \in  M$. \\
 
-La solución clásica de movimiento $ \phi _0 $ va a estar dada por la que minimice la acción del campo:
+La solución clásica de movimiento $ \phi _0 (x) $ va a estar dada por la que minimice la acción del campo:
 
 \begin{equation}
-\frac{\delta S [ \phi ] }{\delta \phi (x)} | _{\phi _0} = 0
+\left. \frac{\delta S [ \phi ] }{\delta \phi (x)}  \right| _{\phi = \phi _0  } = 0
 \end{equation}
 
 
-Dependiendo de que tipo de teoría tenga voy a obtener distintas formas para la acción, lo que va a conducir a distintas ecuaciones de movimiento, por ejemplo para campos Escalares, Bosonicos y Fermionicos (en el Vacío), obtengo  la Ecuación de Klein Gordon, las Ecuaciones de Maxwell y la Ecuación de Dirac respectivamente.
+Dependiendo de que tipo de teoría se tenga, se van a obtener distintos lagrangianos, lo cual conduce a distintas ecuaciones de movimiento, por ejemplo para campos Escalares, Bosonicos y Fermionicos en el Vacío, se obtienen las Ecuaciones de Klein Gordon, Maxwell y Dirac respectivamente.
 
 \begin{equation}
 \begin{array}{c}
-\mathscr{L} = \frac{1}{2} (\partial _t \phi ) ^2 - \frac{1}{2} ( \nabla \phi ) ^2 - \frac{1}{2} m ^2 \phi ^2 
+\mathscr{L} = \frac{1}{2 c^2} (\partial _t \phi ) ^2 - \frac{1}{2} (  \nabla \phi ) ^2 - 
+	\left( \frac{m c}{2 \hbar}  \right) ^2 \phi ^2 
 \rightarrow 
 \left(
 	\partial _t ^2 - \nabla ^2 + m^2 
-		\right) \phi = 0 \\
-\mathscr{L} = - \frac{1}{4} F _{\mu \nu} F ^{\mu \nu}
-\rightarrow \partial _{\mu} F ^{\mu \nu} = 0
- \\
-\mathscr{L} = { \bar{\psi} } \left(
-			i \gamma ^{\mu} \partial _{\mu} - m 
+		\right) \phi = 0 \\[8pt]
+		
+\mathscr{L} = - \frac{1}{4 \mu _0} F _{\mu \nu} F ^{\mu \nu}
+\rightarrow \partial _{\mu} F ^{\mu \nu} = 0 \\[8pt]
+
+\mathscr{L} =  { \bar{\psi} } \left(
+			i \hbar c \gamma ^{\mu} \partial _{\mu} - m c^2 
 			\right) \psi 
 \rightarrow
-			\left( i \gamma ^{\mu} \partial _{\mu}  - m   \right)\psi = 0
+			\left( i \hbar  \gamma ^{\mu} \partial _{\mu}  - m c  \right)\psi = 0\\[10pt]
 \end{array}
+\label{campos}
 \end{equation}
 
 
 
 
-En Teorías Cuantícas de Campos, el campo se convierte en un operador ($\phi \rightarrow \hat{\phi}$) actuando sobre algún cierto Espacio de Fock.\\   %, donde todas las configuraciones del campo contribuyen en la integral de caminos no voy a poder encontrar una ecuacion diferencial de movimiento, en cambio si reemplazo la acción por la acción efectiva, voy a poder encontrar una ecuacion de movimiento para el valor de espectacion del vacio (lo que voy a llamar $ \phi _J$ ), donde estoy teniendo en cuenta todas las fuentes externas $J$.
+En Teorías Cuantícas de Campos, el campo se reinterpreta como un operador ($\phi \rightarrow \hat{\phi}$), cuya dinamica seguira estando dada por \ref{campos}. \\
 
 
-Dada una fuente J(x), se define la Funcional Generatriz como:
 
-\begin{equation}
-Z [J] = 
-\int D \phi \ e ^{- S[ \phi ] + (J, \phi )}
-\end{equation}
 
-Donde $(.,.) $ es el producto interno de funciones sobre la variedad, en nuestro caso $(\phi,J) = \int J(x) \phi (x)$ . \\
+Otra forma alternativa de obtener la dinamica de los campos $\hat{\phi } (x)$, es mediante la formulación mediante Integrales de Caminos dada por Richard Feynman. \\
 
-Toda la información que contiene la teoría con todos los efectos cuánticos está dada por los valores medios de los campos en presencia de la fuente:
+En esta formulación, toda la información que contiene la teoría con todos los efectos cuánticos está dada por los valores medios de los campos ordenados temporalmente actuando sobre el vacio, dada una fuente externa $J(x)$ estos valores quedan expresados como:
 
 \begin{equation}
 \begin{array}{c}
 < 0 | \hat{ \phi  } (x _1) .... \hat{\phi  } (x _n) | 0 > = \frac{1}{Z[J]} 
-\int D \phi \ e ^{- S[ \phi ] + (J, \phi )} \phi (x _1) ... \phi (x _n) = \\ \\
-\frac{\delta ^n Log Z[J] }{ \delta J(x) ... \delta J(x _n) }
+\int D \phi \ e ^{- S[ \phi ] + (J, \phi )} \phi (x _1) ... \phi (x _n) \\[10pt]
+\end{array}
+\label{valor}
+\end{equation}
+
+Donde N es una constante de normalización, $S[\phi]$ es la acción clasica del campo, $(.,.) $ es el producto interno de funciones sobre la variedad, en nuestro caso está dado por $(\phi,J) = \int J(x) \phi (x) d^n x$, y $Z[J]$ es la Funcional Generatriz que será definida a continuación.\\
+
+
+
+
+Para poder calcular (\ref{valor}), se define la Funcional Generatriz, dada por:
+
+\begin{equation}
+Z [J] = 
+\int D \phi \ e ^{- S[ \phi ] + (J, \phi )}
+\label{eq.generatriz}
+\end{equation}
+
+Una vez calculada la funcional generatriz, los valores medios (\ref{valor}) quedan determinados por sus derivadas funcionales.
+
+\begin{equation}
+\begin{array}{c}
+< 0 | \hat{ \phi  } (x _1) .... \hat{\phi  } (x _n) | 0 > = 
+\frac{\delta ^n Log Z[J] }{ \delta J(x1) ... \delta J(x _n) } \\[10pt]
 \end{array}
 \end{equation}
 
 
-El campo medio, queda definido como:
+Se define entonces el campo medio como:
 
 \begin{equation}
-\phi _J (x) \equiv < \hat{\phi } (x) > = \frac{\delta Log Z[J] }{\delta J(x)} 
+\begin{array}{c}
+\phi _J (x) \equiv < \hat{\phi } (x) > = \frac{\delta Log Z[J] }{\delta J(x)}  \\[10pt]
+\end{array}
 \end{equation}
 
 
 
-Así como la ecuación de movimiento para el campo clásico estaba dada por el mínimo de la acción, el campo $ \phi _J (x) $ va a satisfacer una ecuación de movimiento dada por la acción efectiva $ \Gamma [\phi _J] $, que en el limite $\hbar \rightarrow 0$ tiende a la ecuación de movimiento clásica:
+Así como la ecuación de movimiento para el campo clásico estaba dada por la acción, el campo $ \phi _J (x) $ va a satisfacer una ecuación de movimiento dada por una acción efectiva $ \Gamma [\phi _J] $, la cual a orden $\hbar$ coincide con la acción clasica.
 
 
 \begin{equation}
 \begin{array}{c}
 \frac{\delta \Gamma [ \phi _J ]  }{\delta \phi _J (x)  } = 
-J (x) \\
+J (x) \\[8pt]
 \underset{ \hbar \rightarrow 0 }{ Lim  } \Gamma [ \phi  ] = S [ \phi ]
 \end{array}
 \label{eq.accion1}
 \end{equation}
 
-Se define entonces la acción efectiva como:
+Definiendo la acción efectiva como (\ref{efectiva}) se puede ver que cumple (\ref{eq.accion1}):
 
 \begin{equation}
 \Gamma [\phi _J] = (J, \phi _J) - Log Z [J]
+\label{efectiva}
 \end{equation}
 
-La cual cumple al evaluarla en el campo medio $\phi _J $
+Para demostrar esto se toma su derivada funcional evaluada en el campo medio $\phi _J $.
 
 
 \begin{equation}
 \frac{\delta \Gamma [ \phi _J ]}{\delta \phi _J (x) } = 
-J(x) + \int dx ' \frac{\delta J (x')}{\delta \phi _J (x) } \phi _J (x') - 
-\frac{1}{Z[J]} \int dx' \frac{\delta Z[J] }{\delta J(x')} \frac{\delta J[x']}{\delta \phi _J (x)} = J(x)
+J(x) + \int dx ' \frac{\delta J [\phi _J ]}{\delta \phi _J (x) } \phi _J (x) - 
+\frac{1}{Z[J]} \int dx' \frac{\delta Z[J] }{\delta J(x')} \frac{\delta J[\phi _J ]}{\delta \phi _J (x)} = J(x) \\[8pt]
 \end{equation}
 
-Hay un método de obtener un desarrollo en potencias de $\hbar$ de $\Gamma [ \phi _J]$ , sin necesidad de calcular la Funcional Generatriz. \\
+
+Se puede obtener un desarrollo en potencias de $\hbar$ de $\Gamma [ \phi _J]$ , sin necesidad de calcular explicitamente la Funcional Generatriz. \\
 
 
-Para hallar una expresión para la acción efectiva voy a hacer una traslación del campo $\phi (x) \rightarrow \phi _{J} (x) + \phi (x) $ en la funcional generatriz, y luego voy a desarrollar la acción clásica  $ S[ \phi _J + \phi ] $ alrededor de $ \phi _J $ .
+Para obtener dicha expresión se hace el cambi de variables $\phi (x) \rightarrow \phi(x) + \phi _J (x) $ en (\ref{eq.generatriz}), con el que se obtiene desarrollando la acción a orden 2:
 
-\begin{equation}
-\begin{array}{c}
-S [\phi _J + \phi ] \approx
-S[ \phi _j ] +
-\int dx \frac{\delta S[\phi]}{\delta \phi (x) } | _ {\phi = \phi _J} \phi( x ) +
-\frac{1}{2}
-\int dx dx' \frac{\delta S[\phi]}{\delta \phi (x') \phi (x) } | _ {\phi = \phi _J} \phi( x ) \phi (x')  \\ \\
-= S[ \phi _J ] + \int \delta S \ \phi + \frac{1}{2} \int \delta ^2 S \ \phi \phi
-\end{array}
-\end{equation}
-
-Donde el renglón de abajo, es la misma expresión de arriba escrita de manera mas compacta. Insertando  esta expresión en la Funcional Generatriz obtengo:
 
 \begin{equation}
 \begin{array}{c}
 Z[J] = e ^{-S[ \phi _J ] + (J, \phi _J )} 
-\int D \phi e ^{ \int (\delta S [\phi] - J) \phi - \frac{1}{2} \int \delta ^2 S[\phi ] - ... }
+\int D \phi e ^{ -(\delta S  - J, \phi ) - \frac{1}{2}  (\phi, (\delta ^2 S, \phi ) ) }
 \end{array}
 \end{equation}
 
-Haciendo el cambio $J = \delta \Gamma [ \phi ]$ Se puede ver que el termino dominante a $\hbar \rightarrow 0$ viene dado por $\delta ^2 S$, obteniendo así, para la primera aproximación de la acción efectiva.
+Donde:
 
+\begin{equation}
+\begin{array}{ccc}
+\delta S(x) = \left. \frac{\delta S[\phi]}{ \delta \phi (x) } \right| _{\phi = \phi _J} & &
+\delta ^2 S(x,y) = \left. \frac{\delta ^2 S[\phi]}{ \delta \phi (x1) \delta \phi (x) } \right| _{\phi = \phi _J}
+\end{array}
+\end{equation}
 
-
+Haciendo el cambio de variables $\phi (x) \rightarrow \sqrt{\hbar} \phi (x) $ se obtiene para la acción efectiva la expresión:
 
 
 \begin{equation}
-\Gamma [\phi _J ] = S [ \phi _J ] - Log \int D \phi e ^{\frac{1}{2} \int \delta ^2 S \phi \phi }
+\Gamma [\phi _J ] = S [ \phi _J ] - Log \ \int D \phi \ e ^{- \frac{1}{2}  (\phi, (\delta ^2 S, \phi) } + O(\hbar ^2)
 \end{equation}
 
 
