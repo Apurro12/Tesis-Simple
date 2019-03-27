@@ -283,21 +283,21 @@ t ^{\frac{(-m+n)}{2}}
 
 
 
-Los primeros 5 terminos $C _n (A) $ están calculados en \cite{VASSILEVICH2003279}, los cuales dependen de los invariantes geometricos de la variedad, la forma explicita de los primeros 3 es: 
+Los primeros 5 terminos $C _n (A) $ están calculados en \cite{VASSILEVICH2003279}, los cuales dependen de los invariantes geometricos de la variedad, la forma explicita de los 3 primeros, para condiciones de contorno Dirichlet son: 
 
 \begin{equation}
 \begin{array}{c}
-C _0 (A) = (4 \pi ) ^{-m/2}  \int _M d ^m x \sqrt{g}  \\[10pt]
-C _1 (A) = \frac{(4 \pi) ^{-(m-1)/2} }{4} \int _{\partial M } d ^{m-1} \sqrt{h} \\[10pt]
-C _2 (A) = \frac{(4 \pi) ^{-m/2} }{6} \left(
+C _0 (A) = \frac{1}{(4 \pi ) ^{m/2} }  \int  _{M} d ^m x \sqrt{g}  \\[10pt]
+C _1 (A) = \frac{ 1 }{(4 \pi ) ^{(m-1)/2} } \int _{\partial M } d ^{m-1} \sqrt{h} \\[10pt]
+C _2 (A) = \frac{ 1 }{6 (4 \pi) ^{m/2} } \left(
 									\int _M d ^m x\sqrt{g} (6 V + R) +
-									\int _{\partial M } d ^{n-1} x 
-									\sqrt{h} (2 L _{aa}  + 12 S)
+									\int _{\partial M } d ^{m-1} x 
+									\sqrt{h} \ 2 L _{aa} 
 									\right)
 \end{array}
 \end{equation} 
 
-Donde $C _0$ y $C _1$ representan el volumen de la variedad y del borde respectivamente, $C _2$ así como el resto de los coeficientes son funciones del potencial $V$, el Campo de Gauge $\omega $, la condición de contorno $S$, en tensor de curvatura de la variedad $R _{\mu \nu \rho \sigma }$ y el tensor de curvatura extrínseca $K _{\mu \nu }$ sobre el borde de la variedad. \\
+Donde $C _0$ y $C _1$ representan el volumen de la variedad y del borde respectivamente, $C _2$ así como el resto de los coeficientes son funciones del potencial $V$, el tensor de curvatura de la variedad $R _{\mu \nu \rho \sigma }$, el tensor de curvatura extrínseca $K _{\mu \nu }$ sobre el borde de la variedad, tambien pueden depender del Campo de Gauge $\omega $, la condición de contorno $S$, y demas invariantes locales.  \\
 
 
 Utilizando este desarrollo para $K(t)$, se ve que la función $\zeta _A (s)$ posee polos simples en :
@@ -309,7 +309,7 @@ x _n = \frac{m-n}{2}
 \end{equation}
 
 
-Donde los residuos de la función $\zeta _A (s) $ estan dados por:
+Donde los residuos de la función $\zeta _A (s) $ están dados por:
 
 \begin{equation}
 \left. Res \ \zeta _A (s)  \right| _{s= \frac{m - n}{2}} =  
@@ -317,16 +317,16 @@ Donde los residuos de la función $\zeta _A (s) $ estan dados por:
 \end{equation}
 
 
-La cual en principio converge para valores grandes de $s$, pero una vez calculada se puede hacer la prolongación analítica al plano complejo, en particular va a tener polos simples en $x _n$ dados por:   :
+Utilizando $K(t)$ y $\zeta _A (s) $ es posible dar definiciones convergentes a la Accíon Efectia y a la Energía de Casimir.
 
-Donde $m$ es la dimension de la variedad,$d$ el orden del operador A y $n= 0,1,2,3 ...$ \\
+
 
 
 \section{Regularización :}
 
 \textbf{Regularización de la Acción Efectiva:} \\
 
-En la sección anterior se vio que si el operador $\delta ^2 S$ tiene autovalores $\lambda _n$ la primer corrección a la acción efectiva puede expresarse como:
+En la sección anterior se vio que si el operador $\delta ^2 S$ tiene autovalores $\lambda _n$ la primer corrección a la acción efectiva a 1-loop queda:
 
 \begin{equation}
 Log \ Det \ \delta ^2 S = 
