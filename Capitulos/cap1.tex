@@ -288,13 +288,14 @@ Los primeros 5 terminos $C _n (A) $ están calculados en \cite{VASSILEVICH200327
 \begin{equation}
 \begin{array}{c}
 C _0 (A) = \frac{1}{(4 \pi ) ^{m/2} }  \int  _{M} d ^m x \sqrt{g}  \\[10pt]
-C _1 (A) = \frac{ 1 }{(4 \pi ) ^{(m-1)/2} } \int _{\partial M } d ^{m-1} \sqrt{h} \\[10pt]
+C _1 (A) = \frac{ 1 }{4 (4 \pi ) ^{(m-1)/2} } \int _{\partial M } d ^{m-1} \sqrt{h} \\[10pt]
 C _2 (A) = \frac{ 1 }{6 (4 \pi) ^{m/2} } \left(
 									\int _M d ^m x\sqrt{g} (6 V + R) +
 									\int _{\partial M } d ^{m-1} x 
 									\sqrt{h} \ 2 L _{aa} 
 									\right)
 \end{array}
+\label{coef}
 \end{equation} 
 
 Donde $C _0$ y $C _1$ representan el volumen de la variedad y del borde respectivamente, $C _2$ así como el resto de los coeficientes son funciones del potencial $V$, el tensor de curvatura de la variedad $R _{\mu \nu \rho \sigma }$, el tensor de curvatura extrínseca $K _{\mu \nu }$ sobre el borde de la variedad, tambien pueden depender del Campo de Gauge $\omega $, la condición de contorno $S$, y demas invariantes locales.  \\
@@ -322,7 +323,7 @@ Utilizando $K(t)$ y $\zeta _A (s) $ es posible dar definiciones convergentes a l
 
 
 
-\section{Regularización :}
+\section{Regularización:}
 
 \textbf{Regularización de la Acción Efectiva:} \\
 
@@ -348,13 +349,13 @@ Como  $ \epsilon $ y $ \gamma $ no dependen del campo, pueden entrar en la acci�
 \Gamma [ \phi ] = 
 S[ \phi ] - 
 \frac{\hbar }{2}
-\int _ { \epsilon } ^{\infty} \frac{ dT}{T} Tr \  e ^{- T \delta ^2 S}
+\int _ { \epsilon } ^{\infty} \frac{ dT}{T} H(T)
 \end{equation}
 
 Dependiendo del tipo de acción y si el campo presenta o no masa, voy a tener divergencias ultravioletas o infrarrojas, en caso de que tenga masa, no se van a presentar divergencias infrarrojas y las divergencias UV van a poder ser interpretadas como correcciones cuánticas al lagrangiano de partida. \\
 
 
-Como ejemplo se va a tomar un campo masico con autointeracción $\lambda \phi ^4 $.
+Como ejemplo se va a tomar un campo masico en 1+1, con autointeracción $\lambda \phi ^4 $.
 
 Su Acción viene dada por:
 
@@ -366,7 +367,7 @@ S[ \phi ] = \int dx dt \
 \frac{\lambda}{4!} \phi ^4 
 \end{equation}
 
-Calculando la segunda variación de la acción obtengo:
+Calculando la segunda variación de la acción se obtiene:
 
 \begin{equation}
 \delta ^2 S = 
@@ -387,77 +388,35 @@ e ^{- T m ^2 }
 Tr \  e ^{- T ( - \partial _t ^2 - \partial _x ^2 + \frac{\lambda}{2} \phi ^2 ) }
 \end{equation}
 
-Dada la exponencial generada por la masa, puedo ver que la acción efectiva no posee divergencias infrarrojas $(T \rightarrow \infty)$, el comportamiento divergente va a estar en el limite $T \rightarrow 0$, voy entonces a desarrollar el Heat-Kernel en este limite:
-
+Dada la exponencial generada por la masa, puedo ver que la acción efectiva no posee divergencias infrarrojas $(T \rightarrow \infty)$, el comportamiento divergente va a estar en el limite $T \rightarrow 0$, utilizando (\ref{coef}), la contribución divergente viene dada por:
 
 
 \begin{equation}
-\begin{array}{c}
-Tr \  e ^{- T ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) } \approx
-\frac{1}{4 \pi}
-\int
-\frac{  dx dt }{T}
+\int _ { \epsilon } ^{1}  
+\frac{ dT}{T} 
 \left(
-1  -
-T  \frac{\lambda}{2} \phi ^2  +
-T ^2 \frac{\lambda ^2 }{8} \phi ^4 + O ( \phi ^6 T ^3)
-\right)
-
-\end{array}
+		1 - T m^2
+		\right)
+\left(
+		\frac{C _0}{T} + C _2 
+		\right)
 \end{equation}
 
-Donde en general, el desarrollo del Heat-Kernel va a ser un desarrollo en potencias de $ \lambda \phi ^2 T $, insertando el desarrollo hasta este orden en la acción efectiva obtengo:
 
-\begin{comment}
-
-\begin{equation}
-\begin{array}{c}
-\int _ { \epsilon } ^{\infty} \frac{ dt}{t} 
-e ^{- t m ^2 }
-Tr \  e ^{- t ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) } = \\
-\int _ { \epsilon } ^{1} \frac{ dt}{t} 
-e ^{- t m ^2 }
-Tr \  e ^{- t ( - \partial ^2 + \frac{\lambda}{2} \phi ^2 ) } + 
-\int _ { 1 } ^{\infty} \frac{ dt}{t} 
-Tr \  e ^{- t ( - \partial ^2 + m^2 + \frac{\lambda}{2} \phi ^2 ) }
-
-\end{array}
-\end{equation}
-
-\end{comment}
+Donde los terminos superiores del desarrollo del Heat-Kernel van a ser contener potencias crecientes de $ \lambda \phi ^2 T $.
 
 
+Estos terminos divergentes se pueden introducir en el lagrangiano de forma tal que la acción efevtiva resulte finita.
 
 \begin{equation}
 \begin{array}{c}
-\Gamma [ \phi ] = 
-\int dx dt  \\
-\left(
-\frac{( \partial _t \phi ) ^2}{2} +  
-\frac{( \partial _x \phi ) ^2}{2} +
-\frac{m ^2 }{2} \phi ^2 +
-\frac{\lambda}{4!} \phi ^4 
-						\right)  \\
-- \frac{1}{8 \pi}
-\left(
-	\frac{\lambda \phi ^2 Log( \epsilon )}{2}  + \frac{ \lambda ^2 \phi ^4 }{m}
-	\right) + O ( \phi ^6)
-
-\end{array}
-\end{equation}
-
-Así los términos que acompañan a $\phi ^2 $ y $\phi ^4 $ se reinterpretan como correcciones cuánticas a la masa y a la constante de acoplamiento $\lambda $:
-
-\begin{equation}
-\begin{array}{c}
-
-\Gamma [ \phi ] = 
-\int dx dt 
-\frac{ ( \partial \phi ) ^2 }{2 } +
-\frac{\phi ^2}{2} m ^2 + O ( \phi ^6 ) + .... 
-+ \frac{\phi ^4}{4!} \lambda \\ \\
-m ^2 _{fis} = m ^2 - \frac{\lambda phi ^2 Log( \epsilon )}{8 \pi} \\
-\lambda _{fis} = \lambda + \frac{3 \lambda ^2}{m} 
+m ^2 _{fis} = m ^2 \left(
+							1 + \frac{Log (\epsilon)}{2 \pi} 
+							\right) \\[10pt]
+							
+\lambda _{fis} = \lambda \left(
+								 1 - 2 \phi ^2 Log( \epsilon )
+								 \right) \\[10pt]
 
 
 \end{array}
@@ -478,7 +437,7 @@ c
 		}
 \end{equation}
 
-Para regularizarla voy a calcular la función $\zeta _A (s)$ del problema usando coordenadas polares:
+Para regularizarla se va a calcular la función $\zeta _A (s)$ del problema usando coordenadas polares:
 
 \begin{equation}
 \begin{array}{c}
@@ -502,7 +461,7 @@ La Energía de Casimir, se corresponderá con $\zeta _A (-1/2)$, obteniendo
 - \frac{\pi ^4}{180 a ^3}
 \end{equation}
 
-La Energía de Casimir queda definida por:
+La Energía de Casimir queda entonces definida por:
 
 \begin{equation}
 E _0 =  \frac{A c \hbar}{(2 \pi) ^2}
@@ -521,21 +480,26 @@ F(L) = - \partial _L E _0 (L) =
 Que coincide con lo expresado al principio de la sección. \\ \\
 
 
-En el ejemplo anterior la función $\zeta _A (s) $ era regular en $s= -1/2$, entonces no fue necesario introducir un regulador, para obtener la función $\zeta _A (s)$ adimensional para todos los valores de $s$, se la define de la siguiente forma (suponiendo que $A$ tiene autovalores $\lambda _n ^2 $):
+
+\textbf{Adimensionalización:\\}
+
+
+En los ejemplos anteriores se trabajó con  $\zeta _A (s) $ y $H(t)$, lo que se va hacer de aquí en adelante, es adimensionalzarlas para poder tomar tomar potencias complejas que esten bien definidas.
+
 
 \begin{equation}
-\zeta _A (s) = \sum _{n \in N} \left( \frac{\lambda _n}{\mu }  \right) ^{-2s } = 
-\mu ^{2s} \sum _{n \in N } \lambda _n ^{-2s}
+\begin{array}{c}
+
+
+\zeta _A (s) = \sum _{n \in N} \left( \frac{\lambda _n}{\mu }  \right) ^{-2s } \\[10pt]
+
+H (t)  = \sum \limits_{n \in N} e ^{- \frac{t \lambda _{n}}{\mu} }
+
+\end{array}
 \end{equation}
 
-Donde $\mu $ tiene unidades de $longitud ^{-1}$ . \\
-
-Para que coincida con $\underset{ {n \in N}}{  \sum } \lambda _n$ en $s= -1/2$, se procede a definir la energía de vacío como:
+Quedando entonces la Energía de Casimir definida como:
 
 \begin{equation}
-E _ 0 = 
-\frac{\hbar c}{2 }
-\left(
-	\mu ^{2s+1} \sum _{n \in N} \lambda _n ^{-2s} 
-	\right) _{s=-1/2}
+E _0 = \frac{\hbar \mu}{2} \zeta _A (-1/2)
 \end{equation}
