@@ -106,7 +106,7 @@ dx
 \end{equation}
 
 
-Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion $\psi $ que se pueden usar, se va a usar el desarrollo dado en \cite{Nobody06}.
+Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion $\psi $ que se pueden usar, se va a usar el desarrollo dado en \cite{Abramowitz:1974:HMF:1098650}.
 
 \begin{equation}
 \begin{array}{cc}
@@ -116,15 +116,17 @@ Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion
 
 El cual su radio de convergencia esta centrado alrededor de $x = 0$
 
-La ultima integral queda expresada como:
+
+El último termino queda expresado como:
 
 \begin{equation}
+\frac{\alpha}{2 \pi}
 \int _{x_0} ^{\infty}
 \left(
--2 \gamma + 
-2 \sum _{n=2} ^{\infty}
-\zeta (2n+1) (-1) ^{n+1}
-( \frac{\alpha}{2 x} ) ^{2n}
+-2 \gamma -
+2 \sum _{n=1} ^{\infty}
+\zeta (2n+1) (-1) ^{n}
+\left( \frac{\alpha}{2 x} \right) ^{2n}
 \right)
 x ^{-2s-2} dx
 \end{equation}
