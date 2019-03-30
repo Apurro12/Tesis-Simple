@@ -6,3 +6,5 @@
 *.toc
 *.ipynb
 *.ipynb_checkpoints/
+*.bbl
+*.blg

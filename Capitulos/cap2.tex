@@ -1,8 +1,9 @@
 \chapter{Ejemplos Sencillos}
     
-En este capitulo se van a aplicar las herramientas vistas en el capítulo anterior. Se va a calcular de distintas formas la función $ \zeta _A (s) $, para luego obtener la energía de vacio, sobre un operador diferencial $A = - \partial ^2 _x$ sometido a distintas condiciones de contorno.
-    
-A partir de aquí se utilizaran las unidades naturales $\hbar=c=1$.
+En este capitulo se van a aplicar las herramientas vistas en el capítulo anterior. 
+
+
+Se va a obtener la energía de vacío del operador $A = - \partial ^2 _x$ sometido a distintas condiciones de contorno, para eso se va a calcular la función $ \zeta _A (s) $, primero exactamente, y luego en el último ejemplo, se utilizará el Heat-Kernel junto con dos métodos para aproximar $\zeta _A (s)$.
 
 \section{Dirichlet,Neumann y Periódicas}
 
@@ -415,46 +416,19 @@ El cual coincide con lo calculado anteriormente. Utilizando esta tecnica se pued
 
 \subsection{Uso del Heat-Kernel:}
 
-En está sección se van a calcular los polos de la función $\zeta _A (s) $, utilizando el desarrollo del Heat-Kernel dado por [referenciar], dada las condiciones de nuestro operador (variedad unidimensional, sin curvatura, sin potencial), los coeficientes de  Heat-Kernel son:
+
+Utilizando la formula (\ref{losresi}), luego de calcular los coeficientes del Heat Kernel dados por \cite{VASSILEVICH2003279}, se obtiene:
+
+
 
 \begin{equation}
 \begin{array}{c}
-C _0 (A) = \frac{1}{\sqrt{4 \pi}} \int _{0} ^{L} dx = \frac{L}{\sqrt{4 \pi}} \\[10pt]
-C _1 (A) = \frac{1}{4} \left( (-1) + (+1) \right) = 0 \\[10pt]
-C _2 (A) = \frac{12}{6} \frac{1}{\sqrt{4 \pi }} \left(  - \gamma \right) = - \frac{\gamma}{\sqrt{\pi}} \\[10pt]
-C _3 (A) = \frac{192}{384}  (- \gamma ) ^2 = \frac{\gamma ^2}{2} \\[10pt]
-C _4 (A) = \frac{480}{360} \frac{1}{\sqrt{4 \pi}} (- \gamma) ^3 = \frac{-2 \gamma}{3 \sqrt{\pi}}
-
-\end{array}
-\end{equation}
-
-Utilizando estos coeficientes en la formula (\ref{losresi}) se obtiene:
-
-\begin{equation}
-\begin{array}{c}
-Res[ \zeta _A (s)] | _{s=1/2} = \frac{L}{2 \pi} \\
+Res[ \zeta _A (s)] | _{s=1/2} = \frac{L \mu}{2 \pi} \\
 Res[ \zeta _A (s)] | _{s=0} = 0 \\
-Res[ \zeta _A (s)] | _{s=-1/2} = \frac{\gamma}{2 \pi} \\
-Res[ \zeta _A (s)] | _{s=-1} = \frac{\gamma}{2 \pi} = 0 \\
-Res[ \zeta _A (s)] | _{s=-3/2} = - \frac{\gamma ^2}{2 \pi} = 0 \\
-
-
-\end{array}
-\end{equation}
-
-\begin{equation}
-\begin{array}{c}
-
-\zeta(s \rightarrow 1/2) = \frac{L \mu }{2 \pi} \frac{1}{s-1/2} + finito\\[10pt]
-
-\zeta(s \rightarrow 0) = finito \\[10pt]
-
-\zeta (s \rightarrow - 1/2)  = \frac{ - \gamma  }{2 \pi \mu } \frac{1}{s + 1/2} + finito \\[10pt]
-
-\zeta (s \rightarrow - 3/2)  = \frac{ - \gamma  }{2 \pi \mu } \frac{1}{s + 1/2} + finito \\[10pt]
-
+Res[ \zeta _A (s)] | _{s=-1/2} = \frac{\gamma}{2 \pi \mu} \\
+Res[ \zeta _A (s)] | _{s=-1} = 0 \\
 \end{array}
 \end{equation}
 
 
-Lo cual coincide con lo calculado por los dos métodos anteriores.
+Lo cual, dado que $\zeta _A (s)$ tiene polos simples, coincide con lo calculado por los dos métodos anteriores.

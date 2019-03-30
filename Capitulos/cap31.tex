@@ -6,7 +6,7 @@ En esta seccion se va a estudiar la fucion $\zeta (s) $ en el limite $L \rightar
 \zeta (s) = \int _{0} ^{\infty} \rho (x) \ \left( \frac{x}{\mu } \right) ^{-2 s} dx
 \end{equation}
 
-Donde la $\rho(x) $ es la densidad de autovalores, para llegar a esta representación se va a utilizar la forma como integral en el plano complejo donde el camino de intregración de está dado por la figura izquierda de (\ref{fig:contorno}), la parametrización va a estar dada por:
+Donde la $\rho(x) $ es la densidad de autovalores, para llegar a esta representación se va a utilizar la forma como integral, donde el camino de intregración de está dado por la figura izquierda de (\ref{fig:contorno}). La parametrización usada fue:
 
 
 \[
@@ -18,13 +18,13 @@ z(t) =
    \end{cases}
 \]
 
-De (\ref{larga}) se puede ver que $S1/S2 \rightarrow 1$ cuando $L \rightarrow \infty$, por lo tanto se va a utilizar $M ( \lambda)$ dada por (\ref{eq.completa}).\\
+De (\ref{larga}) se puede ver que $S1,S2 \rightarrow 1$ cuando $L \rightarrow \infty$, por lo tanto se va a utilizar $M ( \lambda)$ dada por (\ref{eq.completa}).\\
 
 
 
-Dependiendo si estoy arriba o abajo del eje real, voy a tener un termino exponencialmente creciente/decreciente en el limite $L \rightarrow \infty$ proveniente de $e ^{i z t}$
+Dependiendo si se está arriba o abajo del eje real, va a existir un termino exponencialmente creciente/decreciente en el limite $L \rightarrow \infty$ proveniente de $e ^{i z t}$
 
-Voy a separar mi integral en una parte de arriba y una parte de abajo, en el termino de arriba del eje real obtengo:
+La integral correspodiente a arriba del eje real es:
 
 \begin{equation}
 \begin{array}{c}
@@ -32,36 +32,38 @@ Voy a separar mi integral en una parte de arriba y una parte de abajo, en el ter
 \partial _z
 Log
 \left(
-\frac{e ^{-2 i z  L } e ^{- \frac{i \alpha}{2 \lambda} Log[2 z  L]} }{\Gamma[1-\frac{i \alpha}{2 z }]} +
-\frac{e ^{ \frac{i \alpha}{2 z } Log[2 z  L]} }{\Gamma[1+\frac{i \alpha}{2 z }]}
+\frac{e ^{-2 i z  L } e ^{- \frac{i \alpha}{2 \lambda} Log \left( 2 z  L \right) } }
+	 {\Gamma \left( 1 + \frac{ \alpha}{2 i z } \right)} +
+\frac{e ^{ \frac{i \alpha}{2 z } Log \left( 2 z  L \right)  } }{\Gamma \left( 1 - \frac{ \alpha}{2 i z } \right) }
 \right) d z \\
 z = i t + \epsilon 
 \end{array}
 \end{equation}
 
-Sacando factor comun de modo que me quede un termino exponencialmente decrenciente dentro del Logatirmo obtengo
+Sacando factor comun de modo de obtener un termino exponencialmente decrenciente adentro del logatirmo se obtiene:
 
 \begin{equation}
 \frac{1}{2 \pi i}  \int _{\infty} ^{t0} 
 \partial _{z}
 \left(
-\frac{i\alpha}{2 z} Log[2 z L] - Log[\Gamma[1 + \frac{i \alpha}{2 z}]] +
-Log[1- \epsilon _L ]
+\frac{i\alpha}{2 z} Log ( 2 z L ) - 
+Log \left( \Gamma \left( 1 - \frac{ \alpha}{2 i z} \right) \right) +
+Log \left( 1- \epsilon _L \right)
 \right)
 d z
 \end{equation}
 
-Donde $ \epsilon _L \rightarrow 0$ si $L \rightarrow \infty $ , entonces Logaritmo va a cero, quedando la integral final:
+Donde $ \epsilon _L \rightarrow 0$ si $L \rightarrow \infty $ , utilizando el mismo razonamiento para la integral de abajo, y luego tomando el limite $\epsilon \rightarrow 0$, se obtiene:
 
 \begin{equation}
 \begin{array}{c}
 \zeta (s) = 
 \frac{L}{\pi}
-\int _ {x_0} ^{\infty} x ^{-2s} dx + \\
+\int _ {x_0} ^{\infty} x ^{-2s} dx + \\[10pt]
 \frac{\alpha}{2 \pi } \int _{x_0} ^{\infty} 
-\left(
-\frac{-1}{ x ^2} -
-\frac{Log[2 x L]}{x ^2}  -
+\left(-
+\frac{1}{ x ^2} +
+\frac{Log \left( 2 x L \right) }{x ^2}  -
 \frac{1}{ x ^2 } 
 \left(
 \psi (1 + \frac{i \alpha}{2 x}) + \psi (1 - \frac{i \alpha}{2 x}) 
@@ -73,18 +75,25 @@ x ^{-2s} d x
 
 
 
-Relizando las integrales termino a termino obtengo
-
+Relizando las integrales termino a termino se obtiene:
 \begin{equation}
 \begin{array}{c}
 \zeta (s) = 
+
+
+\frac{L}{2 \pi} \frac{x _0 ^{1-2s}}{s-1/2} + 
+
+
 \frac{\alpha}{2 \pi} x _{0} ^{-2s-1}
 \left( 
-\frac{1}{(1+2s) ^2} +
-\frac{Log[2 L x _0]}{1+2s} -
-\frac{1}{1+2s}
-\right) + 
-\frac{L}{\pi} \frac{x _0 ^{-2s+1}}{2s-1}  \\
+	-\frac{1}{1+2s} +
+	\frac{1}{(1+2s) ^2} +
+	\frac{Log(2 L x _0)}{1+2s} 
+	\right) + 
+
+  \\[10pt]
+
+
 - \frac{\alpha}{2 \pi}
 \int _{x_0} ^{\infty} 
 \left(
@@ -97,7 +106,7 @@ dx
 \end{equation}
 
 
-Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion $\psi $ que se pueden usar, yo voy a el desarrollo 
+Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion $\psi $ que se pueden usar, se va a usar el desarrollo dado en \cite{Nobody06}.
 
 \begin{equation}
 \begin{array}{cc}
