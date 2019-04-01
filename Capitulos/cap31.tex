@@ -6,7 +6,7 @@ En esta seccion se va a estudiar la fucion $\zeta (s) $ en el limite $L \rightar
 \zeta (s) = \int _{0} ^{\infty} \rho (x) \ \left( \frac{x}{\mu } \right) ^{-2 s} dx
 \end{equation}
 
-Donde la $\rho(x) $ es la densidad de autovalores, para llegar a esta representación se va a utilizar la forma como integral, donde el camino de intregración de está dado por la figura izquierda de (\ref{fig:contorno}). La parametrización usada fue:
+Donde la $\rho(x) $ es la densidad de autovalores, para llegar a esta representación se utilizó la representación integral, donde el camino de intregración de está dado por la figura izquierda de (\ref{fig:contorno}). La parametrización usada fue:
 
 
 \[
@@ -28,7 +28,7 @@ La integral correspodiente a arriba del eje real es:
 
 \begin{equation}
 \begin{array}{c}
-\frac{1}{2 \pi i} \int _{\infty} ^{t0} 
+\frac{ 1 }{2 \pi i} \int _{\infty} ^{t0} 
 \partial _z
 Log
 \left(
@@ -43,7 +43,7 @@ z = i t + \epsilon
 Sacando factor comun de modo de obtener un termino exponencialmente decrenciente adentro del logatirmo se obtiene:
 
 \begin{equation}
-\frac{1}{2 \pi i}  \int _{\infty} ^{t0} 
+\frac{ 1 }{2 \pi i}  \int _{\infty} ^{t0} 
 \partial _{z}
 \left(
 \frac{i\alpha}{2 z} Log ( 2 z L ) - 
@@ -57,16 +57,16 @@ Donde $ \epsilon _L \rightarrow 0$ si $L \rightarrow \infty $ , utilizando el mi
 
 \begin{equation}
 \begin{array}{c}
-\zeta (s) = 
-\frac{L}{\pi}
+\frac{\zeta (s)}{\mu ^{2s}} = 
+\frac{L }{\pi}
 \int _ {x_0} ^{\infty} x ^{-2s} dx + \\[10pt]
-\frac{\alpha}{2 \pi } \int _{x_0} ^{\infty} 
+\frac{\alpha }{2 \pi } \int _{x_0} ^{\infty} 
 \left(-
 \frac{1}{ x ^2} +
 \frac{Log \left( 2 x L \right) }{x ^2}  -
-\frac{1}{ x ^2 } 
+\frac{1}{ 2 x ^2 } 
 \left(
-\psi (1 + \frac{i \alpha}{2 x}) + \psi (1 - \frac{i \alpha}{2 x}) 
+\psi (1 - \frac{ \alpha}{2 i x}) - \psi (1 + \frac{ \alpha}{2 i x}) 
 \right)
 \right)
 x ^{-2s} d x
@@ -75,26 +75,26 @@ x ^{-2s} d x
 
 
 
-Relizando las integrales termino a termino se obtiene:
+Realizando las integrales termino a termino se obtiene:
 \begin{equation}
 \begin{array}{c}
-\zeta (s) = 
+\frac{\zeta (s)}{\mu ^{2s}} = 
 
 
-\frac{L}{2 \pi} \frac{x _0 ^{1-2s}}{s-1/2} + 
+\frac{L  }{2 \pi} \frac{x _0 ^{1-2s}}{s-1/2} + 
 
 
-\frac{\alpha}{2 \pi} x _{0} ^{-2s-1}
+\frac{\alpha  }{2 \pi} x _{0} ^{-2s-1}
 \left( 
-	-\frac{1}{1+2s} +
-	\frac{1}{(1+2s) ^2} +
-	\frac{Log(2 L x _0)}{1+2s} 
+	-\frac{1}{2(s+1/2)} +
+	\frac{1}{4 (s+1/2) ^2} +
+	\frac{Log(2 L x _0)}{2(s+1/2)} 
 	\right) + 
 
   \\[10pt]
 
 
-- \frac{\alpha}{2 \pi}
+- \frac{\alpha  }{4 \pi}
 \int _{x_0} ^{\infty} 
 \left(
 \psi(1 + \frac{i \alpha}{2 x}) +
@@ -112,20 +112,20 @@ Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion
 \begin{array}{cc}
 \psi (1+ z ) = - \gamma + \sum _{n=2} ^{\infty} (-1) ^n \zeta (n) z ^{n-1} & |z| < 1
 \end{array}
+\label{repr}
 \end{equation}
-
-El cual su radio de convergencia esta centrado alrededor de $x = 0$
 
 
 El último termino queda expresado como:
 
 \begin{equation}
-\frac{\alpha}{2 \pi}
+- \frac{\alpha}{4 \pi}
 \int _{x_0} ^{\infty}
 \left(
 -2 \gamma -
-2 \sum _{n=1} ^{\infty}
-\zeta (2n+1) (-1) ^{n}
+2 \sum _{n=1} ^{\infty} 
+(-1) ^{n}
+\zeta (2n+1) 
 \left( \frac{\alpha}{2 x} \right) ^{2n}
 \right)
 x ^{-2s-2} dx
@@ -135,21 +135,52 @@ Quedando la funcion $\zeta _A (s) $ :
 
 \begin{equation}
 \begin{array}{c}
-\zeta _A (s) = 
-\frac{L x0 ^{-2s+1} }{2 \pi } \frac{1}{s- 1/2} + 
-\frac{\alpha x0 ^{-2s-1} }{8 \pi } \frac{1}{(s+1/2) ^2} + \\
-\frac{\alpha x0 ^{-2s-1} }{4 \pi } 
+\frac{\zeta _A (s)}{\mu ^{2s}} = 
+\frac{L  }{2 \pi } \frac{ x _0 ^{1-2s} }{s- 1/2} + 
+\frac{\alpha  }{8 \pi } \frac{ x_0 ^{-2s-1} }{(s+1/2) ^2} + \\[10pt]
+
+
+\frac{\alpha  }{4 \pi } 
 \left(
-Log[2 L x_0] + \gamma - 1
+Log(2 L x _0 ) -1 + \gamma 
 \right)
-\frac{1}{s+1/2} + \\
-\frac{x_0 ^{-2s}}{2\pi} 
+\frac{x _0 ^{-2s-1}}{s+1/2} + \\[10pt]
+
+
+\frac{\alpha }{4\pi} 
 \sum _{n=1} ^{\infty} (-1) ^{n} \zeta (2n+1) 
-( \frac{\alpha}{2 x0} ) ^{2n+1} \frac{1}{s+n+1/2}
+( \frac{\alpha}{2 } ) ^{2n} \ \frac{x _0 ^{-2s-2n-1}}{s+n+1/2}
 \end{array}
 \end{equation}
 
-Para ver la energía de vacío hay que evaluar esta expresion en $s=-1/2$ y graficar su parte finita, tal como esta en la figura [ \ref{fig:vacio} ] donde estan los primeros 100 terminos de la serie, en funcion de $x = \alpha / x_0$ y la suma exacta de la serie al reemplazar $\zeta (2s+1) = 1$.
+La parte finita de esta expresión en $s=-1/2$ viene dada por:
+
+\begin{equation}
+\begin{array}{c}
+
+PF \ \zeta (s=-1/2) = 
+
+- \frac{L x_0 ^2}{2 \pi \mu} \ + \\[10pt]
+
+\frac{\alpha}{4 \pi} 
+						\sum _{n=1} ^{\infty} \frac{(-1) ^n}{n} \zeta (2n+1)
+						\left( \frac{\alpha}{2 x_0 } \right) ^{2n}  + \\[10pt]
+
+\frac{\alpha  }{4 \pi } 
+\left(
+Log(2 L x _0 ) -1 + \gamma 
+\right)
+\left. \frac{ x _0 ^{-2s-1} \mu ^{2s} -  \frac{1}{\mu}  }{s+1/2} \right| _{s=-1/2}  + \\[10pt]
+
+					
+
+\end{array}
+\end{equation}
+
+Donde el último término debe entenderse como el desarrollo de taylor,que converge en $s=-1/2$.
+
+
+En la figura [ \ref{fig:vacio} ] está graficado el segundo termino, en funcion de $x = \alpha / x_0$. Puede verse una divergencia alrededor de $x=2$, la cual se debe a la divergencia en la representación (\ref{repr}).
 
 \begin{figure}
     \centering
