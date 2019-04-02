@@ -1,19 +1,52 @@
 \chapter{Extensiones Autoadjuntas del Operador}
 
-    En Este capitulo se van a estudiar otras condiciones de contorno que hacen que el operador sea Autoadjunto en $x=0$ ademas de CC Dirichlet.
+	En este capítulo se va a estudiar otras posibles condiciones de contorno en $x=0$, que hacen que el operador sea autoajunto. Luego se va a estudiar la extencion autoadjunta, y una vez obtenida se va a estudiar la nueva estructura de polos. 
 
-\section{Condiciones de Contorno Regulares}
 
-En el capitulo anterior se estudiaron condiciones de contorno Dirichlet en ambos extremos, el objetivo de esta seccíon es ver si existen condiciones de contorno que en la ecuacion del espectro contengan $U(L)$ o su derivada
+\section{Condiciones de Contorno Regulares:}
 
-Suponiendo que en $x=0$ quiero poner las condiciones de contorno Robin mas generales:
+En el capitulo anterior se estudiaron condiciones de contorno Dirichlet en ambos extremos, el objetivo de esta seccíon es ver si existen otras posibles condiciones de contorno.\\
+
+Imponiendo las condiciones de contorno Robin mas generales, el operador queda definido por:
 
 \begin{equation}
-\phi (0) + C \phi'(0) = 0 
-\label{eq.robin}
+\begin{array}{c}
+    A \phi (x) = - \partial ^2 _x  \phi(x) + \frac{\alpha}{x} \phi(x) \\
+    \phi(L) = 0 \\
+    \phi (0) + C \phi'(0) = 0 
+\end{array}
+\label{operador}
 \end{equation}
 
-Los desarrollos de $U(x \rightarrow 0$ y $ F _1 ^1 (x \rightarrow 0 )$ están calculados en la ecuacion(REFERENCIAR) del capitulo anterior, puede verse que $F _1 ^1 (x)$ es una serie de potencia regular en $x=0$ entonces tanto $y_1 (x \rightarrow 0 ) \rightarrow 0$ como $y' _1 (x \rightarrow 0 ) \rightarrow 0$, como $U(x)$ posee potencias negativas y un termino logaritmico, $y _2 (x \rightarrow 0 ) \rightarrow Cte$ pero  $y' _2 (x \rightarrow 0 ) \rightarrow \infty $.
+
+
+En el caítulo 3 se mostró que tiene soluciones dadas por:
+
+\begin{equation}
+    \phi (x) = 
+    C[1]
+    \underbrace{
+     \ e ^{-i \lambda x} \ x \ F _{1} ^{1} (1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x) } _ {y_1}
+    + C[2] \underbrace{ \ e^{-i \lambda x } \ x \ U (1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x) } _{y_2} 
+\tag{\ref{eq.phi}}
+\end{equation}
+
+Donde el comportamiento a $x \rightarrow 0$ está calculado en (\ref{eq.scat}).
+
+\begin{equation}
+\begin{array}{c}
+\phi (x \rightarrow 0) \approx
+C[1] ( x + O(x ^2)) + \\[10pt]
+C[2] x 
+\left( 
+\frac{1}{  \alpha x  \Gamma ( \frac{ \alpha}{2 i \lambda}  )   }  +
+\frac{Ln(x) }{\Gamma ( \frac{ \alpha}{2 i \lambda} ) } + Cte + O(x)
+\right)
+\end{array}
+\tag{\ref{eq.scat}}
+\end{equation}
+
+Puede verse que $F _1 ^1 (x)$ es una serie de potencia regular en $x=0$, entonces tanto  $y_1 (x \rightarrow 0 ) \rightarrow 0$ como $y' _1 (x \rightarrow 0 ) \rightarrow 0$, como $U(x)$ posee potencias negativas y un termino logaritmico, $y _2 (x \rightarrow 0 ) \rightarrow Cte$ pero  $y' _2 (x \rightarrow 0 ) \rightarrow \infty $.
 
 Para cualquier condicion de contorno de la forma (\ref{eq.robin} ) siempre obtengo $C[2] = 0$ entonces el espectro está dado por los ceros de $y[L]$ o $y'[L]$.
 
