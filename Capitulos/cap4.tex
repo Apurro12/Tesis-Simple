@@ -1,6 +1,6 @@
 \chapter{Extensiones Autoadjuntas del Operador}
 
-	En este capítulo se va a estudiar otras posibles condiciones de contorno en $x=0$, que hacen que el operador sea autoajunto. Luego se va a estudiar la extencion autoadjunta, y una vez obtenida se va a estudiar la nueva estructura de polos. 
+	En este capítulo se va a estudiar otras posibles condiciones de contorno en $x=0$, que hacen que el operador sea hermítico. Luego se va a estudiar si admite extenciones autoadjuntas, y una vez obtenida se va a estudiar la nueva estructura de polos. 
 
 
 \section{Condiciones de Contorno Regulares:}
@@ -20,7 +20,7 @@ Imponiendo las condiciones de contorno Robin mas generales, el operador queda de
 
 
 
-En el caítulo 3 se mostró que tiene soluciones dadas por:
+En el capítulo 3 se mostró que las soluciones vienen dadas por:
 
 \begin{equation}
     \phi (x) = 
@@ -40,42 +40,45 @@ C[1] ( x + O(x ^2)) + \\[10pt]
 C[2] x 
 \left( 
 \frac{1}{  \alpha x  \Gamma ( \frac{ \alpha}{2 i \lambda}  )   }  +
-\frac{Ln(x) }{\Gamma ( \frac{ \alpha}{2 i \lambda} ) } + Cte + O(x)
+\frac{Log(x) }{\Gamma ( \frac{ \alpha}{2 i \lambda} ) } + Cte + O(x)
 \right)
 \end{array}
 \tag{\ref{eq.scat}}
 \end{equation}
 
-Puede verse que $F _1 ^1 (x)$ es una serie de potencia regular en $x=0$, entonces tanto  $y_1 (x \rightarrow 0 ) \rightarrow 0$ como $y' _1 (x \rightarrow 0 ) \rightarrow 0$, como $U(x)$ posee potencias negativas y un termino logaritmico, $y _2 (x \rightarrow 0 ) \rightarrow Cte$ pero  $y' _2 (x \rightarrow 0 ) \rightarrow \infty $.
-
-Para cualquier condicion de contorno de la forma (\ref{eq.robin} ) siempre obtengo $C[2] = 0$ entonces el espectro está dado por los ceros de $y[L]$ o $y'[L]$.
-
-
-En la proxima seccion, voy a buscar extenciones autoajuntas del operador que puedna o no contener a $U(L)$ en el espectro.
+Aquí puede verse que $y' (x \rightarrow 0 ) \approx  \frac{ Log (x) }{\Gamma \left( \frac{\alpha}{2 i \lambda}\right)} $, por lo tanto cuaquier condicion de contorno de la forma ( \label{eq.phi} ) va a implicar $C[2] = 0$.
+ 
+Por lo tanto las únicas condiciones de contorno validas en $x=0$ son Dirichlet,  entonces el espectro está dado por los ceros de $y(L)$ o $y'(L)$. \\
 
 
-\section{Artesanal}
 
-Dado el Hamiltoniano $\mathscr{H} = - \partial ^2 _x + \frac{\alpha}{x}  $ voy a buscar condiciones de contorno que lo hagan autoadjunto en $x=0$ que es donde está la singularidad. 
+En la proxima seccion, se van a  buscar extenciones autoajuntas de forma que pueda contener a $U(L)$ en el espectro.
+
+
+\section{Artesanal:}
+
+Dado el operador $A = - \partial ^2 _x + \frac{\alpha}{x}  $ se van a buscar las condiciones de contorno en $x=0$ que lo hagan autoadjunto.\\
 
 La primer condicion necesaria es que su dominio e imagen pertenezcan a $L _2$.
 
 \begin{equation}
 \begin{array}{c}
-si, \ \phi \in L _2 \rightarrow \mathscr{H} \phi \in L _2
+si \ \phi \in L _2 \rightarrow A \phi \in L _2
 \end{array}
+\label{cond}
 \end{equation}
 
 
-Como voy a estudiar el comportamiento en $x=0$, suponiendo que en $x=L$ todo es bien comportado, voy a empezar buscando soluciones analiticas en $x=0$, 
+Como $\phi (x)$ es bien comportada en el intervalo $(0,L]$, va a ser suficiente la integrabilidad en $x=0$ para que se cumpla (\ref{cond}). \\
 
-Basandome en el desarrollo de las autofunciones ( \ref{eq.scat} ) a  $x \rightarrow 0 $ 
-Suponiendo que la primer funcion decae igual que la primer autofuncion $ y_1 (x) $.
+
+La aplicación de $A$ sobre $y _1 (x \rightarrow 0)$ está dada por:
+
 
 \begin{equation}
 \begin{array}{c}
-\phi _1 (x \rightarrow 0) \approx x \ \rightarrow \phi _1 \ \in \ L _2 \\
-\mathscr{H} [ \phi _1 ] (x \rightarrow 0) \approx \alpha \in L _2
+y _1 (x \rightarrow 0) \approx x + a _2 x ^2 + O (x ^3 ) \ \rightarrow y _2 \ \in \ L _2 \\
+A y _2 (x \rightarrow 0) \approx \alpha - 2 a_2 + O(x ) \rightarrow y _1\in L _2
 \end{array}
 \label{eq.chico1}
 \end{equation}
@@ -231,40 +234,11 @@ Lo cual coincide con lo calculado anteriormente.
 
 \section{Autofunciones:}
 
-Las solcuciones de $H \phi (x) = \lambda ^2 \phi (x)$ ya fueron calculadas anteriormente, la solucion general tiene la forma
+Las soluciones de $A \phi (x) = \lambda ^2 \phi (x)$, junto con su desarrollo alrededor de $x \rightarrow 0$, para que se cumpla la condición de contorno (REFERENCIAR), debe cumplirse que.
+
 
 \begin{equation}
-\phi (x) = 
-x e ^{-i \lambda x}
-\left(
-A  F _1 ^1 \left( 1 - \frac{i \alpha}{2\lambda}  \right) + 
-B  U \left( 1 - \frac{i \alpha}{2\lambda}  \right)
-\right)
-\end{equation}
-
-Desarrollando todo alrededor de $x \rightarrow 0$ obtengo:
-
-\begin{equation}
-\begin{array}{c}
-\phi (x \rightarrow 0 ) = 
-x 
-\left(
-	1 - i \lambda x + O (x ^2)
-	\right)
-\left(
-	A + O (x) + B \left( \frac{1}{\alpha \Gamma x} + \frac{Cte}{\Gamma} + \frac{Log[x]}{\Gamma} + O(x)\right)	
-	\right) = \\
-x \left( A + \frac{Cte B}{\Gamma} - \frac{i \lambda B}{\alpha \Gamma}  \right) +
-\frac{B}{\alpha	\Gamma} (1 + \alpha x Log[x] ) + O (x^2)
-\end{array}
-\end{equation}
-
-Donde: $Cte = 2 \gamma -1 + Log[2 i \lambda] + \psi \left( 1 - \frac{i \alpha}{2 \lambda}\right)$; y $\Gamma = \Gamma \left[ - \frac{i \alpha}{2 \lambda} \right]$
-
-Para que se cumpla la condicion de contorno debe cumpirse que:
-
-\begin{equation}
-A = \frac{B}{\alpha	\Gamma} 
+C[1] = \frac{C[2] }{\alpha	\Gamma} 
 \left(
 \frac{1}{c} + i \lambda - \alpha Cte
 \right)
