@@ -8,7 +8,7 @@ Como trabajo de tesis se propondrá aplicar los métodos desarrollados en el cap
 
 \begin{equation}
 \begin{array}{c}
-    A \phi (x) = - \partial ^2 _x  \phi(x) + \frac{\alpha}{x} \phi(x) \\
+    A \phi (x) = - \partial ^2 _x  \phi(x) + \frac{\alpha}{x} \phi(x) \\[5pt]
     \phi(0) = \phi(L) = 0 
 \end{array}
 \label{operador}
@@ -18,7 +18,7 @@ Para eso voy a resolver la ecuación de autovalores (\ref{eq.aut.sin}).
 
 \begin{equation}
 \begin{array}{c}
-    A  \phi (x)  =   \lambda ^2 \phi (x) \\ 
+    A  \phi (x)  =   \lambda ^2 \phi (x) \\[5pt]
     \lambda \ \in \ \mathfrak{R} _+
 \end{array}
 \label{eq.aut.sin}
@@ -52,33 +52,23 @@ Donde $F _1 ^1(a,b,z)$ y $ U(a,b,z)$ son las soluciones LI de la ecuación hyper
 Las cuales poseen las expresiones analíticas  : 
 
 \begin{equation}
-\begin{array}{c}
-	U(a,b,z) = \frac{1}{\Gamma (a)} 
+\begin{aligned}
+	U(a,b,z) &= \frac{1}{\Gamma (a)} 
 	\int _0 ^{\infty} e ^{-zt}
 	t ^{a-1}
 	(1+t) ^{b-a-1}
-	dt \\
-	F _1 ^1 (a,b,z) = \sum _ {k=0} ^{\infty} 
+	dt \\[5pt]
+	F _1 ^1 (a,b,z) &= \sum _ {k=0} ^{\infty} 
 	\frac{(a) _k}{(b) _k} 
 	\frac{z ^k}{k!} 
-\end{array}
+\end{aligned}
 \end{equation}
 
 Donde $( \   ) _n$ es el símbolo de Pochhammer. \\
 
-%\textbf{Estados Ligados:} \\
-
-%Primero voy a buscar estados ligados, imponiendo la condicion $\phi ^{-} (0) = 0$, veo que $U(1- \frac{\alpha}{2 \lambda} ,2 ,0) \rightarrow \infty $ obtengo $C[2] = 0$
-
-%Los estados ligados van a surgir entonces de la condicion de contorno en $x=L$
-
-%\begin{equation}
-%	F _1 ^{1} (1- \frac{\alpha}{2 \lambda} , 2 2 i \lambda L ) = L 
-%\end{equation}
 
 
 \textbf{Espectro del operador:} \\
-%    A partir de aquí $\phi ^{+} (x)$ la escribiré $\phi (x)$ \\
 
 
 Para aplicar la condición de contorno $\phi (0) = 0$, hay que hacer un desarrollo de $\phi(x)$  alrededor de $x \rightarrow 0$:
@@ -92,7 +82,7 @@ C[2] x
 \frac{1}{  \alpha x  \Gamma ( \frac{ \alpha}{2 i \lambda}  )   }  +
 \frac{Ln(x) }{\Gamma ( \frac{ \alpha}{2 i \lambda} ) } + Cte + O(x)
 \right)
-\\ \\
+\\[15pt]
 Donde,  \ Cte = 
 \frac{
 -1 + 2 \gamma + Ln[2 i \lambda] + \psi (1 + \frac{ \alpha}{2 i \lambda})
@@ -128,16 +118,15 @@ Para estudiar el espectro de $F _1 ^1$ voy a hacer un desarrollo asintótico alr
 
 
 \begin{equation}
-\begin{array}{c}
-    F _1 ^1 (a,b,z) = \Gamma (b) 
+\begin{aligned}
+    F _1 ^1 (a,b,z) &= \Gamma (b) 
     \left(
     \frac{e^z z ^{a-b} }{\Gamma(a)} * S_1 + \frac{(-z) ^{ -a}}{ \Gamma(b-a)} 
     * S_2
-    \right) \\ 
-    S _1 = \sum _{n=0} ^{\infty} \frac{(b-a) _n (1-a) _n}{n!} z ^{-n} \\ 
-    S _2 = \sum _{n=0} ^{\infty} \frac{(a) _n (1+a-b) _n}{n!} (-z) ^{-n}
-    
-\end{array}
+    \right) \\[5pt]
+    S _1 &= \sum _{n=0} ^{\infty} \frac{(b-a) _n (1-a) _n}{n!} z ^{-n} \\[5pt]
+    S _2 &= \sum _{n=0} ^{\infty} \frac{(a) _n (1+a-b) _n}{n!} (-z) ^{-n} 
+\end{aligned}
 \label{eq.aprox}
 \end{equation}
 
@@ -148,15 +137,15 @@ $A_1$ y $A _2$ son las correcciones al orden dominante, para calcular el polo de
 El orden dominante de (\ref{eq.aprox}) es:
 
 \begin{equation}
-\begin{array}{c}
-    F _1 ^1 (1+  \frac{  \alpha}{2 i \lambda} ,2 ,2 i \lambda L  ) \approx \\ \\
-   i  \frac{e ^{ \frac{\pi}{4} \frac{\alpha}{\lambda} } }{2 \lambda L}
+\begin{aligned}
+    F _1 ^1 (1+  \frac{  \alpha}{2 i \lambda} ,2 ,2 i \lambda L  ) & \approx 
+    i  \frac{e ^{ \frac{\pi}{4} \frac{\alpha}{\lambda} } }{2 \lambda L}
     \left( -
     \frac{e ^{- i \frac{\alpha}{2 \lambda} Ln(2 \lambda L) } e ^{2 i \lambda L} }{\Gamma(1+\frac{ \alpha}{2 i \lambda})} +
     \frac{e ^{  i \frac{\alpha}{2 \lambda} Ln(2 \lambda L) }}               {\Gamma(1-\frac{ \alpha}{2 i \lambda})}
-    \right) = 
-    i  \frac{e ^{ \frac{\pi}{4} \frac{\alpha}{\lambda} } }{2 \lambda L}     M (\lambda) 
-\end{array}
+    \right) \\[5pt]  
+    &=  i  \frac{e ^{ \frac{\pi}{4} \frac{\alpha}{\lambda} } }{2 \lambda L}     M (\lambda) 
+\end{aligned}
 \label{eq.completa}
 \end{equation}
 
@@ -195,7 +184,7 @@ De aquí se puede ver que $\mu _n$ esta dada por:
 
 \begin{equation}
 \begin{array}{c}
-    \mu _n = n \pi + \epsilon _n \\
+    \mu _n = n \pi + \epsilon _n \\[5pt]
     Donde \ \epsilon _n \rightarrow{0} ,\ si \ n \rightarrow{0}
 \end{array}
 \label{eq.mu2}
@@ -228,12 +217,12 @@ teniendo en cuenta que $\frac{ln(2 \mu _n)}{2 \mu _n }$ tiende a cero, puedo hac
 \end{equation}
 
 
-Al orden mas bajo se obtiene: 
+Al orden mas bajo se obtiene: \\
 
 \begin{equation}
-(1 + \frac{i \beta}{ \mu _n} Ln( 2 \mu _n) ) 
-(1 + \frac{i  \gamma \beta}{ \mu _n})  =
-(1 + 2 i \epsilon _n)
+\left( 1 + \frac{i \beta}{ \mu _n} Ln( 2 \mu _n) \right) 
+\left(1 + \frac{i  \gamma \beta}{ \mu _n} \right)  =
+(1 + 2 i \epsilon _n) \\[5pt]
 \end{equation}
 
 Todo esto conduce a que el termino subdominante sea $\epsilon _n =  \frac{\beta }{2 n \pi}  Ln(2 n \pi)$, pero existe otro termino que decae como 1/n, para calcular el polo en $s=-1/2$ se deben calcular todos los términos que decaigan como 1/n, reemplazando $\epsilon _n =  \frac{\beta }{2 n \pi} Ln(2 n \pi) + \epsilon '$ en la ecuación anterior, se obtiene:
@@ -248,75 +237,69 @@ Todo esto conduce a que el termino subdominante sea $\epsilon _n =  \frac{\beta 
 Luego para calcular la función $\zeta _{A}$ se utiliza su definición.
 
 \begin{equation}
-\begin{array}{c}
-    \zeta _A (s) = \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2 s}  = \\
-    ( L \mu ) ^{2 s} \sum _{n=1} ^{\infty} 
+\begin{aligned}
+    \zeta _A (s) &= \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2 s}  \\
+    & =    ( L \mu ) ^{2 s} \sum _{n=1} ^{\infty} 
     \left( 
     n \pi + \frac{\alpha L }{2 n \pi} Ln(2 n \pi) + \frac{\gamma \alpha L}{2 n \pi} +
     O(\frac{1}{n^2})
     \right) ^{-2s}
-    
-\end{array}
+\end{aligned}
 \end{equation}
 
 Como en el ejemplo anterior puedo escribir todo como:
 
 \begin{equation}
-\begin{array}{c}
-    \zeta _A (s) = \left( \frac{L \mu }{\pi} \right)  ^{2 s} 
+\begin{aligned}
+    \zeta _A (s) &= \left( \frac{L \mu }{\pi} \right)  ^{2 s} 
     \sum _{n=1} ^{\infty} n ^{- 2  s} 
     \left(
     	1 + \chi _n 
-    	\right) ^{-2 s} \\ \\
-    	Donde: \ \chi _n = 
+    	\right) ^{-2 s} \\[5pt]
+		 \chi _n &= 
     	\frac{\alpha L  }{2 n^2 \pi ^2} Ln(2 n \pi) + 
     	\frac{\gamma \alpha L}{2 n^2 \pi ^2 } +
     	O \left(
-    		\frac{1}{n^3} \right)    	\\	
-    		 
-\end{array}
+    		\frac{1}{n^3} \right) 
+\end{aligned}
 \end{equation}
 
 Al igual que en el capítulo anterior voy a desarrollar el binomio alrededor de  $\chi _n \rightarrow 0$, se va a desarrollar hasta el termino lineal, ya que el termino $\chi _n ^2 $ el orden mas bajo es $n ^{-4} $. 
 
 
-\begin{equation}
-\begin{array}{c}
-    \zeta _A (s) = ( \frac{L \mu}{\pi} ) ^{2 s}
+\begin{align}
+    \zeta _A (s) &= \left( \frac{L \mu}{\pi} \right) ^{2 s}
     \sum _{n=1} ^{\infty} 
     n ^{-2s}
     \left(
     1 - 2 s \chi _n + O(n ^{-4}) \
-    \right) =  \\
-    ( \frac{L \mu }{\pi} ) ^{2 s}
+    \right)   \\[5pt]
+     &= \left( \frac{L \mu }{\pi} \right) ^{2 s}
     \sum _{n=1} ^{\infty} n ^{-2 s} 
     \left(
     1 - 2s \left(
     \frac{\alpha L }{2 n ^2 \pi ^2} Ln( 2  n \pi) + 
     \frac{\gamma \alpha L }{2 n ^2 \pi ^2} 
 	\right) +
-    O (\frac{1}{n ^{3} }  )
-    \right)
-\end{array}
-\end{equation}
-
-
-\begin{equation}
-\begin{array}{c}
-    \zeta _A (s) = 
-    \left( \frac{L \mu }{ \pi } \right) ^{2 s}  
-    \left(
+    O \left( \frac{1}{n ^{3} }  \right)
+    \right) \nonumber \\
+    &=  \left( \frac{L \mu }{ \pi } \right) ^{2 s}  
     \zeta (2 s) -
 	\frac{ s \alpha L}{ \pi ^2} \zeta (2s+2)
 	\left(
 	   Ln[2  \pi ] + \gamma
-	\right) +
+	\right( + 
     \frac{s \alpha L}{\pi ^2}
-	\zeta '(2s+2) \
+	\zeta '(2s+2)
+\end{align}    
+  
+\begin{align}
+   
+    \left(
+    
 	\right) + \\
     \sum _{n=1} ^{\infty} O \left( \frac{1}{n ^{2s+3}} \right)
-\end{array}
-\end{equation}
+\end{align}
 
 Donde sabiendo que $\zeta(s) = \frac{1}{s-1} + Regular$, el primer polo queda determinado como
 
@@ -485,10 +468,9 @@ Para calcular los siguientes polos, voy a calcular la función $\zeta _A (s) $ c
 \begin{array}{c}
 M( \lambda ) = 
 -
- \frac{e ^{2 i \lambda L } e ^{ - \frac{i \alpha Ln \left( 2 \lambda L \right) }{2 \lambda } }  }
+ \frac{e ^{2 i \lambda L } e ^{ - \frac{i \alpha  }{2 \lambda } Ln \left( 2 \lambda L \right) }  }
       { \Gamma \left( 1 + \frac{ \alpha}{2 i \lambda}  \right) } S1 ( \lambda ) +
- \frac{ e ^{   \frac{i \alpha Ln \left(2 \lambda L \right) } 
-           {2 \lambda } } }
+ \frac{ e ^{   \frac{i \alpha  } {2 \lambda } Ln \left(2 \lambda L \right) } }
       { \Gamma \left( 1 - \frac{ \alpha}{2 i \lambda}  \right)   } S2 ( \lambda )  \\ [15pt]
       
 S1 ( \lambda ) = \sum _{n=0} ^{ \infty }
