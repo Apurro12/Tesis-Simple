@@ -1,7 +1,7 @@
 \chapter{Ejemplos Sencillos}
 
   
-En este capítulo se va a obtener la energía de vacío del operador $A = - \partial ^2 _x$ sometido a distintas condiciones de contorno, para eso se va a calcular la función $ \zeta _A (s) $ exactamente, luego en el último ejemplo, se utilizará el Heat-Kernel junto con dos métodos para aproximar $\zeta _A (s)$.
+En este capítulo se va a obtener la energía de vacío del operador $A = - \partial ^2 _x$, sometido a distintas condiciones de contorno, en los primeros tres ejemplos se va a calcular la función $ \zeta _A (s) $ exactamente, luego en el último, se utilizará el Heat-Kernel junto con dos métodos para aproximar $\zeta _A (s)$.
 
 \section{Dirichlet,Neumann y Periódicas}
 
@@ -9,7 +9,7 @@ En esta sección estudiará el espectro y las energías de vacío del operador $
 
 \textbf{Dirichlet:}
 
-El operador $A$ estará dado por:
+El operador $A$ está dado por:
 
 \begin{equation}
 \begin{array}{c}
@@ -19,7 +19,7 @@ El operador $A$ estará dado por:
 \end{equation}
 
 
-Cuyos autovalores y autofunciones están dados por  : 
+Cuyos autovalores y autofunciones son: 
 
 \begin{equation}
 \begin{array}{c}
@@ -41,7 +41,7 @@ La función $\zeta _A (s)$ queda determinada por:
 \end{equation}
 
 
-Que es regular en $s=-1/2$, siendo entonces la energía de vacío:
+La cual es regular en $s=-1/2$, siendo entonces la energía de vacío:
 
 \begin{equation}
 \begin{array}{c}
@@ -49,11 +49,11 @@ E _0 = - \frac{\pi}{12 L} \\[8pt]
 \end{array}
 \end{equation}
 
-Lo cual conduce a una Energía de Vacío atractiva, notar que aquí la constante $\mu$ no aparece en elx resultado final, debido a que la energía de vacio fue finita.\\
+Lo cual conduce a una Energía de Vacío atractiva, notar que aquí la constante $\mu$ no aparece en el resultado final, debido a que la energía de vacío fue finita.\\
 
 \textbf{Neumann:}
 
-El operador $A$ estará dado por:
+El operador $A$ está dado por:
 
 \begin{equation}
 \begin{array}{c}
@@ -77,14 +77,15 @@ Cuyos autovalores y autofunciones están dados por  :
 
 
 
-La función $\zeta _A (s)$ será la misma que la calculada anteriormente (debído a que excluyo los modos cero), así como también la energía de vacío. \\
+La función $\zeta _A (s)$ será la misma que la calculada anteriormente (debido a que se excluyen los modos cero), así como también la energía de vacío. \\
 
 \textbf{Periódicas:}
 
-El operador $A$ estará dado por:
+El operador $A$ está dado por:
 
 \begin{equation}
 \begin{array}{c}
+	A \phi (x) = - \partial _x ^2 \phi (x) \\[5pt]
     \phi (0) = \phi (L)  \\[5pt]
     \phi ' (0) = \phi ' (L)
 \end{array}
@@ -157,7 +158,7 @@ Una vez obtenidos los autovalores el siguiente paso es calcular la función $\ze
     \zeta _ {A } (s) = \mu ^{2s} \sum_{n = 1} ^{ \infty } \lambda _n ^ {-2 s}
 \end{equation}
 
-Al no poder encontrar explícitamente los autovalores voy a utilizar 3 técnicas distintas para hallar aproximaciones de la función $\zeta _A (s)$.
+Al no poder encontrar explícitamente los autovalores se van a utilizar 3 técnicas distintas para estudiar $\zeta _A (s)$.
 
 \subsection{Calculo Asintótico de los autovalores}
 
@@ -172,7 +173,7 @@ Haciendo el cambio a variables adimensionales $\tau = \lambda L $ y $\theta = \g
 \label{eq.asintota}
 \end{equation}
 
-Tal como se puede ver en la figura [\ref{fig:Dibujo1}], los autovalores $\tau _n$ tienden a pegarse a la asíntota vertical de $ Tg ( \tau ) $ a medida que $\tau _n$ se hace cada vez mas grande, por lo cual los autovalores $\tau _n$ se pueden descomponer en una parte correspondiente a las asíntotas verticales de $Tg( \tau )$ mas una corrección que tiende a cero a medida que n  $ \rightarrow \infty$ :
+Tal como se puede ver en la figura [\ref{fig:Dibujo1}], los autovalores $\tau _n$ tienden a pegarse a la asíntota vertical de $ Tg ( \tau ) $ a medida que $\tau _n$ se hace cada vez mas grande, por lo cual los autovalores $\tau _n$ se pueden descomponer en una parte correspondiente a las asíntotas verticales de $Tg( \tau )$ mas una corrección que tiende a cero en el límite $ n  \rightarrow \infty$ :
 
 \begin{figure}
     \centering
@@ -192,7 +193,7 @@ Tal como se puede ver en la figura [\ref{fig:Dibujo1}], los autovalores $\tau _n
 
 Conocer $\epsilon _n $ es equivalente a resolver la ecuación (\ref{eq.asintota}), la cual no posee solución analítica, en vez de eso se va a obtener un desarrollo de $\epsilon _n $ para $n \rightarrow \infty$.
 
-Utilizando (\ref{eq.mu}) en la segunda ecuación de (\ref{eq.asintota}) y desarrollar alrededor de $\epsilon \rightarrow{0}$ se obtiene:
+Utilizando (\ref{eq.mu}) en la segunda ecuación de (\ref{eq.asintota}) y desarrollando alrededor de $\epsilon \rightarrow{0}$ se obtiene:
 
 \begin{equation}
 \begin{aligned}
@@ -227,7 +228,7 @@ Aquí se puede ver que  $\epsilon _n $ posee un desarrollo en serie de la forma:
 \end{equation}
 
 
-Reemplazadno este desarrollo de $\epsilon _n$ en (\ref{igualdad epsilon}), e igualando orden a orden se obtiene para los dos primeros oredenes:
+Reemplazando este desarrollo de $\epsilon _n$ en (\ref{igualdad epsilon}), e igualando orden a orden se obtiene para los dos primeros ordenes:
 
 \begin{equation}
     \epsilon _n = \frac{\theta}{n \pi} 
@@ -263,7 +264,7 @@ La función $ \zeta _A (s)$ queda expresada a este orden como:
         \frac{1}{2 n} + 
         \frac{L \gamma}{n^2 \pi ^2} -
         \frac{L \gamma}{2 n ^3 \pi ^2} +
-        O(\frac{1}{n ^{4}} ) } _{ \chi _n}
+        O \left( \frac{1}{n ^{4}} \right) } _{ \chi _n}
     \right ) ^{-2 s}
 \end{aligned}
 \end{equation}
@@ -306,7 +307,7 @@ Calculadas todas las sumatorias, el resultado final es:
 \end{equation}
 
 
-Los polos de mi función $\zeta _A (s)$ estarán dados por los polos de las funciones $\zeta (s+n)$, desarrollando en los primeros polos obtengo:
+Los polos de mi función $\zeta _A (s)$ están dados por los polos de las funciones $\zeta (s+n)$, desarrollando en los primeros polos obtengo:
 
 \begin{equation}
 \begin{aligned}
@@ -315,7 +316,7 @@ Los polos de mi función $\zeta _A (s)$ estarán dados por los polos de las func
 \zeta _A (s \rightarrow 0) &= \ finito \\[5pt]
 \zeta _A (s \rightarrow -1/2) &= \frac{\gamma}{2 \pi \mu } \frac{1}{s+1/2} \\[5pt]
 \zeta _A (s \rightarrow -1) &= finito \\[5pt]
-\end{array}
+\end{aligned}
 \end{equation}
 
 Lo cual está de acuerdo con lo expuesto en el capítulo 1.
@@ -324,7 +325,7 @@ Lo cual está de acuerdo con lo expuesto en el capítulo 1.
 
 Conocida la ecuación de autovalores, se puede proceder a calcular la función $\zeta _A (s) $ sin calcular explícitamente los autovalores.
 
-Si los  autovalores están definidos por una función $f(\lambda ) = 0$ de la cual son ceros simples, entonces la función $f'(z) / f(z) $ va a tener polos simples en los autovalores de $\hat{A}$, así la  función $\zeta _A (s)$ va a poder representarse como una integral en el plano complejo, donde el camino de intregración es cualquiera de los dos caminos representados en la figura [\ref{fig:contorno}]:
+Si los  autovalores están definidos por una función $f(\lambda ) = 0$ de la cual son ceros simples, entonces la función $f'(z) / f(z) $ va a tener polos simples en los autovalores de $\hat{A}$, así la  función $\zeta _A (s)$ va a poder representarse como una integral en el plano complejo, donde el camino de integración es cualquiera de los dos caminos representados en la figura [\ref{fig:contorno}]:
 
 \begin{equation}
 \begin{aligned}
@@ -332,7 +333,6 @@ Si los  autovalores están definidos por una función $f(\lambda ) = 0$ de la cu
    \frac{1}{2 \pi i} \int _{C} \frac{f'(z)}{f(z)} \left( \frac{z}{\mu} \right) ^{-2s} dz 
    =  \frac{1}{2 \pi i} \int _{C} \partial _z Ln f(z) \ 
 	   \left( \frac{z}{\mu} \right) ^{-2s}
-
 \end{aligned}
 \label{asd}
 \end{equation}
@@ -360,10 +360,10 @@ Reemplazando $f(z)$ por  \ref{autovalores} se obtiene:
 
 
 
-Voy a utilizar el camino de la derecha de [\ref{fig:contorno}], el cual puedo descomponer en 3 integrales, una angular y dos rectas, la contribución angular es regular para todo s por lo tanto no aporta a la estructura de polos, en cuanto a las contribuciones sobre los ejes se va a parametrizar de la forma $z = \pm i  t$. \\ 
+Se va a utilizar el camino de la derecha de [\ref{fig:contorno}], el cual se puede descomponer en 3 integrales, una angular y dos rectas, la contribución angular es regular para $ \forall s$, por lo tanto no aporta a la estructura de polos, en cuanto a las contribuciones sobre los ejes se va a parametrizar de la forma $z = \pm i  t$. \\ 
 
 
-	Luego de tirar los términos exponencialmente decrecientes, que no contriuyen a los polos se obtiene:
+	Luego de tirar los términos exponencialmente decrecientes, que no contribuyen a los polos se obtiene:
 
 \begin{equation}
 	\zeta _A (s) = 
@@ -381,7 +381,7 @@ Voy a utilizar el camino de la derecha de [\ref{fig:contorno}], el cual puedo de
 \label{contorno}
 \end{equation}
 
-Donde en el demonimador se puede sacar factor comun $t$ y utilizar la serie geometrica para obtener:
+Donde en el denominador se puede sacar factor común $t$ y utilizar la serie geométrica para obtener:
 
 \begin{equation}
     \chi =   \sum _{m=0} ^{\infty} \frac{(-1) ^{m} \gamma ^{m} }{t ^{m+1}}

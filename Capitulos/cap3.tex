@@ -107,7 +107,7 @@ En la figura (\ref{fig:funcion}) se puede observar el comportamiento  de $ | F _
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.7]{Funcion.jpg}
+\includegraphics[scale=0.7]{Funcion.pdf}
 \caption{En esta imagen se puede ver el comportamiento de los ceros de función $F _1 ^1$, para $\alpha=1$ y $L=1$}
 \label{fig:funcion}
 \end{figure}
@@ -149,7 +149,7 @@ El orden dominante de (\ref{eq.aprox}) es:
 \label{eq.completa}
 \end{equation}
 
-Para obtener la función $\zeta _A (s) $, se va a utilizar $M( \lambda)$, ya que posee los mismos ceros que $F _1 ^1$, tambienn se puede utilizar cualquier funcíon que tenga los mismos ceros que $M ( \lambda )$.
+Para obtener la función $\zeta _A (s) $, se va a utilizar $M( \lambda)$, ya que posee los mismos ceros que $F _1 ^1$, también se puede utilizar cualquier función que tenga los mismos ceros que $M ( \lambda )$.
 
 
 
@@ -273,7 +273,7 @@ Al igual que en el capítulo anterior voy a desarrollar el binomio alrededor de 
     n ^{-2s}
     \left(
     1 - 2 s \chi _n + O(n ^{-4}) \
-    \right)   \\[5pt]
+    \right)   \nonumber \\[5pt]
      &= \left( \frac{L \mu }{\pi} \right) ^{2 s}
     \sum _{n=1} ^{\infty} n ^{-2 s} 
     \left(
@@ -282,25 +282,18 @@ Al igual que en el capítulo anterior voy a desarrollar el binomio alrededor de 
     \frac{\gamma \alpha L }{2 n ^2 \pi ^2} 
 	\right) +
     O \left( \frac{1}{n ^{3} }  \right)
-    \right) \nonumber \\
-    &=  \left( \frac{L \mu }{ \pi } \right) ^{2 s}  
-    \zeta (2 s) -
+    \right) \nonumber \\[5pt]
+    &=   \left( \frac{L \mu }{ \pi } \right) ^{2 s}  
+    \left( \zeta (2 s) -
 	\frac{ s \alpha L}{ \pi ^2} \zeta (2s+2)
 	\left(
-	   Ln[2  \pi ] + \gamma
-	\right( + 
+	   Ln(2  \pi ) + \gamma
+	\right) + 
     \frac{s \alpha L}{\pi ^2}
-	\zeta '(2s+2)
+	\zeta '(2s+2) \right) \nonumber \\[5pt]
+	&  + \sum _{n=1} ^{\infty} O \left( \frac{1}{n ^{2s+3}} \right)
 \end{align}    
   
-\begin{align}
-   
-    \left(
-    
-	\right) + \\
-    \sum _{n=1} ^{\infty} O \left( \frac{1}{n ^{2s+3}} \right)
-\end{align}
-
 Donde sabiendo que $\zeta(s) = \frac{1}{s-1} + Regular$, el primer polo queda determinado como
 
 \begin{equation}
@@ -363,31 +356,28 @@ Utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales, el 
 
 \end{comment}
 
-\begin{equation}
-\begin{array}{c}
-    \zeta _A (s) \approx \\
-     \frac{e^{-i \pi s} \mu ^{2s}}{2 \pi i} \int _{\infty} ^{1}
+\begin{align}
+    \zeta _A (s) &\approx \\
+     & \frac{e^{-i \pi s} \mu ^{2s}}{2 \pi i} \int _{\infty} ^{1}
      \frac{ i \alpha}{2 t^2}
      \left(
      - 1 + Ln(2 L t) + \frac{i \pi}{2}  - \psi (1+\frac{\alpha}{2 t})
      \right)
      t^{-2 s}
-      \ 
+      \nonumber
      (i dt) + \\
-     \frac{e^{i \pi s} \mu ^{2s}}{2 \pi i} \int _1 ^{\infty}
+     & \frac{e^{i \pi s} \mu ^{2s}}{2 \pi i} \int _1 ^{\infty}
 	\left(      
      \frac{ i \alpha}{2  t^2}
      \left(
-     1 - Ln(2 L t) + \frac{i \pi}{2} + \psi (1 + \frac{\alpha}{2 t}) 
-      
+     1 - Ln(2 L t) + \frac{i \pi}{2} + \psi (1 + \frac{\alpha}{2 t})       
      \right)
      + 2 i L
      \right)
      t^{-2 s}
-     (-i dt)
-     
-\end{array}
-\end{equation}
+     (-i dt) \nonumber
+\end{align}
+
 
 Donde antes de reacomodar los términos puedo calcular el termino que contiene $2iL$ el cual es la potencia mas alta de $t$ para obtener: 
 
@@ -410,20 +400,22 @@ Ningún otro termino aportará a este polo, entonces coincidiendo con lo calcula
 Una vez calculado este termino, puedo reorganizar el resto de la integral como:
 
 \begin{equation}
-\begin{array}{c}
-    \frac{\alpha \mu ^{2s} }{2 \pi} \ sin(\pi s)
+\begin{aligned}
+	\zeta _A (s) &=  \\[5pt]
+    & \frac{\alpha \mu ^{2s} }{2 \pi} \ sin(\pi s)
     \int _1 ^{\infty}
     t ^{-2 s-2} 
     \left(
     1 - Ln(2Lt) + \psi (1 + \frac{\alpha}{2t})
-    \right) dt \ + \\ 
+    \right) dt \  \\[5pt]
+    & +
     \frac{\alpha \mu ^{2s} }{4} 
     Cos(\pi s)
     \int _1 ^{\infty} t^{-2s-2} dt
-\end{array}
+\end{aligned}
 \end{equation}
 
-Donde todos los términos son calculables analíticamente, excepto el que esta multiplicado por $\psi$, para lo cual utilizo el desarrollo de $\psi$ en $t \rightarrow \infty$, quedandome co el primer ordend dado que el siguiente termino contribuye al polo en $s = -3/2$.
+Donde todos los términos son calculables analíticamente, excepto el que esta multiplicado por $\psi$, para lo cual utilizo el desarrollo de $\psi$ en $t \rightarrow \infty$, quedándome con el primer orden, dado que el siguiente termino contribuye al polo en $s = -3/2$.
 
 \begin{equation}
     \psi(1 + \frac{\alpha}{2 t}) =
@@ -433,28 +425,26 @@ Donde todos los términos son calculables analíticamente, excepto el que esta m
 Realizando todas las integrales, la función $ \zeta _A (s)$ a este orden queda determinada por:  
 
 \begin{equation}
-\begin{array}{c}
-    \zeta _A (s)  = 
+\begin{aligned}{c}
+    \zeta _A (s)  &= 
     \frac{L \mu ^{2 s} e ^{i \pi s}}{2 \pi i} \frac{1}{s-1/2} 
     -\frac{\alpha \mu ^{2s} Sin(\pi s)}{8 \pi} \frac{1}{(s+1/2) ^2} \\
-    + \frac{\alpha \mu ^{2s} sin (\pi s) }{4 \pi } \frac{1 - \gamma -  Ln(2 L)}{s+1/2}
+    & \ \ \ + \frac{\alpha \mu ^{2s} sin (\pi s) }{4 \pi } \frac{1 - \gamma -  Ln(2 L)}{s+1/2}
     + \frac{\alpha \mu ^{2s} Cos(\pi s)}{8} \frac{1}{s+1/2}
-    
-\end{array}
+\end{aligned}
 \end{equation}
 
 
 
-Para calcular el polo en $s=-1/2$ desarrollo en Serie de Laurent, obteniendo el mismo resultado que con el metodo anterior:
+Para calcular el polo en $s=-1/2$ desarrollo en Serie de Laurent, obteniendo el mismo resultado que con el método anterior:
 
 \begin{equation}
-\begin{array}{c}
-
-	\zeta (s \rightarrow -1/2) = 
-    \frac{\alpha}{8 \pi \mu } \frac{1}{(s+1/2)^2} + \\
-	\frac{\alpha ( \gamma  + Ln(2L \mu ) -1 )}{4 \pi \mu } \frac{1}{s+1/2} + \ Regular
-    
-\end{array}
+\begin{aligned}
+	\zeta (s \rightarrow -1/2) &= 
+    \frac{\alpha}{8 \pi \mu } \frac{1}{(s+1/2)^2} \\
+    &+
+	\frac{\alpha ( \gamma  + Ln(2L \mu ) -1 )}{4 \pi \mu } \frac{1}{s+1/2} + \ Regular    
+\end{aligned}
 \label{eq.desarrollo}
 \end{equation}
 
@@ -465,26 +455,24 @@ Para calcular el polo en $s=-1/2$ desarrollo en Serie de Laurent, obteniendo el 
 Para calcular los siguientes polos, voy a calcular la función $\zeta _A (s) $ con variable compleja, pero utilizando todos los términos de la expansión en serie de la función $M ( \lambda )$:
 
 \begin{equation}
-\begin{array}{c}
-M( \lambda ) = 
+\begin{aligned}
+M( \lambda ) &= 
 -
  \frac{e ^{2 i \lambda L } e ^{ - \frac{i \alpha  }{2 \lambda } Ln \left( 2 \lambda L \right) }  }
       { \Gamma \left( 1 + \frac{ \alpha}{2 i \lambda}  \right) } S1 ( \lambda ) +
  \frac{ e ^{   \frac{i \alpha  } {2 \lambda } Ln \left(2 \lambda L \right) } }
-      { \Gamma \left( 1 - \frac{ \alpha}{2 i \lambda}  \right)   } S2 ( \lambda )  \\ [15pt]
-      
-S1 ( \lambda ) = \sum _{n=0} ^{ \infty }
+      { \Gamma \left( 1 - \frac{ \alpha}{2 i \lambda}  \right)   } S2 ( \lambda )  \\[10pt]      
+S1 ( \lambda ) &= \sum _{n=0} ^{ \infty }
 \frac{\Gamma (1 - \frac{ \alpha}{2 i \lambda} + n )}{\Gamma (1 - \frac{ \alpha}{2 i \lambda})} 
 \frac{\Gamma (- \frac{ \alpha}{2 i \lambda} + n )}{\Gamma (- \frac{\alpha}{2 i \lambda})} 
 \frac{1}{( 2 i \lambda L ) ^n} = 
-1 + \sum _{n=1} ^{\infty} \frac{S ^{(1)} _n (\lambda)}{\lambda ^n} \\ [10pt]
-
-S2 (\lambda ) = \sum _{n=0 } ^{\infty}
+1 + \sum _{n=1} ^{\infty} \frac{S ^{(1)} _n (\lambda)}{\lambda ^n} \\[10pt]
+S2 (\lambda ) &= \sum _{n=0 } ^{\infty}
 \frac{ \Gamma ( 1 + \frac{ \alpha}{2 i \lambda } + n ) }{\Gamma ( 1 + \frac{ \alpha}{2 i \lambda } )}
 \frac{\Gamma ( \frac{ \alpha }{2 i \lambda} + n )}{\Gamma ( \frac{ \alpha }{2 i \lambda} )}
 \frac{1}{( - 2 i \lambda L ) ^n} = 
 1 + \sum _{n=1} ^{\infty} \frac{S ^{(2)} _n (\lambda)}{\lambda ^n}
-\end{array}
+\end{aligned}
 \label{larga}
 \end{equation}
 
@@ -493,22 +481,18 @@ Donde $S _n ^{(1,2)}$ es un polinomio (de potencias negativas), donde el orden m
 
 Al igual que antes, al integrar sobre los ejes verticales va a haber una parte exponencialmente creciente o decreciente, tirando los términos exponencialmente decrecientes se obtiene:
 
-\begin{equation}
-\begin{array}{c}
 
-Ln ( M ( \lambda = i t ) ) =  Ln(S2) + 
+\begin{align}
+Ln ( M ( \lambda = i t ) ) &=  Ln(S2) + 
 \frac{i \alpha }{2 \lambda} Ln(2 \lambda L) - 
 Ln( \Gamma( 1 - \frac{ \alpha}{2 i \lambda} ) ) \\ 
-
-Ln( M ( \lambda = -i t ) ) = Ln(S1) -  
+Ln( M ( \lambda = -i t ) ) &= Ln(S1) -  
 \frac{i \alpha }{2 \lambda} Ln( 2 \lambda L ) - 
 Ln( \Gamma ( 1 + \frac{ \alpha}{2 i \lambda} )) +
-2 i \lambda L 
+2 i \lambda L  \nonumber
+\end{align}
 
-\end{array}
-\end{equation}
-
-Donde lo único que difiere con lo calculado antes es contribución de los terminos que generan $S1$ y $S2$. \\
+Donde lo único que difiere con lo calculado antes es contribución de los términos que generan $S1$ y $S2$. \\
 
 
 
@@ -516,9 +500,9 @@ Donde lo único que difiere con lo calculado antes es contribución de los termi
 Quedándome solo con los términos que me contribuyen a los polos en  $s < -1/2$ obtengo:
 
 \begin{equation}
-\begin{array}{c}
- \zeta _A (s) = \\ [10pt]
-\frac{e ^{- i \pi s} \mu ^{2s } }{2 \pi}
+\begin{aligned}
+ \zeta _A (s) &= \\[10pt]
+& \frac{e ^{- i \pi s} \mu ^{2s } }{2 \pi}
 \int _{\infty} ^{1} t ^{-2s } 
 		\frac{S2' (it)}{S2 (it)}
 		d t
@@ -526,13 +510,11 @@ Quedándome solo con los términos que me contribuyen a los polos en  $s < -1/2$
 \frac{e ^{i \pi s} \mu ^{2s}}{2 \pi}
 \int _{1} ^{\infty} t ^{-2s } 
 	\frac{S1' (-it)}{S1(-it)}
-	d t +
-	 \\ [10pt]
-	\frac{\alpha \mu ^{2s} }{2 \pi }	sin( \pi s)  \int _1 ^{\infty}
+	d t 
+	 \\[10pt]
+	& + \frac{\alpha \mu ^{2s} }{2 \pi }	sin( \pi s)  \int _1 ^{\infty}
 	t ^{-2s-2} \left( \psi \left( 1 + \frac{\alpha}{2 t}\right) + \gamma \right) dt \\[15pt]
-
-
-\end{array}
+\end{aligned}
 \end{equation}
 
 
@@ -543,12 +525,13 @@ Se puede ver de la expresión anterior que solo van a existir polos simples en l
 Usando que $\frac{S1' (-it)}{S1 (-i t)} = - \frac{S2 ' (i t)}{S2(it)} = \frac{S'(t)}{S(t)}  $ se puede reescribir lo anterior como:
 
 \begin{equation}
-\begin{array}{c}
-\zeta _A (s) =  \\ [5pt]
--  \frac{i \mu ^{2s}  sin (\pi s)}{\pi} \int _1 ^{\infty} t ^{-2s} \frac{S'(t)}{S(t)} dt + 
+\begin{aligned}
+\zeta _A (s) &=  \\[5pt]
+&
 \frac{\alpha \mu ^{2s} sin( \pi s )}{2 \pi } \int _{1} ^{\infty} 
-t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt
-\end{array}
+t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt \\[5pt]
+& -  \frac{i \mu ^{2s}  sin (\pi s)}{\pi} \int _1 ^{\infty} t ^{-2s} \frac{S'(t)}{S(t)} dt + 
+\end{aligned}
 \end{equation}
 
 
@@ -556,45 +539,36 @@ t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt
 En vez de desarrollar en serie $S'(t) / S (t)$ se va a desarrollar el Logaritmo y tomarle la derivada para luego evaluar en $\lambda \rightarrow -i t$, lo cual nos permite controlar el orden del desarrollo.
 
 \begin{equation}
-\begin{array}{c}
-
-\frac{S'( \lambda)}{S( \lambda )} \approx 
+\begin{aligned}
+\frac{S'( \lambda)}{S( \lambda )} &\approx 
 \partial _{\lambda} Log \left(
 								1 + \sum _{n=1} ^{N-1}  \frac{S _n}{\lambda ^n}
-								\right) \approx 
+								\right) =
 \partial _{\lambda} 
-	
 \sum _{m = 1} ^{N/2} 
 	\left(
 	\frac{(-1) ^{m+1} }{m}
 	\left(
 		\sum _{n=1} ^{N-1} \frac{S _n}{\lambda ^n}
 		\right) ^m 
-	\right) = \\ [10pt]
-	
+	\right)  \\[10pt]
+	&=
 \left(								
 	\sum _{l = 1} ^{N-1} 
 	\frac{S' _l}{\lambda ^l} - l \frac{S _l}{\lambda ^{l+1}}
 	\right)							
-
 \left(
 	\sum _{m = 1} ^{N/2} (-1) ^{m+1} 
-
-
 	\left(
 			\sum _{n=1} ^{N-1} \frac{S _n}{\lambda ^n}
-			\right) ^{m-1}
-			
+			\right) ^{m-1}		
 	\right)
-
-
-	
-\end{array}	
+\end{aligned}	
 \end{equation}
 
 
 
-Este desarrollo de Taylor es correcto hasta el orden N (en caso de que N sea semientero hay que tomarle la parte entera), tiene la ventaja de poder ser calculado explicitamente, los primeros terminos de $\frac{S'(t)}{S(t)}$ son:
+Este desarrollo de Taylor es correcto hasta el orden N (en caso de que N sea semientero hay que tomarle la parte entera), tiene la ventaja de poder ser calculado explícitamente, los primeros términos de $\frac{S'(t)}{S(t)}$ son:
 
 \begin{equation}
 \frac{S'(t)}{S(t)} = 
@@ -616,7 +590,7 @@ Para seguir calculando la estructura de polos, basta con seguir desarrollando la
 
 %Estos comentarios tienen las contribuciones de la parte finita
 \begin{comment}
-Las primeras 3 integrales se pueden realizar analíticamente de manera sencilla, dado que son todas series de potencias, la integral angular va a tener que ser evaluada numéricamente dado que es de la forma (parametrizando $\lambda = e ^{i \theta}$ y llamando $M_c$ a todo el termino adentro del Lnaritmo) :
+Las primeras 3 integrales se pueden realizar analíticamente de manera sencilla, dado que son todas series de potencias, la integral angular va a tener que ser evaluada numéricamente dado que es de la forma (parametrizando $\lambda = e ^{i \theta}$ y llamando $M_c$ a todo el termino adentro del Logaritmo) :
 
 \begin{equation}
 \begin{array}{c}
