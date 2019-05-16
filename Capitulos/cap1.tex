@@ -7,7 +7,7 @@ En el presente capítulo se presentarán la acción efectiva y la energía de Ca
 
 A lo largo de este capítulo y en toda la tesis se utilizará: tiempo euclídeo, $c=1$ y $\hbar =1$, aunque en algunos resultados de este capítulo para exponer manifiestamente el carácter cuántico se mantendrá $\hbar$.
 
-\section{Acción Efectiva}
+\section{Acción Efectiva}\label{accion_efectiva}
 
 En esta sección escribiremos la acción efectiva en su aproximación a {\it 1-loop} para un campo escalar $\phi(x)$. En general, el procedimiento puede repetirse para campos fermiónicos y de gauge si se considera que las expresiones que siguen llevan implícitas las sumas sobre índices espinoriales, de Lorentz o de gauge, según corresponda.
 
@@ -15,7 +15,7 @@ Consideremos entonces un campo escalar $\phi(x)$ definido sobre una región $\ma
 \begin{align}
 		S[\phi]=\int_\mathcal R dx\ \mathscr L(\phi,\partial\phi)\,,
 \end{align}
-donde $\mathscr L$ es el lagrangiano que define la teoría. La solución clásica $\phi _0(x)$ de las ecuaciones de movimiento es la configuración que minimiza la funcional $S[\phi]$,
+ donde $\mathscr L$ es el lagrangiano que define la teoría. La solución clásica $\phi _0(x)$ de las ecuaciones de movimiento es la configuración que minimiza la funcional $S[\phi]$,
 \begin{equation}
 \begin{array}{c}
 \left. \frac{\delta S [ \phi ] }{\delta \phi (x)}  \right| _{\phi = \phi _0  } = 0 \, . \\[10pt]
@@ -133,7 +133,7 @@ Si $ \{ \lambda _n \} _{n \in \mathbb N}$ es el espectro del operador de fluctua
 Sin embargo, para teorías locales, $\delta ^2 S$ es típicamente un operador diferencial, de modo que $\lambda_n\to\infty$ a medida que $n\to \infty$. Como el espectro diverge en el ultravioleta (UV), la expresión \eqref{det} es divergente y requiere un mecanismo de regularización. Esta es una manifestación de las divergencias UV debidas a las fluctuaciones a primer orden (1-loop) del campo $\phi$.
 
 
-\section{Energía de Casimir}
+\section{Energía de Casimir}\label{sec.casimir}
 
 Como vimos, las fluctuaciones cuánticas del campo introducen correcciones divergentes en la acción efectiva. Esto implica que el cálculo de amplitudes de dispersión entre partículas requiere una reinterpretación de los parámetros de la teoría por medio de la cual estas divergencias no aparezcan en el resultado de cantidades físicas. Veremos ahora otra manifestación de las divergencias en teoría cuántica de campos pero, esta vez, los infinitos no provienen de las interacciones entre partículas ``físicas'' sino que se originan en el mismo ``estado de vacío'' del campo.
 
@@ -148,6 +148,7 @@ La primera medida experimental de este efecto fue realizada en 1958 por Sparnaay
 La fuerza de Casimir se origina en la energía de vacío de los campos contenidos entre las placas conductoras. En efecto, cada uno de los modos normales de oscilación del campo tiene asociada una frecuencia de oscilación $\omega_n$. La cuantización del campo conduce entonces a un conjunto de osciladores desacoplados de modo que la energía en el estado fundamental (correspondiente al vacío de la teoría) resulta
 \begin{equation}
 E _0 = \frac{\hbar}{2} \sum _n \omega _n\,.
+\label{eq.casimir.div}
 \end{equation}
 Como el espectro de oscilaciones de un campo (que tiene infinitos grados de libertad) no está acotado superiormente, $\omega_n\to\infty$ si $n\to\infty$, la energía de vacío es divergente. Este infinito se origina entonces en los modos de alta frecuencia del campo o, en otras palabras, en las configuraciones que presentan grandes oscilaciones en pequeñas distancias. Sin embargo, existen procedimientos que permiten aislar esta divergencia UV de las cantidades físicas de la teoría y permiten expresar la dependencia de la energía de vacío $E_0$ con la distancia en términos de cantidades finitas.
 
@@ -195,6 +196,7 @@ Como típicamente $\lambda_n\to \infty$ si $n\to \infty$, la función $\zeta  (s
 \zeta (s) = \frac{1}{\Gamma (s) } 
 \int _0 ^{\infty} dT \
 T^{s-1} K(T) \,.
+\label{eq.mellin}
 \end{equation}
 
 Consideremos, por ejemplo, el caso en que $A$ es un operador de tipo Laplace sobre campos escalares $\phi(x)$ sobre una variedad $M$ (de dimensión $m$) con condiciones de contorno locales,
@@ -211,7 +213,7 @@ C _n (A) \
 T^{\frac{(-m+n)}{2}} 
 \label{eq.heat.expansion}
 \end{equation}
-Los coeficientes $C_n(A)$ se denominan coeficientes de Seeley-DeWitt del problema y dependen del potencial $V(x)$, del parámetro $S$ y de los invariantes geométricos de la variedad. Una expresión para los primeros cinco coeficientes $C _n (A) $ puede encontrarse en \cite{Vassilevich:2003xt}. Para el caso de condiciones de contorno de Dirichlet, los primeros tres coeficientes están dados por
+Los coeficientes $C_n(A)$ se denominan coeficientes de Seeley-DeWitt del problema y dependen del potencial $V(x)$, del parámetro $S$, de los invariantes geométricos de la variedad y sus derivadas. Una expresión para los primeros cinco coeficientes $C _n (A) $ puede encontrarse en \cite{Vassilevich:2003xt}. Para el caso de condiciones de contorno de Dirichlet, los primeros tres coeficientes están dados por
 \begin{align}
 C _0 (A) &= \frac{1}{(4 \pi ) ^{m/2} }  \int  _{M} d ^m x \sqrt{g}  \\[2mm]
 C _1 (A) &= \frac{ 1 }{4 (4 \pi ) ^{(m-1)/2} } \int _{\partial M } d ^{m-1} \sqrt{h} \\[2mm]
@@ -223,9 +225,13 @@ C _2 (A) &= \frac{ 1 }{6 (4 \pi) ^{m/2} } \left(
 \label{coef}
 \end{align} 
 
-{\magenta Donde $C _0$ y $C _1$ representan el volumen de la variedad y del borde respectivamente, $C _2$ así como el resto de los coeficientes son funciones del potencial $V$, el tensor de curvatura de la variedad $R _{\mu \nu \rho \sigma }$, el tensor de curvatura extrínseca $K _{\mu \nu }$ sobre el borde de la variedad, tambien pueden depender del Campo de Gauge $\omega $, la condición de contorno $S$, y demas invariantes locales.}{\red (Poner bien qué es cada cosa en las tres ecuaciones anteriores.)}
+Donde $C_0$ está expresado como la integral del tensor métrico sobre todo el volumen lo cual representa el volumen de la variedad.
+Análogamente $C _1$ se expresa como una integral sobre el borde del tensor métrico superficial, representando el volumen del borde. 
 
-Utilizando este desarrollo para $K(T)$ {\red (poner la referencia a la ecuación)}, se ve que la función $\zeta (s)$ posee polos simples en
+$C _2$ así como el resto de los coeficientes son integrales en el volumen y el borde de la variedad de: el potencial $V(x)$, el tensor de curvatura de Riemann $R _{\mu \nu \rho \sigma } \ (R =  g ^{i j} g^{ l m } R _{i j l m} )$, el tensor de curvatura extrínseca $L _{\mu \nu }$ sobre el borde de la variedad, el Campo de Gauge $\omega $, la condición de contorno $S$, así de como todas sus derivadas y posibles combinaciones entre ellos.
+
+
+Utilizando (\ref{eq.heat.expansion}) en  (\ref{eq.mellin}) , se ve que la función $\zeta (s)$ posee polos simples en
 \begin{equation}
 s _n = \frac{m-n}{2} 
 \label{eq.ceros.zeta}
@@ -241,7 +247,7 @@ En las secciones siguientes utilizaremos las funciones espectrales $K(T)$ y $\ze
 
 \section{Regularización de la Acción Efectiva}
 
-En la sección anterior {\red (citar la sección correctamente y las ecuaciones)} vimos que la acción efectiva a 1-loop está dada por el siguiente determinante funcional,
+En la sección \ref{accion_efectiva}, en las ecuaciones \ref{gama-det} y \ref{det} vimos que la acción efectiva a 1-loop está dada por el siguiente determinante funcional,
 \begin{equation}
 \log {\rm Det} \, \delta ^2 S = 
 \sum_{n\in{\mathbb N}} \log \lambda _n
@@ -255,9 +261,9 @@ Utilizando esta expresión en el determinante funcional de \eqref{gama-det} pode
 \Gamma [ \phi ] = 
 S[ \phi ] - 
 \frac{\hbar }{2}
-\int _ { \epsilon } ^{\infty} \frac{ dT}{T}\ K(T)
+\int _ { \epsilon } ^{\infty} \frac{ dT}{T}\ K(T) \, .
 \end{equation}
-{\red El comportamiento de la traza del heat-kernel $K(T)$ para pequeños valores de $t$ determina las divergencias UV de la acción efectiva. Las divergencias infrarrojas (IR) están asociadas con el comportamiento de $K(T)$ para grandes valores de $t$. Como puede verse de \eqref{gamma-hk}, los campos masivos no presentan, en general, divergencias IR.}
+El comportamiento de la traza del heat-kernel $K(T)$ para pequeños valores de $t$ determina las divergencias UV de la acción efectiva. Las divergencias infrarrojas (IR) están asociadas con el comportamiento de $K(T)$ para grandes valores de $t$. Como puede verse de \eqref{gamma-hk}, los campos masivos no presentan, en general, divergencias IR.
 
 Consideremos, a modo de ejemplo, un campo escalar masivo $\phi(x,t)$ en 1+1 dimensiones con autointeracción $\lambda \phi ^4 $. La acción euclídea está dada por
 \begin{equation}
@@ -284,7 +290,7 @@ S[ \phi ] -
 \ e ^{- T m ^2 }
 \,{\rm Tr} \,  e ^{- T ( - \partial _t ^2 - \partial _x ^2 + \frac{\lambda}{2} \phi ^2 ) }
 \end{equation}
-Esta expresión muestra que un campo escalar masivo no tiene divergencias IR. Sin embargo, existen divergencias UV generadas por el comportamiento del integrando en $T=0$. Utilizando el desarrollo (\ref{coef}) las contribuciones divergentes están dadas por {(\red ¿qué pasa con los términos siguientes de la exponencial?)}
+Esta expresión muestra que un campo escalar masivo no tiene divergencias IR. Sin embargo, existen divergencias UV generadas por el comportamiento del integrando en $T=0$. Utilizando el desarrollo (\ref{eq.heat.expansion}) las contribuciones divergentes están dadas por:
 \begin{equation}
 - \frac{\hbar }{2}\int _ { \epsilon } ^{1}  
 \frac{ dT}{T} 
@@ -293,29 +299,28 @@ Esta expresión muestra que un campo escalar masivo no tiene divergencias IR. Si
 		\right)
 \left(
 		\frac{C _0}{T} + C _2 
-		\right)
+		\right),
 \end{equation}
-{\magenta Donde los terminos superiores en el  desarrollo del Heat-Kernel van a contribuir con potencías mayores de $ \lambda \phi ^2 T $, lo cual es integrable en el limite $\epsilon \rightarrow 0 $.
+donde los términos superiores en el  desarrollo del Heat-Kernel junto con la exponencial van a contribuir con potencias integrables en el limite $\epsilon \rightarrow 0 $.
 
-Estos terminos divergentes se pueden introducir en el lagrangiano, redefiniendo $m$ y $\lambda$ de forma que la acción efectiva resulte finita.
+Para una variedad sin borde, la forma general de los coeficientes puede encontrarse en \cite{Vassilevich2}, en este ejemplo los primeros 3 están dados por:
+\begin{align}
+C _0 (A) &= \frac{1}{4 \pi   }  \int  _{M} d x dt   \\[2mm]
+C _1 (A) &= 0 \\[2mm]
+C _2 (A) &= - \frac{ \lambda }{8 \pi }  \int _M d x dt \  \phi ^2
+\label{coef2}
+\end{align} 
+
+
+
+Estos términos divergentes se pueden introducir en el lagrangiano, redefiniendo redefiniendo $m$ de forma que la acción efectiva resulte finita.
 \begin{equation}
-\begin{array}{c}
-m ^2 _{fis} = m ^2 \left(
-							1 + \frac{Log (\epsilon)}{2 \pi} 
-							\right) \\[10pt]
-							
-\lambda _{fis} = \lambda \left(
-								 1 - 2 \phi ^2 Log( \epsilon )
-								 \right) \\[10pt]
-
-
-\end{array}
+m ^2 _{fis} = m ^2 - \frac{\lambda \hbar \ln \epsilon}{8 \pi}
 \end{equation}
-Donde $m _{fis}$ y $ \lambda _{fis} $ se reinterpretan como las correciones cuanticas a los parámetros originales del lagrangiano, los cuales se van ir corrigiendo a medida que la accíon efectiva a mas loops.} {\red (Ser un poco más detallado en el cálculo de estas correcciones. No mucho, pero mostrar al menos los valores de $C_0,C_1,C_2$ para el caso que estamos considerando.)}
-
+Donde $m _{fis}$ se reinterpreta como la corrección cuántica a la masa original del lagrangiano, en el siguiente termino del desarrollo de Heat-Kernel se va a obtener la correccion a primer orden de $\lambda$, junto con correcciones de orden superior de $m$.
 \section{Regularización de la Energía de Casimir}
 
-Al inicio de la sección {\red (poner la referencia a la sección)} se otuvo la siguiente expresión para la energía de vacío de un campo escalar sin masa (con dos grados de polarización) entre dos placas paralelas de área infinita,
+En la sección \ref{sec.casimir} se obtuvo la siguiente expresión para la energía de vacío de un campo escalar sin masa (con dos grados de polarización) entre dos placas paralelas de área infinita,
 \begin{equation}
 E _0 = \frac{A \hbar c}{(2 \pi) ^2} \int dk _x dk _y 
 \sum _{n=1} ^{\infty} 
@@ -357,6 +362,14 @@ A partir de esta expresión se obtiene la fuerza atractiva entre las placas dada
 
 \bigskip
 
+Como resultado general se puede entonces redefinir la energía de vacío\ref{eq.casimir.div} de la forma:
+\begin{equation}
+E _0 = \frac{\hbar}{2} \zeta  (-1/2)
+\label{eq.casimir.no.mu}
+\end{equation}
+
+\bigskip
+
 \textbf{Adimensionalización:}
 
 \medskip
@@ -379,18 +392,21 @@ La Energía de Casimir queda definida como:
 
 \begin{equation}
 E _0 = \frac{\hbar \mu}{2} \zeta  (-1/2)
+\label{eq.casimir.mu}
 \end{equation}
 
 En el caso que $\zeta (s)$ tenga una extensión analítica en $s=-1/2$ la energía de vacío coincide con (REF), en cambio si posee un polo, $\mu$ va a contribuir de manera no trivial, por ejemplo si tiene un polo doble:
 
 \begin{equation}
-E _0 = 
+\begin{aligned}
+E _0 &= 
 \frac{\hbar \mu ^{2s+1}}{2} 
-\sum\limits_{n \in \mathbb N}  \lambda _n   ^{-2s } = 
+\sum\limits_{n \in \mathbb N}  \lambda _n   ^{-2s } \\ &= 
 \frac{\hbar }{2} 
 \left(
 		\frac{C _{-2}}{ \left( s+1/2 \right) ^2} + \frac{2 C _{-2} \ln \mu + C _{-1}}{s+1/2} + {\rm finito} 
-		\right) = 
+		\right) 
+\end{aligned}
 \end{equation}
 
-{\red Esta última sección no es muy clara. No hace falta adimensionalizar el heat-kernel. Por otro lado, el factor de escala $\mu$ tiene importancia cuando la $\zeta$ tiene un polo en $s=-\frac12$ y eso no se ve en esta sección. Por ahora, sin saber cómo sigue después, yo dejaría esta sección para más adelante.}
+En el ejemplo anterior no se introdujo $\mu$ explícitamente dado que $\zeta (-1/2)$ es regular y no afecta al resultado final, a partir del próximo capítulo se utilizará \ref{eq.casimir.mu} en lugar de \ref{eq.casimir.no.mu}.
