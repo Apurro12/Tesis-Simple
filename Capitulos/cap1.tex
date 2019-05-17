@@ -115,7 +115,7 @@ y $\delta^2S$ es el operador definido por el núcleo $\delta ^2 S(x_1,x_2)$ dado
 \begin{equation}
 		\delta ^2 S(x_1,x_2) = \left. \frac{\delta ^2 S[\phi]}{ \delta \phi (x_1) \delta \phi (x_2) } \right| _{\phi = \phi _J}\,.
 \end{equation}
-$\delta^2S$ se denomina {\it operador de fluctuaciones cuánticas} y su espectro determina los {\it modos de oscilación} del campo $\phi(x)$. Haciendo el cambio de variables $\phi (x) \rightarrow \sqrt{\hbar}\, \phi (x) $, se obtiene la primera correción cuantica a la  acción, o la acción efectiva a 1-loop,
+$\delta^2S$ se denomina {\it operador de fluctuaciones cuánticas} y su espectro determina los {\it modos de oscilación} del campo $\phi(x)$. Haciendo el cambio de variables $\phi (x) \rightarrow \sqrt{\hbar}\, \phi (x) $, se obtiene la primera correción cuantica a la  acción, o la acción efectiva a {\it 1-loop},
 \begin{equation}
 \Gamma [\phi] = S [ \phi] - 
 \hbar\,\log\int \mathscr D \phi \ e ^{- \frac{1}{2}  (\phi, \delta ^2 S\, \phi) } + O(\hbar ^2)\,,
@@ -130,7 +130,7 @@ Si $ \{ \lambda _n \} _{n \in \mathbb N}$ es el espectro del operador de fluctua
 \begin{equation}\label{det}
 {\rm Det}\,(\delta ^2 S) = \prod_{ n \in \mathbb N }\ \lambda _n\,.
 \end{equation}
-Sin embargo, para teorías locales, $\delta ^2 S$ es típicamente un operador diferencial, de modo que $\lambda_n\to\infty$ a medida que $n\to \infty$. Como el espectro diverge en el ultravioleta (UV), la expresión \eqref{det} es divergente y requiere un mecanismo de regularización. Esta es una manifestación de las divergencias UV debidas a las fluctuaciones a primer orden (1-loop) del campo $\phi$.
+Sin embargo, para teorías locales, $\delta ^2 S$ es típicamente un operador diferencial, de modo que $\lambda_n\to\infty$ a medida que $n\to \infty$. Como el espectro diverge en el ultravioleta (UV), la expresión \eqref{det} es divergente y requiere un mecanismo de regularización. Esta es una manifestación de las divergencias UV debidas a las fluctuaciones a primer orden {\it 1-loop} del campo $\phi$.
 
 
 \section{Energía de Casimir}\label{sec.casimir}
@@ -182,7 +182,7 @@ Hemos introducido un factor 2 para representar las dos polarizaciones del campo 
 
 \section{Funciones Espectrales}
 
-En los trabajos \cite{Seeley:1967ea,10.2307/2373309,10.2307/2373312} R.T. Seeley estudió la existencia y propiedades de la resolvente $(A - \lambda) ^{-1}$ de un operador diferencial $A$, con coeficientes infinitamente derivables definido sobre secciones de un fibrado vectorial sombre una variedad de base compacta $R$ con borde suave $\partial R$. Lo cual permite estudiar las propiedades del operador pseudo diferencial $A ^{-s}$.
+En los trabajos \cite{Seeley:1967ea,10.2307/2373309,10.2307/2373312} R.T. Seeley estudió la existencia y propiedades de la resolvente $(A - \lambda) ^{-1}$ de un operador diferencial $A$, con coeficientes infinitamente derivables definido sobre secciones de un fibrado vectorial sobre una variedad de base compacta $R$ con borde suave $\partial R$. Lo cual permite estudiar las propiedades del operador pseudo diferencial $A ^{-s}$.
 
 
 
@@ -225,10 +225,7 @@ C _2 (A) &= \frac{ 1 }{6 (4 \pi) ^{m/2} } \left(
 \label{coef}
 \end{align} 
 
-Donde $C_0$ está expresado como la integral del tensor métrico sobre todo el volumen lo cual representa el volumen de la variedad.
-Análogamente $C _1$ se expresa como una integral sobre el borde del tensor métrico superficial, representando el volumen del borde. 
-
-$C _2$ así como el resto de los coeficientes son integrales en el volumen y el borde de la variedad de: el potencial $V(x)$, el tensor de curvatura de Riemann $R _{\mu \nu \rho \sigma } \ (R =  g ^{i j} g^{ l m } R _{i j l m} )$, el tensor de curvatura extrínseca $L _{\mu \nu }$ sobre el borde de la variedad, el Campo de Gauge $\omega $, la condición de contorno $S$, así de como todas sus derivadas y posibles combinaciones entre ellos.
+Donde $C _0$ y $C _1$ representan el volumen de la variedad y del borde respectivamente, así $g$ y $h$ representan sus tensores métricos, donde $m$ es la dimension de la variedad. $C _2$ así como el resto de los coeficientes son funciones del potencial $V$, el tensor de curvatura de la variedad $R _{\mu \nu \rho \sigma } \ (R =  g ^{i j} g^{ l m } R _{i j l m} ) $, el tensor de curvatura extrínseca $L _{\mu \nu }$ sobre el borde de la variedad, tambien pueden depender del Campo de Gauge $\omega $, la condición de contorno $S$, y demas invariantes locales, así como todas sus derivadas y posibles combinaciones entre ellos.
 
 
 Utilizando (\ref{eq.heat.expansion}) en  (\ref{eq.mellin}) , se ve que la función $\zeta (s)$ posee polos simples en
@@ -245,9 +242,9 @@ con residuos dados por
 
 En las secciones siguientes utilizaremos las funciones espectrales $K(T)$ y $\zeta(s) $ para dar definiciones finitas de la acción efectiva y la energía de Casimir.
 
-\section{Regularización de la Acción Efectiva}
+\section{Regularización de la Acción Efectiva}\label{cap.acc}
 
-En la sección \ref{accion_efectiva}, en las ecuaciones \ref{gama-det} y \ref{det} vimos que la acción efectiva a 1-loop está dada por el siguiente determinante funcional,
+En las ecuaciones \ref{gama-det} y \ref{det} de la sección \ref{accion_efectiva}, vimos que la acción efectiva a {\it 1-loop} está dada por el siguiente determinante funcional,
 \begin{equation}
 \log {\rm Det} \, \delta ^2 S = 
 \sum_{n\in{\mathbb N}} \log \lambda _n
@@ -290,7 +287,7 @@ S[ \phi ] -
 \ e ^{- T m ^2 }
 \,{\rm Tr} \,  e ^{- T ( - \partial _t ^2 - \partial _x ^2 + \frac{\lambda}{2} \phi ^2 ) }
 \end{equation}
-Esta expresión muestra que un campo escalar masivo no tiene divergencias IR. Sin embargo, existen divergencias UV generadas por el comportamiento del integrando en $T=0$. Utilizando el desarrollo (\ref{eq.heat.expansion}) las contribuciones divergentes están dadas por:
+Esta expresión muestra que un campo escalar masivo no tiene divergencias IR. Sin embargo, existen divergencias UV generadas por el comportamiento del integrando en $T=0$. Utilizando el desarrollo (\ref{eq.heat.expansion}) se puede ver que las contribuciones divergentes están dadas por:
 \begin{equation}
 - \frac{\hbar }{2}\int _ { \epsilon } ^{1}  
 \frac{ dT}{T} 
@@ -303,7 +300,7 @@ Esta expresión muestra que un campo escalar masivo no tiene divergencias IR. Si
 \end{equation}
 donde los términos superiores en el  desarrollo del Heat-Kernel junto con la exponencial van a contribuir con potencias integrables en el limite $\epsilon \rightarrow 0 $.
 
-Para una variedad sin borde, la forma general de los coeficientes puede encontrarse en \cite{Vassilevich2}, en este ejemplo los primeros 3 están dados por:
+Para una variedad sin borde, la forma general de los coeficientes de Seeley-DeWitt puede encontrarse en \cite{Vassilevich2}, en este caso particular los primeros 3 están dados por:
 \begin{align}
 C _0 (A) &= \frac{1}{4 \pi   }  \int  _{M} d x dt   \\[2mm]
 C _1 (A) &= 0 \\[2mm]
@@ -317,8 +314,8 @@ Estos términos divergentes se pueden introducir en el lagrangiano, redefiniendo
 \begin{equation}
 m ^2 _{fis} = m ^2 - \frac{\lambda \hbar \ln \epsilon}{8 \pi}
 \end{equation}
-Donde $m _{fis}$ se reinterpreta como la corrección cuántica a la masa original del lagrangiano, en el siguiente termino del desarrollo de Heat-Kernel se va a obtener la correccion a primer orden de $\lambda$, junto con correcciones de orden superior de $m$.
-\section{Regularización de la Energía de Casimir}
+Donde $m _{fis}$ se reinterpreta como la corrección cuántica a la masa original del lagrangiano, en el siguiente termino del desarrollo de Heat-Kernel se va a obtener la corrección a primer orden de $\lambda$, junto con correcciones de orden superior de $m$.
+\section{Regularización de la Energía de Casimir}\label{cap.casimir}
 
 En la sección \ref{sec.casimir} se obtuvo la siguiente expresión para la energía de vacío de un campo escalar sin masa (con dos grados de polarización) entre dos placas paralelas de área infinita,
 \begin{equation}
@@ -362,7 +359,7 @@ A partir de esta expresión se obtiene la fuerza atractiva entre las placas dada
 
 \bigskip
 
-Como resultado general se puede entonces redefinir la energía de vacío\ref{eq.casimir.div} de la forma:
+Como resultado general se puede redefinir \ref{eq.casimir.div} de la forma:
 \begin{equation}
 E _0 = \frac{\hbar}{2} \zeta  (-1/2)
 \label{eq.casimir.no.mu}
@@ -370,22 +367,17 @@ E _0 = \frac{\hbar}{2} \zeta  (-1/2)
 
 \bigskip
 
-\textbf{Adimensionalización:}
+\section{Adimensionalización:}
 
 \medskip
 
-En los ejemplos anteriores se trabajó con  $\zeta _A (s) $ y $K(T)$, lo que se va hacer de aquí en adelante, es adimensionalzarlas para poder tomar tomar potencias complejas que esten bien definidas:
-
+En los capítulos \ref{cap.casimir} y \ref{cap.acc} se utilizó $K(T)$ y $\zeta (s)$ para dar definiciones finitas de la acción efectiva a {\it 1-loop} y la energía de casimir respectivamente, lo que se va hacer de aquí en adelante, es adimensionalzarlas de manera que las potencias complejas que estén bien definidas:
 
 \begin{equation}
-\begin{array}{c}
-
- \\ 
-\zeta  (s) = \sum\limits_{n \in \mathbb N} \left( \frac{\lambda _n}{\mu }  \right) ^{-2s } \\[10pt]
-
-H \left( T \right)  = \sum\limits_{n \in \mathbb N} e ^{- \frac{T \lambda _{n}}{\mu} } \, .
-
-\end{array}
+\begin{aligned}
+\zeta  (s) &= \sum\limits_{n \in \mathbb N} \left( \frac{\lambda _n}{\mu }  \right) ^{-2s } \\[10pt]
+H \left( T \right)  &= \sum\limits_{n \in \mathbb N} e ^{- \frac{T \lambda _{n}}{\mu} } \, .
+\end{aligned}
 \end{equation}
 
 La Energía de Casimir queda definida como:
@@ -395,7 +387,7 @@ E _0 = \frac{\hbar \mu}{2} \zeta  (-1/2)
 \label{eq.casimir.mu}
 \end{equation}
 
-En el caso que $\zeta (s)$ tenga una extensión analítica en $s=-1/2$ la energía de vacío coincide con (REF), en cambio si posee un polo, $\mu$ va a contribuir de manera no trivial, por ejemplo si tiene un polo doble:
+En el caso que $\zeta (s)$ tenga una extensión analítica en $s=-1/2$ la energía de vacío coincide con (\ref{eq.casimir.no.mu}), en cambio si posee un polo $\mu$ va a contribuir de manera no trivial, por ejemplo si (\ref{funcion.zeta}) tiene un polo doble:
 
 \begin{equation}
 \begin{aligned}
@@ -409,4 +401,4 @@ E _0 &=
 \end{aligned}
 \end{equation}
 
-En el ejemplo anterior no se introdujo $\mu$ explícitamente dado que $\zeta (-1/2)$ es regular y no afecta al resultado final, a partir del próximo capítulo se utilizará \ref{eq.casimir.mu} en lugar de \ref{eq.casimir.no.mu}.
+En el \ref{e0-zeta} no se introdujo $\mu$ explícitamente dado que $\zeta (-1/2)$ es regular y no afecta al resultado final, a partir del próximo capítulo se utilizará la definición de la energía de vacío dada por \ref{eq.casimir.mu} en lugar de \ref{eq.casimir.no.mu}.

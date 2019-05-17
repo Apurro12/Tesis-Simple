@@ -1,6 +1,6 @@
 \chapter{Ejemplos Sencillos}
 
-En este capítulo se van a estudiar la función $\zeta _A (s)$ y la energía de vacío del operador $A = - \partial ^2 _x$, en el intervalo $[0,L]$, sometido a 4 condiciones de contorno. 
+En este capítulo se va a estudiar la {\it función-$\zeta$} y luego se obtendrá la energía de vacío del operador $A = - \partial ^2 _x$ en el intervalo $[0,L]$ sometido a distintas condiciones de contorno. 
 
 En los tres primeros operadores se tomarán condiciones de contorno Dirichlet, Neumann y Periódicas en ambos extremos, luego conociendo sus autovalores  se calculara la función $ \zeta _A (s) $ exactamente. 
 
@@ -167,16 +167,17 @@ al no poder encontrar explícitamente los autovalores se van a utilizar 3 técni
 
 \subsection{Calculo Asintótico de los autovalores}
 
+En esta sección se va a obtener un representación en serie para la {\it función-zeta}, para lo cual se van a desarrollar asintoticamente de los autovalores y luego se va a utilizar \ref{def.zeta.adim}.\\
+
 
 Haciendo el cambio a variables adimensionales $\tau = \lambda L $ y $\theta = \gamma L $, las ecuaciones (\ref{autovalores}) se pueden expresar de la forma:
 
-\begin{equation}
-\begin{array}{c}
-    \tan (\tau) + \frac{\tau}{\theta} = 0 \\[5pt]
-    \frac{\tau}{\theta} \cos( \tau ) + \sin( \tau ) = 0
-\end{array}
-\label{eq.asintota}
-\end{equation}
+\begin{align}
+    \tan (\tau) + \frac{\tau}{\theta} &= 0 \label{eq.asintota} \\[5pt]
+    \frac{\tau}{\theta} \cos( \tau ) + \sin( \tau ) &= 0 \label{eq.regular}
+\end{align}
+
+
 
 Tal como se puede ver en la figura [\ref{fig:Dibujo1}], los autovalores $\tau _n$ tienden a pegarse a la asíntota vertical de $ \tan ( \tau ) $ a medida que $\tau _n$ crece, por lo tanto los autovalores $\tau _n$ se pueden descomponer en una parte correspondiente a las asíntotas verticales de $ \tan ( \tau )$ mas una corrección que tiende a cero en el límite $ n  \rightarrow \infty$ :
 
@@ -197,14 +198,14 @@ Tal como se puede ver en la figura [\ref{fig:Dibujo1}], los autovalores $\tau _n
 \end{equation}
 
 
-Conocer $\epsilon _n $ es equivalente a resolver la ecuación (\ref{eq.asintota}), la cual no posee solución analítica, en vez de eso se va a obtener un desarrollo de $\epsilon _n $ para $n \rightarrow \infty$.
+Conocer $\epsilon _n $ es equivalente a resolver (\ref{eq.asintota}) y (\ref{eq.regular}) las cuales no poseen solución analítica, por lo tanto se va desarrollar $\epsilon _n $ en potencias de $n$.
 
-Utilizando (\ref{eq.mu}) en la segunda ecuación de (\ref{eq.asintota}) y desarrollando alrededor de $\epsilon \rightarrow{0}$ se obtiene:
+Utilizando (\ref{eq.mu}) en (\ref{eq.regular}) y desarrollando alrededor de $\epsilon \rightarrow{0}$ se obtiene:
 
 \begin{equation}
 \begin{aligned}
-    \sin( n \pi + \frac{\pi}{2} + \epsilon _n ) &= 
-    - \frac{n \pi + \frac{\pi}{2} + \epsilon _n}{\theta}  \ \cos( n \pi + \frac{\pi}{2} + \epsilon _n )  \\
+    \sin \left( n \pi + \frac{\pi}{2} + \epsilon _n \right) &= 
+    - \frac{n \pi + \frac{\pi}{2} + \epsilon _n}{\theta}  \ \cos \left( n \pi + \frac{\pi}{2} + \epsilon _n \right)  \\
          (-1) ^n \sum _{p=0} ^{\infty} \frac{(-1) ^p  \epsilon _n ^{2 p }}{(2p)!} 
     &=  \frac{-(n \pi + \frac{\pi}{2} + \epsilon _n) }{\theta}  \  \	
     (-1) ^n
@@ -356,17 +357,27 @@ Reemplazando $f(z)$ por  \ref{autovalores} se obtiene:
 \end{equation}
 
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.3]{contorno.jpg}
-\caption{Camino tenido en cuenta para realizar la integral de contorno en el plano complejo}
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{Camino.pdf}
+        \caption{Lorem ipsum}
+        \label{fig.izquierda}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{Camino2.pdf}
+        \caption{Lorem ipsum}
+        \label{fig.derecha}
+    \end{subfigure}
+    \caption{Camino tenido en cuenta para realizar la integral de contorno en el plano complejo}
 \label{fig:contorno}
-\end{figure}
+\end{figure*}
 
 
-
-
-Se va a utilizar el camino de la derecha de [\ref{fig:contorno}], el cual se puede descomponer en 3 integrales, una angular y dos rectas, la contribución angular es regular para $ \forall s$, por lo tanto no aporta a la estructura de polos, en cuanto a las contribuciones sobre los ejes se va a parametrizar de la forma $z = \pm i  t$. \\ 
+Se va a utilizar el camino de la figura \ref{fig.derecha}, el cual se puede descomponer en 3 integrales, una angular y dos rectas, la contribución angular es regular para $ \forall s$, por lo tanto no aporta a la estructura de polos, en cuanto a las contribuciones sobre los ejes se va a parametrizar de la forma $z = \pm i  t$. \\ 
 
 
 	Luego de tirar los términos exponencialmente decrecientes, los cuales no contribuyen a los polos se obtiene:
