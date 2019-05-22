@@ -4,7 +4,7 @@ En este capítulo se va a estudiar la {\it función-$\zeta$} para luego obtener 
 
 En los tres primeros operadores se tomarán condiciones de contorno Dirichlet, Neumann y Periódicas en ambos extremos, luego conociendo sus autovalores  se calculara la {\it función-$\zeta  (s)$} exactamente. 
 
-En el último operador, se tomará una condición de contorno Dirichlet en un borde y Robin en el otro, luego se utilizarán 3 técnicas distintas para obtener aproximaciones de la {\it función-$\zeta _A (s)$}: el desarrollo asintótico de los autavalores, una representacion en el plano complejo  y el Heat-Kernel.
+En el último operador, se tomará una condición de contorno Dirichlet en un borde y Robin en el otro, luego se utilizarán 3 técnicas distintas para obtener aproximaciones de la {\it función-$\zeta$}: el desarrollo asintótico de los autavalores, una representacion en el plano complejo  y el Heat-Kernel.
 
 \section{Dirichlet,Neumann y Periódicas}
 
@@ -35,11 +35,11 @@ cuyos autovalores y autofunciones son:
 \end{aligned}
 \end{equation}
 
-la función $\zeta _A (s)$ queda determinada por
+la {\it función-$\zeta$} queda determinada por
 
 \begin{equation}
 \begin{aligned}
-\zeta _A (s) &= 
+\zeta  (s) &= 
 \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2s}  \\[10pt]
 &= \left(  \frac{\pi}{L \mu} \right) ^{-2s}   \sum _{n=1} ^{\infty} n ^{-2s} = 
 \left( \frac{\pi}{L \mu} \right) ^{-2s}  \zeta (2s) \, . \\[10pt]
@@ -83,7 +83,7 @@ cuyos autovalores y autofunciones están dados por
 
 
 
-la función $\zeta _A (s)$ será la misma que la calculada anteriormente (debido a que se excluyen los modos cero), así como también la energía de vacío. \\
+la {\it función-$\zeta (s)$} será la misma que la calculada anteriormente (debido a que se excluyen los modos cero), así como también la energía de vacío. \\
 
 \textbf{Periódicas:}
 
@@ -155,7 +155,7 @@ El espectro de autovalores $\lambda _n > 0 $ está dado por  cualquiera de las d
 una vez obtenidos los autovalores el siguiente paso es calcular la {\it función-$\zeta  (s) $} definida por:
 
 \begin{equation}
-    \zeta _ {A } (s) =  \sum_{n = 1} ^{ \infty } \left( \frac{\lambda _n}{\mu } \right) ^ {-2 s} \, ,
+    \zeta (s) =  \sum_{n = 1} ^{ \infty } \left( \frac{\lambda _n}{\mu } \right) ^ {-2 s} \, ,
     \tag{\ref{eq.casimir.mu}}
 \end{equation}
 
@@ -302,7 +302,7 @@ calculadas todas las sumatorias, el resultado final es
 \end{equation}
 
 
-los polos de la {\it función-$\zeta _A (s)$} están dados por los polos de las funciones de Riemann $\zeta _R (s+n)$, la estructura de polos está dada entonces por:
+los polos de la {\it función-$\zeta (s)$} están dados por los polos de las funciones de Riemann $\zeta _R (s+n)$, la estructura de polos está dada entonces por:
 
 \begin{equation}
 \begin{aligned}
@@ -320,7 +320,8 @@ los polos de la {\it función-$\zeta _A (s)$} están dados por los polos de las 
 
 lo cual está de acuerdo con \ref{eq.ceros.zeta}.
 
-\subsection{Calculo de la función zeta mediante calculo complejo:}{\label{sec.complejo}}
+\subsection{Calculo de la función zeta mediante calculo complejo:}
+{\label{sec.complejo}}
 
 En la sección \ref{seq.asin} para calcular la {\it función-$\zeta$} se obtuvo un desarrollo de los autovalores y luego se los utilizó en la definición \ref{eq.casimir.mu}. En esté capítulo se obtendrá una expresión de la {\it función-$\zeta$} sin calcular explícitamente los autovalores, mediante una integral en el plano complejo.
 
@@ -340,7 +341,7 @@ Si los  autovalores $\lambda _n$ están definidos por una función $f( \lambda  
 Reemplazando $f(z)$ por  \ref{autovalores2} se obtiene:
 
 \begin{equation}
-	\zeta _A (s) = 
+	\zeta  (s) = 
     \frac{1}{2 \pi i} \int _{C}
     \frac{ \cos (L z) \left(L + \frac{1}{\gamma} \right) - \sin(L z) \frac{z L}{\gamma}
     }
@@ -355,17 +356,17 @@ Reemplazando $f(z)$ por  \ref{autovalores2} se obtiene:
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[height=1.2in]{Camino.pdf}
-        \caption{Lorem ipsum}
+        \caption{}
         \label{fig.izquierda}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[height=1.2in]{Camino2.pdf}
-        \caption{Lorem ipsum}
+        \caption{}
         \label{fig.derecha}
     \end{subfigure}
-    \caption{Camino tenido en cuenta para realizar la integral de contorno en el plano complejo}
+    \caption{Estos caminos son los tenidos en cuenta para representar a la {\it función-$\zeta$} como una integral en el plano complejo.}
 \label{fig:contorno}
 \end{figure*}
 
@@ -409,7 +410,7 @@ pudiendo entonces integrar termino a termino, el resultado final está dado por
 \label{eq.zeta.com}
 \end{equation}
 
-Se puede ver que la función $\zeta _A (s)$ tiene polos simples en $s=1/2$ y en los semienteros negativos, la estructura de polos queda determinada por
+Se puede ver que la {\it función-$\zeta$} tiene polos simples en $s=1/2$ y en los semienteros negativos, la estructura de polos queda determinada por
 
 \begin{equation}
 \begin{aligned}
@@ -423,7 +424,7 @@ Se puede ver que la función $\zeta _A (s)$ tiene polos simples en $s=1/2$ y en 
 
 Lo cual coincide a los primeros ordenes con (\ref{eq.polos.asin}) y está en concordancia  con (\ref{eq.ceros.zeta}).
 
-Utilizando esta técnica se puede sacar la estructura entera de polos de la {\it función-$\zeta _A (s)$}, para calcular la parte finita hay que tener en cuenta la parte angular de (\ref{asd}), y los términos exponenciales tirados para llegar a (\ref{contorno}).
+Utilizando esta técnica se puede sacar la estructura entera de polos de la {\it función-$\zeta (s)$}, para calcular la parte finita hay que tener en cuenta la parte angular de (\ref{asd}), y los términos exponenciales tirados para llegar a (\ref{contorno}).
 
 
 \subsection{Uso del Heat-Kernel:}
@@ -433,10 +434,10 @@ En las secciones \ref{sec.complejo} y \ref{seq.asin} se utilizaron técnicas par
 En \cite{Vassilevich:2003xt} están presentados los primeros términos de Seeley-DeWitt para un operador con borde, una vez calculados para este operador (variedad unidimensional, sin curvatura, y condición de contorno Robin en un extremo y Dirichlet en el otro) se puede utilizar la ecuación (\ref{losresi}) para relacionarlos con los residuos de la {\it función-$\zeta$}, obteniendo
 \begin{equation}
 \begin{aligned}
-Res \  \zeta _A (s)  | _{s=1/2} &= \frac{L \mu}{2 \pi} \\[5pt]
-Res \  \zeta _A (s)  | _{s=0} &= 0 \\[5pt]
-Res \ \zeta _A (s) | _{s=-1/2} &= \frac{\gamma}{2 \pi \mu} \\[5pt]
-Res \  \zeta _A (s) | _{s=-1} &= 0 \, . \\[5pt]
+Res \  \zeta  (s)  | _{s=1/2} &= \frac{L \mu}{2 \pi} \\[5pt]
+Res \  \zeta  (s)  | _{s=0} &= 0 \\[5pt]
+Res \ \zeta (s) | _{s=-1/2} &= \frac{\gamma}{2 \pi \mu} \\[5pt]
+Res \  \zeta  (s) | _{s=-1} &= 0 \, . \\[5pt]
 \end{aligned}
 \end{equation}
 
