@@ -1,13 +1,12 @@
 \chapter{Estudio del Problema Singular}
 
 
-En esté capítulo se va a encontrar el resultado original de esta tesis. Aquí se van aplicar las herramientas desarrolladas en el capitulo anterior al estudio del espectro de un operador singular en un intervalo compacto, encontrando una contradicción al teorema (\ref{eq.heat.expansion}), a su vez se va a generar un scipt de Mathematica que permite graficar distintas aproximaciones a la parte finita de la energía de vacío.
+En esté capítulo se va encuentra el resultado original de esta tesis. Aquí se van aplicar las herramientas desarrolladas en el capitulo anterior al estudio del espectro de un operador singular en un intervalo compacto, encontrando una contradicción al teorema (\ref{eq.heat.expansion}), a su vez se va a generar un scipt de Mathematica que permite graficar distintas aproximaciones a la parte finita de la energía de vacío.
 
 \section{El Operador Singular}
 
 
-En está sección se estudiará el operador diferencial \ref{operador} obteniendo su espectro y el desarrollo de autofunciones, el operador $A$ está dado por
-
+En está sección se estudiará el operador diferencial \ref{operador} obteniendo su espectro y autofunciones
 \begin{equation}
 \begin{aligned}
     A \phi (x) &= - \partial ^2 _x  \phi(x) + \frac{\alpha}{x} \phi(x) \\[5pt]
@@ -16,7 +15,7 @@ En está sección se estudiará el operador diferencial \ref{operador} obteniend
 \label{operador}
 \end{equation}
 
-Para calcular la {\it función-$\zeta$} solo se van a tener en cuenta los estados ligados, los autovalores están dados por 
+Para calcular la {\it función-$\zeta$} solo se van a tener en cuenta los estados ligados, cuyos autovalores están dados por 
 
 \begin{equation}
 \begin{aligned}
@@ -26,14 +25,16 @@ Para calcular la {\it función-$\zeta$} solo se van a tener en cuenta los estado
 \end{aligned}
 \label{eq.aut.sin}
 \end{equation}
-las soluciones LI $ y_1 $ y $ y_2 $ dadas por
+las soluciones LI $ y_1 $ e $ y_2 $ de (\ref{eq.aut.sin}) están dadas por
 \begin{equation}
-    \phi (x) = 
+\begin{aligned}
+    \phi (x) =
     C[1]
     \underbrace{
-     \ e ^{-i \lambda x} \ x \ F _{1} ^{1} (1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x) } _ {y_1}
-    + C[2] \underbrace{ \ e^{-i \lambda x } \ x \ U (1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x) } _{y_2} 
+     \ e ^{-i \lambda x} \ x \ F _{1} ^{1} (1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x) } _ {y_1} + 
+      C[2] \underbrace{ \ e^{-i \lambda x } \ x \ U (1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x) } _{y_2} 
     \, ,
+\end{aligned}
 \label{eq.phi}
 \end{equation}
 donde $F _1 ^1(a,b,z)$ y $ U(a,b,z)$ son las soluciones LI de la ecuación hypergeométrica
@@ -84,25 +85,25 @@ Cte &=
 \end{align}
 de este desarrollo se ve que $y _1 (x \rightarrow 0 ) \rightarrow 0$ e $y _2 (x \rightarrow 0)  \rightarrow
 \frac{1}{  \alpha   \Gamma ( \frac{i \alpha}{2 \lambda}  )   } $ , entonces la condición de contorno en $x=0$ fija $C[2] =0$.
-Fijando la condición de contorno en $x=L$ los autovalores estarán dados por
+Utilizando la condición de contorno en $x=L$ los autovalores están dados por
 \begin{equation}
 F _1 ^1 (1+\frac{ \alpha}{2 i \lambda},2,2 i \lambda L)  = 0
 	\, .
 \label{eq.1}
 \end{equation}
-En la figura (\ref{fig:funcion}) se pueden observar los ceros de 
+En la figura (\ref{fig:funcion}) está graficada la función  
 \mbox{$ | F _1 ^1 (1+\frac{ \alpha}{2 i \lambda},2,2 i \lambda L) | ^2 $} para   $\alpha=1, \ L=1$. \\
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.7]{Funcion.pdf}
-\caption{En esta imagen se puede ver el comportamiento de los ceros de función $F _1 ^1$, para $\alpha=1$ y $L=1$}
+\caption{En esta imagen se puede ven ver los primeros ceros de la función $| F _1 ^1 (1+\frac{ \alpha}{2 i \lambda},2,2 i \lambda L) | ^2$, para $\alpha=1$ y $L=1$, los cuales representan a los primeros autovalores de $A$.}
 \label{fig:funcion}
 \end{figure}
 
 \textbf{Desarrollo en serie:} \\
 
-Para determinar los ceros de $F _1 ^1 (1+\frac{ \alpha}{2 i \lambda},2,2 i \lambda L) $ se va a utilizar el desarrollo asintótico de $F _1 ^1 (a,b,z)$ a $z \rightarrow \infty$
+Para determinar los ceros de $F _1 ^1 (1+\frac{ \alpha}{2 i \lambda},2,2 i \lambda L) $ se va a utilizar el desarrollo asintótico $F _1 ^1 (a,b,z)$ a $z \rightarrow \infty$ dado en \cite{Abramowitz:hyper}.
 \begin{equation}
 \begin{aligned}
     F _1 ^1 (a,b,z) &= \Gamma (b) 
@@ -116,7 +117,7 @@ Para determinar los ceros de $F _1 ^1 (1+\frac{ \alpha}{2 i \lambda},2,2 i \lamb
 \end{aligned}
 \label{eq.aprox}
 \end{equation}
-$S_1$ y $S _2$ son las correcciones al orden dominante. Para calcular el polo de la {\it función-$\zeta$} en $s=-1/2$ basta tomar $S _1 = S _2 = 1$ que es lo que se hará a continuación, para conocer los polos mas hallá de $s=-1/2$ o para estudiar la parte finita de $\zeta (-1/2)$ se deben tomar mas términos en $S_1$ y $S _2$, lo cual se hará al final de este capítulo.
+$S_1$ y $S _2$ son las correcciones al orden dominante. Para calcular el polo de la {\it función-$\zeta$} en $s=-1/2$ basta tomar $S _1 = S _2 = 1$ que es lo que se hará a continuación, para conocer los polos mas hallá de $s=-1/2$ o para estudiar la parte finita de $\zeta (-1/2)$ se deben tomar mas términos en $S_1$ y $S _2$, lo cual se hará al final de este capítulo en las secciones \ref{sec.sig.polos} y (REF).
 
 Utilizando (\ref{eq.aprox}) el orden dominante de $F _1 ^1 (1+  \frac{  \alpha}{2 i \lambda} ,2 ,2 i \lambda L  )$ está dado por
 \begin{equation}
@@ -131,14 +132,12 @@ Utilizando (\ref{eq.aprox}) el orden dominante de $F _1 ^1 (1+  \frac{  \alpha}{
 \end{equation}
 para obtener la {\it función-$\zeta $} se puede utilizar $M( \lambda)$ así  como cualquier otra función que contenga los mismos ceros que $F _1 ^1 (1+  \frac{  \alpha}{2 i \lambda} ,2 ,2 i \lambda L  )$.
 
+\section{Calculo Asintótico de los autovalores}\label{seq.2.asin}
 
 
-\section{Calculo Asintótico de los autovalores}
+En está sección se va a utilizar el mismo procedimiento que en en \ref{seq.asin} para calcular la {\it función-$\zeta$}, se va a utilizar un desarrollo de los autovalores para luego usarlos en la definición \ref{def.adim} y así obtener los polos en $s=1/2$ y  $s=-1/2$.
 
-
-En está sección se va a utilizar el mismo procedimiento que en en \ref{seq.asin} para calcular la {\it función-$\zeta$}, se va a utilizar un desarrollo de los autovalores para luego usarlos en la definición de la {\it función-$\zeta$} y así obtener el polo en $s=-1/2$.
-
-Se van a definir las variables adimensionales: $\mu = \lambda L $ y $\beta = \alpha L$, luego se redefine $M (\mu)$ como
+Se van a definir las variables adimensionales: $\mu = \lambda L $ y $\beta = \alpha L$, luego se trabajará con una  $M (\mu)$ de la forma
 
 \begin{equation}
 M (\mu) = e ^{\frac{i \beta }{\mu} \log(2 \mu) }
@@ -153,7 +152,7 @@ en el limite de $\mu  \rightarrow \infty$ se obtiene
 	1 - e ^{2 i \mu}
 		\, ,
 \end{equation}
-de aquí se puede ver que tal como sucedía en \ref{eq.mu} que $\mu _n$ esta dado por
+de aquí se puede ver que tal como sucedía en \ref{eq.mu} $\mu _n$ queda determinada por un orden dominante y correcciones asintóticas
 \begin{equation}
 \begin{aligned}
     &\mu _n = n \pi + \epsilon _n \\[5pt]
@@ -162,7 +161,7 @@ de aquí se puede ver que tal como sucedía en \ref{eq.mu} que $\mu _n$ esta dad
 \end{aligned}
 \label{eq.mu2}
 \end{equation}
-para calcular $\epsilon _n$ se utiliza (\ref{eq.mu2}) en (\ref{eq.otro.mu}), lo cual para conduce a
+para calcular $\epsilon _n$ se utiliza (\ref{eq.mu2}) en (\ref{eq.otro.mu}), lo cual conduce a
 \begin{equation}
 	e ^{ i \frac{\beta}{ \mu _n} \log (2 \mu _n)}     
     \frac{\Gamma(1 + \frac{ \beta}{2  i \mu _n} ) }
@@ -185,7 +184,7 @@ sabiendo que $\frac{\log (2 \mu _n)}{2 \mu _n } \rightarrow 0$ en el límite $\m
     \right)
     	\, ,
 \end{equation}
-el orden dominante está dado por
+las primeras correcciones a $\epsilon$ se obtienen de
 \begin{equation}
 \left( 1 + \frac{i \beta}{ \mu _n} \log ( 2 \mu _n) \right) 
 \left(1 + \frac{i  \gamma \beta}{ \mu _n} \right)  =
@@ -266,14 +265,13 @@ lo cual coincide con el resultado general \ref{eq.vol} luego desarrollando \ref{
     {\rm Regular}
     	\, ,
 \end{equation}
-lo cual muestra el primer resultado de esta tesis, la existencia de un polo doble en $\zeta(-1/2)$ que está en contradicción con (\ref{eq.heat.expansion}).
+lo cual muestra el primer resultado de esta tesis, la existencia de un polo doble en $\zeta(-1/2)$ lo que está en contradicción con (\ref{eq.heat.expansion}).
 
-\section{Cálculo Utilizando Variable Compleja}
+\section{Cálculo Utilizando Variable Compleja}\label{seq.2.com}
 
 
 En la sección anterior se estudio los polos de la {\it función-$\zeta$} en $s=1/2$ y $s=-1/2$ teniendo en cuenta el orden dominante en \ref{eq.aprox}.
-En esta sección al igual que en \ref{sec.complejo} se va a expresar la {\it función-$\zeta $} como una integral en el plano complejo, reteniendo el mismo orden que en la sección anterior, obteniendo coincidencia con (\ref{eq.res.1}) y (\ref{eq.res.2}).
-
+En esta sección al igual que en \ref{sec.complejo} se va a expresar la {\it función-$\zeta $} como una integral en el plano complejo, obteniendo coincidencia con (\ref{eq.res.1}) y (\ref{eq.res.2}).
 
 La {\it función-$ \zeta$} queda determinada por
 \begin{equation}
@@ -289,8 +287,8 @@ La {\it función-$ \zeta$} queda determinada por
 \end{equation}
 donde $M (z)$ está definida en (\ref{eq.completa}).
 
-Se va a utilizar el contorno dado por \ref{fig.derecha},
-utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales, el termino $e ^{2 i \lambda L}$ va a generar un termino exponencialmente creciente/decreciente, tirando la parte exponencialmente decreciente y la integral angular se obtiene para la parte que contribuye a los polos
+Se va a utilizar el contorno dado por \ref{fig.derecha}. 
+Utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales el termino $e ^{2 i \lambda L}$ va a generar un termino exponencialmente creciente/decreciente dependiendo la rama, tirando la parte exponencialmente decreciente y la integral angular se obtiene que la contribución a los polos está dada por 
 \begin{comment}
 \begin{equation}
 \begin{array}{c}
@@ -314,8 +312,9 @@ utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales, el 
 \end{array}
 \end{equation}
 \end{comment}
-\begin{align}
-    \zeta  (s) &= \\
+
+\begin{align}\label{eq.zeta.logs}
+    \zeta  (s) =& \\
      & \frac{e^{-i \pi s} \mu ^{2s}}{2 \pi i} \int _{\infty} ^{1}
      \frac{ i \alpha}{2 t^2}
      \left(
@@ -334,8 +333,9 @@ utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales, el 
      \right)
      t^{-2 s}
      (-i dt) \nonumber
+     	\, .
 \end{align}
-El termino que tiene la potencia mas alta de $t$ va a dar el polo en $s=1/2$ el cual está dado por
+El término que tiene la potencia mas alta de $t$ va a dar el polo en $s=1/2$ el cual está dado por
 \begin{equation}
     \frac{e^{i \pi s} \mu ^{2s} }{2 \pi i }
     \int _1 ^{\infty}
@@ -345,29 +345,29 @@ El termino que tiene la potencia mas alta de $t$ va a dar el polo en $s=1/2$ el 
     \frac{L e^{i \pi s} \mu ^{2s}}{2 \pi i} \frac{1}{s-1/2   }
     	\, ,
 \end{equation}
-ningún otro termino aportará a este polo, entonces coincidiendo con lo calculado anteriormente se obtiene
+ningún otro termino aportará a este polo, entonces coincidiendo con \ref{eq.res.2} se obtiene
 \begin{equation}
     \zeta (s \rightarrow 1/2) = \frac{L \mu }{2 \pi} \frac{1}{s- 1/2 } + Regular
     	\, .
 \end{equation}
 Una vez calculado este termino, el resto de la integral se puede reescribir como
-\begin{equation}
-\begin{aligned}
-	\zeta (s) &=  \\[5pt]
+\begin{align}
+	\zeta (s) =&  
+		\nonumber \\[5pt]
     & \frac{\alpha \mu ^{2s} }{2 \pi} \ sin(\pi s)
     \int _1 ^{\infty}
     t ^{-2 s-2} 
     \left(
     1 -  \log (2Lt) + \psi \left( 1 + \frac{\alpha}{2t} \right)
-    \right) dt \  \\[5pt]
-    & +
+    \right) dt \ + 
+    	\nonumber \\[5pt]
+    &
     \frac{\alpha \mu ^{2s} }{4} 
     Cos(\pi s)
     \int _1 ^{\infty} t^{-2s-2} dt
     	\, ,
-\end{aligned}
-\end{equation}
-donde todos los términos son calculables analíticamente, excepto el que contiene $\psi \left( 1 + \frac{\alpha}{2t} \right)$, para lo se desarrolla $\psi \left( 1 + \frac{\alpha}{2t} \right) $ alrededor de $t \rightarrow \infty$ a orden cero, dado que el siguiente orden contribuye al polo en $s = -3/2$
+\end{align}
+donde todos los términos son calculables analíticamente, excepto el que contiene $\psi \left( 1 + \frac{\alpha}{2t} \right)$, para lo cual se desarrolla $\psi \left( 1 + \frac{\alpha}{2t} \right) $ alrededor de $t \rightarrow \infty$ a orden cero, dado que el siguiente orden contribuye al polo en $s = -3/2$
 
 \begin{equation}
     \psi(1 + \frac{\alpha}{2 t}) =
@@ -376,80 +376,79 @@ donde todos los términos son calculables analíticamente, excepto el que contie
 \end{equation}
 realizando todas las integrales, la {\it función-$\zeta (s)$} queda determinada por:  
 \begin{equation}
-\begin{aligned}{c}
-    \zeta _A (s)  &= 
-    \frac{L \mu ^{2 s} e ^{i \pi s}}{2 \pi i} \frac{1}{s-1/2} 
-    -\frac{\alpha \mu ^{2s} Sin(\pi s)}{8 \pi} \frac{1}{(s+1/2) ^2} \\
-    & \ \ \ + \frac{\alpha \mu ^{2s} sin (\pi s) }{4 \pi } \frac{1 - \gamma -   \log (2 L)}{s+1/2}
+\begin{aligned}
+    \zeta  (s)  = 
+    & \frac{L \mu ^{2 s} e ^{i \pi s}}{2 \pi i} \frac{1}{s-1/2} 
+    -\frac{\alpha \mu ^{2s} \sin(\pi s)}{8 \pi} \frac{1}{(s+1/2) ^2} + \\
+    & \frac{\alpha \mu ^{2s} sin (\pi s) }{4 \pi } \frac{1 - \gamma -   \log (2 L)}{s+1/2}
     + \frac{\alpha \mu ^{2s} Cos(\pi s)}{8} \frac{1}{s+1/2}
     	\, .
 \end{aligned}
 \end{equation}
-Para calcular el polo en $s=-1/2$ se desarrolla en Serie de Laurent, obteniendo el mismo resultado ( \ref{eq.res.1})
+Para calcular el polo en $s=-1/2$ se desarrolla en Serie de Laurent, obteniendo el mismo resultado (\ref{eq.res.1})
 \begin{equation}
 \begin{aligned}
-	\zeta (s \rightarrow -1/2) &= 
-    \frac{\alpha}{8 \pi \mu } \frac{1}{(s+1/2)^2} \\
-    &+
-	\frac{\alpha ( \gamma  +  \log (2L \mu ) -1 )}{4 \pi \mu } \frac{1}{s+1/2} + \ Regular    
+	\zeta (s \rightarrow -1/2) = 
+    &\frac{\alpha}{8 \pi \mu } \frac{1}{(s+1/2)^2} + \\
+	&\frac{\alpha ( \gamma  +  \log (2L \mu ) -1 )}{4 \pi \mu } \frac{1}{s+1/2} + \ Regular    
 \end{aligned}
 \tag{\ref{eq.res.1}}
 \end{equation}
 
 
 
-\section{Siguientes Polos:} 
+\section{Siguientes Polos}\label{sec.sig.polos}
 
-Para calcular los siguientes polos, voy a calcular la función $\zeta _A (s) $ con variable compleja, pero utilizando todos los términos de la expansión en serie de la función $M ( \lambda )$:
 
-\begin{equation}
-\begin{aligned}
+En las secciones \ref{seq.2.com} y \ref{seq.2.asin} se utilizó el termino dominante en el desarrollo de $F _{1} ^{1} (1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x)$ para obtener los polos en $s=1/2$ y en $s=-1/2$. En esta sección se van a utilizar todos los términos del desarrollo $\ref{eq.aprox}$ para obtener la estructura de polos mas hallá de $s=-1/2$, demostrando que todos son polos simples. 
+
+Se va a calcular la {\it función-$\zeta$} utilizando variable compleja, como en la sección anterior pero con $M ( \lambda )$ dada por
+
+
+\begin{align}
 M( \lambda ) &= 
 -
  \frac{e ^{2 i \lambda L } e ^{ - \frac{i \alpha  }{2 \lambda } Ln \left( 2 \lambda L \right) }  }
       { \Gamma \left( 1 + \frac{ \alpha}{2 i \lambda}  \right) } S1 ( \lambda ) +
  \frac{ e ^{   \frac{i \alpha  } {2 \lambda } Ln \left(2 \lambda L \right) } }
-      { \Gamma \left( 1 - \frac{ \alpha}{2 i \lambda}  \right)   } S2 ( \lambda )  \\[10pt]      
+      { \Gamma \left( 1 - \frac{ \alpha}{2 i \lambda}  \right)   } S2 ( \lambda )        
+      \\[10pt]      
 S1 ( \lambda ) &= \sum _{n=0} ^{ \infty }
 \frac{\Gamma (1 - \frac{ \alpha}{2 i \lambda} + n )}{\Gamma (1 - \frac{ \alpha}{2 i \lambda})} 
 \frac{\Gamma (- \frac{ \alpha}{2 i \lambda} + n )}{\Gamma (- \frac{\alpha}{2 i \lambda})} 
 \frac{1}{( 2 i \lambda L ) ^n} = 
-1 + \sum _{n=1} ^{\infty} \frac{S ^{(1)} _n (\lambda)}{\lambda ^n} \\[10pt]
+1 + \sum _{n=1} ^{\infty} \frac{S ^{(1)} _n (\lambda)}{\lambda ^n} 
+	\nonumber
+	\\[10pt]
 S2 (\lambda ) &= \sum _{n=0 } ^{\infty}
 \frac{ \Gamma ( 1 + \frac{ \alpha}{2 i \lambda } + n ) }{\Gamma ( 1 + \frac{ \alpha}{2 i \lambda } )}
 \frac{\Gamma ( \frac{ \alpha }{2 i \lambda} + n )}{\Gamma ( \frac{ \alpha }{2 i \lambda} )}
 \frac{1}{( - 2 i \lambda L ) ^n} = 
 1 + \sum _{n=1} ^{\infty} \frac{S ^{(2)} _n (\lambda)}{\lambda ^n}
-\end{aligned}
+\nonumber
 \label{larga}
-\end{equation}
-
-Donde $S _n ^{(1,2)}$ es un polinomio (de potencias negativas), donde el orden mas bajo es 1 y el mas alto $\lambda ^n$. \\
-
-
-Al igual que antes, al integrar sobre los ejes verticales va a haber una parte exponencialmente creciente o decreciente, tirando los términos exponencialmente decrecientes se obtiene:
-
-
-\begin{align}
- \log ( M ( \lambda = i t ) ) &=   \log (S2) + 
-\frac{i \alpha }{2 \lambda}  \log (2 \lambda L) - 
- \log ( \Gamma( 1 - \frac{ \alpha}{2 i \lambda} ) ) \\ 
- \log ( M ( \lambda = -i t ) ) &=  \log (S1) -  
-\frac{i \alpha }{2 \lambda}  \log ( 2 \lambda L ) - 
- \log ( \Gamma ( 1 + \frac{ \alpha}{2 i \lambda} )) +
-2 i \lambda L  \nonumber
 \end{align}
 
-Donde lo único que difiere con lo calculado antes es contribución de los términos que generan $S1$ y $S2$. \\
+Donde $S _n ^{(1,2)}$ son un polinomios de potencias negativas, donde el orden mas bajo es 1 y el mas alto $\lambda ^n$. 
 
 
+Al igual que en \ref{seq.2.com} al integrar sobre los ejes verticales va a haber una parte exponencialmente creciente o decreciente, tirando los términos exponencialmente decrecientes se obtiene
+\begin{align}
+\log ( M ( \lambda = i t ) ) &=   \log (S2) + 
+\frac{i \alpha }{2 \lambda}  \log (2 \lambda L) - 
+ \log \left( \Gamma \left( 1 - \frac{ \alpha}{2 i \lambda} \right) \right) \\ 
+\log ( M ( \lambda=-i t ) ) &=  \log (S1) -  
+\frac{i \alpha }{2 \lambda}  \log ( 2 \lambda L ) - 
+ \log \left( \Gamma \left( 1 + \frac{ \alpha}{2 i \lambda} \right) \right) +
+2 i \lambda L  \nonumber
+	\,	,
+\end{align}
+donde la única diferencia con los logaritmos utilizados para llegar a (\ref{eq.zeta.logs}) es la contribución de los términos $\log ( S1 )$ y $ \log ( S2) $.
 
-
-Quedándome solo con los términos que me contribuyen a los polos en  $s < -1/2$ obtengo:
-
+Teniendo en cuenta solo los términos que contribuyen a los polos en  $s < -1/2$ se obtiene
 \begin{equation}
 \begin{aligned}
- \zeta _A (s) &= \\[10pt]
+ \zeta  (s) =& \\[10pt]
 & \frac{e ^{- i \pi s} \mu ^{2s } }{2 \pi}
 \int _{\infty} ^{1} t ^{-2s } 
 		\frac{S2' (it)}{S2 (it)}
@@ -458,33 +457,27 @@ Quedándome solo con los términos que me contribuyen a los polos en  $s < -1/2$
 \frac{e ^{i \pi s} \mu ^{2s}}{2 \pi}
 \int _{1} ^{\infty} t ^{-2s } 
 	\frac{S1' (-it)}{S1(-it)}
-	d t 
+	d t +
 	 \\[10pt]
-	& + \frac{\alpha \mu ^{2s} }{2 \pi }	sin( \pi s)  \int _1 ^{\infty}
-	t ^{-2s-2} \left( \psi \left( 1 + \frac{\alpha}{2 t}\right) + \gamma \right) dt \\[15pt]
+	&  \frac{\alpha \mu ^{2s} }{2 \pi }	\sin ( \pi s)  \int _1 ^{\infty}
+	t ^{-2s-2} \left( \psi \left( 1 + \frac{\alpha}{2 t}\right) + \gamma \right) dt 
+		\, .
 \end{aligned}
 \end{equation}
-
-
-
-
-Se puede ver de la expresión anterior que solo van a existir polos simples en los semienteros negativos dado que $sin(\pi s)$ posee ceros simples en los enteros negativos, lo cual coincide con el caso regular.
-
-Usando que $\frac{S1' (-it)}{S1 (-i t)} = - \frac{S2 ' (i t)}{S2(it)} = \frac{S'(t)}{S(t)}  $ se puede reescribir lo anterior como:
-
+Utilizando que  $\frac{S1' (-it)}{S1 (-i t)} = - \frac{S2 ' (i t)}{S2(it)} = \frac{S'(t)}{S(t)}  $ se puede reescribir lo anterior como
 \begin{equation}
 \begin{aligned}
-\zeta _A (s) &=  \\[5pt]
+\zeta  (s) =&  \\[5pt]
 &
 \frac{\alpha \mu ^{2s} sin( \pi s )}{2 \pi } \int _{1} ^{\infty} 
-t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt \\[5pt]
-& -  \frac{i \mu ^{2s}  sin (\pi s)}{\pi} \int _1 ^{\infty} t ^{-2s} \frac{S'(t)}{S(t)} dt + 
+t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt -\\[5pt]
+&   \frac{i \mu ^{2s}  sin (\pi s)}{\pi} \int _1 ^{\infty} t ^{-2s} \frac{S'(t)}{S(t)} dt 
+	\, ,
 \end{aligned}
 \end{equation}
+de aquí se puede que solo van a existir polos simples en los semienteros negativos dado que $\sin (\pi s)$ posee ceros simples en los enteros negativos, lo cual coincide con el caso regular.
 
-
-
-En vez de desarrollar en serie $S'(t) / S (t)$ se va a desarrollar el Logaritmo y tomarle la derivada para luego evaluar en $\lambda \rightarrow -i t$, lo cual nos permite controlar el orden del desarrollo.
+En vez de desarrollar en serie $S'(t) / S (t)$ se desarrolla el Logaritmo y se le toma la derivada para luego evaluar en $\lambda \rightarrow -i t$, lo cual nos permite controlar el orden del desarrollo.
 
 \begin{equation}
 \begin{aligned}
