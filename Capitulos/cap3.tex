@@ -184,14 +184,14 @@ sabiendo que $\frac{\log (2 \mu _n)}{2 \mu _n } \rightarrow 0$ en el límite $\m
     \right)
     	\, ,
 \end{equation}
-las primeras correcciones a $\epsilon$ se obtienen de
+las primeras correcciones a $\epsilon _n$ se obtienen de
 \begin{equation}
 \left( 1 + \frac{i \beta}{ \mu _n} \log ( 2 \mu _n) \right) 
 \left(1 + \frac{i  \gamma \beta}{ \mu _n} \right)  =
 (1 + 2 i \epsilon _n) \, ,
 \end{equation}
 siendo el termino subdominante $\epsilon _n =  \frac{\beta }{2 n \pi}  \log (2 n \pi)$, lo cual no es suficiente para hallar el polo en $s=-1/2$ ya que existe otro termino que decae como $1/n$, reemplazando $\epsilon _n =  \frac{\beta }{2 n \pi} \log (2 n \pi) + \epsilon '$ en la ecuación anterior, se obtiene:
-\begin{equation}
+\begin{equation}\label{anterior}
     \epsilon _n =  \frac{\beta }{2 n \pi} \log (2 n \pi) +
                 \frac{\gamma \beta}{2 n \pi} +
                 O\left(  \frac{1}{n^2} \right)
@@ -285,7 +285,7 @@ La {\it función-$ \zeta$} queda determinada por
 	\, ,
 	\tag{\ref{asd}}
 \end{equation}
-donde $M (z)$ está definida en (\ref{eq.completa}).
+donde $M (z)$ está definido en (\ref{eq.completa}).
 
 Se va a utilizar el contorno dado por \ref{fig.derecha}. 
 Utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales el termino $e ^{2 i \lambda L}$ va a generar un termino exponencialmente creciente/decreciente dependiendo la rama, tirando la parte exponencialmente decreciente y la integral angular se obtiene que la contribución a los polos está dada por 
@@ -367,7 +367,7 @@ Una vez calculado este termino, el resto de la integral se puede reescribir como
     \int _1 ^{\infty} t^{-2s-2} dt
     	\, ,
 \end{align}
-donde todos los términos son calculables analíticamente, excepto el que contiene $\psi \left( 1 + \frac{\alpha}{2t} \right)$, para lo cual se desarrolla $\psi \left( 1 + \frac{\alpha}{2t} \right) $ alrededor de $t \rightarrow \infty$ a orden cero, dado que el siguiente orden contribuye al polo en $s = -3/2$
+donde todos los términos son calculables analíticamente, excepto el que contiene $\psi \left( 1 + \frac{\alpha}{2t} \right)$, para lo cual se desarrolla $\psi \left( 1 + \frac{\alpha}{2t} \right) $ alrededor de \mbox{$t \rightarrow \infty$} a orden cero, dado que el siguiente orden contribuye al polo en $s = -3/2$
 
 \begin{equation}
     \psi(1 + \frac{\alpha}{2 t}) =
@@ -400,12 +400,13 @@ Para calcular el polo en $s=-1/2$ se desarrolla en Serie de Laurent, obteniendo 
 \section{Siguientes Polos}\label{sec.sig.polos}
 
 
-En las secciones \ref{seq.2.com} y \ref{seq.2.asin} se utilizó el termino dominante en el desarrollo de $F _{1} ^{1} (1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x)$ para obtener los polos en $s=1/2$ y en $s=-1/2$. En esta sección se van a utilizar todos los términos del desarrollo $\ref{eq.aprox}$ para obtener la estructura de polos mas hallá de $s=-1/2$, demostrando que todos son polos simples. 
+En las secciones \ref{seq.2.com} y \ref{seq.2.asin} se utilizó el termino dominante en el desarrollo de $F _{1} ^{1} \left( 1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x \right)$ para obtener los polos en $s=1/2$ y en $s=-1/2$. En esta sección se van a utilizar todos los términos del desarrollo $\ref{eq.aprox}$ para obtener la estructura de polos mas hallá de $s=-1/2$, demostrando que todos son polos simples. 
+
 
 Se va a calcular la {\it función-$\zeta$} utilizando variable compleja, como en la sección anterior pero con $M ( \lambda )$ dada por
 
 
-\begin{align}
+\begin{align}\label{larga}
 M( \lambda ) &= 
 -
  \frac{e ^{2 i \lambda L } e ^{ - \frac{i \alpha  }{2 \lambda } Ln \left( 2 \lambda L \right) }  }
@@ -426,7 +427,6 @@ S2 (\lambda ) &= \sum _{n=0 } ^{\infty}
 \frac{1}{( - 2 i \lambda L ) ^n} = 
 1 + \sum _{n=1} ^{\infty} \frac{S ^{(2)} _n (\lambda)}{\lambda ^n}
 \nonumber
-\label{larga}
 \end{align}
 
 Donde $S _n ^{(1,2)}$ son un polinomios de potencias negativas, donde el orden mas bajo es 1 y el mas alto $\lambda ^n$. 
@@ -477,7 +477,7 @@ t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt -\\[5pt]
 \end{equation}
 de aquí se puede que solo van a existir polos simples en los semienteros negativos dado que $\sin (\pi s)$ posee ceros simples en los enteros negativos, lo cual coincide con el caso regular.
 
-En vez de desarrollar en serie $S'(t) / S (t)$ se desarrolla el Logaritmo y se le toma la derivada para luego evaluar en $\lambda \rightarrow -i t$, lo cual nos permite controlar el orden del desarrollo.
+En vez de desarrollar en serie $S1 '(-i t) / S (-i t)$ se desarrolla  $\log S1 (\lambda)$ alrededor de $\lambda \rightarrow \infty$, luego se le toma la derivada respecto de $\lambda$ y finalmente se evalúa en $\lambda \rightarrow -i t$, lo cual nos permite controlar el orden del desarrollo.
 
 \begin{equation}
 \begin{aligned}
@@ -520,9 +520,9 @@ Este desarrollo de Taylor es correcto hasta el orden N (en caso de que N sea sem
 
 
 
-Con este desarrollo puedo encontrar el polo en $s=-3/2$.
+Con este desarrollo puedo se puede encontrar el polo en $s=-3/2$.
 \begin{equation}
-\zeta _A (s \rightarrow -3/2) = 
+\zeta  (s \rightarrow -3/2) = 
 \frac{L ^2 \alpha  ^3 \psi ^{(2)} (1) + 12   \alpha  - 6 L \alpha ^2}{32 L^2 \pi \mu ^3}
 \frac{1}{s+3/2}
 \end{equation}
@@ -618,21 +618,184 @@ Donde se puede hacer el producto de Cauchy para tener la solución exacta de has
 
 \section{Cálculo de la energía de vacío}
 
-La energía de vacío queda definida por la ecuación: 
+La energía de vacío queda definida por la ecuación (\ref{eq.casimir.mu})
 
 \begin{equation}
     E _0 = \frac{\mu }{2}  
-    \zeta _A \left( - 1/2 \right) 
+    \zeta  \left( - 1/2 \right) 
+    \tag{\ref{eq.casimir.mu}} \, ,
 \end{equation}
 
-Utilizando el desarrollo de $\zeta _A (s \rightarrow -1/2)$ en (\ref{eq.desarrollo}), se obtiene para la energía de vacío:
+Utilizando el desarrollo de $\zeta  (s \rightarrow -1/2)$ dado por (\ref{eq.res.1}) en (\ref{eq.casimir.mu}) se obtiene para la energía de vacío
 
-\begin{equation}
+\begin{equation}\label{eq.casimir.resultado}
 E _0 = \frac{1}{2} \left(
 				\frac{\alpha}{8 \pi  } \frac{1}{(s+1/2)^2} + 
-				\frac{\alpha ( \gamma  +  \log (2L \mu ) -1 )}{4 \pi  } \frac{1}{s+1/2} +
-				\ Regular
-				\right)
+				\frac{\alpha ( \gamma  +  \log (2L \mu ) -1 )}{4 \pi  (s+1/2)}
+				\right) + 
+				\frac{\mu}{2} \ Regular
 \end{equation}
 
- 
+\section{Cálculo de la parte Regular}
+
+En la secciones \ref{seq.2.com} y \ref{seq.2.asin} se calcularon calcularon los polos de la \mbox{{\it función-$\zeta$}} en $s=1/2$ y $s=-1/2$ encontrando que en $s=-1/2$ existe en polo doble, luego en la sección \ref{sec.sig.polos} se estudiaron los polos siguientes encontrando que son todos polos simples. En esta sección se hallará un método para estudiar la parte regular de \ref{eq.casimir.resultado}.
+
+
+El primer resultado a utilizar es la existencia del término logarítmico en (\ref{anterior}) el cual genera el polo doble en $s=-1/2$, el segundo está dado en la sección \ref{sec.sig.polos} el cual asegura la existencia de polos simples mas hallá de $s=-1/2$ lo que permite escribir a los autovalores de la forma
+
+\begin{equation}
+\begin{aligned}
+\lambda L _n &= \mu _n  = 
+			n \pi + \epsilon _n \\
+			\epsilon _n &= 
+			\frac{ \beta }{2 n \pi } \log (2 n \pi) +
+			\sum _{p=1} ^{\infty} \frac{a _p}{n ^p }
+			\, ,
+\end{aligned}
+\end{equation}
+para calcular los términos $a_p $ hay que cortar la serie que define a  $S1 $ y $S2$ en (\ref{larga}) a un orden cada vez mayor, para esto se utilizará un script del software Mathematica. Una vez obtenida la aproximación de los autovalores al orden deseado se procede de forma igual a la sección \ref{seq.2.asin}.
+
+
+La primer parte del script consiste en definir el desarrollo de Taylor de cada función  en (\ref{larga}) escrita en función de las variables adimensionales $\mu _n = \lambda _n L$ y $\beta = \alpha L$
+
+\begin{verbatim}
+LG[Q_] := Sum[
+              ((I  \[Beta]  Log[2 n Pi])/ (n Pi))^p 1/p!, 
+              {p, 0, Q}];
+S1[Q_] := 
+          Sum[
+              Pochhammer[1 - \[Beta]/(2 I n Pi),l] 
+              Pochhammer[-(\[Beta]/(2 I n Pi)), l] 
+              1/(2 I n Pi )^l, {l, 0,Q}];
+S2[Q_] := 
+          Sum[
+              Pochhammer[1 + \[Beta]/(2 I n Pi), l] 
+              Pochhammer[\[Beta]/(2 I n Pi), l] 
+              1/(-2 I  n Pi )^l, {l, 0, Q}];
+G1[Q_] := 
+          Normal[
+          Series[
+                 1/Gamma[1 + \[Beta]/(2 I \[Mu])], 
+                 {\[Mu], \[Infinity],Q}]] 
+                 /. {\[Mu] -> n Pi};
+G2[Q_] := Normal[
+          Series[
+                 1/Gamma[1 -\[Beta]/(2 I \[Mu])], 
+                 {\[Mu], \[Infinity], Q}]] 
+                 /. {\[Mu] -> n Pi};
+Ex[Q_] := Sum[(2 I \[Epsilon])^l/l!, {l, 0, Q}];
+\end{verbatim}
+la segunda parte del script lo que hace es calcular $a_p$ hasta $p=9$ e imprimirlos en la pantalla.
+
+\begin{verbatim}
+a[0] = \[Beta]/(2 Pi ) Log[2 n Pi]/n;
+
+Do[{
+  	serie = LG[j] S2[j] G2[j] - Ex[j] S1[j] G1[j],
+  	polinomio = 
+   serie /. {\[Epsilon] -> \[Beta]/(2 Pi ) Log[2 n Pi]/n + 
+       Sum[a[p]/n^p, {p, 1, j}]},
+  	coeficiente = Coefficient[polinomio, n, -j],
+  	sol = Solve[coeficiente == 0, a[j]],
+  	a[j] = a[j] /. {sol[[1]][[1]]},
+  	a[j] = Simplify[a[j]],
+  	Print[a[j]]},
+   {j, 1, 9}]
+\end{verbatim}
+una vez obtenidos los primeros términos la {\it función-$\zeta$} se puede expresar como
+\begin{equation}
+\begin{aligned}
+\zeta (s) =& 
+( \mu L ) ^{2s}
+\sum _{n=1} ^{\infty}
+( n \pi) ^{-2s} \left( 1 + \frac{ \epsilon _n }{n \pi } \right) ^{-2s } \\
+ =& 
+(\mu L) ^{2s} \sum _{n=1} ^{\infty}
+( n \pi) ^{-2s} \left(
+						1 -2s  \frac{\epsilon _n}{n \pi} + 
+						\left( s + \frac{1}{2} \right) O( \epsilon ^2 )
+						\right)
+\, ,
+\end{aligned}
+\end{equation}
+donde al evaluar $\zeta (-1/2)$ todos los términos que contienen potencias $\epsilon ^2$ o mayores se anulan. Quedándose solo con los términos que no se anulan de $\zeta (-1/2)$ se obtiene
+\begin{equation}
+\begin{aligned}
+\zeta (s) =& (\mu L) ^{2s} \sum _{n=1} ^{\infty} 
+	(n \pi ) ^{-2s}
+		\left(
+				1 - 2s \frac{\epsilon _n}{n \pi } 
+				\right) \\
+		=& \left( \frac{\mu L}{\pi} \right) ^{2s}
+				\left(
+						\zeta _R (2s) - 
+						\frac{2 s}{\pi } \sum _{n=1} ^{\infty} 
+						n ^{-2s-1} \epsilon _n
+						\right)
+\\
+		=& \left( \frac{\mu L }{\pi} \right) ^{2s}
+			\Bigg(
+						\zeta _R (2s) - \\ 
+						& \qquad \qquad \quad
+						\frac{2 s}{\pi }  \Bigg( \left(
+							\frac{\beta \log (2 \pi) \zeta _R (2s+2) -
+							\beta \zeta _R ' (2s+2)}{2 \pi }
+								\right) + \\
+								& \qquad \qquad \qquad \qquad 
+								\sum _{p=1} ^{9} 
+							a _p \zeta _R (2s+1+p)
+								\Bigg) \Bigg) \, .
+\end{aligned}
+\end{equation}
+Donde las contribuciones de la parte finita de los términos divergentes en $s=-1/2$ están dados por
+\begin{align}\label{cortar}
+PF \left(
+	\frac{\beta \log (2 \pi) \zeta _R (2s+2) -
+	\beta \zeta _R ' (2s+2)}{2 \pi } 
+		\right) \Bigg| _{s=-1/2}
+	&= 
+	  \frac{ \gamma _1 \beta}{2 \pi }  \\
+PF \left( 
+		\sum _{p=1} ^{9} a _p \zeta _R (2s+1+p)
+		\right) \Bigg| _{s=-1/2 }
+	&= \sum _{p=2} ^{9} a _p \zeta _R (p)
+	\, ,
+\end{align}
+donde $\gamma _1 $ es la constante de Stieltjes. Quedando entonces la parte finita  de $\zeta$ en $s=-1/2$ como
+\begin{equation}
+PF \zeta (s) \Bigg| _{s=-1/2} = \frac{\pi}{L \mu}
+					\left(
+							- \frac{1}{12} +
+							\frac{1}{\pi } \left(
+											\frac{\gamma _1 \beta}{2 \pi} + 
+											\sum _{p=2} ^{9} a _p \zeta _R (p)
+												\right)
+							\right) 
+							\, .
+\end{equation}
+Siendo la parte regular de la energía de casimir, en la figura \ref{fig.finita} se puede observar la energía de casimir $E _0 / \alpha$ en función de $\beta$
+\begin{equation}
+PF E_0 = 
+\frac{\pi}{2 L }
+					\left(
+							- \frac{1}{12} +
+							\frac{1}{\pi } \left(
+											\frac{\gamma _1 \beta}{2 \pi} + 
+											\sum _{p=2} ^{9} a _p \zeta _R (p)
+												\right)
+							\right) 
+\end{equation}
+
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{Finita.pdf}
+\caption{En esta imagen se puede ver la parte regular de la energía de Casimir adimensionalizada con $\alpha$ en función de $\beta$. }
+\label{fig.finita}
+\end{figure}
+
+
+
+
+
