@@ -638,14 +638,13 @@ E _0 = \frac{1}{2} \left(
 
 \section{Cálculo de la parte Regular}
 
-En la secciones \ref{seq.2.com} y \ref{seq.2.asin} se calcularon calcularon los polos de la \mbox{{\it función-$\zeta$}} en $s=1/2$ y $s=-1/2$ encontrando que en $s=-1/2$ existe en polo doble, luego en la sección \ref{sec.sig.polos} se estudiaron los polos siguientes encontrando que son todos polos simples. En esta sección se hallará un método para estudiar la parte regular de \ref{eq.casimir.resultado}.
+En la secciones \ref{seq.2.com} y \ref{seq.2.asin} se calcularon calcularon los polos de la \mbox{{\it función-$\zeta$}} en $s=1/2$ y $s=-1/2$ encontrando que en $s=-1/2$ existe en polo doble, luego en la sección \ref{sec.sig.polos} se estudiaron los siguientes polos encontrando que son todos polos simples ubicados en los semienteros negativos. En esta sección se hallará un método para estudiar la parte regular de \ref{eq.casimir.resultado}.
 
-
-El primer resultado a utilizar es la existencia del término logarítmico en (\ref{anterior}) el cual genera el polo doble en $s=-1/2$, el segundo está dado en la sección \ref{sec.sig.polos} el cual asegura la existencia de polos simples mas hallá de $s=-1/2$ lo que permite escribir a los autovalores de la forma
+Utilizando las mismas variables adimensionales que en la sección \ref{seq.2.asin}: $\mu _n = \lambda _n L$ y $\beta = \alpha L$, $\mu _n$ queda expresado de la forma
 
 \begin{equation}
 \begin{aligned}
-\lambda L _n &= \mu _n  = 
+\mu _n  &= 
 			n \pi + \epsilon _n \\
 			\epsilon _n &= 
 			\frac{ \beta }{2 n \pi } \log (2 n \pi) +
@@ -653,11 +652,10 @@ El primer resultado a utilizar es la existencia del término logarítmico en (\r
 			\, ,
 \end{aligned}
 \end{equation}
-para calcular los términos $a_p $ hay que cortar la serie que define a  $S1 $ y $S2$ en (\ref{larga}) a un orden cada vez mayor, para esto se utilizará un script del software Mathematica. Una vez obtenida la aproximación de los autovalores al orden deseado se procede de forma igual a la sección \ref{seq.2.asin}.
+cada termino $a_p$ que se quiera calcular requiere llevar (\ref{larga}) a un orden mas grande, para esta tarea se utilizará un script del software Mathematica. Una vez obtenida la aproximación de los autovalores al orden deseado se procede de forma igual a la sección \ref{seq.2.asin}.
 
 
-La primer parte del script consiste en definir el desarrollo de Taylor de cada función  en (\ref{larga}) escrita en función de las variables adimensionales $\mu _n = \lambda _n L$ y $\beta = \alpha L$
-
+La primer parte del script consiste en definir el desarrollo de Taylor de cada función  en (\ref{larga})
 \begin{verbatim}
 LG[Q_] := Sum[
               ((I  \[Beta]  Log[2 n Pi])/ (n Pi))^p 1/p!, 
@@ -685,7 +683,7 @@ G2[Q_] := Normal[
                  /. {\[Mu] -> n Pi};
 Ex[Q_] := Sum[(2 I \[Epsilon])^l/l!, {l, 0, Q}];
 \end{verbatim}
-la segunda parte del script lo que hace es calcular $a_p$ hasta $p=9$ e imprimirlos en la pantalla.
+la segunda parte del script lo que hace es calcular $a_p$ orden a orden hasta $p=9$ e imprimirlos en la pantalla.
 
 \begin{verbatim}
 a[0] = \[Beta]/(2 Pi ) Log[2 n Pi]/n;
@@ -747,7 +745,9 @@ donde al evaluar $\zeta (-1/2)$ todos los términos que contienen potencias $\ep
 								\Bigg) \Bigg) \, .
 \end{aligned}
 \end{equation}
-Donde las contribuciones de la parte finita de los términos divergentes en $s=-1/2$ están dados por
+en esta expresión hay dos tipos de términos finitos, contribuciones finitas {\it per sé} y contribuciones que van a ser finitas debido al término $ \left( \frac{\mu L}{\pi}\right) ^{2s}$.
+
+Los términos finitos {\it per sé} vienen dados por las partes finitas de los términos divergentes en $s=-1/2$ dados por
 \begin{align}\label{cortar}
 PF \left(
 	\frac{\beta \log (2 \pi) \zeta _R (2s+2) -
@@ -761,9 +761,9 @@ PF \left(
 	&= \sum _{p=2} ^{9} a _p \zeta _R (p)
 	\, ,
 \end{align}
-donde $\gamma _1 $ es la constante de Stieltjes. Quedando entonces la parte finita  de $\zeta$ en $s=-1/2$ como
+donde $\gamma _1 $ es la constante de Stieltjes. Quedando entonces la parte finita {\it per sé}  de $\zeta$ en $s=-1/2$ como
 \begin{equation}
-PF \zeta (s) \Bigg| _{s=-1/2} = \frac{\pi}{L \mu}
+ \zeta (s) \Big| _{s=-1/2} = \frac{\pi}{L \mu}
 					\left(
 							- \frac{1}{12} +
 							\frac{1}{\pi } \left(
@@ -771,8 +771,27 @@ PF \zeta (s) \Bigg| _{s=-1/2} = \frac{\pi}{L \mu}
 											\sum _{p=2} ^{9} a _p \zeta _R (p)
 												\right)
 							\right) 
-							\, .
+							\, ,
 \end{equation}
+todos estos términos tienen una dependencia con la escala de la forma $1/ \mu$
+
+Luego la parte que es finita debido al desarrollo de $ \left( \frac{\mu L}{\pi}\right) ^{2s}$ está dada por el desarrollo del producto de cada término
+
+\begin{align}
+s \left( \frac{\mu L}{\pi} \right) ^{2s}  = &
+										- \frac{\pi}{2 L \mu} +
+										\frac{ \pi }{L \mu } \left( 1 - \log \left( \frac{L \mu }{\pi } \right) \right) (s+1/2)  + 
+										\nonumber \\
+										& \frac{ \pi}{L \mu} \left( 2 \log \left( \frac{L \mu}{\pi}\right)- 
+										  \log ^2 \left( \frac{L \mu}{\pi} \right) \right) (s+1/2) ^2 
+\end{align}
+\begin{align}
+\frac{\beta \log (2 \pi) \zeta _R (2s+2) - \beta \zeta _R ' (2s+2)}{2 \pi } =  
+				& \frac{\beta}{8 \pi (s+1/2) ^2} + \nonumber \\
+				& \frac{\beta ( \gamma + \log (2 \pi ) )}{4 \pi (s+1/2)} + 
+\end{align}
+
+
 Siendo la parte regular de la energía de casimir, en la figura \ref{fig.finita} se puede observar la energía de casimir $E _0 / \alpha$ en función de $\beta$
 \begin{equation}
 PF E_0 = 
