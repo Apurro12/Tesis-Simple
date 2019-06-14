@@ -126,11 +126,11 @@ que puede escribirse como
 O ( \hbar ^2 )\,.
 \end{equation}
 
-Si $ \{ \lambda _n \} _{n \in \mathbb N}$ es el espectro del operador de fluctuaciones $ \delta ^2 S $, su determinante puede escribirse formalmente como
+Si $ \{ \lambda ^2 _n \} _{n \in \mathbb N}$ es el espectro del operador de fluctuaciones $ \delta ^2 S $, su determinante puede escribirse formalmente como
 \begin{equation}\label{det}
-{\rm Det}\,(\delta ^2 S) = \prod_{ n \in \mathbb N }\ \lambda _n\,.
+{\rm Det}\,(\delta ^2 S) = \prod_{ n \in \mathbb N }\ \lambda ^2 _n\,.
 \end{equation}
-Sin embargo, para teorías locales, $\delta ^2 S$ es típicamente un operador diferencial, de modo que $\lambda_n\to\infty$ a medida que $n\to \infty$. Como el espectro diverge en el ultravioleta (UV), la expresión \eqref{det} es divergente y requiere un mecanismo de regularización. Esta es una manifestación de las divergencias UV debidas a las fluctuaciones a primer orden {\it 1-loop} del campo $\phi$.
+Sin embargo, para teorías locales, $\delta ^2 S$ es típicamente un operador diferencial, de modo que $\lambda ^2 _n\to\infty$ a medida que $n\to \infty$. Como el espectro diverge en el ultravioleta (UV), la expresión \eqref{det} es divergente y requiere un mecanismo de regularización. Esta es una manifestación de las divergencias UV debidas a las fluctuaciones a primer orden {\it 1-loop} del campo $\phi$.
 
 
 \section{Energía de Casimir}\label{sec.casimir}
@@ -165,7 +165,7 @@ Descomponiendo al campo en modos normales de oscilación, llegamos a la ecuació
 \end{align}
 Si imponemos que la función de onda se anule sobre los bordes conductores, las frecuencias propias de oscilación resultan
 \begin{equation}
-\omega _n = c\, \sqrt{ k _x ^2 + k _y ^2 + \left( \frac{n \pi}{d} \right) ^2 }
+\omega _n = c\, \sqrt{ \left( \frac{n \pi}{d} \right) ^2 + k _x ^2 + k _y ^2   }
 \end{equation}
 donde $k=(k_x,k_y)$ es el impulso del campo en la dirección transversal a las placas.
 
@@ -182,16 +182,16 @@ Hemos introducido un factor 2 para representar las dos polarizaciones del campo 
 
 \section{Funciones Espectrales}
 
-En los trabajos \cite{Seeley:1967ea,10.2307/2373309,10.2307/2373312} R.T. Seeley estudió la existencia y propiedades de la resolvente $(A - \lambda) ^{-1}$ de un operador diferencial $A$, con coeficientes infinitamente derivables definido sobre secciones de un fibrado vectorial sobre una variedad de base compacta $R$ con borde suave $\partial R$. Lo cual permite estudiar las propiedades del operador pseudo diferencial $A ^{-s}$.
+En los trabajos \cite{Seeley:1967ea,10.2307/2373309,10.2307/2373312} R.T. Seeley estudió la existencia y propiedades de la resolvente $(A - \lambda) ^{-1}$ de un operador diferencial $A$, con coeficientes suaves, definido sobre secciones de un fibrado vectorial sobre una variedad de base compacta $\mathcal{M}$ con borde suave $\partial \mathcal{M}$ bajo determinadas condiciones de contorno. Estos resultados están relacionados con las propiedades del operador pseudo-diferencial $A ^{-s}$ con $s \in \mathbb{C}$.
 
 
 
-Dado un operador diferencial $A$ con espectro $\{ \lambda _n \} _{n \in \mathbb N}$, existen dos funciónes espectrales que serán relevantes para la regularización de las divergencias en teoría cuántica de campos, la función-$\zeta$ y la traza del {\it heat-kernel}:
+Dado un operador diferencial $A$ con espectro $\{ \lambda ^2 _n \} _{n \in \mathbb N}$, existen dos funciónes espectrales que serán relevantes para la regularización de las divergencias en teoría cuántica de campos, la función-$\zeta$ y la traza del {\it heat-kernel}:
 \begin{align}
-\zeta  (s) &= {\rm Tr}\ A ^{-s} = \sum \limits_{n \in \mathbb N}   \lambda _n ^{-s} \label{funcion.zeta}\\[2mm]
-K (T) &=  {\rm Tr} \ e ^{-T A} = \sum \limits_{n \in \mathbb N} e ^{-T \lambda _{n} }
+\zeta  (s) &= {\rm Tr}\ A ^{-s} = \sum \limits_{n \in \mathbb N}   \lambda _n ^{-2s} \label{funcion.zeta}\\[2mm]
+K (T) &=  {\rm Tr} \ e ^{-T A} = \sum \limits_{n \in \mathbb N} e ^{-T \lambda ^2 _{n} }
 \end{align}
-Como típicamente $\lambda_n\to \infty$ si $n\to \infty$, la función $\zeta  (s) $ es analítica si ${\rm Re}\,(s)$ es suficientemente grande; $K(T)$, por su parte, está bien definida para $T>0$. Los polos de $\zeta(s)$ en el plano complejo $s\in\mathbb C$ están relacionados con el desarrollo de $K(T)$ para $T\to 0$; esto se deduce de la relación entre ambas funciones a través de la transformada de Mellin,
+Como típicamente $\lambda ^2 _n\to \infty$ si $n\to \infty$, la función $\zeta  (s) $ es analítica si ${\rm Re}\,(s)$ es suficientemente grande; $K(T)$, por su parte, está bien definida para $T>0$. Los polos de $\zeta(s)$ en el plano complejo $s\in\mathbb C$ están relacionados con el desarrollo de $K(T)$ para $T\to 0$; esto se deduce de la relación entre ambas funciones a través de la transformada de Mellin,
 \begin{equation}
 \zeta (s) = \frac{1}{\Gamma (s) } 
 \int _0 ^{\infty} dT \
@@ -199,11 +199,11 @@ T^{s-1} K(T) \,.
 \label{eq.mellin}
 \end{equation}
 
-Consideremos, por ejemplo, el caso en que $A$ es un operador de tipo Laplace sobre campos escalares $\phi(x)$ sobre una variedad $M$ (de dimensión $m$) con condiciones de contorno locales,
-\begin{align}
+Consideremos, por ejemplo, el caso en que $A$ es un operador de tipo Laplace sobre campos escalares $\phi(x)$ sobre una variedad $\mathcal{M}$ (de dimensión $m$) con condiciones de contorno locales,
+\begin{align}\label{eq.cc}
 &A = - \left(
 			g ^{\mu \nu} \nabla _{\mu} \nabla _{\nu} + V(x)	\right) \,,\\[2mm]
-&\left (\partial _m + S \right) \phi | _{\partial M} = 0\,,
+&\left (\partial _m + S \right) \phi | _{\partial \mathcal{M}} = 0\,,
 \end{align}
 donde $\nabla _{\mu}$ es la derivada covariante, $V(x)$ es un potencial, $\partial _m$ es la derivada normal con respecto al borde y $S$ es un parámetro que caracteriza la condición de contorno. Se puede probar \cite{10.2307/2373309,10.2307/2373078} que $K(T)$ admite un desarrollo asintótico para valores pequeños de t  de la forma
 \begin{equation}
@@ -215,20 +215,20 @@ T^{\frac{(-m+n)}{2}}
 \end{equation}
 Los coeficientes $C_n(A)$ se denominan coeficientes de Seeley-DeWitt del problema y dependen del potencial $V(x)$, del parámetro $S$, de los invariantes geométricos de la variedad y sus derivadas. Una expresión para los primeros cinco coeficientes $C _n (A) $ puede encontrarse en \cite{Vassilevich:2003xt}. Para el caso de condiciones de contorno de Dirichlet, los primeros tres coeficientes están dados por
 \begin{align}
-C _0 (A) &= \frac{1}{(4 \pi ) ^{m/2} }  \int  _{M} d ^m x \sqrt{g}  \\[2mm]
-C _1 (A) &= \frac{ 1 }{4 (4 \pi ) ^{(m-1)/2} } \int _{\partial M } d ^{m-1} \sqrt{h} \\[2mm]
+C _0 (A) &= \frac{1}{(4 \pi ) ^{m/2} }  \int  _{\mathcal{M}} d ^m x \sqrt{g}  \\[2mm]
+C _1 (A) &= \frac{ 1 }{4 (4 \pi ) ^{(m-1)/2} } \int _{\partial \mathcal{M} } d ^{m-1} \sqrt{h} \\[2mm]
 C _2 (A) &= \frac{ 1 }{6 (4 \pi) ^{m/2} } \left(
-									\int _M d ^m x\sqrt{g} (6 V + R) +
-									\int _{\partial M } d ^{m-1} x 
+									\int _{\mathcal{M}} d ^m x\sqrt{g} (6 V + R) +
+									\int _{\partial \mathcal{M} } d ^{m-1} x 
 									\sqrt{h} \ ( 2 L _{aa} + 12 S )
 									\right)
 \label{coef}
 \end{align} 
 
-Donde $C _0$ y $C _1$ representan el volumen de la variedad y del borde respectivamente, así $g$ y $h$ representan sus tensores métricos, donde $m$ es la dimension de la variedad. $C _2$ así como el resto de los coeficientes son funciones del potencial $V$, el tensor de curvatura de la variedad $R _{\mu \nu \rho \sigma } \ (R =  g ^{i j} g^{ l m } R _{i j l m} ) $, el tensor de curvatura extrínseca $L _{\mu \nu }$ sobre el borde de la variedad, tambien pueden depender del Campo de Gauge $\omega $, la condición de contorno $S$, y demas invariantes locales, así como todas sus derivadas y posibles combinaciones entre ellos.
+Donde $C _0$ y $C _1$ representan el volumen de la variedad y del borde respectivamente, así $g$ y $h$ representan sus tensores métricos, y $m$ la dimension de la variedad. $C _2$ así como el resto de los coeficientes son funciones del potencial $V$, la curvatura de Ricci de la variedad $R$, el tensor de curvatura extrínseca $L _{ij } \ (i,j = 1,2,...,m-1)$ sobre el borde de la variedad, la condición de contorno $S$ definida en la ecuación (\ref{eq.cc}), y demás invariantes locales.
 
 
-Utilizando (\ref{eq.heat.expansion}) en  (\ref{eq.mellin}) , se ve que la función $\zeta (s)$ posee polos simples en
+Utilizando (\ref{eq.heat.expansion}) en  (\ref{eq.mellin}) , se muestra que la función $\zeta (s)$ posee polos simples en
 \begin{equation}
 s _n = \frac{m-n}{2} 
 \label{eq.ceros.zeta}
@@ -240,9 +240,9 @@ con residuos dados por
 	\, ,
 \label{losresi}
 \end{equation}
-un valor particular es el residuo en $s=1/2$ el cual es proporcional al volumen de la variedad
+En particular, el residuo en $s=\frac{1}{2}$ es proporcional al volumen de la variedad
 \begin{equation}\label{eq.vol}
-	{\rm Res} \ \zeta (s) | _{s=1/2} = \frac{ {\rm Vol} }{2 \pi} \, .
+	{\rm Res} \ \zeta (s) | _{s=1/2} = \frac{ {\rm Vol (\mathcal{M})} }{2 \pi} \, .
 \end{equation}
 
 
@@ -253,11 +253,11 @@ En las secciones siguientes utilizaremos las funciones espectrales $K(T)$ y $\ze
 En las ecuaciones \ref{gama-det} y \ref{det} de la sección \ref{accion_efectiva}, vimos que la acción efectiva a {\it 1-loop} está dada por el siguiente determinante funcional,
 \begin{equation}
 \log {\rm Det} \, \delta ^2 S = 
-\sum_{n\in{\mathbb N}} \log \lambda _n
+\sum_{n\in{\mathbb N}} \log \lambda ^2 _n
 \end{equation}
-en el que $\{\lambda_n\}_{n\in\mathbb N}$ representa el espectro del operador de fluctuaciones cuánticas $\delta^2S$. Uno de los métodos para regularizar esta cantidad divergente se basa en el desarrollo de la función-$\Gamma$ incompleta,
+en el que $\{\lambda ^2 _n\}_{n\in\mathbb N}$ representa el espectro del operador de fluctuaciones cuánticas $\delta^2S$. Uno de los métodos para regularizar esta cantidad divergente se basa en el desarrollo de la función-$\Gamma$ incompleta,
 \begin{equation}
-- \log\lambda_n=\int _ { \epsilon } ^{\infty}\frac{dT}{T}\ e ^{- T \lambda _n} +\gamma+\log\epsilon + O ( \epsilon  ) \,.
+- \log\lambda ^2 _n=\int _ { \epsilon } ^{\infty}\frac{dT}{T}\ e ^{- T \lambda ^2 _n} +\gamma+\log\epsilon + O ( \epsilon  ) \,.
 \end{equation}
 Utilizando esta expresión en el determinante funcional de \eqref{gama-det} podemos escribir
 \begin{equation}\label{gamma-hk}
@@ -284,8 +284,10 @@ La segunda variación de la acción resulta
 + m ^2 
 + \frac{\lambda}{2}\phi ^2 \,.
 \end{equation}
+
+
 De acuerdo con \eqref{gamma-hk}, la acción efectiva puede expresarse como
-\begin{equation}
+\begin{equation}\label{eq.accion-efectiva}
 \Gamma [ \phi ] = 
 S[ \phi ] - 
 \frac{\hbar }{2}
@@ -294,7 +296,7 @@ S[ \phi ] -
 \,{\rm Tr} \,  e ^{- T ( - \partial _t ^2 - \partial _x ^2 + \frac{\lambda}{2} \phi ^2 ) }
 \end{equation}
 Esta expresión muestra que un campo escalar masivo no tiene divergencias IR. Sin embargo, existen divergencias UV generadas por el comportamiento del integrando en $T=0$. Utilizando el desarrollo (\ref{eq.heat.expansion}) se puede ver que las contribuciones divergentes están dadas por:
-\begin{equation}
+\begin{equation}\label{seeley-div}
 - \frac{\hbar }{2}\int _ { \epsilon } ^{1}  
 \frac{ dT}{T} 
 \left(
@@ -306,7 +308,7 @@ Esta expresión muestra que un campo escalar masivo no tiene divergencias IR. Si
 \end{equation}
 donde los términos superiores en el  desarrollo del Heat-Kernel junto con la exponencial van a contribuir con potencias integrables en el limite $\epsilon \rightarrow 0 $.
 
-Para una variedad sin borde, la forma general de los coeficientes de Seeley-DeWitt puede encontrarse en \cite{Vassilevich2}, en este caso particular los primeros 3 están dados por:
+Los 3 primeros coeficientes Seeley-DeWitt están dados en la ecuación (\ref{coef}), para este caso particular ($m=2, V = - \lambda /2,R=0$) se obtiene
 \begin{align}
 C _0 (A) &= \frac{1}{4 \pi   }  \int  _{M} d x dt   \\[2mm]
 C _1 (A) &= 0 \\[2mm]
@@ -315,12 +317,11 @@ C _2 (A) &= - \frac{ \lambda }{8 \pi }  \int _M d x dt \  \phi ^2
 \end{align} 
 
 
-
-Estos términos divergentes se pueden introducir en el lagrangiano, redefiniendo redefiniendo $m$ de forma que la acción efectiva resulte finita.
+Estos términos divergentes se pueden introducir en el lagrangiano, redefiniendo la acción efectiva de modo que resulte finita. $C_0$ renormaliza la constante cosmológica $\Lambda$, mientras que  $C_2$ renormaliza la masa $m$.
 \begin{equation}
-m ^2 _{fis} = m ^2 - \frac{\lambda \hbar \ln \epsilon}{8 \pi}
+m ^2 _{fis} = m ^2 ( \epsilon )  - \frac{\lambda \hbar \ln \epsilon}{8 \pi}
 \end{equation}
-Donde $m _{fis}$ se reinterpreta como la corrección cuántica a la masa original del lagrangiano, en el siguiente termino del desarrollo de Heat-Kernel se va a obtener la corrección a primer orden de $\lambda$, junto con correcciones de orden superior de $m$.
+Donde $m _{fis}$ se reinterpreta como la corrección cuántica a la masa original del lagrangiano. Los siguientes coeficientes de  Seeley-DeWitt van a corregir primer orden de $\lambda$ y a orden superior $m$, de la ecuación (\ref{seeley-div}) resulta que estas correcciones son finitas en el limite $\epsilon \rightarrow 0$, por lo tanto es necesario tener en cuenta las correcciones dadas por (\ref{eq.accion-efectiva}) en el intervalo $[1, \infty)$ para obtener la corrección término a término.
 \section{Regularización de la Energía de Casimir}\label{cap.casimir}
 
 En la sección \ref{sec.casimir} se obtuvo la siguiente expresión para la energía de vacío de un campo escalar sin masa (con dos grados de polarización) entre dos placas paralelas de área infinita,
@@ -334,7 +335,7 @@ E _0 = \frac{A \hbar c}{(2 \pi) ^2} \int dk _x dk _y
 La definición \eqref{funcion.zeta} sugiere reemplazar esta expresión divergente de la energía de vacío por la siguiente representación
 \begin{equation}\label{e0-zeta}
 E _0 = \frac{A \hbar c}{(2 \pi) ^2} 
-\ \zeta (-1/2)
+\ \zeta ( -1/2 )
 \end{equation}
 donde la función-$\zeta$ está dada por
 \begin{equation}
@@ -353,10 +354,10 @@ Calculamos ahora la extensión analítica de $\zeta(s)$ al punto $s=-\frac12$,
 \frac{\pi}{s-1} \left( \frac{\pi}{d} \right) ^{2-2s} \zeta_R (2s-2)\,.
 \end{align}
 En esta expresión $\zeta_R(s)$ representa la función-$\zeta$ de Riemann,
-\begin{align}
+\begin{align}\label{rieman-zeta-def}
 	\zeta_R(s)=\sum_{n=1}^\infty n^{-s}\,,
 \end{align}
-cuya extensión analítica a $s=-3$ es $\zeta_R(-3)=\frac{1}{120}$. Utilizando finalmente la representación \eqref{e0-zeta}, obtenemos para la energía de vacío por unidad de área transversal
+cuya extensión analítica a $s=-3$ es $\zeta_R(-3)=\frac{1}{120}$ [CITAR APENDICE]. Utilizando finalmente la representación \eqref{e0-zeta}, obtenemos para la energía de vacío por unidad de área transversal
 \begin{equation}
 \frac{E _0}{A} = 
 - \hbar c\ \frac{ \pi ^2}{720}\ \frac{1}{d^3}\,.
@@ -379,13 +380,10 @@ E _0 = \frac{\hbar}{2} \zeta  (-1/2)
 
 En los capítulos \ref{cap.casimir} y \ref{cap.acc} se utilizó $K(T)$ y $\zeta (s)$ para dar definiciones finitas de la acción efectiva a {\it 1-loop} y la energía de casimir respectivamente, lo que se va hacer de aquí en adelante, es adimensionalzarlas de manera que las potencias complejas que estén bien definidas:
 
-\begin{equation}
-\begin{aligned}
-\zeta  (s) &= \sum\limits_{n \in \mathbb N} \left( \frac{\lambda _n}{\mu }  \right) ^{-2s } \\[10pt]
-H \left( T \right)  &= \sum\limits_{n \in \mathbb N} e ^{- \frac{T \lambda _{n}}{\mu} } \, .
-\end{aligned}
-\label{def.adim}
-\end{equation}
+\begin{align}
+\zeta  (s) &= \sum\limits_{n \in \mathbb N} \left( \frac{\lambda ^2 _n}{\mu }  \right) ^{-2s } \label{def.adim}\\[10pt]
+H \left( T \right)  &= \sum\limits_{n \in \mathbb N} e ^{- \frac{T \lambda ^2 _{n}}{\mu} } \, .
+\end{align}
 
 La Energía de Casimir queda definida como:
 
@@ -394,7 +392,7 @@ E _0 = \frac{\hbar \mu}{2} \zeta  (-1/2)
 \label{eq.casimir.mu}
 \end{equation}
 
-En el caso que $\zeta (s)$ tenga una extensión analítica en $s=-1/2$ la energía de vacío coincide con (\ref{eq.casimir.no.mu}), en cambio si posee un polo $\mu$ va a contribuir de manera no trivial, por ejemplo si (\ref{funcion.zeta}) tiene un polo doble:
+En el caso que $\zeta (s)$ tenga una extensión analítica regular en $s=-1/2$ la energía de vacío coincide con (\ref{eq.casimir.no.mu}), en cambio si posee un polo, $\mu$ va a contribuir de manera no trivial, por ejemplo si (\ref{funcion.zeta}) tiene un polo simple:
 
 \begin{equation}
 \begin{aligned}
@@ -403,9 +401,9 @@ E _0 &=
 \sum\limits_{n \in \mathbb N}  \lambda _n   ^{-2s } \\ &= 
 \frac{\hbar }{2} 
 \left(
-		\frac{C _{-2}}{ \left( s+1/2 \right) ^2} + \frac{2 C _{-2} \ln \mu + C _{-1}}{s+1/2} + {\rm finito} 
+		\frac{C _{-1}}{  s+1/2 } + 2 C _{-1} \ln \mu + {\rm finito} 
 		\right) 
 \end{aligned}
 \end{equation}
 
-En el \ref{e0-zeta} no se introdujo $\mu$ explícitamente dado que $\zeta (-1/2)$ es regular y no afecta al resultado final, a partir del próximo capítulo se utilizará la definición de la energía de vacío dada por \ref{eq.casimir.mu} en lugar de \ref{eq.casimir.no.mu}.
+En \ref{e0-zeta} no se introdujo $\mu$ explícitamente dado que $\zeta (-1/2)$ fue regular y esto no afecta el resultado final, a partir del próximo capítulo se utilizará la definición de la energía de vacío dada por \ref{eq.casimir.mu} en lugar de \ref{eq.casimir.no.mu}.

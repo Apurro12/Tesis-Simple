@@ -1,37 +1,34 @@
 \chapter{Ejemplos Sencillos}
 
-En este capítulo se va a estudiar la {\it función-$\zeta$} para luego obtener la energía de vacío del operador $A = - \partial ^2 _x$ en el intervalo $[0,L]$ sometido a distintas condiciones de contorno. 
+En este capítulo se aplicarán las ideas del capítulo anterior a ejemplos sencillos. Estudiaremos el operador $A = - \partial ^2 _x$ en el intervalo $[0,L]$ sometido a distintas condiciones de contorno. Calcularemos la {\it función-$\zeta$} para luego obtener la energía de vacío. 
 
-En los tres primeros operadores se tomarán condiciones de contorno Dirichlet, Neumann y Periódicas en ambos extremos, luego conociendo sus autovalores  se calculara la {\it función-$\zeta  (s)$} exactamente. 
+En los tres primeros casos se considerará condiciones de contorno Dirichlet, Neumann y periódicas en ambos extremos. Luego conociendo sus autovalores  se calculara la {\it función-$\zeta$} exactamente. 
 
-En el último operador, se tomará una condición de contorno Dirichlet en un borde y Robin en el otro, luego se utilizarán 3 técnicas distintas para obtener aproximaciones de la {\it función-$\zeta$}: el desarrollo asintótico de los autavalores, una representacion en el plano complejo  y el Heat-Kernel.
+En el último ejemplo de este capítulo, se tomará una condición de contorno Dirichlet en un borde y Robin en el otro, de modo de introducir un parámetro externo con dimensiones. Se utilizarán tres técnicas distintas para estudiar la {\it función-$\zeta$}: el desarrollo asintótico de los autavalores, una representacion en el plano complejo  y el heat-kernel.
 
-\section{Dirichlet,Neumann y Periódicas}
+\section{Condiciones de contorno Dirichlet,Neumann y periódicas}
+\label{sec.Dirichlet}
 
-En esta sección estudiará el espectro y las energías de vacío del operador $A = - \partial ^2 _x$ en el intervalo $[0,L]$, al aplicarle condiciones de contorno Dirichlet,Neumann y Periódicas:\\
+En esta sección se estudiarán el espectro y las energía de vacío del operador $A = - \partial ^2 _x$ en el intervalo $[0,L]$ bajo condiciones de contorno Dirichlet,Neumann y periódicas:\\
 
-\textbf{Dirichlet:}
+\textbf{Condiciones de contorno Dirichlet}
 
 
-El operador $A$ está dado por
-
+Consideremos primeramente el operador $A$ dado por
 \begin{equation}
 \begin{aligned}
 	A \phi (x) &= - \partial _x ^2 \phi (x) \\[10pt]
     \phi (0) &= \phi(L) = 0 
-    \, ,
+    \, .
 \end{aligned}
 \end{equation}
 
-
-
-cuyos autovalores y autofunciones son: 
+Sus autovalores y autofunciones normalizadas son
 
 \begin{equation}
 \begin{aligned}
 	\phi _n (x) &= \sqrt{\frac{2}{L}} \sin( \frac{n \pi x}{L} ) \\[10pt]
-	\lambda _n ^2 &= \left( \frac{n \pi }{L} \right) ^2 \\[10pt]
-	n &= 1,2,3, ...
+	\lambda ^2 _n  &= \left( \frac{n \pi }{L} \right) ^2 \, \, \, \, \, n = 1,2,3, \, ...
 \end{aligned}
 \end{equation}
 
@@ -40,26 +37,30 @@ la {\it función-$\zeta$} queda determinada por
 \begin{equation}
 \begin{aligned}
 \zeta  (s) &= 
-\sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2s}  \\[10pt]
+\sum _{n=1} ^{\infty} \left( \frac{\lambda _n }{\mu }  \right) ^{-2s}  \\[10pt]
 &= \left(  \frac{\pi}{L \mu} \right) ^{-2s}   \sum _{n=1} ^{\infty} n ^{-2s} = 
-\left( \frac{\pi}{L \mu} \right) ^{-2s}  \zeta (2s) \, . \\[10pt]
+\left( \frac{\pi}{L \mu} \right) ^{-2s}  \zeta _R (2s) \, . \\[10pt]
 \end{aligned}
 \end{equation}
 
+Donde $\zeta _R$ es la función zeta de Riemann definida en \ref{rieman-zeta-def}, en el apendice [CITAR] se demuestra  que $\zeta _R (-1) = -1/12$. 
 
-la cual es regular en $s=-1/2$, siendo entonces la energía de vacío
+Por lo tanto resulta que $\zeta$ es regular en $s=-\frac{1}{2}$, siendo la energía de vacío
 
-\begin{equation}
+\begin{equation}\label{eq.energia.dirichlet}
 \begin{array}{c}
-E _0 = - \frac{\pi}{12 L} \, ,
+E _0 = - \frac{\pi}{24 L} \, ,
 \end{array}
 \end{equation}
 
-lo cual conduce a una fuerza de vacío atractiva. Notar que aquí la constante $\mu$ no parece en el resultado final, esto se debe a que la energía de vacío resultó finita.\\
 
-\textbf{Neumann:}
+Como la energía de vacío crece con $L$, el efecto Casimir implica una fuerza
+atractiva entre los extremos del intervalo en el cual está confinado el campo
+escalar. Notar que, como la {\it función-$\zeta$} es regular en $s=-\frac{1}{2}$, el resultado no depende del parámetro de escala $\mu$.\\
 
-El operador $A$ está dado por
+\textbf{Condiciones de contorno Neumann}\\
+
+Consideremos ahora el operador $A$ dado por.
 
 \begin{equation}
 \begin{aligned}
@@ -67,28 +68,29 @@ El operador $A$ está dado por
     \phi ' (0) &= \phi ' (L) = 0 \, ,
 \end{aligned}
 \end{equation}
-
-
-
 cuyos autovalores y autofunciones están dados por
-
 \begin{equation}
 \begin{aligned}
 	\phi _0 (x) &= \sqrt{ \frac{1}{L} } \\[5pt]
-	\phi _n (x)  &= \sqrt{\frac{2}{L}} \cos \left( \frac{n \pi x}{L} \right) \\[5pt]
-	\lambda _n ^2 &= \left( \frac{n \pi }{L} \right) ^2 \\[5pt]
-	n &= 1,2,3, ...
+	\phi _n (x)  &= \sqrt{\frac{2}{L}} \cos \left( \frac{n \pi x}{L} \right) 
+	\, \, \, \, \, \, n \neq 0\\[5pt]
+	\lambda ^2 _n  &= \left( \frac{n \pi }{L} \right) ^2 
+	\, \, \, \, \, \,
+	n = 0,1,2,3, \dots
+	\\[5pt]
 \end{aligned}
 \end{equation}
 
 
+Como el cálculo de la {\it función-$\zeta$} se realiza excluyendo los modos cero, la
+energía de vacıío coincide con la calculada anteriormente para condiciones
+de contorno Dirichlet.\\
 
-la {\it función-$\zeta (s)$} será la misma que la calculada anteriormente (debido a que se excluyen los modos cero), así como también la energía de vacío. \\
 
-\textbf{Periódicas:}
 
-El operador $A$ está dado por
+\textbf{Condiciones de contorno periódicas}\\
 
+Estudiemos ahora el mismo operador bajo condiciones de contorno periódicas
 \begin{equation}
 \begin{array}{c}
 	A \phi (x) = - \partial _x ^2 \phi (x) \\[5pt]
@@ -96,93 +98,82 @@ El operador $A$ está dado por
     \phi ' (0) = \phi ' (L) \, ,
 \end{array}
 \end{equation}
+Este problema representa una partícula escalar confinada en un anillo $S ^1$ .
+Los autovalores y autofunciones están dados por
 
-cuyos autovalores y autofunciones están dados por
 
-\begin{equation}
-\begin{aligned}
+\begin{align}
 	\phi _{0} &= \sqrt{\frac{1}{L}} \\[5pt]
-	\phi _{n} (x) &= \sqrt{\frac{2}{L}} \cos \left( \frac{2 n \pi x}{L} \right) \\[5pt]
-	\psi _n (x) &=\sqrt{\frac{2}{L}} \sin \left( \frac{n \pi x}{L} \right) \\[5pt]
-	\lambda _n ^2 &= \left( \frac{2 n \pi }{L} \right) ^2 \\[5pt]
-	n &= 1,2,3, ...
-\end{aligned}
-\end{equation}
+	\phi _{n} (x) &= \sqrt{\frac{2}{L}} \cos \left( \frac{2 n \pi x}{L} \right),
+	\, \, \,  \psi _n (x) =\sqrt{\frac{2}{L}} \sin \left( \frac{n \pi x}{L} \right) 
+	\, \, \, \, \, \, \, \, \, n \neq 0
+	\\[5pt]
+	\lambda ^2 _n  &= \left( \frac{2 n \pi }{L} \right) ^2 
+	\, \, \, \, \, \, \, \, \,
+	 n = 0,1,2,3, \dots
+\end{align}
 
-la {\it función-$\zeta  (s)$} queda determinada por
+La {\it función-$\zeta$} resulta
 
 \begin{equation}
 \begin{aligned}
 \zeta  (s) &= 
-2 \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right)^{-2s} \\[5pt]
+2 \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu ^2} \right)^{-s} \\[5pt]
 &=  2 \left( \frac{2 \pi}{L} \right) ^{-2s} \mu ^{2s} \sum _{n=1} ^{\infty} n ^{-2s} =  
-2 \mu ^{2s} \left( \frac{2 \pi}{L} \right) ^{-2s} \zeta (2s)
+2 \mu ^{2s} \left( \frac{2 \pi}{L} \right) ^{-2s} \zeta _R (2s)
 \end{aligned}
 \end{equation}
-que al igual que en los casos anteriores es regular en $s=-1/2$, obteniendo entonces para la Energía de Vacío:
+que al igual que en los casos anteriores es regular en $s=-1/2$. Obtenemos
+entonces la energía de vacío
 \begin{equation}
-E _0 = - \frac{\pi}{3 L}
+E _0 = - \frac{\pi}{6 L}
 \end{equation}
-lo cual nuevamente conduce a una Energía de Vacío atractiva.
+Nuevamente, la energía crece con L, lo que señala una fuerza que tiende a
+reducir el tamaño del anillo.
 
 \section{Condiciones de Contorno Mixtas}
 
-En este caso el operador $A$ va a depender de un parámetro arbitrario $\gamma$, estando dado por
+
+Introducimos ahora un parámetro $S$ con dimensiones, a partir de condiciones de contorno Robin en uno de los extremos del intervalo,
 
 \begin{equation}
 \begin{aligned}
     A \phi (x) &= - \partial ^2 _x \ \phi (x)  \\[5pt]
     \phi (0) &= 0 \\[5pt]
-    \phi ' (L) + \gamma \phi (L) &= 0 \, ,
+    \phi ' (L) + S \phi (L) &= 0 \, .
 \end{aligned}
 \end{equation}
-
-el cual posee autofunciones de la forma
+Las autofunciones con autovalor no nulo son
 
 \begin{equation}
 \phi _n (x) = 
 B _n \sin ( \lambda _n x ) \, .
 \end{equation}
-El espectro de autovalores $\lambda _n > 0 $ está dado por  cualquiera de las dos ecuaciones equivalentes
+Donde $B_n$ es una constante de normalización. El espectro de autovalores no nulos $\lambda _n \neq 0 $ está dado por
 
 \begin{align}
-    \frac{\lambda}{\gamma}  \ \cos( L \lambda ) +   \sin( L \lambda ) &= 0 \label{autovalores2} \\[5pt]
-    \frac{\lambda}{\gamma}  + \tan (\lambda L )  &= 0 \, , \label{autovalores}
+    \lambda _n   \cos( \lambda _n L) +  S \sin( \lambda _n L) &= 0
+    \, . \label{autovalores2} 
 \end{align}
 
-
-
-una vez obtenidos los autovalores el siguiente paso es calcular la {\it función-$\zeta  (s) $} definida por:
+Una vez obtenidos los autovalores, calcularemos la {\it función-$\zeta$}
 
 \begin{equation}
     \zeta (s) =  \sum_{n = 1} ^{ \infty } \left( \frac{\lambda _n}{\mu } \right) ^ {-2 s} \, ,
     \tag{\ref{eq.casimir.mu}}
 \end{equation}
 
-la dificultad está en que las ecuaciones (\ref{autovalores2}) y (\ref{autovalores2}) no poseen solución analítica. Para poder estudiar la  {\it función-$\zeta$}, se van a utilizar 3 técnicas, la primera consiste en obtener un desarrollo de los autovalores para poder expresar la {\it función-$\zeta$} como un desarrollo en serie, la segunda consiste en representar la {\it función-$\zeta$} como una integral en el plano complejo, y la tercera en utilizar su relación con el {\it heat-kernel}. 
+la dificultad está en que las ecuación (\ref{autovalores2}) no provee una solución explícita para $\lambda _n$. Para estudiar la  {\it función-$\zeta$} utilizaremos tres técnicas: la primera de ellas consiste en obtener un desarrollo asintótico de los autovalores, la segunda utiliza una representación integral en el plano complejo de la {\it función-$\zeta$}, la tercera se basa en la relación con el {\it heat-kernel}. 
 
-\subsection{Calculo Asintótico de los autovalores}{\label{seq.asin}}
+\subsection{Desarrollo Asintótico de los autovalores}{\label{seq.asin}}
 
-En esta sección se va a obtener un representación en serie para la {\it función-$\zeta$}, para lo cual se van a desarrollar asintoticamente de los autovalores y se los utilizará en  \ref{eq.casimir.mu}.
+Primeramente, definimos variables adimensionales $\tau _n = \lambda _n L $ y $\theta = S L $, de modo que la ecuación (\ref{autovalores2}) se puede expresar de la forma
 
-Haciendo el cambio a variables adimensionales $\tau = \lambda L $ y $\theta = \gamma L $, las ecuaciones (\ref{autovalores}) y (\ref{autovalores2}) se pueden expresar de la forma:
-
-\begin{align}
-    \tan (\tau) + \frac{\tau}{\theta} &= 0 \label{eq.asintota} \\[5pt]
-    \frac{\tau}{\theta} \cos( \tau ) + \sin( \tau ) &= 0 \label{eq.regular}
-\end{align}
-
-
-
-En la figura \ref{fig:Dibujo1} están graficados los dos terminos de \ref{eq.asintota}, puede verse que los autovalores $\tau _n$ tienden a pegarse a la asíntota vertical de $ \tan ( \tau ) $ a medida que $\tau _n$ crece, se puede apreciar que los autovalores $\tau _n$ se descomponen en una parte correspondiente a las asíntotas verticales de $ \tan ( \tau )$ mas una corrección que tiende a cero en el límite $ n  \rightarrow \infty$ :
-
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.6]{Dibujo.pdf}
-    \caption{En este ejemplo, se puede ver que la intersección entre $ \tan(x)$ y $-x$ tiende a las asíntotas verticales de $\tan (x) $, el mismo comportamiento se aprecia para cualquier recta de la forma $- a x$.}
-    \label{fig:Dibujo1}
-\end{figure}
-
+\begin{equation}
+    \tan (\tau _n) + \frac{\tau _n}{\theta} = 0
+    \label{eq.asintota}
+\end{equation}
+En la figura \ref{fig:Dibujo1} están graficados los dos terminos de \ref{eq.asintota}. Puede verse que los autovalores $\tau _n$ tienden a las asíntotas verticales de $ \tan ( \tau ) $ a medida que $\tau _n$ crece. Por consiguiente, escribimos para los autovalores $\tau _n$ 
 \begin{equation}
 \begin{aligned}
     & \tau _n = n \pi + \frac{\pi}{2} + \epsilon _n \\[5pt]
@@ -190,36 +181,31 @@ En la figura \ref{fig:Dibujo1} están graficados los dos terminos de \ref{eq.asi
 \end{aligned}
 \label{eq.mu}
 \end{equation}
-
-
-Conocer $\epsilon _n $ es equivalente a resolver (\ref{eq.asintota}) y (\ref{eq.regular}) lo cual no posee solución analítica, entonces se va desarrollar $\epsilon _n $ en potencias de $n$.
-
-Utilizando (\ref{eq.mu}) en (\ref{eq.regular}) y desarrollando alrededor de $\epsilon \rightarrow{0}$ se obtiene
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6]{Dibujo.pdf}
+    \caption{En este ejemplo, se puede ver que la intersección entre $ \tan(x)$ y $-x$ tiende a las asíntotas verticales de $\tan (x) $, el mismo comportamiento se aprecia para cualquier recta de la forma $- a x$.}
+    \label{fig:Dibujo1}
+\end{figure}
+Remplazando esta expresión en (\ref{autovalores2}),
 
 \begin{equation}
 \begin{aligned}
-    \sin \left( n \pi + \frac{\pi}{2} + \epsilon _n \right) &= 
-    - \frac{n \pi + \frac{\pi}{2} + \epsilon _n}{\theta}  \ \cos \left( n \pi + \frac{\pi}{2} + \epsilon _n \right)  \\[5pt]
-         (-1) ^n \sum _{p=0} ^{\infty} \frac{(-1) ^p  \epsilon _n ^{2 p }}{(2p)!} 
-    &=  \frac{-(n \pi + \frac{\pi}{2} + \epsilon _n) }{\theta}  \  \	
-    (-1) ^n
-     \sum _{p=0} ^{\infty} \frac{(-1) ^ {p+1} \epsilon _n ^{2 p + 1}}{(2p+1)!} 
-     \, ,
+    \sin \left( n \pi + \frac{\pi}{2} + \epsilon _n \right) = -
+    \frac{n \pi + \frac{\pi}{2} + \epsilon _n}{\theta} \cos \left( n \pi + \frac{\pi}{2} + \epsilon _n\right)
+    \, ,
 \end{aligned}
 \end{equation}
-
-
-donde reacomodando se llega a la igualdad
-
+podemos obtener un desarrollo de $\epsilon _n$ en potencias negativas del indice $n$. Para ello, desarrollamos esta ecuación para valores pequeños de $\epsilon _n$,   
 \begin{equation}
     1 = 
     \sum _{p=0} ^{\infty} (-1) ^p     \left[
-   	\epsilon _n ^{2p+2 }\left( \frac{1}{(2p+1)! \theta } + \frac{1}{(2p+2)} \right) +
-  	\frac{n \pi + \frac{\pi}{2}}{\theta} \frac{  \epsilon _n ^{2p+1}}{(2p+1)!} 			\right]
-  	\, ,
+   	\left( \frac{1}{\theta (2p+1)!  } + \frac{1}{(2p+2)!} \right) \epsilon _n ^{2p+2 } +
+  	\frac{n \pi + \frac{\pi}{2}}{\theta (2p+1)! }   \epsilon _n ^{2p+1} 			\right]
+  	\, .
 \label{igualdad epsilon}
 \end{equation}
-aquí se puede ver que  $\epsilon _n $ posee un desarrollo de la forma:
+Esta expresión muestra que $\epsilon _n$ admite un desarrollo de la forma
 
 \begin{equation}
     \epsilon _n = 
@@ -228,31 +214,28 @@ aquí se puede ver que  $\epsilon _n $ posee un desarrollo de la forma:
     \frac{\epsilon ^{(3)}}{n ^3}  + ...
 \label{eq.epsilon}
 \end{equation}
-reemplazando este desarrollo de $\epsilon _n$ en (\ref{igualdad epsilon}), e igualando orden a orden se obtiene para los primeros ordenes:
+Reemplazando este desarrollo en (\ref{igualdad epsilon}), e igualando orden a orden, obtenemos para los primeros términos
 \begin{equation}
     \epsilon _n = \frac{\theta}{n \pi} 
-     - \frac{ \theta}{2 \pi n ^2 } + O \left( \frac{1}{n ^3}\right) 
+     - \frac{ \theta}{2 \pi n ^2 } + O \left( n ^{-3}\right) 
      \, .
 \label{epsilons}
 \end{equation}
-
-\newpage
-
-
-La  {\it función $\zeta (s)$} queda expresada a este orden como
+La  {\it función-$\zeta$} puede entonces escribirse
 \begin{equation}
 \begin{aligned}
     \zeta  (s) &=  
     \sum _{n=1} ^{\infty} 
-    \left( \frac{\lambda _n }{\mu} 
-    	\right) ^ {-2 s}  =
-    \sum _{n=1} ^{\infty} 
+    \left( \frac{\lambda _n }{\mu } 
+    	\right) ^ {- 2s}  \\
+    &=
+    \mu ^{2s} \sum _{n=1} ^{\infty} 
     \left(
-	\frac{n \pi}{L \mu} + 
-    \frac{\pi}{2 L \mu} +
-    \frac{\gamma}{n \pi \mu } -
-    \frac{\gamma}{2 n ^2 \pi \mu } +
-    O \left(  \frac{1}{n^3} \right) 
+	\frac{n \pi}{L } + 
+    \frac{\pi}{2 L } +
+    \frac{\gamma}{n \pi } -
+    \frac{\gamma}{2 \pi n ^2   } +
+    O \left(  n^{-3} \right) 
     \right) ^{-2 s}  \\[5pt]
     &= \left( \frac{L \mu }{\pi} \right) ^{2s}    
     \sum _{n=1} ^{\infty} 
@@ -262,92 +245,101 @@ La  {\it función $\zeta (s)$} queda expresada a este orden como
     \underbrace{
         \frac{1}{2 n} + 
         \frac{L \gamma}{n^2 \pi ^2} -
-        \frac{L \gamma}{2 n ^3 \pi ^2} +
-        O \left( \frac{1}{n ^{4}} \right) } _{ \chi _n}
+        \frac{L \gamma}{2 n ^3 \pi ^2} } 
+        _{ \chi _n} +
+        O \left(n ^{-4} \right)  
     \right ) ^{-2 s}
-    \, ,
+    \, .
 \end{aligned}
 \end{equation}
-para calcular esta serie se desarrolla el binomio alrededor de $\chi _n \rightarrow{0} $ hasta el orden cubico, dado que  cada termino $\chi _{n} ^{m} $ contribuye al orden mas bajo en una potencia $\frac{1}{n ^m}$,
+
+De manera consistente con los términos  $ O (n ^{-4})$ que no hemos calculado, desarrollamos el binomio para pequeños valores de $\chi _n$ hasta el orden cúbico,
 
 
 \begin{align}
 \zeta  (s) &= 
-\left( \frac{L \mu }{\pi} \right) ^{2s}
+\left( \frac{L \mu }{\pi} \right) ^{2 s}
 \sum _{n=1} ^{\infty}
-  n  ^{-2 S} . \\[5pt]
-& \ \  \ \Bigg(
+  n  ^{-2 s} \times \\[5pt]
+& \times   \ \Bigg(
 	1 - 
 	2 s \chi _n +  s(2s+1) \frac{\chi _n ^2}{2} - 
-	\frac{2}{3} s(2s+1)(s+1) \chi _n ^3  + O \left( \frac{1}{n ^4} \right) \Bigg)
+	\frac{2}{3} s(2s+1)(s+1) \chi _n ^3  + O \left( n ^{-4} \right) \Bigg)
 	\, ,
 	\nonumber
 \end{align}
 
-calculadas todas las sumatorias, el resultado final es
+La {\it función-$\zeta$} puede entonces escribirse en términos de la función zeta de Riemann $\zeta _R (s)$
+
+
 \begin{equation}
 \begin{aligned}
     \zeta  (s) &= \left( \frac{L \mu }{\pi} \right) ^{2s} . \\[5pt]
 	& \Bigg(
 		\zeta _R ( 2 s ) -
 		s \zeta _R ( 2s+1 ) +
-		 \zeta _R (2s +2 ) s \left( \frac{1}{4} + \frac{s}{2} - \frac{2 L  \gamma}{\pi ^2} \right) - \\[5pt]
-		 & \zeta _R (2s+3) \left(  
-							\frac{s(s+1) ( \pi ^2 + 2 \pi ^2 s - 24 L \gamma)}{12 \pi ^2 }
-		 					\right) 
-		+ ...
+		 s \left( \frac{1}{4} + \frac{s}{2} - \frac{2 L  \gamma}{\pi ^2} \right) \zeta _R (2s +2 ) - \\[5pt]
+		 &  \left(  
+					\frac{s(s+1) ( \pi ^2 + 2 \pi ^2 s - 24 L \gamma)}{12 \pi ^2 }
+		 			\right) \zeta _R (2s+3)
+		+ \sum _{n=1} ^{\infty} n ^{-2s} O ( n ^{-4})
 		\Bigg)
 		\, ,
 \end{aligned}
 \end{equation}
+donde cada término $\sum _{n=1} ^{\infty} n ^{-2s} O ( n ^{-p})$ será proporcional a $\zeta _R (2s+p)$, que es una función meroforma con polo simple en $s = \frac{1}{2} - \frac{p}{2}$.
+Por lo tanto los polos de $\zeta (s)$ están dados por el polo simple de $\zeta _R (s)$. De esta manera, se muestra que $\zeta (s)$ posee polos simples en semi-enteros negativos, de acuerdo con (\ref{eq.ceros.zeta}). El desarrollo hasta orden $O(n^{-3})$ que hemos calculado para los autovalores permite obtener los residuos correspondientes a los siguientes polos.
 
-
-los polos de la {\it función-$\zeta (s)$} están dados por los polos de las funciones de Riemann $\zeta _R (s+n)$, la estructura de polos está dada entonces por:
 
 \begin{equation}
 \begin{aligned}
-\zeta  (s \rightarrow 1/2) &= 
-\frac{L \mu }{2 \pi } \frac{1}{s-1/2} + \ {\rm finito} \\[5pt]
-\zeta  (s \rightarrow 0) &= \ {\rm finito} \\[5pt]
-\zeta  (s \rightarrow -1/2) &= \frac{\gamma}{2 \pi \mu } \frac{1}{s+1/2} 
-	+ {\rm finito}\\[5pt]
-\zeta (s \rightarrow -1) &=  {\rm finito} 
+\left(1- \frac{1}{2} \right) \zeta  (s)| _{s=\frac{1}{2}} &= 
+\frac{L \mu }{2 \pi } \\[5pt]
+s \zeta  (s) |_{s=0} &= \ 0 \\[5pt]
+\left( s + \frac{1}{2} \right)\zeta  (s) | _{s=-\frac{1}{2}} &= \frac{\gamma}{2 \pi  } \\[5pt]
+(s+1) \zeta (s) |_{s=-1} &=  0
 \, ,
 \\[5pt]
 \end{aligned}
 \label{eq.polos.asin}
 \end{equation}
 
-lo cual está de acuerdo con \ref{eq.ceros.zeta}.
 
-\subsection{Calculo de la función zeta mediante calculo complejo:}
+
+\subsection{Representación integral de la función $\zeta$}
 {\label{sec.complejo}}
 
-En la sección \ref{seq.asin} para calcular la {\it función-$\zeta$} se obtuvo un desarrollo de los autovalores y luego se los utilizó en la definición \ref{eq.casimir.mu}. En esté capítulo se obtendrá una expresión de la {\it función-$\zeta$} sin calcular explícitamente los autovalores, mediante una integral en el plano complejo.
+En la sección \ref{seq.asin} se calculó un desarrollo de los autovalores y luego se
+los utilizó en la definición (\ref{def.adim}) para obtener
+la estructura de polos de la función $\zeta$. En este capítulo estudiaremos la
+estructura analítica de $\zeta (s)$ de una manera alternativa, que será de utilidad
+más adelante.
 
-
-Si los  autovalores $\lambda _n$ están definidos por una función $f( \lambda  ) = 0$ de la cual son ceros simples, entonces la función $f'(z) / f(z) $ va a tener polos simples en los autovalores con residuos $2 \pi i \ \lambda _n$, así utilizando el teorema de los residuos la  {\it función-$\zeta (s)$} se puede representar como una integral en el plano complejo, donde el camino de integración puede ser cualquiera de los dos presentados en la [\ref{fig:contorno}]
-
+Supongamos que los autovalores $\lambda ^2 _n$ están definidos por una expresión de
+la forma $f ( \lambda ^2 _ n ) = 0$ y que $\lambda ^2 _n$  son ceros simples de la función analítica $f (z)$.
+En ese caso, la función $( \log f (z))'$ tiene polos simples en $\lambda ^2 _n$ con residuo 1.
+Utilizando el teorema de los residuos, la función $\zeta (s)$ se puede representar
+como una integral en el plano complejo cuyo camino de integración $C$
+encierra los ceros de $f (z)$ (véase la figura \ref{fig:contorno}),
 \begin{equation}
 \begin{aligned}
-   \zeta  (s) &=  \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2s} \\[5pt] &=  
+   \zeta  (s) &=  \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2s} 
+   =  
    \frac{1}{2 \pi i} \int _{C} \frac{f'(z)}{f(z)} \left( \frac{z}{\mu} \right) ^{-2s} dz 
-   =  \frac{1}{2 \pi i} \int _{C} \partial _z \log f(z) \ 
-	   \left( \frac{z}{\mu} \right) ^{-2s} \, .
 \end{aligned}
 \label{asd}
 \end{equation}
+En el problema que estamos considerando $f(z) = z \cos Lz + \gamma \sin Lz$ (ver (\ref{autovalores2})). Reemplazando en la representación integral obtenemos
 
-Reemplazando $f(z)$ por  \ref{autovalores2} se obtiene:
 
 \begin{equation}
 	\zeta  (s) = 
-    \frac{1}{2 \pi i} \int _{C}
+    \frac{\mu ^{2s}}{2 \pi i} \int _{C}
     \frac{ \cos (L z) \left(L + \frac{1}{\gamma} \right) - \sin(L z) \frac{z L}{\gamma}
     }
     { \cos(L z) \frac{z}{\gamma} + \sin(L z)
     }
-    \left( \frac{z}{\mu} \right) ^{-2 s} dz  \, .
+     z  ^{-2 s} dz  \, .
 \end{equation}
 
 
@@ -371,15 +363,35 @@ Reemplazando $f(z)$ por  \ref{autovalores2} se obtiene:
 \end{figure*}
 
 
-Se va a utilizar el camino de la figura \ref{fig.derecha}, el cual se puede descomponer en 3 integrales, una angular que es regular $ \forall s$ y por lo tanto no aporta a la estructura de polos, y dos rectas las cuales van a parametrizar de la forma $z = \pm i  t$. 
+Se va a utilizar el camino de la figura \ref{fig.derecha}, el cual se puede descomponer en 3 integrales, una angular que es regular $ \forall s$ y por lo tanto no aporta a la estructura de polos, y dos rectas las cuales se van a parametrizar de la forma $z = \pm i  t$. 
 
-Teniendo en cuenta solo los términos que contribuyen a la estructura de polos, la {\it función-$\zeta$} queda expresada como
+Para las ramas de $z= i t$ y $z=- i t$ se obtienen respectivamente
+\begin{equation}\label{eq.tirados}
+\begin{aligned}
+\frac{e ^{-i \pi s}}{2 \pi i} \int _{\infty} ^{1} 
+	\frac{(1+L \gamma) \left( e^{L t} - e ^{- L t} \right) +
+			(L t) \left( e ^{L t} - e^{- L t} \right)
+			}
+			{\gamma \left( e ^{L t} - e ^{- L t} \right) + 
+			t \left( e ^{L t} - e ^{-L t} \right)}
+			t ^{-2s} dt \\[7pt]
+\frac{e ^{i \pi s}}{2 \pi i} \int _{1} ^{\infty} 
+	\frac{(1+L \gamma) \left( e^{L t} - e ^{- L t} \right) +
+			(L t) \left( e ^{L t} - e^{- L t} \right)
+			}
+			{\gamma \left( e ^{L t} - e ^{- L t} \right) + 
+			t \left( e ^{L t} - e ^{-L t} \right)}
+			t ^{-2s} dt
+			\, .
+\end{aligned}
+\end{equation}
+A partir de estas expresiones, teniendo en cuenta que los términos exponenciales decrecientes no contribuyen a la estructura de polos, la {\it función-$\zeta$} queda expresada como
 
 \begin{equation}
 	\zeta  (s) = 
-    \frac{ \sin (\pi s)}{ \pi } 
+    \frac{ \sin (\pi s) \mu ^{2s}}{ \pi } 
     \int _1 ^{\infty} 
-    \left( \frac{t}{\mu}  \right)^{-2s}
+    t^{-2s}
     \left(
     	L + 
 	    \underbrace
@@ -390,7 +402,7 @@ Teniendo en cuenta solo los términos que contribuyen a la estructura de polos, 
     dt  \,  ,
 \label{contorno}
 \end{equation}
-en $\chi$ se puede calcular factor común $t$ y utilizar la serie geométrica para obtener
+en $\chi$ se puede sacar factor común $t$ y utilizar la serie geométrica para obtener
 
 \begin{equation}
     \chi =   \sum _{m=0} ^{\infty} \frac{(-1) ^{m} \gamma ^{m} }{t ^{m+1}}
@@ -414,8 +426,9 @@ Se puede ver que la {\it función-$\zeta$} tiene polos simples en $s=1/2$ y en l
 
 \begin{equation}
 \begin{aligned}
-\zeta(s \rightarrow 1/2) &= \frac{L \mu }{2 \pi} \frac{1}{s-1/2} + finito \\
-\zeta (s \rightarrow -n - 1/2)  &= \frac{ (-1) ^n \gamma ^{2n+1}  }{2 \pi \mu ^{2n + 1}} \frac{1}{s + n + 1/2} + finito
+\left(s-\frac{1}{2} \right) \zeta(s) |_{s=\frac{1}{2}} &= \frac{L \mu }{2 \pi}   \\
+\left( s + n + \frac{1}{2} \right)
+\zeta (s ) |_{s= -n - \frac{1}{2}}  &= \frac{ (-1) ^n \gamma ^{2n+1}  }{2 \pi \mu ^{2n + 1}} 
 \, .
 \end{aligned}
 \label{eq.polos.complejo}
@@ -424,14 +437,34 @@ Se puede ver que la {\it función-$\zeta$} tiene polos simples en $s=1/2$ y en l
 
 Lo cual coincide a los primeros ordenes con (\ref{eq.polos.asin}) y está en concordancia  con (\ref{eq.ceros.zeta}).
 
-Utilizando esta técnica se puede sacar la estructura entera de polos de la {\it función-$\zeta (s)$}, para calcular la parte finita hay que tener en cuenta la parte angular de (\ref{asd}), y los términos exponenciales tirados para llegar a (\ref{contorno}).
+Utilizando esta técnica se puede sacar la estructura entera de polos de la {\it función-$\zeta (s)$}, para calcular la parte finita hay que tener en cuenta la parte angular de (\ref{asd}), y los términos exponenciales tirados en (\ref{eq.tirados}) para llegar a (\ref{contorno}).
 
 
 \subsection{Uso del Heat-Kernel:}
 
 En las secciones \ref{sec.complejo} y \ref{seq.asin} se utilizaron técnicas para aproximar la {\it función-$\zeta$}, obteniendo la estructura de polos. En esta sección se hará uso del resultado general (\ref{eq.heat.expansion}) para obtener los polos de la {\it función-$\zeta$}.
 
-En \cite{Vassilevich:2003xt} están presentados los primeros términos de Seeley-DeWitt para un operador con borde, una vez calculados para este operador (variedad unidimensional, sin curvatura, y condición de contorno Robin en un extremo y Dirichlet en el otro) se puede utilizar la ecuación (\ref{losresi}) para relacionarlos con los residuos de la {\it función-$\zeta$}, obteniendo
+En la ecuación (\ref{coef}) están presentados los primeros términos de Seeley-DeWitt para un operador con borde, en estas condiciones: variedad unidimensional, sin curvatura, y condición de contorno Robin en un extremo y Dirichlet en el otro, los coeficientes de Seeley-DeWitt quedan expresados como:
+
+
+\begin{equation}
+\begin{aligned}
+C _0 &= \frac{1}{\sqrt{4 \pi}} \int _0 ^L dx\\
+C _1 &= \frac{1}{4}  \\
+C _2 &= \frac{1}{12 \sqrt{\pi}  } \int _0 ^L dx \\
+C _3 &=
+\end{aligned}
+\end{equation}
+
+
+Luego se utiliza la ecuación (\ref{losresi}) que relaciona los coeficientes de Seeley-DeWitt con los residuos de los polos de la función $\zeta$
+\begin{equation}
+\left. {\rm Res} \ \zeta  (s)  \right| _{s_n= \frac{m - n}{2}} =  
+\frac{ C_n  (A) }{ {\Gamma ( \frac{m-n}{2}} ) }
+\tag{\ref{losresi}}
+\, ,
+\end{equation}
+teniendo en cuenta que $\Gamma (-1) = \Gamma (-2) = \infty$, los residuos de la función-$\zeta$ están dados por
 \begin{equation}
 \begin{aligned}
 Res \  \zeta  (s)  | _{s=1/2} &= \frac{L \mu}{2 \pi} \\[5pt]

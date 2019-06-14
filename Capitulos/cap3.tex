@@ -640,7 +640,14 @@ E _0 = \frac{1}{2} \left(
 
 En la secciones \ref{seq.2.com} y \ref{seq.2.asin} se calcularon calcularon los polos de la \mbox{{\it función-$\zeta$}} en $s=1/2$ y $s=-1/2$ encontrando que en $s=-1/2$ existe en polo doble, luego en la sección \ref{sec.sig.polos} se estudiaron los siguientes polos encontrando que son todos polos simples ubicados en los semienteros negativos. En esta sección se hallará un método para estudiar la parte regular de \ref{eq.casimir.resultado}.
 
-Utilizando las mismas variables adimensionales que en la sección \ref{seq.2.asin}: $\mu _n = \lambda _n L$ y $\beta = \alpha L$, $\mu _n$ queda expresado de la forma
+Utilizando las mismas variables adimensionales que en la sección \ref{seq.2.asin}: $\mu _n = \lambda _n L$ y $\beta = \alpha L$, función-$\zeta$ queda expresada como
+
+\begin{equation}
+\zeta (s) = \left( \mu L \right) ^{2s} \sum _{n=1} ^{\infty} \mu _n ^{-2s}
+\, ,
+\end{equation}
+
+Sabiendo que $\mu _n$ tiene un desarrollo de la forma
 
 \begin{equation}
 \begin{aligned}
@@ -652,7 +659,120 @@ Utilizando las mismas variables adimensionales que en la sección \ref{seq.2.asi
 			\, ,
 \end{aligned}
 \end{equation}
-cada termino $a_p$ que se quiera calcular requiere llevar (\ref{larga}) a un orden mas grande, para esta tarea se utilizará un script del software Mathematica. Una vez obtenida la aproximación de los autovalores al orden deseado se procede de forma igual a la sección \ref{seq.2.asin}.
+
+Se procede de forma igual a la sección \ref{seq.2.asin}.
+
+\begin{equation}
+\begin{aligned}
+\zeta (s) =& 
+( \mu L ) ^{2s}
+\sum _{n=1} ^{\infty}
+( n \pi) ^{-2s} \left( 1 + \frac{ \epsilon _n }{n \pi } \right) ^{-2s } \\
+ =& 
+(\mu L) ^{2s} \sum _{n=1} ^{\infty}
+( n \pi) ^{-2s} \left(
+						1 -2s  \frac{\epsilon _n}{n \pi} + 
+						\left( s + \frac{1}{2} \right) O( \epsilon ^2 )
+						\right)
+\, ,
+\end{aligned}
+\end{equation}
+donde todos los términos que contienen potencias $\epsilon ^2$ o mayores se anulan, dado que el desarrollo a ordenes superiores contendrá un factor común $s+ \frac{1}{2}$. Quedándose solo con los términos que no se anulan en $\zeta (-1/2)$ se obtiene
+
+
+\begin{align}
+\zeta (s) &= \left( \frac{\mu L}{\pi} \right) ^{2s} \times \\
+			\nonumber
+			&\times
+			\left(
+					\zeta (2s) - \frac{s \beta}{\pi ^2} 
+						\left(
+							\log (2 \pi ) \zeta (2s+2) - \zeta '(2s+2)
+							\right)-
+					\frac{2 s}{\pi} \sum _{p=1} ^{\infty}
+						a _p \zeta (2s+p+1)
+					\right)
+\, ,					
+\end{align}
+esta expresión es la que completa la ecuación (\ref{eq.zeta.c}).
+En esta expresión hay dos tipos de términos finitos, contribuciones finitas {\it per sé} y contribuciones que van a ser finitas debido al término $ \left( \frac{\mu L}{\pi}\right) ^{2s}$.
+
+
+Los términos finitos {\it per sé} vienen dados por la parte que convergente al evaluar $\zeta (-\frac{1}{2} )$, para esto es útil recordar el desarrollo
+\begin{align}\label{cortar}
+	\log (2 \pi) \zeta _R (2s+2) -
+	\zeta _R ' (2s+2) = & 
+	\frac{1}{4 \left( s + \frac{1}{2} \right) ^2} + 
+	\frac{ \log (2 \pi ) }{2 \left( s + \frac{1}{2} \right) } + \\
+	& \gamma \log (2 \pi ) + \gamma _1 + O \left( s + \frac{1}{2} \right)
+	 ,
+\end{align}
+donde $\gamma _1$ es la constante de Stieltjes.
+
+
+Quedando entonces la parte finita {\it per sé}  de $\zeta$ en $s=-1/2$ como
+\begin{align}\label{eq.escala}
+ \zeta \left( -\frac{1}{2} \right) &= \frac{\pi}{L \mu} \times \\
+ 					& \times
+					\left(
+							- \frac{1}{12} +
+							\frac{\beta}{2 \pi ^2} \left(
+														\gamma \log (2 \pi)
+														+ \gamma _1
+														\right) +
+							\left(
+								a _1 \frac{\gamma}{\pi} +
+								\frac{1}{\pi} \sum _{p=2} ^{\infty}
+								a_p \zeta (p) 
+								\right)
+							\right) 
+							\, ,
+\end{align}
+esta contribución a la energía de vacío viene dada por 
+\begin{align}
+ E _0 &= \frac{\pi}{2 L } \times \\
+ 					& \times
+					\left(
+							- \frac{1}{12} +
+							\frac{\beta}{2 \pi ^2} \left(
+														\gamma \log (2 \pi)
+														+ \gamma _1
+														\right) +
+							\left(
+							a _1\frac{\gamma}{\pi}
+							+ \frac{1}{\pi} \sum _{p=2} ^{\infty}
+								a_p \zeta (p) 
+								\right)
+							\right) 
+							\, ,
+\end{align}
+dado que $a _p$ es un polinomio en $\beta$ sin término independiente, en el límite $\alpha \rightarrow 0$ queda determinada por
+\begin{equation}
+\lim \limits_{\alpha \rightarrow 0} E _0 = 
+		- \frac{\pi}{24 L}
+\, ,
+\end{equation}
+lo cual coincide con el caso sin potencial con condiciones de contorno Dirichlet en ambos extremos (ecuación \ref{eq.energia.dirichlet} de la sección \ref{sec.Dirichlet}).
+
+
+Las contribuciones no calculadas son
+\begin{equation}
+\left(
+		\frac{\mu L}{\pi}
+		\right) ^{2s}
+\left(
+		-\frac{s \beta}{\pi ^2}
+			\left(
+				\frac{1}{4 \left( s + \frac{1}{2}\right) ^2} +
+				\frac{\log (2 \pi )}{2 \left( s + \frac{1}{2}\right)}
+				\right)	-
+				\frac{s \beta \gamma}{2 \pi ^2 \left( s + \frac{1}{2} \right) }
+		\right)
+\, ,
+\end{equation}
+en esta expresión va a haber partes que al término $ \left( \frac{\mu L}{\pi}\right) ^{2s}$ van a ser finitas, pero sin presentar el comportamiento trivial con la escala $\frac{1}{\mu}$ que aparece en la ecuación \ref{eq.escala}, de tal forma que la energía de vacío resulta independiente de la escala. Luego hay otros términos que son los que presentan las divergencias a renormalizar de la teoría. 
+
+cada termino $a_p$ que se quiera calcular requiere llevar (\ref{larga}) a un orden mas grande, para esta tarea se utilizará un script del software Mathematica.
 
 
 La primer parte del script consiste en definir el desarrollo de Taylor de cada función  en (\ref{larga})
@@ -700,79 +820,10 @@ Do[{
   	Print[a[j]]},
    {j, 1, 9}]
 \end{verbatim}
-una vez obtenidos los primeros términos la {\it función-$\zeta$} se puede expresar como
-\begin{equation}
-\begin{aligned}
-\zeta (s) =& 
-( \mu L ) ^{2s}
-\sum _{n=1} ^{\infty}
-( n \pi) ^{-2s} \left( 1 + \frac{ \epsilon _n }{n \pi } \right) ^{-2s } \\
- =& 
-(\mu L) ^{2s} \sum _{n=1} ^{\infty}
-( n \pi) ^{-2s} \left(
-						1 -2s  \frac{\epsilon _n}{n \pi} + 
-						\left( s + \frac{1}{2} \right) O( \epsilon ^2 )
-						\right)
-\, ,
-\end{aligned}
-\end{equation}
-donde al evaluar $\zeta (-1/2)$ todos los términos que contienen potencias $\epsilon ^2$ o mayores se anulan. Quedándose solo con los términos que no se anulan de $\zeta (-1/2)$ se obtiene
-\begin{equation}
-\begin{aligned}
-\zeta (s) =& (\mu L) ^{2s} \sum _{n=1} ^{\infty} 
-	(n \pi ) ^{-2s}
-		\left(
-				1 - 2s \frac{\epsilon _n}{n \pi } 
-				\right) \\
-		=& \left( \frac{\mu L}{\pi} \right) ^{2s}
-				\left(
-						\zeta _R (2s) - 
-						\frac{2 s}{\pi } \sum _{n=1} ^{\infty} 
-						n ^{-2s-1} \epsilon _n
-						\right)
-\\
-		=& \left( \frac{\mu L }{\pi} \right) ^{2s}
-			\Bigg(
-						\zeta _R (2s) - \\ 
-						& \qquad \qquad \quad
-						\frac{2 s}{\pi }  \Bigg( \left(
-							\frac{\beta \log (2 \pi) \zeta _R (2s+2) -
-							\beta \zeta _R ' (2s+2)}{2 \pi }
-								\right) + \\
-								& \qquad \qquad \qquad \qquad 
-								\sum _{p=1} ^{9} 
-							a _p \zeta _R (2s+1+p)
-								\Bigg) \Bigg) \, .
-\end{aligned}
-\end{equation}
-en esta expresión hay dos tipos de términos finitos, contribuciones finitas {\it per sé} y contribuciones que van a ser finitas debido al término $ \left( \frac{\mu L}{\pi}\right) ^{2s}$.
 
-Los términos finitos {\it per sé} vienen dados por las partes finitas de los términos divergentes en $s=-1/2$ dados por
-\begin{align}\label{cortar}
-PF \left(
-	\frac{\beta \log (2 \pi) \zeta _R (2s+2) -
-	\beta \zeta _R ' (2s+2)}{2 \pi } 
-		\right) \Bigg| _{s=-1/2}
-	&= 
-	  \frac{ \gamma _1 \beta}{2 \pi }  \\
-PF \left( 
-		\sum _{p=1} ^{9} a _p \zeta _R (2s+1+p)
-		\right) \Bigg| _{s=-1/2 }
-	&= \sum _{p=2} ^{9} a _p \zeta _R (p)
-	\, ,
-\end{align}
-donde $\gamma _1 $ es la constante de Stieltjes. Quedando entonces la parte finita {\it per sé}  de $\zeta$ en $s=-1/2$ como
-\begin{equation}
- \zeta (s) \Big| _{s=-1/2} = \frac{\pi}{L \mu}
-					\left(
-							- \frac{1}{12} +
-							\frac{1}{\pi } \left(
-											\frac{\gamma _1 \beta}{2 \pi} + 
-											\sum _{p=2} ^{9} a _p \zeta _R (p)
-												\right)
-							\right) 
-							\, ,
-\end{equation}
+
+
+
 todos estos términos tienen una dependencia con la escala de la forma $1/ \mu$
 
 Luego la parte que es finita debido al desarrollo de $ \left( \frac{\mu L}{\pi}\right) ^{2s}$ está dada por el desarrollo del producto de cada término
