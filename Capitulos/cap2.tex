@@ -58,7 +58,8 @@ Como la energía de vacío crece con $L$, el efecto Casimir implica una fuerza
 atractiva entre los extremos del intervalo en el cual está confinado el campo
 escalar. Notar que, como la {\it función-$\zeta$} es regular en $s=-\frac{1}{2}$, el resultado no depende del parámetro de escala $\mu$.\\
 
-\textbf{Condiciones de contorno Neumann}\\
+\subsection*{Condiciones de contorno Neumann}
+
 
 Consideremos ahora el operador $A$ dado por.
 
@@ -150,7 +151,6 @@ Las autofunciones con autovalor no nulo son
 B _n \sin ( \lambda _n x ) \, .
 \end{equation}
 Donde $B_n$ es una constante de normalización. El espectro de autovalores no nulos $\lambda _n \neq 0 $ está dado por
-
 \begin{align}
     \lambda _n   \cos( \lambda _n L) +  S \sin( \lambda _n L) &= 0
     \, . \label{autovalores2} 
@@ -342,7 +342,6 @@ En el problema que estamos considerando $f(z) = z \cos Lz + \gamma \sin Lz$ (ver
      z  ^{-2 s} dz  \, .
 \end{equation}
 
-
 \begin{figure*}[t!]
     \centering
     \begin{subfigure}[t]{0.5\textwidth}
@@ -410,8 +409,7 @@ en $\chi$ se puede sacar factor común $t$ y utilizar la serie geométrica para 
 \label{eq:chi}
 \end{equation}
 pudiendo entonces integrar termino a termino, el resultado final está dado por
-
-\begin{equation}
+\begin{equation}\label{eq.seta}
     \zeta  (s) = 
     \frac{ \sin(\pi s) \mu ^{2s }}{\pi } 
     \left(
@@ -419,11 +417,8 @@ pudiendo entonces integrar termino a termino, el resultado final está dado por
     \sum _{m=0} ^{\infty}
     \frac{(-1) ^{m} \gamma ^{m} }{2s+m}
     \right) \, .
-\label{eq.zeta.com}
 \end{equation}
-
 Se puede ver que la {\it función-$\zeta$} tiene polos simples en $s=1/2$ y en los semienteros negativos, la estructura de polos queda determinada por
-
 \begin{equation}
 \begin{aligned}
 \left(s-\frac{1}{2} \right) \zeta(s) |_{s=\frac{1}{2}} &= \frac{L \mu }{2 \pi}   \\
@@ -440,7 +435,7 @@ Lo cual coincide a los primeros ordenes con (\ref{eq.polos.asin}) y está en con
 Utilizando esta técnica se puede sacar la estructura entera de polos de la {\it función-$\zeta (s)$}, para calcular la parte finita hay que tener en cuenta la parte angular de (\ref{asd}), y los términos exponenciales tirados en (\ref{eq.tirados}) para llegar a (\ref{contorno}).
 
 
-\subsection{Uso del Heat-Kernel:}
+\subsection{Uso del Heat-Kernel}
 
 En las secciones \ref{sec.complejo} y \ref{seq.asin} se utilizaron técnicas para aproximar la {\it función-$\zeta$}, obteniendo la estructura de polos. En esta sección se hará uso del resultado general (\ref{eq.heat.expansion}) para obtener los polos de la {\it función-$\zeta$}.
 
@@ -476,3 +471,24 @@ Res \  \zeta  (s) | _{s=-1} &= 0 \, . \\[5pt]
 
 
 Lo cual coincide con (\ref{eq.polos.complejo}) y (\ref{eq.polos.asin}).
+
+\subsection{Cálculo de la energía de vacío} 
+
+La energía de vacío queda definida por la ecuación (\ref{eq.casimir.mu})
+
+\begin{equation}
+    E _0 = \frac{\mu }{2}  
+    \zeta  \left( - 1/2 \right) 
+    \tag{\ref{eq.casimir.mu}} \, ,
+\end{equation}
+
+Utilizando la expresión de $\zeta  (s )$ dada por (\ref{eq.seta}) en (\ref{eq.casimir.mu}) se obtiene para la energía de vacío
+
+\begin{equation}
+E _0 = \frac{1}{2} \left(
+				\frac{\gamma}{2 \pi \left( s+\frac{1}{2} \right) }
+				\right) + 
+				\frac{\mu}{2} \ {\rm Regular}
+\, .
+\end{equation}
+Donde la parte finita de la energía de vacío viene dada por la parte regular de la expresión anterior.
