@@ -1,0 +1,115 @@
+\chapter{ahorita}
+
+\section{Parte finita de la energía de vacío la venganza }
+
+La energía de vacío puede expresarse como según REF, al igual que en la sección
+\begin{equation}
+	\zeta (s) = 
+	\frac{1}{2 \pi i} \int _{\mathcal{C}} 
+						\lambda ^{-2s}
+						\partial _ \lambda 
+						\log F _1 ^{1} ( \lambda )
+						d \lambda
+	\, .
+\end{equation}
+Utilizando las variables adimensionales $\beta = \alpha L, \mu = \lambda L$ la función $\zeta (s)$ queda expresada como
+\begin{align}
+	\zeta (s) =& 
+	\frac{L ^{2s}}{2 \pi i} \int _{\mathcal{C}} 
+	f (\mu , \beta) \mu ^{-2s} d \mu 
+\, ,
+\end{align}
+donde $f( \mu, \beta)$ está dada por
+\begin{align}
+f(\mu, \beta) =& 	
+i
+\frac{
+		\left(1 + \frac{ \beta}{2 i \mu} \right) 
+		F _1 ^1 
+			\left( 2 + \frac{ \beta}{2 i \mu} ,3 ,2 i \mu \right)
+		+ \left( \frac{\beta				
+				}
+				{2 \mu ^2 } 
+				\right)
+				( F _{1} ^1 ) ^{(1,0,0)}
+				\left( 1 + \frac{\beta}{2 i \mu} ,2 ,2 i \mu
+						\right)
+		}
+		{F _1 ^1 \left( 1 + \frac{\beta}{2 i \mu},2,2 i \mu \right)} 
+\, .		
+\nonumber
+\end{align}
+Utilizando el camino de integración \ref{fig.derecha.derecha} la función $\zeta (s)$ puede expresarse como.
+\begin{align*}
+\zeta (s) = 
+- \frac{L ^{2s}}{2 \pi } 
+\Bigg(&	  e ^{- i \pi s} \int _0 ^{C _0}
+			f (i t,\beta )
+			t ^{-2s}  dt 
+		+ e ^{- i \pi s} \int _{C _0} ^{\infty}
+			f (i t,\beta )
+			t ^{-2s}  dt \\
+		+&e ^{-i \pi s} \int _{0} ^{C _0} 
+			f (-i t,\beta )
+			t ^{-2s}  dt 
+		+ e ^{i \pi s} \int _{C _0} ^{\infty}
+			f (-i t,\beta )
+			t ^{-2s}  dt 
+	\Bigg)
+\, ,
+\end{align*}
+Donde la primer y tercer integral pueden calcularse de manera numérica. La segunda y la curta contienen la parte divergente de $\zeta$, para calcularlas se utiliza el desarrollo de  $f(i t,\beta)$ en los límites $t \rightarrow \pm \infty$ dado por la ecuación REFERENCIAR
+\[ 
+f  _a ( i t ,\beta )=
+\begin{cases} 
+	  i  \left(
+			\frac{1}{t} - \frac{\beta}{2 t ^2 } + \frac{\beta}{2 t^2}
+			\log (2 t) - \frac{\beta \gamma}{2 t^2} + 2
+			\right) + O (t ^{-3})
+	  & t > 0 \\
+      i  \left(
+			- \frac{1}{t} + \frac{\beta}{2 t ^2 } - \frac{\beta}{2 t^2}
+			\log (2 t) - \frac{\beta \gamma}{2 t^2} 
+			\right) + O (t ^{-3})
+      & t < 0
+   \end{cases}   
+\]
+Utilizando este desarrollo las ultimas dos integrales pueden expresarse como
+\begin{align}
+\nonumber
+	\int _{C _0} ^{\infty}
+			f (i t,\beta )
+			t ^{-2s}  dt &= 
+	\int _{C _0} ^{\infty}
+		\left(
+			f (it, \beta) - f _a (it, \beta )			
+				\right) t ^{-2s} dt 
+	\\ &+ 
+\nonumber
+	\int _{C _0} ^{\infty}
+			f _a (i t, \beta)
+			 t ^{-2s} dt  \\
+\nonumber
+	\int _{C _0} ^{\infty}
+			f (-i t,\beta )
+			t ^{-2s}  dt &= 
+	\int _{C _0} ^{\infty}
+		\left(
+			f (-it, \beta) - f _a (-it, \beta )			
+				\right) t ^{-2s} dt 
+	\\ &+ 
+\nonumber
+	\int _{C _0} ^{\infty}
+			f _a (-i t, \beta)
+			 t ^{-2s} dt
+\end{align}
+Donde las términos de arriba pueden integrarse numéricamente en $s=-1/2$ dado que son convergentes, las contribuciones divergentes están dadas por
+\begin{align}
+&	\int _{C _0} ^{\infty}
+			f _a (it, \beta )			
+			 t ^{-2s} dt 
+\\
+&	\int _{C _0} ^{\infty}
+			f _a (-i t, \beta)
+			 t ^{-2s} dt
+\end{align}
