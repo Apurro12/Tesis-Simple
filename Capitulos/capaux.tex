@@ -2,44 +2,50 @@
 
 \section{Parte finita de la energía de vacío la venganza }
 
-La energía de vacío puede expresarse como según REF, al igual que en la sección
+En la sección \ref{sec.complejo} se mostró que la función $\zeta (s)$ puede representarse mediante una integral en el plano complejo, junto con posibles caminos que permiten calcular esta integral en la figura \ref{fig:contorno}. En los dos capítulos anteriores \ref{cap.sencillos}  y \ref{cap.singular} se utilizó el contorno \ref{fig.derecha} para obtener la estructura de polos, en este capítulo se utilizará el contorno \ref{fig.derecha.derecha} para obtener tanto los polos como su parte finita en $s = - \frac{1}{2}$.
+
+Al igual que en los capítulos \ref{cap.sencillos}  y \ref{cap.singular} la energía de vacío queda expresada como la integral
 \begin{equation}
 	\zeta (s) = 
 	\frac{1}{2 \pi i} \int _{\mathcal{C}} 
-						\lambda ^{-2s}
+						\left( \frac{\lambda}{\mu} \right) ^{-2s}
 						\partial _ \lambda 
-						\log F _1 ^{1} ( \lambda )
+						\log F _1 ^{1} 
+						\left( 1+\frac{ \alpha}{2 \lambda i },
+							2,2 i \lambda x 
+							\right)												
 						d \lambda
 	\, .
 \end{equation}
-Utilizando las variables adimensionales $\beta = \alpha L, \mu = \lambda L$ la función $\zeta (s)$ queda expresada como
+Utilizando las variables adimensionales $\beta = \alpha L$ y  $\tau = \lambda L$ la ecuación anterior puede reescribirse de la forma
 \begin{align}
+\label{eq.ultima.int}
 	\zeta (s) =& 
-	\frac{L ^{2s}}{2 \pi i} \int _{\mathcal{C}} 
-	f (\mu , \beta) \mu ^{-2s} d \mu 
+	\frac{\left(L \mu \right)^{2s}}{2 \pi i} \int _{\mathcal{C}} 
+	f (\tau , \beta) \tau ^{-2s} d \tau 
 \, ,
 \end{align}
-donde $f( \mu, \beta)$ está dada por
+donde $f( \tau, \beta)$ está dada por
 \begin{align}
-f(\mu, \beta) =& 	
+f(\tau, \beta) =& 	
 i
 \frac{
-		\left(1 + \frac{ \beta}{2 i \mu} \right) 
+		\left(1 + \frac{ \beta}{2 i \tau} \right) 
 		F _1 ^1 
-			\left( 2 + \frac{ \beta}{2 i \mu} ,3 ,2 i \mu \right)
+			\left( 2 + \frac{ \beta}{2 i \tau} ,3 ,2 i \tau \right)
 		+ \left( \frac{\beta				
 				}
-				{2 \mu ^2 } 
+				{2 \tau ^2 } 
 				\right)
 				( F _{1} ^1 ) ^{(1,0,0)}
-				\left( 1 + \frac{\beta}{2 i \mu} ,2 ,2 i \mu
+				\left( 1 + \frac{\beta}{2 i \tau} ,2 ,2 i \tau
 						\right)
 		}
-		{F _1 ^1 \left( 1 + \frac{\beta}{2 i \mu},2,2 i \mu \right)} 
+		{F _1 ^1 \left( 1 + \frac{\beta}{2 i \tau},2,2 i \tau \right)} 
 \, .		
 \nonumber
 \end{align}
-Utilizando el camino de integración \ref{fig.derecha.derecha} la función $\zeta (s)$ puede expresarse como.
+Utilizando el camino de integración \ref{fig.derecha.derecha}, la integral \ref{eq.ultima.int} puede reescribirse como suma de cuatro integrales
 \begin{align*}
 \zeta (s) = 
 - \frac{L ^{2s}}{2 \pi } 
@@ -49,7 +55,7 @@ Utilizando el camino de integración \ref{fig.derecha.derecha} la función $\zet
 		+ e ^{- i \pi s} \int _{C _0} ^{\infty}
 			f (i t,\beta )
 			t ^{-2s}  dt \\
-		+&e ^{-i \pi s} \int _{0} ^{C _0} 
+		+&e ^{i \pi s} \int _{0} ^{C _0} 
 			f (-i t,\beta )
 			t ^{-2s}  dt 
 		+ e ^{i \pi s} \int _{C _0} ^{\infty}
@@ -58,23 +64,25 @@ Utilizando el camino de integración \ref{fig.derecha.derecha} la función $\zet
 	\Bigg)
 \, ,
 \end{align*}
-Donde la primer y tercer integral pueden calcularse de manera numérica. La segunda y la curta contienen la parte divergente de $\zeta$, para calcularlas se utiliza el desarrollo de  $f(i t,\beta)$ en los límites $t \rightarrow \pm \infty$ dado por la ecuación REFERENCIAR
+Donde la primer y tercer integral pueden calcularse de manera numérica en $s= -\frac{1}{2}$ dado que allí son convergentes. La segunda y la cuarta contienen el término divergente de $\zeta \left(- \frac{1}{2} \right)$ calculado en la ecuación (\ref{eq.result.zeta.c}), para calcular la parte finita de estas integrales se utiliza el desarrollo \ref{eq.aprox} obteniendo
 \[ 
-f  _a ( i t ,\beta )=
+f   ( i t ,\beta )=
 \begin{cases} 
+	  f _{+} ( t, \beta) = 
 	  i  \left(
 			\frac{1}{t} - \frac{\beta}{2 t ^2 } + \frac{\beta}{2 t^2}
-			\log (2 t) - \frac{\beta \gamma}{2 t^2} + 2
+			\log (2 t) + \frac{\beta \gamma}{2 t^2} 
 			\right) + O (t ^{-3})
 	  & t > 0 \\
+	  f _{-} ( t, \beta) =
       i  \left(
 			- \frac{1}{t} + \frac{\beta}{2 t ^2 } - \frac{\beta}{2 t^2}
-			\log (2 t) - \frac{\beta \gamma}{2 t^2} 
+			\log (2 t) - \frac{\beta \gamma}{2 t^2} +2
 			\right) + O (t ^{-3})
       & t < 0
    \end{cases}   
 \]
-Utilizando este desarrollo las ultimas dos integrales pueden expresarse como
+Utilizando este desarrollo las ultimas dos integrales pueden expresarse
 \begin{align}
 \nonumber
 	\int _{C _0} ^{\infty}
@@ -82,12 +90,12 @@ Utilizando este desarrollo las ultimas dos integrales pueden expresarse como
 			t ^{-2s}  dt &= 
 	\int _{C _0} ^{\infty}
 		\left(
-			f (it, \beta) - f _a (it, \beta )			
+			f (it, \beta) - f _{+} (t, \beta )			
 				\right) t ^{-2s} dt 
 	\\ &+ 
 \nonumber
 	\int _{C _0} ^{\infty}
-			f _a (i t, \beta)
+			f _{+} ( t, \beta)
 			 t ^{-2s} dt  \\
 \nonumber
 	\int _{C _0} ^{\infty}
@@ -95,21 +103,162 @@ Utilizando este desarrollo las ultimas dos integrales pueden expresarse como
 			t ^{-2s}  dt &= 
 	\int _{C _0} ^{\infty}
 		\left(
-			f (-it, \beta) - f _a (-it, \beta )			
+			f (-it, \beta) - f _{-} (t, \beta )			
 				\right) t ^{-2s} dt 
 	\\ &+ 
 \nonumber
 	\int _{C _0} ^{\infty}
-			f _a (-i t, \beta)
+			f _{-} ( t, \beta)
 			 t ^{-2s} dt
 \end{align}
-Donde las términos de arriba pueden integrarse numéricamente en $s=-1/2$ dado que son convergentes, las contribuciones divergentes están dadas por
+Donde las términos de arriba pueden integrarse numéricamente en $s=-1/2$ dado que son convergentes. 
+
+Las contribuciones divergentes están dadas por
 \begin{align}
-&	\int _{C _0} ^{\infty}
-			f _a (it, \beta )			
-			 t ^{-2s} dt 
-\\
-&	\int _{C _0} ^{\infty}
-			f _a (-i t, \beta)
-			 t ^{-2s} dt
+\label{arriba}
+&
+	\int _{C _0} ^{\infty}
+			f _{+} (t, \beta )			
+			 t ^{-2s} dt =  
+	O \left( s + \frac{1}{2} \right)
+\\[5pt]
+\nonumber			
+&+
+	i \left(- C _0 
+		    - \frac{\beta \log C_0 (\gamma + \log 2 - 1 ) 
+		    		}{2} 
+		    - \frac{\beta \log ^2 C _0}{4}
+		    + \frac{\beta ( \gamma + \log 2 -1 )}{4 (s + 1/2)} 
+		    + \frac{\beta}{8 (s + \frac{1}{2}) ^2}
+					\right)
+\\[5pt]
+\label{abajo}
+&
+	\int _{C _0} ^{\infty}
+			f _{-} ( t, \beta)
+			 t ^{-2s} dt =
+	O \left(s + \frac{1}{2} \right)
+\\[5pt]
+\nonumber
+&+
+	i \left(C _0 
+			- C _0 ^2
+		    + \frac{\beta \log C_0 (\gamma + \log 2 - 1 ) 
+		    		}{2} 
+		    + \frac{\beta \log ^2 C _0}{4}
+		    - \frac{\beta ( \gamma + \log 2 -1 )}{4 (s + 1/2)} 
+		    - \frac{\beta}{8 (s + \frac{1}{2}) ^2}
+					\right)
 \end{align}
+%%Esta integral no se si ponerla completa o no...
+\begin{comment}
+\begin{align}
+\nonumber
+&
+	\int _{C _0} ^{\infty}
+			f _{+} (t, \beta )			
+			 t ^{-2s} dt =  
+				i \left(
+						\frac{C _0 ^{-2s}}{2s} +
+						\frac{ \beta C _0 ^{-2s-1}}
+							 {4} \left(
+										\frac{\gamma  + \log 2 C_0 -1}
+										{s + 1/2}
+										+ \frac{1}{2 (s + 1/2) ^2}
+										\right)
+						\right)
+\\[5pt]
+\nonumber			
+&=
+	i \left(- C _0 
+		    - \frac{\beta ( 2 \gamma + \log 4 C _0 -2 ) \log C_0
+		    		}{4} 
+		    + \frac{\beta ( \gamma + \log 2 -1 )}{4 (s + 1/2)} 
+		    + \frac{\beta}{8 (s + \frac{1}{2}) ^2}
+					\right)
+\\
+&
+	+ O \left( s + \frac{1}{2} \right)
+\\[5pt]
+\nonumber
+&
+	\int _{C _0} ^{\infty}
+			f _{-} ( t, \beta)
+			 t ^{-2s} dt  \\
+& 
+=
+\nonumber
+				i \left(
+						\frac{C _0 ^{-2s+1} }{s - \frac{1}{2}}
+						- \frac{C _0 ^{-2s}}{2s} 
+						- \frac{ \beta C _0 ^{-2s-1}}
+							 {4} \left(
+										\frac{\gamma  + \log 2 C_0 -1}
+										{s + 1/2}
+										+ \frac{1}{2 (s + 1/2) ^2}
+										\right)
+						\right)
+\\[5pt]
+\nonumber
+&=
+	i \left(
+			- C _0 ^2 
+			+ C _0 
+		    + \frac{\beta ( 2 \gamma + \log 4 C _0 -2 ) \log C_0
+		    		}{4} 
+		    - \frac{\beta ( \gamma + \log 2 -1 )}{4 (s + 1/2)} 
+		    - \frac{\beta}{8 (s + \frac{1}{2}) ^2}
+					\right)
+\\
+	& + O \left(s + \frac{1}{2} \right)
+\end{align}
+\end{comment}
+Se obtiene entonces para $\zeta \left( - \frac{1}{2} \right)$
+\begin{eqnarray}
+\zeta \left( - \frac{1}{2} \right) &=& 
+- \frac{i}{2 \pi L \mu} 
+\Bigg(	  
+		 \int _{C _0} ^{\infty}
+			\left(
+					f (i t,\beta )
+					- f (-i t,\beta )
+					- f _{+} (t) 
+					+ f _{-} (t)
+					\right)
+			t   dt   \nonumber
+\\ \nonumber
+&&\hskip 1.5cm +
+		 \int _{- C _0} ^{C _0}
+			f (i t,\beta )
+			t   dt 	
+	\Bigg)
+\\ \nonumber
+&&
+	- \frac{\beta \log ^2 C _0}{4 \pi L \mu}
+	- \frac{\beta \log C _0 (\gamma + \log 2 -1 )}{2 \pi L \mu} 
+	- \frac{16 C_0 - 8 C _0 ^2 + \pi ^2 \beta}{16 \pi L \mu}
+\\ \nonumber
+&&
+	+\frac{\beta \log ^2 (L \mu )}{4 \pi L \mu} 
+	+ \frac{\beta \log  (L \mu) (\gamma + \log 2 -1)}{2 \pi L \mu}
+\\ 
+&&	+ \frac{\beta}
+		 {8 \pi L \mu  \left( s + \frac{1}{2} \right) ^2} +
+	\frac{\beta (\gamma + \log (2 L \mu) -1 ) }
+		 {4 \pi L \mu  \left( s + \frac{1}{2} 														 \right)} 
+\, .
+\end{eqnarray}
+Donde en la última linea se están los polos calculados en REF, y en la penultima linea la dependencia con la escala $\log (L \mu)$
+
+
+
+
+
+
+
+
+
+
+
+
+

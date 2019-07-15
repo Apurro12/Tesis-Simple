@@ -11,9 +11,9 @@ A lo largo de este capítulo y en toda la tesis se utilizará: tiempo euclídeo,
 
 En esta sección escribiremos la acción efectiva en su aproximación a {\it 1-loop} para un campo escalar $\phi(x)$. En general, el procedimiento puede repetirse para campos fermiónicos y de gauge si se considera que las expresiones que siguen llevan implícitas las sumas sobre índices espinoriales, de Lorentz o de gauge, según corresponda.
 
-Consideremos entonces un campo escalar $\phi(x)$ definido sobre una región $\mathcal R\subset \mathbb{R}^d$ con borde $\partial \mathcal R$, donde $x \in  \mathcal R$. La dinámica del campo $\phi(x)$ está determinada a partir de una acción $S[\phi]$
+Consideremos entonces un campo escalar $\phi(x)$ definido sobre una región $\mathcal{M}\subset \mathbb{R}^d$ con borde $\partial \mathcal{M}$, donde $x \in  \mathcal{M}$. La dinámica del campo $\phi(x)$ está determinada a partir de una acción $S[\phi]$
 \begin{align}
-		S[\phi]=\int_\mathcal R dx\ \mathscr L(\phi,\partial\phi)\,,
+		S[\phi]=\int_\mathcal{M} dx\ \mathscr L(\phi,\partial\phi)\,,
 \end{align}
  donde $\mathscr L$ es el lagrangiano que define la teoría. La solución clásica $\phi _0(x)$ de las ecuaciones de movimiento es la configuración que minimiza la funcional $S[\phi]$,
 \begin{equation}
@@ -51,9 +51,9 @@ En Teoría Cuántica de Campos, el campo se reinterpreta como un operador ($\phi
 \phi \ e ^{- \frac{1}{\hbar} S[ \phi ] + \frac{1}{\hbar} (J, \phi )} \phi (x _1) ... \phi (x _n)\,.
 \label{valor}
 \end{equation}
-En esta expresión $(\,,\,) $ representa el producto interno de funciones en $\mathcal R$,
+En esta expresión $(\,,\,) $ representa el producto interno de funciones en $\mathcal{M}$,
 \begin{align}
-	(J,\phi) = \int_\mathcal R dx\ J(x) \phi (x)\,.
+	(J,\phi) = \int_\mathcal{M} dx\ J(x) \phi (x)\,.
 \end{align}
 Para calcular \eqref{valor} se define la {\it funcional generatriz} $Z[J]$ dada por
 \begin{equation}
@@ -143,7 +143,7 @@ En el año 1948 Hendrik Casimir \cite{Casimir:1948dh}, a partir de las fuerzas d
 		F(d) = - \hbar c\,A\ \frac{\pi ^2 }{240}\ \frac{1}{d^4}\,.
 	\label{casimir.1}
 \end{equation}
-La primera medida experimental de este efecto fue realizada en 1958 por Sparnaay \cite{SPARNAAY1958751}; aunque el resultado de este experimento no contradijo la predicción de Casimir, la incertidumbre en la medición tampoco permitió un resultado concluyente. Desde entonces se han realizado varios experimentos para distintas configuraciones. La precisión de los experimentos varian desde el $15 \%$ en el caso de placas paralelas \cite{casimir.placas.paralelas,articulo.casimir} en el año $2002$, al rango del $0.1-5 \%$ para una esfera y un plano, a partir del año $2001$\cite{casimir.cilindro1,PhysRevLett.81.4549,PhysRevD.60.111101,PhysRevA.62.052109}.
+La primera medida experimental de este efecto fue realizada en 1958 por Sparnaay \cite{SPARNAAY1958751}; aunque el resultado de este experimento no contradijo la predicción de Casimir, la incertidumbre en la medición tampoco permitió un resultado concluyente. Desde entonces se han realizado varios experimentos para distintas configuraciones. La precisión de los experimentos varian desde el $15 \%$ en el caso de placas paralelas \cite{casimir.placas.paralelas,articulo.casimir} en el año $2002$, al rango del $0.1-5 \%$ para una esfera y un plano, a partir del año $2001$\cite{casimir.cilindro1,PhysRevLett.81.4549,PhysRevD.60.111101,PhysRevA.62.052109}. {\red Agregar referencias a medidas más actuales.}
 
 La fuerza de Casimir se origina en la energía de vacío de los campos contenidos entre las placas conductoras. En efecto, cada uno de los modos normales de oscilación del campo tiene asociada una frecuencia de oscilación $\omega_n$. La cuantización del campo conduce entonces a un conjunto de osciladores desacoplados de modo que la energía en el estado fundamental (correspondiente al vacío de la teoría) resulta
 \begin{equation}
@@ -199,7 +199,7 @@ T^{s-1} K(T) \,.
 \label{eq.mellin}
 \end{equation}
 
-Consideremos, por ejemplo, el caso en que $A$ es un operador de tipo Laplace sobre campos escalares $\phi(x)$ sobre una variedad $\mathcal{M}$ (de dimensión $m$) con condiciones de contorno locales,
+Consideremos, por ejemplo, el caso en que $A$ es un operador de tipo Laplace sobre campos escalares $\phi(x)$ sobre una variedad $\mathcal{M}$  (de dimensión $m$) con condiciones de contorno locales,
 \begin{align}\label{eq.cc}
 &A = - \left(
 			g ^{\mu \nu} \nabla _{\mu} \nabla _{\nu} + V(x)	\right) \,,\\[2mm]
@@ -225,7 +225,7 @@ C _2 (A) &= \frac{ 1 }{6 (4 \pi) ^{m/2} } \left(
 \label{coef}
 \end{align} 
 
-Donde $C _0$ y $C _1$ representan el volumen de la variedad y del borde respectivamente, así $g$ y $h$ representan sus tensores métricos, y $m$ la dimension de la variedad. $C _2$ así como el resto de los coeficientes son funciones del potencial $V$, la curvatura de Ricci de la variedad $R$, el tensor de curvatura extrínseca $L _{ij } \ (i,j = 1,2,...,m-1)$ sobre el borde de la variedad, la condición de contorno $S$ definida en la ecuación (\ref{eq.cc}), y demás invariantes locales.
+Donde $C _0$ y $C _1$ representan el volumen de la variedad y del borde respectivamente, así $g$ y $h$ representan sus tensores métricos, y $m$ la dimension de la variedad. $C _2$ así como el resto de los coeficientes son funciones del potencial $V$, la curvatura escalar de Ricci $R$ de la variedad, el tensor de curvatura extrínseca $L _{ab } \ (a,b = 1,2,...,m-1)$ sobre el borde de la variedad, y la condición de contorno $S$ definida en la ecuación (\ref{eq.cc}).
 
 
 Utilizando (\ref{eq.heat.expansion}) en  (\ref{eq.mellin}) , se muestra que la función $\zeta (s)$ posee polos simples en
@@ -378,7 +378,7 @@ E _0 = \frac{\hbar}{2} \zeta  (-1/2)
 
 \medskip
 
-En los capítulos \ref{cap.casimir} y \ref{cap.acc} se utilizó $K(T)$ y $\zeta (s)$ para dar definiciones finitas de la acción efectiva a {\it 1-loop} y la energía de casimir respectivamente, lo que se va hacer de aquí en adelante, es adimensionalzarlas de manera que las potencias complejas que estén bien definidas:
+En los capítulos \ref{cap.casimir} y \ref{cap.acc} se utilizó $K(T)$ y $\zeta (s)$ para dar definiciones finitas de la acción efectiva a {\it 1-loop} y la energía de casimir respectivamente, lo que se va hacer de aquí en adelante, es adimensionalzarlas de manera que las potencias complejas que estén bien definidas {\red (¿por qué se pone $\mu$ en el heat-kernel?)}:
 
 \begin{align}
 \zeta  (s) &= \sum\limits_{n \in \mathbb N} \left( \frac{\lambda  _n}{\mu }  \right) ^{-2s } \label{def.adim}\\[10pt]

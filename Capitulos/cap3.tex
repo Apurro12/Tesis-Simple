@@ -1,10 +1,11 @@
 \chapter{Estudio del Problema Singular}
+{\label{cap.singular}}
 
 El presente capítulo contiene el resultado original de este Trabajo de Diploma, que consiste en el análisis de un operador diferencial con un coeficiente singular. Como hemos mencionado, el desarrollo asintótico (\ref{eq.heat.expansion})
 es válido para operadores diferenciales con coeficientes suaves. En efecto,
 mostraremos a continuación que la presencia de una singularidad puede
 conducir a un desarrollo asintótico de la traza del heat-kernel que no con-
-tiene exclusivamente potencias semi-enteras de t. En efecto, veremos que
+tiene exclusivamente potencias semi-enteras de t. Veremos que
 en el caso del operador singular que hemos analizado el desarrollo contiene
 términos $\log t$.
 
@@ -40,10 +41,22 @@ Las autofunciones, en términos de dos soluciones linealmente independientes $\p
 \begin{equation}
 \begin{aligned}
     \phi (x) =
-    C _1
-    \underbrace{
-     \ e ^{-i \lambda x} \ x \ F _{1} ^{1} \left( 1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x \right) } _ {\phi_1} + 
-      C _2 \underbrace{ \ e^{-i \lambda x } \ x \ U \left( 1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x \right) } _{\phi_2} 
+	    C _1
+    	\underbrace{
+				     \ e ^{-i \lambda x} \ x \ 
+				     F _{1} ^{1} 
+				     		\left(  
+				     			1 - \frac{i \alpha}
+				     			{2\lambda}
+				     		,2,2 i \lambda x \right) 
+				     } _ {\phi_1} + 
+      C _2 
+      \underbrace{ 
+      			   \ e^{-i \lambda x } \ x \ 
+      			   U 
+      			   	\left( 
+      			   		1- \frac{i \alpha}{2 \lambda}
+      			   		,2,2 i \lambda x \right) } _{\phi_2} 
     \, . 
 \end{aligned}
 \label{eq.phi}
@@ -70,7 +83,7 @@ las cuales están dadas por \cite{Abramowitz:hyper}
 	\, ,
 \end{align}
 donde $(.) _n$ es el símbolo de Pochhammer.
-Si se cumple que  $a=-m,b \neq -n$ donde $ m,n \in \mathbb{N}$, $F _1 ^1 (a,b,z)$ es un polinomio en $z$ y $U(a,b,z)$ es LI con $F _1 ^1 (a,b,z)$, en tal caso se usa $z^{1-b} M(a+1,-b,2-b,z)$ como segunda solución LI.
+Si se cumple que  $a=-m,b \neq -n$ donde $ m,n \in \mathbb{N}$, $F _1 ^1 (a,b,z)$ es un polinomio en $z$ y $U(a,b,z)$ es linealmente dependiente con $F _1 ^1 (a,b,z)$, en tal caso se usa $z^{1-b} M(a+1,-b,2-b,z)$ como segunda solución LI.
 
 
 Las constantes $C_1,C_2$ están sujetas al vínculo impuesto por las condiciones de contorno.
@@ -80,30 +93,30 @@ Para imponer las condiciones de contorno, primeramente desarrollamos $\phi (x)$ 
 C _1  x  + 
 C _2 \ x 
 \left( 
-\frac{1}{  \alpha x  \Gamma ( \frac{ \alpha}{2 i \lambda}  )   }  +
-\frac{\log (x) }{\Gamma ( \frac{ \alpha}{2 i \lambda} ) } + \mathscr{C} \right) + O(x ^2)
+\frac{1}{  \alpha x  \Gamma ( - \frac{i \alpha}{2  \lambda}  )   }  +
+\frac{\log (x) }{\Gamma ( - \frac{ i \alpha}{2 \lambda} ) } + \mathscr{C} \right) + O(x ^2)
 	\nonumber
 \\[10pt]
 \mathscr{C} &= 
 \frac{
--1 + 2 \gamma + \log ( 2  i \lambda ) + \psi (1 + \frac{ \alpha}{2 i \lambda})
+-1 + 2 \gamma + \log ( 2  i \lambda ) + \psi (1 - \frac{i \alpha}{2 \lambda})
 }
 {\Gamma (\frac{i \alpha}{2 \lambda})}
 \, ,
 \label{eq.scat}
 \end{align}
 de este desarrollo se ve que $ \phi _1 (x \rightarrow 0 ) \rightarrow 0,\phi _2 (x \rightarrow 0)  \rightarrow
-\frac{1}{  \alpha   \Gamma ( \frac{i \alpha}{2 \lambda}  )   } $ , entonces la condición de contorno en $x=0$ fija $C _2 =0$. 
+\frac{1}{  \alpha   \Gamma ( \frac{i \alpha}{2 \lambda}  )   } $ , entonces la condición de contorno en $x=0$ fija $C _2 =0$. En caso de que $\Gamma ( \frac{i \alpha}{2 \lambda}  ) \rightarrow \infty$, $\phi _2 (0) = 0$.
 
 
 Utilizando la condición de contorno en $x=L$ los autovalores están dados por las soluciones de la siguiente ecuación
 \begin{equation}
-F _1 ^1 \left( 1+\frac{ \alpha}{2 i \lambda},2,2 i \lambda L \right)  = 0
+F _1 ^1 \left(1-\frac{i \alpha}{2 \lambda},2,2 i \lambda L \right)  = 0
 	\, .
 \label{eq.1}
 \end{equation}
 En la figura (\ref{fig:funcion}) graficamos
-\mbox{$ | F _1 ^1 (1+\frac{ \alpha}{2 i \lambda},2,2 i \lambda L) | ^2 $} para los valores  $\alpha=1, \ L=1$. Las intersecciones con el eje horizontal indican los autovalores positivos del espectro del operador singular.
+\mbox{$ | F _1 ^1 (1-\frac{i \alpha}{2 \lambda},2,2 i \lambda L) | ^2 $} para los valores  $\alpha=1, \ L=1$. Las intersecciones con el eje horizontal indican los autovalores positivos del espectro del operador singular.
 
 \begin{figure}[h!]
 \centering
@@ -131,12 +144,12 @@ $S_1$ y $S _2$ representan el desarrollo a todo orden. Para calcular el polo de 
 
 Utilizando (\ref{eq.aprox}) y tomando $S _1 = S _2 = 1$, $F _1 ^1 \left(1+  \frac{  \alpha}{2 i \lambda} ,2 ,2 i \lambda L  \right)$ está dado por
 \begin{equation}
-    i  \frac{e ^{ \frac{\pi}{4} \frac{\alpha}{\lambda} } }{2 \lambda L}
-    \left( -
-    \frac{e ^{- i \frac{\alpha}{2 \lambda}  \log (2 \lambda L) } e ^{2 i \lambda L} }{\Gamma(1+\frac{ \alpha}{2 i \lambda})} +
-    \frac{e ^{  i \frac{\alpha}{2 \lambda}  \log (2 \lambda L) }}               {\Gamma(1-\frac{ \alpha}{2 i \lambda})}
+    \frac{i e ^{ \frac{\pi \alpha }{4 \lambda}  } }{2 \lambda L}
+    \left(
+    \frac{e ^{   \frac{ i \alpha}{2 \lambda}  \log (2 \lambda L) }}               {\Gamma(1+\frac{i \alpha}{2 \lambda})} -
+    \frac{e ^{-  \frac{i \alpha}{2 \lambda}  \log (2 \lambda L) } e ^{2 i \lambda L} }{\Gamma(1-\frac{i \alpha}{2 \lambda})} 
     \right) \\[5pt]  
-    =  i  \frac{e ^{ \frac{\pi}{4} \frac{\alpha}{\lambda} } }{2 \lambda L}     M (\lambda) 
+    =  i  \frac{e ^{ \frac{\pi \alpha }{4 \lambda}  } }{2 \lambda L}     M (\lambda) 
     \, ,
 \label{eq.completa}
 \end{equation}
@@ -414,6 +427,7 @@ Para calcular el polo en $s=-1/2$ se desarrolla en Serie de Laurent, obteniendo 
 
 
 \begin{align}
+\label{eq.result.zeta.c}
 \nonumber	
     &\zeta  (s) =  \frac{\alpha}{8  \pi \mu (s+1/2)^2} +
     \frac{ \alpha ( \gamma  +  \log (2L \mu ) -1 ) }{4  \pi \mu (s+1/2) }  + 
@@ -669,19 +683,21 @@ Donde $f \left( - \frac{1}{2}\right)$ se calculará en la sección siguiente.
 
 \section{Parte finita de la energía de vacío}
 
-En la secciones \ref{seq.2.asin} y \ref{seq.2.com} se calcularon calcularon los polos de la \mbox{{\it función-$\zeta$}} en $s=1/2$ y $s=-1/2$ encontrando que en $s=-1/2$ existe en polo doble. En la sección \ref{sec.sig.polos} se estudio la estructura completa de polos encontrando que excepto en $s= - \frac{1}{2}$ todos los polos son simples ubicados y están ubicados en los semienteros negativos. En \ref{sec.regular} se expresó la energía de vacío, siendo la parte finita $\frac{\mu}{2} f \left( - \frac{1}{2} \right)$. 
+En los capítulos \ref{seq.2.asin} y \ref{seq.2.com} se calcularon los polos de \mbox{$\zeta (s)$} en $s= \frac{1}{2}$ y $s=-\frac{1}{2}$ encontrando que en $s=- \frac{1}{2}$ existe en polo doble. En \ref{sec.sig.polos} se estudió la estructura completa de polos encontrando que $\zeta (s)$ posee polos son simples ubicados en los semienteros negativos. En \ref{sec.regular} se expresó la energía de vacío, siendo la parte finita de esta $\frac{\mu}{2} f \left( - \frac{1}{2} \right)$. 
 
-En esta sección se hallará un método para estudiar $ f \left( - \frac{1}{2} \right)$, utilizando las mismas herramientas que en la sección \ref{seq.2.asin}.
+En esta sección se estudiará $ f \left( - \frac{1}{2} \right)$
 
-Utilizando las mismas variables adimensionales que en la sección \ref{seq.2.asin}: $\mu _n = \lambda _n L$ y $\beta = \alpha L$, función-$\zeta$ puede expresarse como
+\subsection{Desarrollo asintótico}
+
+Utilizando las variables adimensionales $\rho _n = \lambda _n L$ y $\beta = \alpha L$, $\zeta (s)$ puede expresarse como
 \begin{equation}
-\zeta (s) = \left( \mu L \right) ^{2s} \sum _{n=1} ^{\infty} \mu _n ^{-2s}
+\zeta (s) = \left( \mu L \right) ^{2s} \sum _{n=1} ^{\infty} \rho _n ^{-2s} 
 \, ,
 \end{equation}
-como $\zeta (s)$ solo posee un polo doble, $\mu _n$ tiene un desarrollo de la forma
+como $\zeta (s)$ posee solo un polo doble en $-\frac{1}{2}$, $\rho _n$ tiene un desarrollo de la forma
 \begin{equation}
 \begin{aligned}
-\mu _n  &= 
+\rho _n  &= 
 			n \pi + \epsilon _n \\
 			\epsilon _n &= 
 			\frac{ \beta }{2 n \pi } \log (2 n \pi) +
@@ -689,7 +705,7 @@ como $\zeta (s)$ solo posee un polo doble, $\mu _n$ tiene un desarrollo de la fo
 			\, .
 \end{aligned}
 \end{equation}
-Procediendo igual que en \ref{seq.2.asin}.
+Procediendo igual que en el capítulo \ref{seq.2.asin}, $\zeta (s)$ puede expresarse como un desarrollo en serie
 \begin{equation}
 \begin{aligned}
 \zeta (s) =& 
@@ -700,12 +716,23 @@ Procediendo igual que en \ref{seq.2.asin}.
 (\mu L) ^{2s} \sum _{n=1} ^{\infty}
 ( n \pi) ^{-2s} \left(
 						1 -2s  \frac{\epsilon _n}{n \pi} + 
-						\left( s + \frac{1}{2} \right) O( \epsilon ^2 )
+						\left( s + \frac{1}{2} \right) 
+						O \left( \frac{ \log ^2 ( 2 n \pi ) }{ n ^4} \right)  
 						\right)
-\, ,
+\, .
 \end{aligned}
 \end{equation}
-donde todos los términos que contienen potencias $\epsilon ^2$ o mayores se anulan, dado que el desarrollo a ordenes superiores contendrá un factor común $s + \frac{1}{2}$. Esto implica que la contribución a $\zeta \left( - \frac{1}{2} \right)$ está dada por
+Donde el último término no presenta polos en \mbox{${\rm Re}(s) >- \frac{3}{2}$} dado que
+\begin{equation} 
+	\sum _{n=1} ^{\infty}
+	 n  ^{-2s} O \left( \frac{ \log ^m (n)}{ n ^p} \right)
+	\propto 
+		(-1) ^m \zeta ^{(m)} (2s+p) 
+\, ,
+\end{equation}
+lo cual es finito para $s \neq \frac{1-p}{2}$.
+Por lo tanto todos los términos siguientes en el desarrollo también se anularán, debido a la existencia del factor $s + \frac{1}{2}$.
+Por lo tanto los términos que contribuyen a $\zeta \left( - \frac{1}{2} \right)$ están dados por
 \begin{align}
 \zeta (s) &= \left( \frac{\mu L}{\pi} \right) ^{2s} \times \\
 			\nonumber
@@ -720,7 +747,7 @@ donde todos los términos que contienen potencias $\epsilon ^2$ o mayores se anu
 					\right)
 \, .					
 \end{align}
-Esta expresión es la versión completa de (\ref{eq.zeta.c}).
+Esta expresión completa la ecuación (\ref{eq.zeta.c}) en la cual no se tiene en cuenta el último término.
 En esta expresión hay dos tipos de términos finitos, contribuciones finitas {\it per sé} y contribuciones que van a ser finitas debido al término $ \left( \frac{\mu L}{\pi}\right) ^{2s}$.
 
 
@@ -816,21 +843,25 @@ estos términos tienden a $0$ en el limite $\alpha \rightarrow 0$.
 
 Juntando las ecuaciones (\ref{eq.la.parte.finita}), (\ref{eq.res.1}) y (\ref{eq.escala}) se obtiene para $\zeta \left( - \frac{1}{2} \right)$.
 
-\begin{equation}\label{eq.zeta.final}
-\begin{aligned}
-&\zeta \left( - \frac{1}{2} \right) =
-		\frac{\alpha}{8  \pi \mu (s+1/2)^2} +
+\begin{align}\label{eq.zeta.final}
+\nonumber
+\zeta \left( - \frac{1}{2} \right) &=
+		\frac{\alpha}{8  \pi \mu (s+1/2)^2}	 +
 	    \frac{
 	    	\alpha ( \gamma  +  \log (2L \mu ) -1 ) }
 	    	{4  \pi \mu (s+1/2) } 
-	      	+ \\[5pt]
-		& 
+\\[5pt]
+&
++
 		\frac{\beta \log ^2 \left( \frac{\mu L}{\pi} \right)}{4 \pi \mu L}  +
 		\frac{
 			\beta \log \left( \frac{\mu L}{\pi}\right)
 				( \log (2 \pi ) + \gamma -1)}
-			{2 \pi \mu L} + \\[5pt]
-			&
+			{2 \pi \mu L}  
+\\[5pt]
+\nonumber
+&
++
 \frac{\pi}{L \mu}  
 					\left(
 							- \frac{1}{12} +
@@ -845,35 +876,43 @@ Juntando las ecuaciones (\ref{eq.la.parte.finita}), (\ref{eq.res.1}) y (\ref{eq.
 								\right)
 							\right) 
 \, .
-\end{aligned}
-\end{equation}
+\end{align}
 Donde la energía de vacío queda expresada como
 \begin{align}\label{energia.vacio.final}
 \nonumber
-E _0 =& \frac{1}{2} \left(
-				\frac{\alpha}{8 \pi  } \frac{1}{(s+1/2)^2} + 
-				\frac{\alpha ( \gamma  +  \log (2L \mu ) -1 )}{4 \pi  (s+1/2)}
-				\right) + \\		
-		&\frac{\beta \log ^2 \left( \frac{\mu L}{\pi} \right)}{8 \pi  L}  +
+E_ 0 &=
+		\frac{\alpha}{4  \pi  (s+1/2)^2}	 +
+	    \frac{
+	    	\alpha ( \gamma  +  \log (2L \mu ) -1 ) }
+	    	{2  \pi \ (s+1/2) } 
+\\[5pt]
+&
++
+		\frac{\beta \log ^2 \left( \frac{\mu L}{\pi} \right)}{2 \pi  L}  +
 		\frac{
 			\beta \log \left( \frac{\mu L}{\pi}\right)
 				( \log (2 \pi ) + \gamma -1)}
-			{4 \pi  L} + \\				
+			{ \pi  L}  
+\\[5pt]
 \nonumber
-	&\frac{\pi}{2 L }  
+&
++
+\frac{\pi}{2 L }  
 					\left(
 							- \frac{1}{12} +
-							\frac{\beta}{2 \pi ^2}
-														( \gamma \log (2 \pi)
-														+ \gamma _1 ) +
-																\left(
+							\frac{\beta}{2 \pi ^2} \left(
+														\gamma \log (2 \pi)
+														+ \gamma _1
+														\right) +
+							\left(
 								a _1 \frac{\gamma}{\pi} +
 								\frac{1}{\pi} \sum _{p=2} ^{\infty}
 								a_p \zeta (p) 
-														\right)	
-						\right)
+								\right)
+							\right) 
 \, .
 \end{align}
+
 La cual presenta 3 tipos de comportamientos, términos divergentes a renormalizar en la teoría (primer linea), términos que dependen de manera no trivial con la escala (segunda linea) y términos que no dependen la escala (ultima linea).
 
 
@@ -900,4 +939,5 @@ Una vez obtenidos suficientes términos $a_p$ se puede graficar la parte finita 
     \caption{En esta imagen se muestran dos posibles adimensionalizaciones de la ecuación \ref{eq.graficar}, que representan la energía de vacío independiente de $\mu$ .}
 \label{fig.finitas}
 \end{figure*}
+
 
