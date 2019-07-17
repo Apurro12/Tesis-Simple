@@ -231,7 +231,7 @@ Para calcular la {\it función-$\zeta $} se utiliza su definición
 \begin{equation}
 \begin{aligned}
     \zeta (s) &= \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2 s}  \\
-    & =    ( L \mu ) ^{2 s} \sum _{n=1} ^{\infty} 
+    & =    ( \mu L) ^{2 s} \sum _{n=1} ^{\infty} 
     \left( 
     n \pi + \frac{\alpha L }{2 n \pi} \log (2 n \pi) + \frac{\gamma \alpha L}{2 n \pi} +
     O \left( n^{-2} \right)
@@ -242,7 +242,7 @@ Para calcular la {\it función-$\zeta $} se utiliza su definición
 la cual se puede reescribir como
 \begin{equation}
 \begin{aligned}
-    \zeta  (s) &= \left( \frac{L \mu }{\pi} \right)  ^{2 s} 
+    \zeta  (s) &= \left( \frac{\mu L }{\pi} \right)  ^{2 s} 
     \sum _{n=1} ^{\infty} n ^{- 2  s} 
     \left(
     	1 + \chi _n  + O( n^{-2} )
@@ -255,13 +255,13 @@ la cual se puede reescribir como
 \end{equation}
 Desarrollando consistentemente hasta el orden retenido se obtiene
 \begin{align}\label{eq.zeta.c}
-    \zeta  (s) &= \left( \frac{L \mu}{\pi} \right) ^{2 s}
+    \zeta  (s) &= \left( \frac{\mu L}{\pi} \right) ^{2 s}
     \sum _{n=1} ^{\infty} 
     n ^{-2s}
     \left(
     1 - 2 s \chi _n + O \left( n ^{-3} \right) \
     \right)   \nonumber \\[5pt]
-     &= \left( \frac{L \mu }{\pi} \right) ^{2 s}
+     &= \left( \frac{\mu L }{\pi} \right) ^{2 s}
     \sum _{n=1} ^{\infty} n ^{-2 s} 
     \left(
     1 - 2s \left(
@@ -270,7 +270,7 @@ Desarrollando consistentemente hasta el orden retenido se obtiene
 	\right) +
     O \left( n ^{-3}   \right)
     \right) \nonumber \\[5pt]
-    &=   \left( \frac{L \mu }{ \pi } \right) ^{2 s}  
+    &=   \left( \frac{\mu L }{ \pi } \right) ^{2 s}  
     \left( \zeta _R (2 s) -
 	\frac{ s \alpha L}{ \pi ^2} \zeta _R (2s+2)
 	\left(
@@ -284,13 +284,13 @@ Donde $\gamma$ es la constante de Euler-Mascheroni.
 Dado que $\sum _{n=1} ^{\infty} O \left( n ^{-2s-3} \right)$ es regular para $s > -1$, de la expresión anterior el polo en $s= - \frac{1}{2}$ está dado por
 \begin{equation}\label{eq.res.2}
     ( s-1/2 ) \zeta  (s) | _{s \rightarrow \frac{1}{2}} = 
-    \frac{L \mu }{2 \pi}
+    \frac{\mu L }{2 \pi}
     	\, ,
 \end{equation}
 lo cual coincide con el resultado general \ref{eq.vol}. Luego desarrollando \ref{eq.zeta.c} alrededor de $s=-1/2$ se obtiene
 \begin{align}\label{eq.res.1}
     &\zeta  (s) =  \frac{\alpha}{8  \pi \mu (s+1/2)^2} +
-    \frac{ \alpha ( \gamma  +  \log (2L \mu ) -1 ) }{4  \pi \mu (s+1/2) }  + 
+    \frac{ \alpha ( \gamma  +  \log (2\mu L ) -1 ) }{4  \pi \mu (s+1/2) }  + 
 	f (s) \\
 	&| f(s) | < \infty , \, \forall s > -1
     	\, .
@@ -387,7 +387,7 @@ El término que tiene la potencia mas alta de $t$ va a contribuir al polo en $s=
 ningún otro término aportará a este polo, entonces coincidiendo con \ref{eq.res.2} se obtiene
 \begin{equation}
 	\left(s- \frac{1}{2} \right)
-    \zeta (s) \Big| _{s=1/2} = \frac{L \mu }{2 \pi} 
+    \zeta (s) \Big| _{s=1/2} = \frac{\mu L }{2 \pi} 
     	\, .
 \end{equation}
 Una vez calculado este termino, el resto de la integral se puede reescribir de la forma
@@ -415,7 +415,7 @@ realizando todas las integrales, la {\it función-$\zeta (s)$} queda determinada
 \begin{equation}\label{eq.laurent}
 \begin{aligned}
     \zeta  (s)  = 
-    & \frac{L \mu ^{2 s} e ^{i \pi s}}{2 \pi i (s-\frac{1}{2})}  
+    & \frac{\mu L ^{2 s} e ^{i \pi s}}{2 \pi i (s-\frac{1}{2})}  
     -\frac{\alpha \mu ^{2s} \sin(\pi s)}{8 \pi (s+\frac{1}{2}) ^2}  + 
     \frac{\alpha \mu ^{2s} \sin  (\pi s) (1 - \gamma -   \log (2 L))}{4 \pi (s+ \frac{1}{2} )} + \\
     & \frac{\alpha \mu ^{2s} \cos(\pi s)}{8 (s+\frac{1}{2} )} +
@@ -430,7 +430,7 @@ Para calcular el polo en $s=-1/2$ se desarrolla en Serie de Laurent, obteniendo 
 \label{eq.result.zeta.c}
 \nonumber	
     &\zeta  (s) =  \frac{\alpha}{8  \pi \mu (s+1/2)^2} +
-    \frac{ \alpha ( \gamma  +  \log (2L \mu ) -1 ) }{4  \pi \mu (s+1/2) }  + 
+    \frac{ \alpha ( \gamma  +  \log (2\mu L ) -1 ) }{4  \pi \mu (s+1/2) }  + 
 	f (s) \\
 	&| f(s) | < \infty , \, \forall s > -1
     	\, .
@@ -673,7 +673,7 @@ Utilizando la expresión de $\zeta  (s )$ dada por (\ref{eq.res.1}) se obtiene p
 \begin{equation}\label{eq.casimir.resultado}
 E _0 = \frac{1}{2} \left(
 				\frac{\alpha}{8 \pi  } \frac{1}{(s+1/2)^2} + 
-				\frac{\alpha ( \gamma  +  \log (2L \mu ) -1 )}{4 \pi  (s+1/2)}
+				\frac{\alpha ( \gamma  +  \log (2\mu L ) -1 )}{4 \pi  (s+1/2)}
 				\right) + 
 				\frac{\mu}{2} \ f \left( - \frac{1}{2} \right)
 \, .
@@ -727,7 +727,7 @@ Donde el último término no presenta polos en \mbox{${\rm Re}(s) >- \frac{3}{2}
 	\sum _{n=1} ^{\infty}
 	 n  ^{-2s} O \left( \frac{ \log ^m (n)}{ n ^p} \right)
 	\propto 
-		(-1) ^m \zeta ^{(m)} (2s+p) 
+		(-1) ^m \zeta _R ^{(m)} (2s+p) 
 \, ,
 \end{equation}
 lo cual es finito para $s \neq \frac{1-p}{2}$.
@@ -740,117 +740,33 @@ Por lo tanto los términos que contribuyen a $\zeta \left( - \frac{1}{2} \right)
 			\left(
 					\zeta _R (2s) - \frac{s \beta}{\pi ^2} 
 						\left(
-							\log (2 \pi ) \zeta (2s+2) - \zeta '(2s+2)
+							\log (2 \pi ) \zeta _R (2s+2) - \zeta _R '(2s+2)
 							\right)-
 					\frac{2 s}{\pi} \sum _{p=1} ^{\infty}
 						a _p \zeta _R (2s+p+1)
 					\right)
 \, .					
 \end{align}
-Esta expresión completa la ecuación (\ref{eq.zeta.c}) en la cual no se tiene en cuenta el último término.
-En esta expresión hay dos tipos de términos finitos, contribuciones finitas {\it per sé} y contribuciones que van a ser finitas debido al término $ \left( \frac{\mu L}{\pi}\right) ^{2s}$.
-
-
-Los términos finitos {\it per sé} vienen dados por la parte que convergente al evaluar $\zeta (-\frac{1}{2} )$, para esto es útil recordar los desarrollos
+Esta expresión completa la ecuación (\ref{eq.zeta.c}), la cual no se tiene en cuenta el último término.
+Para calcular $\zeta \left( - \frac{1}{2} \right)$ se utilizan los desarrollos
 \begin{align}\label{cortar}
 	\log (2 \pi) \zeta _R (2s+2) -
 	\zeta _R ' (2s+2) = & 
 	\frac{1}{4 \left( s + \frac{1}{2} \right) ^2} + 
-	\frac{ \log (2 \pi ) }{2 \left( s + \frac{1}{2} \right) } + \\
-	& \gamma \log (2 \pi ) + \gamma _1 + O \left( s + \frac{1}{2} \right) \\
+	\frac{ \log (2 \pi ) }{2 \left( s + \frac{1}{2} \right) } \\
+	+ &  \gamma \log (2 \pi ) + \gamma _1 + O \left( s + \frac{1}{2} \right) \\
 	\zeta _R (2s+2) = &\frac{1}{2 \left( s + \frac{1}{2} \right)} + \gamma + O \left( s + \frac{1}{2} \right)
 	 ,
 \end{align}
-donde $\gamma _1$ es la constante de Stieltjes.
-
-
-La parte finita {\it per sé}  de $\zeta$ en $s=-1/2$ es 
-\begin{align}\label{eq.escala}
- \zeta \left( -\frac{1}{2} \right) &= \frac{\pi}{L \mu} \times \\
- 					& \times
-					\left(
-							- \frac{1}{12} +
-							\frac{\beta}{2 \pi ^2} \left(
-														\gamma \log (2 \pi)
-														+ \gamma _1
-														\right) +
-							\left(
-								a _1 \frac{\gamma}{\pi} +
-								\frac{1}{\pi} \sum _{p=2} ^{\infty}
-								a_p \zeta (p) 
-								\right)
-							\right) 
-							\, ,
-\end{align}
-esta contribución a la energía de vacío viene dada por 
-\begin{align}\label{eq.graficar}
-\nonumber
- E _0 &= \frac{\pi}{2 L } \times \\
- 					& \times
-					\left(
-							- \frac{1}{12} +
-							\frac{\beta}{2 \pi ^2} \left(
-														\gamma \log (2 \pi)
-														+ \gamma _1
-														\right) +
-							\left(
-							a _1\frac{\gamma}{\pi}
-							+ \frac{1}{\pi} \sum _{p=2} ^{\infty}
-								a_p \zeta (p) 
-								\right)
-							\right) 
-							\, ,
-\end{align}
-dado que $a _p$ es un polinomio en $\beta$ sin término independiente, en el límite $\alpha \rightarrow 0$ la expresión anterior tiende a la energía de vacío sin potencial con condiciones de contorno Dirichlet en ambos extremos (ecuación \ref{eq.energia.dirichlet} de la sección \ref{sec.Dirichlet}).
-\begin{equation}
-\lim \limits_{\alpha \rightarrow 0} E _0 = 
-		- \frac{\pi}{24 L}
-\, ,
-\end{equation}
-Las contribuciones no tenidas en cuenta  \ref{eq.escala} para calcular $\zeta \left( - \frac{1}{2}\right)$ son
-\begin{equation}\label{eq.terminos.div}
-\left(
-		\frac{\mu L}{\pi}
-		\right) ^{2s}
-\left(
-		-\frac{s \beta}{\pi ^2}
-			\left(
-				\frac{1}{4 \left( s + \frac{1}{2}\right) ^2} +
-				\frac{\log (2 \pi )}{2 \left( s + \frac{1}{2}\right)}
-				\right)	-
-				\frac{s \beta \gamma}{2 \pi ^2 \left( s + \frac{1}{2} \right) }
-		\right)
-\, ,
-\end{equation}
-en esta expresión va a haber partes que debido al término $ \left( \frac{\mu L}{\pi}\right) ^{2s}$ van a ser finitas, pero sin presentar el comportamiento trivial con la escala $\frac{1}{\mu}$ que aparece en \ref{eq.escala} de tal forma que la energía de vacío resulta independiente de la escala.
-
-Los términos divergentes en $s = -\frac{1}{2} $ de (\ref{eq.terminos.div}) coinciden con los polos calculados en las secciones \ref{seq.2.asin} y \ref{seq.2.com}
-\begin{equation*}
-	\frac{\alpha}{8  \pi \mu (s+1/2)^2} +
-    \frac{ \alpha ( \gamma  +  \log (2L \mu ) -1 ) }{4  \pi \mu (s+1/2) }
-    	\, .
-\end{equation*}
-Luego la parte finita de (\ref{eq.terminos.div}) se obtiene desarrollando $\left(\frac{\mu L}{\pi}\right) ^{2s} $ siendo
-\begin{equation}\label{eq.la.parte.finita}
-\frac{\beta \log ^2 \left( \frac{\mu L}{\pi} \right)}{4 \pi \mu L}  +
-\frac{
-	\beta \log \left( \frac{\mu L}{\pi}\right) 
-	( \log (2 \pi ) + \gamma -1)
-	}{2 \pi \mu L}
-\, ,
-\end{equation}
-estos términos tienden a $0$ en el limite $\alpha \rightarrow 0$.
-
-Juntando las ecuaciones (\ref{eq.la.parte.finita}), (\ref{eq.res.1}) y (\ref{eq.escala}) se obtiene para $\zeta \left( - \frac{1}{2} \right)$.
-
+donde $\gamma _1$ es la constante de Stieltjes. Obteniendo para $\zeta \left( - \frac{1}{2} \right) $
 \begin{align}\label{eq.zeta.final}
-\nonumber
 \zeta \left( - \frac{1}{2} \right) &=
-		\frac{\alpha}{8  \pi \mu (s+1/2)^2}	 +
+		\frac{\beta}{8  \pi \mu L \left(s + \frac{1}{2} \right)^2}	 +
 	    \frac{
-	    	\alpha ( \gamma  +  \log (2L \mu ) -1 ) }
-	    	{4  \pi \mu (s+1/2) } 
+	    	\beta ( \gamma  +  \log (2 \mu L ) -1 ) }
+	    	{4  \pi \mu L \left(s + \frac{1}{2} \right) } 
 \\[5pt]
+\nonumber
 &
 +
 		\frac{\beta \log ^2 \left( \frac{\mu L}{\pi} \right)}{4 \pi \mu L}  +
@@ -858,66 +774,67 @@ Juntando las ecuaciones (\ref{eq.la.parte.finita}), (\ref{eq.res.1}) y (\ref{eq.
 			\beta \log \left( \frac{\mu L}{\pi}\right)
 				( \log (2 \pi ) + \gamma -1)}
 			{2 \pi \mu L}  
+- \frac{\beta (\gamma + \log(2 \pi) )}{2 \pi \mu L}
 \\[5pt]
 \nonumber
 &
 +
-\frac{\pi}{L \mu}  
+\frac{\pi}{\mu L}  
 					\left(
 							- \frac{1}{12} +
 							\frac{\beta}{2 \pi ^2} \left(
 														\gamma \log (2 \pi)
 														+ \gamma _1
 														\right) +
-							\left(
 								a _1 \frac{\gamma}{\pi} +
 								\frac{1}{\pi} \sum _{p=2} ^{\infty}
 								a_p \zeta (p) 
-								\right)
 							\right) 
 \, .
 \end{align}
-Donde la energía de vacío queda expresada como
+De aquí se puede ver que los polos coinciden con los calculados en las secciones \ref{seq.2.asin} y \ref{seq.2.com}. Utilizando esta definición de $\zeta \left( - \frac{1}{2} \right) $ se obtiene para la energía de vacío
 \begin{align}\label{energia.vacio.final}
-\nonumber
-E_ 0 &=
-		\frac{\alpha}{4  \pi  (s+1/2)^2}	 +
-	    \frac{
-	    	\alpha ( \gamma  +  \log (2L \mu ) -1 ) }
-	    	{2  \pi \ (s+1/2) } 
+	E_ 0 &=
+		\frac{\alpha}{16  \pi  \left(s + \frac{1}{2} \right)^2}	 
+		+   \frac{
+	    	\alpha ( \gamma  +  \log (2\mu L ) -1 ) }
+	    	{8  \pi \left(s+ \frac{1}{2} \right) } 
 \\[5pt]
-&
-+
-		\frac{\beta \log ^2 \left( \frac{\mu L}{\pi} \right)}{2 \pi  L}  +
-		\frac{
-			\beta \log \left( \frac{\mu L}{\pi}\right)
+\nonumber
+&+
+	\frac{\alpha \log ^2 \left( \frac{\mu L}{\pi} \right)}{8 \pi}  +
+		\frac{ 
+			\alpha \log \left( \frac{\mu L}{\pi}\right)
 				( \log (2 \pi ) + \gamma -1)}
-			{ \pi  L}  
+			{4 \pi }  
+	- \frac{\alpha (\gamma + \log (2 \pi ) )}{4 \pi}
 \\[5pt]
 \nonumber
 &
 +
-\frac{\pi}{2 L }  
-					\left(
-							- \frac{1}{12} +
-							\frac{\beta}{2 \pi ^2} \left(
-														\gamma \log (2 \pi)
-														+ \gamma _1
-														\right) +
-							\left(
-								a _1 \frac{\gamma}{\pi} +
+	\frac{\pi}{2 L}  
+			\left(
+				- \frac{1}{12} +
+				\frac{\alpha L}{2 \pi ^2} 
+				\left(
+					\gamma \log (2 \pi)
+					+ \gamma _1
+					\right) +
+								\frac{\gamma \alpha L}{2 \pi ^2} +
 								\frac{1}{\pi} \sum _{p=2} ^{\infty}
 								a_p \zeta (p) 
-								\right)
 							\right) 
 \, .
 \end{align}
+Dado que $a _p$ es un polinomio en $\alpha L$, se obtiene para la energía de vacio en el limite $\alpha \rightarrow 0$
+\begin{equation}
+\lim \limits_{\alpha \rightarrow 0} E _0 = 
+		- \frac{\pi}{24 L}
+\, ,
+\end{equation}
+lo cual corresponde a la energía de vacío sin potencial con condiciones de contorno Dirichlet en ambos extremos, coincidiendo   con la ecuación \ref{eq.energia.dirichlet} de la sección \ref{sec.Dirichlet}.
 
-La cual presenta 3 tipos de comportamientos, términos divergentes a renormalizar en la teoría (primer linea), términos que dependen de manera no trivial con la escala (segunda linea) y términos que no dependen la escala (ultima linea).
-
-
-En el apéndice \ref{Apendice.1} está escrito un script en el software Mathematica que permite obtener los términos $a _p$ de la ecuación anterior. 
-Una vez obtenidos suficientes términos $a_p$ se puede graficar la parte finita de la energía de vacío e independiente de $\mu$, lo que está hecho en la imagen \ref{fig.finitas}
+En el apéndice \ref{Apendice.1} se encuentra un script del software Mathematica que permite obtener los términos $a _p$, En este caso se calcularon hasta $p=10$, en la figura \ref{fig.finitas} está graficada la energía de vacío adimensionalizada obtenida pr este método junto con el método que se describirá en el capítulo siguiente.
 
 
 
@@ -925,19 +842,300 @@ Una vez obtenidos suficientes términos $a_p$ se puede graficar la parte finita 
     \centering
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[height=1.2in]{Finita.pdf}
+        \includegraphics[height=1.0in]{Finita.pdf}
         \caption{Aquí se divide a ambos miembros de la ecuación \ref{eq.graficar} por $				\alpha$, de aquí se puede ver que la energía de vacío es siempre atractiva.}
         \label{fig.izquierda}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
-        \includegraphics[height=1.2in]{exportar1.pdf}
+        \includegraphics[height=1.0in]{exportar1.pdf}
         \caption{Aquí se multiplica a ambos lados \ref{eq.graficar} por $L$, ademas 				se puede apreciar en el inset que en el limite $\beta \rightarrow 0$ la energía 		tiende a $- \frac{1}{12}$}
         \label{fig.derecha}
     \end{subfigure}
     \caption{En esta imagen se muestran dos posibles adimensionalizaciones de la ecuación \ref{eq.graficar}, que representan la energía de vacío independiente de $\mu$ .}
 \label{fig.finitas}
 \end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=1.45in]{Energias.pdf}
+        \caption{}
+%        \label{fig.izquierda}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=1.45in]{Ls.pdf}
+        \caption{}
+%        \label{fig.derecha}
+    \end{subfigure}
+    \caption{En esta imagen se muestra la energía de Casimir $E _0$ para distintos valores de $\alpha$ en función de la longitud del intervalo $L$, puede verse que a medida que incrementa $\alpha$ la energía de vacío posee un máximo local mas abrupto.}
+\label{fig:vacios}
+\end{figure*}
+
+\subsection{Parte finita de la energía de vacío la venganza }
+
+En la sección \ref{sec.complejo} se mostró que la función $\zeta (s)$ puede representarse mediante una integral en el plano complejo, junto con posibles caminos que permiten calcular esta integral en la figura \ref{fig:contorno}. En los dos capítulos anteriores \ref{cap.sencillos}  y \ref{cap.singular} se utilizó el contorno \ref{fig.derecha} para obtener la estructura de polos, en este capítulo se utilizará el contorno \ref{fig.derecha.derecha} para obtener tanto los polos como su parte finita en $s = - \frac{1}{2}$.
+
+Al igual que en los capítulos \ref{cap.sencillos}  y \ref{cap.singular} la energía de vacío queda expresada como la integral
+\begin{equation}
+	\zeta (s) = 
+	\frac{1}{2 \pi i} \int _{\mathcal{C}} 
+						\left( \frac{\lambda}{\mu} \right) ^{-2s}
+						\partial _ \lambda 
+						\log F _1 ^{1} 
+						\left( 1+\frac{ \alpha}{2 \lambda i },
+							2,2 i \lambda x 
+							\right)												
+						d \lambda
+	\, .
+\end{equation}
+Utilizando las variables adimensionales $\beta = \alpha L$ y  $\tau = \lambda L$ la ecuación anterior puede reescribirse de la forma
+\begin{align}
+\label{eq.ultima.int}
+	\zeta (s) =& 
+	\frac{\left(L \mu \right)^{2s}}{2 \pi i} \int _{\mathcal{C}} 
+	f (\tau , \beta) \tau ^{-2s} d \tau 
+\, ,
+\end{align}
+donde $f( \tau, \beta)$ está dada por
+\begin{align}
+f(\tau, \beta) =& 	
+i
+\frac{
+		\left(1 + \frac{ \beta}{2 i \tau} \right) 
+		F _1 ^1 
+			\left( 2 + \frac{ \beta}{2 i \tau} ,3 ,2 i \tau \right)
+		+ \left( \frac{\beta				
+				}
+				{2 \tau ^2 } 
+				\right)
+				( F _{1} ^1 ) ^{(1,0,0)}
+				\left( 1 + \frac{\beta}{2 i \tau} ,2 ,2 i \tau
+						\right)
+		}
+		{F _1 ^1 \left( 1 + \frac{\beta}{2 i \tau},2,2 i \tau \right)} 
+\, .		
+\nonumber
+\end{align}
+Utilizando el camino de integración \ref{fig.derecha.derecha}, la integral \ref{eq.ultima.int} puede reescribirse como suma de cuatro integrales
+\begin{align*}
+\zeta (s) = 
+- \frac{L ^{2s}}{2 \pi } 
+\Bigg(&	  e ^{- i \pi s} \int _0 ^{C _0}
+			f (i t,\beta )
+			t ^{-2s}  dt 
+		+ e ^{- i \pi s} \int _{C _0} ^{\infty}
+			f (i t,\beta )
+			t ^{-2s}  dt \\
+		+&e ^{i \pi s} \int _{0} ^{C _0} 
+			f (-i t,\beta )
+			t ^{-2s}  dt 
+		+ e ^{i \pi s} \int _{C _0} ^{\infty}
+			f (-i t,\beta )
+			t ^{-2s}  dt 
+	\Bigg)
+\, ,
+\end{align*}
+Donde la primer y tercer integral pueden calcularse de manera numérica en $s= -\frac{1}{2}$ dado que allí son convergentes. La segunda y la cuarta contienen el término divergente de $\zeta \left(- \frac{1}{2} \right)$ calculado en la ecuación (\ref{eq.result.zeta.c}), para calcular la parte finita de estas integrales se utiliza el desarrollo \ref{eq.aprox} obteniendo
+\[ 
+f   ( i t ,\beta )=
+\begin{cases} 
+	  f _{+} ( t, \beta) = 
+	  i  \left(
+			\frac{1}{t} - \frac{\beta}{2 t ^2 } + \frac{\beta}{2 t^2}
+			\log (2 t) + \frac{\beta \gamma}{2 t^2} 
+			\right) + O (t ^{-3})
+	  & t > 0 \\
+	  f _{-} ( t, \beta) =
+      i  \left(
+			- \frac{1}{t} + \frac{\beta}{2 t ^2 } - \frac{\beta}{2 t^2}
+			\log (2 t) - \frac{\beta \gamma}{2 t^2} +2
+			\right) + O (t ^{-3})
+      & t < 0
+   \end{cases}   
+\]
+Utilizando este desarrollo las ultimas dos integrales pueden expresarse
+\begin{align}
+\nonumber
+	\int _{C _0} ^{\infty}
+			f (i t,\beta )
+			t ^{-2s}  dt &= 
+	\int _{C _0} ^{\infty}
+		\left(
+			f (it, \beta) - f _{+} (t, \beta )			
+				\right) t ^{-2s} dt 
+	\\ &+ 
+\nonumber
+	\int _{C _0} ^{\infty}
+			f _{+} ( t, \beta)
+			 t ^{-2s} dt  \\
+\nonumber
+	\int _{C _0} ^{\infty}
+			f (-i t,\beta )
+			t ^{-2s}  dt &= 
+	\int _{C _0} ^{\infty}
+		\left(
+			f (-it, \beta) - f _{-} (t, \beta )			
+				\right) t ^{-2s} dt 
+	\\ &+ 
+\nonumber
+	\int _{C _0} ^{\infty}
+			f _{-} ( t, \beta)
+			 t ^{-2s} dt
+\end{align}
+Donde las términos de arriba pueden integrarse numéricamente en $s=-1/2$ dado que son convergentes. 
+
+Las contribuciones divergentes están dadas por
+\begin{align}
+\label{arriba}
+&
+	\int _{C _0} ^{\infty}
+			f _{+} (t, \beta )			
+			 t ^{-2s} dt =  
+	O \left( s + \frac{1}{2} \right)
+\\[5pt]
+\nonumber			
+&+
+	i \left(- C _0 
+		    - \frac{\beta \log C_0 (\gamma + \log 2 - 1 ) 
+		    		}{2} 
+		    - \frac{\beta \log ^2 C _0}{4}
+		    + \frac{\beta ( \gamma + \log 2 -1 )}{4 (s + 1/2)} 
+		    + \frac{\beta}{8 (s + \frac{1}{2}) ^2}
+					\right)
+\\[5pt]
+\label{abajo}
+&
+	\int _{C _0} ^{\infty}
+			f _{-} ( t, \beta)
+			 t ^{-2s} dt =
+	O \left(s + \frac{1}{2} \right)
+\\[5pt]
+\nonumber
+&+
+	i \left(C _0 
+			- C _0 ^2
+		    + \frac{\beta \log C_0 (\gamma + \log 2 - 1 ) 
+		    		}{2} 
+		    + \frac{\beta \log ^2 C _0}{4}
+		    - \frac{\beta ( \gamma + \log 2 -1 )}{4 (s + 1/2)} 
+		    - \frac{\beta}{8 (s + \frac{1}{2}) ^2}
+					\right)
+\end{align}
+%%Esta integral no se si ponerla completa o no...
+\begin{comment}
+\begin{align}
+\nonumber
+&
+	\int _{C _0} ^{\infty}
+			f _{+} (t, \beta )			
+			 t ^{-2s} dt =  
+				i \left(
+						\frac{C _0 ^{-2s}}{2s} +
+						\frac{ \beta C _0 ^{-2s-1}}
+							 {4} \left(
+										\frac{\gamma  + \log 2 C_0 -1}
+										{s + 1/2}
+										+ \frac{1}{2 (s + 1/2) ^2}
+										\right)
+						\right)
+\\[5pt]
+\nonumber			
+&=
+	i \left(- C _0 
+		    - \frac{\beta ( 2 \gamma + \log 4 C _0 -2 ) \log C_0
+		    		}{4} 
+		    + \frac{\beta ( \gamma + \log 2 -1 )}{4 (s + 1/2)} 
+		    + \frac{\beta}{8 (s + \frac{1}{2}) ^2}
+					\right)
+\\
+&
+	+ O \left( s + \frac{1}{2} \right)
+\\[5pt]
+\nonumber
+&
+	\int _{C _0} ^{\infty}
+			f _{-} ( t, \beta)
+			 t ^{-2s} dt  \\
+& 
+=
+\nonumber
+				i \left(
+						\frac{C _0 ^{-2s+1} }{s - \frac{1}{2}}
+						- \frac{C _0 ^{-2s}}{2s} 
+						- \frac{ \beta C _0 ^{-2s-1}}
+							 {4} \left(
+										\frac{\gamma  + \log 2 C_0 -1}
+										{s + 1/2}
+										+ \frac{1}{2 (s + 1/2) ^2}
+										\right)
+						\right)
+\\[5pt]
+\nonumber
+&=
+	i \left(
+			- C _0 ^2 
+			+ C _0 
+		    + \frac{\beta ( 2 \gamma + \log 4 C _0 -2 ) \log C_0
+		    		}{4} 
+		    - \frac{\beta ( \gamma + \log 2 -1 )}{4 (s + 1/2)} 
+		    - \frac{\beta}{8 (s + \frac{1}{2}) ^2}
+					\right)
+\\
+	& + O \left(s + \frac{1}{2} \right)
+\end{align}
+\end{comment}
+Se obtiene entonces para $\zeta \left( - \frac{1}{2} \right)$
+\begin{eqnarray}
+\zeta \left( - \frac{1}{2} \right) &=& 
+- \frac{i}{2 \pi L \mu} 
+\Bigg(	  
+		 \int _{C _0} ^{\infty}
+			\left(
+					f (i t,\beta )
+					- f (-i t,\beta )
+					- f _{+} (t) 
+					+ f _{-} (t)
+					\right)
+			t   dt   \nonumber
+\\ \nonumber
+&&\hskip 1.5cm +
+		 \int _{- C _0} ^{C _0}
+			f (i t,\beta )
+			t   dt 	
+	\Bigg)
+\\ \nonumber
+&&
+	- \frac{\beta \log ^2 C _0}{4 \pi L \mu}
+	- \frac{\beta \log C _0 (\gamma + \log 2 -1 )}{2 \pi L \mu} 
+	- \frac{16 C_0 - 8 C _0 ^2 + \pi ^2 \beta}{16 \pi L \mu}
+\\ \nonumber
+&&
+	+\frac{\beta \log ^2 (L \mu )}{4 \pi L \mu} 
+	+ \frac{\beta \log  (L \mu) (\gamma + \log 2 -1)}{2 \pi L \mu}
+\\ 
+&&	+ \frac{\beta}
+		 {8 \pi L \mu  \left( s + \frac{1}{2} \right) ^2} +
+	\frac{\beta (\gamma + \log (2 L \mu) -1 ) }
+		 {4 \pi L \mu  \left( s + \frac{1}{2} 														 \right)} 
+\, .
+\end{eqnarray}
+Donde en la última linea se están los polos calculados en REF, y en la penultima linea la dependencia con la escala $\log (L \mu)$
+
+
+
+
+
+
+
+
+
+
+
+
 
 
