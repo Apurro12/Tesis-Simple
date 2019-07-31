@@ -1,123 +1,108 @@
 \chapter{Limite Continuo}
 
-En esta sección se va a estudiar la función $\zeta (s) $ en el limite $L \rightarrow \infty$, donde la función $\zeta _A (s)$ va a quedar definida por:
+En esta sección se va a estudiar la {\it función-$\zeta $} en el limite $L \rightarrow \infty$, donde $\zeta  (s)$ va a quedar definida por:
 
 \begin{equation}
 \zeta (s) = \int _{0} ^{\infty} \rho (x) \ \left( \frac{x}{\mu } \right) ^{-2 s} dx
 \end{equation}
 
-Donde la $\rho(x) $ es la densidad de autovalores, para llegar a esta representación se utilizó la representación integral, donde el camino de integración de está dado por la figura izquierda de (\ref{fig:contorno}). La parametrización usada fue:
+Donde la $\rho(x) $ representará la densidad de autovalores, para llegar a esta representación se va a utilizar la representación integral como en los capítulos \ref{seq.2.com} y \ref{sec.finita.compleja}, pero a diferencia de estos el camino de integración estará dado por  (\ref{fig.izquierda}). La parametrización usada fue:
 
 
 \[
 z(t) =  
 	  \begin{cases} 
-      t + i \epsilon  & x _0 \leq t \leq \infty \\
-      t - i \epsilon  & x _0 \leq t \leq \infty \\
-      x _0 + i t		  & - \epsilon \leq t \leq \epsilon
+      x + i \epsilon  & x _0 \leq x \leq \infty \\
+      x - i \epsilon  & x _0 \leq x \leq \infty \\
+      x _0 + i y		  & - \epsilon \leq y \leq \epsilon
    \end{cases}
 \]
 
 De (\ref{larga}) se puede ver que $S1,S2 \rightarrow 1$ cuando $L \rightarrow \infty$, por lo tanto se va a utilizar $M ( \lambda)$ dada por (\ref{eq.completa}).\\
 
 
-
-Dependiendo si se está arriba o abajo del eje real, va a existir un termino exponencialmente creciente/decreciente en el limite $L \rightarrow \infty$ proveniente de $e ^{i z t}$
-
-La integral correspondiente a arriba del eje real es:
-
-\begin{equation}
-\begin{array}{c}
-\frac{ 1 }{2 \pi i} \int _{\infty} ^{t0} 
-\partial _z
-Log
-\left(
-\frac{e ^{-2 i z  L } e ^{- \frac{i \alpha}{2 \lambda} Log \left( 2 z  L \right) } }
-	 {\Gamma \left( 1 + \frac{ \alpha}{2 i z } \right)} +
-\frac{e ^{ \frac{i \alpha}{2 z } Log \left( 2 z  L \right)  } }{\Gamma \left( 1 - \frac{ \alpha}{2 i z } \right) }
-\right) d z \\
-z = i t + \epsilon 
-\end{array}
-\end{equation}
-
-Sacando factor común de modo de obtener un termino exponencialmente decreciente adentro del logaritmo se obtiene:
-
-\begin{equation}
-\frac{ 1 }{2 \pi i}  \int _{\infty} ^{t0} 
-\partial _{z}
-\left(
-\frac{i\alpha}{2 z} Log ( 2 z L ) - 
-Log \left( \Gamma \left( 1 - \frac{ \alpha}{2 i z} \right) \right) +
-Log \left( 1- \epsilon _L \right)
-\right)
-d z
-\end{equation}
-
-Donde $ \epsilon _L \rightarrow 0$ si $L \rightarrow \infty $ , utilizando el mismo razonamiento para la integral de abajo, y luego tomando el limite $\epsilon \rightarrow 0$, se obtiene:
-
-\begin{equation}
-\begin{array}{c}
-\frac{\zeta (s)}{\mu ^{2s}} = 
-\frac{L }{\pi}
-\int _ {x_0} ^{\infty} x ^{-2s} dx + \\[10pt]
-\frac{\alpha }{2 \pi } \int _{x_0} ^{\infty} 
-\left(-
-\frac{1}{ x ^2} +
-\frac{Log \left( 2 x L \right) }{x ^2}  -
-\frac{1}{ 2 x ^2 } 
-\left(
-\psi (1 - \frac{ \alpha}{2 i x}) - \psi (1 + \frac{ \alpha}{2 i x}) 
-\right)
-\right)
-x ^{-2s} d x
-\end{array}
-\end{equation}
-
-
-
+Dependiendo si se está arriba o abajo del eje real, va a existir un termino exponencialmente creciente/decreciente en el limite $L \rightarrow \infty$  proveniente de $e ^{i z t}$.
+\begin{align}
+	\frac{ 1 }{2 \pi i}  
+&	
+	\int _{\infty} ^{x _0} 
+	x ^{-2s}
+	\left( +
+	\frac{i \alpha}{2 x^2} - 
+	\frac{i \alpha }{2 \lambda ^2} \log ( 2 \lambda L ) +
+	\frac{i \alpha}{2 x ^2 } \psi \left( 1 + \frac{i \alpha}{2 x} \right) +
+	\epsilon _L
+	\right)
+	d x
+\\
+	\frac{ 1 }{2 \pi i}  
+&	
+	\int _{x _0} ^{\infty} 
+	x ^{-2s}
+	\left( -
+	\frac{i \alpha}{2 x^2} + 
+	\frac{i \alpha }{2 \lambda ^2} \log ( 2 \lambda L ) -
+	\frac{i \alpha}{2 x ^2 } \psi \left( 1 + \frac{i \alpha}{2 x} \right) +
+	\epsilon _L
+	\right)
+	d x
+\\
+&
+	\lim \limits _{L \rightarrow \infty} \epsilon _L = 0
+\end{align}
+Donde, ambas integrales pueden expresarse como una sola de la forma
+\begin{align}
+&
+	\zeta (s)=
+	\frac{L }{\pi}
+	\int _ {x_0} ^{\infty} \left( \frac{x}{\mu} \right) ^{-2s} dx
+\\	 
+& 
+\nonumber
+	+
+	\frac{\alpha }{2 \pi } \int _{x_0} ^{\infty} 
+	\left( \frac{x}{\mu} \right) ^{-2s}
+	\left(-
+	\frac{1}{ x ^2} +
+	\frac{\log \left( 2 x L \right) }{x ^2}  -
+	\frac{1}{ 2 x ^2 } 
+	\left(
+	\psi \left( 1 + \frac{i \alpha}{2  x} \right) + \psi \left( 1 - \frac{i \alpha}{2 x} \right) 
+	\right)
+	\right)
+	d x
+\end{align}
 Realizando las integrales termino a termino se obtiene:
-\begin{equation}
-\begin{array}{c}
-\frac{\zeta (s)}{\mu ^{2s}} = 
-
-
-\frac{L  }{2 \pi} \frac{x _0 ^{1-2s}}{s-1/2} + 
-
-
-\frac{\alpha  }{2 \pi} x _{0} ^{-2s-1}
-\left( 
-	-\frac{1}{2(s+1/2)} +
-	\frac{1}{4 (s+1/2) ^2} +
-	\frac{Log(2 L x _0)}{2(s+1/2)} 
-	\right) + 
-
-  \\[10pt]
-
-
-- \frac{\alpha  }{4 \pi}
-\int _{x_0} ^{\infty} 
-\left(
-\psi(1 + \frac{i \alpha}{2 x}) +
-\psi(1 - \frac{i \alpha}{2 x} )
-\right)
-x ^{-2s-2}
-dx
-\end{array}
-\end{equation}
-
-
+\begin{align}
+	\zeta (s)=
+&
+\nonumber
+	\frac{L  \mu ^{2s} x _0 ^{1-2s} }{2 \pi \left( s- \frac{1}{2} \right)}  + 
+	\frac{\alpha \mu ^{2s} x _{0} ^{-2s-1} }{2 \pi} 
+	\left( 
+	\frac{1}{4 \left(s+ \frac{1}{2} \right) ^2} +
+	\frac{\log(2 x _0 L) -1 }{2 \left(s+\frac{1}{2} \right)} 
+	\right) 
+\\
+-
+&	
+	\frac{\alpha \mu ^{2s} }{4 \pi}
+	\int _{x_0} ^{\infty} 
+	x ^{-2s-2}
+	\left(
+	\psi \left( 1 - \frac{i \alpha}{2 x} \right) +
+	\psi \left( 1 + \frac{i \alpha}{2 x} \right)
+	\right)
+	dx
+\end{align}
 Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion $\psi $ que se pueden usar, se va a usar el desarrollo dado en \cite{Abramowitz:1974:HMF:1098650}.
-
 \begin{equation}
 \begin{array}{cc}
-\psi (1+ z ) = - \gamma + \sum _{n=2} ^{\infty} (-1) ^n \zeta (n) z ^{n-1} & |z| < 1
+\psi (1+ z ) = - \gamma + \sum \limits_{n=2}^{\infty} (-1) ^n \zeta (n) z ^{n-1} & |z| < 1
 \end{array}
 \label{repr}
 \end{equation}
-
-
 El último termino queda expresado como:
-
 \begin{equation}
 - \frac{\alpha}{4 \pi}
 \int _{x_0} ^{\infty}
@@ -130,83 +115,80 @@ El último termino queda expresado como:
 \right)
 x ^{-2s-2} dx
 \end{equation}
+Quedando $\zeta  (s) $ :
+\begin{align}
+	\zeta (s)=
+&
+\nonumber
+	\frac{L  \mu ^{2s} x _0 ^{1-2s} }{2 \pi \left( s- \frac{1}{2} \right)}  + 
+	\frac{\alpha \mu ^{2s} x _{0} ^{-2s-1} }{2 \pi} 
+	\left( 
+	\frac{1}{4 \left(s+ \frac{1}{2} \right) ^2} +
+	\frac{\log(2 x _0 L) -1 + \gamma}{2 \left(s+\frac{1}{2} \right)} 
+	\right) 
+\\
++
+&	
+	\frac{\alpha }{4\pi} 
+	\sum _{n=1} ^{\infty} (-1) ^{n} \zeta (2n+1) 
+	\left( \frac{\alpha}{2 } \right) ^{2n} \ \frac{x _0 ^{-2s-2n-1}}{s+n+ \frac{1}{2}}
+\end{align}
+Obteniendo para $\zeta \left( - \frac{1}{2} \right)$
+\begin{align}
+	\zeta \left(- \frac{1}{2} + \epsilon \right)=
+&
+\nonumber
+	-
+	\frac{L x _0 ^2}{2 \pi \mu}+ 
+	\frac{\alpha}{8 \pi \mu  \epsilon  ^2} +
+	\frac{\alpha \left( \log (2 L \mu ) + \gamma -1  \right)}{4 \pi \mu  \epsilon }
+\\
+\nonumber
+&
++
+	\frac{\alpha \log \left( \frac{\mu}{x _0} \right) 	
+		\left( 2 (\log ( 2 L x_0) + \gamma -1 ) + \log \left( \frac{\mu}{x _0}\right)  \right) }{4 \pi \mu}
+\\
+&
++	
+	\frac{\alpha }{4\pi} 
+	\sum _{n=1} ^{\infty} \frac{(-1) ^{n} \zeta (2n+1) }{n}  
+	\left( \frac{\alpha}{2 x _0} \right) ^{2n}
+\end{align}
+De esta expresión puede verse que los polos en $s = -\frac{1}{2}$ coinciden con los calculados para un intervalo $L$ finito.
 
-Quedando la función $\zeta _A (s) $ :
+La energía de vacío resulta
+\begin{align}
+\label{eq.energia.cotinua}
+	E _0 ( \epsilon ) 
+&	
+	=
+\nonumber
+	\frac{\alpha}{16 \pi  \epsilon  ^2} +
+	\frac{\alpha \left( \log (2 L \mu ) + \gamma -1  \right)}{8 \pi \epsilon } -
+	\frac{L x _0 ^2}{4 \pi}
+\\
+\nonumber
+&
++
+	\frac{\alpha \log \left( \frac{\mu}{x _0} \right) 	
+		\left( 2 (\log ( 2 L x_0) + \gamma -1 ) + \log \left( \frac{\mu}{x _0}\right)  \right) }{8 \pi}
+\\
+&
++	
+	\frac{\alpha }{8 \pi} 
+	\sum _{n=1} ^{\infty} \frac{(-1) ^{n} \zeta (2n+1) }{n}  
+	\left( \frac{\alpha}{2 x _0} \right) ^{2n}
+\end{align}
 
-\begin{equation}
-\begin{array}{c}
-\frac{\zeta _A (s)}{\mu ^{2s}} = 
-\frac{L  }{2 \pi } \frac{ x _0 ^{1-2s} }{s- 1/2} + 
-\frac{\alpha  }{8 \pi } \frac{ x_0 ^{-2s-1} }{(s+1/2) ^2} + \\[10pt]
-
-
-\frac{\alpha  }{4 \pi } 
-\left(
-Log(2 L x _0 ) -1 + \gamma 
-\right)
-\frac{x _0 ^{-2s-1}}{s+1/2} + \\[10pt]
-
-
-\frac{\alpha }{4\pi} 
-\sum _{n=1} ^{\infty} (-1) ^{n} \zeta (2n+1) 
-( \frac{\alpha}{2 } ) ^{2n} \ \frac{x _0 ^{-2s-2n-1}}{s+n+1/2}
-\end{array}
-\end{equation}
-
-La parte finita de esta expresión en $s=-1/2$ viene dada por:
-
-\begin{equation}
-\begin{array}{c}
-
-PF \ \zeta (s=-1/2) = 
-
-- \frac{L x_0 ^2}{2 \pi \mu} \ + \\[10pt]
-
-\frac{\alpha}{4 \pi} 
-						\sum _{n=1} ^{\infty} \frac{(-1) ^n}{n} \zeta (2n+1)
-						\left( \frac{\alpha}{2 x_0 } \right) ^{2n}  + \\[10pt]
-
-\frac{\alpha  }{4 \pi } 
-\left(
-Log(2 L x _0 ) -1 + \gamma 
-\right)
-\left. \frac{ x _0 ^{-2s-1} \mu ^{2s} -  \frac{1}{\mu}  }{s+1/2} \right| _{s=-1/2}  + \\[10pt]
-
-					
-
-\end{array}
-\end{equation}
-
-Donde el último término debe entenderse como el desarrollo de taylor,que converge en $s=-1/2$.
-
-
-En la figura [ \ref{fig:vacio} ] está graficado el segundo termino, en función de $x = \alpha / x_0$. Puede verse una divergencia alrededor de $x=2$, la cual se debe a la divergencia en la representación (\ref{repr}).
+En la figura \ref{fig:vacio} está graficado el último termino de la energía de vacío en función de $x = \alpha / x_0$, puede observarse una divergencia alrededor de $x=2$ la cual se debe a la representación (\ref{repr}).
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.3]{Vacio.jpg}
-    \caption{En esta imagen esta graficada la parte finita de la $\zeta _A (-1/2) $ en función del parámetro $x= \frac{\alpha}{x _0}$ donde se sumaron los primeros 100 términos de la serie, y en azul se puede ver la suma de la serie al reemplazar $\zeta (2n+1) = 1$}
+    \caption{En esta imagen esta graficada la parte finita de la $E _0 (\epsilon) $ de la ecuación \ref{eq.energia.cotinua} en función del parámetro $x= \frac{\alpha}{x _0}$ donde se sumaron los primeros 100 términos de la serie, y en azul se puede ver la suma de la serie al reemplazar $\zeta (2n+1) = 1$}
     \label{fig:vacio}
 \end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

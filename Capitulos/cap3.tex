@@ -9,16 +9,11 @@ tiene exclusivamente potencias semi-enteras de t. Veremos que
 en el caso del operador singular que hemos analizado el desarrollo contiene
 términos $\log t$.
 
-Aquí se van aplicar las herramientas desarrolladas en el capitulo anterior
-al estudio del espectro de un operador singular en un intervalo compacto,
-encontrando una contradicción al teorema (\ref{eq.heat.expansion}), a su vez se va a generar un scipt de Mathematica que permite graficar distintas aproximaciones a
-la parte finita de la energía de vacío.
-
 
 \section{El Operador Singular}
 
 
-En está sección se estudiará el siguiente operador diferencial definido sobre funciones en el intervalo $[0,L]$,
+En está sección se estudiará el siguiente operador diferencial definido sobre funciones $\phi (x)\in \mathbb{L} ^2 [0,L]$,
 \begin{equation}
 \begin{aligned}
     A \phi (x) &= - \partial ^2 _x  \phi(x) + \frac{\alpha}{x} \phi(x) \\[5pt]
@@ -26,7 +21,7 @@ En está sección se estudiará el siguiente operador diferencial definido sobre
 \end{aligned}
 \label{operador}
 \end{equation}
-Por simplicidad, imponemos condiciones Dirichlet en ambos extremos. El parámetro $\alpha \in \mathbb{R _{+}}$ caracteriza la singularidad en el origen.
+Por simplicidad, se analizaran condiciones Dirichlet en ambos extremos para luego en el capítulo (REF) estudiar otras condiciones de contorno. El parámetro $\alpha \in \mathbb{R _{+}}$ caracteriza la singularidad en el origen.
 
 Los autovalores están dados por la ecuación 
 \begin{equation}
@@ -61,7 +56,7 @@ Las autofunciones, en términos de dos soluciones linealmente independientes $\p
 \end{aligned}
 \label{eq.phi}
 \end{equation}
-Donde $F _1 ^1(a,b,z)$ y $ U(a,b,z)$ son las soluciones LI de la ecuación hypergeométrica
+Donde $F _1 ^1(a,b,z)$ y $ U(a,b,z)$ son las soluciones LI de la ecuación {\mbox{hypergeométrica} }
 \begin{equation}
     z \ \partial ^2 _z \ \psi (a,b,z) + (b-z) \
     \partial _z \psi (a,b,z)
@@ -106,26 +101,26 @@ C _2 \ x
 \label{eq.scat}
 \end{align}
 de este desarrollo se ve que $ \phi _1 (x \rightarrow 0 ) \rightarrow 0,\phi _2 (x \rightarrow 0)  \rightarrow
-\frac{1}{  \alpha   \Gamma ( \frac{i \alpha}{2 \lambda}  )   } $ , entonces la condición de contorno en $x=0$ fija $C _2 =0$. En caso de que $\Gamma ( \frac{i \alpha}{2 \lambda}  ) \rightarrow \infty$, $\phi _2 (0) = 0$.
+\frac{1}{  \alpha   \Gamma ( \frac{i \alpha}{2 \lambda}  )   } $ , entonces la condición de contorno en $x=0$ fija $C _2 =0$. A menos que $\Gamma ( \frac{i \alpha}{2 \lambda}  ) \rightarrow \infty$, en ese caso $\phi _2 (0) = 0$.
 
 
-Utilizando la condición de contorno en $x=L$ los autovalores están dados por las soluciones de la siguiente ecuación
+Imponiendo la condición de contorno en $x=L$ los autovalores están dados por las soluciones de
 \begin{equation}
 F _1 ^1 \left(1-\frac{i \alpha}{2 \lambda},2,2 i \lambda L \right)  = 0
 	\, .
 \label{eq.1}
 \end{equation}
-En la figura (\ref{fig:funcion}) graficamos
-\mbox{$ | F _1 ^1 (1-\frac{i \alpha}{2 \lambda},2,2 i \lambda L) | ^2 $} para los valores  $\alpha=1, \ L=1$. Las intersecciones con el eje horizontal indican los autovalores positivos del espectro del operador singular.
-
+En la figura (\ref{fig:funcion}) se encuentra graficado
+\mbox{$ | F _1 ^1 (1-\frac{i \alpha}{2 \lambda},2,2 i \lambda L) | ^2 $} para $\alpha=1, \ L=1$. Las intersecciones con el eje horizontal indican los autovalores positivos del espectro del operador singular.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.7]{Funcion.pdf}
-\caption{En esta imagen se puede ven ver los primeros ceros de la función $| F _1 ^1 (1+\frac{ \alpha}{2 i \lambda},2,2 i \lambda L) | ^2$, para $\alpha=1$ y $L=1$, los cuales representan a los primeros autovalores de $A$.}
+\caption{En esta imagen se puede ven ver los primeros ceros de la función $| F _1 ^1 (1+\frac{ \alpha}{2 i \lambda},2,2 i \lambda L) | ^2$, para $\alpha=1$ y $L=1$, los cuales representan a los primeros autovalores del operador $A$.}
 \label{fig:funcion}
 \end{figure}
 
-Más adelante utilizaremos el desarrollo asintótico de la funcion $F _1 ^1 (a,b,z)$ para $z \rightarrow \infty$, \cite{Abramowitz:hyper},
+
+Para calcular $\zeta(s)$ se utilizará el desarrollo asintótico de la funcion $F _1 ^1 (a,b,z)$ para $z \rightarrow \infty$ \cite{Abramowitz:hyper},
 \begin{equation}
 \begin{aligned}
     F _1 ^1 (a,b,z) &= \Gamma (b) 
@@ -135,11 +130,11 @@ Más adelante utilizaremos el desarrollo asintótico de la funcion $F _1 ^1 (a,b
     \right) \\[5pt]
     S _1 (z) &= \sum _{n=0} ^{\infty} \frac{(b-a) _n (1-a) _n}{n!} z ^{-n} \\[5pt]
     S _2 (z) &= \sum _{n=0} ^{\infty} \frac{(a) _n (1+a-b) _n}{n!} (-z) ^{-n}     
-		\, .
+		\, ,
 \end{aligned}
 \label{eq.aprox}
 \end{equation}
-$S_1$ y $S _2$ representan el desarrollo a todo orden. Para calcular el polo de la {\it función-$\zeta$} en $s=-1/2$ basta tomar $S _1 = S _2 = 1$ que es lo que se hará a continuación, para conocer los polos mas hallá de $s=-1/2$ o para estudiar la parte finita de $\zeta (-1/2)$ se deben tomar mas términos en $S_1$ y $S _2$, lo cual se hará al final de este capítulo en las secciones \ref{sec.sig.polos} y \ref{sec.regular}.
+aquí $S_1$ y $S _2$ representan el desarrollo a todo orden. Para calcular el polo de  $\zeta \left( - \frac{1}{2} \right)$ basta tomar $S _1 = S _2 = 1$ que es lo que se hará a continuación. Para estudiar los polos en la región  $Re(s) < - \frac{1}{2}$, o para estudiar la parte finita de $\zeta \left(-\frac{1}{2} \right)$ en $s = - \frac{1}{2}$, se deben tener en cuenta todos los términos de $S_1$ y $S _2$, lo cual se hará al final de este capítulo en las secciones \ref{sec.sig.polos} y \ref{sec.regular}.
 
 
 Utilizando (\ref{eq.aprox}) y tomando $S _1 = S _2 = 1$, $F _1 ^1 \left(1+  \frac{  \alpha}{2 i \lambda} ,2 ,2 i \lambda L  \right)$ está dado por
@@ -153,60 +148,58 @@ Utilizando (\ref{eq.aprox}) y tomando $S _1 = S _2 = 1$, $F _1 ^1 \left(1+  \fra
     \, ,
 \label{eq.completa}
 \end{equation}
-dado que $M( \lambda)$ posee los mismos ceros que (\ref{eq.completa}), se puede utilizar $M( \lambda)$  para estudiar los polos de la {\it función-$\zeta$} para $s \geq - \frac{1}{2}$, así  como cualquier otra función que contenga los mismos ceros.
+dado que $M( \lambda)$ posee los mismos ceros que (\ref{eq.completa}), se puede utilizar $M( \lambda)$  para estudiar los polos de $\zeta (s)$ en la región  $Re(s) \geq - \frac{1}{2}$, así  como cualquier otra función que contenga los mismos ceros.
 
 \section{Calculo Asintótico de los autovalores}\label{seq.2.asin}
 
-En está sección seguiremos el procedimiento descrito en \ref{seq.asin} para estudiar la estructura de polos de la función $\zeta$: calcularemos el desarrollo asintótico de grandes autovalores, que luego será utilizado para determinar los residuos en los primeros polos $s= \frac{1}{2}$ y $s= - \frac{1}{2}$.
+En está sección seguiremos el procedimiento descrito en \ref{seq.asin} para estudiar la estructura de polos de $\zeta (s)$: calcularemos el desarrollo asintótico de grandes autovalores, que luego será utilizado para determinar los residuos en los primeros polos $s= \frac{1}{2}$ y $s= - \frac{1}{2}$.
 
 
 
-Es conveniente definir las variables adimensionales: $\mu _n = \lambda _nL $ y $\beta = \alpha L$. Luego en vez de utilizar $M (\mu _n)$ definida en (\ref{eq.completa}) se trabajará una función $N (\mu _n)$ que posee los mismos ceros, definida de la forma
+Es conveniente definir las variables adimensionales: $\rho _n = \lambda _nL $ y $\beta = \alpha L$. Luego en vez de utilizar $M (\rho _n)$ definida en (\ref{eq.completa}) se trabajará con la función $N (\rho _n)$ definida de la forma
 \begin{align}
 \nonumber
-N (\mu _n) &=
-e ^{\frac{i \beta }{\mu _n} \log(2 \mu _n) }
-\Gamma \left( 1 + \frac{ \beta}{2 i \mu _n} \right)
-M (\mu _n) \\ 
+N (\rho _n) &=
+e ^{\frac{i \beta }{\rho _n} \log(2 \rho _n) }
+\Gamma \left( 1 + \frac{ \beta}{2 i \rho _n} \right)
+M (\rho _n) \\ 
 &=  
-e ^{\frac{i \beta }{\mu _n} \log(2 \mu _n) }
-\frac{\Gamma \left(1 + \frac{ \beta}{2 i \mu _n} \right)}
-	{\Gamma \left(1 - \frac{ \beta}{2 i \mu _n} \right)}
-- e ^{2 i \mu _n}
-\, ,
+e ^{\frac{i \beta }{\rho _n} \log(2 \rho _n) }
+\frac{\Gamma \left(1 + \frac{ \beta}{2 i \rho _n} \right)}
+	{\Gamma \left(1 - \frac{ \beta}{2 i \rho _n} \right)}
+- e ^{2 i \rho _n}
+\, .
 \label{eq.otro.mu}
 \end{align}
-en el limite de $\mu _n \rightarrow \infty$ se obtiene
+En el limite de $\rho _n \rightarrow \infty$ se obtiene
 \begin{equation}
-    N(\mu _n  \rightarrow \infty) = 
-	1 - e ^{2 i \mu _n}
+    N(\rho _n  \rightarrow \infty) = 
+	1 - e ^{2 i \rho _n}
 		\, ,
 \end{equation}
-de aquí puede verse el comportamiento dominante  de $\mu _n$ para grandes valores de $n$
-\begin{equation}
-\begin{aligned}
-    &\mu _n = n \pi + \epsilon _n \\[5pt]
+de aquí puede verse que $\rho _n$ está dado por
+\begin{align}
+\label{eq.mu2}
+    &\rho _n = n \pi + \epsilon _n \\[5pt]
 	&\lim \limits _{n \rightarrow{0}} \epsilon _n  = 0
 		\, .
-\end{aligned}
-\label{eq.mu2}
-\end{equation}
-Reemplazando (\ref{eq.mu2}) en (\ref{eq.otro.mu}), e igualando $N (\mu _n) = 0$ se que $\mu _n$ cumple la ecuación
+\end{align}
+Utilizando el desarrollo (\ref{eq.mu2}) y (\ref{eq.otro.mu}), se obtiene la ecuación para $\epsilon _n$
 \begin{equation}
-	e ^{ i \frac{\beta}{ \mu _n} \log (2 \mu _n)}     
-    \frac{\Gamma(1 + \frac{ \beta}{2  i \mu _n} ) }
-    {\Gamma(1 -  \frac{ \beta}{2  i \mu _n} )} =    
+	e ^{ i \frac{\beta}{ \rho _n} \log (2 \rho _n)}     
+    \frac{\Gamma(1 + \frac{ \beta}{2  i \rho _n} ) }
+    {\Gamma(1 -  \frac{ \beta}{2  i \rho _n} )} =    
     e ^{2 i \epsilon _n }
     	\, .
 \label{eq.a.desarrollar}
 \end{equation}
-Utilizando que  $ \lim \limits_{\mu _n \rightarrow \infty} \frac{\log (2 \mu _n)}{2 \mu _n } \rightarrow 0$, se puede representar \ref{eq.a.desarrollar} por su desarrollo en serie en los límites $ \mu _n \rightarrow \infty $ y $\epsilon _n \rightarrow 0$,
+Utilizando que  $ \lim \limits_{\rho _n \rightarrow \infty} \frac{\log (2 \rho _n)}{2 \rho _n } \rightarrow 0$, se puede representar \ref{eq.a.desarrollar} por su desarrollo en serie en los límites $ \rho _n \rightarrow \infty $ y $\epsilon _n \rightarrow 0$,
 \begin{equation}
     \left(
-    \sum _{p = 0} ^{\infty} \frac{ \left( i \frac{\beta}{ \mu _n } \log(2 \mu _n ) \right) ^p }{p!}
+    \sum _{p = 0} ^{\infty} \frac{ \left( i \frac{\beta}{ \rho _n } \log(2 \rho _n ) \right) ^p }{p!}
     \right)
     \left(
-	\sum _{q = 0} ^{\infty} \frac{a _q}{\mu _n ^q}
+	\sum _{q = 0} ^{\infty} \frac{a _q}{\rho _n ^q}
 	\right)
     =
     \left(
@@ -214,23 +207,33 @@ Utilizando que  $ \lim \limits_{\mu _n \rightarrow \infty} \frac{\log (2 \mu _n)
     \right)
     	\, .
 \end{equation}
-La corrección a $O ( n ^{-1}) $ de $\epsilon _n$ viene dada por
+La primer corrección al orden dominante viene dada por
 \begin{equation}
-\left( 1 + \frac{i \beta}{ \mu _n} \log ( 2 \mu _n) \right) 
-\left(1 + \frac{i  \gamma \beta}{ \mu _n} \right)  =
+\left( 1 + \frac{i \beta}{ \rho _n} \log ( 2 \rho _n) \right) 
+\left(1 + \frac{i  \gamma \beta}{ \rho _n} \right)  =
 (1 + 2 i \epsilon _n) \, ,
 \end{equation}
-resultando el orden dominante $\epsilon _n =  \frac{\beta }{2 n \pi}  \log (2 n \pi)$, lo cual no es suficiente para hallar el polo en $s=- \frac{1}{2}$ ya que existe otro termino que decae como $ n ^{-1}$, reemplazando $\epsilon _n =  \frac{\beta }{2 n \pi} \log (2 n \pi) + \epsilon '$ en la ecuación anterior, se obtiene
+de donde se obtiene que $\epsilon _n$ está dado por 
 \begin{equation}\label{anterior}
     \epsilon _n =  \frac{\beta }{2 n \pi} \log (2 n \pi) +
                 \frac{\gamma \beta}{2 n \pi} +
-                O\left(  \frac{1}{n^2} \right)
-                	\, .
+                O\left(  n^{-2} \right)
+                	\, ,
 \end{equation}
-Para calcular la {\it función-$\zeta $} se utiliza su definición
+Obteniendo para $\lambda _n$ 
+\begin{equation}
+	\lambda _n L= 
+	\rho _n = 
+	n \pi
+	+ \frac{\beta }{2 n \pi} \log (2 n \pi)
+	+ \frac{\gamma \beta}{2 n \pi}
+\, .
+\end{equation}
+Para calcular la $\zeta (s)$ se utiliza el desarrollo de $\rho _n$
 \begin{equation}
 \begin{aligned}
-    \zeta (s) &= \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2 s}  \\
+    \zeta (s) &= \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2 s}  
+    = ( \mu L) ^{2 s} \sum _{n=1} ^{\infty}  \rho _n  ^{-2 s}  \\
     & =    ( \mu L) ^{2 s} \sum _{n=1} ^{\infty} 
     \left( 
     n \pi + \frac{\alpha L }{2 n \pi} \log (2 n \pi) + \frac{\gamma \alpha L}{2 n \pi} +
@@ -239,7 +242,7 @@ Para calcular la {\it función-$\zeta $} se utiliza su definición
     	\, ,
 \end{aligned}
 \end{equation}
-la cual se puede reescribir como
+el cual se puede reescribir como
 \begin{equation}
 \begin{aligned}
     \zeta  (s) &= \left( \frac{\mu L }{\pi} \right)  ^{2 s} 
@@ -280,8 +283,7 @@ Desarrollando consistentemente hasta el orden retenido se obtiene
 	\zeta ' _R(2s+2) \right) \nonumber \\[5pt]
 	&\ \ \ \  + \sum _{n=1} ^{\infty} O \left( n ^{-2s-3} \right) \, .
 \end{align}    
-Donde $\gamma$ es la constante de Euler-Mascheroni.
-Dado que $\sum _{n=1} ^{\infty} O \left( n ^{-2s-3} \right)$ es regular para $s > -1$, de la expresión anterior el polo en $s= - \frac{1}{2}$ está dado por
+Dado que $\sum _{n=1} ^{\infty} O \left( n ^{-2s-3} \right)$ es regular en la región  $Re(s) > -1$, de la expresión anterior el polo en $s=  \frac{1}{2}$ está dado por
 \begin{equation}\label{eq.res.2}
     ( s-1/2 ) \zeta  (s) | _{s \rightarrow \frac{1}{2}} = 
     \frac{\mu L }{2 \pi}
@@ -289,22 +291,24 @@ Dado que $\sum _{n=1} ^{\infty} O \left( n ^{-2s-3} \right)$ es regular para $s 
 \end{equation}
 lo cual coincide con el resultado general \ref{eq.vol}. Luego desarrollando \ref{eq.zeta.c} alrededor de $s=-1/2$ se obtiene
 \begin{align}\label{eq.res.1}
-    &\zeta  (s) =  \frac{\alpha}{8  \pi \mu (s+1/2)^2} +
-    \frac{ \alpha ( \gamma  +  \log (2\mu L ) -1 ) }{4  \pi \mu (s+1/2) }  + 
+    &\zeta  (s) =  \frac{\alpha}{8  \pi \mu \left(s+\frac{1}{2} \right)^2} +
+    \frac{ \alpha ( \gamma  +  \log (2\mu L ) -1 ) }
+    	{4  \pi \mu \left(s+\frac{1}{2} \right) }  + 
 	f (s) \\
+\nonumber
 	&| f(s) | < \infty , \, \forall s > -1
     	\, .
 \end{align}
-Lo cual muestra el primer resultado de esta tesis, la existencia de un polo doble en $\zeta(-1/2)$ lo cual está en contradicción con (\ref{eq.heat.expansion}).
+Aquí se encuentra el primer resultado de esta tesis. La existencia de un polo doble en $\zeta \left( -\frac{1}{2} \right)$ lo cual está en contradicción con el resultado (\ref{eq.ceros.zeta}), el cual determina que $\zeta (s)$ posee solamente polos simples.
 
 \section{Cálculo Utilizando Variable Compleja}\label{seq.2.com}
 
 
 En la sección anterior se estudiaron los polos de la {\it función-$\zeta$} en $s=\frac{1}{2}$ y $s=-\frac{1}{2}$ desarrollando los autovalores.
-En esta sección al igual que en la sección \ref{sec.complejo} se va a expresar la {\it función-$\zeta $} como una integral en el plano complejo sin necesidad de conocer los autovalores, obteniendo coincidencia con los resultados (\ref{eq.res.1}) y (\ref{eq.res.2}).
+En esta sección al igual que en el capítulo \ref{sec.complejo} se va a expresar la {\it función-$\zeta $} como una integral en el plano complejo, obteniendo coincidencia con los resultados (\ref{eq.res.1}) y (\ref{eq.res.2}).
 
-Dado que se van a estudiar los polos en $s=1/2$ y $s=-1/2$ se utilizará la función $M (z)$ definida en (\ref{eq.completa}).
-La {\it función-$ \zeta$} queda determinada por
+Dado que se van a estudiar los polos en $s= \frac{1}{2}$ y $s=- \frac{1}{2}$ se utilizará la función $M (z)$ definida en (\ref{eq.completa}).
+$ \zeta (s)$ queda entonces determinada por
 \begin{equation}
 \zeta (s) = 
 \frac{1}{2 \pi i} 
@@ -316,8 +320,7 @@ La {\it función-$ \zeta$} queda determinada por
 	\, ,
 	\tag{\ref{asd}}
 \end{equation}
-Se va a utilizar el contorno dado por \ref{fig.derecha}. 
-Utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales. El termino $e ^{2 i \lambda L}$ va a generar un termino exponencialmente creciente/decreciente dependiendo de la rama, tirando la parte exponencialmente decreciente en cada rama y la contribución angular, se obtiene para los términos $\log M(z)$ definidos en la ecuación anterior.
+Para realizar esta integral se va a utilizar el contorno dado en la figura \ref{fig.derecha}. Se utilizará la parametrización $ z (t) = \pm i t$ sobre los ejes verticales, con lo cual el termino $e ^{2 i \lambda L}$ va a generar un termino exponencialmente creciente/decreciente dependiendo de la rama. Reteniendo solamente los términos que aportan a los polos se obtiene
 \begin{comment}
 \begin{equation}
 \begin{array}{c}
@@ -351,9 +354,9 @@ Utilizando la parametrización $ z (t) = \pm i t$ sobre los ejes verticales. El 
 2 i \lambda L  \nonumber
 	\,	,
 \end{align}
-lo cual conduce a una representación integral de la función $\zeta$ dada por
+con lo cual $\zeta (s)$ queda representada de la forma
 \begin{align}\label{eq.zeta.logs}
-    \zeta  (s) =& \\
+     & \zeta  (s) = \\
      & \frac{e^{-i \pi s} \mu ^{2s}}{2 \pi i} \int _{\infty} ^{1}
      \frac{ i \alpha}{2 t^2}
      \left(
@@ -374,7 +377,7 @@ lo cual conduce a una representación integral de la función $\zeta$ dada por
      (-i dt) \nonumber
      	\, .
 \end{align}
-El término que tiene la potencia mas alta de $t$ va a contribuir al polo en $s=1/2$, el cual está dado por
+El término con la potencia mas alta de $t$ va a contribuir al polo en $s= \frac{1}{2}$, lo cual está dado por
 \begin{equation}
     \frac{e^{i \pi s} \mu ^{2s} }{2 \pi i }
     \int _1 ^{\infty}
@@ -384,13 +387,13 @@ El término que tiene la potencia mas alta de $t$ va a contribuir al polo en $s=
     \frac{L e^{i \pi s} \mu ^{2s}}{2 \pi i} \frac{1}{s-1/2   }
     	\, ,
 \end{equation}
-ningún otro término aportará a este polo, entonces coincidiendo con \ref{eq.res.2} se obtiene
+ningún otro término aportará a este polo, entonces coincidiendo con \ref{eq.res.2} se obtiene para el polo en $s= \frac{1}{2}$
 \begin{equation}
 	\left(s- \frac{1}{2} \right)
     \zeta (s) \Big| _{s=1/2} = \frac{\mu L }{2 \pi} 
     	\, .
 \end{equation}
-Una vez calculado este termino, el resto de la integral se puede reescribir de la forma
+Una vez calculado este término, el resto de la integral se puede reescribir de la forma
 \begin{align}
     & \frac{\alpha \mu ^{2s} }{2 \pi} \ sin(\pi s)
     \int _1 ^{\infty}
@@ -405,13 +408,13 @@ Una vez calculado este termino, el resto de la integral se puede reescribir de l
     \int _1 ^{\infty} t^{-2s-2} dt
     	\, ,
 \end{align}
-donde todos los términos son calculables analíticamente, excepto el que contiene $\psi \left( 1 + \frac{\alpha}{2t} \right)$, el cual puede desarrollarse como serie de potencias en $t \rightarrow \infty$
+donde todos los términos son calculables analíticamente, excepto el que contiene $\psi \left( 1 + \frac{\alpha}{2t} \right)$, el cual puede expresarse como serie de potencias
 \begin{equation}
     \psi \left(1 + \frac{\alpha}{2 t} \right) =
     - \gamma + O \left( t^{-1} \right)
     \, .
 \end{equation}
-realizando todas las integrales, la {\it función-$\zeta (s)$} queda determinada a este orden por:  
+Una vez realizadas todas las integrales $\zeta (s)$ queda expresada como  
 \begin{equation}\label{eq.laurent}
 \begin{aligned}
     \zeta  (s)  = 
@@ -423,9 +426,7 @@ realizando todas las integrales, la {\it función-$\zeta (s)$} queda determinada
     	\, .
 \end{aligned}
 \end{equation}
-Para calcular el polo en $s=-1/2$ se desarrolla en Serie de Laurent, obteniendo el mismo resultado que (\ref{eq.res.1})
-
-
+Para calcular el polo en $s=- \frac{1}{2}$ se desarrolla en Serie de Laurent la expresión anterior, obteniendo el mismo resultado que (\ref{eq.res.1})
 \begin{align}
 \label{eq.result.zeta.c}
 \nonumber	
@@ -440,40 +441,37 @@ Para calcular el polo en $s=-1/2$ se desarrolla en Serie de Laurent, obteniendo 
 \section{Siguientes Polos}\label{sec.sig.polos}
 
 
-En las secciones \ref{seq.2.com} y \ref{seq.2.asin} se utilizó el primer término en el desarrollo de $F _{1} ^{1} \left( 1+\frac{ \alpha}{2 \lambda i },2,2 i \lambda x \right)$ ( lo que corresponde a tomar $S1 = S2 = 1$ en la ecuación (\ref{eq.aprox}) )  para obtener los polos en $s=1/2$ y en $s=-1/2$. En esta sección se van a utilizar todos los términos del desarrollo \ref{eq.aprox} para obtener la estructura de polos mas hallá de $s=-1/2$, demostrando que todos son polos simples. 
+En las secciones \ref{seq.2.com} y \ref{seq.2.asin} se aproximó $F _{1} ^{1} \left( 1 - \frac{i \alpha}{2 \lambda},2,2 i \lambda x \right)$ con la función $ M (\lambda )$ definida en (\ref{eq.completa}) (lo que corresponde tomar $S1 = S2 = 1$ en \ref{eq.aprox})  para obtener los polos en $s= \frac{1}{2}$ y en $s=- \frac{1}{2}$. En esta sección se van a utilizar todos los términos del desarrollo \ref{eq.aprox} para obtener la estructura completa de polos, demostrando que todos son polos simples ubicados en los semienteros negativos. 
 
 
 Se va a calcular la {\it función-$\zeta$} utilizando variable compleja, como en la sección anterior, pero tomando todos los términos de $M ( \lambda )$,
-
-
 \begin{align}\label{larga}
 M( \lambda ) &= 
 -
  \frac{e ^{2 i \lambda L } e ^{ - \frac{i \alpha  }{2 \lambda } Ln \left( 2 \lambda L \right) }  }
-      { \Gamma \left( 1 + \frac{ \alpha}{2 i \lambda}  \right) } S1 ( \lambda ) +
+      { \Gamma \left( 1 - \frac{i \alpha}{2  \lambda}  \right) } S _1 ( \lambda ) +
  \frac{ e ^{   \frac{i \alpha  } {2 \lambda } Ln \left(2 \lambda L \right) } }
-      { \Gamma \left( 1 - \frac{ \alpha}{2 i \lambda}  \right)   } S2 ( \lambda )        
+      { \Gamma \left( 1 + \frac{i \alpha}{2  \lambda}  \right)   } S _2 ( \lambda )        
       \\[10pt]      
 S _1 ( \lambda ) &= \sum _{n=0} ^{ \infty }
 \left(1 - \frac{ \alpha}{2 i \lambda}  \right) _n
 \left(- \frac{ \alpha}{2 i \lambda}  \right) _n
-\frac{1}{( 2 i \lambda L ) ^n} = 
+\frac{1}{( 2 i \lambda L ) ^n \ n!} = 
 1 + \sum _{n=1} ^{\infty} \frac{S ^{(1)} _n (\lambda)}{\lambda ^n} 
 	\nonumber
 	\\[10pt]
 S _2 (\lambda ) &= \sum _{n=0 } ^{\infty}
 \left( 1 + \frac{ \alpha}{2 i \lambda }  \right) _n
 \left( \frac{ \alpha }{2 i \lambda} \right) _n
-\frac{1}{( - 2 i \lambda L ) ^n} = 
+\frac{1}{( - 2 i \lambda L ) ^n \ n!} = 
 1 + \sum _{n=1} ^{\infty} \frac{S ^{(2)} _n (\lambda)}{\lambda ^n}
 \nonumber
 \, .
 \end{align}
+Donde $S _n ^{(1,2)}$ son un polinomios en $\frac{1}{ \lambda}$ donde la potencia mas alta es $3 n$ y la mas baja $n$, lo cual permitirá controlar el orden del desarrollo.
 
-Donde $S _n ^{(1,2)}$ son un polinomios de $\frac{1}{ \lambda}$, donde la potencia mas alta es $n$ y la mas baja $1$.
 
-
-Al igual que en la sección \ref{seq.2.com} al integrar sobre los ejes verticales va a existir una parte exponencialmente creciente o decreciente, tirando los términos exponencialmente decrecientes y la parte circular, se obtiene
+Al igual que en la sección \ref{seq.2.com} al integrar sobre los ejes verticales va a existir una parte exponencialmente creciente/decreciente, teniendo en cuenta solo los términos que contribuyen a los polos se obtiene
 \begin{align}
 \log ( M ( \lambda = i t ) ) &=   \log (S _2) + 
 \frac{i \alpha }{2 \lambda}  \log (2 \lambda L) - 
@@ -484,84 +482,79 @@ Al igual que en la sección \ref{seq.2.com} al integrar sobre los ejes verticale
 2 i \lambda L  \nonumber
 	\,	,
 \end{align}
-donde la única diferencia con los términos calculados en (\ref{eq.logatirmos}) es la contribución de los términos $\log ( S _1 )$ y $ \log ( S _2) $.
+donde la única diferencia con los términos calculados en (\ref{eq.logatirmos}) es la aparición de los términos $\log ( S _1 )$ y $ \log ( S _2) $.
 
-Teniendo en cuenta solo los términos que contribuyen a los polos en  $s < -1/2$ se obtiene
+Teniendo en cuenta solo los términos que contribuyen a los polos en  $Re(s) < - \frac{1}{2}$ se obtiene
 \begin{equation}
 \begin{aligned}
  \zeta  (s) =& \\[10pt]
 & \frac{e ^{- i \pi s} \mu ^{2s } }{2 \pi}
 \int _{\infty} ^{1} t ^{-2s } 
-		\frac{S2' (it)}{S2 (it)}
+		\frac{S _2' (it)}{S _2 (it)}
 		d t
 	- 
 \frac{e ^{i \pi s} \mu ^{2s}}{2 \pi}
 \int _{1} ^{\infty} t ^{-2s } 
-	\frac{S1' (-it)}{S1(-it)}
-	d t +
+	\frac{S _1 ' (-it)}{S _1 (-it)}
+	d t 
 	 \\[10pt]
-	&  \frac{\alpha \mu ^{2s} }{2 \pi }	\sin ( \pi s)  \int _1 ^{\infty}
+	&  + \frac{\alpha \mu ^{2s} }{2 \pi }	\sin ( \pi s)  \int _1 ^{\infty}
 	t ^{-2s-2} \left( \psi \left( 1 + \frac{\alpha}{2 t}\right) + \gamma \right) dt 
 		\, .
 \end{aligned}
 \end{equation}
-Utilizando que  $\frac{S1' (-it)}{S1 (-i t)} = - \frac{S2 ' (i t)}{S2(it)} = \frac{S'(t)}{S(t)}  $ se puede reescribir la ecuación anterior como
+Utilizando la propiedad  $\frac{S _1 ' (-it)}{S _1 (-i t)} = - \frac{S _2 ' (i t)}{S _2 (it)} = \frac{S'(t)}{S(t)}  $ se puede reescribir la ecuación anterior como
 \begin{equation}
 \begin{aligned}
 \zeta  (s) =&  \\[5pt]
 &
 \frac{\alpha \mu ^{2s} sin( \pi s )}{2 \pi } \int _{1} ^{\infty} 
-t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt -\\[5pt]
-&   \frac{i \mu ^{2s}  sin (\pi s)}{\pi} \int _1 ^{\infty} t ^{-2s} \frac{S'(t)}{S(t)} dt 
+t ^{-2s-2} \left( \psi (1 + \frac{\alpha}{2 t}) + \gamma \right) dt 
+\\[5pt]
+& -  \frac{i \mu ^{2s}  sin (\pi s)}{\pi} \int _1 ^{\infty} t ^{-2s} \frac{S'(t)}{S(t)} dt 
 	\, ,
 \end{aligned}
 \end{equation}
-de aquí se puede que solo van a existir polos simples en los semienteros negativos dado que $\sin (\pi s)$ posee ceros simples en los enteros negativos, lo cual coincide con el caso regular.
+de aquí se puede observar que solo van a existir polos simples en los semienteros negativos dado que $\sin (\pi s)$ posee ceros simples en los enteros negativos. Lo cual coincide con el caso regular.
 
-En vez de desarrollar en serie $S1 '(-i t) / S (-i t)$ se desarrolla  $\log S1 (\lambda)$ alrededor de $\lambda \rightarrow \infty$, luego se le toma la derivada respecto de $\lambda$ y finalmente se evalúa en $\lambda \rightarrow -i t$, lo cual nos permite controlar el orden del desarrollo.
 
+Para controlar el orden del desarrollo $ \frac{S' ( t)}{ S ( t)} $, el primer paso es desarrollar $\log S _1 (\lambda)$ alrededor de $\lambda \rightarrow \infty$, luego tomarle su derivada respecto de $\lambda$ y finalmente se evaluar en $\lambda = -i t$\\
 \begin{equation}
 \begin{aligned}
-\frac{S'( \lambda)}{S( \lambda )} &\simeq 
+\frac{S _1 '( \lambda)}{S _1 ( \lambda )} &\simeq 
 \partial _{\lambda} Log \left(
-								1 + \sum _{n=1} ^{N-1}  \frac{S _n}{\lambda ^n}
-								\right) =
+						1 + \sum _{n=1} ^{N-1}  \frac{S ^{(1)} _n}{\lambda ^n}
+						\right) =
 \partial _{\lambda} 
 \sum _{m = 1} ^{N/2} 
 	\left(
 	\frac{(-1) ^{m+1} }{m}
 	\left(
-		\sum _{n=1} ^{N-1} \frac{S _n}{\lambda ^n}
+		\sum _{n=1} ^{N-1} \frac{S ^{(1)} _n}{\lambda ^n}
 		\right) ^m 
 	\right)  \\[10pt]
 	&=
 \left(								
 	\sum _{l = 1} ^{N-1} 
-	\frac{S' _l}{\lambda ^l} - l \frac{S _l}{\lambda ^{l+1}}
+	\frac{S  ^{(1) '} _l}{\lambda ^l} - l \frac{S ^{(1)}  _l}{\lambda ^{l+1}}
 	\right)							
 \left(
 	\sum _{m = 1} ^{N/2} (-1) ^{m+1} 
 	\left(
-			\sum _{n=1} ^{N-1} \frac{S _n}{\lambda ^n}
+			\sum _{n=1} ^{N-1} \frac{S ^{(1)} _n}{\lambda ^n}
 			\right) ^{m-1}		
 	\right)
+\, .
 \end{aligned}	
 \end{equation}
-
-
-
-Este desarrollo de Taylor es correcto hasta el orden N (en caso de que N sea semientero hay que tomarle la parte entera), tiene la ventaja de poder ser calculado explícitamente, los primeros términos de $\frac{S'(t)}{S(t)}$ son:
-
+Este desarrollo  es correcto hasta el orden N (en caso de que N sea semientero hay que tomarle la parte entera) el cual tiene la ventaja de poder ser calculado explícitamente. Los primeros términos de $\frac{S'(t)}{S(t)}$ son
 \begin{equation}
 \frac{S'(t)}{S(t)} = 
 \frac{i \alpha}{2 L t^3} -
 \frac{3 i (L \alpha ^2 - 2 \alpha)}{8 L^2 t ^4}
+\, .
 \end{equation}
-
-
-
-
-Con este desarrollo el polo en $s=-3/2$ está dado por 
+Con este desarrollo el polo en $s=-\frac{3}{2}$ está dado por 
 \begin{equation}
 \left( s+ \frac{3}{2} \right)
 \zeta  (s) |_{s = - \frac{3}{2}}= 
@@ -658,14 +651,14 @@ Donde se puede hacer el producto de Cauchy para tener la solución exacta de has
 
 
 \section{Cálculo de la energía de vacío}
-\label{sec.regular}
 
 La energía de vacío queda definida por la ecuación (\ref{eq.casimir.mu})
 
 \begin{equation}
+\nonumber
     E _0 = \frac{\mu }{2}  
-    \zeta  \left( - 1/2 \right) 
-    \tag{\ref{eq.casimir.mu}} \, ,
+    \zeta  \left( - \frac{1}{2} \right) 
+	\, ,
 \end{equation}
 
 Utilizando la expresión de $\zeta  (s )$ dada por (\ref{eq.res.1}) se obtiene para la energía de vacío
@@ -678,14 +671,15 @@ E _0 = \frac{1}{2} \left(
 				\frac{\mu}{2} \ f \left( - \frac{1}{2} \right)
 \, .
 \end{equation}
-Donde $f \left( - \frac{1}{2}\right)$ se calculará en la sección siguiente.
+Donde $f \left( - \frac{1}{2}\right)$ se calculará en la sección siguiente, conduciendo a la forma completa de la energía de vacío dada por (\ref{energia.vacio.final}) y 
 
 
 \section{Parte finita de la energía de vacío}
+\label{sec.regular}
 
-En los capítulos \ref{seq.2.asin} y \ref{seq.2.com} se calcularon los polos de \mbox{$\zeta (s)$} en $s= \frac{1}{2}$ y $s=-\frac{1}{2}$ encontrando que en $s=- \frac{1}{2}$ existe en polo doble. En \ref{sec.sig.polos} se estudió la estructura completa de polos encontrando que $\zeta (s)$ posee polos son simples ubicados en los semienteros negativos. En \ref{sec.regular} se expresó la energía de vacío, siendo la parte finita de esta $\frac{\mu}{2} f \left( - \frac{1}{2} \right)$. 
+En los capítulos \ref{seq.2.asin} y \ref{seq.2.com} se calcularon los polos de \mbox{$\zeta (s)$} en $s= \frac{1}{2}$ y $s=-\frac{1}{2}$ encontrando que en $s=- \frac{1}{2}$ existe en polo doble. En \ref{sec.sig.polos} se estudió la estructura completa de polos encontrando que $\zeta (s)$ posee polos son simples ubicados en los semienteros negativos. En \ref{sec.regular} se expresó la energía de vacío, siendo la parte finita de esta $\frac{\mu}{2} f \left( - \frac{1}{2} \right)$.
 
-En esta sección se estudiará $ f \left( - \frac{1}{2} \right)$
+En esta sección se estudiará $ f \left( - \frac{1}{2} \right)$ de dos maneras diferentes, utilizando el desarrollo asintótico y la representación compleja, como se hizo en las secciones \ref{seq.2.asin} y \ref{seq.2.com} respectivamente.
 
 \subsection{Desarrollo asintótico}
 
@@ -694,7 +688,7 @@ Utilizando las variables adimensionales $\rho _n = \lambda _n L$ y $\beta = \alp
 \zeta (s) = \left( \mu L \right) ^{2s} \sum _{n=1} ^{\infty} \rho _n ^{-2s} 
 \, ,
 \end{equation}
-como $\zeta (s)$ posee solo un polo doble en $-\frac{1}{2}$, $\rho _n$ tiene un desarrollo de la forma
+como $\zeta (s)$ posee un único polo doble en $-\frac{1}{2}$, $\rho _n$ posee un desarrollo de la forma
 \begin{equation}
 \begin{aligned}
 \rho _n  &= 
@@ -706,12 +700,12 @@ como $\zeta (s)$ posee solo un polo doble en $-\frac{1}{2}$, $\rho _n$ tiene un 
 \end{aligned}
 \end{equation}
 Procediendo igual que en el capítulo \ref{seq.2.asin}, $\zeta (s)$ puede expresarse como un desarrollo en serie
-\begin{equation}
-\begin{aligned}
+\begin{align}
 \zeta (s) =& 
 ( \mu L ) ^{2s}
 \sum _{n=1} ^{\infty}
 ( n \pi) ^{-2s} \left( 1 + \frac{ \epsilon _n }{n \pi } \right) ^{-2s } \\
+\nonumber
  =& 
 (\mu L) ^{2s} \sum _{n=1} ^{\infty}
 ( n \pi) ^{-2s} \left(
@@ -720,8 +714,7 @@ Procediendo igual que en el capítulo \ref{seq.2.asin}, $\zeta (s)$ puede expres
 						O \left( \frac{ \log ^2 ( 2 n \pi ) }{ n ^4} \right)  
 						\right)
 \, .
-\end{aligned}
-\end{equation}
+\end{align}
 Donde el último término no presenta polos en \mbox{${\rm Re}(s) >- \frac{3}{2}$} dado que
 \begin{equation} 
 	\sum _{n=1} ^{\infty}
@@ -731,8 +724,8 @@ Donde el último término no presenta polos en \mbox{${\rm Re}(s) >- \frac{3}{2}
 \, ,
 \end{equation}
 lo cual es finito para $s \neq \frac{1-p}{2}$.
-Por lo tanto todos los términos siguientes en el desarrollo también se anularán, debido a la existencia del factor $s + \frac{1}{2}$.
-Por lo tanto los términos que contribuyen a $\zeta \left( - \frac{1}{2} \right)$ están dados por
+Por lo tanto todos los términos siguientes en el desarrollo también se anularán debido a la existencia del factor $s + \frac{1}{2}$.
+Los términos que contribuyen a $\zeta \left( - \frac{1}{2} \right)$ están dados por
 \begin{align}
 \zeta (s) &= \left( \frac{\mu L}{\pi} \right) ^{2s} \times \\
 			\nonumber
@@ -747,7 +740,7 @@ Por lo tanto los términos que contribuyen a $\zeta \left( - \frac{1}{2} \right)
 					\right)
 \, .					
 \end{align}
-Esta expresión completa la ecuación (\ref{eq.zeta.c}), la cual no se tiene en cuenta el último término.
+Esta expresión completa la ecuación (\ref{eq.zeta.c}) en  la cual no se tiene en cuenta el último término.
 Para calcular $\zeta \left( - \frac{1}{2} \right)$ se utilizan los desarrollos
 \begin{align}\label{cortar}
 	\log (2 \pi) \zeta _R (2s+2) -
@@ -820,21 +813,21 @@ De aquí se puede ver que los polos coinciden con los calculados en las seccione
 					\gamma \log (2 \pi)
 					+ \gamma _1
 					\right) +
-								\frac{\gamma \alpha L}{2 \pi ^2} +
+								\frac{\gamma ^2 \alpha L}{2 \pi ^2} +
 								\frac{1}{\pi} \sum _{p=2} ^{\infty}
 								a_p \zeta (p) 
 							\right) 
 \, .
 \end{align}
-Dado que $a _p$ es un polinomio en $\alpha L$, se obtiene para la energía de vacio en el limite $\alpha \rightarrow 0$
+Dado que $a _p$ es un polinomio en $\alpha L$, en el límite $\alpha \rightarrow 0$ se obtiene
 \begin{equation}
 \lim \limits_{\alpha \rightarrow 0} E _0 = 
 		- \frac{\pi}{24 L}
 \, ,
 \end{equation}
-lo cual corresponde a la energía de vacío sin potencial con condiciones de contorno Dirichlet en ambos extremos, coincidiendo   con la ecuación \ref{eq.energia.dirichlet} de la sección \ref{sec.Dirichlet}.
+lo cual corresponde a la energía de vacío sin potencial con condiciones de contorno Dirichlet en ambos extremos, tal como se calculó en la ecuación \ref{eq.energia.dirichlet} del capítulo \ref{sec.Dirichlet}.
 
-En el apéndice \ref{Apendice.1} se encuentra un script del software Mathematica que permite obtener los términos $a _p$, En este caso se calcularon hasta $p=10$, en la figura \ref{fig.finitas} está graficada la energía de vacío adimensionalizada obtenida pr este método junto con el método que se describirá en el capítulo siguiente.
+En el apéndice \ref{Apendice.1} se encuentra un script del software Mathematica que permite obtener los términos $a _p$, En este caso se calcularon hasta $p=10$. En la figura \ref{fig.finitas} está graficada la energía de vacío adimensionalizada obtenida por este método junto con el método que se describirá en el capítulo siguiente.
 
 
 
@@ -843,17 +836,17 @@ En el apéndice \ref{Apendice.1} se encuentra un script del software Mathematica
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[height=1.0in]{Finita.pdf}
-        \caption{Aquí se divide a ambos miembros de la ecuación \ref{eq.graficar} por $				\alpha$, de aquí se puede ver que la energía de vacío es siempre atractiva.}
+        \caption{}
         \label{fig.izquierda}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[height=1.0in]{exportar1.pdf}
-        \caption{Aquí se multiplica a ambos lados \ref{eq.graficar} por $L$, ademas 				se puede apreciar en el inset que en el limite $\beta \rightarrow 0$ la energía 		tiende a $- \frac{1}{12}$}
+        \caption{}
         \label{fig.derecha}
     \end{subfigure}
-    \caption{En esta imagen se muestran dos posibles adimensionalizaciones de la ecuación \ref{eq.graficar}, que representan la energía de vacío independiente de $\mu$ .}
+    \caption{En esta imagen se muestran dos posibles adimensionalizaciones de la energía de vacío, una vez obtenida la curva \ref{fig.izquierda} se pueden generar todas las curvas de la figura \ref{fig:vacios} haciendo los cambios de variables $\beta \rightarrow \alpha L$, $E _0 \rightarrow \frac{E _0}{\alpha}$.}
 \label{fig.finitas}
 \end{figure*}
 
@@ -863,7 +856,7 @@ En el apéndice \ref{Apendice.1} se encuentra un script del software Mathematica
         \centering
         \includegraphics[height=1.45in]{Energias.pdf}
         \caption{}
-%        \label{fig.izquierda}
+        \label{fig.izquierda123}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.5\textwidth}
@@ -872,15 +865,15 @@ En el apéndice \ref{Apendice.1} se encuentra un script del software Mathematica
         \caption{}
 %        \label{fig.derecha}
     \end{subfigure}
-    \caption{En esta imagen se muestra la energía de Casimir $E _0$ para distintos valores de $\alpha$ en función de la longitud del intervalo $L$, puede verse que a medida que incrementa $\alpha$ la energía de vacío posee un máximo local mas abrupto.}
+    \caption{En esta imagen se puede observar la dependencia de la energía de Casimir $E _0$ para distintos valores de $\alpha$ y $L$, puede verse en \ref{fig.izquierda123} que a medida que incrementa $\alpha$ la energía de vacío posee un máximo local mas abrupto.}
 \label{fig:vacios}
 \end{figure*}
 
-\subsection{Parte finita de la energía de vacío la venganza }
+\subsection{Integral compleja}\label{sec.finita.compleja}
 
-En la sección \ref{sec.complejo} se mostró que la función $\zeta (s)$ puede representarse mediante una integral en el plano complejo, junto con posibles caminos que permiten calcular esta integral en la figura \ref{fig:contorno}. En los dos capítulos anteriores \ref{cap.sencillos}  y \ref{cap.singular} se utilizó el contorno \ref{fig.derecha} para obtener la estructura de polos, en este capítulo se utilizará el contorno \ref{fig.derecha.derecha} para obtener tanto los polos como su parte finita en $s = - \frac{1}{2}$.
+En la sección \ref{sec.complejo} se mostró que la función $\zeta (s)$ puede representarse mediante una integral en el plano complejo, junto con posibles caminos de integración en la figura \ref{fig:contorno}. En los capítulos anteriores \ref{cap.sencillos}  y \ref{cap.singular} se utilizó el contorno \ref{fig.derecha} para obtener la estructura de polos, en este capítulo se utilizará el contorno \ref{fig.derecha.derecha} para obtener tanto los polos como su parte finita en $s = - \frac{1}{2}$.
 
-Al igual que en los capítulos \ref{cap.sencillos}  y \ref{cap.singular} la energía de vacío queda expresada como la integral
+La {\it función-$\zeta$} queda determinada por la integral
 \begin{equation}
 	\zeta (s) = 
 	\frac{1}{2 \pi i} \int _{\mathcal{C}} 
@@ -893,39 +886,39 @@ Al igual que en los capítulos \ref{cap.sencillos}  y \ref{cap.singular} la ener
 						d \lambda
 	\, .
 \end{equation}
-Utilizando las variables adimensionales $\beta = \alpha L$ y  $\tau = \lambda L$ la ecuación anterior puede reescribirse de la forma
+Utilizando las variables adimensionales $\beta = \alpha L$ y  $\rho = \lambda L$ la ecuación anterior puede reescribirse de la forma
 \begin{align}
 \label{eq.ultima.int}
 	\zeta (s) =& 
 	\frac{\left(L \mu \right)^{2s}}{2 \pi i} \int _{\mathcal{C}} 
-	f (\tau , \beta) \tau ^{-2s} d \tau 
+	f (\rho , \beta) \rho ^{-2s} d \rho 
 \, ,
 \end{align}
-donde $f( \tau, \beta)$ está dada por
+donde $f( \rho, \beta)$ está dada por
 \begin{align}
-f(\tau, \beta) =& 	
+f(\rho, \beta) =& 	
 i
 \frac{
-		\left(1 + \frac{ \beta}{2 i \tau} \right) 
+		\left(1 + \frac{ \beta}{2 i \rho} \right) 
 		F _1 ^1 
-			\left( 2 + \frac{ \beta}{2 i \tau} ,3 ,2 i \tau \right)
+			\left( 2 + \frac{ \beta}{2 i \rho} ,3 ,2 i \rho \right)
 		+ \left( \frac{\beta				
 				}
-				{2 \tau ^2 } 
+				{2 \rho ^2 } 
 				\right)
 				( F _{1} ^1 ) ^{(1,0,0)}
-				\left( 1 + \frac{\beta}{2 i \tau} ,2 ,2 i \tau
+				\left( 1 + \frac{\beta}{2 i \rho} ,2 ,2 i \rho
 						\right)
 		}
-		{F _1 ^1 \left( 1 + \frac{\beta}{2 i \tau},2,2 i \tau \right)} 
+		{F _1 ^1 \left( 1 + \frac{\beta}{2 i \rho},2,2 i \rho \right)} 
 \, .		
 \nonumber
 \end{align}
 Utilizando el camino de integración \ref{fig.derecha.derecha}, la integral \ref{eq.ultima.int} puede reescribirse como suma de cuatro integrales
-\begin{align*}
-\zeta (s) = 
+\begin{align}
+& \zeta (s) = 
 - \frac{L ^{2s}}{2 \pi } 
-\Bigg(&	  e ^{- i \pi s} \int _0 ^{C _0}
+\Bigg(	  e ^{- i \pi s} \int _0 ^{C _0}
 			f (i t,\beta )
 			t ^{-2s}  dt 
 		+ e ^{- i \pi s} \int _{C _0} ^{\infty}
@@ -938,9 +931,10 @@ Utilizando el camino de integración \ref{fig.derecha.derecha}, la integral \ref
 			f (-i t,\beta )
 			t ^{-2s}  dt 
 	\Bigg)
-\, ,
-\end{align*}
-Donde la primer y tercer integral pueden calcularse de manera numérica en $s= -\frac{1}{2}$ dado que allí son convergentes. La segunda y la cuarta contienen el término divergente de $\zeta \left(- \frac{1}{2} \right)$ calculado en la ecuación (\ref{eq.result.zeta.c}), para calcular la parte finita de estas integrales se utiliza el desarrollo \ref{eq.aprox} obteniendo
+\, .
+\label{eq.zeta.completa.2}
+\end{align}
+Donde la primer y tercer integral pueden calcularse de manera numérica en $s= -\frac{1}{2}$ dado son convergentes. La segunda y la cuarta contienen los polos de $\zeta \left(- \frac{1}{2} \right)$ calculados en la ecuación (\ref{eq.result.zeta.c}), para calcular la parte finita de estas integrales se utiliza el desarrollo \ref{eq.aprox}, obteniendo para $t \rightarrow \infty$
 \[ 
 f   ( i t ,\beta )=
 \begin{cases} 
@@ -949,13 +943,12 @@ f   ( i t ,\beta )=
 			\frac{1}{t} - \frac{\beta}{2 t ^2 } + \frac{\beta}{2 t^2}
 			\log (2 t) + \frac{\beta \gamma}{2 t^2} 
 			\right) + O (t ^{-3})
-	  & t > 0 \\
+\\
 	  f _{-} ( t, \beta) =
       i  \left(
 			- \frac{1}{t} + \frac{\beta}{2 t ^2 } - \frac{\beta}{2 t^2}
 			\log (2 t) - \frac{\beta \gamma}{2 t^2} +2
 			\right) + O (t ^{-3})
-      & t < 0
    \end{cases}   
 \]
 Utilizando este desarrollo las ultimas dos integrales pueden expresarse
@@ -963,31 +956,33 @@ Utilizando este desarrollo las ultimas dos integrales pueden expresarse
 \nonumber
 	\int _{C _0} ^{\infty}
 			f (i t,\beta )
-			t ^{-2s}  dt &= 
+			t ^{-2s}  dt =& 
 	\int _{C _0} ^{\infty}
 		\left(
 			f (it, \beta) - f _{+} (t, \beta )			
 				\right) t ^{-2s} dt 
-	\\ &+ 
-\nonumber
+\label{eq.arriba1}
+\\ &+ 
 	\int _{C _0} ^{\infty}
 			f _{+} ( t, \beta)
 			 t ^{-2s} dt  \\
 \nonumber
 	\int _{C _0} ^{\infty}
 			f (-i t,\beta )
-			t ^{-2s}  dt &= 
+			t ^{-2s}  dt 
+=& 
 	\int _{C _0} ^{\infty}
 		\left(
 			f (-it, \beta) - f _{-} (t, \beta )			
 				\right) t ^{-2s} dt 
 	\\ &+ 
-\nonumber
+\label{eq.arriba2}
 	\int _{C _0} ^{\infty}
 			f _{-} ( t, \beta)
 			 t ^{-2s} dt
+\, ,
 \end{align}
-Donde las términos de arriba pueden integrarse numéricamente en $s=-1/2$ dado que son convergentes. 
+Donde las términos de arriba pueden integrarse numéricamente en $s=- \frac{1}{2}$ dado que son convergentes. 
 
 Las contribuciones divergentes están dadas por
 \begin{align}
@@ -1089,7 +1084,7 @@ Las contribuciones divergentes están dadas por
 	& + O \left(s + \frac{1}{2} \right)
 \end{align}
 \end{comment}
-Se obtiene entonces para $\zeta \left( - \frac{1}{2} \right)$
+Utilizando las ecuaciones (\ref{abajo},\ref{arriba},\ref{eq.arriba2},\ref{eq.arriba1}) en (\ref{eq.zeta.completa.2}) se obtiene
 \begin{eqnarray}
 \zeta \left( - \frac{1}{2} \right) &=& 
 - \frac{i}{2 \pi L \mu} 
@@ -1124,12 +1119,32 @@ Se obtiene entonces para $\zeta \left( - \frac{1}{2} \right)$
 		 {4 \pi L \mu  \left( s + \frac{1}{2} 														 \right)} 
 \, .
 \end{eqnarray}
-Donde en la última linea se están los polos calculados en REF, y en la penultima linea la dependencia con la escala $\log (L \mu)$
+Donde en la última linea están los polos coincidiendo con lo calculado en (\ref{eq.zeta.final},\ref{eq.result.zeta.c},\ref{eq.res.1}), en la penultima linea se encuentra la dependencia no trivial con la escala $\log (L \mu)$ que coincide con (\ref{eq.zeta.final})
 
+Utilizando esta resultado se obtiene para la energía de vacío
 
-
-
-
+\begin{align}
+\nonumber
+	E _0 &=  
+		\frac{1}{4 \pi i L} 
+		\left(
+			\int _{-C _0} ^{C _0} f (i t) t dt
+			+ \int _{C _0} ^{\infty}  \left( f(i t) - f(-i t) - f _{+} (t) + f _{-} (t) \right) t dt
+			\right) 
+\\ \nonumber &
+	+ \frac{\beta \log ^2 L \mu}{8 \pi L}
+	+ \frac{\beta (\gamma -1 + \log 2  )  \log L \mu}{4 \pi L}
+\\ \nonumber &
+	- \frac{\beta \log ^2 (C _0) }{8 \pi L}
+	-\frac{\beta \log (C _0) (\gamma -1 + \log 2  )}{4 \pi L}
+	+ \frac{C _0 ^2}{4 \pi L}
+	- \frac{C _0}{2 \pi L}
+	- \frac{\pi \beta}{32 L}
+\\ &
+	+ \frac{\beta}{16 \pi L \left( s + \frac{1}{2} \right) ^2}
+	+ \frac{\beta (\gamma -1 + \log 2 L \mu )}{8  \pi L \left( s + \frac{1}{2} \right)}
+\end{align}
+En la figura \ref{fig:vacios} se encuentra graficada la energía de vacío para distintos valores de $\alpha$ y $L$ utilizando esta técnica, luego en la figura \ref{fig.finitas} se encuentran graficadas $ \frac{E _0}{\alpha}$ y $E _0 L$ utilizando los dos métodos desarrollados en esta sección.
 
 
 

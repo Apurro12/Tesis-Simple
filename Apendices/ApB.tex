@@ -1,0 +1,103 @@
+\chapter{Función-$\zeta$ de Riemman}\label{Apendice.2}
+
+En este apéndice se demostraran las propiedades de la función-$\zeta$ de Riemman $\zeta _R (s)$
+
+La función $\zeta _R (s)$ se define como la prolongación analítica de la siguiente serie
+\begin{align}
+	\zeta _R (s) = 
+	\sum _{n=1} ^{\infty} \frac{1}{n ^{s}}
+	\, ,
+\end{align}
+para calcular sus propiedades se utilizará la identidad
+\begin{align}
+	\frac{1}{n ^{s}} =
+	\frac{1}{\Gamma (s)} 
+	\int _0 ^{\infty} t^{s-1} e ^{-n t}  dt
+	\, ,
+\end{align}
+obteniendo
+\begin{align}
+	\zeta (s) = 
+	\frac{1}{\Gamma (s)}
+	\int _0 ^\infty
+	\frac{t ^{s-1}}{e ^t -1} dt
+	\, ,
+\end{align}
+aquí puede utilizarse el desarrollo de taylor 
+\begin{equation}
+	\frac{1}{e ^t -1} = 
+	\sum _{n=-1} ^{\infty}
+	\frac{ \mathcal{B} _{n+1}}{(n+1)!} t ^n
+	\, ,
+\end{equation}
+donde $\mathcal{B} _{n}$ son los {\it Números de Bernoulli}, utilizando esta representación $\zeta (s)$ queda expresada como
+\begin{align}
+	\zeta (s) = 
+&
+	\frac{1}{\Gamma (s)}
+	\int _0 ^1 
+	t ^{s-1} 
+	\left(	
+		\frac{1}{e ^t -1} -
+		\sum _{n=-1} ^{N}
+		\frac{ \mathcal{B} _{n+1}}{(n+1)!} t ^n	
+		\right)		
+		+
+	\frac{1}{\Gamma (s)}
+	\int _1 ^\infty
+	\frac{t ^{s-1}}{e ^t -1} dt
+\\
+	+
+&
+	\frac{1}{\Gamma (s)}
+	\sum _{n=-1} ^{N}
+	\frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}
+	\, ,
+\end{align}
+así $\zeta (s)$ podrá ser calculada $\forall s $ en algún lado, dos valores característicos de $\zeta(s)$ están dados por
+\begin{align}
+	\zeta (-1) = 
+&
+	Res \Big| _{s=1}
+		\left(
+			\frac{1}{\Gamma (s)} \frac{\mathcal{B} _2}{2! (s+1)}
+			\right) =
+	- \frac{1}{12}
+\\
+	\zeta (\epsilon \rightarrow 1) =
+& 
+	\frac{1}{\Gamma (1)} \frac{\mathcal{B} _0}{ \epsilon} + O (\epsilon -1 ) = 
+	\frac{1}{ \epsilon} + O (\epsilon -1 ) 
+	\, ,
+\end{align}
+otra propiedad importante es la no existencia de polos exceptuando $s=1$, para esto se ve que la única posible contribución a un polo son los términos de la forma  $	\frac{1}{\Gamma (s)} \frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}$, para esto 
+\begin{align}
+	\zeta ( s \rightarrow -n ) = 
+	\frac{1}{\Gamma (s)}
+	\frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}
+	+ O (s + n) = 
+	\frac{(-1) ^n \mathcal{B} _{n+1}}
+		{n+1}
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
