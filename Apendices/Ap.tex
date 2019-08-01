@@ -1,5 +1,9 @@
 \chapter{Mathematica}\label{Apendice.1}
 
+En este apendice se muestra el script utilizado en el capítulo \ref{seq.desarrollo.asintotico} para obtener los términos $a _p$, el cual puede pegarse y ejecutarse directamente en el programa "Wolfram Mathematica".\\
+
+
+
 La primer parte del script consiste en definir el desarrollo de Taylor de cada función  en (\ref{larga})
 \begin{verbatim}
 LG[Q_] := Sum[
@@ -28,8 +32,7 @@ G2[Q_] := Normal[
                  /. {\[Mu] -> n Pi};
 Ex[Q_] := Sum[(2 I \[Epsilon])^l/l!, {l, 0, Q}];
 \end{verbatim}
-la segunda parte del script lo que hace es calcular $a_p$ orden a orden hasta $p=9$ e imprimirlos en la pantalla.
-
+la segunda parte del script lo que hace es resolver asintoticamente cada termino $a_p$ orden a orden hasta $p=9$ ( y en este caso imprimirlos en pantalla).
 \begin{verbatim}
 a[0] = \[Beta]/(2 Pi ) Log[2 n Pi]/n;
 

@@ -1,7 +1,6 @@
-\chapter{Limite Continuo}
+\chapter{Límite Continuo}
 
-En esta sección se va a estudiar la {\it función-$\zeta $} en el limite $L \rightarrow \infty$, donde $\zeta  (s)$ va a quedar definida por:
-
+En esta sección se va a estudiar la {\it función-$\zeta $} en el limite $L \rightarrow \infty$, donde $\zeta  (s)$ va a quedar definida por
 \begin{equation}
 	\zeta (s) = \int _{0} ^{\infty} \rho (x) \ \left( \frac{x}{\mu } 			\right) ^{-2 s} dx
 \, ,	
@@ -19,7 +18,7 @@ donde $\rho(x) $ representará la densidad de autovalores. Para llegar a esta re
 	\, ,
 	\tag{\ref{asd}}
 \end{equation}
-pero a diferencia de estos el camino a utilizar es el que está representado en la imagen \ref{fig.izquierda} cuya parametrización está dada por 
+pero a diferencia de estos capítulos, el camino a utilizar es el que está representado en la imagen \ref{fig.izquierda} cuya parametrización está dada por 
 \begin{equation}
 z(x) =  
 	  \begin{cases} 
@@ -29,14 +28,15 @@ z(x) =
    \end{cases}
 \label{eq.para.con}
 \end{equation}
-De (\ref{larga}) se puede ver que $S _1,S _2 \rightarrow 1$ cuando $L \rightarrow \infty$, por lo tanto se va a utilizar $M (z)$ que es la función que está definida en (\ref{eq.completa}).\\
+De (\ref{larga}) se puede ver que $S _1,S _2 \rightarrow 1$ cuando $L \rightarrow \infty$, por lo tanto se utilizará la función $M (z)$ definida en (\ref{eq.completa}).
 
-Dependiendo si se está arriba o abajo del eje real, va a existir un termino exponencialmente creciente/decreciente en el limite $L \rightarrow \infty$  proveniente del término exponencial $e ^{i z t}$. Las tres integrales provenientes de la parametrización (\ref{eq.para.con}) quedan determinadas por 
+
+Al igual que en los capítulos \ref{seq.2.com} y  \ref{sec.finita.compleja} se va a generar un termino exponencialmente decreciente, el cual en este caso va a tender a cero en el límite $L \rightarrow \infty$. Las tres integrales provenientes de la parametrización (\ref{eq.para.con}) quedan determinadas por 
 \begin{align}
 	\frac{ 1 }{2 \pi i}  
 &	
 	\int _{\infty} ^{x _0} 
-	x ^{-2s}
+	\left( \frac{x}{\mu} \right) ^{-2s}
 	\left( +
 	\frac{i \alpha}{2 x^2} - 
 	\frac{i \alpha }{2 \lambda ^2} \log ( 2 \lambda L ) +
@@ -49,7 +49,7 @@ Dependiendo si se está arriba o abajo del eje real, va a existir un termino exp
 	\frac{ 1 }{2 \pi i}  
 &	
 	\int _{x _0} ^{\infty} 
-	x ^{-2s}
+	\left( \frac{x}{\mu} \right) ^{-2s}
 	\left( -
 	\frac{i \alpha}{2 x^2} + 
 	\frac{i \alpha }{2 \lambda ^2} \log ( 2 \lambda L ) -
@@ -63,14 +63,10 @@ Dependiendo si se está arriba o abajo del eje real, va a existir un termino exp
 &
 	\int _{- \epsilon} ^{\epsilon}
 	O (\epsilon) \, dx
-\\
-&	
-\nonumber
-	\text{donde}
-	\lim \limits _{L \rightarrow \infty} \epsilon _L = 0
+\label{int3}
 \, .	
 \end{align}
-Donde ambas integrales \ref{int1} y \ref{int2} pueden expresarse de la forma
+donde $\lim \limits _{L \rightarrow \infty} \epsilon _L = 0$, por lo tanto junto con la integral (\ref{int3}) no se tendrán en cuenta. Ambas integrales (\ref{int1}) y (\ref{int2}) pueden expresarse conjuntamente de la forma
 \begin{align}
 &
 	\zeta (s)=
@@ -115,15 +111,17 @@ Realizando las integrales término a término se obtiene:
 	\psi \left( 1 + \frac{i \alpha}{2 x} \right)
 	\right)
 	dx
+\, .
 \end{align}
-Para calcular el ultimo termino hay distintos desarrollos en serie de la función poligamma $\psi $ que se pueden usar, se va a usar el desarrollo dado en \cite{Abramowitz:1974:HMF:1098650}.
+Para calcular el último término hay distintos desarrollos en serie de la función poligamma $\psi $ que se pueden usar, se va a usar el desarrollo dado en \cite{Abramowitz:1974:HMF:1098650}.
 \begin{equation}
 \begin{array}{cc}
-\psi (1+ z ) = - \gamma + \sum \limits_{n=2}^{\infty} (-1) ^n \zeta (n) z ^{n-1} & |z| < 1
+\psi (1+ z ) = - \gamma + \sum \limits_{n=2}^{\infty} (-1) ^n \zeta _R (n) z ^{n-1},  & |z| < 1
+\, ,
 \end{array}
 \label{repr}
 \end{equation}
-El último termino queda expresado como:
+con lo cual el ultimo término queda expresado de la forma
 \begin{equation}
 - \frac{\alpha \mu ^{2s}}{4 \pi}
 \int _{x_0} ^{\infty}
@@ -131,13 +129,13 @@ El último termino queda expresado como:
 -2 \gamma -
 2 \sum _{n=1} ^{\infty} 
 (-1) ^{n}
-\zeta (2n+1) 
+\zeta _R (2n+1) 
 \left( \frac{\alpha}{2 x} \right) ^{2n}
 \right)
 x ^{-2s-2} dx
 \, ,
 \end{equation}
-obteniendo para $\zeta  (s) $ en este caso
+pudiendose expresar para $\zeta  (s) $ en este caso como
 \begin{align}
 	\zeta (s)=
 &
@@ -151,12 +149,20 @@ obteniendo para $\zeta  (s) $ en este caso
 \\
 +
 &	
-	\frac{\alpha }{4\pi} 
-	\sum _{n=1} ^{\infty} (-1) ^{n} \zeta (2n+1) 
+	\frac{\alpha \mu ^{2s}}{4\pi} 
+	\sum _{n=1} ^{\infty} (-1) ^{n} \zeta _R (2n+1) 
 	\left( \frac{\alpha}{2 } \right) ^{2n} \ \frac{x _0 ^{-2s-2n-1}}{s+n+ \frac{1}{2}}
 	\, ,
 \end{align}
-de aquí se pueden ver que $\zeta \left( - \frac{1}{2} \right)$ está dada por
+de aquí puede verse que $ \zeta (s) $ ademas de poseer los polos en $s = \pm \frac{1}{2}$, al igual que el caso finito posee polos simples en $ s = -n - \frac{1}{2}$ que están dados por
+\begin{equation}
+	\left( s + n + \frac{1}{2}\right)
+	\zeta \left( s \rightarrow -n - \frac{1}{2}\right) =
+	\frac{(-1) ^n \zeta _R (2n+1)}{4 \pi \ 2 ^{ 2n } }
+	\left( \frac{\alpha}{\mu} \right) ^{2n+1}
+	\, ,
+\end{equation}
+tambien puede verse que el polo en $s = - \frac{1}{2}$ está dado por 
 \begin{align}
 	\zeta \left(- \frac{1}{2} + \epsilon \right)=
 &
@@ -175,12 +181,12 @@ de aquí se pueden ver que $\zeta \left( - \frac{1}{2} \right)$ está dada por
 &
 +	
 	\frac{\alpha }{4\pi} 
-	\sum _{n=1} ^{\infty} \frac{(-1) ^{n} \zeta (2n+1) }{n}  
+	\sum _{n=1} ^{\infty} \frac{(-1) ^{n} \zeta _R (2n+1) }{n}  
 	\left( \frac{\alpha}{2 x _0} \right) ^{2n}
 \, ,
 \end{align}
-de esta expresión puede verse que los polos en $s = -\frac{1}{2}$ coinciden con los calculados para un intervalo $L$ finito en las expresiones (\ref{eq.result.zeta.c}) y (\ref{eq.res.1}).
-La energía de vacío resulta
+una observación es que los polos en $s = -\frac{1}{2}$ coinciden con los calculados para un intervalo $L$ finito en las expresiones (\ref{eq.result.zeta.c}) y (\ref{eq.res.1}).
+Para la energía de vacío se obtiene la expresión analítica
 \begin{align}
 \label{eq.energia.cotinua}
 	E _0 ( \epsilon ) 
@@ -200,10 +206,12 @@ La energía de vacío resulta
 &
 +	
 	\frac{\alpha }{8 \pi} 
-	\sum _{n=1} ^{\infty} \frac{(-1) ^{n} \zeta (2n+1) }{n}  
+	\sum _{n=1} ^{\infty} \frac{(-1) ^{n} \zeta _R (2n+1) }{n}  
 	\left( \frac{\alpha}{2 x _0} \right) ^{2n}
+\, ,
 \end{align}
-En la figura \ref{fig:vacio} se encuentra graficado el último termino de la energía de vacío en función del parámetro $x = \frac{\alpha}{x_0}$, puede observarse una divergencia alrededor de $x=2$ la cual se debe a la representación (\ref{repr}).
+de aquí puede verse que además de presentarse los términos dependientes de la escala $\log ( \mu )$ se presenta una dependencia con el parámetro de corte $x _0$.
+En la figura \ref{fig:vacio} se encuentra graficado el último termino de la energía de vacío en función del parámetro $x = \frac{\alpha}{x_0}$ en donde puede observarse una divergencia alrededor de $x=2$ la cual se debe a la representación (\ref{repr}).
 
 \begin{figure}
     \centering
