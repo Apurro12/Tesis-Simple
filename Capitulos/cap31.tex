@@ -3,25 +3,35 @@
 En esta sección se va a estudiar la {\it función-$\zeta $} en el limite $L \rightarrow \infty$, donde $\zeta  (s)$ va a quedar definida por:
 
 \begin{equation}
-\zeta (s) = \int _{0} ^{\infty} \rho (x) \ \left( \frac{x}{\mu } \right) ^{-2 s} dx
+	\zeta (s) = \int _{0} ^{\infty} \rho (x) \ \left( \frac{x}{\mu } 			\right) ^{-2 s} dx
+\, ,	
+\label{eq.zeta.continuo}
 \end{equation}
-
-Donde la $\rho(x) $ representará la densidad de autovalores, para llegar a esta representación se va a utilizar la representación integral como en los capítulos \ref{seq.2.com} y \ref{sec.finita.compleja}, pero a diferencia de estos el camino de integración estará dado por  (\ref{fig.izquierda}). La parametrización usada fue:
-
-
-\[
-z(t) =  
+donde $\rho(x) $ representará la densidad de autovalores. Para llegar a esta representación se va a utilizar la representación integral (\ref{asd}) tal como se utilizó en los capítulos \ref{seq.2.com} y  \ref{sec.finita.compleja}
+\begin{equation}
+\zeta (s) = 
+\frac{1}{2 \pi i} 
+\int _{\mathcal{C}}
+\frac{M ' ( z ) }{ M ( z ) } z ^{-2s} d z = 
+\frac{1}{2 \pi i} 
+\int _{\mathcal{C}}
+\partial _z \ \log 	M(z)  z ^{-2s} \ dz
+	\, ,
+	\tag{\ref{asd}}
+\end{equation}
+pero a diferencia de estos el camino a utilizar es el que está representado en la imagen \ref{fig.izquierda} cuya parametrización está dada por 
+\begin{equation}
+z(x) =  
 	  \begin{cases} 
-      x + i \epsilon  & x _0 \leq x \leq \infty \\
-      x - i \epsilon  & x _0 \leq x \leq \infty \\
-      x _0 + i y		  & - \epsilon \leq y \leq \epsilon
+      x + i \epsilon  &  x \in ( \infty, x_0] \\
+      x - i \epsilon  &  x \in  [ x_0, \infty) \\
+      x _0 + i x	  &  x \in [-\epsilon,\epsilon]
    \end{cases}
-\]
+\label{eq.para.con}
+\end{equation}
+De (\ref{larga}) se puede ver que $S _1,S _2 \rightarrow 1$ cuando $L \rightarrow \infty$, por lo tanto se va a utilizar $M (z)$ que es la función que está definida en (\ref{eq.completa}).\\
 
-De (\ref{larga}) se puede ver que $S1,S2 \rightarrow 1$ cuando $L \rightarrow \infty$, por lo tanto se va a utilizar $M ( \lambda)$ dada por (\ref{eq.completa}).\\
-
-
-Dependiendo si se está arriba o abajo del eje real, va a existir un termino exponencialmente creciente/decreciente en el limite $L \rightarrow \infty$  proveniente de $e ^{i z t}$.
+Dependiendo si se está arriba o abajo del eje real, va a existir un termino exponencialmente creciente/decreciente en el limite $L \rightarrow \infty$  proveniente del término exponencial $e ^{i z t}$. Las tres integrales provenientes de la parametrización (\ref{eq.para.con}) quedan determinadas por 
 \begin{align}
 	\frac{ 1 }{2 \pi i}  
 &	
@@ -34,6 +44,7 @@ Dependiendo si se está arriba o abajo del eje real, va a existir un termino exp
 	\epsilon _L
 	\right)
 	d x
+\label{int1}	
 \\
 	\frac{ 1 }{2 \pi i}  
 &	
@@ -46,11 +57,20 @@ Dependiendo si se está arriba o abajo del eje real, va a existir un termino exp
 	\epsilon _L
 	\right)
 	d x
+\label{int2}	
 \\
+	\frac{ 1 }{2 \pi i}	
 &
+	\int _{- \epsilon} ^{\epsilon}
+	O (\epsilon) \, dx
+\\
+&	
+\nonumber
+	\text{donde}
 	\lim \limits _{L \rightarrow \infty} \epsilon _L = 0
+\, .	
 \end{align}
-Donde, ambas integrales pueden expresarse como una sola de la forma
+Donde ambas integrales \ref{int1} y \ref{int2} pueden expresarse de la forma
 \begin{align}
 &
 	\zeta (s)=
@@ -71,8 +91,9 @@ Donde, ambas integrales pueden expresarse como una sola de la forma
 	\right)
 	\right)
 	d x
+	\, .
 \end{align}
-Realizando las integrales termino a termino se obtiene:
+Realizando las integrales término a término se obtiene:
 \begin{align}
 	\zeta (s)=
 &
@@ -95,7 +116,7 @@ Realizando las integrales termino a termino se obtiene:
 	\right)
 	dx
 \end{align}
-Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion $\psi $ que se pueden usar, se va a usar el desarrollo dado en \cite{Abramowitz:1974:HMF:1098650}.
+Para calcular el ultimo termino hay distintos desarrollos en serie de la función poligamma $\psi $ que se pueden usar, se va a usar el desarrollo dado en \cite{Abramowitz:1974:HMF:1098650}.
 \begin{equation}
 \begin{array}{cc}
 \psi (1+ z ) = - \gamma + \sum \limits_{n=2}^{\infty} (-1) ^n \zeta (n) z ^{n-1} & |z| < 1
@@ -104,7 +125,7 @@ Para calcular el ultimo termino hay distintos desarrollos en serie de la funcion
 \end{equation}
 El último termino queda expresado como:
 \begin{equation}
-- \frac{\alpha}{4 \pi}
+- \frac{\alpha \mu ^{2s}}{4 \pi}
 \int _{x_0} ^{\infty}
 \left(
 -2 \gamma -
@@ -114,8 +135,9 @@ El último termino queda expresado como:
 \left( \frac{\alpha}{2 x} \right) ^{2n}
 \right)
 x ^{-2s-2} dx
+\, ,
 \end{equation}
-Quedando $\zeta  (s) $ :
+obteniendo para $\zeta  (s) $ en este caso
 \begin{align}
 	\zeta (s)=
 &
@@ -132,8 +154,9 @@ Quedando $\zeta  (s) $ :
 	\frac{\alpha }{4\pi} 
 	\sum _{n=1} ^{\infty} (-1) ^{n} \zeta (2n+1) 
 	\left( \frac{\alpha}{2 } \right) ^{2n} \ \frac{x _0 ^{-2s-2n-1}}{s+n+ \frac{1}{2}}
+	\, ,
 \end{align}
-Obteniendo para $\zeta \left( - \frac{1}{2} \right)$
+de aquí se pueden ver que $\zeta \left( - \frac{1}{2} \right)$ está dada por
 \begin{align}
 	\zeta \left(- \frac{1}{2} + \epsilon \right)=
 &
@@ -154,9 +177,9 @@ Obteniendo para $\zeta \left( - \frac{1}{2} \right)$
 	\frac{\alpha }{4\pi} 
 	\sum _{n=1} ^{\infty} \frac{(-1) ^{n} \zeta (2n+1) }{n}  
 	\left( \frac{\alpha}{2 x _0} \right) ^{2n}
+\, ,
 \end{align}
-De esta expresión puede verse que los polos en $s = -\frac{1}{2}$ coinciden con los calculados para un intervalo $L$ finito.
-
+de esta expresión puede verse que los polos en $s = -\frac{1}{2}$ coinciden con los calculados para un intervalo $L$ finito en las expresiones (\ref{eq.result.zeta.c}) y (\ref{eq.res.1}).
 La energía de vacío resulta
 \begin{align}
 \label{eq.energia.cotinua}
@@ -180,13 +203,12 @@ La energía de vacío resulta
 	\sum _{n=1} ^{\infty} \frac{(-1) ^{n} \zeta (2n+1) }{n}  
 	\left( \frac{\alpha}{2 x _0} \right) ^{2n}
 \end{align}
-
-En la figura \ref{fig:vacio} está graficado el último termino de la energía de vacío en función de $x = \alpha / x_0$, puede observarse una divergencia alrededor de $x=2$ la cual se debe a la representación (\ref{repr}).
+En la figura \ref{fig:vacio} se encuentra graficado el último termino de la energía de vacío en función del parámetro $x = \frac{\alpha}{x_0}$, puede observarse una divergencia alrededor de $x=2$ la cual se debe a la representación (\ref{repr}).
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.3]{Vacio.jpg}
-    \caption{En esta imagen esta graficada la parte finita de la $E _0 (\epsilon) $ de la ecuación \ref{eq.energia.cotinua} en función del parámetro $x= \frac{\alpha}{x _0}$ donde se sumaron los primeros 100 términos de la serie, y en azul se puede ver la suma de la serie al reemplazar $\zeta (2n+1) = 1$}
+    \caption{En esta imagen esta graficada la parte finita de la $E _0 (\epsilon) $ de la ecuación \ref{eq.energia.cotinua} en función del parámetro $x= \frac{\alpha}{x _0}$ donde se sumaron los primeros 100 términos de la serie, puede verse un claro comportamiento divergente alrededor de $x=2$}
     \label{fig:vacio}
 \end{figure}
 
