@@ -29,7 +29,7 @@
 \def\red{\color{red}}
 \def\magenta{\color{magenta}}
 
-%\includeonly{Capitulos/cap3,Capitulos/cap2}
+\includeonly{Capitulos/Conclusiones}
 
 \begin{document}
 
@@ -181,9 +181,12 @@ Me gustan los agradecimientos cortos, y la birra fría.
 \chapter*{Prefacio}
 
 \pagestyle{plain}
-%\markboth{PREFACIO23}{PREFACIO} % encabezado 
+\markboth{PREFACIO23}{PREFACIO} % encabezado 
 
-{\red En este trabajo de tesis se estudiara la funcion zeta en el intervalo compacto $[0,L]$ del operador singular $A = - \partial _x ^2 + \frac{\alpha}{x} $, está inspirado en un trabajo realizado por A. Wipf, P. A. G. Pisani y  H. Falomir \cite{0305-4470-35-26-306}, en donde se estudian las funciones espectrales de operadores del estilo $A = - \partial _x ^2 + \frac{g}{x ^2} + x^2 $ el cual posee simetría conforme.}
+ En el año 2002 en un trabajo realizado por H. Falomir, P.A.G. Pisani y M.A. Muschietti  \cite{doi:10.1063/1.1809257} se estudiaron la resolvente y extenciones autoadjuntas de operadores singulares de la forma $A = - \partial ^2 _x + g(g-1) x ^{-2}$ en un intervalo unidimensaional compacto, encontrando que la {\it función-$\zeta$} posee polos simples en $s _n = - \left( g - \frac{1}{2} \right) n$ donde $n \in \mathbb{N} _+$. Lo cual se aparta del comportamiento esperado para el caso regular en el cual $\zeta (s)$ poseería polos simples en $s _n = \frac{1 - n}{2}$ con  $n \in \mathbb{N} _+$.
+
+En este trabajo de tesis se estudió la {\it función-$\zeta$} del operador ${A = - \partial ^2 _x + \frac{\alpha}{x}}$ en el intervalo compacto $[0,L]$ encontrando que tal como ocurre en el caso regular los polos se ubican según $s _n = \frac{1 - n}{2}$, pero a diferencia de este la singularidad conduce a la aparición de un polo doble, lo cual implica que el desarrollo del {\it heat-kernel} posee términos logaritmicos. Tal como se conjeturó en 1980 por Constantine Callias y Clifford H. Taubes \cite{callias1980}.
+
 
 
 %----------------------------------------------------------------------------------------
@@ -209,6 +212,8 @@ Me gustan los agradecimientos cortos, y la birra fría.
 %\include{Capitulos/cap5}
 \thispagestyle{empty}
 \include{Capitulos/Conclusiones}
+
+
 \thispagestyle{empty}
 
 
@@ -216,19 +221,20 @@ Me gustan los agradecimientos cortos, y la birra fría.
 %	APÉNDICES
 %----------------------------------------------------------------------------------------
 
-\addtocontents{toc}{\vspace{2em}} % Agrega espacios en la toc
+%\addtocontents{toc}{\vspace{1cm}} 
+% Agrega espacios en la toc pero de manera rara
 
 \appendix % Los siguientes capítulos son apéndices
 
-%  Incluye los apéndices en el folder de apéndices
+%Incluye los apéndices en el folder de apéndices
 
 \include{Apendices/Ap}
 \include{Apendices/ApB}
+\include{Apendices/ApC}
 \thispagestyle{empty}
-%\include{Apendices/AppendixB}
-%\include{Apendices/AppendixC}
 
-\addtocontents{toc}{\vspace{2exm}} % Agrega espacio en la toc
+
+%\addtocontents{toc}{\vspace{2cm}} % Agrega espacio en la toc
 
 
 %----------------------------------------------------------------------------------------
@@ -241,4 +247,3 @@ Me gustan los agradecimientos cortos, y la birra fría.
 
 
 \end{document}
-
