@@ -1,10 +1,10 @@
-*.out
+*.pdf
 *.aux
 *.log
-*.pdf
-*.gz
-*.toc
-*.ipynb
-*.ipynb_checkpoints/
 *.bbl
 *.blg
+*.zip
+*.fz
+*.toc
+*.gz
+*.out
