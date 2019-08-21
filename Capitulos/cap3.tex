@@ -20,7 +20,7 @@ En está sección se estudiará el siguiente operador diferencial definido sobre
 \end{aligned}
 \label{operador}
 \end{equation}
-Por simplicidad, se analizaran condiciones Dirichlet en ambos extremos para luego en el apéndice \ref{Apendice.3} se analizarán otras condiciones de contorno. El parámetro $\alpha \in \mathbb{R _{+}}$ caracteriza la singularidad en el origen.
+Por simplicidad, se analizaran condiciones Dirichlet en ambos extremos.  El parámetro $\alpha \in \mathbb{R _{+}}$ caracteriza la singularidad en el origen.
 Los autovalores están dados por la ecuación 
 \begin{equation}
 \begin{aligned}
@@ -31,9 +31,12 @@ Los autovalores están dados por la ecuación
 \label{eq.aut.sin}
 \end{equation}
 las autofunciones, en términos de dos soluciones linealmente independientes $\phi _1 (x), \phi _2 (x)$ de (\ref{eq.aut.sin}), pueden escribirse
-\begin{equation}
-\begin{aligned}
+\begin{align}
+\label{eq.phi}
+&
     \phi (x) =
+\\
+&
 	    C _1
     	\underbrace{
 				     \ e ^{-i \lambda x} \ x \ 
@@ -51,9 +54,8 @@ las autofunciones, en términos de dos soluciones linealmente independientes $\p
       			   		1- \frac{i \alpha}{2 \lambda}
       			   		,2,2 i \lambda x \right) } _{\phi_2} 
     \, ,
-\end{aligned}
-\label{eq.phi}
-\end{equation}
+\nonumber
+\end{align}
 donde $F _1 ^1(a,b,z)$ y $ U(a,b,z)$ son las soluciones LI de la ecuación {\mbox{hypergeométrica} }
 \begin{equation}
     z \ \partial ^2 _z \ \psi (a,b,z) + (b-z) \
@@ -98,11 +100,62 @@ C _2 \ x
 \, ,
 \label{eq.scat}
 \end{align}
-de este desarrollo se ve que $ \phi _1 (x \rightarrow 0 ) \rightarrow 0,\phi _2 (x \rightarrow 0)  \rightarrow
-\frac{1}{  \alpha   \Gamma ( \frac{i \alpha}{2 \lambda}  )   } $ , entonces la condición de contorno en $x=0$ fija $C _2 =0$. A menos que $\Gamma ( \frac{i \alpha}{2 \lambda}  ) \rightarrow \infty$, en ese caso $\phi _2 (0) = 0$.
+El primer detalle a tener en cuenta es que pasa si $\Gamma ( \frac{i \alpha}{2 \lambda}  ) \rightarrow \infty$, lo cual $\phi (0) = 0$ indepenientemente de $C _1$ y $C _2$, lo que sucede es que no puede simplemente hacerse el reemplazo $\lambda \rightarrow  \frac{i \alpha }{ n } $ con $n=1,2,3 \dots$ en \eqref{eq.phi}. 
+
+Para tratar este caso se escribe el autovalor $\lambda ^2 = - \frac{\alpha ^2}{4 n ^2}$ donde $n \in \mathbb{R _+}$, en ese caso las soluciones de \eqref{eq.aut.sin} están dadas por
+\begin{align}
+& \nonumber 
+	\phi (x)     =
+\\ &        
+	    C _1
+    	\underbrace{
+				     \ e ^{- \frac{x \alpha}{2n}} \ x \ 
+				     F _{1} ^{1}
+				     \left( 1+n,2, \frac{x \alpha}{n} \right) 
+				     } _ {\phi_1} 				     
+				     + 
+      C _2 
+      \underbrace{ 
+      			   \ e^{- \frac{x \alpha}{2n}} \ x \ 
+      			   U 
+      			   \left( 1+n,2, \frac{x \alpha}{n} \right)
+      			   } _{\phi_2} 
+    \, ,
+\label{eq.phi.2}
+\end{align}
+utilizando esta solución se obtiene para $\phi (x) $ cerca de $x \simeq 0$ 
+\begin{align}
+\nonumber
+	\phi (x) 
+&=
+	C _1 x 
+	\left(1 + \frac{(1+n) \alpha x}{2 n } \right)
+	+ C _2 x
+	\left(
+	\frac{1}{\alpha \Gamma (n) x } + \frac{\log (x)}{\Gamma (n)} +\mathscr{C}
+	\right)
+	+ O(x)
+\\
+\mathscr{C} 
+&=
+\frac{\psi (1+n) + \log \left( \frac{\alpha}{n} \right) -1 + 2 \gamma}{\Gamma (n)}
+\, ,
+\end{align}
+lo cual implica $C _2 = 0$. Con lo cual el problema de energías negativas queda determinado por los ceros de.
+\begin{equation}
+	F _1 ^1 
+	\left(
+		1+n,2, \frac{L \alpha}{n}
+		\right) = 0
+\, ,		
+\end{equation}
+donde el autovalor está dado por $\lambda ^2 = - \frac{\alpha ^2}{4 n ^2}$.
 
 
-Imponiendo la condición de contorno en $x=L$ los autovalores están dados por las soluciones de
+Para los cálculos que nos interesan solo se utilizarán los autovalores $\lambda ^2 >0$. 
+
+Del desarrollo \ref{eq.scat} se ve que la condición de contorno en $x=0$ fija $C _2 =0$. 
+Imponiendo entonces la condición de contorno $\phi (L)=0$ se obtiene que los autovalores positivos $\lambda ^2$ están dados por las soluciones de
 \begin{equation}
 F _1 ^1 \left(1-\frac{i \alpha}{2 \lambda},2,2 i \lambda L \right)  = 0
 	\, .
@@ -533,10 +586,12 @@ de aquí se puede observar que solo van a existir polos simples en los semienter
 
 
 Para controlar el orden del desarrollo de $ \frac{S' ( t)}{ S ( t)} $, el primer paso es desarrollar $\log S _1 (\lambda)$ alrededor de $\lambda \rightarrow \infty$, luego tomarle su derivada respecto de $\lambda$ y finalmente se evaluar en $\lambda = -i t$, pudiendo así controlar el orden del desarrollo
-\begin{equation}
-\begin{aligned}
-\frac{S _1 '( \lambda)}{S _1 ( \lambda )} &\simeq 
-\partial _{\lambda} Log \left(
+\begin{align}
+&
+\nonumber
+	\frac{S _1 '( \lambda)}{S _1 ( \lambda )} 
+	\simeq 
+	\partial _{\lambda} Log \left(
 						1 + \sum _{n=1} ^{N-1}  \frac{S ^{(1)} _n}{\lambda ^n}
 						\right) =
 \partial _{\lambda} 
@@ -559,8 +614,7 @@ Para controlar el orden del desarrollo de $ \frac{S' ( t)}{ S ( t)} $, el primer
 			\right) ^{m-1}		
 	\right)
 \, .
-\end{aligned}	
-\end{equation}
+\end{align}	
 Este desarrollo  es correcto hasta el orden N (en caso de que N sea semi-entero hay que tomarle la parte entera) el cual tiene la ventaja de poder ser calculado explícitamente. Los primeros términos de $\frac{S'(t)}{S(t)}$ son
 \begin{equation}
 \frac{S'(t)}{S(t)} = 
@@ -755,7 +809,8 @@ Para calcular $\zeta \left( - \frac{1}{2} \right)$ se utilizan los desarrollos
 	\log (2 \pi) \zeta _R (2s+2) -
 	\zeta _R ' (2s+2) = & 
 	\frac{1}{4 \left( s + \frac{1}{2} \right) ^2} + 
-	\frac{ \log (2 \pi ) }{2 \left( s + \frac{1}{2} \right) } \\
+	\frac{ \log (2 \pi ) }{2 \left( s + \frac{1}{2} \right) } 
+\\ \nonumber
 	+ &  \gamma \log (2 \pi ) + \gamma _1 + O \left( s + \frac{1}{2} \right) \\
 	\zeta _R (2s+2) = &\frac{1}{2 \left( s + \frac{1}{2} \right)} + \gamma + O \left( s + \frac{1}{2} \right)
 	 ,
@@ -1081,7 +1136,7 @@ Utilizando las ecuaciones (\ref{abajo},\ref{arriba},\ref{eq.arriba2},\ref{eq.arr
 \end{align}
 Donde en la última linea están los polos coincidiendo con lo calculado anteriormente en (\ref{eq.zeta.final},\ref{eq.result.zeta.c},\ref{eq.res.1}), en la penultima linea se encuentra la dependencia no trivial con la escala $\log (L \mu)$ que coincide con la calculada con el método anterior en la ecuación (\ref{eq.zeta.final}).
 
-Utilizando esta resultado se obtiene para la energía de vacío
+Utilizando este resultado se obtiene para la energía de vacío
 \begin{align}
 \label{eq.vacio.completa.finita}
 \nonumber
@@ -1105,10 +1160,55 @@ Utilizando esta resultado se obtiene para la energía de vacío
 	+ \frac{\beta (\gamma -1 + \log 2 L \mu )}{8  \pi L \epsilon }
 	\, .
 \end{align}
-En la figura \ref{fig.finitas} se muestran dos posibles adimensionalizaciones de la energía de vacío $\frac{E _0}{\alpha}$ y $E _0 L$, utilizando estos dos métodos. Lo que está graficado es la parte de la ecuación \eqref{energia.vacio.final} que no depende de $\mu$ en azul, y en rojos las primeras dos lineas de \eqref{eq.vacio.completa.finita} calculada para distintos valores de $\beta$, puede observarse que ambas curvas son parecidas para $\beta < 2$, luego la curva azul presenta un exceso de la curva roja, hasta que llega un momento en que la curva azul deja de converger alrededor de $\beta = 10$.
+Al momento de graficar las energías de vacío se definio la Energía Regularizada $E _{Reg}$ en las ecuaciones \eqref{integral.ante} y \eqref{integral.ultima}, lo que corresponde tomar $\mu L = 1$ en     \eqref{energia.vacio.final} y \eqref{eq.vacio.completa.finita} respectivamente, de manera que la energía de vacío no dependa de la escala $\mu$.
+\begin{align}
+\nonumber
+&
+	\frac{E_ {Reg} ( \beta )}{\alpha}  =
+	\frac{ \log ^2 \left( \frac{ 1 }{\pi} \right)}{8 \pi}  +
+		\frac{ 
+			 \log \left( \frac{ 1 }{\pi}\right)
+				( \log (2 \pi ) + \gamma -1 )}  
+			{4 \pi }  
+	- \frac{ (\gamma + \log (2 \pi ) )}{4 \pi}
+\\[5pt]
+&
++
+	\frac{\pi}{2 \beta}  
+			\left(
+				- \frac{1}{12} +
+				\frac{\beta}{2 \pi ^2} 
+				\left(
+					\gamma \log (2 \pi)
+					+ \gamma _1
+					\right) +
+								\frac{\gamma ^2 \beta }{2 \pi ^2} +
+								\frac{1}{\pi} \sum _{p=2} ^{\infty}
+								a_p \zeta (p) 
+							\right) 
+\, .
+\label{integral.ante}
+\end{align}
+\begin{align}
+\nonumber
+&
+	\frac{E _{Reg} ( \beta ) }{\alpha} =  
+		\frac{1}{4 \pi i L} 
+		\left(
+			\int _{-C _0} ^{C _0} f (i t) t dt
+			+ \int _{C _0} ^{\infty}  \left( f(i t) - f(-i t) - f _{+} (t) + f _{-} (t) \right) t dt
+			\right) 
+\\  &
+	- \frac{\beta \log ^2 (C _0) }{8 \pi L}
+	-\frac{\beta \log (C _0) (\gamma -1 + \log 2  )}{4 \pi L}
+	+ \frac{C _0 ^2}{4 \pi L}
+	- \frac{C _0}{2 \pi L}
+	- \frac{\pi \beta}{32 L}
+	\, .
+\label{integral.ultima}
+\end{align}
 
-En la figura \ref{fig:vacios} se encuentran graficada la energía de vacio para distintos valores de $\alpha$ y $\beta$, generadas a partir de la interpolacion de los puntos obtenidos en el método integral que se presenta en la figura \ref{fig.finitas}.
+En la figura \ref{fig.finitas} se muestran las energías de vacío adimensionalizacionalizadas de la forma $\frac{E _{Reg}}{\alpha}$ y $E _{Reg} L$. En el rango $0 < \beta < 2$ las curvas se solapan perfectamente, en el intervalo $2 < \beta < 8$ puede observarse una ligera diferenicia entre ambas curvas (lo cual se espera que al aumentar la cantidad de términos $a _p$ disminuya), luego a partir de $10 < \beta$ el método analítico  deja de converger y empieza a exibir un crecimiento polinómico.
 
-
-
+En la fígura \ref{fig:vacios} se encuentra graficada la energía de vacio para distintos valores de $\alpha$ y $\beta$, generadas a partir de la interpolacion de los puntos obtenidos con el método integral que se presenta en la figura \ref{fig.finitas}. En esta figura puede observarse que la energía de vacío posee un máximo local alrededor de $\alpha L \sim 0.2$ el cual se hace mas pronunciado al aumentar $\alpha$, este punto determina una región donde la energía de vacío pasa de ser atractiva a repulsiva, lo cual ocurre independientemente de cuan pequeño sea $\alpha$.
 
