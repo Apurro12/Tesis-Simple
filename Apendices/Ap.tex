@@ -1,6 +1,6 @@
-\chapter{Mathematica}\label{Apendice.1}
+\chapter{Script de Mathematica}\label{Apendice.1}
 
-En este apendice se muestra el script utilizado en el capítulo \ref{seq.desarrollo.asintotico} para obtener los términos $a _p$, el cual puede pegarse y ejecutarse directamente en el programa "Wolfram Mathematica".\\
+En este apendice se muestra el script utilizado en el capítulo \ref{seq.desarrollo.asintotico} para obtener los términos $a _p$ del desarrollo de $\zeta (s)$. El cual se puede ejecutar pegar y ejecutar  directamente en el programa "Wolfram Mathematica".\\
 
 
 
@@ -19,6 +19,9 @@ S2[Q_] :=
               Pochhammer[1 + \[Beta]/(2 I n Pi), l] 
               Pochhammer[\[Beta]/(2 I n Pi), l] 
               1/(-2 I  n Pi )^l, {l, 0, Q}];
+\end{verbatim}
+\newpage
+\begin{verbatim}
 G1[Q_] := 
           Normal[
           Series[
@@ -32,7 +35,7 @@ G2[Q_] := Normal[
                  /. {\[Mu] -> n Pi};
 Ex[Q_] := Sum[(2 I \[Epsilon])^l/l!, {l, 0, Q}];
 \end{verbatim}
-la segunda parte del script lo que hace es resolver asintoticamente cada termino $a_p$ orden a orden hasta $p=9$ ( y en este caso imprimirlos en pantalla).
+la segunda parte del script lo que hace es resolver asintoticamente cada termino $a_p$ hasta el orden deseado, el cual es el valor máximo permitido de j que en este caso es 10, e imprimirlos en pantalla.
 \begin{verbatim}
 a[0] = \[Beta]/(2 Pi ) Log[2 n Pi]/n;
 
@@ -46,5 +49,5 @@ Do[{
   	a[j] = a[j] /. {sol[[1]][[1]]},
   	a[j] = Simplify[a[j]],
   	Print[a[j]]},
-   {j, 1, 9}]
+   {j, 1, 10}]
 \end{verbatim}

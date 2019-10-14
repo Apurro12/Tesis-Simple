@@ -1,6 +1,6 @@
 \chapter{Función-\texorpdfstring{$\zeta$}{}  de Riemman} \label{Apendice.2}
 
-En este apéndice se demostraran las propiedades de la función-$\zeta$ de Riemman $\zeta _R (s)$
+En este apéndice se demostraran las propiedades de la función $\zeta$ de Riemman $\zeta _R (s)$
 
 La función $\zeta _R (s)$ se define como la prolongación analítica de la siguiente serie
 \begin{align}
@@ -8,31 +8,32 @@ La función $\zeta _R (s)$ se define como la prolongación analítica de la sigu
 	\sum _{n=1} ^{\infty} \frac{1}{n ^{s}}
 	\, ,
 \end{align}
-para calcular sus propiedades se utilizará la identidad
+para lo cual se puede utilizar la identidad
 \begin{align}
 	\frac{1}{n ^{s}} =
 	\frac{1}{\Gamma (s)} 
 	\int _0 ^{\infty} t^{s-1} e ^{-n t}  dt
 	\, ,
 \end{align}
-obteniendo
+obteniendo una representación integral de $\zeta _R (s)$
 \begin{align}
-	\zeta (s) = 
+	\zeta _R (s) = 
 	\frac{1}{\Gamma (s)}
 	\int _0 ^\infty
 	\frac{t ^{s-1}}{e ^t -1} dt
 	\, ,
 \end{align}
-aquí puede utilizarse el desarrollo de taylor 
+para lograr dar una expresión de $\zeta _R (s) $ se utilizá el desarrollo de taylor 
 \begin{equation}
 	\frac{1}{e ^t -1} = 
 	\sum _{n=-1} ^{\infty}
 	\frac{ \mathcal{B} _{n+1}}{(n+1)!} t ^n
 	\, ,
+\label{eq.ap.des}
 \end{equation}
-donde $\mathcal{B} _{n}$ son los {\it Números de Bernoulli}, utilizando esta representación $\zeta (s)$ queda expresada como
+donde $\mathcal{B} _{n}$ son los {\it Números de Bernoulli}, utilizando esta representación $\zeta _R (s)$ queda expresada como
 \begin{align}
-	\zeta (s) = 
+	\zeta _R (s) = 
 &
 	\frac{1}{\Gamma (s)}
 	\int _0 ^1 
@@ -54,7 +55,7 @@ donde $\mathcal{B} _{n}$ son los {\it Números de Bernoulli}, utilizando esta re
 	\frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}
 	\, ,
 \end{align}
-así $\zeta (s)$ podrá ser calculada $\forall s $, dos valores característicos de $\zeta(s)$ están dados por
+así $\zeta _R (s)$ podrá ser calculada $\forall s $ aumentando el orden del desarrollo \eqref{eq.ap.des}, dos valores característicos de $\zeta _R (s)$ están dados por
 \begin{align}
 	\zeta (-1) = 
 &
@@ -69,36 +70,22 @@ así $\zeta (s)$ podrá ser calculada $\forall s $, dos valores característicos
 	\frac{1}{ \epsilon} + O (\epsilon -1 ) 
 	\, .
 \end{align}
-En general puede verse que
+otra propiedad importante es la no existencia de polos exceptuando $s=1$, para esto se ve que la única posible contribución a un polo son los términos de la forma  $	\frac{1}{\Gamma (s)} \frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}$, para ver esto puede desarrollarse $\Gamma (s)$ alrededor de $s = -n$ obteniendo
 \begin{align}
-	\zeta (-n) 
-&
-	= \lim _{s \rightarrow -n}
-	\frac{\mathcal{B} _{n+1}}{\Gamma (s) (n+1)! (n + s)}
-\\	
-	n 
-&
-	= 1,2,3,4  
-\end{align}
-
-
-otra propiedad importante es la no existencia de polos exceptuando $s=1$, para esto se ve que la única posible contribución a un polo son los términos de la forma  $	\frac{1}{\Gamma (s)} \frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}$, para esto 
-\begin{align}
-	\zeta ( s \rightarrow -n ) = 
+	\lim _{s \rightarrow -n }	
+	\zeta ( s  ) = 
 	\frac{1}{\Gamma (s)}
 	\frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}
 	+ O (s + n) = 
 	\frac{(-1) ^n \mathcal{B} _{n+1}}
 		{n+1}
+	\, ,
 \end{align}
-
-
-
-
-
-
-
-
+de lo cual se concluye que
+\begin{align}
+	\zeta ( -n  ) = 
+	\frac{(-1) ^n \mathcal{B} _{n+1}}{n+1}
+\end{align}
 
 
 
