@@ -39,7 +39,7 @@ la  función-$\zeta$ queda determinada por
 \left( \frac{\pi}{L \mu} \right) ^{-2s}  \zeta _R (2s) \, . \\[10pt]
 \end{aligned}
 \end{equation}
-Donde $\zeta _R$ es la función zeta de Riemann definida en la ecuación \ref{rieman-zeta-def}, en el apendice \ref{Apendice.2 se} se demuestra  que $\zeta _R (-1) = - \frac{1}{12}$. 
+Donde $\zeta _R$ es la función zeta de Riemann definida en la ecuación \ref{rieman-zeta-def}, en el apendice \ref{Apendice.2} se se demuestra  que $\zeta _R (-1) = - \frac{1}{12}$. 
 
 Por lo tanto resulta que $\zeta (s)$ es regular en $s=-\frac{1}{2}$, siendo la energía de vacío
 
@@ -156,7 +156,7 @@ Una vez obtenidos los autovalores, calcularemos la {\it función-$\zeta$}
     \zeta (s) =  \sum_{n = 1} ^{ \infty } \left( \frac{\lambda _n}{\mu } \right) ^ {-2 s} \, ,
     \tag{\ref{eq.casimir.mu}}
 \end{equation}
-la dificultad está en que las ecuación (\ref{autovalores2}) no provee una solución explícita para $\lambda _n$. Para estudiar la función-$\zeta$ utilizaremos tres técnicas: la primera de ellas consiste en obtener un desarrollo asintótico de los autovalores, la segunda utiliza una representación integral en el plano complejo de la función-$\zeta$, y la tercera se basa en la relación con el {\it heat-kernel}. 
+la dificultad está en que las ecuación (\ref{autovalores2}) no posee una solución explícita para $\lambda _n$. Para estudiar la función-$\zeta$ utilizaremos tres técnicas: la primera de ellas consiste en obtener un desarrollo asintótico de los autovalores, la segunda utiliza una representación integral en el plano complejo de la función-$\zeta$, y la tercera se basa en la relación con el {\it heat-kernel}. 
 
 \subsection{Desarrollo Asintótico de los autovalores}{\label{seq.asin}}
 
@@ -204,7 +204,7 @@ para lograr obtener una expresión de $\epsilon _n$ se desarrolla la ecuación a
 & 
   	\, .
 \end{align}
-A partir de esta expresión, como solamente existen potencias enteras de $\epsilon$, se propone un desarrollo de  $\epsilon _n$ de la forma
+Expresión que permite obtener un desrrollo asintótico de $\epsilon _n$  proponiendo un desarrollo de   de la forma
 \begin{equation}
 \label{eq.epsilon}
     \epsilon _n = 
@@ -219,7 +219,7 @@ Reemplazando esta propuesta de desarrollo en la ecuación \eqref{igualdad epsilo
      \, .
 \label{epsilons}
 \end{equation}
-Utilizando estos resultados en la definición de función-$\zeta$ dada \eqref{def.adim} se obtiene
+Utilizando estos resultados en la definición de función-$\zeta$ dada en \eqref{def.adim} se obtiene
 \begin{align}
 \nonumber
     \zeta  (s) &=  
@@ -293,7 +293,7 @@ Los siguientes términos de $\zeta (s)$ son de la forma $\sum _{n=1} ^{\infty} n
 	\, ,
 \end{align}
 donde $\zeta _R (2s+p)$ es una función meroforma con polo simple en $s = \frac{1}{2} - \frac{p}{2}$,
-por lo tanto los polos de $\zeta (s)$ quedan caracterizados por los polos simples de las funciones  $\zeta _R (2s+p)$. De esta manera se muestra que $\zeta (s)$ posee polos simples en los semi-enteros negativos, de acuerdo con el el resultado \eqref{eq.ceros.zeta}. El desarrollo hasta orden $O(n^{-3})$ que hemos calculado para los autovalores permite obtener los residuos correspondientes a los siguientes polos.
+por lo tanto los polos de $\zeta (s)$ quedan caracterizados por los polos simples de las funciones  $\zeta _R (2s+p)$. De esta manera se muestra que $\zeta (s)$ posee polos simples en los semi-enteros negativos lo cual está de acuerdo con el el resultado \eqref{eq.ceros.zeta}. El desarrollo hasta orden $O(n^{-3})$ que hemos calculado para los autovalores permite obtener los residuos correspondientes a los siguientes polos.
 \begin{equation}
 \begin{aligned}\label{eq.polos.asin}
 	\left(1- \frac{1}{2} \right) \zeta  (s)| _{s=\frac{1}{2}} &= 
@@ -349,14 +349,14 @@ En el problema que estamos considerando $f(z) = z \cos Lz + S \sin Lz$ (ver (\re
         \centering
         \includegraphics[height=1.2in]{Camino.pdf}
         \caption{}
-        \label{fig.izquierda}
+        \label{fig.izquierda_2}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.3\textwidth}
         \centering
         \includegraphics[height=1.2in]{Camino2.pdf}
         \caption{}
-        \label{fig.derecha}
+        \label{fig.medio}
     \end{subfigure}
     ~
     \begin{subfigure}[t]{0.3\textwidth}
@@ -368,8 +368,7 @@ En el problema que estamos considerando $f(z) = z \cos Lz + S \sin Lz$ (ver (\re
     \caption{Estos caminos son los tenidos en cuenta para representar a la {\it función-$\zeta$} como una integral en el plano complejo.}
 \label{fig:contorno}
 \end{figure*}
-Se va a utilizar el camino de integración dado en la figura \ref{fig.derecha}, el cual se puede descomponer en 3 integrales, una angular que es regular $ \forall s$ y por lo tanto no aporta a la estructura de polos, y dos rectas las cuales se van a parametrizar de la forma $z = \pm i  t$. 
-Cuyas integrales correspondientes son
+Se va a utilizar el camino de integración dado en la figura \ref{fig.medio}, el cual se puede descomponer en 3 integrales, una angular que es regular $ \forall s$ y por lo tanto no aporta a la estructura de polos, y dos rectas las cuales se van a parametrizar de la forma $z = \pm i  t$. 
 \begin{align}
 \label{eq.tirados}
 \frac{\mu ^{2s} e ^{-i \pi s}}{2 \pi i} \int _{\infty} ^{1} 
@@ -441,7 +440,7 @@ Utilizando esta técnica se pudo calcular la estructura entera de polos de la fu
 
 En las secciones \ref{sec.complejo} y \ref{seq.asin} se utilizaron técnicas para aproximar la {\it función-$\zeta$}, obteniendo la estructura de polos. En esta sección se hará uso del resultado general (\ref{eq.heat.expansion}) para obtener los polos de la {\it función-$\zeta$}.
 
-En la ecuación (\ref{coef}) están presentados los primeros términos de Seeley-DeWitt para un operador con borde, en estas condiciones: variedad unidimensional, sin curvatura, y condición de contorno Robin en un extremo y Dirichlet en el otro, los coeficientes de Seeley-DeWitt quedan expresados como :
+En la ecuación (\ref{coef}) están presentados los primeros términos de Seeley-DeWitt para un operador con borde, en estas condiciones: variedad unidimensional, sin curvatura, y condición de contorno Robin en un extremo y Dirichlet en el otro, los coeficientes de Seeley-DeWitt quedan expresados como:
 \begin{equation}
 \begin{aligned}
 C _0 &=  \frac{L \mu}{\sqrt{4 \pi} }\\
@@ -485,5 +484,7 @@ E _0 ( \epsilon )
 				\frac{\mu}{2} \ {\rm PF} \, f \left( - \frac{1}{2} \right)
 \, .
 \end{equation}
-Donde PF significa la parte finita. De esta ecuación puede verse que la energía de vacío $E _0 (\epsilon)$ depende de $\epsilon$, lo cual es esperable ya que $\zeta \left( -\frac{1}{2} \right)$ presenta el polo. 
-En el siguiente capítulo se calculará la parte finita de la energía de vacio para el operador que nos interesa, permitiendo así poder graficar la energía de vacío.
+Donde PF significa la parte finita. De esta ecuación puede verse que la energía de vacío $E _0 (\epsilon)$ depende del cutoff $\epsilon$, lo cual es esperable ya que $\zeta \left( -\frac{1}{2} \right)$ presenta un polo. 
+
+
+En el siguiente capítulo además de utilizar las técnicas anteriores se calculará la parte finita de la energía de vacio para el operador que nos interesa, permitiendo así poder obtener una grafica de la energía de vacío.

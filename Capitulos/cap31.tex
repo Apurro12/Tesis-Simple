@@ -6,7 +6,7 @@ En esta sección se va a estudiar la {\it función-$\zeta $} en el limite $L \ri
 \, ,	
 \label{eq.zeta.continuo}
 \end{equation}
-donde $\rho(x) $ representará la densidad de autovalores. Para llegar a esta representación se va a utilizar la representación integral (\ref{asd}) tal como se utilizó en los capítulos \ref{seq.2.com} y  \ref{sec.finita.compleja}
+donde $\rho(x) $ representa la densidad de autovalores. Para llegar a esta representación se va a utilizar la representación integral (\ref{asd}) tal como se utilizó en los capítulos \ref{seq.2.com} y  \ref{sec.finita.compleja}
 \begin{equation}
 \zeta (s) = 
 \frac{1}{2 \pi i} 
@@ -18,11 +18,11 @@ donde $\rho(x) $ representará la densidad de autovalores. Para llegar a esta re
 	\, ,
 	\tag{\ref{asd}}
 \end{equation}
-pero a diferencia de estos capítulos, el camino a utilizar es el que está representado en la imagen \ref{fig.izquierda} cuya parametrización está dada por 
+pero a diferencia de estos capítulos, el camino a utilizar es el que está representado en la imagen \ref{fig.izquierda_2} cuyos segmentos pueden parametrizarse de la forma
 \begin{equation}
 z(x) =  
 	  \begin{cases} 
-      x + i \epsilon  &  x \in ( \infty, x_0] \\
+      x + i \epsilon  &  x \in [x _0, \infty] \\
       x - i \epsilon  &  x \in  [ x_0, \infty) \\
       x _0 + i x	  &  x \in [-\epsilon,\epsilon]
    \end{cases}
@@ -33,13 +33,15 @@ De (\ref{larga}) se puede ver que $S _1,S _2 \rightarrow 1$ cuando $L \rightarro
 
 Al igual que en los capítulos \ref{seq.2.com} y  \ref{sec.finita.compleja} se va a generar un termino exponencialmente decreciente, el cual en este caso va a tender a cero en el límite $L \rightarrow \infty$. Las tres integrales provenientes de la parametrización (\ref{eq.para.con}) quedan determinadas por 
 \begin{align}
-&
+\zeta (s) =& \\
+& +
 \nonumber
 	\frac{ 1 }{2 \pi i}  
 	\int _{\infty} ^{x _0} 
 	\left( \frac{x}{\mu} \right) ^{-2s} \times
 \\
 &
+\nonumber
 	\times
 	\left( +
 	\frac{i \alpha}{2 x^2} - 
@@ -51,7 +53,7 @@ Al igual que en los capítulos \ref{seq.2.com} y  \ref{sec.finita.compleja} se v
 \label{int1}	
 \\
 \nonumber
-&
+& +
 	\frac{ 1 }{2 \pi i}  
 	\int _{x _0} ^{\infty} 
 	\left( \frac{x}{\mu} \right) ^{-2s}
@@ -66,16 +68,16 @@ Al igual que en los capítulos \ref{seq.2.com} y  \ref{sec.finita.compleja} se v
 	\epsilon _L
 	\right)
 	d x
-\label{int2}	
+\nonumber
 \\
-&
+& +
+\nonumber
 	\frac{ 1 }{2 \pi i}	
 	\int _{- \epsilon} ^{\epsilon}
 	O (\epsilon) \, dx
-\label{int3}
 \, .	
 \end{align}
-donde $\lim \limits _{L \rightarrow \infty} \epsilon _L = 0$, por lo tanto junto con la integral (\ref{int3}) no se tendrán en cuenta. Ambas integrales (\ref{int1}) y (\ref{int2}) pueden expresarse conjuntamente de la forma
+donde $\lim \limits _{L \rightarrow \infty} \epsilon _L = 0$, por lo tanto la última integral no se tendrá en cuenta. Obteniendo para $\zeta(s) $
 \begin{align}
 &
 	\zeta (s)=
@@ -122,7 +124,7 @@ Realizando las integrales término a término se obtiene:
 	dx
 \, .
 \end{align}
-Para calcular el último término hay distintos desarrollos en serie de la función poligamma $\psi $ que se pueden usar, se va a usar el desarrollo dado en \cite{Abramowitz:1974:HMF:1098650}.
+Para calcular el último término hay distintos desarrollos en serie de la función poligamma $\psi $ que se pueden utilizar, se va a usar el desarrollo dado en \cite{Abramowitz:1974:HMF:1098650}.
 \begin{equation}
 \begin{array}{cc}
 \psi (1+ z ) = - \gamma + \sum \limits_{n=2}^{\infty} (-1) ^n \zeta _R (n) z ^{n-1},  & |z| < 1
@@ -224,7 +226,7 @@ En la figura \ref{fig:vacio} se encuentra graficado el último termino de la ene
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.3]{Vacio.pdf}
+    \includegraphics[scale=0.5]{Vacio.pdf}
     \caption{En esta imagen esta graficada la parte finita de la $E _0 (\epsilon) $ de la ecuación \ref{eq.energia.cotinua} en función del parámetro $x= \frac{\alpha}{x _0}$ donde se sumaron los primeros 100 términos de la serie, puede verse un claro comportamiento divergente alrededor de $x=2$}
     \label{fig:vacio}
 \end{figure}
