@@ -33,10 +33,14 @@ De (\ref{larga}) se puede ver que $S _1,S _2 \rightarrow 1$ cuando $L \rightarro
 
 Al igual que en los capítulos \ref{seq.2.com} y  \ref{sec.finita.compleja} se va a generar un termino exponencialmente decreciente, el cual en este caso va a tender a cero en el límite $L \rightarrow \infty$. Las tres integrales provenientes de la parametrización (\ref{eq.para.con}) quedan determinadas por 
 \begin{align}
+&
+\nonumber
 	\frac{ 1 }{2 \pi i}  
-&	
 	\int _{\infty} ^{x _0} 
-	\left( \frac{x}{\mu} \right) ^{-2s}
+	\left( \frac{x}{\mu} \right) ^{-2s} \times
+\\
+&
+	\times
 	\left( +
 	\frac{i \alpha}{2 x^2} - 
 	\frac{i \alpha }{2 \lambda ^2} \log ( 2 \lambda L ) +
@@ -46,10 +50,15 @@ Al igual que en los capítulos \ref{seq.2.com} y  \ref{sec.finita.compleja} se v
 	d x
 \label{int1}	
 \\
+\nonumber
+&
 	\frac{ 1 }{2 \pi i}  
-&	
 	\int _{x _0} ^{\infty} 
 	\left( \frac{x}{\mu} \right) ^{-2s}
+	\times
+\\
+&
+	\times	
 	\left( -
 	\frac{i \alpha}{2 x^2} + 
 	\frac{i \alpha }{2 \lambda ^2} \log ( 2 \lambda L ) -
@@ -59,8 +68,8 @@ Al igual que en los capítulos \ref{seq.2.com} y  \ref{sec.finita.compleja} se v
 	d x
 \label{int2}	
 \\
-	\frac{ 1 }{2 \pi i}	
 &
+	\frac{ 1 }{2 \pi i}	
 	\int _{- \epsilon} ^{\epsilon}
 	O (\epsilon) \, dx
 \label{int3}
@@ -215,7 +224,7 @@ En la figura \ref{fig:vacio} se encuentra graficado el último termino de la ene
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.3]{Vacio.jpg}
+    \includegraphics[scale=0.3]{Vacio.pdf}
     \caption{En esta imagen esta graficada la parte finita de la $E _0 (\epsilon) $ de la ecuación \ref{eq.energia.cotinua} en función del parámetro $x= \frac{\alpha}{x _0}$ donde se sumaron los primeros 100 términos de la serie, puede verse un claro comportamiento divergente alrededor de $x=2$}
     \label{fig:vacio}
 \end{figure}

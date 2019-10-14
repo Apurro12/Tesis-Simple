@@ -476,18 +476,19 @@ donde todos los términos son calculables analíticamente, excepto el que contie
     \, .
 \end{equation}
 Una vez realizadas todas las integrales $\zeta (s)$ queda expresada como  
-\begin{equation}\label{eq.laurent}
-\begin{aligned}
+
+\begin{align}
+\nonumber
     \zeta  (s)  & = 
      \frac{\mu ^{2s} L ^{2 s} e ^{i \pi s}}{2 \pi i (s-\frac{1}{2})}  
     -\frac{\alpha \mu ^{2s} \sin(\pi s)}{8 \pi \left( s+\frac{1}{2} \right) ^2}  + 
     \frac{\alpha \mu ^{2s} \sin  (\pi s) (1 - \gamma -   \log (2 L))}{4 \pi (s+ \frac{1}{2} )} 
 \\
+\label{eq.laurent}
     & + \frac{\alpha \mu ^{2s} \cos(\pi s)}{8 (s+\frac{1}{2} )} +
     \int _1 ^{\infty} O \left( t ^{-2s-3} \right) dt
     	\, .
-\end{aligned}
-\end{equation}
+\end{align}
 Para calcular el polo en $s=- \frac{1}{2}$ se desarrolla en Serie de Laurent la expresión anterior
 \begin{align}
 \label{eq.result.zeta.c}
@@ -552,24 +553,25 @@ Al igual que en la sección \ref{seq.2.com} al integrar sobre los ejes verticale
 donde la única diferencia con los logaritmos calculados en la sección anterior en la ecuación (\ref{eq.logatirmos}) es la aparición de los términos $\log ( S _1 )$ y $ \log ( S _2) $.
 
 Teniendo en cuenta solo los términos que contribuyen a los polos en  $R{\rm } e(s) < - \frac{1}{2}$ se obtiene para $\zeta (s)$
-\begin{equation}
-\begin{aligned}
- \zeta  (s) =& \\[10pt]
-& \frac{e ^{- i \pi s} \mu ^{2s } }{2 \pi}
-\int _{\infty} ^{1} t ^{-2s } 
+\begin{align}
+\nonumber
+	\zeta  (s) =& 	
+\\[10pt]
+& 
+	\frac{e ^{- i \pi s} \mu ^{2s } }{2 \pi}
+	\int _{\infty} ^{1} t ^{-2s } 
 		\frac{S _2' (it)}{S _2 (it)}
-		d t
-	- 
-\frac{e ^{i \pi s} \mu ^{2s}}{2 \pi}
-\int _{1} ^{\infty} t ^{-2s } 
+		d t - 
+	\frac{e ^{i \pi s} \mu ^{2s}}{2 \pi}
+	\int _{1} ^{\infty} t ^{-2s } 
 	\frac{S _1 ' (-it)}{S _1 (-it)}
-	d t 
+	d t
+\nonumber 
 	 \\[10pt]
 	&  + \frac{\alpha \mu ^{2s} }{2 \pi }	\sin ( \pi s)  \int _1 ^{\infty}
 	t ^{-2s-2}  \psi \left( 1 + \frac{\alpha}{2 t}\right) dt 
 		\, .
-\end{aligned}
-\end{equation}
+\end{align}
 Utilizando la propiedad  $\frac{S _1 ' (-it)}{S _1 (-i t)} = - \frac{S _2 ' (i t)}{S _2 (it)} = \frac{S'(t)}{S(t)}  $ se puede reescribir la ecuación anterior de la forma
 \begin{equation}
 \begin{aligned}

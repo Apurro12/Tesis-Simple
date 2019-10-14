@@ -58,18 +58,30 @@ así $\zeta (s)$ podrá ser calculada $\forall s $, dos valores característicos
 \begin{align}
 	\zeta (-1) = 
 &
-	Res \Big| _{s=1}
-		\left(
+	\lim _{s \rightarrow -1}
 			\frac{1}{\Gamma (s)} \frac{\mathcal{B} _2}{2! (s+1)}
-			\right) =
+			 =
 	- \frac{1}{12}
 \\
 	\zeta (\epsilon \rightarrow 1) =
 & 
 	\frac{1}{\Gamma (1)} \frac{\mathcal{B} _0}{ \epsilon} + O (\epsilon -1 ) = 
 	\frac{1}{ \epsilon} + O (\epsilon -1 ) 
-	\, ,
+	\, .
 \end{align}
+En general puede verse que
+\begin{align}
+	\zeta (-n) 
+&
+	= \lim _{s \rightarrow -n}
+	\frac{\mathcal{B} _{n+1}}{\Gamma (s) (n+1)! (n + s)}
+\\	
+	n 
+&
+	= 1,2,3,4  
+\end{align}
+
+
 otra propiedad importante es la no existencia de polos exceptuando $s=1$, para esto se ve que la única posible contribución a un polo son los términos de la forma  $	\frac{1}{\Gamma (s)} \frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}$, para esto 
 \begin{align}
 	\zeta ( s \rightarrow -n ) = 

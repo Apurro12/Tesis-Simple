@@ -98,9 +98,13 @@ Estudiemos ahora el mismo operador bajo condiciones de contorno periódicas
 Este problema representa una partícula escalar confinada en un anillo $S ^1$ .
 Los autovalores y autofunciones están dados por
 \begin{align}
-	\phi _{0} &= \sqrt{\frac{1}{L}} \\[5pt]
-	\phi _{n} (x) &= \sqrt{\frac{2}{L}} \cos \left( \frac{2 n \pi x}{L} \right),
-	\, \, \,  \psi _n (x) =\sqrt{\frac{2}{L}} \sin \left( \frac{n \pi x}{L} \right) 
+\nonumber
+	\phi _{0} &= \sqrt{\frac{1}{L}} 
+\\[5pt]
+\nonumber
+	\phi _{n} (x) &= \sqrt{\frac{2}{L}} \cos \left( \frac{2 n \pi x}{L} 
+	\right),
+	\, \, \,  \psi _n (x) =\sqrt{\frac{2}{L}} \sin \left( \frac{n \pi 		x}{L} \right) 
 	\, \, \, \, \, \, \, \, \, n \neq 0
 	\\[5pt]
 	\lambda ^2 _n  &= \left( \frac{2 n \pi }{L} \right) ^2 
@@ -108,15 +112,16 @@ Los autovalores y autofunciones están dados por
 	 n = 0,1,2,3, \dots
 \end{align}
 La función-$\zeta$ resulta
-\begin{equation}
-\begin{aligned}
-\zeta  (s) &= 
-2 \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu ^2} \right)^{-s} \\[5pt]
+\begin{align}
+\nonumber
+	\zeta  (s) &= 
+	2 \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu ^2} \right)^
+	{-s} 
+	\\[5pt]
 &=  2 \left( \frac{2 \pi}{L} \right) ^{-2s} \mu ^{2s} \sum _{n=1} ^{\infty} n ^{-2s} =  
 2 \mu ^{2s} \left( \frac{2 \pi}{L} \right) ^{-2s} \zeta _R (2s)
 \, ,
-\end{aligned}
-\end{equation}
+\end{align}
 que al igual que en los casos anteriores es regular en $s=- \frac{1}{2}$. Obtenemos
 entonces la energía de vacío
 \begin{equation}
@@ -185,14 +190,20 @@ Utilizando esta expresión de $\rho _n$ en la ecuación \eqref{autovalores2} se 
 \end{aligned}
 \end{equation}
 para lograr obtener una expresión de $\epsilon _n$ se desarrolla la ecuación anterior alrededor de $\epsilon  _n \sim 0$, obteniendo 
-\begin{equation}
-    1 = 
-    \sum _{p=0} ^{\infty} (-1) ^p     \left[
-   	\left( \frac{1}{\theta (2p+1)!  } + \frac{1}{(2p+2)!} \right) \epsilon _n ^{2p+2 } +
-  	\frac{n \pi + \frac{\pi}{2}}{\theta (2p+1)! }   \epsilon _n ^{2p+1} 			\right]
-  	\, .
+\begin{align}
+\nonumber
+    1 =     
+    \sum _{p=0} ^{\infty} (-1) ^p    
+    \Bigg[
+   	\left( \frac{1}{\theta (2p+1)!  } + \frac{1}{(2p+2)!} \right) 			\epsilon _n ^{2p+2 } 
+&   	
+\\
 \label{igualdad epsilon}
-\end{equation}
+  	+ \frac{n \pi + \frac{\pi}{2}}{\theta (2p+1)! }   \epsilon _n ^{2p
+  	+1}	\Bigg]
+& 
+  	\, .
+\end{align}
 A partir de esta expresión, como solamente existen potencias enteras de $\epsilon$, se propone un desarrollo de  $\epsilon _n$ de la forma
 \begin{equation}
 \label{eq.epsilon}
@@ -284,16 +295,17 @@ Los siguientes términos de $\zeta (s)$ son de la forma $\sum _{n=1} ^{\infty} n
 donde $\zeta _R (2s+p)$ es una función meroforma con polo simple en $s = \frac{1}{2} - \frac{p}{2}$,
 por lo tanto los polos de $\zeta (s)$ quedan caracterizados por los polos simples de las funciones  $\zeta _R (2s+p)$. De esta manera se muestra que $\zeta (s)$ posee polos simples en los semi-enteros negativos, de acuerdo con el el resultado \eqref{eq.ceros.zeta}. El desarrollo hasta orden $O(n^{-3})$ que hemos calculado para los autovalores permite obtener los residuos correspondientes a los siguientes polos.
 \begin{equation}
-\begin{aligned}
-\left(1- \frac{1}{2} \right) \zeta  (s)| _{s=\frac{1}{2}} &= 
-\frac{L \mu }{2 \pi } \\[5pt]
-s \zeta  (s) |_{s=0} &= \ 0 \\[5pt]
-\left( s + \frac{1}{2} \right)\zeta  (s) | _{s=-\frac{1}{2}} &= \frac{S}{2 \pi \mu } \\[5pt]
-(s+1) \zeta (s) |_{s=-1} &=  0
-\, ,
+\begin{aligned}\label{eq.polos.asin}
+	\left(1- \frac{1}{2} \right) \zeta  (s)| _{s=\frac{1}{2}} &= 
+\frac{L \mu }{2 \pi } 
 \\[5pt]
+	s \zeta  (s) |_{s=0} &= \ 0 
+\\[5pt]
+	\left( s + \frac{1}{2} \right)\zeta  (s) | _{s=-\frac{1}{2}} &= 		\frac{S}{2 \pi \mu } 
+\\[5pt]
+	(s+1) \zeta (s) |_{s=-1} &=  0
+	\, .
 \end{aligned}
-\label{eq.polos.asin}
 \end{equation}
 
 

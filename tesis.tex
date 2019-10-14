@@ -8,17 +8,16 @@
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{mathrsfs}
-\usepackage{verbatim}
 \usepackage{cite}
 \usepackage{subcaption} %Subfiguras
-\usepackage{verbatim}
+\usepackage{verbatim} %Esto es para poner comentarios largos y demas
 \graphicspath{{Img/}} %En qué carpeta están las imágenes
 \usepackage[nottoc]{tocbibind}
 \usepackage[pdftex,
-            pdfauthor={NOMBRE DEL AUTOR},
+            pdfauthor={Camilo Leonel Amadio},
             pdftitle={Tesis Amadio Camilo},
-            pdfsubject={ÁREA DE LA TESIS},
-            pdfkeywords={PALABRAS CLAVE},
+            pdfsubject={Física},
+            pdfkeywords={QTF},
             pdfproducer={Latex con hyperref},
             pdfcreator={pdflatex}]{hyperref}
 \usepackage{amssymb}
@@ -29,7 +28,7 @@
 \def\red{\color{red}}
 \def\magenta{\color{magenta}}
 
-%\includeonly{Capitulos/cap3}
+%\includeonly{Apendices/ApB}%Capitulos/cap3}
 
 \begin{document}
 
@@ -170,6 +169,7 @@ Me gustan los agradecimientos cortos, y la birra fría.
     \item A mis mejores amigos, Lucas, La Sol y la Celia
     \item A la cervecería Quilmes que sin ella probablemente ya me hubiera suicidado hace mucho
     \item A Ana y Analia, que son las mejores bibliotecarias que existen, no me imagino como hubiera sido sin ellas. 
+    \item Por último y no menos importante, a todas esas mamas y papas de nuestros compañeros que nos daban de comer como si fueramos sus nietos
 \end{enumerate}
 
 
@@ -183,9 +183,9 @@ Me gustan los agradecimientos cortos, y la birra fría.
 \pagestyle{plain}
 \markboth{PREFACIO23}{PREFACIO} % encabezado 
 
- En el año 2002 en un trabajo realizado por H. Falomir, P.A.G. Pisani y M.A. Muschietti  \cite{doi:10.1063/1.1809257} se estudiaron la resolvente y extenciones autoadjuntas de operadores singulares de la forma $A = - \partial ^2 _x + g(g-1) x ^{-2}$ en un intervalo unidimensaional compacto, encontrando que la {\it función-$\zeta$} posee polos simples en $s _n = - \left( g - \frac{1}{2} \right) n$ donde $n \in \mathbb{N} _+$. Lo cual se aparta del comportamiento esperado para el caso regular en el cual $\zeta (s)$ poseería polos simples en $s _n = \frac{1 - n}{2}$ con  $n \in \mathbb{N} _+$.
+ En el año 2002 en un trabajo realizado por H. Falomir, P.A.G. Pisani y M.A. Muschietti  \cite{doi:10.1063/1.1809257} se estudío la resolvente y extenciones autoadjuntas de operadores singulares de la forma $A = - \partial ^2 _x + g(g-1) x ^{-2}$ en un intervalo unidimensaional compacto, encontrando que la {\it función-$\zeta$} posee polos simples en $s _n = - \left( g - \frac{1}{2} \right) n$ donde $n \in \mathbb{N} _+$. Lo cual se aparta del comportamiento esperado para el caso regular en el cual $\zeta (s)$ poseería polos simples en $s _n = \frac{1 - n}{2}$ con  $n \in \mathbb{N} _+$.
 
-En este trabajo de tesis se estudió la {\it función-$\zeta$} del operador ${A = - \partial ^2 _x + \frac{\alpha}{x}}$ en el intervalo compacto $[0,L]$ encontrando que tal como ocurre en el caso regular los polos se ubican según $s _n = \frac{1 - n}{2}$, pero a diferencia de este la singularidad conduce a la aparición de un polo doble, lo cual implica que el desarrollo del {\it heat-kernel} posee términos logaritmicos. Tal como se conjeturó en 1980 por Constantine Callias y Clifford H. Taubes \cite{callias1980}.
+En este trabajo de tesis se estudió la {\it función-$\zeta$} del operador ${A = - \partial ^2 _x + \frac{\alpha}{x}}$ en el intervalo compacto $[0,L]$ encontrando que a diferencia del operador anterior polos se ubican según $s _n = \frac{1 - n}{2}$ como habria de esperarse en el caso regular, pero a diferencia de este la singularidad conduce a la aparición de un polo doble en el momento de calcular la energía de vacío, lo cual implica que el desarrollo del {\it heat-kernel} posee términos logaritmicos. Tal como se conjeturó en 1980 por Constantine Callias y Clifford H. Taubes \cite{callias1980}.
 
 
 
