@@ -1,6 +1,8 @@
 \chapter{Script de Mathematica}\label{Apendice.1}
 
-En este apendice se muestra el script utilizado en el capítulo \ref{seq.desarrollo.asintotico} para obtener los términos $a _p$ del desarrollo de $\zeta (s)$. El cual se puede ejecutar pegar y ejecutar  directamente en el programa "Wolfram Mathematica".\\
+En este apéndice se presentará el script utilizado en el capítulo \ref{seq.desarrollo.asintotico} para obtener los términos $a _p$ del desarrollo de $\zeta (s)$. 
+
+Este script está escrito en el programa "Wolfram Mathematica", el cual puede copiarse y pegar para ser ejecutado directamente.\\
 
 
 
@@ -35,7 +37,7 @@ G2[Q_] := Normal[
                  /. {\[Mu] -> n Pi};
 Ex[Q_] := Sum[(2 I \[Epsilon])^l/l!, {l, 0, Q}];
 \end{verbatim}
-la segunda parte del script lo que hace es resolver asintoticamente cada termino $a_p$ hasta el orden deseado, el cual es el valor máximo permitido de j que en este caso es 10, e imprimirlos en pantalla.
+La segunda parte del script lo que hace es resolver asintóticamente cada termino $a_p$ hasta el orden deseado, lo que se corresponde con el valor máximo de j, e imprimirlos en pantalla.
 \begin{verbatim}
 a[0] = \[Beta]/(2 Pi ) Log[2 n Pi]/n;
 

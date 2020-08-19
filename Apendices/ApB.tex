@@ -1,21 +1,21 @@
 \chapter{Función-\texorpdfstring{$\zeta$}{}  de Riemman} \label{Apendice.2}
 
-En este apéndice se demostraran las propiedades de la función $\zeta$ de Riemman $\zeta _R (s)$
+En este apéndice se estudiará la extensión analítica y la estructura de polos de la función-$\zeta$ de Riemman $\zeta _R (s)$.
 
-La función $\zeta _R (s)$ se define como la prolongación analítica de la siguiente serie
+La función $\zeta _R (s)$ se define como la prolongación analítica de la serie
 \begin{align}
 	\zeta _R (s) = 
 	\sum _{n=1} ^{\infty} \frac{1}{n ^{s}}
 	\, ,
 \end{align}
-para lo cual se puede utilizar la identidad
+donde utilizando la identidad
 \begin{align}
 	\frac{1}{n ^{s}} =
 	\frac{1}{\Gamma (s)} 
 	\int _0 ^{\infty} t^{s-1} e ^{-n t}  dt
 	\, ,
 \end{align}
-obteniendo una representación integral de $\zeta _R (s)$
+se obtiene la representación integral
 \begin{align}
 	\zeta _R (s) = 
 	\frac{1}{\Gamma (s)}
@@ -23,7 +23,7 @@ obteniendo una representación integral de $\zeta _R (s)$
 	\frac{t ^{s-1}}{e ^t -1} dt
 	\, ,
 \end{align}
-para lograr dar una expresión de $\zeta _R (s) $ se utilizá el desarrollo de taylor 
+con el fin de obtener una extensión analítica se puede utilizar el desarrolo de Maclaurin
 \begin{equation}
 	\frac{1}{e ^t -1} = 
 	\sum _{n=-1} ^{\infty}
@@ -31,10 +31,10 @@ para lograr dar una expresión de $\zeta _R (s) $ se utilizá el desarrollo de t
 	\, ,
 \label{eq.ap.des}
 \end{equation}
-donde $\mathcal{B} _{n}$ son los {\it Números de Bernoulli}, utilizando esta representación $\zeta _R (s)$ queda expresada como
+donde $\mathcal{B} _{n}$ son los llamados {\it Números de Bernoulli}, sumando y restando este desarrollo hasta el orden $N$ se obtiene una extensión analítica dada por
 \begin{align}
-	\zeta _R (s) = 
-&
+\nonumber
+	\zeta _R (s) &= 
 	\frac{1}{\Gamma (s)}
 	\int _0 ^1 
 	t ^{s-1} 
@@ -48,29 +48,28 @@ donde $\mathcal{B} _{n}$ son los {\it Números de Bernoulli}, utilizando esta re
 	\int _1 ^\infty
 	\frac{t ^{s-1}}{e ^t -1} dt
 \\
-	+
-&
+	&+
 	\frac{1}{\Gamma (s)}
 	\sum _{n=-1} ^{N}
 	\frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}
 	\, ,
 \end{align}
-así $\zeta _R (s)$ podrá ser calculada $\forall s $ aumentando el orden del desarrollo \eqref{eq.ap.des}, dos valores característicos de $\zeta _R (s)$ están dados por
+así $\zeta _R (s)$ puede ser calculada $\forall s \in \mathds{C}$ tal que $Re (s) > -N-1$, utilizando esta representación se obtiene dos conocidos valores de $\zeta _R (s)$ en $s = \pm 1$
 \begin{align}
-	\zeta (-1) = 
+	\zeta _R (-1) = 
 &
 	\lim _{s \rightarrow -1}
 			\frac{1}{\Gamma (s)} \frac{\mathcal{B} _2}{2! (s+1)}
 			 =
 	- \frac{1}{12}
 \\
-	\zeta (\epsilon \rightarrow 1) =
+	\zeta _R (\epsilon \rightarrow 1) =
 & 
 	\frac{1}{\Gamma (1)} \frac{\mathcal{B} _0}{ \epsilon} + O (\epsilon -1 ) = 
 	\frac{1}{ \epsilon} + O (\epsilon -1 ) 
 	\, .
 \end{align}
-otra propiedad importante es la no existencia de polos exceptuando $s=1$, para esto se ve que la única posible contribución a un polo son los términos de la forma  $	\frac{1}{\Gamma (s)} \frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}$, para ver esto puede desarrollarse $\Gamma (s)$ alrededor de $s = -n$ obteniendo
+Otra propiedad importante es que $ \zeta _{R}$ es una función meromorfa con un único polo en $s = 1$, para esto se desarrolla el término $\frac{1}{\Gamma (s)} \frac{ \mathcal{B} _{n+1}}{ (n+1)! (n + s)}$ alrededor de $s = -n$ obteniendo
 \begin{align}
 	\lim _{s \rightarrow -n }	
 	\zeta ( s  ) = 
@@ -81,12 +80,7 @@ otra propiedad importante es la no existencia de polos exceptuando $s=1$, para e
 		{n+1}
 	\, ,
 \end{align}
-de lo cual se concluye que
-\begin{align}
-	\zeta ( -n  ) = 
-	\frac{(-1) ^n \mathcal{B} _{n+1}}{n+1}
-\end{align}
-
+con lo que se concluye que existe un único polo en $s = 1$.
 
 
 
