@@ -1,17 +1,19 @@
 \chapter{Conclusiones}
 
-A lo largo de este trabajo de tesis se estudió la energía de vacío asociada al operador singular $A = - \partial ^2 + \frac{\alpha}{x} $, para lograr esto analizaron los polos de su correspondiente función-$\zeta$.
+A lo largo de este trabajo de tesis se estudió la energía de vacío asociada al operador singular $A = - \partial ^2 _x + \frac{\alpha}{x} $ para lo cual se analizaron los polos de su correspondiente función-$\zeta$.
 
-En los capítulos \ref{cap.singular} y \ref{cap.continuo} se tomaron como domnio del operador el intervalo compacto $[0,L]$ y no compacto $[0, \infty)$ respectivamente.
-En ambos casos, el polo en $s = \frac{1}{2}$ estuvo dado por
+En los capítulos \ref{cap.singular} y \ref{cap.continuo} se tomaron como dominio del operador los intervalos compacto $[0,L]$ y no compacto $[0, \infty)$ respectivamente, en ambos casos se obtuvo un polo simple en $s = \frac{1}{2}$ cuyo residuo está dado por
 \begin{equation}
 {\rm Res } \ \zeta (s) \big|_{s = \frac{1}{2}}
-= \frac{L \mu}{2 \pi}
+= \frac{L \mu}{2 \pi} 
+= \frac{ {\rm Vol (\mathcal{M})} }{2 \pi} 
 \, ,
 \end{equation}
-lo cual coincide con el resultado que se presenta en la introducción \eqref{eq.vol} siendo ambas proporcional al volumen.
+donde $\mathcal{M}$ es el volumen de la variedad, este resultado coincide con el presentado en \eqref{eq.vol}, lo cual es importante ya que el operador bajo estudio no cumple con las condiciones requeridas para que su Heat Kernel posea un desarrollo de la forma \eqref{eq.heat.expansion}, lo que abre el interrogante sobre la posible extensión del resultado \eqref{eq.vol} en operadores singulares.
 
-En relación al polo en $s= -\frac{1}{2}$, el cual está relacionado con la Energía de Casimir según la ecuación (\ref{e0-zeta}), se demostró independencia del intervalo tal como ocurre en $s= \frac{1}{2}$ . Pero a diferencia de este aquí se encontró un polo doble dado por
+
+
+En cuanto al estudio de $\zeta (s= -\frac{1}{2} )$, término presente en la definición de la Energía de Casimir \eqref{e0-zeta}, en ambos casos (intervalo compacto y no compacto) se demostró que tal como ocurre en $s= \frac{1}{2}$ el polo es independiente del intervalo pero a diferencia del caso regular se encontró que posee un polo doble dado por
 \begin{align*}
 &
 	\zeta \left( - \frac{1}{2} + \epsilon \right) = 
@@ -20,10 +22,11 @@ En relación al polo en $s= -\frac{1}{2}$, el cual está relacionado con la Ener
 	{\rm PF } \zeta \left( - \frac{1}{2} \right)
 \, ,
 \end{align*}
-lo cual demuestra que el desarrollo asintótico del {\it Heat-Kernel} presenta términos logaritmicos, tal y como se conjeturó en 1980 \cite{Callias1980}.
+lo que demuestra que el desarrollo asintótico del Heat-Kernel presenta términos logaritmicos. 
+% tal como se conjeturó en 1980 \cite{callias1980}.
 
 
-En cuanto a los demas polos, se estudio la estructura completa de polos de $\zeta \left(s \right)$, obteniedno que en ambos intervalos al igual que en el caso regular los polos son todos simples (excepto en $s= - \frac{1}{2}$) y están ubicados en los semienteros negativos, lo cual junto con el resultado anterior confirma la conjetura dada en \cite{Callias1980}, la cual afirma que el {\it Heat-Kernel} para operadores singulares posee un desarrollo de la forma  
+En cuanto al estudio de los demas polos se concluyó que al igual que en el caso regular son todos simples y están ubicados en los semienteros negativos. Utilizando este resultado y el anterior se confirma la conjetura dada en \cite{callias1980} la cual afirma que el Heat-Kernel para operadores singulares posee un desarrollo de la forma  
 \begin{equation}
 	K(T) \sim 
 	\frac{ \log (T)}{T ^{\frac{1}{2} }} C _{2} +
@@ -32,15 +35,14 @@ En cuanto a los demas polos, se estudio la estructura completa de polos de $\zet
 	T^{\frac{(-1+n)}{2}} 
 \, ,
 \end{equation}
-lo cual es muy interesante ya que excepto por el polo en $s = - \frac{1}{2}$ el {\it Heat-Kernel} coincide con el caso regular, lo cual no se cumple para otros operadores singulares, por ejemplo de la forma $- \partial ^2 _x + \frac{\alpha}{x ^2}$ en donde se demostró que los polos de $\zeta (s)$ pueden caer incluso valores irracionales \cite{doi:10.1063/1.1809257}.
+este resultado es muy importante ya que exceptuando el polo en $s = - \frac{1}{2}$ el desarrollo del Heat-Kernel coincide en estructura con el caso regular lo cual no se cumple para otros operadores singulares, un ejemplo de esto es el operador $- \partial ^2 _x + \frac{\alpha}{x ^2}$ en donde se demostró que sus polos pueden caer incluso valores irracionales \cite{doi:10.1063/1.1809257}.
 
 
+En cuanto al estudio de la parte finita de $\zeta \left( - \frac{1}{2} \right)$ se obtuvieron dos representaciónes, una integral y un desarrollo en serie, dependientes del parámetro adimensional $\beta = \alpha L$, a partir de la cual se generaron curvas de la energía de vacío para distintos valores de $\alpha$ y $L$, se observó que la energía de vacío posee en máximo local en el cual para  $L < L _{critico} $ la fuerza es atractiva y luego se recupera el clásico comportamiento repulsivo, comportamiento también presente en potenciales regulares \cite{Beauregard_2013}.\\
 
-Luego a través de dos métodos diferentes se calculó la parte finita de $\zeta \left( - \frac{1}{2} \right)$ obteniendo una representación fundamental de la energía de vacío en función de un parámetro adimensional $\beta$, a partir de la cual se generaron curvas de la energía de vacío para distintos valores de $\alpha$ y $L$, se observó que la energía de vacío posee en máximo local indicando que para valores pequeños de $L$ la fuerza es atractiva, y luego a partir de un $L _{critico} < L $ la fuerza se vuelve repulsiva, comportamiento que también se presenta para potenciales regulares \cite{Beauregard_2013}.
+Dado que la energía de casimir depende profundamente de la geometría se a utilizado ampliamente en distintos modelos, en \cite{Blau_1988} se mencionan algunas aplicaciones como por ejemplo, las placas paralelas neutras en el vacio \cite{PLUNIEN198687}, dinamica de campos sobre membranas en teoría $M$ \cite{DEWIT1988545}, modelos de quarks en el nucleo atómico \cite{PhysRevD.14.2622}, etc. En partícular un modelo que se cita es una aproximación semi-clasica de la estructura del electrón \cite{MILTON198049} en el cual se propone un modelo de electrón formado por un cascaron esferico que se mantiene estable debido a un equilibrio entre la  energía electrostática repulsiva y la energía de casimir atractiva del campo en el interior del cascaron.
 
-Dado la energía de casimir depende profundamente de la geometría se a utilizado ampliamente en distintos modelos, en \cite{Blau:1988kv} se mencionan algunas aplicaciones como por ejemplo, las placas paralelas neutras en el vacio \cite{PLUNIEN198687}, dinamica de campos sobre membranas en teoría $M$ \cite{DEWIT1988545}, modelos de quarks en el nucleo atómico \cite{PhysRevD.14.2622}, etc. En partícular un modelo que se cita es una aproximación semi-clasica de la estructura del electrón \cite{MILTON198049} en el cual se propone un modelo de electrón formado por un cascaron esferico que se mantiene estable debido a un equilibrio entre la  energía electrostática repulsiva y la energía de casimir atractiva del campo en el interior del cascaron.
-
-Inspirado en este último ejemplo se pueden proponer dos interpretaciones, la primera está relacionada con el trabajo original de Casimir \cite{Casimir:1948dh}, en el cual el sistema está formado por dos placas paralelas en el vacío donde una está cargada de tal forma que genera un pontencial electrostático $V (x) = \frac{\alpha}{x}$, en esta interpretación la energía de casimir calculada corresponde a la energía por unidad de area \cite{Blau:1988kv}, aquí puede verse que las placas sufren una fuera repulsiva , pero a partir de  $L < L _{critico}$ las placas se atraen. 
+Inspirado en este último ejemplo se pueden proponer dos interpretaciones, la primera está relacionada con el trabajo original de Casimir \cite{Casimir:1948dh}, en el cual el sistema está formado por dos placas paralelas en el vacío donde una está cargada de tal forma que genera un pontencial electrostático $V (x) = \frac{\alpha}{x}$, en esta interpretación la energía de casimir calculada corresponde a la energía por unidad de area tal como se explica en \cite{Blau_1988}.
 
 La segunda interpretación posible está inspirada en \cite{MILTON198049} y \cite{Beauregard_2013}, donde en vez de pensar que dos placas paralelas interactuan en el vacío, el sistema son dos partículas de igual carga sometidas a su campo electromanético, lo cual para $L _{critico} < L$ genera una fuerza repulsiva como es de esperar, pero a partir de un valor límite $L < L _{critico}$ las partíclas sufren una fuerza atractiva.
 
