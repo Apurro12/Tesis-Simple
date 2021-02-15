@@ -1,0 +1,2 @@
+Hay un x^2 que me comí entonces ahí la integral converge
+Hacer el grafico numericamente con el mathematica nomas, usar la representación compleja

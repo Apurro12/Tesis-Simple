@@ -1,21 +1,21 @@
 \chapter{Ejemplos Sencillos}
 \label{cap.sencillos}
 
-En este capítulo se aplicarán las ideas del capítulo anterior a ejemplos sencillos. Estudiaremos el operador $A = - \partial ^2 _x$ en el intervalo $[0,L]$ sometido a distintas condiciones de contorno, con este fin se calculará la función-$\zeta$ para luego obtener la energía de vacío. 
+En este capítulo se aplicarán las ideas del capítulo anterior a ejemplos sencillos. Se estudiará el operador $A = - \partial ^2 _x$ en el intervalo $[0,L]$ sometido a distintas condiciones de contorno, con este fin se calculará la función-$\zeta$, para luego obtener la energía de vacío. 
 
-En los tres primeros casos se considerará condiciones de contorno Dirichlet, Neumann y periódicas en ambos extremos. Entonces conociendo sus autovalores  se calculara la función-$\zeta$ exactamente. 
+En los tres primeros casos se considerara condiciones de contorno Dirichlet, Neumann y periódicas, en ambos extremos. Entonces, conociendo sus autovalores, se calculara la función-$\zeta$ exactamente. 
 
-En el último ejemplo de este capítulo, se tomará una condición de contorno Dirichlet en un borde y Robin en el otro, de modo de introducir un parámetro externo con dimensiones. Se utilizarán tres técnicas distintas para estudiar la función-$\zeta$: el desarrollo asintótico de los autavalores, una representacion en el plano complejo  y el heat-kernel.
+En el último ejemplo de este capítulo, se tomará una condición de contorno Dirichlet en un borde y Robin en el otro, de modo de introducir un parámetro externo con dimensiones. Se utilizarán tres técnicas distintas para estudiar la función-$\zeta$: el desarrollo asintótico de los autavalores, una representación en el plano complejo  y el heat-kernel.
 
 \section{Condiciones de contorno Dirichlet,Neumann y periódicas}
 \label{sec.Dirichlet}
 
-En esta sección se estudiarán el espectro y las energía de vacío del operador $A = - \partial ^2 _x$ en el intervalo $[0,L]$ bajo condiciones de contorno Dirichlet,Neumann y periódicas:\\
+En esta sección se estudiarán el espectro y las energía de vacío del operador $A = - \partial ^2 _x$, en el intervalo $[0,L]$ bajo condiciones de contorno Dirichlet,Neumann y periódicas:\\
 
 \subsection*{Condiciones de contorno Dirichlet}
 
 
-Consideremos primeramente el operador $A$ dado por
+Se considera primeramente el operador $A$ dado por
 \begin{equation}
 \begin{aligned}
 	A \phi (x) &= - \partial _x ^2 \phi (x) \\[10pt]
@@ -39,9 +39,9 @@ la  función-$\zeta$ queda determinada por
 \left( \frac{\pi}{L \mu} \right) ^{-2s}  \zeta _R (2s) \, . \\[10pt]
 \end{aligned}
 \end{equation}
-Donde $\zeta _R$ es la función zeta de Riemann definida en la ecuación \ref{rieman-zeta-def}, en el apendice \ref{Apendice.2} se se demuestra  que $\zeta _R (-1) = - \frac{1}{12}$. 
+Donde $\zeta _R$ es la función zeta de Riemann definida en la ecuación \ref{rieman-zeta-def}, en el apendice \ref{Apendice.2} se demuestra  que $\zeta _R (-1) = - \frac{1}{12}$. 
 
-Por lo tanto resulta que $\zeta (s)$ es regular en $s=-\frac{1}{2}$, siendo la energía de vacío
+Por lo tanto, resulta que $\zeta (s)$ es regular en $s=-\frac{1}{2}$, siendo la energía de vacío
 
 \begin{equation}\label{eq.energia.dirichlet}
 \begin{array}{c}
@@ -51,13 +51,13 @@ E _0 = - \frac{\pi}{24 L} \, ,
 
 
 Como la energía de vacío crece con $L$, el efecto Casimir implica una fuerza
-atractiva entre los extremos del intervalo en el cual está confinado el campo
-escalar. Notar que, como la  función-$\zeta$ es regular en $s=-\frac{1}{2}$ el resultado no depende del parámetro de escala $\mu$, tal como se predijo en el capítulo \ref{seq.adim}.\\
+atractiva entre los extremos del intervalo, en el cual está confinado el campo
+escalar. Se nota que, como la  función-$\zeta$ es regular en $s=-\frac{1}{2}$, el resultado no depende del parámetro de escala $\mu$, tal como se predijo en el capítulo \ref{seq.adim}.\\
 
 \subsection*{Condiciones de contorno Neumann}
 
 
-Consideremos ahora el operador $A$ dado por.
+Se considera ahora el operador $A$ dado por.
 
 \begin{equation}
 \begin{aligned}
@@ -87,7 +87,7 @@ de contorno Dirichlet.\\
 \subsection*{Condiciones de contorno periódicas}
 
 
-Estudiemos ahora el mismo operador bajo condiciones de contorno periódicas
+Se estudia ahora, el mismo operador bajo condiciones de contorno periódicas
 \begin{equation}
 \begin{array}{c}
 	A \phi (x) = - \partial _x ^2 \phi (x) \\[5pt]
@@ -122,7 +122,7 @@ La función-$\zeta$ resulta
 2 \mu ^{2s} \left( \frac{2 \pi}{L} \right) ^{-2s} \zeta _R (2s)
 \, ,
 \end{align}
-que al igual que en los casos anteriores es regular en $s=- \frac{1}{2}$. Obtenemos
+que al igual que en los casos anteriores es regular en $s=- \frac{1}{2}$. Se obtiene
 entonces la energía de vacío
 \begin{equation}
 E _0 = - \frac{\pi}{6 L}
@@ -133,7 +133,7 @@ reducir el tamaño del anillo.
 \section{Condiciones de Contorno Mixtas}
 
 
-Introducimos ahora un parámetro $S$ con dimensiones, a partir de condiciones de contorno Robin en uno de los extremos del intervalo,
+Se introduce ahora un parámetro $S$ con dimensiones, a partir de condiciones de contorno Robin, en uno de los extremos del intervalo,
 \begin{equation}
 \begin{aligned}
     A \phi (x) &= - \partial ^2 _x \ \phi (x)  \\[5pt]
@@ -151,22 +151,22 @@ Donde $B_n$ es una constante de normalización. El espectro de autovalores no nu
     \lambda _n   \cos( \lambda _n L) +  S \sin( \lambda _n L) &= 0
     \, . \label{autovalores2} 
 \end{align}
-Una vez obtenidos los autovalores, calcularemos la {\it función-$\zeta$}
+Una vez obtenidos los autovalores, se calculará la {\it función-$\zeta$}
 \begin{equation}
     \zeta (s) =  \sum_{n = 1} ^{ \infty } \left( \frac{\lambda _n}{\mu } \right) ^ {-2 s} \, ,
     \tag{\ref{eq.casimir.mu}}
 \end{equation}
-la dificultad está en que las ecuación (\ref{autovalores2}) no posee una solución explícita para $\lambda _n$. Para estudiar la función-$\zeta$ utilizaremos tres técnicas: la primera de ellas consiste en obtener un desarrollo asintótico de los autovalores, la segunda utiliza una representación integral en el plano complejo de la función-$\zeta$, y la tercera se basa en la relación con el {\it heat-kernel}. 
+la dificultad está en que, la ecuación (\ref{autovalores2}) no posee una solución explícita para $\lambda _n$. Para estudiar la función-$\zeta$ se utilizarán tres técnicas: la primera de ellas consiste en obtener un desarrollo asintótico de los autovalores; la segunda, utiliza una representación integral en el plano complejo de la función-$\zeta$; y la tercera se basa en la relación con el {\it heat-kernel}. 
 
 \subsection{Desarrollo Asintótico de los autovalores}{\label{seq.asin}}
 
-Primeramente, definimos variables adimensionales $\rho _n = \lambda _n L $ y $\theta = S L $, de modo que la ecuación (\ref{autovalores2}) se puede expresar de la forma
+Primeramente, se definen  variables adimensionales $\rho _n = \lambda _n L $ y $\theta = S L $, de modo que, la ecuación (\ref{autovalores2}) se puede expresar de la forma
 \begin{equation}
     \tan (\rho _n) + \frac{\rho _n}{\theta} = 0
     \, .
     \label{eq.asintota}
 \end{equation}
-En la figura \ref{fig:Dibujo1} están graficados los dos terminos de \ref{eq.asintota}. Puede verse que los autovalores $\rho _n$ tienden a las asíntotas verticales de $ \tan ( \rho ) $ a medida que $\rho _n$ crece. Por consiguiente, escribimos para los autovalores $\rho _n$ 
+En la figura \ref{fig:Dibujo1} están graficados los dos términos de \ref{eq.asintota}. Puede verse que los autovalores $\rho _n$ tienden a las asíntotas verticales de $ \tan ( \rho ) $, a medida que $\rho _n$ crece. Por consiguiente, se escribe para los autovalores $\rho _n$ 
 \begin{align}
     & \rho _n = n \pi + \frac{\pi}{2} + \epsilon _n 
 \label{eq.mu}    
@@ -181,7 +181,7 @@ En la figura \ref{fig:Dibujo1} están graficados los dos terminos de \ref{eq.asi
     \caption{En este ejemplo, se puede ver que la intersección entre $ \tan(x)$ y $-x$ tiende a las asíntotas verticales de $\tan (x) $, el mismo comportamiento se aprecia para cualquier recta de la forma $- a x$.}
     \label{fig:Dibujo1}
 \end{figure}
-Utilizando esta expresión de $\rho _n$ en la ecuación \eqref{autovalores2} se obetiene una ecuación para $\epsilon _n$
+Utilizando esta expresión de $\rho _n$ en la ecuación \eqref{autovalores2}, se obtiene una ecuación para $\epsilon _n$
 \begin{equation}
 \begin{aligned}
     \sin \left( n \pi + \frac{\pi}{2} + \epsilon _n \right) = -
@@ -189,7 +189,7 @@ Utilizando esta expresión de $\rho _n$ en la ecuación \eqref{autovalores2} se 
     \, ,
 \end{aligned}
 \end{equation}
-para lograr obtener una expresión de $\epsilon _n$ se desarrolla la ecuación anterior alrededor de $\epsilon  _n \sim 0$, obteniendo 
+Para lograr obtener una expresión de $\epsilon _n$ se desarrolla la ecuación anterior alrededor de $\epsilon  _n \sim 0$, logrando
 \begin{align}
 \nonumber
     1 =     
@@ -204,7 +204,7 @@ para lograr obtener una expresión de $\epsilon _n$ se desarrolla la ecuación a
 & 
   	\, .
 \end{align}
-Expresión que permite obtener un desrrollo asintótico de $\epsilon _n$  proponiendo un desarrollo de   de la forma
+Expresión, que permite obtener un desarrollo asintótico de $\epsilon _n$  proponiendo un desarrollo de la forma
 \begin{equation}
 \label{eq.epsilon}
     \epsilon _n = 
@@ -212,7 +212,7 @@ Expresión que permite obtener un desrrollo asintótico de $\epsilon _n$  propon
     \frac{\epsilon ^{(2)}}{n ^2}  + 
     \frac{\epsilon ^{(3)}}{n ^3}  + \dotsb
 \end{equation}
-Reemplazando esta propuesta de desarrollo en la ecuación \eqref{igualdad epsilon}, y resolviendo término a término se obtiene para $\epsilon _n $
+Reemplazando esta propuesta de desarrollo en la ecuación \eqref{igualdad epsilon}, y resolviendo término a término, se obtiene para $\epsilon _n $
 \begin{equation}
     \epsilon _n = \frac{\theta}{n \pi} 
      - \frac{ \theta}{2 \pi n ^2 } + O \left( n ^{-3}\right) 
@@ -252,7 +252,7 @@ Utilizando estos resultados en la definición de función-$\zeta$ dada en \eqref
     \right ) ^{-2 s}
     \, .
 \end{align}
-De manera consistente con los términos  $ O (n ^{-4})$ que no hemos calculado, desarrollamos el binomio para pequeños valores de $\chi _n$ hasta el orden cúbico,
+De manera consistente, con los términos  $ O (n ^{-4})$ que no se han calculado, se desarrolla  el binomio para pequeños valores de $\chi _n$ hasta el orden cúbico,
 \begin{align}
 \label{eq.auxiliar2}
 \zeta  (s) &= 
@@ -266,7 +266,7 @@ De manera consistente con los términos  $ O (n ^{-4})$ que no hemos calculado, 
 	\, .
 	\nonumber
 \end{align}
-Dado que los términos $\chi _n ^p$ son polinomios en $\frac{1}{n}$, $\zeta(s)$ puede entonces escribirse en términos de la función zeta de Riemann $\zeta _R (s)$
+Dado que los términos $\chi _n ^p$ son polinomios en $\frac{1}{n}$, $\zeta(s)$, puede entonces escribirse en términos de la función zeta de Riemann $\zeta _R (s)$
 \begin{align}
     \zeta  (s) &= \left( \frac{L \mu }{\pi} \right) ^{2s} \times 
 \\[5pt]
@@ -293,7 +293,7 @@ Los siguientes términos de $\zeta (s)$ son de la forma $\sum _{n=1} ^{\infty} n
 	\, ,
 \end{align}
 donde $\zeta _R (2s+p)$ es una función meroforma con polo simple en $s = \frac{1}{2} - \frac{p}{2}$,
-por lo tanto los polos de $\zeta (s)$ quedan caracterizados por los polos simples de las funciones  $\zeta _R (2s+p)$. De esta manera se muestra que $\zeta (s)$ posee polos simples en los semi-enteros negativos lo cual está de acuerdo con el el resultado \eqref{eq.ceros.zeta}. El desarrollo hasta orden $O(n^{-3})$ que hemos calculado para los autovalores permite obtener los residuos correspondientes a los siguientes polos.
+por lo tanto, los polos de $\zeta (s)$ quedan caracterizados por los polos simples de las funciones  $\zeta _R (2s+p)$. De esta manera, se muestra que $\zeta (s)$ posee polos simples en los semi-enteros negativos lo cual está de acuerdo con el el resultado \eqref{eq.ceros.zeta}. El desarrollo hasta orden $O(n^{-3})$ se ha calculado para los autovalores, permite obtener los residuos correspondientes a los siguientes polos.
 \begin{equation}
 \begin{aligned}\label{eq.polos.asin}
 	\left(1- \frac{1}{2} \right) \zeta  (s)| _{s=\frac{1}{2}} &= 
@@ -315,15 +315,15 @@ por lo tanto los polos de $\zeta (s)$ quedan caracterizados por los polos simple
 
 En la sección \ref{seq.asin} se calculó un desarrollo de los autovalores y luego se
 los utilizó en la definición (\ref{def.adim}) para obtener
-la estructura de polos de la función $\zeta$. En este capítulo estudiaremos la
+la estructura de polos de la función $\zeta$. En este capítulo se estudiará la
 estructura analítica de $\zeta (s)$ de una manera alternativa, que será de utilidad
 más adelante.
 
-Supongamos que los autovalores $\lambda ^2 _n$ están definidos por una expresión de
+Si se supone que, los autovalores $\lambda ^2 _n$ están definidos por una expresión de
 la forma $f ( \lambda ^2 _ n ) = 0$ y que $\lambda ^2 _n$  son ceros simples de la función analítica $f (z)$.
 En ese caso, la función $( \log f (z))'$ tiene polos simples en $\lambda ^2 _n$ con residuo 1.
 Utilizando el teorema de los residuos, la función $\zeta (s)$ se puede representar
-como una integral en el plano complejo cuyo camino de integración $C$
+como una integral, en el plano complejo, cuyo camino de integración $C$
 encierra los ceros de $f (z)$ (véase la figura \ref{fig:contorno}),
 \begin{equation}
 \begin{aligned}
@@ -333,7 +333,7 @@ encierra los ceros de $f (z)$ (véase la figura \ref{fig:contorno}),
 \end{aligned}
 \label{asd}
 \end{equation}
-En el problema que estamos considerando $f(z) = z \cos Lz + S \sin Lz$ (ver (\ref{autovalores2})). Reemplazando en la representación integral obtenemos
+En el problema que se está considerando $f(z) = z \cos Lz + S \sin Lz$ (ver (\ref{autovalores2})); reemplazando en la representación integral se obtiene
 \begin{equation}
 	\zeta  (s) = 
     \frac{\mu ^{2s}}{2 \pi i} \int _{C}
@@ -368,7 +368,7 @@ En el problema que estamos considerando $f(z) = z \cos Lz + S \sin Lz$ (ver (\re
     \caption{Estos caminos son los tenidos en cuenta para representar a la {\it función-$\zeta$} como una integral en el plano complejo.}
 \label{fig:contorno}
 \end{figure*}
-Se va a utilizar el camino de integración dado en la figura \ref{fig.medio}, el cual se puede descomponer en 3 integrales, una angular que es regular $ \forall s$ y por lo tanto no aporta a la estructura de polos, y dos rectas las cuales se van a parametrizar de la forma $z = \pm i  t$. 
+Se va a utilizar el camino de integración dado en la figura \ref{fig.medio}, el cual se puede descomponer en 3 integrales, una angular que es regular $ \forall s$ y por lo tanto no aporta a la estructura de polos, y dos rectas las cuales, se van a parametrizar de la forma $z = \pm i  t$. 
 \begin{align}
 \label{eq.tirados}
 \frac{\mu ^{2s} e ^{-i \pi s}}{2 \pi i} \int _{\infty} ^{1} 
@@ -421,7 +421,7 @@ Utilizando este desarrollo en la ecuación \eqref{contorno}, luego de integrar t
     \frac{(-1) ^{m} S ^{m} }{2s+m}
     \right) \, .
 \end{equation}
-De esta expresión puede verse que la función $\zeta$ posee polos simples en $s=\frac{1}{2}$ y en los semienteros negativos, pudiendo ser calculados explicitamente
+De esta expresión, puede verse que la función $\zeta$ posee polos simples en $s=\frac{1}{2}$ y en los semienteros negativos, pudiendo ser calculados explícitamente
 \begin{equation}
 \begin{aligned}
 \left(s-\frac{1}{2} \right) \zeta(s) |_{s=\frac{1}{2}} &= \frac{L \mu }{2 \pi}   \\
@@ -431,16 +431,16 @@ De esta expresión puede verse que la función $\zeta$ posee polos simples en $s
 \end{aligned}
 \label{eq.polos.complejo}
 \end{equation}
-Lo cual coincide en los primeros ordenes con (\ref{eq.polos.asin}) y está en concordancia  con (\ref{eq.ceros.zeta}).
+Lo cual, coincide en los primeros órdenes, con (\ref{eq.polos.asin}) y está en concordancia  con (\ref{eq.ceros.zeta}).
 
-Utilizando esta técnica se pudo calcular la estructura entera de polos de la función $\zeta (s)$, para calcular la parte finita hay que tener en cuenta la parte angular de (\ref{asd}), y los términos exponenciales tirados en (\ref{eq.tirados}) para llegar a (\ref{contorno}).
+Utilizando esta técnica, se pudo calcular la estructura entera de polos de la función $\zeta (s)$; para calcular la parte finita hay que tener en cuenta la parte angular de (\ref{asd}), y los términos exponenciales tirados en (\ref{eq.tirados}) para llegar a (\ref{contorno}).
 
 
 \subsection{Uso del Heat-Kernel}
 
-En las secciones \ref{sec.complejo} y \ref{seq.asin} se utilizaron técnicas para aproximar la {\it función-$\zeta$}, obteniendo la estructura de polos. En esta sección se hará uso del resultado general (\ref{eq.heat.expansion}) para obtener los polos de la {\it función-$\zeta$}.
+En las secciones \ref{sec.complejo} y \ref{seq.asin} se utilizaron técnicas para aproximar la {\it función-$\zeta$}, obteniendo la estructura de polos. En esta sección, se hará uso del resultado general (\ref{eq.heat.expansion}) para obtener los polos de la {\it función-$\zeta$}.
 
-En la ecuación (\ref{coef}) están presentados los primeros términos de Seeley-DeWitt para un operador con borde, en estas condiciones: variedad unidimensional, sin curvatura, y condición de contorno Robin en un extremo y Dirichlet en el otro, los coeficientes de Seeley-DeWitt quedan expresados como:
+En la ecuación (\ref{coef}) están presentados los primeros términos de Seeley-DeWitt para un operador con borde; en estas condiciones: variedad unidimensional, sin curvatura, y condición de contorno Robin en un extremo y Dirichlet en el otro, los coeficientes de Seeley-DeWitt quedan expresados como:
 \begin{equation}
 \begin{aligned}
 C _0 &=  \frac{L \mu}{\sqrt{4 \pi} }\\
@@ -449,7 +449,7 @@ C _2 &= - \frac{S}{\mu \sqrt{\pi} } \\
 C _3 &= \frac{ S ^2 }{2 \mu ^2 }
 \end{aligned}
 \end{equation}
-Luego se utiliza la ecuación (\ref{losresi}) que relaciona los coeficientes de Seeley-DeWitt con los residuos de la función $\zeta$
+Luego, se utiliza la ecuación (\ref{losresi}) que relaciona los coeficientes de Seeley-DeWitt con los residuos de la función $\zeta$
 \begin{equation}
 \left. {\rm Res} \ \zeta  (s)  \right| _{s_n= \frac{m - n}{2}} =  
 \frac{ C_n  (A) }{ {\Gamma ( \frac{m-n}{2}} ) }
@@ -465,26 +465,26 @@ Teniendo en cuenta que $\Gamma (-n) = \infty$ para $n = 1,2,3, \dots  $ Los resi
 {\rm Res} \  \zeta  (s) | _{s=-1} &= 0 \, . \\[5pt]
 \end{aligned}
 \end{equation}
-Lo cual coincide con los residuos calculados en las secciones anteriores en las ecuaciones (\ref{eq.polos.complejo}) y (\ref{eq.polos.asin}). Utilizando este método, por cada polo de $\zeta (s)$ que se desee conocer hay que calcular la integral correspondiente a su término $C _n (A)$.
+Lo cual, coincide con los residuos calculados en las secciones anteriores en las ecuaciones (\ref{eq.polos.complejo}) y (\ref{eq.polos.asin}). Utilizando este método, por cada polo de $\zeta (s)$ que se desee conocer hay que calcular la integral correspondiente a su término $C _n (A)$.
 
 \subsection{Cálculo de la energía de vacío} 
 
-La energía de vacío se definio en ecuación (\ref{eq.casimir.mu}) del capítulo anterior
+La energía de vacío se definió en ecuación (\ref{eq.casimir.mu}) del capítulo anterior
 \begin{equation*}
     E _0 = \frac{\mu }{2}  
     \zeta  \left( - \frac{1}{2} \right) 
     \tag{\ref{eq.casimir.mu}} \, .
 \end{equation*}
-Utilizando la expresión de $\zeta \left( - \frac{1}{2} \right)$ dada en la ecuación \eqref{eq.polos.complejo} en  la expresión anterior se obtiene para la energía de vacío
+Utilizando la expresión de $\zeta \left( - \frac{1}{2} \right)$, dada en la ecuación \eqref{eq.polos.complejo}, en  la expresión anterior se obtiene para la energía de vacío
 \begin{equation}
 E _0 ( \epsilon )
 				= 
 				\frac{S}{4 \pi \epsilon }
 				+ 
 				\frac{\mu}{2} \ {\rm PF} \, f \left( - \frac{1}{2} \right)
-\, .
+\, ,
 \end{equation}
-Donde PF significa la parte finita. De esta ecuación puede verse que la energía de vacío $E _0 (\epsilon)$ depende del cutoff $\epsilon$, lo cual es esperable ya que $\zeta \left( -\frac{1}{2} \right)$ presenta un polo. 
+donde PF significa la parte finita. De esta ecuación, puede verse que la energía de vacío $E _0 (\epsilon)$ depende del cutoff $\epsilon$, lo cual es esperable ya que $\zeta \left( -\frac{1}{2} \right)$ presenta un polo. 
 
 
-En el siguiente capítulo además de utilizar las técnicas anteriores se calculará la parte finita de la energía de vacio para el operador que nos interesa, permitiendo así poder obtener una grafica de la energía de vacío.
+En el siguiente capítulo además de utilizar las técnicas anteriores se calculará la parte finita de la energía de vacío para el operador que interesa, permitiendo así poder obtener una gráfica de la energía de vacío.

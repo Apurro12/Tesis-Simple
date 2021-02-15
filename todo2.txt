@@ -1,0 +1,5 @@
+Lo que voy a sumar es un promedio en funciones theta de heaveside
+
+Hacer la cuenta variando tau
+Hacer el reescaleo donde Tau e [0,1] y ver si da lo mismo, ¿X tambien?
+Si hago una traslación rigida las lineas se enteran ???
