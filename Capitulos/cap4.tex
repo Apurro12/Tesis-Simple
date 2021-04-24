@@ -1,0 +1,102 @@
+\chapter{Aproximación númerica utilizando Monte Carlo}
+{\label{cap.singular}}
+
+En el presente capitulo se utilizarán simulaciones numéricas para obtener los mismos resultados  (poner figuras), 
+
+
+
+\section{Algoritmo de las lineas-v}
+
+
+Dados dos puntos inicial y final $ y_0$, $ y_N$ respectivamente, el algoritmo se basa en crear un ensamble de lineas que unan estos dos puntos siguiendo una distribución de velocidad gaussiana.
+ 
+
+
+\begin{equation}
+\mathcal{N} \int _{y_0} ^{y_N} \mathcal{D} y 
+e^{-\frac{N}{4} S _{W} [y]} :=
+\mathcal{N} \int \prod _{j=1} ^{N-1} d ^{D} y _{j} e^{- \frac{N}{4} \sum _{i=1} ^{N} ( y _i - y _{i-1} )^2 } ,
+\end{equation}
+
+el objetivo es realizar un sistema de cambios lineales de manera que la distribución de probabilidad se vuelve puramente guassiana, con este fin se completan cuadrados para la variable $ y_1$
+
+
+\begin{equation}
+S _{W} = 	2 \left( y _1 - \frac{y_0 + y_2}{2} \right) ^2 + 
+			\frac{1}{2} \left( y ^2 _2 + y _0 ^2 \right)   -
+			y _0 y_2 +
+			\sum _{i = 3} ^{N} (y _i - y _{i-1}) ^2 
+\end{equation}
+Donde existe un solo término que contiene $y_0$, se define entonces la variable
+\begin{equation}
+z _1 := y_1 - \frac{y _0  + y_2 }{2} ,
+\end{equation}
+realizando el mismo procedimiento para la variable $y_1$ se obtiene
+
+
+\begin{equation}
+S _W = 2 z_1 ^2 +
+		\frac{3}{2} \left( y _2 - \frac{y _0 + 2 y_3}{3} \right) ^2 +
+		\frac{1}{3} \left( y _3 ^2 + y _0 ^2 \right) -
+		\frac{2}{3} y_0 y_3 +
+		\sum _{i = 4} ^{N} (y _i - y _{i-1}) ^2 
+		,
+\end{equation}
+se obtiene entonces una forma cuadratica utilizando el cambio de variables 
+\begin{equation}
+z _2 := y_2 - \frac{y _0  + 2 y_3 }{3} ,
+\end{equation}
+la expresión general luego de completar cuadrados en la variable $y_i$ queda determinada por 
+\begin{equation}
+a _i y _i ^2 - 2 y_i ( y _{i+1} + b _i y_0 ) =
+a _i \left( y _i - \frac{y _{i+1} + b_i y_0}{a_i} \right) ^2 -
+\frac{\left( y _{i+1} + b_i y_0 \right) ^2}{a _i}
+\end{equation}
+
+
+Donde los coeficientes $a_i$ y $b_i$ están dados por el sistema de ecuaciones recurrentes
+
+\[ 
+f   ( i t ,\beta )=
+\begin{cases} 
+	  a_{i+1} = 2 - \frac{1}{a_i},  \, a _1 = 2
+\\
+	  	  b_{i+1} = \frac{b _i}{a _i},  \, b _1 = 1
+   \end{cases}   
+\] 
+
+, donde la solución está dada por
+\begin{equation}
+a _1 = \frac{i+1}{i} , \, b_i = \frac{1}{i} ,
+\end{equation}
+
+por lo tanto la forma general de las variables $z _i$ queda definida por
+\begin{equation}
+z _i = y _i - \frac{y_0}{i+1} - \frac{i}{i+1} y _{i+1} ,
+\end{equation}
+
+reescribiendo la acción con estas nuevas variables, el exponente queda diagonalizado de la forma
+
+\begin{equation}
+S _{W}  = \sum _{i = 1} ^{N-1} \frac{i +1}{i} z _i ^2 + c y _0 ^2 + d y _N ^2
+, 
+\end{equation}
+los valores $c$ y $d$ no son importantes ya que son constantes que se cancelarán con la correspondiente normalización.
+En resumen el algoritmo de las lineas v dados $N-1$ puntos intermedios queda determinado por 
+\begin{enumerate}
+\item Generar $N-1$ numeros $w_i$ que estén distribuidos de acuerdo a la distribución de velocidades $e^{- w _{i} ^2}$
+\item normalizar las variables $w _i$ para obtener las variables auxiliares $z _i$
+	\begin{equation}
+	z _i = \sqrt{\frac{4}{N}} \sqrt{\frac{i}{i+1}} w _i
+	\end{equation}
+
+\item Una vez obtenidos los puntos $ z_i$ se calculan los puntos $ y_i$ por medio de la formula recursiva
+	\begin{equation}
+	y _i = z _i + \frac{1}{i+1} y_0 + \frac{i}{i+1} y _{i+1} ,
+	\end{equation}
+\end{enumerate}
+en el caso donde $y_0 = y _N$ se obtienen loops cerrados de $N$ puntos.
+
+\section{Cálculo Asintótico de los autovalores}\label{seq.2.asin}
+
+
