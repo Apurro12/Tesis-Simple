@@ -1,9 +1,0 @@
-La parte de temperatura finita, la idea seria encararla en la tecnica del plano complejo.
-
-Probar númericamente que la parte finita sale, una vez que esté hay que calcular el desarrollo asintotico para altas y bajas temperaturas.
-
-Calcular la parte de temperatura cero, hay que introducir una nueva variable de tal forma que Z*L = psi
-Tambien se puede hacer la integral poniendo la ecuación integrla
-
-E_ren = se puede hacer el cambio de variables
-La parte finita se puede hacer la sumatoria, o la integral en el plano complejo

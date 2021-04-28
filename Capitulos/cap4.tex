@@ -1,11 +1,96 @@
 \chapter{Aproximación númerica utilizando Monte Carlo}
 {\label{cap.singular}}
 
-En el presente capitulo se utilizarán simulaciones numéricas para obtener los mismos resultados  (poner figuras), 
+En el presente capitulo se calculará la acción efectiva utilizando el formalismo de la linea de mundo.
+
+
+\section{La acción efectiva}
 
 
 
-\section{Algoritmo de las lineas-v}
+Dado un lagrangiano de la forma
+
+
+\begin{equation}
+\mathscr{L} = \frac{1}{2} \partial _{\mu} \phi  \partial _{\mu} \phi +
+	\frac{m^2}{2} \phi ^2  + \frac{1}{2} V(x) \phi ^2
+	\, ,
+\end{equation}
+en la ausencia de campos o acoplamientos la acción efectiva puede ser escrita como
+
+
+\begin{align}
+\Gamma \left[ V \right] =&
+  \frac{1}{2} Tr Ln \frac{- \partial ^2 + m ^2 + V(x)}{- \partial ^2 + m ^2} \\ 
+ =& - \frac{1}{2} \int _{\frac{1}{\Lambda ^2}} ^{\infty} \frac{dT}{T} \int dx dt \left[ \left< x | e ^{-T (- \partial ^2 + m ^2 + V(x))} | x  \right> \right] \, ,
+\label{cap4.accion_efecitva}
+\end{align}
+
+
+%
+
+donde en la segunda integral se puede interpretar el elemento de matriz como la amplitud de transición a tiempo propio $T$, por lo tanto se puede introducir la representación de linea de mundo dada por.
+
+
+\begin{align}
+& \int dx  dt \left< x | e ^{-T (- \partial ^2 + m ^2 + V(x))} | x  \right> = \\
+& \int dx  dt \, 
+\mathcal{N}  \int _{x(0) = x(T)} \mathscr D x e ^{- \int _0 ^T d \tau  \frac{\dot{x} ^2}{4} - V(x + x( \tau )) }
+\nonumber
+\, ,
+\label{eq.definicion_ensamble}
+\end{align}
+dado que en \eqref{cap4.accion_efecitva} la amplitud de transición se calcula entre dos puntos coincidente, la integral de caminos debe ser calculada sobre lineas de mundo cerradas $x(0) = x(T)$, la constante de normalización $\mathcal{N}$ queda determinada por el límite de cero potencial.
+
+
+Esta integral de caminos puede ser interpretada como el valor medio en un ensamble de lineas de mundo con distribución de velocidad gaussiana
+\begin{equation}
+\mathcal{N} 
+\int _{x(0) = x(T)} \mathscr D x e ^{- \int _0 ^T d \tau \frac{\dot{x} ^2}{4} - V(x + x( \tau )) } =
+\frac{1}{4 \pi T} \left<  e ^{- \int _0 ^T dt   V(x + x(t)) }  \right> _{x}
+\, ,
+\label{eq_valores_medio}
+\end{equation}
+
+como último paso se introducirán loops unitarios, que son lineas de mundo parametrizadas con un tiempo propio $t \in [0,1]$
+
+\begin{equation}
+y _{\mu} (t) = \frac{1}{\sqrt{T}} x _{\mu} (T t)
+\Longrightarrow
+\int _{0} ^{T} d \tau \, \dot{x ^2 ( \tau)} = \int _{0} ^{1} dt \, \dot{y ^2 ( t)}
+\, .
+\label{def.loop_unitarios}
+\end{equation}
+
+Utilizando \eqref{def.loop_unitarios} y  \eqref{eq_valores_medio} en \eqref{cap4.accion_efecitva} se obtiene una representación de la acción efectiva dada por
+
+\begin{equation}
+\Gamma \left[ V \right] = 
+\left<
+-  \frac{1}{8 \pi}
+\int _{\frac{1}{\Lambda}} ^{\infty} \frac{dT}{T^ {2}} e ^{- m^2 T}
+\int dx \left( W _v [ y(t); x] - 1\right)
+\right> _{y} 
+ ,
+\label{accion_efectiva_path_integral}
+\end{equation}
+
+
+donde
+\begin{equation}
+W _v [ y(t); x] = exp \left[ -T \int _{0} ^{1} dt V( x + \sqrt{T} y(t)) \right]
+ , 
+\label{eq.definicion_w}
+\end{equation}
+Para calcular el valor medio \eqref{accion_efectiva_path_integral} hay diversas técnicas enumeradas en \cite{Gies_2003} en particular se seguirá el metodo realizado en \cite{Franchino_Vi_as_2019}, en este trabajo se utilizará la diagonalización explícita de la acción "v loops".
+
+
+%Donde surge el vinculo que los loops tengan distribución de velocidad gaussiana
+%\begin{equation}
+%P[{y(t)}] = \delta \left(  \int _{0} ^{1} y(t) \right) exp \left(  -\frac{1}{4} \int _{0} ^{1} dt \dot{y} ^2 \right)
+%\end{equation}
+
+\section{Algoritmo v loops}
 
 
 Dados dos puntos inicial y final $ y_0$, $ y_N$ respectivamente, el algoritmo se basa en crear un ensamble de lineas que unan estos dos puntos siguiendo una distribución de velocidad gaussiana.
@@ -16,6 +101,7 @@ Dados dos puntos inicial y final $ y_0$, $ y_N$ respectivamente, el algoritmo se
 \mathcal{N} \int _{y_0} ^{y_N} \mathcal{D} y 
 e^{-\frac{N}{4} S _{W} [y]} :=
 \mathcal{N} \int \prod _{j=1} ^{N-1} d ^{D} y _{j} e^{- \frac{N}{4} \sum _{i=1} ^{N} ( y _i - y _{i-1} )^2 } ,
+\label{eq.definicion_accion_discreta}
 \end{equation}
 
 el objetivo es realizar un sistema de cambios lineales de manera que la distribución de probabilidad se vuelve puramente guassiana, con este fin se completan cuadrados para la variable $ y_1$
@@ -26,8 +112,11 @@ S _{W} = 	2 \left( y _1 - \frac{y_0 + y_2}{2} \right) ^2 +
 			\frac{1}{2} \left( y ^2 _2 + y _0 ^2 \right)   -
 			y _0 y_2 +
 			\sum _{i = 3} ^{N} (y _i - y _{i-1}) ^2 
+\, ,
 \end{equation}
-Donde existe un solo término que contiene $y_0$, se define entonces la variable
+
+donde existe un solo término que contiene $y_0$, se define entonces la variable
+
 \begin{equation}
 z _1 := y_1 - \frac{y _0  + y_2 }{2} ,
 \end{equation}
@@ -51,6 +140,7 @@ la expresión general luego de completar cuadrados en la variable $y_i$ queda de
 a _i y _i ^2 - 2 y_i ( y _{i+1} + b _i y_0 ) =
 a _i \left( y _i - \frac{y _{i+1} + b_i y_0}{a_i} \right) ^2 -
 \frac{\left( y _{i+1} + b_i y_0 \right) ^2}{a _i}
+\, .
 \end{equation}
 
 
@@ -65,9 +155,9 @@ f   ( i t ,\beta )=
    \end{cases}   
 \] 
 
-, donde la solución está dada por
+conde la solución está dada por
 \begin{equation}
-a _1 = \frac{i+1}{i} , \, b_i = \frac{1}{i} ,
+a _1 = \frac{i+1}{i} ; \, b_i = \frac{1}{i} ,
 \end{equation}
 
 por lo tanto la forma general de las variables $z _i$ queda definida por
@@ -95,8 +185,212 @@ En resumen el algoritmo de las lineas v dados $N-1$ puntos intermedios queda det
 	y _i = z _i + \frac{1}{i+1} y_0 + \frac{i}{i+1} y _{i+1} ,
 	\end{equation}
 \end{enumerate}
-en el caso donde $y_0 = y _N$ se obtienen loops cerrados de $N$ puntos.
+en el caso que $y_0 = y _N$ se obtienen loops cerrados de $N-1$ puntos puntos intermedios.
+En la figura \ref{fig:ejemplo_loops} se puede observar un ejemplo de la generación 5 loops cerrados con este algoritmo donde$N=31$.
 
-\section{Cálculo Asintótico de los autovalores}\label{seq.2.asin}
+
+\section{Test del algoritmo de los v loops}
 
 
+Considerese la acción en un espacio $N-1$ dimensional definida en \eqref{eq.definicion_accion_discreta} lo cual genera una distribución de probabilidad dada por 
+\begin{equation}
+P [y] = \mathcal{N} e^{-S _{W} [y]}
+\, .
+\end{equation}
+El valor medio de la acción está dado por
+\begin{equation}
+\left< S _W \right> = 
+\mathcal{N} \int dy _1 ... dy _{N-1} S _w [y] e^{-S _{W} [y]} =
+\frac{1}{2} (N-1) D + \frac{1}{4} \Delta y ^2 
+\,
+\end{equation}
+en la figura \ref{fig:convergencia_loops} se puede ver como al aumentar el número de loops la aproximación numérica tiende el valor de la acción. \\
+
+
+
+La distribución de probabilidad que genera esta acción está dada por
+\begin{align}
+\mathcal{P} [S _W] &=  \mathcal{N} \int d y_1 \dotsb d y_{N-1} \delta \left( S_W - S_{W'}  \right) e ^{S_W}  \\
+&=
+ \mathcal{N} \left(  S' _W - S_{class} \right) ^{-1 + \frac{(N+1) D}{2}}
+e ^{-\left( S' _W - S_{class} \right)}
+\theta \left( S ' _W - S _{class} \right)
+\, ,
+\nonumber
+\end{align}
+donde la acción clásica está dada por
+\begin{equation}
+S _{class} = \frac{\Delta y ^2}{ 4}
+\, .
+\end{equation}
+En la figura \ref{fig:distribucion_accion_cap4} se puede comprar el resultado numérico de la simulación con el resultado analítico 
+
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6]{loops_accion.png}
+    \caption{Aquí se puede ver como al aumentar el número de loops involucrados en el calculo del valor medio de la acción el resultado converge al valor analítico de la acción}
+    \label{fig:convergencia_loops}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6]{distribucion_accion.png}
+    \caption{En esta figura se puede observar como la distribución los datos obtenidos a partir del algoritmo de los v loops convergen a la distribución de la acción calculada de manera analítica}
+    \label{fig:distribucion_accion_cap4}
+\end{figure}
+
+
+
+\section{Cálculo numérico de la energía de casimir}
+
+
+En esta sección se utilizará el algoritmo de los v loops para calcular la acción efectiva en un potencial de placas paralelas en el límite de condiciones Dirichlet dado por
+
+\begin{equation}
+V(x) = \lim _{\lambda \rightarrow \infty} \lambda \left( \delta (x) + \delta ( x - a) \right)
+\, .
+\label{eq.definicion_potencial_D}
+\end{equation}
+
+Utilizando el potencial \eqref{eq.definicion_potencial_D} en \eqref{eq.definicion_w} el efecto neto es obtener una función escalón, donde el valor es $1$ si para un dado valor de $x$ y $T$ el loop penetra ambas superficies y cero en el caso contrario. \\
+
+
+Dado un loop $y = y(t)$ las condiciones para que toque ambas placas están dadas por
+
+\begin{align}
+\label{condiciones}
+\sqrt{T} Y_{max} + x & \geq a \\
+\sqrt{T} Y_{min} + x & \leq 0 \, ,
+\nonumber
+\end{align}
+donde 
+\begin{align*}
+y_{max}  &= max(y(t)) \\
+y_{min}  &= min(y(t)) \, 
+\end{align*}
+
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6]{ejemplo_loops.png}
+    \caption{Muestreo de 5 loops generados para calcular la integral}
+    \label{fig:ejemplo_loops}
+\end{figure}
+
+
+
+Lo cual conduce a una acción acción efectiva dada por
+
+\begin{align}
+\label{ec1.accion_efectiva}
+\Gamma \left[ V \right] = 
+ \Bigg<
+&- \frac{\Delta y}{8 \pi}
+	\left(
+		\frac{2 \Delta y e^{-\frac{(m a)^2}{\Delta y ^2}}}{a}
+		-2 m \Gamma \left( \frac{1}{2}, \frac{(m a)^2}{\Delta y ^2} \right)
+	\right) \\
+	&-  \frac{a}{8 \pi}
+	\left(
+		\frac{\Delta y ^2 e^{-\frac{m^2 a^2}{\Delta y^2}}}{a^2} -
+		m^2 \Gamma \left( 0, \frac{m^2 a^2}{\Delta y ^2} \right)
+	\right)	
+\Bigg> _{y} 
+\nonumber
+\end{align}
+
+donde la función gamma incompleta está definida por
+\begin{equation*}
+\Gamma (a, z) = \int _{z} ^{\infty} t^{a-1} e ^{-t} dt
+\, .
+\end{equation*}
+
+A partir de aquí se puede obtener la energía de vacío tomando la derivada  $\partial a$, lo que resulta en una Fuerza de casimir dada por
+\begin{equation}
+F (m,a) = 
+\frac{m^2 \Gamma \left( 0 , \frac{a ^2 m^2}{\Delta y^2} \right)}{8 \pi}
+- \frac{\Delta y^2 \, e ^ {\frac{a ^2 m^2}{\Delta y^2}}}{8 \pi a^2 } 
+\, ,
+\end{equation}
+en el límite de masa cero se obtiene la dependencia con $a^{-2}$, que corresponde a la Fuerza de Casimir en $D = 1+1$
+\begin{equation}
+\lim _{m \rightarrow 0} F(m,a) = - \frac{\Delta y^2}{8 \pi a^2}
+\, ,
+\end{equation}
+lo que está en coincidencia con el resultado teórico 
+\begin{equation}
+F = - \frac{\pi}{24 a^2}
+\, ,
+\end{equation}
+en la tabla \ref{table:1} se compara este valor teórico con los valores numéricos obtenidos al variar el número de loops y la cantidad de puntos intermedios.
+
+
+
+\begin{comment}
+donde la solución exacta está dada por
+\begin{equation}
+F = 
+-\frac{1}{4 \pi a^2} \int _{2 m a} ^{\infty} dy \frac{\sqrt{y^2 - 4 m^2 a^2}}{e^y -1} 
++ \frac{m^2}{ \pi } \int _{2 m a} ^{\infty} \frac{dy}{(e^y-1) (y^2 - 4 a^2 m^2)}
+\, ,
+\end{equation}
+
+\end{comment}
+
+A su vez, en la imagen \eqref{fig:fuerza_Casimir_masa} está graficada la Fuerza de Casimir $a^2 F(m,a)$ en función del parametro $m a$.
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=1.7in]{fuerza_casimir_masa_linea.png}
+        \caption{}
+        \label{fig.izquierda_21}
+    \end{subfigure}%
+    ~
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=1.7in]{fuerza_casimir_masa.png}
+        \caption{}
+        \label{fig.derecha.derecha1}
+    \end{subfigure}
+    \caption{En esta figura se puede ver la dependencia de la Fuerza de Casimir $a^2 F(m,a)$ en función de $m a$.}
+\label{fig:fuerza_Casimir_masa}
+\end{figure*}
+
+
+
+\begin{table}
+\begin{center}
+ \begin{tabular}{|| c c c||} 
+ \hline \\ 
+ num. loops & N & $\frac{ \Delta F}{F}$ \\ [0.5ex] 
+ \hline\hline
+  10.000 & 10.000& 0.013 \\ 
+ \hline
+  1.000 & 10.000 & 0.024 \\
+ \hline
+  100 & 10.000 & 0.037\\
+ \hline
+  10.000 & 1.000 & 0.05 \\
+ \hline
+  1.000 & 1.000 & 0.058 \\ 
+ \hline
+   100 & 1.000 & 0.10 \\
+ \hline
+  10.000 & 1000 & 0.17\\
+ \hline
+  1.000 & 100 & 0.18 \\
+ \hline
+   100 & 100 & 0.20 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+\caption{En esta tabla se puede ver como al aumentar el numero de loops y el número de puntos intermedios, el cálculo converge al resultado teorico}
+\label{table:1}
+\end{table}
