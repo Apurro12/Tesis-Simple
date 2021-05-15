@@ -1,8 +1,8 @@
-\chapter{Aproximación númerica utilizando Monte Carlo}
+\chapter{Aproximación numérica utilizando Monte Carlo}
 {\label{cap.singular}}
 
-En el presente capitulo se calculará la acción efectiva utilizando el formalismo de la linea de mundo.
-
+En el presenta capítulo se desarrollara un formalismo para calcular la acción efectiva, y por lo tanto la energía de casimir.
+Se aplicaran estos resultados a un campo confinado entre dos placas paralelas en el vacío sin interacción.
 
 \section{La acción efectiva}
 
@@ -40,7 +40,7 @@ donde en la segunda integral se puede interpretar el elemento de matriz como la 
 \, ,
 \label{eq.definicion_ensamble}
 \end{align}
-dado que en \eqref{cap4.accion_efecitva} la amplitud de transición se calcula entre dos puntos coincidente, la integral de caminos debe ser calculada sobre lineas de mundo cerradas $x(0) = x(T)$, la constante de normalización $\mathcal{N}$ queda determinada por el límite de cero potencial.
+dado que en \eqref{cap4.accion_efecitva} la amplitud de transición se calcula entre dos puntos coincidentes, la integral de caminos debe ser calculada sobre lineas de mundo cerradas $x(0) = x(T)$, la constante de normalización $\mathcal{N}$ queda determinada por el límite de cero potencial.
 
 
 Esta integral de caminos puede ser interpretada como el valor medio en un ensamble de lineas de mundo con distribución de velocidad gaussiana
@@ -131,7 +131,7 @@ S _W = 2 z_1 ^2 +
 		\sum _{i = 4} ^{N} (y _i - y _{i-1}) ^2 
 		,
 \end{equation}
-se obtiene entonces una forma cuadratica utilizando el cambio de variables 
+resultando la forma cuadrática
 \begin{equation}
 z _2 := y_2 - \frac{y _0  + 2 y_3 }{3} ,
 \end{equation}
@@ -172,7 +172,7 @@ S _{W}  = \sum _{i = 1} ^{N-1} \frac{i +1}{i} z _i ^2 + c y _0 ^2 + d y _N ^2
 , 
 \end{equation}
 los valores $c$ y $d$ no son importantes ya que son constantes que se cancelarán con la correspondiente normalización.
-En resumen el algoritmo de las lineas v dados $N-1$ puntos intermedios queda determinado por 
+En resumen el algoritmo de los v loops, dados $N-1$ puntos intermedios queda determinado por 
 \begin{enumerate}
 \item Generar $N-1$ numeros $w_i$ que estén distribuidos de acuerdo a la distribución de velocidades $e^{- w _{i} ^2}$
 \item normalizar las variables $w _i$ para obtener las variables auxiliares $z _i$
@@ -186,13 +186,13 @@ En resumen el algoritmo de las lineas v dados $N-1$ puntos intermedios queda det
 	\end{equation}
 \end{enumerate}
 en el caso que $y_0 = y _N$ se obtienen loops cerrados de $N-1$ puntos puntos intermedios.
-En la figura \ref{fig:ejemplo_loops} se puede observar un ejemplo de la generación 5 loops cerrados con este algoritmo donde$N=31$.
+En la figura \ref{fig:ejemplo_loops} se puede observar un ejemplo de la generación 5 loops cerrados con este algoritmo donde $N=31$.
 
 
 \section{Test del algoritmo de los v loops}
 
 
-Considerese la acción en un espacio $N-1$ dimensional definida en \eqref{eq.definicion_accion_discreta} lo cual genera una distribución de probabilidad dada por 
+Considerese la acción en un espacio $N-1$ dimensional definida en \eqref{eq.definicion_accion_discreta} el cual genera una distribución de probabilidad dada por 
 \begin{equation}
 P [y] = \mathcal{N} e^{-S _{W} [y]}
 \, .
@@ -230,14 +230,14 @@ En la figura \ref{fig:distribucion_accion_cap4} se puede comprar el resultado nu
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.6]{loops_accion.png}
-    \caption{Aquí se puede ver como al aumentar el número de loops involucrados en el calculo del valor medio de la acción el resultado converge al valor analítico de la acción}
+    \includegraphics[scale=0.6]{loops_accion.pdf}
+    \caption{Aquí se puede ver como al aumentar el número de loops el resultado converge al valor analítico de la acción, aquí se gráfico solamente el valor medio y no su error. }
     \label{fig:convergencia_loops}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.6]{distribucion_accion.png}
+    \includegraphics[scale=0.6]{distribucion_accion.jpg}
     \caption{En esta figura se puede observar como la distribución los datos obtenidos a partir del algoritmo de los v loops convergen a la distribución de la acción calculada de manera analítica}
     \label{fig:distribucion_accion_cap4}
 \end{figure}
@@ -262,14 +262,14 @@ Dado un loop $y = y(t)$ las condiciones para que toque ambas placas están dadas
 
 \begin{align}
 \label{condiciones}
-\sqrt{T} Y_{max} + x & \geq a \\
-\sqrt{T} Y_{min} + x & \leq 0 \, ,
+\sqrt{T} y_{max} + x & \geq a \\
+\sqrt{T} y_{min} + x & \leq 0 \, ,
 \nonumber
 \end{align}
 donde 
 \begin{align*}
 y_{max}  &= max(y(t)) \\
-y_{min}  &= min(y(t)) \, 
+y_{min}  &= min(y(t)) \, .
 \end{align*}
 
 
@@ -277,7 +277,7 @@ y_{min}  &= min(y(t)) \,
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.6]{ejemplo_loops.png}
+    \includegraphics[scale=0.6]{ejemplo_loops.pdf}
     \caption{Muestreo de 5 loops generados para calcular la integral}
     \label{fig:ejemplo_loops}
 \end{figure}
@@ -301,6 +301,7 @@ Lo cual conduce a una acción acción efectiva dada por
 		m^2 \Gamma \left( 0, \frac{m^2 a^2}{\Delta y ^2} \right)
 	\right)	
 \Bigg> _{y} 
+\, ,
 \nonumber
 \end{align}
 
@@ -314,54 +315,42 @@ A partir de aquí se puede obtener la energía de vacío tomando la derivada  $\
 \begin{equation}
 F (m,a) = 
 \frac{m^2 \Gamma \left( 0 , \frac{a ^2 m^2}{\Delta y^2} \right)}{8 \pi}
-- \frac{\Delta y^2 \, e ^ {\frac{a ^2 m^2}{\Delta y^2}}}{8 \pi a^2 } 
+- \frac{\Delta y^2 \, e ^ {-\frac{a ^2 m^2}{\Delta y^2}}}{8 \pi a^2 } 
 \, ,
+\label{eq.fuerza.casimir.numerica}
 \end{equation}
-en el límite de masa cero se obtiene la dependencia con $a^{-2}$, que corresponde a la Fuerza de Casimir en $D = 1+1$
+lo cual en la figura \eqref{fig:fuerza_Casimir_masa} está comparado con el valor exacto dado por
 \begin{equation}
-\lim _{m \rightarrow 0} F(m,a) = - \frac{\Delta y^2}{8 \pi a^2}
-\, ,
-\end{equation}
-lo que está en coincidencia con el resultado teórico 
-\begin{equation}
-F = - \frac{\pi}{24 a^2}
-\, ,
-\end{equation}
-en la tabla \ref{table:1} se compara este valor teórico con los valores numéricos obtenidos al variar el número de loops y la cantidad de puntos intermedios.
-
-
-
-\begin{comment}
-donde la solución exacta está dada por
-\begin{equation}
-F = 
--\frac{1}{4 \pi a^2} \int _{2 m a} ^{\infty} dy \frac{\sqrt{y^2 - 4 m^2 a^2}}{e^y -1} 
-+ \frac{m^2}{ \pi } \int _{2 m a} ^{\infty} \frac{dy}{(e^y-1) (y^2 - 4 a^2 m^2)}
-\, ,
+F _{exacto} (m,a) = - \int _{m} ^{ \infty } \frac{dt}{\pi} \frac{t^2}{\sqrt{t^2 -m^2}(e^{2 t a} -1)}
+\, .
 \end{equation}
 
-\end{comment}
 
-A su vez, en la imagen \eqref{fig:fuerza_Casimir_masa} está graficada la Fuerza de Casimir $a^2 F(m,a)$ en función del parametro $m a$.
+En el límite de masa cero la ecuación \eqref{eq.fuerza.casimir.numerica}  toma la conocida dependencia con $a^{-2}$, que corresponde a la Fuerza de Casimir en $D = 1+1$
+\begin{align}
+\lim _{m \rightarrow 0} F(m,a) = - \frac{\Delta y^2}{8 \pi a^2} \\
+F _{exacto} (a) = - \frac{\pi}{24 a^2}
+\, ,
+\end{align}
+en la tabla \ref{table:1} y en la figura \ref{fig:convergencia_loops} el valor calculado con el resultado exacto al variar el número de loops y la cantidad de puntos intermedios.
 
-\begin{figure*}[t!]
+
+
+
+\begin{figure}
     \centering
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=1.7in]{fuerza_casimir_masa_linea.png}
-        \caption{}
-        \label{fig.izquierda_21}
-    \end{subfigure}%
-    ~
-    \begin{subfigure}[t]{0.5\textwidth}
-        \centering
-        \includegraphics[height=1.7in]{fuerza_casimir_masa.png}
-        \caption{}
-        \label{fig.derecha.derecha1}
-    \end{subfigure}
-    \caption{En esta figura se puede ver la dependencia de la Fuerza de Casimir $a^2 F(m,a)$ en función de $m a$.}
-\label{fig:fuerza_Casimir_masa}
-\end{figure*}
+    \includegraphics[scale=0.6]{fuerza_casimir_masa_linea.pdf}
+    \caption{En esta figura se puede ver la dependencia de la Fuerza de Casimir $a^2 F(m,a)$ en función de $m a$, el error es la desviación estándar muestral, se utilizaron 1.000 loops y 1.000 puntos intermedios.}
+    \label{fig:fuerza_Casimir_masa}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6]{convergencia.pdf}
+    \caption{En esta figura se puede observar como al aumentar el número de puntos por loops se reduce el error sistematico debido a la discretización de los loops.}
+    \label{fig:convergencia_loops}
+\end{figure}
 
 
 
@@ -391,6 +380,6 @@ A su vez, en la imagen \eqref{fig:fuerza_Casimir_masa} está graficada la Fuerza
  \hline
 \end{tabular}
 \end{center}
-\caption{En esta tabla se puede ver como al aumentar el numero de loops y el número de puntos intermedios, el cálculo converge al resultado teorico}
+\caption{En esta tabla se puede ver como al aumentar el numero de loops y el número de puntos intermedios, el cálculo converge al resultado teórico.}
 \label{table:1}
 \end{table}
