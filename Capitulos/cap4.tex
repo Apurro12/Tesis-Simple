@@ -1,4 +1,4 @@
-\chapter{Aproximación numérica utilizando Monte Carlo}
+\chapter{Aproximación numérica Montecarlo}
 {\label{cap.singular}}
 
 En el presenta capítulo se desarrollara un formalismo para calcular la acción efectiva, y por lo tanto la energía de casimir.
@@ -255,7 +255,7 @@ V(x) = \lim _{\lambda \rightarrow \infty} \lambda \left( \delta (x) + \delta ( x
 \label{eq.definicion_potencial_D}
 \end{equation}
 
-Utilizando el potencial \eqref{eq.definicion_potencial_D} en \eqref{eq.definicion_w} el efecto neto es obtener una función escalón, donde el valor es $1$ si para un dado valor de $x$ y $T$ el loop penetra ambas superficies y cero en el caso contrario. \\
+Donde se van a restar las contribuciones individuales de cada placa, utilizando el potencial \eqref{eq.definicion_potencial_D} en \eqref{eq.definicion_w} el efecto neto es obtener una función escalón, donde el valor es $1$ si para un dado valor de $x$ y $T$ el loop penetra ambas superficies y cero en el caso contrario. \\
 
 
 Dado un loop $y = y(t)$ las condiciones para que toque ambas placas están dadas por
@@ -332,17 +332,46 @@ En el límite de masa cero la ecuación \eqref{eq.fuerza.casimir.numerica}  toma
 F _{exacto} (a) = - \frac{\pi}{24 a^2}
 \, ,
 \end{align}
-en la tabla \ref{table:1} y en la figura \ref{fig:convergencia_loops} el valor calculado con el resultado exacto al variar el número de loops y la cantidad de puntos intermedios.
 
 
+La precisión en este cálculo depende de 2 parámetros, el número de puntos intermedios $N$ y el número de loops involucrados en la estimación, al aumentar el número de loops se reduce el error estadístico montecarlo, mientras que aumentar $N$ reduce el error sistemático debido a la discretización del espacio tiempo. En la figura \ref{fig:convergencia_loops} se puede ver que al utilizar  100 loops que el error montecarlo es dominante, mientras que en \ref{fig:convergencia_loops.derecha} ya no se detectan fluctuaciones montecarlo, por lo cual se puede observar el error sistemático debido a la discretización. 
+
+
+En cuanto al tiempo de ejecución del algoritmo, en \ref{fig:tiempo_de_ejecucion} se demuestra que para esta implementación  el tiempo es lineal en el número de puntos intermedios, esto se debe a que la acción efectiva fue diagonalizada lo cual implica que la generación de un punto es independiente del resto.
+
+
+
+\begin{figure*}[t!]
+    \centering
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=1.7in]{convergencia.pdf}
+        \caption{}
+        \label{fig:convergencia_loops}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.5\textwidth}
+        \centering
+        \includegraphics[height=1.7in]{convergencia grande.pdf}
+        \caption{}
+        \label{fig:convergencia_loops.derecha}
+    \end{subfigure}
+    \caption{En esta figura se puede observar como al aumentar el número de loops y de puntos intermedios el resultado converge al valor teórico.}
+\label{fig:contorno}
+\end{figure*}
 
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.6]{fuerza_casimir_masa_linea.pdf}
-    \caption{En esta figura se puede ver la dependencia de la Fuerza de Casimir $a^2 F(m,a)$ en función de $m a$, el error es la desviación estándar muestral, se utilizaron 1.000 loops y 1.000 puntos intermedios.}
-    \label{fig:fuerza_Casimir_masa}
+    \includegraphics[scale=0.6]{Tiempo de ejecución.pdf}
+    \caption{En esta figura se puede ver que la complejidad computacional del algoritmo es lineal.}
+    \label{fig:tiempo_de_ejecucion}
 \end{figure}
+
+
+
+
+\begin{comment}
 
 
 \begin{figure}
@@ -351,7 +380,6 @@ en la tabla \ref{table:1} y en la figura \ref{fig:convergencia_loops} el valor c
     \caption{En esta figura se puede observar como al aumentar el número de puntos por loops se reduce el error sistematico debido a la discretización de los loops.}
     \label{fig:convergencia_loops}
 \end{figure}
-
 
 
 \begin{table}
@@ -383,3 +411,6 @@ en la tabla \ref{table:1} y en la figura \ref{fig:convergencia_loops} el valor c
 \caption{En esta tabla se puede ver como al aumentar el numero de loops y el número de puntos intermedios, el cálculo converge al resultado teórico.}
 \label{table:1}
 \end{table}
+\end{comment}
+
+
