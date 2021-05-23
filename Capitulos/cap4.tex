@@ -1,7 +1,6 @@
-\chapter{Aproximación numérica Montecarlo}
-{\label{cap.singular}}
+\chapter{Aproximación numérica Montecarlo}{\label{cap.montecarlo}}
 
-En el presenta capítulo se desarrollara un formalismo para calcular la acción efectiva, y por lo tanto la energía de casimir.
+En el presente capítulo se desarrollara un formalismo para calcular numéricamente la acción efectiva, y por lo tanto la energía de casimir.
 Se aplicaran estos resultados a un campo confinado entre dos placas paralelas en el vacío sin interacción.
 
 \section{La acción efectiva}
@@ -57,7 +56,7 @@ como último paso se introducirán loops unitarios, que son lineas de mundo para
 \begin{equation}
 y _{\mu} (t) = \frac{1}{\sqrt{T}} x _{\mu} (T t)
 \Longrightarrow
-\int _{0} ^{T} d \tau \, \dot{x ^2 ( \tau)} = \int _{0} ^{1} dt \, \dot{y ^2 ( t)}
+\int _{0} ^{T} d \tau \, \dot{x  } ^2 ( \tau) = \int _{0} ^{1} dt \, \dot{y } ^2 ( t)
 \, .
 \label{def.loop_unitarios}
 \end{equation}
@@ -79,21 +78,17 @@ Utilizando \eqref{def.loop_unitarios} y  \eqref{eq_valores_medio} en \eqref{cap4
 donde
 \begin{equation}
 W _v [ y(t); x] = exp \left[ -T \int _{0} ^{1} dt V( x + \sqrt{T} y(t)) \right]
- , 
+\, .
 \label{eq.definicion_w}
 \end{equation}
-Para calcular el valor medio \eqref{accion_efectiva_path_integral} hay diversas técnicas enumeradas en \cite{Gies_2003} en particular se seguirá el metodo realizado en \cite{Franchino_Vi_as_2019}, en este trabajo se utilizará la diagonalización explícita de la acción "v loops".
+Para calcular el valor medio \eqref{accion_efectiva_path_integral} hay diversas técnicas enumeradas en \cite{Gies_2003}, en particular se seguirá el método realizado en \cite{Franchino_Vi_as_2019}, diagonalización explícita de la acción usando 'v loops'.
 
 
-%Donde surge el vinculo que los loops tengan distribución de velocidad gaussiana
-%\begin{equation}
-%P[{y(t)}] = \delta \left(  \int _{0} ^{1} y(t) \right) exp \left(  -\frac{1}{4} \int _{0} ^{1} dt \dot{y} ^2 \right)
-%\end{equation}
 
 \section{Algoritmo v loops}
 
 
-Dados dos puntos inicial y final $ y_0$, $ y_N$ respectivamente, el algoritmo se basa en crear un ensamble de lineas que unan estos dos puntos siguiendo una distribución de velocidad gaussiana.
+Dados dos puntos inicial y final $ y_0 / y_N$, el algoritmo se basa en crear un ensamble de lineas que unan estos dos puntos siguiendo una distribución de velocidad gaussiana.
  
 
 
@@ -131,7 +126,7 @@ S _W = 2 z_1 ^2 +
 		\sum _{i = 4} ^{N} (y _i - y _{i-1}) ^2 
 		,
 \end{equation}
-resultando la forma cuadrática
+sugiriendo el cambio de variables
 \begin{equation}
 z _2 := y_2 - \frac{y _0  + 2 y_3 }{3} ,
 \end{equation}
@@ -155,7 +150,7 @@ f   ( i t ,\beta )=
    \end{cases}   
 \] 
 
-conde la solución está dada por
+donde la solución está dada por
 \begin{equation}
 a _1 = \frac{i+1}{i} ; \, b_i = \frac{1}{i} ,
 \end{equation}
@@ -172,20 +167,21 @@ S _{W}  = \sum _{i = 1} ^{N-1} \frac{i +1}{i} z _i ^2 + c y _0 ^2 + d y _N ^2
 , 
 \end{equation}
 los valores $c$ y $d$ no son importantes ya que son constantes que se cancelarán con la correspondiente normalización.
-En resumen el algoritmo de los v loops, dados $N-1$ puntos intermedios queda determinado por 
+En resumen el algoritmo de los v loops dados $N-1$ puntos intermedios está determinado por 
 \begin{enumerate}
-\item Generar $N-1$ numeros $w_i$ que estén distribuidos de acuerdo a la distribución de velocidades $e^{- w _{i} ^2}$
+\item Generar $N-1$ numeros $w_i$ que estén distribuidos de acuerdo a la distribución de velocidades $e^{- w _{i} ^2}$.
 \item normalizar las variables $w _i$ para obtener las variables auxiliares $z _i$
 	\begin{equation}
 	z _i = \sqrt{\frac{4}{N}} \sqrt{\frac{i}{i+1}} w _i
+	\, .
 	\end{equation}
 
 \item Una vez obtenidos los puntos $ z_i$ se calculan los puntos $ y_i$ por medio de la formula recursiva
 	\begin{equation}
-	y _i = z _i + \frac{1}{i+1} y_0 + \frac{i}{i+1} y _{i+1} ,
+	y _i = z _i + \frac{1}{i+1} y_0 + \frac{i}{i+1} y _{i+1} \, .
 	\end{equation}
 \end{enumerate}
-en el caso que $y_0 = y _N$ se obtienen loops cerrados de $N-1$ puntos puntos intermedios.
+En el caso que $y_0 = y _N$ se obtienen loops cerrados de $N-1$ puntos puntos intermedios.
 En la figura \ref{fig:ejemplo_loops} se puede observar un ejemplo de la generación 5 loops cerrados con este algoritmo donde $N=31$.
 
 
@@ -204,7 +200,7 @@ El valor medio de la acción está dado por
 \frac{1}{2} (N-1) D + \frac{1}{4} \Delta y ^2 
 \,
 \end{equation}
-en la figura \ref{fig:convergencia_loops} se puede ver como al aumentar el número de loops la aproximación numérica tiende el valor de la acción. \\
+en la figura \ref{fig:convergencia_loops} se puede ver como al aumentar el número de loops la aproximación numérica converge al valor exacto de la acción. \\
 
 
 
@@ -223,9 +219,7 @@ donde la acción clásica está dada por
 S _{class} = \frac{\Delta y ^2}{ 4}
 \, .
 \end{equation}
-En la figura \ref{fig:distribucion_accion_cap4} se puede comprar el resultado numérico de la simulación con el resultado analítico 
-
-
+En la figura \ref{fig:distribucion_accion_cap4} se puede comparar el resultado numérico de la simulación con el resultado analítico.
 
 
 \begin{figure}
@@ -258,7 +252,7 @@ V(x) = \lim _{\lambda \rightarrow \infty} \lambda \left( \delta (x) + \delta ( x
 Donde se van a restar las contribuciones individuales de cada placa, utilizando el potencial \eqref{eq.definicion_potencial_D} en \eqref{eq.definicion_w} el efecto neto es obtener una función escalón, donde el valor es $1$ si para un dado valor de $x$ y $T$ el loop penetra ambas superficies y cero en el caso contrario. \\
 
 
-Dado un loop $y = y(t)$ las condiciones para que toque ambas placas están dadas por
+Dado un loop $y = y(t)$ las condiciones para que penetre ambas placas están dadas por
 
 \begin{align}
 \label{condiciones}
@@ -284,7 +278,7 @@ y_{min}  &= min(y(t)) \, .
 
 
 
-Lo cual conduce a una acción acción efectiva dada por
+Lo cual conduce a una acción efectiva dada por
 
 \begin{align}
 \label{ec1.accion_efectiva}
@@ -308,15 +302,14 @@ Lo cual conduce a una acción acción efectiva dada por
 donde la función gamma incompleta está definida por
 \begin{equation*}
 \Gamma (a, z) = \int _{z} ^{\infty} t^{a-1} e ^{-t} dt
-\, .
+\, ,
 \end{equation*}
-
-A partir de aquí se puede obtener la energía de vacío tomando la derivada  $\partial a$, lo que resulta en una Fuerza de casimir dada por
+A partir de aquí se puede obtener la energía de vacío tomando la derivada  $\partial a$, lo que resulta en una Fuerza de Casimir dada por
 \begin{equation}
 F (m,a) = 
 \frac{m^2 \Gamma \left( 0 , \frac{a ^2 m^2}{\Delta y^2} \right)}{8 \pi}
 - \frac{\Delta y^2 \, e ^ {-\frac{a ^2 m^2}{\Delta y^2}}}{8 \pi a^2 } 
-\, ,
+\, .
 \label{eq.fuerza.casimir.numerica}
 \end{equation}
 lo cual en la figura \eqref{fig:fuerza_Casimir_masa} está comparado con el valor exacto dado por
@@ -324,6 +317,14 @@ lo cual en la figura \eqref{fig:fuerza_Casimir_masa} está comparado con el valo
 F _{exacto} (m,a) = - \int _{m} ^{ \infty } \frac{dt}{\pi} \frac{t^2}{\sqrt{t^2 -m^2}(e^{2 t a} -1)}
 \, .
 \end{equation}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=60mm,scale=0.5]{fuerza_casimir_masa_linea.pdf}
+    \caption{En esta figura se puede ver la dependencia de la Fuerza de Casimir $a^2 F(m,a)$ en función de $m a$, el error es la desviación estándar muestral, se utilizaron 1.000 loops y 1.000 puntos intermedios.}
+    \label{fig:fuerza_Casimir_masa}
+\end{figure}
+
 
 
 En el límite de masa cero la ecuación \eqref{eq.fuerza.casimir.numerica}  toma la conocida dependencia con $a^{-2}$, que corresponde a la Fuerza de Casimir en $D = 1+1$
@@ -333,11 +334,16 @@ F _{exacto} (a) = - \frac{\pi}{24 a^2}
 \, ,
 \end{align}
 
+en la figura \ref{fig:figuras_loops} se encuentra la comparación de la fuerza de Casimir a $m=0$ obtenida por este método versus el valor exacto.
 
-La precisión en este cálculo depende de 2 parámetros, el número de puntos intermedios $N$ y el número de loops involucrados en la estimación, al aumentar el número de loops se reduce el error estadístico montecarlo, mientras que aumentar $N$ reduce el error sistemático debido a la discretización del espacio tiempo. En la figura \ref{fig:convergencia_loops} se puede ver que al utilizar  100 loops que el error montecarlo es dominante, mientras que en \ref{fig:convergencia_loops.derecha} ya no se detectan fluctuaciones montecarlo, por lo cual se puede observar el error sistemático debido a la discretización. 
 
 
-En cuanto al tiempo de ejecución del algoritmo, en \ref{fig:tiempo_de_ejecucion} se demuestra que para esta implementación  el tiempo es lineal en el número de puntos intermedios, esto se debe a que la acción efectiva fue diagonalizada lo cual implica que la generación de un punto es independiente del resto.
+
+
+En términos generales la precisión en este cálculo depende de 2 parámetros, el número de puntos intermedios $N$ y el número de loops involucrados en la estimación, al aumentar el número de loops se reduce el error estadístico montecarlo, mientras que aumentar $N$ reduce el error sistemático debido a la discretización del espacio tiempo. En la figura \ref{fig:convergencia_loops} se puede ver que al utilizar  100 loops el error montecarlo es dominante, mientras que en \ref{fig:convergencia_loops.derecha} ya no se detectan fluctuaciones montecarlo, donde la diferencia entre el valor calculado y el valor exacto se debe al error sistemático debido a la discretización. 
+
+
+En cuanto al tiempo de ejecución del algoritmo, en la figura \ref{fig:tiempo_de_ejecucion} se demuestra que para esta implementación  el tiempo es lineal en el número de puntos intermedios, esto se debe a que la acción efectiva fue diagonalizada lo cual implica que la generación de un punto es independiente del resto.
 
 
 
@@ -357,7 +363,7 @@ En cuanto al tiempo de ejecución del algoritmo, en \ref{fig:tiempo_de_ejecucion
         \label{fig:convergencia_loops.derecha}
     \end{subfigure}
     \caption{En esta figura se puede observar como al aumentar el número de loops y de puntos intermedios el resultado converge al valor teórico.}
-\label{fig:contorno}
+\label{fig:figuras_loops}
 \end{figure*}
 
 

@@ -89,11 +89,11 @@ de contorno Dirichlet.\\
 
 Se estudia ahora, el mismo operador bajo condiciones de contorno periódicas
 \begin{equation}
-\begin{array}{c}
-	A \phi (x) = - \partial _x ^2 \phi (x) \\[5pt]
-    \phi (0) = \phi (L)  \\[5pt]
-    \phi ' (0) = \phi ' (L) \, ,
-\end{array}
+\begin{aligned}
+	A \phi (x) &= - \partial _x ^2 \phi (x) \\[5pt]
+    \phi (0) &= \phi (L)  \\[5pt]
+    \phi ' (0) &= \phi ' (L) \, .
+\end{aligned}
 \end{equation}
 Este problema representa una partícula escalar confinada en un anillo $S ^1$ .
 Los autovalores y autofunciones están dados por
@@ -125,15 +125,15 @@ La función-$\zeta$ resulta
 que al igual que en los casos anteriores es regular en $s=- \frac{1}{2}$. Se obtiene
 entonces la energía de vacío
 \begin{equation}
-E _0 = - \frac{\pi}{6 L}
+E _0 = - \frac{\pi}{6 L} \, ,
 \end{equation}
-Nuevamente, la energía crece con L, lo que señala una fuerza que tiende a
+nuevamente la energía crece con L, lo que señala una fuerza que tiende a
 reducir el tamaño del anillo.
 
 \section{Condiciones de Contorno Mixtas}
 
 
-Se introduce ahora un parámetro $S$ con dimensiones, a partir de condiciones de contorno Robin, en uno de los extremos del intervalo,
+Se introduce ahora un parámetro dimensional $S$, a partir de condiciones de contorno Robin en uno de los extremos del intervalo,
 \begin{equation}
 \begin{aligned}
     A \phi (x) &= - \partial ^2 _x \ \phi (x)  \\[5pt]
@@ -166,14 +166,14 @@ Primeramente, se definen  variables adimensionales $\rho _n = \lambda _n L $ y $
     \, .
     \label{eq.asintota}
 \end{equation}
-En la figura \ref{fig:Dibujo1} están graficados los dos términos de \ref{eq.asintota}. Puede verse que los autovalores $\rho _n$ tienden a las asíntotas verticales de $ \tan ( \rho ) $, a medida que $\rho _n$ crece. Por consiguiente, se escribe para los autovalores $\rho _n$ 
+En la figura \ref{fig:Dibujo1} están graficados los dos términos de \eqref{eq.asintota}. Puede verse que los autovalores $\rho _n$ tienden a las asíntotas verticales de $ \tan ( \rho ) $ a medida que $\rho _n$ crece. Por consiguiente, se obtiene para  autovalores $\rho _n$ 
 \begin{align}
     & \rho _n = n \pi + \frac{\pi}{2} + \epsilon _n 
 \label{eq.mu}    
 \\[5pt]
 \nonumber
     & \lim \limits_{ n \rightarrow \infty} \epsilon _n = 0
-\, ,
+\, .
 \end{align}
 \begin{figure}
     \centering
@@ -181,12 +181,12 @@ En la figura \ref{fig:Dibujo1} están graficados los dos términos de \ref{eq.as
     \caption{En este ejemplo, se puede ver que la intersección entre $ \tan(x)$ y $-x$ tiende a las asíntotas verticales de $\tan (x) $, el mismo comportamiento se aprecia para cualquier recta de la forma $- a x$.}
     \label{fig:Dibujo1}
 \end{figure}
-Utilizando esta expresión de $\rho _n$ en la ecuación \eqref{autovalores2}, se obtiene una ecuación para $\epsilon _n$
+Utilizando esta expresión de $\rho _n$ en  \eqref{autovalores2}, se obtiene una ecuación para $\epsilon _n$
 \begin{equation}
 \begin{aligned}
     \sin \left( n \pi + \frac{\pi}{2} + \epsilon _n \right) = -
     \frac{n \pi + \frac{\pi}{2} + \epsilon _n}{\theta} \cos \left( n \pi + \frac{\pi}{2} + \epsilon _n\right)
-    \, ,
+    \, .
 \end{aligned}
 \end{equation}
 Para lograr obtener una expresión de $\epsilon _n$ se desarrolla la ecuación anterior alrededor de $\epsilon  _n \sim 0$, logrando
@@ -252,7 +252,7 @@ Utilizando estos resultados en la definición de función-$\zeta$ dada en \eqref
     \right ) ^{-2 s}
     \, .
 \end{align}
-De manera consistente, con los términos  $ O (n ^{-4})$ que no se han calculado, se desarrolla  el binomio para pequeños valores de $\chi _n$ hasta el orden cúbico,
+De manera consistente con los términos  $ O (n ^{-4})$ que no se han calculado se desarrolla  el binomio para pequeños valores de $\chi _n$ hasta el orden cúbico,
 \begin{align}
 \label{eq.auxiliar2}
 \zeta  (s) &= 
@@ -293,7 +293,7 @@ Los siguientes términos de $\zeta (s)$ son de la forma $\sum _{n=1} ^{\infty} n
 	\, ,
 \end{align}
 donde $\zeta _R (2s+p)$ es una función meroforma con polo simple en $s = \frac{1}{2} - \frac{p}{2}$,
-por lo tanto, los polos de $\zeta (s)$ quedan caracterizados por los polos simples de las funciones  $\zeta _R (2s+p)$. De esta manera, se muestra que $\zeta (s)$ posee polos simples en los semi-enteros negativos lo cual está de acuerdo con el el resultado \eqref{eq.ceros.zeta}. El desarrollo hasta orden $O(n^{-3})$ se ha calculado para los autovalores, permite obtener los residuos correspondientes a los siguientes polos.
+por lo tanto, los polos de $\zeta (s)$ quedan caracterizados por los polos simples de las funciones  $\zeta _R (2s+p)$. De esta manera, se muestra que $\zeta (s)$ posee polos simples en los semi-enteros negativos lo cual está de acuerdo con el el resultado \eqref{eq.ceros.zeta}. El desarrollo hasta orden $O(n^{-3})$ que se ha calculado para los autovalores permite obtener los residuos correspondientes a los siguientes polos.
 \begin{equation}
 \begin{aligned}\label{eq.polos.asin}
 	\left(1- \frac{1}{2} \right) \zeta  (s)| _{s=\frac{1}{2}} &= 
@@ -324,16 +324,16 @@ la forma $f ( \lambda ^2 _ n ) = 0$ y que $\lambda ^2 _n$  son ceros simples de 
 En ese caso, la función $( \log f (z))'$ tiene polos simples en $\lambda ^2 _n$ con residuo 1.
 Utilizando el teorema de los residuos, la función $\zeta (s)$ se puede representar
 como una integral, en el plano complejo, cuyo camino de integración $C$
-encierra los ceros de $f (z)$ (véase la figura \ref{fig:contorno}),
+encierra los ceros de $f (z)$ (véase la figura \ref{fig:contorno}).
 \begin{equation}
 \begin{aligned}
    \zeta  (s) &=  \sum _{n=1} ^{\infty} \left( \frac{\lambda _n}{\mu} \right) ^{-2s} 
    =  
-   \frac{1}{2 \pi i} \int _{C} \frac{f'(z)}{f(z)} \left( \frac{z}{\mu} \right) ^{-2s} dz 
+   \frac{1}{2 \pi i} \int _{C} \frac{f'(z)}{f(z)} \left( \frac{z}{\mu} \right) ^{-2s} dz \, ,
 \end{aligned}
 \label{asd}
 \end{equation}
-En el problema que se está considerando $f(z) = z \cos Lz + S \sin Lz$ (ver (\ref{autovalores2})); reemplazando en la representación integral se obtiene
+en el problema que se está considerando $f(z) = z \cos Lz + S \sin Lz$,ver (\ref{autovalores2}); reemplazando en la representación integral se obtiene
 \begin{equation}
 	\zeta  (s) = 
     \frac{\mu ^{2s}}{2 \pi i} \int _{C}
@@ -447,6 +447,7 @@ C _0 &=  \frac{L \mu}{\sqrt{4 \pi} }\\
 C _1 &=  \frac{1}{4} \left( \chi (L) - \chi (0) \right) =  -2 \\
 C _2 &= - \frac{S}{\mu \sqrt{\pi} } \\
 C _3 &= \frac{ S ^2 }{2 \mu ^2 }
+\, .
 \end{aligned}
 \end{equation}
 Luego, se utiliza la ecuación (\ref{losresi}) que relaciona los coeficientes de Seeley-DeWitt con los residuos de la función $\zeta$

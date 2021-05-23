@@ -5,7 +5,7 @@ El presente capítulo contiene el resultado original de este Trabajo de Diploma,
 es válido para operadores diferenciales con coeficientes suaves. En efecto,
 mostraremos a continuación que la presencia de una singularidad puede
 conducir a un desarrollo asintótico de la traza del heat-kernel que no con-
-tiene exclusivamente potencias semi-enteras de $T$, contradiciendo el resultado \ref{eq.heat.expansion}. Veremos que
+tiene exclusivamente potencias semi-enteras de $T$, contradiciendo el resultado \eqref{eq.heat.expansion}. Veremos que
 en el caso del operador singular que hemos analizado el desarrollo del heat-kernel contiene términos $\log T$.
 
 
@@ -62,7 +62,7 @@ donde $F _1 ^1(a,b,z)$ y $ U(a,b,z)$ son las soluciones LI de la ecuación {\mbo
     \partial _z \psi (a,b,z)
     -a \ \psi (a,b,z) = 0 \, .
 \end{equation}
-las cuales están dadas por \cite{Abramowitz:hyper}
+Las cuales están dadas por \cite{Abramowitz:hyper}
 \begin{align}
 	U(a,b,z) = &\frac{1}{\Gamma (a)} 
 	\int _0 ^{\infty} e ^{-zt}
@@ -78,11 +78,11 @@ las cuales están dadas por \cite{Abramowitz:hyper}
 	\, ,
 \end{align}
 donde $(.) _n$ es el símbolo de Pochhammer.
-Si se cumple que  $a=-m,b \neq -n$ donde $ m,n \in \mathbb{N}$, $F _1 ^1 (a,b,z)$ es un polinomio en $z$ y $U(a,b,z)$, es linealmente dependiente con $F _1 ^1 (a,b,z)$, en tal caso se usa $z^{1-b} M(a+1,-b,2-b,z)$ como segunda solución LI.
+Si se cumple que  $a=-m,b \neq -n$ donde $ m,n \in \mathbb{N}$, $F _1 ^1 (a,b,z)$ es un polinomio en $z$, y $U(a,b,z)$ es linealmente dependiente con $F _1 ^1 (a,b,z)$, en tal caso se usa $z^{1-b} M(a+1,-b,2-b,z)$ como segunda solución LI.
 
 
 Las constantes $C_1,C_2$ están sujetas al vínculo impuesto por las condiciones de contorno.
-Para imponer las condiciones de contorno, primeramente desarrollamos $\phi (x)$ cerca de $x \simeq 0$ 
+Para imponer las condiciones de contorno, primeramente se desarrolla $\phi (x)$ cerca de $x \simeq 0$ 
 \begin{align}
 \phi  ( x ) &=
 C _1  x  + 
@@ -154,7 +154,7 @@ así el autovalor queda determinado por $\lambda ^2 = - \frac{\alpha ^2}{4 n ^2}
 
 Para los cálculos que interesan sólo, se utilizarán los autovalores $\lambda ^2 >0$. 
 
-Del desarrollo \ref{eq.scat} se ve que la condición de contorno en $x=0$ fija $C _2 =0$;
+Del desarrollo \eqref{eq.scat} se ve que la condición de contorno en $x=0$ fija $C _2 =0$;
 imponiendo entonces, la condición de contorno $\phi (L)=0$ se obtiene que los autovalores positivos $\lambda ^2$ están dados por las soluciones de
 \begin{equation}
 F _1 ^1 \left(1-\frac{i \alpha}{2 \lambda},2,2 i \lambda L \right)  = 0
@@ -173,7 +173,7 @@ En la figura (\ref{fig:funcion}) se encuentra graficado
 \end{figure}
 
 
-Para calcular $\zeta(s)$ se utilizará el desarrollo asintótico de la función $F _1 ^1 (a,b,z)$ a $z \rightarrow \infty$ \cite{Abramowitz:hyper},
+Para calcular $\zeta(s)$ se utiliza el desarrollo asintótico de la función $F _1 ^1 (a,b,z)$ en $z \rightarrow \infty$ \cite{Abramowitz:hyper},
 \begin{equation}
 \begin{aligned}
     F _1 ^1 (a,b,z) &= \Gamma (b) 
@@ -188,7 +188,7 @@ Para calcular $\zeta(s)$ se utilizará el desarrollo asintótico de la función 
 \label{eq.aprox}
 \end{equation}
 aquí $S_1$ y $S _2$ representan el desarrollo a todo orden.
-Utilizando este desarrollo, $F _1 ^1 \left(1+  \frac{  \alpha}{2 i \lambda} ,2 ,2 i \lambda L  \right)$, queda determinada por
+Utilizando este desarrollo, $F _1 ^1 \left(1+  \frac{  \alpha}{2 i \lambda} ,2 ,2 i \lambda L  \right)$ queda determinada por
 \begin{align}
 \label{eq.completa}
 	F _1 ^1 \left(1+  \frac{  \alpha}{2 i \lambda} ,2 ,2 i \lambda L  \right) 
@@ -215,7 +215,7 @@ Luego, finalmente en la sección \ref{sec.regular} se utilizará el desarrollo c
 
 \section{Cálculo Asintótico de los autovalores}\label{seq.2.asin}
 
-En esta sección se seguirá el procedimiento descrito en \ref{seq.asin} para estudiar la estructura de polos de $\zeta (s)$: se calculará el desarrollo asintótico de grandes autovalores, que luego será utilizado para determinar los residuos en los primeros polos $s= \frac{1}{2}$ y $s= - \frac{1}{2}$.
+En esta sección se seguirá el procedimiento descrito en \ref{seq.asin} para estudiar la estructura de polos de $\zeta (s)$: se calculará el desarrollo asintótico a grandes autovalores, que luego será utilizado para determinar los residuos en los primeros polos $s= \frac{1}{2}$ y $s= - \frac{1}{2}$.
 
 
 
@@ -534,7 +534,7 @@ M( \lambda ) &=
 \nonumber
 \, ;
 \end{align}
-$S _n ^{(1,2)}$ son un polinomios en $\frac{1}{ \lambda}$, donde la potencia más alta es $3 n$ y la mas baja $n$, lo cual permite controlar el orden del desarrollo.
+$S _n ^{(1,2)}$ son polinomios en $\frac{1}{ \lambda}$, donde la potencia más alta es $3 n$ y la mas baja $n$, lo cual permite controlar el orden del desarrollo.
 
 
 Al igual que en la sección \ref{seq.2.com}, al integrar sobre los ejes verticales va a existir un término exponencialmente creciente/decreciente, teniendo en cuenta solo los términos que contribuyen a los polos se obtiene
@@ -746,7 +746,7 @@ se puede apreciar que la energía de vacío depende del cutoff $\epsilon$. El t�
 \section{Parte finita de la energía de vacío}
 \label{sec.regular}
 
-En los capítulos \ref{seq.2.asin} y \ref{seq.2.com} se calcularon los polos de \mbox{$\zeta (s)$} en $s= \frac{1}{2}$ y $s=-\frac{1}{2}$, encontrando que en $s=- \frac{1}{2}$ existe en polo doble. En \ref{sec.sig.polos} se estudió la estructura completa de polos, encontrando que $\zeta (s)$ posee polos son simples ubicados en los semienteros negativos. En \ref{sec.regular} se expresó la energía de vacío siendo la parte finita de esta $\frac{\mu}{2} {\rm PF } \zeta \left( - \frac{1}{2} \right)$.
+En los capítulos \ref{seq.2.asin} y \ref{seq.2.com} se calcularon los polos de \mbox{$\zeta (s)$} en $s= \frac{1}{2}$ y $s=-\frac{1}{2}$, encontrando que en $s=- \frac{1}{2}$ existe en polo doble. En \ref{sec.sig.polos} se estudió la estructura completa de polos, encontrando que $\zeta (s)$ posee polos simples ubicados en los semienteros negativos. En \ref{sec.regular} se expresó la energía de vacío siendo la parte finita de esta $\frac{\mu}{2} {\rm PF } \zeta \left( - \frac{1}{2} \right)$.
 
 En esta sección, se estudiará ${\rm PF } \zeta \left( - \frac{1}{2} \right)$ de dos maneras diferentes: primero se utilizará el desarrollo asintótico correspondiente a la sección \ref{seq.2.asin} y luego se hará uso de la representación integral tal como se hizo en la sección \ref{seq.2.com}.
 
@@ -854,7 +854,7 @@ donde $\gamma _1$ es la constante de Stieltjes. Obteniendo para $\zeta \left( - 
 							\right) 
 \, .
 \end{align}
-De aquí, se puede ver que los polos coinciden con los calculados en las secciones \ref{seq.2.asin} y \ref{seq.2.com}, así ${\rm PF} \zeta (s)$ definida en (\ref{eq.casimir.resultado}) y \eqref{eq.res.1} queda determinado por el segundo y tercer renglón de la expresión anterior. 
+De aquí, se puede ver que los polos coinciden con los calculados en las secciones \ref{seq.2.asin} y \ref{seq.2.com}, así ${\rm PF} \zeta (s)$ definida en (\ref{eq.casimir.resultado}) y \eqref{eq.res.1} queda determinada por el segundo y tercer renglón de la expresión anterior. 
 Utilizando esta definición de $\zeta \left( - \frac{1}{2} \right) $ se obtiene para la energía de vacío
 \begin{align}\label{energia.vacio.final}
 	E_ 0 (\epsilon )&=
@@ -893,11 +893,11 @@ Dado que $a _p$ es un polinomio en $\alpha L$, en el límite $\alpha \rightarrow
 \begin{equation}
 \lim \limits_{\alpha \rightarrow 0} E _0 = 
 		- \frac{\pi}{24 L}
-\, ,
+\, .
 \end{equation}
 Esto corresponde a la energía de vacío sin potencial con condiciones de contorno Dirichlet en ambos extremos, tal como se calculó en la ecuación (\ref{eq.energia.dirichlet}) del capítulo \ref{sec.Dirichlet}.
 
-En el apéndice \ref{Apendice.1} se encuentra un script del software Mathematica que permite obtener los términos $a _p$, En este caso, se calcularon hasta $p=10$. En la figura \ref{fig.finitas} está graficada la energía de vacío adimensionalizada obtenida por este método, junto con el método que se describirá a continuación.
+En el apéndice \ref{Apendice.1} se encuentra un script del software Mathematica que permite obtener los términos $a _p$, En este caso, se calculó hasta $p=10$. En la figura \ref{fig.finitas} está graficada la energía de vacío adimensionalizada obtenida por este método, junto con el método que se describirá a continuación.
 
 
 
@@ -1139,7 +1139,7 @@ Utilizando las ecuaciones (\ref{abajo},\ref{arriba},\ref{eq.arriba2},\ref{eq.arr
 		 {4 \pi L \mu  \epsilon } 
 \, .
 \end{align}
-En la última línea están los polos que coinciden con lo calculado anteriormente en (\ref{eq.zeta.final},\ref{eq.result.zeta.c} y\ref{eq.res.1}), en la penúltima línea se encuentra la dependencia no trivial con la escala $\log (L \mu)$, que coincide con la calculada con el método anterior en la ecuación (\ref{eq.zeta.final}).
+En la última línea están los polos que coinciden con lo calculado anteriormente en (\ref{eq.zeta.final},\ref{eq.result.zeta.c} y \ref{eq.res.1}), en la penúltima línea se encuentra la dependencia no trivial con la escala $\log (L \mu)$, que coincide con la calculada con el método anterior en la ecuación (\ref{eq.zeta.final}).
 
 Utilizando este resultado se obtiene para la energía de vacío
 \begin{align}

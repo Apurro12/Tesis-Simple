@@ -13,6 +13,7 @@ En esta sección, escribiremos la acción efectiva en su aproximación a {\it 1-
 
 Consideremos entonces un campo escalar $\phi(x)$ definido sobre una región $\mathcal{M}\subset \mathbb{R}^m$ con borde $\partial \mathcal{M}$, donde $x \in  \mathcal{M}$. La dinámica del campo $\phi(x)$ está determinada a partir de una acción $S[\phi]$
 \begin{align}
+\label{eq.dinamica_campos}
 		S[\phi]=\int_\mathcal{M} dx\ \mathscr L(\phi,\partial\phi)\,,
 \end{align}
  donde $\mathscr L$ es el lagrangiano que define la teoría. La solución clásica $\phi _0(x)$ de las ecuaciones de movimiento es la configuración que minimiza la funcional $S[\phi]$,
@@ -39,12 +40,12 @@ Como ejemplo, se escriben a continuación los lagrangianos correspondientes a un
 			i \gamma ^{\mu} \partial _{\mu} - m 
 			\right) \psi 
 &\rightarrow&
-			\left( i  \gamma ^{\mu} \partial _{\mu}  - m \right)\psi = 0\\[10pt]
+			\left( i  \gamma ^{\mu} \partial _{\mu}  - m \right)\psi = 0.\\[10pt]
 \end{array}
 \label{campos}
 \end{equation}
 
-En Teoría Cuántica de Campos, el campo se reinterpreta como un operador ($\phi(x) \rightarrow \hat{\phi}(x)$) cuya dinámica está dada por \eqref{campos}. Una alternativa para cuantizar el campo $\phi(x)$ está dada por las integrales de camino de Feynman. En esta formulación, las funciones de correlación de la teoría (que determinan las amplitudes de dispersión) en presencia de una fuente externa $J(x)$ están dadas por\footnote{ Como estamos interesados en un análisis semiclásico, reintroducimos $\hbar$ en las integrales funcionales.}
+En Teoría Cuántica de Campos, el campo se reinterpreta como un operador ($\phi(x) \rightarrow \hat{\phi}(x)$) cuya dinámica está dada por \eqref{eq.dinamica_campos}. Una alternativa para cuantizar el campo $\phi(x)$ está dada por las integrales de camino de Feynman. En esta formulación, las funciones de correlación de la teoría (que determinan las amplitudes de dispersión) en presencia de una fuente externa $J(x)$ están dadas por\footnote{ Como estamos interesados en un análisis semiclásico, reintroducimos $\hbar$ en las integrales funcionales.}
 \begin{equation}
 \langle 0 | \hat{ \phi  } (x _1) \ldots \hat{\phi  } (x _n) | 0 \rangle = \frac{1}{\langle 0|0\rangle} 
 \int  \mathscr D
@@ -143,7 +144,7 @@ En el año 1948 Hendrik Casimir \cite{Casimir:1948dh}, inspirado en las fuerzas 
 		F(d) = -  \frac{\hbar c \pi ^2 \,A\  }{240 \, d^4}\,.
 	\label{casimir.1}
 \end{equation}
-La primera medida experimental de este efecto fue realizada en 1958 por Sparnaay \cite{SPARNAAY1958751}; aunque el resultado de este experimento no contradijo la predicción de Casimir, la incertidumbre en la medición tampoco permitió un resultado concluyente. Desde entonces, se han realizado varios experimentos para distintas configuraciones. La precisión de los experimentos varían desde el $15 \%$ en el caso de placas paralelas \cite{casimir.placas.paralelas,articulo.casimir} en el año $2002$, al rango del $0.1-5 \%$ para una esfera y un plano, a partir del año $2001$\cite{casimir.cilindro1,PhysRevLett.81.4549,PhysRevD.60.111101,PhysRevA.62.052109}.
+La primera medida experimental de este efecto fue realizada en 1958 por Sparnaay \cite{SPARNAAY1958751}; aunque el resultado de este experimento no contradijo la predicción de Casimir, la incertidumbre en la medición tampoco permitió un resultado concluyente. Desde entonces, se han realizado varios experimentos para distintas configuraciones. La precisión de los experimentos varían desde el $15 \%$ en el caso de placas paralelas \cite{casimir.placas.paralelas,articulo.casimir} en el año $2002$, al rango del $0.1-5 \%$ para una esfera y un plano a partir del año $2001$\cite{casimir.cilindro1,PhysRevLett.81.4549,PhysRevD.60.111101,PhysRevA.62.052109}.
 
 La fuerza de Casimir se origina en la energía de vacío de los campos contenidos entre las placas conductoras. En efecto, cada uno de los modos normales de oscilación del campo tiene asociada una frecuencia de oscilación $\omega_n$. La cuantización del campo conduce entonces a un conjunto de osciladores desacoplados, de modo que la energía en el estado fundamental (correspondiente al vacío de la teoría) resulta
 \begin{equation}
@@ -259,7 +260,7 @@ En las secciones siguientes se utilizarán las funciones espectrales $K(T)$ y $\
 \section{Regularización de la Acción Efectiva}\label{cap.acc}
 
 En las ecuaciones (\ref{gama-det}) y (\ref{det}) de la sección \ref{accion_efectiva}, se vio que la acción efectiva a {\it 1-loop} está dada por el siguiente determinante funcional,
-\begin{equation}
+\begin{equation}\label{eq.regu.gamma}
     \log {\rm Det} \, \delta ^2 S = 
     \sum_{n\in{\mathbb N}} \log \lambda ^2 _n
     \, ,
@@ -268,7 +269,7 @@ en el que $\{\lambda ^2 _n\}_{n\in\mathbb N}$ representa el espectro del operado
 \begin{equation}
 - \log\lambda ^2 _n=\int _ { \epsilon } ^{\infty}\frac{dT}{T}\ e ^{- T \lambda ^2 _n} +\gamma+\log\epsilon + O ( \epsilon  ) \,.
 \end{equation}
-Utilizando esta expresión en el determinante funcional  \eqref{gama-det} se puede escribir
+Utilizando esta expresión en el determinante funcional  \eqref{eq.regu.gamma} la acción efectiva se puede escribir
 \begin{equation}\label{gamma-hk}
 \Gamma [ \phi ] = 
 S[ \phi ] - 
@@ -321,16 +322,16 @@ Los 3 primeros coeficientes Seeley-DeWitt están dados en las ecuaciones \eqref{
 \begin{align}
 C _0 (A) &= \frac{1}{4 \pi   }  \int  _{M} d x dt   \\[2mm]
 C _1 (A) &= 0 \\[2mm]
-C _2 (A) &= - \frac{ \lambda }{8 \pi }  \int _M d x dt \  \phi (x) ^2
+C _2 (A) &= - \frac{ \lambda }{8 \pi }  \int _M d x dt \  \phi (x) ^2 \, .
 \label{coef2}
 \end{align} 
 
 
-Estos términos divergentes se introducen en el lagrangiano, redefiniendo la acción efectiva, de modo que resulte finita. $C_0$ renormaliza la constante cosmológica $\Lambda$, mientras que  $C_2$ renormaliza la masa $m$.
+Estos términos divergentes se introducen en el lagrangiano, redefiniendo la acción efectiva, de modo que resulte finita. $C_0$ renormaliza la constante cosmológica $\Lambda$, mientras que  $C_2$ renormaliza la masa $m$
 \begin{equation}
-m ^2 _{fis} = m ^2 ( \epsilon )  - \frac{\lambda \hbar \ln \epsilon}{8 \pi}
+m ^2 _{fis} = m ^2 ( \epsilon )  - \frac{\lambda \hbar \ln \epsilon}{8 \pi} .
 \end{equation}
-Donde $m _{fis}$, se reinterpreta como la corrección cuántica a la masa original del lagrangiano. Los siguientes coeficientes de  Seeley-DeWitt van a corregir primer orden de $\lambda$ y a orden superior $m$, de la ecuación (\ref{seeley-div}) resulta que, estas correcciones son finitas en el límite $\epsilon \rightarrow 0$, por lo tanto es necesario calcular asintóticamente la integral (\ref{eq.accion-efectiva}) en el intervalo $[1, \infty)$, para obtener una corrección término a término.
+Donde $m _{fis}$, se reinterpreta como la corrección cuántica a la masa original del lagrangiano. Los siguientes coeficientes de  Seeley-DeWitt van a corregir a primer orden $\lambda$ y a orden superior $m$, de la ecuación (\ref{seeley-div}) resulta que estas correcciones son finitas en el límite $\epsilon \rightarrow 0$, por lo tanto es necesario calcular asintóticamente la integral (\ref{eq.accion-efectiva}) en el intervalo $[1, \infty)$, para obtener una corrección término a término.
 
 \section{Regularización de la Energía de Casimir}\label{cap.casimir}
 
@@ -340,7 +341,7 @@ E _0 = \frac{A \hbar c}{(2 \pi) ^2} \int dk _x dk _y
 \sum _{n=1} ^{\infty} 
 \sqrt{
 		\left( \frac{n \pi}{d} \right) ^2 + k _x ^2 + k _y ^2
-		}
+		} \, .
 \end{equation}
 La definición \eqref{funcion.zeta} sugiere reemplazar esta expresión divergente de la energía de vacío por la siguiente representación
 \begin{equation}\label{e0-zeta}
@@ -353,7 +354,7 @@ donde $\zeta (s)$ está dada por
 \sum _{n=1} ^{\infty} 
 \left\{\left( \frac{n \pi}{d} \right) ^2 + k _x ^2 + k _y ^2\right\}^{-s}\,.
 \end{equation}
-Se calcula ahora la extensión analítica de $\zeta(s)$ al punto $s=-\frac12$,
+Se calcula ahora la extensión analítica de $\zeta(s)$ en el punto $s=-\frac12$,
 \begin{align}
 \zeta (s) &= 
 \int dk _x dk _y 
@@ -367,7 +368,7 @@ En esta expresión $\zeta_R(s)$ representa la función-$\zeta$ de Riemann,
 \begin{align}\label{rieman-zeta-def}
 	\zeta_R(s)=\sum_{n=1}^\infty n^{-s}\,,
 \end{align}
-cuya extensión analítica a $s=-3$ es $\zeta_R(-3)=\frac{1}{120}$, tal como está demostrado en el apéndice \ref{Apendice.2}. Utilizando finalmente, la representación \eqref{e0-zeta}, se obtiene para la energía de vacío por unidad de área transversal
+cuya extensión analítica en $s=-3$ es $\zeta_R(-3)=\frac{1}{120}$, tal como está demostrado en el apéndice \ref{Apendice.2}. Utilizando finalmente la representación \eqref{e0-zeta}, se obtiene para la energía de vacío por unidad de área transversal
 \begin{equation}
 \frac{E _0}{A} = 
 - \hbar c\ \frac{ \pi ^2}{720}\ \frac{1}{d^3}\,.
@@ -384,12 +385,11 @@ E _0 = \frac{\hbar}{2} \zeta  \left (- \frac{1}{2} \right)
 
 \bigskip
 
-\section{Adimensionalización:}
-\label{seq.adim}
+\section{Adimensionalización}\label{seq.adim}
 
 \medskip
 
-En los capítulos \ref{cap.casimir} y \ref{cap.acc} se utilizó $K(T)$ y $\zeta (s)$ para dar definiciones finitas de la acción efectiva a {\it 1-loop} y la energía de Casimir respectivamente, lo que se va hacer de aquí en adelante, es adimensionalzar la función-$\zeta$, de manera que, las potencias complejas estén bien definidas:
+En los capítulos \ref{cap.casimir} y \ref{cap.acc} se utilizó $K(T)$ y $\zeta (s)$ para dar definiciones finitas de la acción efectiva a {\it 1-loop} y la energía de Casimir respectivamente, lo que se va hacer de aquí en adelante, es adimensionalzar la función-$\zeta$, de manera que las potencias complejas estén bien definidas:
 
 \begin{align}
 \zeta  (s) &= \sum\limits_{n \in \mathbb N} \left( \frac{\lambda  _n}{\mu }  \right) ^{-2s } \label{def.adim} \, .
@@ -416,4 +416,35 @@ E _0 &=
 donde en el caso particular que  $C _{-1} = 0 $ se recuperara la energía de vacío dada por \eqref{eq.casimir.no.mu}.
 
 
-En \ref{e0-zeta} no se introdujo $\mu$ explícitamente dado que $\zeta \left(- \frac{1}{2} \right)$ es regular y esto no afecta el resultado final. A partir del próximo capítulo se utilizará la definición de la energía de vacío dada por \ref{eq.casimir.mu} en lugar de \ref{eq.casimir.no.mu}.
+En \eqref{e0-zeta} no se introdujo $\mu$ explícitamente dado que $\zeta \left(- \frac{1}{2} \right)$ es regular y esto no afecta el resultado final. A partir del próximo capítulo se utilizará la definición de la energía de vacío dada por \eqref{eq.casimir.mu} en lugar de \eqref{eq.casimir.no.mu}.
+
+
+\section{Realización numérica}
+
+Como se vio en el presente capítulo, y se seguirá desarrollando en los siguientes, el calculo de la Energía de Casimir siempre requiere regularización, el ejemplo presentado poseía 2 particularidades importantes
+\begin{enumerate}
+\item Se conocía exactamente el espectro 
+\item El espectro era sumable analíticamente.
+\end{enumerate}
+Existen pocos escenarios donde se puede encontrar una solución analítica al espectro, típicamente potenciales analíticos en regiones regulares, y aun así una vez obtenido el espectro no siempre es posible obtener una expresión completamente analítica de la Energía de Casimir, esto se desarrollará con mas detalle en el capítulo \ref{cap.singular}.
+
+Para estos casos se puede desarrollar un formalismo que permite la evaluación numérica de la Energía de Casimir, el cual se basa en tomar la ecuación  \eqref{eq.accion-efectiva} y transformarla en una integral de caminos.
+
+\begin{equation}
+\Gamma \left[ V \right] = 
+\left<
+-  \frac{1}{8 \pi}
+\int _{\frac{1}{\Lambda}} ^{\infty} \frac{dT}{T^ {2}} e ^{- m^2 T}
+\int dx \left( W _v [ y(t); x] - 1\right)
+\right> _{y} 
+ ,
+\end{equation}
+donde $W _v [ y(t); x]$ es una cierta funcional que depende del potencial, y los valores medios son calculados tomando un ensamble de lineas de mundo.
+
+
+
+
+
+
+
+
